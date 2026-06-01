@@ -1,0 +1,21 @@
+# Lärbild backend dependencies — the SFW subset of imagegen's stack.
+#
+# Dropped from imagegen's requirements on purpose (face-swap / deepfake only,
+# no SFW-educational use):
+#   insightface>=0.7    — InsightFace buffalo_l face detection + embeddings
+#   onnxruntime>=1.17   — ONNX runtime backing the face-swap model
+# Porträtt (P7) is consent-gated and would reintroduce a face stack only behind
+# the DB consent floor + audit log — never as a default backend dependency.
+
+flask>=3.0
+gunicorn>=21.0          # production WSGI server (LAN-only, port 6767)
+
+# Forked imagegen infra modules added by later phases lean on these:
+flask-sock>=0.7         # WebSocket support for live job progress (P1+)
+simple-websocket>=1.0   # upstream WS client for the ComfyUI bridge (P1+)
+redis>=5.0              # job queue + SSE state (P1+)
+requests>=2.31          # ComfyUI HTTP client (P1+)
+bcrypt>=4.0             # owner login
+cryptography>=42.0      # session / secret crypto
+pillow>=10.0            # image post-processing (pnginfo embed, thumbnails)
+numpy>=1.26             # image array ops
