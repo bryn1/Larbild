@@ -67,6 +67,7 @@ def _register_blueprints(app: Flask) -> None:
     from .routes.library import library_bp
     from .routes.lora import lora_bp
     from .routes.taxonomy import taxonomy_bp
+    from .routes.views import views_bp
 
     app.register_blueprint(health_bp)
     # lb-582: the LGR22 taxonomy single source of truth, exposed at
@@ -79,3 +80,6 @@ def _register_blueprints(app: Flask) -> None:
     # — the Skapa funnel sends only its (subject, imageType) selection; the
     # backend decides the LoRA and the client can never override it.
     app.register_blueprint(lora_bp)
+    # lb-eee: serve the no-build React frontend (the Bibliotek view) at / and
+    # /bibliotek; repoints Flask's /static handler at the repo-root static/ dir.
+    app.register_blueprint(views_bp)
