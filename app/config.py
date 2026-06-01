@@ -99,3 +99,6 @@ class Config:
         self.DB_PATH = Path(
             os.environ.get("LARBILD_DB_PATH", str(_REPO_ROOT / "data" / "larbild.db"))
         )
+        # P0.2 (lb-ah2): run the SQLite migrations on boot. Default on; a test
+        # can disable it to avoid filesystem writes when it doesn't touch the DB.
+        self.INIT_DB = _env_bool("LARBILD_INIT_DB", True)

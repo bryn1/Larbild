@@ -36,8 +36,23 @@ def create_app(overrides: Optional[Mapping] = None) -> Flask:
     if overrides:
         app.config.update(dict(overrides))
 
+    _init_database(app)
     _register_blueprints(app)
     return app
+
+
+def _init_database(app: Flask) -> None:
+    """Create the SQLite DB and run pending migrations on boot (lb-ah2).
+
+    Reconcile-on-boot: idempotent, so every gunicorn worker calling this is
+    safe. ``INIT_DB`` (default True) lets a test skip filesystem writes; tests
+    that exercise the DB instead point ``DB_PATH`` at a temp file.
+    """
+    if not app.config.get("INIT_DB", True):
+        return
+    from .db import init_db
+
+    init_db(app.config["DB_PATH"])
 
 
 def _register_blueprints(app: Flask) -> None:
