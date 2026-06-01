@@ -1,0 +1,1070 @@
+{
+  "subjects": [
+    {
+      "slug": "matematik",
+      "name": "Matematik",
+      "short": "MA",
+      "hue": 18,
+      "glyph": "∑",
+      "blurb": "Tal, algebra, geometri, statistik och samband.",
+      "areas": [
+        {
+          "slug": "taluppfattning",
+          "name": "Taluppfattning",
+          "glyph": "№",
+          "central": "Bråk, decimaltal, procent, potenser, grundpotensform."
+        },
+        {
+          "slug": "algebra",
+          "name": "Algebra",
+          "glyph": "x",
+          "central": "Uttryck, ekvationer, olikheter, funktioner, mönster."
+        },
+        {
+          "slug": "geometri",
+          "name": "Geometri",
+          "glyph": "△",
+          "central": "Vinklar, area, volym, Pythagoras, skala, likformighet."
+        },
+        {
+          "slug": "sannolikhet",
+          "name": "Sannolikhet & statistik",
+          "glyph": "⚄",
+          "central": "Sannolikhet, kombinatorik, lägesmått, diagram, spridning."
+        },
+        {
+          "slug": "samband",
+          "name": "Samband & förändring",
+          "glyph": "∝",
+          "central": "Proportionalitet, linjära funktioner, procentuell förändring."
+        },
+        {
+          "slug": "problemlosning",
+          "name": "Problemlösning",
+          "glyph": "?",
+          "central": "Vardagsekonomi, optimering, flerstegsproblem."
+        }
+      ]
+    },
+    {
+      "slug": "fysik",
+      "name": "Fysik",
+      "short": "FY",
+      "hue": 248,
+      "glyph": "⚛",
+      "blurb": "Materia, krafter, energi, el, strålning och universum.",
+      "areas": [
+        {
+          "slug": "grundfysik",
+          "name": "Grundfysik",
+          "glyph": "◯",
+          "central": "Materiens uppbyggnad, faser, densitet, tryck i vätskor och gaser."
+        },
+        {
+          "slug": "rorelse",
+          "name": "Rörelse & krafter",
+          "glyph": "↗",
+          "central": "Hastighet, acceleration, Newtons lagar, energiomvandlingar."
+        },
+        {
+          "slug": "ljud",
+          "name": "Ljud",
+          "glyph": "♪",
+          "central": "Ljudvågor, frekvens, amplitud, hörsel och buller."
+        },
+        {
+          "slug": "ljus",
+          "name": "Ljus",
+          "glyph": "✦",
+          "central": "Reflektion, brytning, linser, färger, EM-strålning."
+        },
+        {
+          "slug": "el-magnet",
+          "name": "El & magnetism",
+          "glyph": "⚡",
+          "central": "Spänning, ström, resistans, Ohms lag, magnetfält, induktion."
+        },
+        {
+          "slug": "varme-klimat",
+          "name": "Värme & klimat",
+          "glyph": "◐",
+          "central": "Temperatur, energiöverföring, klimatsystem, växthuseffekt."
+        },
+        {
+          "slug": "atom",
+          "name": "Atom- & kärnfysik",
+          "glyph": "α",
+          "central": "Atomens uppbyggnad, joniserande strålning, kärnreaktioner."
+        },
+        {
+          "slug": "universum",
+          "name": "Universum & astronomi",
+          "glyph": "✧",
+          "central": "Solsystemet, stjärnor, galaxer, Big Bang."
+        }
+      ]
+    },
+    {
+      "slug": "kemi",
+      "name": "Kemi",
+      "short": "KE",
+      "hue": 150,
+      "glyph": "⚗",
+      "blurb": "Materiens uppbyggnad, reaktioner och kemin i samhället.",
+      "areas": [
+        {
+          "slug": "kemins_metoder",
+          "name": "Kemins metoder",
+          "glyph": "⌕",
+          "central": "Undersökningar, säkerhet, laborativt arbetssätt."
+        },
+        {
+          "slug": "materia",
+          "name": "Materiens uppbyggnad",
+          "glyph": "◈",
+          "central": "Atomer, molekyler, grundämnen, periodiska systemet, föreningar."
+        },
+        {
+          "slug": "reaktioner",
+          "name": "Kemiska reaktioner",
+          "glyph": "⇌",
+          "central": "Reaktioner och energi, förbränning, reaktionsformler."
+        },
+        {
+          "slug": "vatten",
+          "name": "Vatten, syror & baser",
+          "glyph": "≈",
+          "central": "Vattenlösningar, pH, syror och baser, indikatorer."
+        },
+        {
+          "slug": "organisk",
+          "name": "Organisk kemi",
+          "glyph": "⬡",
+          "central": "Kolföreningar, kolväten, alkoholer, polymerer."
+        },
+        {
+          "slug": "biokemi",
+          "name": "Biokemi",
+          "glyph": "✿",
+          "central": "Livsmedel, näringsämnen, kolhydrater, fetter, proteiner."
+        },
+        {
+          "slug": "kemi_samhalle",
+          "name": "Kemi i samhället",
+          "glyph": "♺",
+          "central": "Hållbar utveckling, materialval, miljöpåverkan."
+        }
+      ]
+    },
+    {
+      "slug": "biologi",
+      "name": "Biologi",
+      "short": "BI",
+      "hue": 135,
+      "glyph": "❧",
+      "blurb": "Celler, människokroppen, genetik, evolution och ekologi.",
+      "areas": [
+        {
+          "slug": "biologins_metoder",
+          "name": "Biologins metoder",
+          "glyph": "⌕",
+          "central": "Fältstudier, mikroskopi, klassificering, arbetssätt."
+        },
+        {
+          "slug": "celler",
+          "name": "Cellbiologi",
+          "glyph": "◌",
+          "central": "Cellens uppbyggnad och funktion, celldelning."
+        },
+        {
+          "slug": "manniskan",
+          "name": "Människokroppen",
+          "glyph": "☻",
+          "central": "Organsystem, anatomi och fysiologi, sinnen."
+        },
+        {
+          "slug": "genetik",
+          "name": "Genetik & ärftlighet",
+          "glyph": "⧬",
+          "central": "DNA, gener, arv, mutationer, genteknik."
+        },
+        {
+          "slug": "evolution",
+          "name": "Evolution",
+          "glyph": "⟿",
+          "central": "Naturligt urval, artbildning, livets historia."
+        },
+        {
+          "slug": "ekologi",
+          "name": "Ekologi",
+          "glyph": "♺",
+          "central": "Ekosystem, näringskedjor, kretslopp, biologisk mångfald."
+        },
+        {
+          "slug": "halsa",
+          "name": "Hälsa",
+          "glyph": "♡",
+          "central": "Kost, motion, sexualitet, droger och beroende."
+        },
+        {
+          "slug": "bioteknik",
+          "name": "Bioteknik",
+          "glyph": "⚙",
+          "central": "Bioteknik och dess samhällspåverkan."
+        }
+      ]
+    },
+    {
+      "slug": "teknik",
+      "name": "Teknik",
+      "short": "TK",
+      "hue": 60,
+      "glyph": "⚙",
+      "blurb": "Tekniska system, material, mekanismer och konstruktion.",
+      "areas": [
+        {
+          "slug": "tekniska_system",
+          "name": "Tekniska system",
+          "glyph": "⊞",
+          "central": "Tekniska system i hemmet och samhället, in- och utflöden."
+        },
+        {
+          "slug": "material",
+          "name": "Material & hållfasthet",
+          "glyph": "▤",
+          "central": "Materialegenskaper, materialval, hållfasthet."
+        },
+        {
+          "slug": "mekanismer",
+          "name": "Mekanismer",
+          "glyph": "⚙",
+          "central": "Hävstänger, kugghjul, växlar, kraftöverföring."
+        },
+        {
+          "slug": "elektronik_styr",
+          "name": "Elektronik & styrning",
+          "glyph": "⌁",
+          "central": "Komponenter, sensorer, styrning och programmering."
+        },
+        {
+          "slug": "konstruktion",
+          "name": "Konstruktion & design",
+          "glyph": "✎",
+          "central": "Ritningar, skisser, designprocessen, prototyper."
+        },
+        {
+          "slug": "teknik_samhalle",
+          "name": "Teknik & samhälle",
+          "glyph": "♺",
+          "central": "Teknikutveckling, hållbarhet, konsekvenser."
+        }
+      ]
+    },
+    {
+      "slug": "geografi",
+      "name": "Geografi",
+      "short": "GE",
+      "hue": 95,
+      "glyph": "◍",
+      "blurb": "Jordens system, klimat, resurser, befolkning och kartor.",
+      "areas": [
+        {
+          "slug": "jordens_system",
+          "name": "Jorden som system",
+          "glyph": "◍",
+          "central": "Berg, vatten, atmosfär, naturlandskap, geologiska processer."
+        },
+        {
+          "slug": "klimat_vader",
+          "name": "Klimat & väder",
+          "glyph": "☁",
+          "central": "Klimatzoner, väder, meteorologi, klimatförändringar."
+        },
+        {
+          "slug": "landskap_resurser",
+          "name": "Landskap & resurser",
+          "glyph": "⛰",
+          "central": "Naturresurser, resursfördelning, markanvändning."
+        },
+        {
+          "slug": "befolkning_migration",
+          "name": "Befolkning & migration",
+          "glyph": "⇄",
+          "central": "Befolkningsmönster, migration, urbanisering."
+        },
+        {
+          "slug": "globalisering",
+          "name": "Globalisering",
+          "glyph": "⊕",
+          "central": "Globala handelsmönster, beroenden, ojämlikhet."
+        },
+        {
+          "slug": "hallbar_utveckling",
+          "name": "Hållbar utveckling",
+          "glyph": "♺",
+          "central": "Mänsklig påverkan, miljö- och utvecklingsfrågor."
+        },
+        {
+          "slug": "kartor",
+          "name": "Kartor & metoder",
+          "glyph": "▦",
+          "central": "Kartor, GIS, fältstudier, geografiska metoder."
+        }
+      ]
+    },
+    {
+      "slug": "historia",
+      "name": "Historia",
+      "short": "HI",
+      "hue": 50,
+      "glyph": "⌛",
+      "blurb": "Från medeltiden till nutid — källor, perspektiv, historiebruk.",
+      "areas": [
+        {
+          "slug": "forntiden_antiken",
+          "name": "Forntiden & antiken",
+          "glyph": "𓂀",
+          "central": "Tidiga högkulturer, antikens Grekland och Rom."
+        },
+        {
+          "slug": "medeltiden",
+          "name": "Medeltiden",
+          "glyph": "⚜",
+          "central": "Medeltiden i Europa och Norden, ca 500–1500."
+        },
+        {
+          "slug": "tidigmoderna",
+          "name": "Tidigmoderna tiden",
+          "glyph": "⚓",
+          "central": "Reformation, upptäcktsresor, stormaktstid, ca 1500–1800."
+        },
+        {
+          "slug": "1800_talet",
+          "name": "1800-talet",
+          "glyph": "⚒",
+          "central": "Industrialisering, demokratisering, nationalism."
+        },
+        {
+          "slug": "1900_talet",
+          "name": "1900-talet",
+          "glyph": "✺",
+          "central": "Världskrigen, kalla kriget, avkolonisering."
+        },
+        {
+          "slug": "nutidshistoria",
+          "name": "Nutidshistoria",
+          "glyph": "⊛",
+          "central": "Efter 1989: globalisering, EU, migration, klimatfrågan."
+        },
+        {
+          "slug": "historiebruk",
+          "name": "Historiebruk",
+          "glyph": "⌖",
+          "central": "Hur historia används, identitet och källkritik."
+        }
+      ]
+    },
+    {
+      "slug": "religion",
+      "name": "Religionskunskap",
+      "short": "RE",
+      "hue": 305,
+      "glyph": "☸",
+      "blurb": "Världsreligioner, livsåskådningar och etik.",
+      "areas": [
+        {
+          "slug": "kristendom",
+          "name": "Kristendom",
+          "glyph": "✝",
+          "central": "Tro, riter, historisk utveckling och samtid."
+        },
+        {
+          "slug": "islam",
+          "name": "Islam",
+          "glyph": "☪",
+          "central": "Tro, riter, historia och samtid."
+        },
+        {
+          "slug": "judendom",
+          "name": "Judendom",
+          "glyph": "✡",
+          "central": "Tro, riter, historia och samtid."
+        },
+        {
+          "slug": "hinduism",
+          "name": "Hinduism",
+          "glyph": "ॐ",
+          "central": "Tro, riter, historia och samtid."
+        },
+        {
+          "slug": "buddhism",
+          "name": "Buddhism",
+          "glyph": "☸",
+          "central": "Tro, riter, historia och samtid."
+        },
+        {
+          "slug": "livsaskadningar",
+          "name": "Livsåskådningar",
+          "glyph": "✺",
+          "central": "Sekulära livsåskådningar, ateism, humanism."
+        },
+        {
+          "slug": "etik",
+          "name": "Etik",
+          "glyph": "⚖",
+          "central": "Etiska modeller: konsekvens-, plikt- och dygdetik."
+        },
+        {
+          "slug": "religion_samhalle",
+          "name": "Religion i samhället",
+          "glyph": "⊕",
+          "central": "Identitet, mångfald, religion och konflikter."
+        }
+      ]
+    },
+    {
+      "slug": "samhalle",
+      "name": "Samhällskunskap",
+      "short": "SH",
+      "hue": 220,
+      "glyph": "⊞",
+      "blurb": "Demokrati, politik, ekonomi, lag och rätt, medier.",
+      "areas": [
+        {
+          "slug": "demokrati",
+          "name": "Demokrati",
+          "glyph": "⊞",
+          "central": "Demokratiska processer, valsystem, inflytande."
+        },
+        {
+          "slug": "politik",
+          "name": "Politik & ideologier",
+          "glyph": "◧",
+          "central": "Ideologier, partier, riksdag och regering."
+        },
+        {
+          "slug": "lag_ratt",
+          "name": "Lag & rätt",
+          "glyph": "⚖",
+          "central": "Rättssystemet, brott och straff, lagar."
+        },
+        {
+          "slug": "privatekonomi",
+          "name": "Privatekonomi",
+          "glyph": "⊜",
+          "central": "Privatekonomi och konsumentkunskap."
+        },
+        {
+          "slug": "samhallsekonomi",
+          "name": "Samhällsekonomi",
+          "glyph": "⇅",
+          "central": "Arbetsmarknad, skatter, ekonomiska kretslopp."
+        },
+        {
+          "slug": "medier",
+          "name": "Medier & källkritik",
+          "glyph": "▤",
+          "central": "Medier, källkritik, informationssamhället."
+        },
+        {
+          "slug": "manskliga_rattigheter",
+          "name": "Mänskliga rättigheter",
+          "glyph": "♡",
+          "central": "Rättigheter, jämlikhet, diskriminering."
+        },
+        {
+          "slug": "internationellt",
+          "name": "Internationella relationer",
+          "glyph": "⊕",
+          "central": "FN, EU, globala frågor och konflikter."
+        }
+      ]
+    },
+    {
+      "slug": "svenska",
+      "name": "Svenska",
+      "short": "SV",
+      "hue": 12,
+      "glyph": "✑",
+      "blurb": "Läsa, skriva, tala och litteraturhistoria.",
+      "areas": [
+        {
+          "slug": "lasforstaelse",
+          "name": "Läsa & förstå",
+          "glyph": "▭",
+          "central": "Skönlitteratur, lässtrategier, tolkning."
+        },
+        {
+          "slug": "skrivande",
+          "name": "Skrivande",
+          "glyph": "✑",
+          "central": "Berättande, argumenterande och utredande texter."
+        },
+        {
+          "slug": "sprakbruk",
+          "name": "Språkbruk",
+          "glyph": "¶",
+          "central": "Grammatik, stavning, ordförråd, meningsbyggnad."
+        },
+        {
+          "slug": "tala_samtala",
+          "name": "Tala & samtala",
+          "glyph": "❝",
+          "central": "Muntliga framställningar, samtal, retorik."
+        },
+        {
+          "slug": "litteraturhistoria",
+          "name": "Litteraturhistoria",
+          "glyph": "⌂",
+          "central": "Epoker, författarskap, litterära verk."
+        }
+      ]
+    },
+    {
+      "slug": "engelska",
+      "name": "Engelska",
+      "short": "EN",
+      "hue": 200,
+      "glyph": "EN",
+      "blurb": "Hörförståelse, läsning, tal, skrivande och kultur.",
+      "areas": [
+        {
+          "slug": "listening",
+          "name": "Hörförståelse",
+          "glyph": "♫",
+          "central": "Lyssna och förstå talad engelska."
+        },
+        {
+          "slug": "reading",
+          "name": "Läsförståelse",
+          "glyph": "▭",
+          "central": "Läsa och förstå olika texttyper."
+        },
+        {
+          "slug": "speaking",
+          "name": "Tala & samtala",
+          "glyph": "❝",
+          "central": "Muntlig produktion och interaktion."
+        },
+        {
+          "slug": "writing",
+          "name": "Skrivande",
+          "glyph": "✑",
+          "central": "Skriftlig produktion, olika texttyper."
+        },
+        {
+          "slug": "kultur",
+          "name": "Engelsktalande världen",
+          "glyph": "◍",
+          "central": "Kultur och samhälle i engelsktalande länder."
+        }
+      ]
+    },
+    {
+      "slug": "modernasprak",
+      "name": "Moderna språk",
+      "short": "ML",
+      "hue": 330,
+      "glyph": "✲",
+      "blurb": "Tyska, franska och spanska — språk och kultur.",
+      "areas": [
+        {
+          "slug": "tyska",
+          "name": "Tyska",
+          "glyph": "DE",
+          "central": "Vardagsspråk, kultur och kommunikation."
+        },
+        {
+          "slug": "franska",
+          "name": "Franska",
+          "glyph": "FR",
+          "central": "Vardagsspråk, kultur och kommunikation."
+        },
+        {
+          "slug": "spanska",
+          "name": "Spanska",
+          "glyph": "ES",
+          "central": "Vardagsspråk, kultur och kommunikation."
+        }
+      ]
+    },
+    {
+      "slug": "bild",
+      "name": "Bild",
+      "short": "BD",
+      "hue": 25,
+      "glyph": "❖",
+      "blurb": "Bildframställning, bildanalys och bildens roll i samhället.",
+      "areas": [
+        {
+          "slug": "bildframstallning",
+          "name": "Bildframställning",
+          "glyph": "✎",
+          "central": "Teckning, måleri, collage, digitalt bildskapande."
+        },
+        {
+          "slug": "tekniker_material",
+          "name": "Tekniker & material",
+          "glyph": "▤",
+          "central": "Verktyg, material och tekniker för två- och tredimensionellt arbete."
+        },
+        {
+          "slug": "komposition",
+          "name": "Komposition & form",
+          "glyph": "◳",
+          "central": "Färglära, perspektiv, proportioner, komposition."
+        },
+        {
+          "slug": "bildanalys",
+          "name": "Bildanalys",
+          "glyph": "⌕",
+          "central": "Tolkning av konst, reklam, nyhetsbilder och samtida bilder."
+        },
+        {
+          "slug": "bild_samhalle",
+          "name": "Bilden i samhället",
+          "glyph": "◍",
+          "central": "Konsthistoria, bildens funktion i medier och kultur."
+        }
+      ]
+    },
+    {
+      "slug": "musik",
+      "name": "Musik",
+      "short": "MU",
+      "hue": 295,
+      "glyph": "♬",
+      "blurb": "Musicerande, skapande och musikens sammanhang.",
+      "areas": [
+        {
+          "slug": "musicerande",
+          "name": "Musicerande",
+          "glyph": "♪",
+          "central": "Sång och spel i olika genrer, instrument och ensemblespel."
+        },
+        {
+          "slug": "musikskapande",
+          "name": "Musikskapande",
+          "glyph": "✦",
+          "central": "Komposition, improvisation, digitala verktyg."
+        },
+        {
+          "slug": "musikteori",
+          "name": "Musikens byggstenar",
+          "glyph": "𝄞",
+          "central": "Rytm, melodi, harmoni, dynamik, notation."
+        },
+        {
+          "slug": "instrument_ljud",
+          "name": "Instrument & ljud",
+          "glyph": "◉",
+          "central": "Instrumentgrupper, ljudteknik, akustik."
+        },
+        {
+          "slug": "musik_samhalle",
+          "name": "Musik i samhället",
+          "glyph": "◍",
+          "central": "Genrer, musikhistoria, musikens funktioner och påverkan."
+        }
+      ]
+    },
+    {
+      "slug": "slojd",
+      "name": "Slöjd",
+      "short": "SL",
+      "hue": 80,
+      "glyph": "✂",
+      "blurb": "Hantverk, material och formgivning i trä, metall och textil.",
+      "areas": [
+        {
+          "slug": "tra_metall",
+          "name": "Trä & metall",
+          "glyph": "⚒",
+          "central": "Hård slöjd: verktyg, sammanfogning, ytbehandling."
+        },
+        {
+          "slug": "textil",
+          "name": "Textil",
+          "glyph": "✁",
+          "central": "Mjuk slöjd: sömnad, stickning, broderi, vävning."
+        },
+        {
+          "slug": "material_verktyg",
+          "name": "Material & verktyg",
+          "glyph": "▤",
+          "central": "Materialkunskap, verktyg, maskiner och säkerhet."
+        },
+        {
+          "slug": "design_form",
+          "name": "Design & formgivning",
+          "glyph": "✎",
+          "central": "Skisser, ritningar, färg- och formval i slöjdprocessen."
+        },
+        {
+          "slug": "slojd_hallbarhet",
+          "name": "Slöjd & hållbarhet",
+          "glyph": "♺",
+          "central": "Återbruk, reparation, hantverkets historia och kultur."
+        }
+      ]
+    },
+    {
+      "slug": "idrott",
+      "name": "Idrott och hälsa",
+      "short": "IH",
+      "hue": 145,
+      "glyph": "⛹",
+      "blurb": "Rörelse, hälsa, friluftsliv och säkerhet.",
+      "areas": [
+        {
+          "slug": "rorelse_traning",
+          "name": "Rörelse & träning",
+          "glyph": "↗",
+          "central": "Komplexa rörelser, styrka, kondition, dans och rörelse till musik."
+        },
+        {
+          "slug": "halsa_livsstil",
+          "name": "Hälsa & livsstil",
+          "glyph": "♡",
+          "central": "Sambandet kost, sömn, motion och hälsa. Ergonomi."
+        },
+        {
+          "slug": "friluftsliv",
+          "name": "Friluftsliv & natur",
+          "glyph": "⛰",
+          "central": "Vistas i naturen, allemansrätt, orientering, kartor."
+        },
+        {
+          "slug": "sakerhet_livraddning",
+          "name": "Säkerhet & livräddning",
+          "glyph": "✚",
+          "central": "Badvett, livräddning, första hjälpen, säkerhet vid aktivitet."
+        },
+        {
+          "slug": "lekar_idrotter",
+          "name": "Lekar & idrotter",
+          "glyph": "◉",
+          "central": "Bollspel, lekar, regler och samarbete."
+        }
+      ]
+    },
+    {
+      "slug": "hemkunskap",
+      "name": "Hem- & konsumentkunskap",
+      "short": "HK",
+      "hue": 12,
+      "glyph": "✿",
+      "blurb": "Mat, hushåll, ekonomi och konsumtion.",
+      "areas": [
+        {
+          "slug": "mat_maltider",
+          "name": "Mat & måltider",
+          "glyph": "◓",
+          "central": "Matlagning, recept, näring, måltidens sammanhang."
+        },
+        {
+          "slug": "halsa_livsmedel",
+          "name": "Hälsa & livsmedel",
+          "glyph": "♡",
+          "central": "Kost, hygien, allergier, livsmedels ursprung och märkning."
+        },
+        {
+          "slug": "konsumtion_ekonomi",
+          "name": "Konsumtion & ekonomi",
+          "glyph": "⊜",
+          "central": "Privatekonomi, konsumenträtt, reklam och köpbeslut."
+        },
+        {
+          "slug": "hushall_miljo",
+          "name": "Hushåll & miljö",
+          "glyph": "♺",
+          "central": "Resurshushållning, rengöring, avfall, hållbar konsumtion."
+        }
+      ]
+    }
+  ],
+  "imageTypes": [
+    {
+      "slug": "foto",
+      "name": "Fotorealistisk",
+      "glyph": "◉",
+      "desc": "T.ex. historisk reenactment, verklighetstrogna scener."
+    },
+    {
+      "slug": "illustration",
+      "name": "Vetenskaplig illustration",
+      "glyph": "✎",
+      "desc": "Anatomi, kemi, märkta strukturer."
+    },
+    {
+      "slug": "diagram",
+      "name": "Schematiskt diagram",
+      "glyph": "⊟",
+      "desc": "Kretsar, kraftdiagram, flöden."
+    },
+    {
+      "slug": "karta",
+      "name": "Karta",
+      "glyph": "▦",
+      "desc": "Historisk eller geografisk karta."
+    },
+    {
+      "slug": "tidslinje",
+      "name": "Tidslinje",
+      "glyph": "▬",
+      "desc": "Kronologi och händelseförlopp."
+    },
+    {
+      "slug": "tecknad",
+      "name": "Tecknad / illustration",
+      "glyph": "✱",
+      "desc": "Låg-tröskel, engagerande, tecknad stil."
+    },
+    {
+      "slug": "mikroskop",
+      "name": "Mikroskopbild",
+      "glyph": "◌",
+      "desc": "Cellnivå, mikroskopisk stil."
+    },
+    {
+      "slug": "tvarsnitt",
+      "name": "Tvärsnitt",
+      "glyph": "◑",
+      "desc": "Genomskärning: vulkan, cell, motor."
+    }
+  ],
+  "videoTypes": [
+    {
+      "slug": "lektionsfilm",
+      "name": "Lektionsfilm",
+      "glyph": "▶",
+      "desc": "1–3 min sammanhållen genomgång."
+    },
+    {
+      "slug": "kort-forklaring",
+      "name": "Kort förklaring",
+      "glyph": "⚡",
+      "desc": "10–30 s snabb illustration av ett begrepp."
+    },
+    {
+      "slug": "animerat-diagram",
+      "name": "Animerat diagram",
+      "glyph": "↗",
+      "desc": "Kraftvektorer, ström, processer i rörelse."
+    },
+    {
+      "slug": "tidslinje-anim",
+      "name": "Tidslinje-animation",
+      "glyph": "▬",
+      "desc": "Animerad kronologi."
+    },
+    {
+      "slug": "ken-burns",
+      "name": "Stillbild + voiceover",
+      "glyph": "◉",
+      "desc": "Ken Burns-panorering med berättarröst."
+    },
+    {
+      "slug": "reenactment",
+      "name": "Historisk reenactment",
+      "glyph": "⌛",
+      "desc": "Dramatiserad scen med berättarröst."
+    }
+  ],
+  "narrationVoices": [
+    {
+      "slug": "sv-standard",
+      "name": "Svenska",
+      "desc": "Standardsvenska, neutral berättarröst."
+    },
+    {
+      "slug": "sv-lattlast",
+      "name": "Lättläst svenska",
+      "desc": "Långsammare tempo, enklare meningar — åk 7 / SVA."
+    }
+  ],
+  "baseLora": {
+    "foto": {
+      "name": "photoreal-edu-v3",
+      "strength": 0.75,
+      "base": "SDXL"
+    },
+    "illustration": {
+      "name": "sciart-lineart-v2",
+      "strength": 0.8,
+      "base": "SDXL"
+    },
+    "diagram": {
+      "name": "schematic-clean-v2",
+      "strength": 0.85,
+      "base": "SDXL"
+    },
+    "karta": {
+      "name": "cartography-flat-v1",
+      "strength": 0.8,
+      "base": "SDXL"
+    },
+    "tidslinje": {
+      "name": "timeline-infographic-v1",
+      "strength": 0.78,
+      "base": "SDXL"
+    },
+    "tecknad": {
+      "name": "friendly-flat-illus-v2",
+      "strength": 0.82,
+      "base": "SDXL"
+    },
+    "mikroskop": {
+      "name": "micrograph-style-v1",
+      "strength": 0.8,
+      "base": "SDXL"
+    },
+    "tvarsnitt": {
+      "name": "cutaway-cross-section-v2",
+      "strength": 0.82,
+      "base": "SDXL"
+    }
+  },
+  "loraMatrix": {
+    "historia:foto": {
+      "name": "histreenact-nordic-v2",
+      "strength": 0.8,
+      "note": "Tidstrogna miljöer, nordisk kontext."
+    },
+    "historia:karta": {
+      "name": "histmap-aged-v2",
+      "strength": 0.82,
+      "note": "Åldrade historiska kartor."
+    },
+    "historia:tidslinje": {
+      "name": "timeline-infographic-v1",
+      "strength": 0.8,
+      "note": "Epok-tidslinjer."
+    },
+    "religion:foto": {
+      "name": "histreenact-nordic-v2",
+      "strength": 0.72,
+      "note": "Riter och platser, respektfull framställning."
+    },
+    "biologi:illustration": {
+      "name": "anatomy-atlas-v3",
+      "strength": 0.85,
+      "note": "Märkt anatomi, atlasstil."
+    },
+    "biologi:mikroskop": {
+      "name": "micrograph-style-v1",
+      "strength": 0.85,
+      "note": "Cell- och vävnadsnivå."
+    },
+    "biologi:tvarsnitt": {
+      "name": "bio-cutaway-v2",
+      "strength": 0.84,
+      "note": "Cell-, organ- och växttvärsnitt."
+    },
+    "kemi:illustration": {
+      "name": "molecule-render-v2",
+      "strength": 0.83,
+      "note": "Molekyl- och atommodeller."
+    },
+    "kemi:diagram": {
+      "name": "reaction-schematic-v1",
+      "strength": 0.85,
+      "note": "Reaktionsscheman, utrustning."
+    },
+    "fysik:diagram": {
+      "name": "physics-vector-v3",
+      "strength": 0.86,
+      "note": "Kraft-, kretsar- och frikroppsdiagram."
+    },
+    "fysik:tvarsnitt": {
+      "name": "cutaway-cross-section-v2",
+      "strength": 0.8,
+      "note": "Apparater i genomskärning."
+    },
+    "fysik:foto": {
+      "name": "lab-scene-v1",
+      "strength": 0.72,
+      "note": "Laborationsmiljöer."
+    },
+    "geografi:karta": {
+      "name": "geomap-thematic-v3",
+      "strength": 0.86,
+      "note": "Tematiska kartor, klimatzoner."
+    },
+    "geografi:tvarsnitt": {
+      "name": "geo-cutaway-v2",
+      "strength": 0.82,
+      "note": "Vulkan-, plattektonik-tvärsnitt."
+    },
+    "teknik:diagram": {
+      "name": "tech-schematic-v2",
+      "strength": 0.84,
+      "note": "Konstruktions- och kopplingsscheman."
+    },
+    "teknik:tvarsnitt": {
+      "name": "machine-cutaway-v2",
+      "strength": 0.83,
+      "note": "Maskiner och mekanismer i genomskärning."
+    },
+    "matematik:diagram": {
+      "name": "math-figure-clean-v2",
+      "strength": 0.85,
+      "note": "Geometriska figurer, grafer."
+    },
+    "samhalle:diagram": {
+      "name": "infographic-civic-v1",
+      "strength": 0.8,
+      "note": "Samhällsinfografik, kretslopp."
+    },
+    "samhalle:karta": {
+      "name": "geomap-thematic-v3",
+      "strength": 0.78,
+      "note": "Politiska och tematiska kartor."
+    },
+    "bild:foto": {
+      "name": "arthistory-ref-v1",
+      "strength": 0.74,
+      "note": "Konsthistoriska referensbilder."
+    },
+    "bild:tecknad": {
+      "name": "friendly-flat-illus-v2",
+      "strength": 0.86,
+      "note": "Illustrationsövningar, stilstudier."
+    },
+    "musik:illustration": {
+      "name": "music-notation-v1",
+      "strength": 0.82,
+      "note": "Notbilder, instrument, ackordscheman."
+    },
+    "musik:diagram": {
+      "name": "music-notation-v1",
+      "strength": 0.8,
+      "note": "Notsystem och musikteori-scheman."
+    },
+    "slojd:illustration": {
+      "name": "craft-howto-v1",
+      "strength": 0.83,
+      "note": "Steg-för-steg-instruktioner, mönster."
+    },
+    "slojd:tvarsnitt": {
+      "name": "machine-cutaway-v2",
+      "strength": 0.78,
+      "note": "Sammanfogningar och konstruktion i genomskärning."
+    },
+    "idrott:illustration": {
+      "name": "anatomy-atlas-v3",
+      "strength": 0.78,
+      "note": "Rörelse- och muskelanatomi."
+    },
+    "idrott:diagram": {
+      "name": "physics-vector-v3",
+      "strength": 0.74,
+      "note": "Bana, planscheman, rörelsediagram."
+    },
+    "hemkunskap:illustration": {
+      "name": "craft-howto-v1",
+      "strength": 0.8,
+      "note": "Recept- och processteg, näringsillustration."
+    }
+  }
+}

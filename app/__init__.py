@@ -44,10 +44,14 @@ def _register_blueprints(app: Flask) -> None:
     """Register every SFW blueprint.
 
     The health blueprint is the foundation and always present. Later phases
-    append their blueprints here (library, jobs, taxonomy, film, lessons, …).
-    Imports stay local to keep the factory's import graph flat and side-effect
-    free at package import time.
+    append their blueprints here (library, jobs, film, lessons, …). Imports
+    stay local to keep the factory's import graph flat and side-effect free at
+    package import time.
     """
     from .routes.health import health_bp
+    from .routes.taxonomy import taxonomy_bp
 
     app.register_blueprint(health_bp)
+    # lb-582: the LGR22 taxonomy single source of truth, exposed at
+    # GET /api/taxonomy so the frontend bootstraps from the backend.
+    app.register_blueprint(taxonomy_bp)
