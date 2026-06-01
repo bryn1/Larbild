@@ -1,0 +1,16 @@
+/* ============================================================================
+   Lärbild — stylesheet entry point
+   ----------------------------------------------------------------------------
+   Single import for the whole design system. Load this one file (or, in a
+   bundler, import it) and you get tokens + base + components in the correct
+   order. Order matters: tokens define the variables that base and components
+   consume.
+
+   Usage (host HTML):
+     <link rel="stylesheet" href="/static/css/larbild.css">
+   Plus the three Google Fonts — see static/css/README.md.
+   ============================================================================ */
+
+@import "tokens.css";
+@import "base.css";
+@import "components.css";

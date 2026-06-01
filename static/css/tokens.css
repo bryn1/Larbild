@@ -1,0 +1,141 @@
+/* ============================================================================
+   Lärbild — Design Tokens
+   ----------------------------------------------------------------------------
+   THE single source of truth for the Lärbild design system. Every other
+   stylesheet (base.css, components.css) and every view consumes these tokens
+   via var(--…). Do not hard-code colors, radii, shadows, or layout dimensions
+   anywhere else — add or adjust them here.
+
+   Ported faithfully from the SFW design handoff (Sibbis
+   /tmp/sfw_design/handoff/design/styles.css :root + docs/DESIGNSYSTEM.md §1-6).
+   Design language: "ljust läromedel" — warm off-white paper, near-black ink,
+   one serif for headings, one grotesk for UI, one mono for metadata. Each
+   subject carries its own identity hue (see --brand-h mechanism below).
+
+   Color model is OKLCH throughout (handoff DESIGNSYSTEM.md §6 "att bevara").
+   Target is a modern desktop browser (LAN owner tool, fixed 1440px width).
+   ============================================================================ */
+
+:root {
+  /* ----- Surface & ink scale (warm paper → near-black ink) ----------------- */
+  --bg:         oklch(0.985 0.004 95);   /* page background, warm off-white  */
+  --bg-2:       oklch(0.965 0.006 95);   /* rail, toned-down surfaces        */
+  --surface:    oklch(1 0 0);            /* cards, panels — pure white       */
+  --surface-2:  oklch(0.975 0.005 95);   /* hover on white surfaces          */
+  --sink:       oklch(0.955 0.006 95);   /* sunken surface (preview/canvas)  */
+  --border:     oklch(0.90 0.006 95);    /* default hairline border          */
+  --border-2:   oklch(0.84 0.008 95);    /* stronger border (inputs)         */
+
+  --ink:        oklch(0.26 0.02 265);    /* body text, near-black, faint blue */
+  --ink-2:      oklch(0.44 0.02 265);    /* secondary text                    */
+  --muted:      oklch(0.58 0.015 265);   /* metadata, dimmed                  */
+  --faint:      oklch(0.72 0.012 265);   /* faintest text                     */
+
+  /* ----- Subject color (dynamic) ------------------------------------------
+     One accent per view: the active subject's hue is written to --brand-h by
+     the view (from subjects[].hue in data.js — the taxonomy is the single
+     source of truth for per-subject hues; they are deliberately NOT duplicated
+     here). All brand tokens derive from --brand-h, so setting the hue retints
+     the whole accent system. Default = Lärbild-indigo.
+
+     NOTE on the default: DESIGNSYSTEM.md §1 and the prototype's runtime
+     (app.jsx maps the default brand #5145d6 → hue 268, which the screenshots
+     reflect) both define Lärbild-indigo as hue 268. The handoff styles.css
+     :root literal of 255 is a stale pre-tweak value that the running app
+     overrides to 268 — so 268 is the faithful rendered default. */
+  --brand-h:    268;
+  --brand:      oklch(0.54 0.16 var(--brand-h));   /* active subject accent   */
+  --brand-soft: oklch(0.95 0.04 var(--brand-h));   /* soft accent background  */
+  --brand-line: oklch(0.84 0.07 var(--brand-h));   /* accent border           */
+  --brand-ink:  oklch(0.40 0.15 var(--brand-h));   /* text on soft accent bg  */
+  --brand-ring: oklch(0.54 0.16 var(--brand-h) / 0.14); /* input focus ring   */
+
+  /* ----- Status ------------------------------------------------------------ */
+  --good:       oklch(0.62 0.15 150);
+  --warn:       oklch(0.72 0.15 70);
+  --danger:     oklch(0.58 0.20 25);
+  --good-soft:  oklch(0.62 0.15 150 / 0.1);   /* good chip background         */
+  --good-line:  oklch(0.62 0.15 150 / 0.3);   /* good chip border             */
+  --good-glow:  oklch(0.62 0.15 150 / 0.16);  /* ok status dot glow ring      */
+  --warn-glow:  oklch(0.72 0.15 70 / 0.16);   /* warn status dot glow ring    */
+  --cool:       oklch(0.62 0.12 220);         /* "cool" GPU (B70) indicator   */
+
+  /* ----- Overlays & misc surfaces ------------------------------------------ */
+  --overlay-light: oklch(1 0 0 / 0.85);       /* translucent glass tag bg     */
+  --scrim:         oklch(0.2 0.02 265 / 0.8); /* dark tag/overlay background   */
+  --scrim-shadow:  oklch(0.2 0.02 265 / 0.5); /* drop-shadow under play icon   */
+  --scrollbar:       oklch(0.86 0.01 95);     /* scrollbar thumb              */
+  --scrollbar-hover: oklch(0.78 0.01 95);     /* scrollbar thumb hover        */
+
+  /* ----- Typography: families ---------------------------------------------
+     Fraunces  = serif headings (page/card/panel titles, italic emphasis).
+     Schibsted Grotesk = all UI and body text.
+     Space Mono = metadata, slugs, IDs, labels, counters (mono ONLY for these).
+     The host page must load these three families (see static/css/README.md). */
+  --serif: "Fraunces", "Source Serif 4", Georgia, serif;
+  --sans:  "Schibsted Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --mono:  "Space Mono", "IBM Plex Mono", ui-monospace, monospace;
+
+  /* ----- Typography: type scale -------------------------------------------
+     Role-based steps covering the design's heading→metadata range. Body is
+     14px / line-height 1.5. Component CSS keeps the handoff's exact per-element
+     sizes for hi-fi fidelity; these tokens are the named scale for composing
+     new views without scattering magic font sizes. */
+  --text-display: 38px;    /* page-head h1                                    */
+  --text-2xl:     28px;    /* big stat values                                */
+  --text-xl:      22px;    /* serif card titles                              */
+  --text-lg:      18px;    /* panel headings                                 */
+  --text-base:    14px;    /* UI / body (default)                            */
+  --text-sm:      13px;    /* secondary controls                             */
+  --text-xs:      12px;    /* dense text                                      */
+  --text-meta:    11px;    /* mono metadata                                  */
+  --text-label:   10px;    /* mono uppercase labels                          */
+  --text-micro:   9.5px;   /* smallest mono tags                             */
+
+  /* ----- Typography: weights, leading, tracking ---------------------------- */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --leading-tight:  1.1;   /* headings                                       */
+  --leading-snug:   1.35;  /* descriptive blurbs                             */
+  --leading-normal: 1.5;   /* body                                           */
+
+  --tracking-heading: -0.02em;  /* serif headings                            */
+  --tracking-label:    0.13em;  /* mono uppercase labels                     */
+
+  /* ----- Spacing scale -----------------------------------------------------
+     Mirrors the px ladder the handoff actually uses (suffix = pixels). The
+     handoff spacing is hand-tuned, so this is a guide rather than a strict
+     geometric scale: a few one-off values (5/7/9/11/13/26px) remain literal in
+     components for exact fidelity. Prefer these tokens in new view layout. */
+  --space-2:  2px;
+  --space-4:  4px;
+  --space-6:  6px;
+  --space-8:  8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-20: 20px;
+  --space-22: 22px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-34: 34px;
+  --space-48: 48px;
+
+  /* ----- Radii ------------------------------------------------------------- */
+  --radius:    12px;   /* cards, panels, inputs                              */
+  --radius-sm: 8px;    /* chips, icon buttons, small tiles                   */
+
+  /* ----- Elevation (three levels) ------------------------------------------ */
+  --shadow-sm: 0 1px 2px oklch(0.4 0.03 265 / 0.06), 0 1px 1px oklch(0.4 0.03 265 / 0.04);
+  --shadow:    0 4px 14px oklch(0.4 0.03 265 / 0.08), 0 1px 3px oklch(0.4 0.03 265 / 0.06);
+  --shadow-lg: 0 18px 50px oklch(0.3 0.04 265 / 0.16);
+
+  /* ----- Layout dimensions ------------------------------------------------- */
+  --rail-w:   248px;   /* left navigation rail width                         */
+  --topbar-h: 60px;    /* top bar height                                     */
+}

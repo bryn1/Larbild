@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lärbild — Designsystem</title>
+
+<!-- Fonts: Fraunces (serif), Schibsted Grotesk (UI/body), Space Mono (metadata) -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Schibsted+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"/>
+
+<!-- The design system under test -->
+<link rel="stylesheet" href="css/larbild.css"/>
+
+<style>
+  /* Styleguide-only layout (the app shell owns body scroll; this doc scrolls). */
+  body { overflow: auto; height: auto; }
+  .sg { max-width: 1100px; margin: 0 auto; padding: 40px 34px 96px; }
+  .sg-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  .sg-head .name { font-family: var(--serif); font-size: 34px; letter-spacing: var(--tracking-heading); }
+  .sg section { margin-top: 48px; }
+  .sg h2 { font-family: var(--serif); font-weight: var(--weight-regular); font-size: 26px; letter-spacing: var(--tracking-heading); margin: 0 0 4px; }
+  .sg h2 em { color: var(--brand); font-style: italic; }
+  .sg .lead { color: var(--muted); font-size: 13px; margin: 0 0 20px; max-width: 60ch; }
+  .sg-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .sw { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--surface); }
+  .sw .chip-color { height: 60px; }
+  .sw .meta { padding: 8px 10px; }
+  .sw .tk { font-family: var(--mono); font-size: 11px; color: var(--ink); }
+  .sw .vl { font-family: var(--mono); font-size: 9.5px; color: var(--muted); margin-top: 2px; word-break: break-all; }
+  .sg-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .sg-type-row { display: flex; align-items: baseline; gap: 16px; padding: 8px 0; border-bottom: 1px dashed var(--border); }
+  .sg-type-row .tag { font-family: var(--mono); font-size: 10px; color: var(--muted); width: 150px; flex: none; }
+  .sg-space { display: flex; flex-direction: column; gap: 6px; }
+  .sg-space-row { display: flex; align-items: center; gap: 12px; }
+  .sg-space-row .tag { font-family: var(--mono); font-size: 10px; color: var(--muted); width: 100px; flex: none; }
+  .sg-space-row .bar { height: 14px; background: var(--brand-soft); border: 1px solid var(--brand-line); border-radius: 3px; }
+  .sg-radius-box { width: 90px; height: 60px; background: var(--brand-soft); border: 1px solid var(--brand-line); display: grid; place-items: center; font-family: var(--mono); font-size: 10px; color: var(--brand-ink); }
+  .sg-shadow-box { width: 120px; height: 70px; background: var(--surface); border-radius: var(--radius); display: grid; place-items: center; font-family: var(--mono); font-size: 10px; color: var(--muted); }
+  .sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .sg-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: 18px; }
+  .sg-card > .upper { margin-bottom: 14px; display: block; }
+  /* placeholder thumb mirroring the handoff phImg scaffold */
+  .sg-ph { width: 100%; height: 100%; display: grid; place-items: center; background: oklch(0.95 0.05 var(--h, 268)); }
+  .sg-ph .g { font-size: 44px; opacity: 0.5; color: oklch(0.45 0.15 var(--h, 268)); }
+</style>
+</head>
+<body>
+<div class="sg">
+
+  <div class="sg-head">
+    <div class="brand"><div class="mark">L</div></div>
+    <div>
+      <div class="name">Lärbild · Designsystem</div>
+      <div class="upper" style="color:var(--muted)">tokens · typografi · komponenter</div>
+    </div>
+  </div>
+  <p class="lead">Visuell referens för designsystemet (<code>static/css/</code>). Allt nedan
+  ritas av de delade tokens och komponentklasserna — jämför mot handoff-skärmbilderna.
+  Sätt <code>--brand-h</code> per vy för att byta ämnesfärg.</p>
+
+  <!-- ============================== COLOR ============================== -->
+  <section>
+    <h2>Färg — <em>OKLCH</em></h2>
+    <p class="lead">Ytor & bläck (varmt papper → nästan-svart). Ämnesfärgen härleds dynamiskt ur <code>--brand-h</code>.</p>
+
+    <div class="upper" style="color:var(--muted);margin-bottom:10px">Ytor & bläck</div>
+    <div class="sg-swatches">
+      <div class="sw"><div class="chip-color" style="background:var(--bg)"></div><div class="meta"><div class="tk">--bg</div><div class="vl">papper</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--bg-2)"></div><div class="meta"><div class="tk">--bg-2</div><div class="vl">rail</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--surface)"></div><div class="meta"><div class="tk">--surface</div><div class="vl">kort</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--surface-2)"></div><div class="meta"><div class="tk">--surface-2</div><div class="vl">hover</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--sink)"></div><div class="meta"><div class="tk">--sink</div><div class="vl">canvas</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--border)"></div><div class="meta"><div class="tk">--border</div><div class="vl">kant</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--border-2)"></div><div class="meta"><div class="tk">--border-2</div><div class="vl">stark kant</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--ink)"></div><div class="meta"><div class="tk">--ink</div><div class="vl">brödtext</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--ink-2)"></div><div class="meta"><div class="tk">--ink-2</div><div class="vl">sekundär</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--muted)"></div><div class="meta"><div class="tk">--muted</div><div class="vl">metadata</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--faint)"></div><div class="meta"><div class="tk">--faint</div><div class="vl">svagast</div></div></div>
+    </div>
+
+    <div class="upper" style="color:var(--muted);margin:22px 0 10px">Ämnesfärg per hue (--brand-h)</div>
+    <div class="sg-swatches">
+      <div class="sw" style="--brand-h:268"><div class="chip-color" style="background:var(--brand)"></div><div class="meta"><div class="tk">268</div><div class="vl">Lärbild-indigo (default)</div></div></div>
+      <div class="sw" style="--brand-h:248"><div class="chip-color" style="background:var(--brand)"></div><div class="meta"><div class="tk">248</div><div class="vl">Fysik</div></div></div>
+      <div class="sw" style="--brand-h:150"><div class="chip-color" style="background:var(--brand)"></div><div class="meta"><div class="tk">150</div><div class="vl">Kemi</div></div></div>
+      <div class="sw" style="--brand-h:135"><div class="chip-color" style="background:var(--brand)"></div><div class="meta"><div class="tk">135</div><div class="vl">Biologi</div></div></div>
+      <div class="sw" style="--brand-h:50"><div class="chip-color" style="background:var(--brand)"></div><div class="meta"><div class="tk">50</div><div class="vl">Historia</div></div></div>
+      <div class="sw" style="--brand-h:18"><div class="chip-color" style="background:var(--brand)"></div><div class="meta"><div class="tk">18</div><div class="vl">Matematik</div></div></div>
+    </div>
+
+    <div class="upper" style="color:var(--muted);margin:22px 0 10px">Härledda brand-tokens (hue 268)</div>
+    <div class="sg-swatches">
+      <div class="sw"><div class="chip-color" style="background:var(--brand)"></div><div class="meta"><div class="tk">--brand</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--brand-soft)"></div><div class="meta"><div class="tk">--brand-soft</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--brand-line)"></div><div class="meta"><div class="tk">--brand-line</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--brand-ink)"></div><div class="meta"><div class="tk">--brand-ink</div></div></div>
+    </div>
+
+    <div class="upper" style="color:var(--muted);margin:22px 0 10px">Status</div>
+    <div class="sg-swatches">
+      <div class="sw"><div class="chip-color" style="background:var(--good)"></div><div class="meta"><div class="tk">--good</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--warn)"></div><div class="meta"><div class="tk">--warn</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--danger)"></div><div class="meta"><div class="tk">--danger</div></div></div>
+      <div class="sw"><div class="chip-color" style="background:var(--cool)"></div><div class="meta"><div class="tk">--cool</div><div class="vl">B70 GPU</div></div></div>
+    </div>
+  </section>
+
+  <!-- ============================== TYPOGRAPHY ============================== -->
+  <section>
+    <h2>Typografi</h2>
+    <p class="lead">Fraunces (serif-rubriker), Schibsted Grotesk (UI/brödtext), Space Mono (metadata/ID).</p>
+
+    <div class="sg-type-row"><span class="tag">--serif · Fraunces</span><span class="serif" style="font-size:30px">Bild<em style="color:var(--brand);font-style:italic">biblioteket</em></span></div>
+    <div class="sg-type-row"><span class="tag">--sans · Schibsted</span><span style="font-size:16px">Generera läromedelsbilder enligt LGR22.</span></div>
+    <div class="sg-type-row"><span class="tag">--mono · Space Mono</span><span class="mono">fysik:diagram · steps 30 · cfg 6.5</span></div>
+
+    <div class="upper" style="color:var(--muted);margin:24px 0 10px">Typskala</div>
+    <div class="sg-type-row"><span class="tag">--text-display 38</span><span class="serif" style="font-size:var(--text-display)">Rubrik</span></div>
+    <div class="sg-type-row"><span class="tag">--text-2xl 28</span><span class="serif" style="font-size:var(--text-2xl)">Stat-värde</span></div>
+    <div class="sg-type-row"><span class="tag">--text-xl 22</span><span class="serif" style="font-size:var(--text-xl)">Korttitel</span></div>
+    <div class="sg-type-row"><span class="tag">--text-lg 18</span><span class="serif" style="font-size:var(--text-lg)">Panelrubrik</span></div>
+    <div class="sg-type-row"><span class="tag">--text-base 14</span><span style="font-size:var(--text-base)">Brödtext / UI</span></div>
+    <div class="sg-type-row"><span class="tag">--text-sm 13</span><span style="font-size:var(--text-sm)">Sekundär kontroll</span></div>
+    <div class="sg-type-row"><span class="tag">--text-xs 12</span><span style="font-size:var(--text-xs)">Tät text</span></div>
+    <div class="sg-type-row"><span class="tag">--text-meta 11</span><span class="mono" style="font-size:var(--text-meta)">METADATA</span></div>
+    <div class="sg-type-row"><span class="tag">--text-label 10</span><span class="mono" style="font-size:var(--text-label)">ETIKETT</span></div>
+    <div class="sg-type-row"><span class="tag">--text-micro 9.5</span><span class="mono" style="font-size:var(--text-micro)">TAGG</span></div>
+  </section>
+
+  <!-- ============================== SPACING ============================== -->
+  <section>
+    <h2>Spacing</h2>
+    <p class="lead">Px-stegen handoffen använder. Suffix = pixlar.</p>
+    <div class="sg-space">
+      <div class="sg-space-row"><span class="tag">--space-2</span><span class="bar" style="width:var(--space-2)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-4</span><span class="bar" style="width:var(--space-4)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-6</span><span class="bar" style="width:var(--space-6)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-8</span><span class="bar" style="width:var(--space-8)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-10</span><span class="bar" style="width:var(--space-10)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-12</span><span class="bar" style="width:var(--space-12)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-14</span><span class="bar" style="width:var(--space-14)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-16</span><span class="bar" style="width:var(--space-16)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-18</span><span class="bar" style="width:var(--space-18)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-20</span><span class="bar" style="width:var(--space-20)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-22</span><span class="bar" style="width:var(--space-22)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-24</span><span class="bar" style="width:var(--space-24)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-28</span><span class="bar" style="width:var(--space-28)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-34</span><span class="bar" style="width:var(--space-34)"></span></div>
+      <div class="sg-space-row"><span class="tag">--space-48</span><span class="bar" style="width:var(--space-48)"></span></div>
+    </div>
+  </section>
+
+  <!-- ============================== FORM & ELEVATION ============================== -->
+  <section>
+    <h2>Form & rumslighet</h2>
+    <div class="sg-row" style="margin-bottom:20px">
+      <div class="sg-radius-box" style="border-radius:var(--radius)">--radius 12</div>
+      <div class="sg-radius-box" style="border-radius:var(--radius-sm)">--radius-sm 8</div>
+    </div>
+    <div class="sg-row">
+      <div class="sg-shadow-box" style="box-shadow:var(--shadow-sm)">--shadow-sm</div>
+      <div class="sg-shadow-box" style="box-shadow:var(--shadow)">--shadow</div>
+      <div class="sg-shadow-box" style="box-shadow:var(--shadow-lg)">--shadow-lg</div>
+    </div>
+  </section>
+
+  <!-- ============================== COMPONENTS ============================== -->
+  <section>
+    <h2>Komponenter</h2>
+    <p class="lead">Klasserna i <code>components.css</code> som vyerna komponerar med.</p>
+
+    <div class="sg-grid">
+
+      <div class="sg-card">
+        <span class="upper" style="color:var(--muted)">Knappar</span>
+        <div class="sg-row">
+          <button class="btn primary">Generera</button>
+          <button class="btn">Avbryt</button>
+          <button class="btn ghost">Ghost</button>
+          <button class="btn sm">Liten</button>
+        </div>
+      </div>
+
+      <div class="sg-card">
+        <span class="upper" style="color:var(--muted)">Chips</span>
+        <div class="sg-row">
+          <button class="chip">fysik</button>
+          <button class="chip accent">diagram</button>
+          <button class="chip good">samtycke ✓</button>
+          <span class="chip plain">bild</span>
+        </div>
+      </div>
+
+      <div class="sg-card">
+        <span class="upper" style="color:var(--muted)">Flikar</span>
+        <div class="tabs">
+          <button class="tab active">Allt</button>
+          <button class="tab">Bilder</button>
+          <button class="tab">Filmer</button>
+        </div>
+      </div>
+
+      <div class="sg-card">
+        <span class="upper" style="color:var(--muted)">Fält</span>
+        <div class="stack" style="gap:12px">
+          <div class="field"><label>Prompt <span class="val">valfri</span></label><input type="text" class="input" placeholder="Beskriv bilden…"/></div>
+          <div class="field"><label>Bildtyp</label><select><option>Diagram</option><option>Fotorealistisk</option></select></div>
+          <div class="field"><label>Steg <span class="val">30</span></label><input class="range" type="range" min="10" max="50" value="30"/></div>
+        </div>
+      </div>
+
+      <div class="sg-card">
+        <span class="upper" style="color:var(--muted)">Sektion + stat</span>
+        <div class="section-h"><span>Telemetri</span><span class="acc">auto</span></div>
+        <div class="sg-row" style="gap:28px">
+          <div class="stat"><span class="v">128</span><span class="l">bilder</span></div>
+          <div class="stat"><span class="v">12</span><span class="l">filmer</span></div>
+        </div>
+      </div>
+
+      <div class="sg-card">
+        <span class="upper" style="color:var(--muted)">GPU-indikatorer</span>
+        <div class="sg-row">
+          <div class="gpu-pill"><span class="dot"></span>vm100 · 3090 · 41%</div>
+          <div class="gpu-pill warn"><span class="dot"></span>het</div>
+          <div class="gpu-pill idle"><span class="dot"></span>vilar</div>
+        </div>
+        <div class="sg-row" style="margin-top:10px">
+          <span class="gpu-tag"><span class="dot"></span>vm100</span>
+          <span class="gpu-tag cool"><span class="dot"></span>vm153 · B70</span>
+        </div>
+      </div>
+
+      <div class="sg-card" style="grid-column:span 2">
+        <span class="upper" style="color:var(--muted)">Auto-LoRA callout</span>
+        <div class="suggest">
+          <div class="sl">Rekommenderad LoRA</div>
+          <div class="sv">physics-vector-v3</div>
+          <div class="sn">Ämnesspecifik (Fysik × diagram) · styrka 0.86</div>
+        </div>
+      </div>
+
+      <div class="sg-card">
+        <span class="upper" style="color:var(--muted)">Brödsmula</span>
+        <div class="crumb"><a>Bibliotek</a><span class="sep">/</span><a>Fysik</a><span class="sep">/</span><span>El & magnetism</span></div>
+      </div>
+
+      <div class="sg-card">
+        <span class="upper" style="color:var(--muted)">Områdesrad</span>
+        <div class="area-rail">
+          <button class="area-item active"><span class="ag">⚡</span><span class="an">El & magnetism</span><span class="ac">8</span></button>
+          <button class="area-item"><span class="ag">≈</span><span class="an">Värme & energi</span><span class="ac">5</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="upper" style="color:var(--muted);margin:24px 0 12px">Ämneskort (.subj-card) — egen hue per kort</div>
+    <div class="subj-grid">
+      <div class="subj-card" style="--h:248">
+        <div class="sc-top"><div class="sc-glyph">⚛</div><div class="sc-count">24 objekt</div></div>
+        <h3>Fysik</h3>
+        <div class="sc-blurb">Krafter, energi, el & magnetism, universum.</div>
+        <div class="sc-areas"><span class="sc-area">Rörelse</span><span class="sc-area">El & magnetism</span><span class="sc-more">+4</span></div>
+      </div>
+      <div class="subj-card" style="--h:135">
+        <div class="sc-top"><div class="sc-glyph">✿</div><div class="sc-count">31 objekt</div></div>
+        <h3>Biologi</h3>
+        <div class="sc-blurb">Celler, ekologi, kropp & hälsa, evolution.</div>
+        <div class="sc-areas"><span class="sc-area">Cellen</span><span class="sc-area">Ekologi</span><span class="sc-more">+5</span></div>
+      </div>
+      <div class="subj-card" style="--h:50">
+        <div class="sc-top"><div class="sc-glyph">❧</div><div class="sc-count">18 objekt</div></div>
+        <h3>Historia</h3>
+        <div class="sc-blurb">Forntid till nutid, källor & reenactment.</div>
+        <div class="sc-areas"><span class="sc-area">Antiken</span><span class="sc-area">1800-talet</span><span class="sc-more">+3</span></div>
+      </div>
+    </div>
+
+    <div class="upper" style="color:var(--muted);margin:24px 0 12px">Asset-kort (.acard)</div>
+    <div class="asset-grid">
+      <div class="acard" style="--h:248">
+        <div class="thumb"><div class="sg-ph"><span class="g">⚡</span></div><span class="kind-tag">bild</span></div>
+        <div class="ainfo">
+          <div class="atitle">Enkel strömkrets med lampa</div>
+          <div class="ameta"><span class="subj-dot" style="background:var(--brand);width:8px;height:8px;border-radius:2px"></span>Fy · El & magnetism</div>
+          <div class="alora">✦ physics-vector-v3</div>
+        </div>
+      </div>
+      <div class="acard" style="--h:50">
+        <div class="thumb"><div class="sg-ph"><span class="g">❧</span></div><span class="kind-tag film">film</span><span class="dur">1:24</span></div>
+        <div class="ainfo">
+          <div class="atitle">Romarrikets uppgång — tidslinje</div>
+          <div class="ameta"><span class="subj-dot" style="background:var(--brand);width:8px;height:8px;border-radius:2px"></span>Hi · Antiken</div>
+          <div class="alora">✦ reenactment-v2</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="upper" style="color:var(--muted);margin:24px 0 12px">Panel & tomt läge</div>
+    <div class="sg-row" style="align-items:stretch">
+      <div class="panel" style="width:320px">
+        <div class="panel-head"><h3>Sorteras in i</h3></div>
+        <div class="panel-body">
+          <div class="stack" style="gap:9px">
+            <div class="row"><span class="mono dim grow">Ämne</span><span class="mono">Fysik</span></div>
+            <div class="row"><span class="mono dim grow">Område</span><span class="mono">El & magnetism</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel grow" style="display:grid;place-items:center">
+        <div class="empty">
+          <div class="eg">◌</div>
+          <div class="pull">Inga objekt här ännu — skapa det första.</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+</body>
+</html>
