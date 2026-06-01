@@ -64,9 +64,14 @@ def _register_blueprints(app: Flask) -> None:
     package import time.
     """
     from .routes.health import health_bp
+    from .routes.lora import lora_bp
     from .routes.taxonomy import taxonomy_bp
 
     app.register_blueprint(health_bp)
     # lb-582: the LGR22 taxonomy single source of truth, exposed at
     # GET /api/taxonomy so the frontend bootstraps from the backend.
     app.register_blueprint(taxonomy_bp)
+    # lb-9tz: backend-authoritative LoRA resolution at POST/GET /api/resolve-lora
+    # — the Skapa funnel sends only its (subject, imageType) selection; the
+    # backend decides the LoRA and the client can never override it.
+    app.register_blueprint(lora_bp)
