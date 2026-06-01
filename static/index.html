@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1440" />
+  <title>Lärbild — Bibliotek</title>
+
+  <!-- Fonts: Fraunces (serif headings), Schibsted Grotesk (UI), Space Mono (meta) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Schibsted+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" />
+
+  <!-- Design system (tokens → base → components) -->
+  <link rel="stylesheet" href="/static/css/larbild.css" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React via CDN + Babel-in-browser (no build step, matching the design) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+  <!-- Pure data layer (window.LBData) then the React Bibliotek view -->
+  <script src="/static/js/bibliotek_data.js"></script>
+  <script type="text/babel" src="/static/js/bibliotek.jsx"></script>
+</body>
+</html>

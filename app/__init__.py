@@ -65,8 +65,12 @@ def _register_blueprints(app: Flask) -> None:
     """
     from .routes.health import health_bp
     from .routes.taxonomy import taxonomy_bp
+    from .routes.views import views_bp
 
     app.register_blueprint(health_bp)
     # lb-582: the LGR22 taxonomy single source of truth, exposed at
     # GET /api/taxonomy so the frontend bootstraps from the backend.
     app.register_blueprint(taxonomy_bp)
+    # lb-eee: serve the no-build React frontend (the Bibliotek view) at / and
+    # /bibliotek; repoints Flask's /static handler at the repo-root static/ dir.
+    app.register_blueprint(views_bp)
