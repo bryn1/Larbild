@@ -65,6 +65,7 @@ def _register_blueprints(app: Flask) -> None:
     """
     from .routes.health import health_bp
     from .routes.library import library_bp
+    from .routes.lora import lora_bp
     from .routes.taxonomy import taxonomy_bp
 
     app.register_blueprint(health_bp)
@@ -74,3 +75,7 @@ def _register_blueprints(app: Flask) -> None:
     # lb-5rc: the auto-sorted library listing (taxonomy tree + per-node asset
     # counts) at GET /api/library — the Bibliotek 3-level browse source.
     app.register_blueprint(library_bp)
+    # lb-9tz: backend-authoritative LoRA resolution at POST/GET /api/resolve-lora
+    # — the Skapa funnel sends only its (subject, imageType) selection; the
+    # backend decides the LoRA and the client can never override it.
+    app.register_blueprint(lora_bp)
