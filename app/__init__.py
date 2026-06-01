@@ -64,9 +64,13 @@ def _register_blueprints(app: Flask) -> None:
     package import time.
     """
     from .routes.health import health_bp
+    from .routes.library import library_bp
     from .routes.taxonomy import taxonomy_bp
 
     app.register_blueprint(health_bp)
     # lb-582: the LGR22 taxonomy single source of truth, exposed at
     # GET /api/taxonomy so the frontend bootstraps from the backend.
     app.register_blueprint(taxonomy_bp)
+    # lb-5rc: the auto-sorted library listing (taxonomy tree + per-node asset
+    # counts) at GET /api/library — the Bibliotek 3-level browse source.
+    app.register_blueprint(library_bp)
