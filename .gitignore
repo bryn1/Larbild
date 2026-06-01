@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# SQLite / runtime data (never commit the DB or generated media)
+*.db
+*.db-shm
+*.db-wal
+/data/
+/storage/
+/output/
+/results/
+
+# Node / frontend build intermediates (commit built static/, not node_modules)
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.vite/
+
+# Secrets / local config
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+logs/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
