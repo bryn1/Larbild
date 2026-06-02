@@ -55,6 +55,10 @@ def test_static_funnel_js_served_and_wired_to_live_endpoints():
     # the funnel bootstraps from the taxonomy SoT and resolves the LoRA server-side
     assert "/api/taxonomy" in src
     assert "/api/resolve-lora" in src
+    # it submits the render (lb-5wp) and tails the live SSE stream (lb-b1r)
+    assert "/api/jobs" in src
+    assert "/events" in src
+    assert "EventSource" in src
 
 
 def test_funnel_js_has_no_nsfw_marker():

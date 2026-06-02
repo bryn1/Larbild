@@ -227,3 +227,65 @@ test("interpretSubmitResponse: 503 + unexpected statuses fail closed (never ok)"
   // a 202 with no job_id is a contract slip → not ok
   assert.equal(S.interpretSubmitResponse(202, { status: "queued" }).ok, false);
 });
+
+/* ---------- live SSE progress (lb-b1r) ---------- */
+
+test("progressPercent: step/total → percent; queued/missing → null; done → 100", () => {
+  assert.equal(S.progressPercent({ status: "running", progress_step: 14, progress_total: 28 }), 50);
+  assert.equal(S.progressPercent({ status: "running", progress_step: 7, progress_total: 28 }), 25);
+  assert.equal(S.progressPercent({ status: "queued" }), null); // nothing to show yet
+  assert.equal(S.progressPercent({ status: "running", progress_total: 0 }), null); // no divide-by-zero
+  assert.equal(S.progressPercent({ status: "running", progress_step: 5 }), null); // total missing
+  assert.equal(S.progressPercent({ status: "done", library_id: "lib-1" }), 100);
+  assert.equal(S.progressPercent(null), null);
+  // clamped into 0..100 even if the worker over-reports
+  assert.equal(S.progressPercent({ status: "running", progress_step: 30, progress_total: 28 }), 100);
+});
+
+test("describeJobState normalises the worker contract into render fields", () => {
+  const queued = S.describeJobState({ job_id: "j1", status: "queued" });
+  assert.equal(queued.label, "I kö");
+  assert.equal(queued.terminal, false);
+  assert.equal(queued.percent, null);
+
+  const running = S.describeJobState({ status: "running", progress_step: 10, progress_total: 28 });
+  assert.equal(running.label, "Renderar");
+  assert.equal(running.percent, 36); // round(10/28*100)
+  assert.equal(running.terminal, false);
+
+  const done = S.describeJobState({ status: "done", library_id: "lib-9", width: 1024, height: 768 });
+  assert.equal(done.done, true);
+  assert.equal(done.terminal, true);
+  assert.equal(done.percent, 100);
+  assert.equal(done.libraryId, "lib-9");
+  assert.equal(done.width, 1024);
+  assert.equal(done.height, 768);
+
+  const failed = S.describeJobState({ status: "failed", error: "OOM på vm100" });
+  assert.equal(failed.failed, true);
+  assert.equal(failed.terminal, true);
+  assert.equal(failed.error, "OOM på vm100");
+});
+
+test("describeJobState replays a full queued→running→done SSE sequence", () => {
+  // Mock the exact event payloads test_jobs_api.py::test_sse_streams_* emits.
+  const events = [
+    { job_id: "j", status: "queued" },
+    { job_id: "j", status: "running", progress_step: 10, progress_total: 28 },
+    { job_id: "j", status: "done", library_id: "lib-2", width: 1024, height: 768 },
+  ];
+  const seen = events.map(S.describeJobState);
+  assert.deepEqual(seen.map((d) => d.label), ["I kö", "Renderar", "Klar"]);
+  assert.deepEqual(seen.map((d) => d.terminal), [false, false, true]);
+  assert.deepEqual(seen.map((d) => d.percent), [null, 36, 100]);
+  // only the terminal frame carries the library link target
+  assert.equal(seen[2].libraryId, "lib-2");
+});
+
+test("bibliotekLink targets /bibliotek with encoded subject+area, falls back safely", () => {
+  assert.equal(S.bibliotekLink("fysik", "ljud"), "/bibliotek?subject=fysik&area=ljud");
+  assert.equal(S.bibliotekLink("fysik", null), "/bibliotek");
+  assert.equal(S.bibliotekLink(null, "ljud"), "/bibliotek");
+  // slugs are url-encoded (defensive — taxonomy slugs are simple, but never inject)
+  assert.equal(S.bibliotekLink("a b", "c&d"), "/bibliotek?subject=a%20b&area=c%26d");
+});

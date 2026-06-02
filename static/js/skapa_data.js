@@ -234,6 +234,87 @@
     return { ok: false, message: b.error || `Kunde inte skapa jobbet (HTTP ${status}).` };
   }
 
+  /**
+   * Progress as an integer percent 0..100 from a job-state's step/total (lb-b1r).
+   *
+   * The render worker reports progress as ``progress_step`` / ``progress_total``
+   * (e.g. diffusion step 10 of 28), NOT a fraction — so the bar computes the
+   * percent here. Returns null when there is nothing meaningful to show yet
+   * (queued, or total missing/zero), so the view can render an indeterminate
+   * state rather than a misleading 0%. A done state is always 100. Pure.
+   */
+  function progressPercent(state) {
+    if (!state) return null;
+    if (state.status === "done") return 100;
+    const step = Number(state.progress_step);
+    const total = Number(state.progress_total);
+    if (!Number.isFinite(step) || !Number.isFinite(total) || total <= 0) return null;
+    const pct = Math.round((step / total) * 100);
+    return Math.max(0, Math.min(100, pct));
+  }
+
+  // Swedish labels for the worker's status values (the SSE/job-state contract).
+  const STATUS_LABELS = {
+    queued: "I kö",
+    running: "Renderar",
+    done: "Klar",
+    failed: "Misslyckades",
+    cancelled: "Avbruten",
+  };
+  const TERMINAL_STATUSES = ["done", "failed", "cancelled"];
+
+  /**
+   * Normalise a raw job-state blob (from GET /api/jobs/<id> or the SSE stream)
+   * into the fields the funnel renders (lb-b1r). Pure — no network; the view's
+   * EventSource handler feeds each parsed ``data:`` payload through this.
+   *
+   * Input (worker contract, app/jobs.py):
+   *   {status:"queued"}
+   *   {status:"running", progress_step, progress_total}
+   *   {status:"done",   library_id, width, height}
+   *   {status:"failed", error}
+   *
+   * Output:
+   *   { status, label, percent|null, terminal, done, failed, libraryId|null,
+   *     width|null, height|null, error|null }
+   */
+  function describeJobState(state) {
+    const s = state || {};
+    const status = s.status || "queued";
+    return {
+      status,
+      label: STATUS_LABELS[status] || status,
+      percent: progressPercent(s),
+      terminal: TERMINAL_STATUSES.indexOf(status) !== -1,
+      done: status === "done",
+      failed: status === "failed",
+      libraryId: s.library_id || null,
+      width: Number.isFinite(Number(s.width)) ? Number(s.width) : null,
+      height: Number.isFinite(Number(s.height)) ? Number(s.height) : null,
+      error: s.error || null,
+    };
+  }
+
+  /**
+   * The Bibliotek deep-link for a completed render's auto-sort destination
+   * (lb-b1r): where the worker filed the asset, by (subject, area). The worker
+   * auto-sorts the result into the library tree under exactly these slugs, so
+   * the funnel can link the teacher straight to the node it landed in.
+   *
+   * Returns ``/bibliotek?subject=<slug>&area=<slug>`` — the existing Bibliotek
+   * route, carrying the destination as query params. (The Bibliotek SPA today
+   * navigates by internal state and does not yet read these params; the link
+   * still lands on the library, and the params are a forward-compatible hook for
+   * a future "open this node" enhancement — documented, not over-claimed.)
+   * Pure URL assembly; encodes the slugs. Returns "/bibliotek" if either is
+   * missing.
+   */
+  function bibliotekLink(subjectSlug, areaSlug) {
+    if (!subjectSlug || !areaSlug) return "/bibliotek";
+    const qs = `subject=${encodeURIComponent(subjectSlug)}&area=${encodeURIComponent(areaSlug)}`;
+    return `/bibliotek?${qs}`;
+  }
+
   return {
     PRIORITY_SUBJECTS,
     DEFAULT_HUE,
@@ -249,5 +330,10 @@
     normalizeSeed,
     clampCount,
     interpretSubmitResponse,
+    progressPercent,
+    describeJobState,
+    bibliotekLink,
+    STATUS_LABELS,
+    TERMINAL_STATUSES,
   };
 });

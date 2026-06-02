@@ -26,8 +26,14 @@
    payload via SkapaData.buildJobPayload (no client LoRA — the worker resolves +
    allowlist-validates it server-side), POSTs it, and captures the returned job
    id. A 4xx/429 is surfaced as a clear Swedish message; the button is locked
-   while a submit is in flight. Live SSE progress is layered on in lb-b1r (P3.3).
-   SFW-only: educational image funnel; no restricted feature, model, or marker.
+   while a submit is in flight.
+
+   Live progress (SSE, lb-b1r / P3.3): once a job is accepted the funnel opens an
+   EventSource to GET /api/jobs/<id>/events and renders queued → running (with the
+   step/total progress) → done. On done it shows the result (dimensions) and a
+   link to where the worker auto-sorted the asset in the Bibliotek (by subject/
+   area). The SSE endpoint resumes the current state on connect, so a reload mid-
+   render catches up. SFW-only: educational image funnel; no restricted marker.
    ============================================================================ */
 const { useState, useEffect, useRef } = React;
 const S = window.SkapaData;
@@ -99,11 +105,31 @@ function LoraSuggest({ state, subject, imageType }) {
   );
 }
 
-/* submit status (lb-5wp): the result of the POST /api/jobs round-trip. The live
-   render progress (queued→running→done) is layered on by lb-b1r; here we confirm
-   acceptance (job id) or show the validation/queue error. */
-function SubmitStatus({ submit, onReset }) {
+/* a slim progress bar (0..100, or indeterminate when percent is null) built from
+   the design tokens — no new colours, just the brand accent on a sunk track. */
+function ProgressBar({ percent }) {
+  const indeterminate = percent == null;
+  return (
+    <div style={{ height: 6, borderRadius: 3, background: "var(--sink)", overflow: "hidden", marginTop: 8 }}>
+      <div style={{
+        height: "100%",
+        width: indeterminate ? "35%" : `${percent}%`,
+        background: "var(--brand)",
+        borderRadius: 3,
+        transition: "width 200ms",
+        opacity: indeterminate ? 0.6 : 1,
+      }} />
+    </div>
+  );
+}
+
+/* submit + live status (lb-5wp submit, lb-b1r progress): the POST /api/jobs
+   result, then the live SSE render progress (queued → running → done). On done it
+   shows the result dimensions and a link to where the asset auto-sorted in the
+   Bibliotek (by subject/area). */
+function SubmitStatus({ submit, jobState, onReset }) {
   if (submit.phase === "idle") return null;
+
   if (submit.phase === "submitting") {
     return (
       <div className="panel" style={{ padding: "12px 14px", marginTop: 12 }}>
@@ -111,6 +137,7 @@ function SubmitStatus({ submit, onReset }) {
       </div>
     );
   }
+
   if (submit.phase === "error") {
     return (
       <div className="panel" style={{ padding: "12px 14px", marginTop: 12, borderColor: "var(--danger)" }}>
@@ -120,15 +147,55 @@ function SubmitStatus({ submit, onReset }) {
       </div>
     );
   }
-  // submitted (202) — accepted + queued. lb-b1r replaces this body with live SSE.
+
+  // submitted (202): the job is accepted. Until the first SSE event lands we know
+  // only that it is queued; describeJobState then drives the live view.
+  const d = jobState || S.describeJobState({ status: "queued" });
+  const dest = submit.dest || {};
+
+  // ---- terminal: failed ----
+  if (d.failed) {
+    return (
+      <div className="panel" style={{ padding: "12px 14px", marginTop: 12, borderColor: "var(--danger)" }}>
+        <div className="upper" style={{ color: "var(--danger)", marginBottom: 6 }}>Renderingen misslyckades</div>
+        {d.error && <div style={{ fontSize: 12.5, color: "var(--ink-2)", lineHeight: 1.4 }}>{d.error}</div>}
+        <div className="mono dim" style={{ fontSize: 10, marginTop: 6 }}>jobb {submit.jobId}</div>
+        <button type="button" className="btn sm ghost" style={{ marginTop: 10 }} onClick={onReset}>Försök igen</button>
+      </div>
+    );
+  }
+
+  // ---- terminal: done → result + Bibliotek deep-link ----
+  if (d.done) {
+    const link = S.bibliotekLink(dest.subject, dest.area);
+    const dims = (d.width && d.height) ? `${d.width}×${d.height}` : null;
+    return (
+      <div className="panel" style={{ padding: "12px 14px", marginTop: 12, borderColor: "var(--good)" }}>
+        <div className="upper" style={{ color: "var(--good)", marginBottom: 6 }}>Klar</div>
+        <div className="row">
+          <span className="mono dim grow" style={{ fontSize: 10 }}>jobb {submit.jobId}</span>
+          {dims && <span className="mono dim" style={{ fontSize: 10 }}>{dims}</span>}
+        </div>
+        <div style={{ fontSize: 12.5, color: "var(--ink-2)", marginTop: 8, lineHeight: 1.4 }}>
+          Bilden sorterades in i biblioteket.
+        </div>
+        <div className="row" style={{ marginTop: 10, gap: 8 }}>
+          <a className="btn sm" href={link}>{SI.library} Visa i biblioteket</a>
+          <button type="button" className="btn sm ghost" onClick={onReset}>Skapa en till</button>
+        </div>
+      </div>
+    );
+  }
+
+  // ---- in flight: queued / running with the live progress bar ----
   return (
     <div className="panel" style={{ padding: "12px 14px", marginTop: 12 }}>
-      <div className="upper" style={{ color: "var(--brand-ink)", marginBottom: 6 }}>Köad</div>
       <div className="row">
-        <span className="mono dim grow" style={{ fontSize: 10 }}>jobb {submit.jobId}</span>
-        <span className="chip accent plain" style={{ fontSize: 11 }}>i kö</span>
+        <span className="upper grow" style={{ color: "var(--brand-ink)" }}>{d.label}</span>
+        {d.percent != null && <span className="mono dim" style={{ fontSize: 10 }}>{d.percent}%</span>}
       </div>
-      <button type="button" className="btn sm ghost" style={{ marginTop: 10 }} onClick={onReset}>Skapa en till</button>
+      <ProgressBar percent={d.percent} />
+      <div className="mono dim" style={{ fontSize: 10, marginTop: 8 }}>jobb {submit.jobId}</div>
     </div>
   );
 }
@@ -155,9 +222,15 @@ function Skapa() {
   // submit lifecycle (lb-5wp): the funnel's POST /api/jobs round-trip.
   //   { phase: "idle" }
   //   { phase: "submitting" }
-  //   { phase: "submitted", jobId }   ← accepted (202); lb-b1r tails its SSE
+  //   { phase: "submitted", jobId, dest:{subject,area} }   ← accepted (202)
   //   { phase: "error", message }     ← 4xx/429/503, a Swedish sentence to show
+  // The destination slugs are captured AT SUBMIT TIME so the live status + the
+  // Bibliotek deep-link stay correct even if the funnel selection changes after.
   const [submit, setSubmit] = useState({ phase: "idle" });
+
+  // live job state from the SSE stream (lb-b1r): the latest describeJobState(...)
+  // result, or null before the first event. Drives the progress bar + done view.
+  const [jobState, setJobState] = useState(null);
 
   // ---- bootstrap the taxonomy ----
   useEffect(() => {
@@ -238,7 +311,9 @@ function Skapa() {
       seed,
       count,
     });
+    const dest = { subject: subjectSlug, area: areaSlug };
     setSubmit({ phase: "submitting" });
+    setJobState(null);
     fetch("/api/jobs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -247,14 +322,39 @@ function Skapa() {
       .then((r) => r.json().catch(() => null).then((j) => ({ status: r.status, body: j })))
       .then(({ status, body }) => {
         const res = S.interpretSubmitResponse(status, body);
-        if (res.ok) setSubmit({ phase: "submitted", jobId: res.jobId });
+        if (res.ok) setSubmit({ phase: "submitted", jobId: res.jobId, dest });
         else setSubmit({ phase: "error", message: res.message });
       })
       .catch((e) => setSubmit({ phase: "error", message: `Nätverksfel: ${e}` }));
   };
 
-  // A fresh render: clear the submit state so the funnel returns to its form.
-  const onReset = () => setSubmit({ phase: "idle" });
+  // A fresh render: clear the submit + live state so the funnel returns to form.
+  const onReset = () => { setSubmit({ phase: "idle" }); setJobState(null); };
+
+  // ---- live progress: tail the job's SSE stream while one is accepted (lb-b1r) ----
+  // Open an EventSource once a job is accepted; each `data:` payload is a job-
+  // state blob (the worker contract). We normalise it via describeJobState and
+  // close on a terminal status (the server also sends `event: end`). The effect
+  // re-runs per jobId and always tears the stream down on cleanup/unmount, so a
+  // new submit or a reset never leaks a connection. EventSource auto-reconnects
+  // on a dropped connection, and the endpoint resumes the current state on
+  // connect — so a blip catches up rather than stalling.
+  const jobId = submit.phase === "submitted" ? submit.jobId : null;
+  useEffect(() => {
+    if (!jobId) return undefined;
+    if (typeof EventSource === "undefined") return undefined; // SSR/old browser guard
+    const es = new EventSource(`/api/jobs/${encodeURIComponent(jobId)}/events`);
+    const onMessage = (ev) => {
+      let parsed;
+      try { parsed = JSON.parse(ev.data); } catch (e) { return; } // ignore non-JSON keepalives
+      const d = S.describeJobState(parsed);
+      setJobState(d);
+      if (d.terminal) es.close(); // no more updates after done/failed/cancelled
+    };
+    es.addEventListener("message", onMessage);
+    es.addEventListener("end", () => es.close());
+    return () => es.close();
+  }, [jobId]);
 
   // ---------- boot states ----------
   if (bootError) {
@@ -401,7 +501,7 @@ function Skapa() {
                 : `Generera (${ready.reason})`}
           </button>
 
-          <SubmitStatus submit={submit} onReset={onReset} />
+          <SubmitStatus submit={submit} jobState={jobState} onReset={onReset} />
         </div>
       </div>
     </div>
