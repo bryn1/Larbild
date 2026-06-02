@@ -66,6 +66,7 @@ def _register_blueprints(app: Flask) -> None:
     """
     from .gpu_telemetry import gpu_bp
     from .routes.health import health_bp
+    from .routes.jobs import jobs_bp
     from .routes.library import library_bp
     from .routes.lora import lora_bp
     from .routes.taxonomy import taxonomy_bp
@@ -86,6 +87,10 @@ def _register_blueprints(app: Flask) -> None:
     # (snapshot) and /api/gpus/stream (SSE) — backs the top-bar GPU pills and
     # the P4 `auto` router's input.
     app.register_blueprint(gpu_bp)
+    # lb-3gi: render-job submission + progress — POST /api/jobs (enqueue, 202),
+    # GET /api/jobs/<id> (state), GET /api/jobs/<id>/events (SSE). The LoRA is
+    # never accepted from the client; the worker resolves it server-side.
+    app.register_blueprint(jobs_bp)
     # lb-eee: serve the no-build React frontend (the Bibliotek view) at / and
     # /bibliotek; repoints Flask's /static handler at the repo-root static/ dir.
     app.register_blueprint(views_bp)
