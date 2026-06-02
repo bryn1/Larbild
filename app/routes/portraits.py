@@ -161,6 +161,23 @@ def create_portrait():
     return jsonify(record), 201
 
 
+@portraits_bp.get("/api/portraits")
+def list_portraits():
+    """List portrait references, each with a server-recomputed ``consent_ok``.
+
+    ``?usable=1`` (or true/yes/on) returns ONLY the consent-OK references — the
+    set the Porträtt use path may surface (lb-xlr): a non-consented or revoked
+    reference is hidden from the use path entirely. Without the flag, the full
+    list is returned for the owner's management view (each item still carries its
+    recomputed ``consent_ok`` so the UI can mark/disable the unusable ones).
+    """
+    raw = (request.args.get("usable") or "").strip().lower()
+    usable_only = raw in {"1", "true", "yes", "on"}
+    items = portraits.list_portraits(usable_only=usable_only)
+    return jsonify({"portraits": items, "count": len(items),
+                    "usable_only": usable_only}), 200
+
+
 @portraits_bp.get("/api/portraits/<face_id>")
 def get_portrait(face_id: str):
     """One portrait reference, with a server-recomputed ``consent_ok``. 404 if gone."""
@@ -168,6 +185,23 @@ def get_portrait(face_id: str):
     if record is None:
         return jsonify({"error": "unknown portrait", "code": "not_found"}), 404
     return jsonify(record), 200
+
+
+@portraits_bp.delete("/api/portraits/<face_id>")
+def delete_portrait(face_id: str):
+    """GDPR delete: cascade the reference files off disk + the DB row, audited.
+
+    Removes the portrait's reference image(s) from STORAGE_DIR and deletes the
+    ``faces`` row; a ``'delete'`` ``face_usage_log`` row is written and PERSISTS
+    (the audit's ``face_id`` is a soft ref, no FK cascade — deletion is recorded,
+    not erased). After this the reference is unusable (a later use → 404) and its
+    files are gone. 404 if the portrait is already gone.
+    """
+    try:
+        result = portraits.delete_portrait(face_id)
+    except portraits.ConsentError as exc:
+        return jsonify({"error": str(exc), "code": exc.code}), exc.status
+    return jsonify(result), 200
 
 
 @portraits_bp.post("/api/portraits/<face_id>/use")
