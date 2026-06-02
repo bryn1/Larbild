@@ -21,8 +21,8 @@ Contract (the SFW + taxonomy guard, identical to ``POST /api/jobs``):
 * **The LoRA is never read from the row.** A ``lora`` / ``loraName`` column is
   dropped exactly like the single-submit path: the render worker resolves +
   allowlist-validates the LoRA from (subject, imageType) at render time (the SFW
-  guard, app.workflow). A crafted ``lora`` column can therefore never inject an
-  off-allowlist (NSFW) LoRA.
+  guard, app.workflow). A crafted ``lora`` column can therefore never inject a
+  non-allowlisted (unsafe) LoRA.
 * ``count`` (optional, default 1) repeats a valid row N times — one queued job
   each — capped at :data:`MAX_ROW_COUNT` so a single line can't flood the queue.
 * A row that fails any check is rejected with its 1-based line number and a clear
@@ -48,11 +48,17 @@ from __future__ import annotations
 
 import csv
 import io
+import json
+import logging
 import os
 from dataclasses import dataclass, field
 from typing import Any, Iterable, Optional
 
 from . import taxonomy
+from .db import connect, new_id
+from .jobs import QueueFull, enqueue_job
+
+log = logging.getLogger("larbild.batch")
 
 __all__ = [
     "MAX_ROWS",
@@ -60,6 +66,9 @@ __all__ = [
     "RowError",
     "BatchSpec",
     "parse_batch",
+    "fan_out",
+    "batch_progress",
+    "get_batch_row",
 ]
 
 # A batch with more than this many rows is rejected whole (a paste-bomb guard).
@@ -286,19 +295,27 @@ def _rows_from_positional(text: str) -> Iterable[tuple[int, dict]]:
         stripped = physical.strip()
         if not stripped or stripped.startswith("#"):
             continue
-        # csv handles quoted commas; fall back to whitespace split for plain txt.
-        cells = next(csv.reader(io.StringIO(physical)))
-        cells = [c.strip() for c in cells]
-        if len(cells) == 1 and cells[0]:
-            cells = stripped.split()
-        row: dict[str, Any] = {}
-        for key, value in zip(_POSITIONAL, cells):
-            row[key] = value
-        # a 5th positional cell is the optional count
-        if len(cells) > len(_POSITIONAL):
-            row["count"] = cells[len(_POSITIONAL)]
-        # surface a too-few-columns row as a normaliser-validated reject rather
-        # than silently dropping it: pass through; _validate_row reports the gap.
+        # A comma in the line → CSV cells (so quoted commas + an explicit count
+        # cell work). No comma → whitespace table: the first 3 tokens are
+        # subject/area/imageType and the REST is the (multi-word) prompt — a
+        # natural ``.txt`` row like ``fysik ljud foto a transverse wave``.
+        if "," in physical:
+            cells = [c.strip() for c in next(csv.reader(io.StringIO(physical)))]
+            row: dict[str, Any] = {}
+            for key, value in zip(_POSITIONAL, cells):
+                row[key] = value
+            if len(cells) > len(_POSITIONAL):  # a 5th cell is the optional count
+                row["count"] = cells[len(_POSITIONAL)]
+        else:
+            tokens = stripped.split()
+            row = {}
+            lead = _POSITIONAL[:-1]  # subject, area, imageType
+            for key, value in zip(lead, tokens):
+                row[key] = value
+            if len(tokens) > len(lead):
+                row["prompt"] = " ".join(tokens[len(lead):])  # remainder = prompt
+        # A short row is passed through so _validate_row reports the missing
+        # field (e.g. "prompt is required") rather than being silently dropped.
         yield line_no, _normalise_keys(row)
 
 
@@ -351,3 +368,223 @@ def parse_batch(text: str) -> BatchSpec:
         else:
             spec.jobs.append(job_spec)
     return spec
+
+
+# ── fan-out: parsed spec → N queued jobs under one batch group (lb-y9c) ──────
+
+# Statuses the aggregate progress rolls up. 'queued'/'running'/'done'/'failed'/
+# 'cancelled' are the jobs-table lifecycle (0001_initial CHECK). 'enqueue_failed'
+# is a synthetic bucket for rows that validated but could not be pushed onto the
+# queue (e.g. the queue filled mid-batch) — they never became a jobs row.
+_PROGRESS_STATUSES = ("queued", "running", "done", "failed", "cancelled")
+
+
+def _enqueue_one(spec: dict, batch_id: str) -> str:
+    """Enqueue a single validated spec under ``batch_id``; return its job_id.
+
+    Strips the parse-only keys (``_line`` provenance, ``count`` expansion factor)
+    the bridge's :func:`app.jobs.enqueue_job` does not accept, then delegates to
+    it unchanged — so each fanned-out job follows the exact same
+    validate-already-done → queue → worker → auto-sort path as a single submit.
+    The LoRA is not passed (the worker resolves it); ``batch_id`` is threaded so
+    the durable jobs row records its group.
+    """
+    enqueue_kwargs = {
+        k: v for k, v in spec.items() if k not in ("_line", "count")
+    }
+    return enqueue_job(batch_id=batch_id, **enqueue_kwargs)
+
+
+def fan_out(spec: BatchSpec, *, source: Optional[str] = None,
+            title: Optional[str] = None) -> dict:
+    """Fan a parsed :class:`BatchSpec` out into individual queued jobs.
+
+    Creates one ``batches`` group row (the returned ``batch_id``), then enqueues
+    each valid spec through the standard bridge — expanding a spec's ``count`` into
+    that many jobs. Returns::
+
+        {"batch_id": str,
+         "job_ids": [str, ...],          # successfully enqueued, in row order
+         "rejected": [{line, error, raw}, ...],  # parse-time rejections
+         "enqueue_failures": [{line, error}, ...],  # validated-but-couldn't-queue
+         "valid_count": int, "rejected_count": int, "enqueued_count": int}
+
+    Partial failures never abort the batch (acceptance): if a single
+    :func:`enqueue_job` raises (``QueueFull`` when the queue fills mid-batch, or a
+    Redis error), that unit is recorded in ``enqueue_failures`` and the loop
+    continues with the rest. The batch row's ``rejected_count`` folds in both
+    parse rejections and enqueue failures so a later GET reports the full picture.
+
+    SFW note: every job goes through :func:`app.jobs.enqueue_job`, which never
+    accepts a LoRA — the worker resolves it server-side. The batch layer adds no
+    new path to a model/LoRA.
+    """
+    batch_id = new_id()
+    job_ids: list[str] = []
+    enqueue_failures: list[dict] = []
+    queue_full = False  # latched once the queue fills — stop pushing further rows
+
+    # The batch group row MUST exist before any job references it: jobs.batch_id
+    # is a FK to batches.id (PRAGMA foreign_keys = ON), so enqueuing first would
+    # fail the constraint. Insert with the parse-time counts now; the final
+    # enqueued/rejected tallies + errors are written back after the fan-out loop.
+    parse_rejections = [e.as_dict() for e in spec.errors]
+    total_rows = spec.valid_count + spec.rejected_count
+    _insert_batch_row(
+        batch_id=batch_id,
+        source=source,
+        title=title,
+        total_rows=total_rows,
+        valid_count=spec.valid_count,        # provisional; corrected post-loop
+        rejected_count=spec.rejected_count,  # provisional; corrected post-loop
+        errors=parse_rejections,
+    )
+
+    for job_spec in spec.jobs:
+        if queue_full:
+            # Queue is full; remaining rows can't enqueue. Record them as failures
+            # so the response accounts for every valid row, but don't keep trying.
+            enqueue_failures.append({"line": job_spec.get("_line"),
+                                     "error": "render queue full: batch truncated"})
+            continue
+        count = int(job_spec.get("count", 1) or 1)
+        line = job_spec.get("_line")
+        for _ in range(count):
+            try:
+                job_ids.append(_enqueue_one(job_spec, batch_id))
+            except QueueFull as e:
+                # Queue filled mid-batch: latch + stop. Every further push would
+                # also fail; keep what we enqueued and report the rest.
+                enqueue_failures.append({"line": line, "error": str(e)})
+                log.warning("fan_out: queue full at line %s, batch %s partial",
+                            line, batch_id)
+                queue_full = True
+                break
+            except Exception as e:  # noqa: BLE001 — one bad enqueue can't sink the batch
+                enqueue_failures.append({"line": line, "error": f"enqueue failed: {e}"})
+                log.warning("fan_out: enqueue failed for line %s: %s", line, e)
+
+    # Write back the final tallies: actual enqueued count + all rejections
+    # (parse-time + enqueue-time) so a later GET reports the full picture.
+    all_rejections = parse_rejections + enqueue_failures
+    _update_batch_counts(
+        batch_id=batch_id,
+        valid_count=len(job_ids),
+        rejected_count=len(all_rejections),
+        errors=all_rejections,
+    )
+
+    return {
+        "batch_id": batch_id,
+        "job_ids": job_ids,
+        "rejected": parse_rejections,
+        "enqueue_failures": enqueue_failures,
+        "valid_count": spec.valid_count,
+        "rejected_count": spec.rejected_count,
+        "enqueued_count": len(job_ids),
+    }
+
+
+def _insert_batch_row(*, batch_id: str, source: Optional[str], title: Optional[str],
+                      total_rows: int, valid_count: int, rejected_count: int,
+                      errors: list[dict]) -> None:
+    """Persist the ``batches`` group record (one row per submitted batch)."""
+    with connect() as conn:
+        conn.execute(
+            """
+            INSERT INTO batches
+                (id, source, title, total_rows, valid_count, rejected_count, errors_json)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            """,
+            (batch_id, source, title, total_rows, valid_count, rejected_count,
+             json.dumps(errors) if errors else None),
+        )
+
+
+def _update_batch_counts(*, batch_id: str, valid_count: int, rejected_count: int,
+                         errors: list[dict]) -> None:
+    """Write the final enqueued/rejected tallies + errors onto the batch row.
+
+    ``valid_count`` here is the number of jobs that actually enqueued (so it
+    reflects a count-expanded or partially-failed fan-out), distinct from the
+    provisional parse-time count written at insert.
+    """
+    with connect() as conn:
+        conn.execute(
+            "UPDATE batches SET valid_count = ?, rejected_count = ?, errors_json = ? "
+            "WHERE id = ?",
+            (valid_count, rejected_count, json.dumps(errors) if errors else None,
+             batch_id),
+        )
+
+
+def get_batch_row(batch_id: str) -> Optional[dict]:
+    """The durable ``batches`` row as a dict (errors_json decoded), or None."""
+    with connect() as conn:
+        row = conn.execute("SELECT * FROM batches WHERE id = ?", (batch_id,)).fetchone()
+    if row is None:
+        return None
+    out = dict(row)
+    if out.get("errors_json"):
+        try:
+            out["errors"] = json.loads(out["errors_json"])
+        except (TypeError, ValueError):
+            out["errors"] = []
+    else:
+        out["errors"] = []
+    out.pop("errors_json", None)
+    return out
+
+
+def batch_progress(batch_id: str) -> Optional[dict]:
+    """Aggregate per-job state for a batch, or None if the batch is unknown.
+
+    Reuses the jobs table as the single source of truth: groups the batch's jobs
+    by ``status`` and counts each, so progress reflects the live lifecycle the
+    render worker drives (the same statuses the SSE streams) without a second
+    bookkeeping store. Returns::
+
+        {"batch_id": str, "total": int, "done": bool,
+         "counts": {"queued": int, "running": int, "done": int,
+                    "failed": int, "cancelled": int},
+         "job_ids": [str, ...],
+         "rejected_count": int, "enqueued_count": int,
+         "source": str | None, "title": str | None, "created_at": str,
+         "errors": [...]}
+
+    ``done`` is True once no job is still ``queued`` or ``running`` (every job
+    reached a terminal status) — the signal the UI uses to stop polling. A batch
+    that enqueued zero jobs (all rows rejected) is ``done`` immediately.
+    """
+    record = get_batch_row(batch_id)
+    if record is None:
+        return None
+
+    counts = {s: 0 for s in _PROGRESS_STATUSES}
+    job_ids: list[str] = []
+    with connect() as conn:
+        rows = conn.execute(
+            "SELECT id, status FROM jobs WHERE batch_id = ? ORDER BY queued_at",
+            (batch_id,),
+        ).fetchall()
+    for r in rows:
+        job_ids.append(r["id"])
+        status = r["status"]
+        if status in counts:
+            counts[status] += 1
+    total = len(job_ids)
+    in_flight = counts["queued"] + counts["running"]
+
+    return {
+        "batch_id": batch_id,
+        "total": total,
+        "done": in_flight == 0,
+        "counts": counts,
+        "job_ids": job_ids,
+        "rejected_count": record.get("rejected_count", 0),
+        "enqueued_count": record.get("valid_count", 0),
+        "source": record.get("source"),
+        "title": record.get("title"),
+        "created_at": record.get("created_at"),
+        "errors": record.get("errors", []),
+    }

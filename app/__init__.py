@@ -65,6 +65,7 @@ def _register_blueprints(app: Flask) -> None:
     package import time.
     """
     from .gpu_telemetry import gpu_bp
+    from .routes.batch import batch_bp
     from .routes.films import films_bp
     from .routes.health import health_bp
     from .routes.jobs import jobs_bp
@@ -94,6 +95,13 @@ def _register_blueprints(app: Flask) -> None:
     # GET /api/jobs/<id> (state), GET /api/jobs/<id>/events (SSE). The LoRA is
     # never accepted from the client; the worker resolves it server-side.
     app.register_blueprint(jobs_bp)
+    # lb-zht/lb-y9c: batch layer — POST /api/jobs/batch parses a CSV/txt/JSON
+    # spec, validates every row against the taxonomy SoT (LoRA dropped), and fans
+    # the valid rows out into N individual jobs through the lb-3gi bridge under
+    # one batch_id; GET /api/jobs/batch/<id>[/events] rolls up aggregate progress
+    # from the jobs table. Fan-out only enqueues — the render stays the worker's
+    # deferred job.
+    app.register_blueprint(batch_bp)
     # lb-ly1/lb-wdu/lb-xlr: Porträtt consent API — register a consented face
     # (under-18 requires guardian consent, computed server-side), gate every
     # compositor use (consentOk recomputed from the DB, else 403), and GDPR-

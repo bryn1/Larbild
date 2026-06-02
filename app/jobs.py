@@ -260,6 +260,7 @@ def enqueue_job(
     seed: Optional[int] = None,
     backend: Optional[str] = None,
     params: Optional[dict] = None,
+    batch_id: Optional[str] = None,
 ) -> str:
     """Persist a durable jobs row, seed live Redis state, push onto the queue.
 
@@ -268,6 +269,11 @@ def enqueue_job(
     the live ``queued`` state, then the LPUSH onto ``QUEUE_KEY``. Raises
     :class:`QueueFull` (before any write) when the queue is at capacity, so the
     caller can return 429 without leaving a half-enqueued job.
+
+    ``batch_id`` (lb-y9c) links this job to a batch group when it was fanned out
+    from a batch submission, so aggregate progress can be read straight off the
+    jobs table; a single-submit job leaves it NULL. The column is added by
+    migration 0003 (run on boot), so it is always present here.
 
     The render worker (lb-ocx) BRPOPs ``QUEUE_KEY``, renders, and writes
     progress/terminal states back via :func:`write_job_state`. The LoRA is NOT
@@ -286,11 +292,12 @@ def enqueue_job(
             """
             INSERT INTO jobs
                 (id, kind, status, subject, area, image_type, video_type,
-                 title, prompt, lora, lora_strength, seed, backend, params_json)
-            VALUES (?, ?, 'queued', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                 title, prompt, lora, lora_strength, seed, backend, params_json,
+                 batch_id)
+            VALUES (?, ?, 'queued', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (job_id, kind, subject, area, image_type, video_type, title, prompt,
-             lora, lora_strength, seed, backend, params_json),
+             lora, lora_strength, seed, backend, params_json, batch_id),
         )
 
     # Live state (SSE reads this immediately on connect = RESUME).
