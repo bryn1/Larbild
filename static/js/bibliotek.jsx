@@ -36,6 +36,7 @@ const I = {
   lessons: <Ico d={<><path d="M4 5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" /><path d="M13 3v5h5" /></>} />,
   sparkle: <Ico d={<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" />} />,
   play:    <Ico d={<path d="M7 5l12 7-12 7z" />} fill="currentColor" sw={0} />,
+  close:   <Ico d={<path d="M6 6l12 12M18 6L6 18" />} sw={2} size={20} />,
 };
 
 /* ---------- LEVEL 1 card: one subject ---------- */
@@ -57,13 +58,20 @@ function SubjectCard({ s, onOpen }) {
 }
 
 /* ---------- an asset tile (bild/film) ---------- */
-function AssetCard({ item, subject }) {
+// The image src is the servable URL the API attaches (item.thumb_url / item.url,
+// each "/media/<file_path>"); falls back to building it from the stored relative
+// path for forward-compat with any caller that hasn't been updated. Clicking the
+// tile opens the full-size lightbox.
+function assetThumbSrc(item) {
+  return item.thumb_url || item.url ||
+    ((item.thumb_path || item.file_path) ? `/media/${item.thumb_path || item.file_path}` : null);
+}
+function AssetCard({ item, subject, onOpen }) {
+  const src = assetThumbSrc(item);
   return (
-    <div className="acard">
+    <div className="acard" onClick={() => onOpen && onOpen(item)}>
       <div className="thumb">
-        {item.thumb_path || item.file_path
-          ? <img src={`/media/${item.thumb_path || item.file_path}`} alt={item.title} />
-          : null}
+        {src ? <img src={src} alt={item.title} loading="lazy" /> : null}
         <span className={`kind-tag ${item.kind === "film" ? "film" : ""}`}>{item.kind}</span>
         {item.kind === "film" && <span className="play">{I.play}</span>}
       </div>
@@ -79,6 +87,55 @@ function AssetCard({ item, subject }) {
   );
 }
 
+/* ---------- full-size lightbox: one asset + its metadata ---------- */
+// Opened by clicking a tile. Shows the full-resolution image (item.url) and the
+// prompt + render provenance (LoRA, seed, backend, dimensions, generated_at).
+// Closes on the backdrop, the × button, or Escape. SFW educational artefact.
+function Lightbox({ item, subject, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+  if (!item) return null;
+  const full = item.url || assetThumbSrc(item);
+  const when = D.fmtDate ? D.fmtDate(item.generated_at) : (item.generated_at || "");
+  const meta = [
+    item.lora && ["LoRA", item.lora + (item.lora_strength != null ? ` · ${item.lora_strength}` : "")],
+    item.seed != null && ["Seed", String(item.seed)],
+    item.backend && ["Backend", item.backend],
+    (item.width && item.height) && ["Mått", `${item.width}×${item.height}`],
+    when && ["Skapad", when],
+  ].filter(Boolean);
+  return (
+    <div className="lb-backdrop" onClick={onClose}>
+      <div className="lb-modal" onClick={(e) => e.stopPropagation()}>
+        <button className="lb-close" onClick={onClose} aria-label="Stäng">{I.close}</button>
+        <div className="lb-stage">
+          {item.kind === "film"
+            ? <video src={full} controls style={{ maxWidth: "100%", maxHeight: "72vh" }} />
+            : (full ? <img src={full} alt={item.title} /> : <div className="dim">Ingen bild</div>)}
+        </div>
+        <div className="lb-info">
+          <div className="lb-title serif">{item.title}</div>
+          <div className="lb-sub mono">
+            {subject ? subject.name : ""} · {item.area_name || item.area}
+            {item.image_type ? " · " + item.image_type : ""}
+          </div>
+          {item.prompt && <div className="lb-prompt">{item.prompt}</div>}
+          {meta.length > 0 && (
+            <dl className="lb-meta">
+              {meta.map(([k, v]) => (
+                <div className="lb-meta-row" key={k}><dt>{k}</dt><dd>{v}</dd></div>
+              ))}
+            </dl>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ---------- the Bibliotek view ---------- */
 function Bibliotek() {
   const [subjects, setSubjects] = useState(null); // /api/library tree (raw order)
@@ -86,6 +143,11 @@ function Bibliotek() {
   const [subjectId, setSubjectId] = useState(null);
   const [areaId, setAreaId] = useState(null);
   const [kind, setKind] = useState("all"); // all | bild | film
+  // Per-node item cache keyed by "<subject>/<area>" — the gallery's data, fetched
+  // lazily from /api/library/items when a node is opened (the count tree from
+  // /api/library has no items). `null` value = in-flight; array = loaded.
+  const [itemsByNode, setItemsByNode] = useState({});
+  const [lightbox, setLightbox] = useState(null); // the asset open in the modal, or null
 
   // Bootstrap from the live backend. /api/library is the primary source; the
   // taxonomy call is best-effort (kept for parity with the design bootstrap).
@@ -106,6 +168,44 @@ function Bibliotek() {
     const h = sub && sub.hue != null ? sub.hue : 268;
     document.documentElement.style.setProperty("--brand-h", h);
   }, [sub]);
+
+  // Lazily fetch the gallery items for the open node from /api/library/items.
+  // When an area is selected → just that area; for "Alla områden" → every area
+  // that has assets (asset_count > 0), so the merged "all" view shows real
+  // images. Each node is fetched once and cached in itemsByNode; an empty node
+  // is never fetched (its asset_count is 0). Best-effort per area: one failed
+  // fetch leaves that node's cache empty without breaking the others.
+  useEffect(() => {
+    if (!sub) return;
+    const wanted = (areaId
+      ? (sub.areas || []).filter((a) => a.id === areaId)
+      : (sub.areas || []).filter((a) => (a.asset_count || 0) > 0)
+    ).map((a) => a.id);
+    const toLoad = wanted.filter((aid) => itemsByNode[`${sub.id}/${aid}`] === undefined);
+    if (toLoad.length === 0) return;
+
+    let alive = true;
+    // Mark in-flight so we don't refetch while a request is pending.
+    setItemsByNode((prev) => {
+      const next = { ...prev };
+      toLoad.forEach((aid) => { next[`${sub.id}/${aid}`] = null; });
+      return next;
+    });
+    toLoad.forEach((aid) => {
+      const qs = `subject=${encodeURIComponent(sub.id)}&area=${encodeURIComponent(aid)}`;
+      fetch(`/api/library/items?${qs}`)
+        .then((r) => (r.ok ? r.json() : { items: [] }))
+        .then((data) => {
+          if (!alive) return;
+          setItemsByNode((prev) => ({ ...prev, [`${sub.id}/${aid}`]: data.items || [] }));
+        })
+        .catch(() => {
+          if (!alive) return;
+          setItemsByNode((prev) => ({ ...prev, [`${sub.id}/${aid}`]: [] }));
+        });
+    });
+    return () => { alive = false; };
+  }, [sub, areaId, itemsByNode]);
 
   if (error) {
     return (
@@ -151,9 +251,17 @@ function Bibliotek() {
 
   // ---------- LEVEL 2/3: inside a subject ----------
   const area = areaId ? D.findArea(sub, areaId) : null;
-  // Assets live on the selected node; this read layer renders whatever the API
-  // attaches (area.assets when present), filtered by the kind tab.
-  let assets = (area ? area.assets : (sub.areas || []).flatMap((a) => a.assets || [])) || [];
+  // Pull the gallery items from the lazily-fetched cache (itemsByNode), keyed by
+  // "<subject>/<area>". For one area → that node; for "Alla områden" → the merged
+  // items across every area with assets. Filtered by the kind tab.
+  const nodeKey = (aid) => `${sub.id}/${aid}`;
+  const relevantAreaIds = area
+    ? [area.id]
+    : (sub.areas || []).filter((a) => (a.asset_count || 0) > 0).map((a) => a.id);
+  // Loading until every relevant node has resolved to an array (null = in-flight,
+  // undefined = not yet requested → the effect above will request it).
+  const itemsLoading = relevantAreaIds.some((aid) => !Array.isArray(itemsByNode[nodeKey(aid)]));
+  let assets = relevantAreaIds.flatMap((aid) => itemsByNode[nodeKey(aid)] || []);
   if (kind !== "all") assets = assets.filter((it) => it.kind === kind);
 
   return (
@@ -170,7 +278,7 @@ function Bibliotek() {
             <span style={{ width: 44, height: 44, borderRadius: 12, display: "grid", placeItems: "center", fontSize: 24, background: D.subjSoft(sub), color: D.subjColor(sub, 0.45) }}>{sub.glyph}</span>
             {area ? area.name : sub.name}
           </h1>
-          <div className="caption">{assets.length} objekt{area ? "" : " · " + (sub.areas || []).length + " områden"}</div>
+          <div className="caption">{(itemsLoading && kind === "all" ? (area ? (area.asset_count || 0) : (sub.asset_count || 0)) : assets.length)} objekt{area ? "" : " · " + (sub.areas || []).length + " områden"}</div>
         </div>
         <div className="page-head-actions">
           <div className="tabs">
@@ -215,8 +323,10 @@ function Bibliotek() {
           )}
           {assets.length ? (
             <div className="asset-grid">
-              {assets.map((it) => <AssetCard key={it.id} item={it} subject={sub} />)}
+              {assets.map((it) => <AssetCard key={it.id} item={it} subject={sub} onOpen={setLightbox} />)}
             </div>
+          ) : itemsLoading ? (
+            <div className="empty"><div className="dim">Läser in bilder…</div></div>
           ) : (
             <div className="empty">
               <div className="pull">Inga {kind === "film" ? "filmer" : kind === "bild" ? "bilder" : "objekt"} här ännu.</div>
@@ -226,6 +336,7 @@ function Bibliotek() {
           )}
         </div>
       </div>
+      {lightbox && <Lightbox item={lightbox} subject={sub} onClose={() => setLightbox(null)} />}
     </div>
   );
 }

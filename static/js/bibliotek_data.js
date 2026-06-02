@@ -113,6 +113,31 @@
     return `/skapa?${qs}`;
   }
 
+  /**
+   * Format a library item's ``generated_at`` for the full-size view.
+   *
+   * The backend stores + emits UTC as a *naive* ISO-8601 string (timezone
+   * policy: store UTC, render Europe/Stockholm in the UI). A naive string is
+   * parsed as local time by the JS Date, so we append a ``Z`` when no offset is
+   * present to force UTC parsing, then render in Europe/Stockholm. Returns the
+   * original string unchanged if it isn't parseable (never throws).
+   */
+  function fmtDate(iso) {
+    if (!iso) return "";
+    const norm = /[zZ]|[+-]\d\d:?\d\d$/.test(iso) ? iso : iso + "Z";
+    const d = new Date(norm);
+    if (isNaN(d.getTime())) return String(iso);
+    try {
+      return new Intl.DateTimeFormat("sv-SE", {
+        timeZone: "Europe/Stockholm",
+        year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit",
+      }).format(d);
+    } catch (_e) {
+      return d.toISOString().slice(0, 16).replace("T", " ");
+    }
+  }
+
   return {
     PRIORITY_SUBJECTS,
     orderSubjects,
@@ -123,5 +148,6 @@
     subjColor,
     subjSoft,
     skapaLink,
+    fmtDate,
   };
 });

@@ -87,6 +87,7 @@ def _register_blueprints(app: Flask) -> None:
     from .routes.jobs import jobs_bp
     from .routes.library import library_bp
     from .routes.lora import lora_bp
+    from .routes.media import media_bp
     from .routes.portraits import portraits_bp
     from .routes.taxonomy import taxonomy_bp
     from .routes.tts import tts_bp
@@ -97,8 +98,14 @@ def _register_blueprints(app: Flask) -> None:
     # GET /api/taxonomy so the frontend bootstraps from the backend.
     app.register_blueprint(taxonomy_bp)
     # lb-5rc: the auto-sorted library listing (taxonomy tree + per-node asset
-    # counts) at GET /api/library — the Bibliotek 3-level browse source.
+    # counts) at GET /api/library — the Bibliotek 3-level browse source. The
+    # node-level item listing (the gallery's source) is GET /api/library/items.
     app.register_blueprint(library_bp)
+    # lb-gallery: serve a generated artefact's bytes at GET /media/<file_path>
+    # (STORAGE_DIR-relative, path-traversal-safe). Without it the Bibliotek
+    # gallery knows which images exist but every <img> 404s — the "counts update
+    # but no images show" symptom. SFW: only reaches files under STORAGE_DIR.
+    app.register_blueprint(media_bp)
     # lb-9tz: backend-authoritative LoRA resolution at POST/GET /api/resolve-lora
     # — the Skapa funnel sends only its (subject, imageType) selection; the
     # backend decides the LoRA and the client can never override it.
