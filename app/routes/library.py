@@ -66,6 +66,7 @@ _ITEM_COLUMNS = (
     "area",
     "image_type",
     "video_type",
+    "level",
     "title",
     "prompt",
     "lora",
