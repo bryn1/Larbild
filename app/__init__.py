@@ -71,6 +71,7 @@ def _register_blueprints(app: Flask) -> None:
     from .routes.lora import lora_bp
     from .routes.portraits import portraits_bp
     from .routes.taxonomy import taxonomy_bp
+    from .routes.tts import tts_bp
     from .routes.views import views_bp
 
     app.register_blueprint(health_bp)
@@ -98,6 +99,10 @@ def _register_blueprints(app: Flask) -> None:
     # delete a reference (cascade files off disk + audit). The consent rule +
     # storage live in app.portraits; this blueprint is the thin HTTP layer.
     app.register_blueprint(portraits_bp)
+    # lb-ayi: Swedish narration TTS (Piper sv-SE on VM600) — POST /api/tts
+    # ({text, voice} -> audio/wav, voices sv-standard | sv-lattlast) backs the
+    # film voice-over (lb-4vw) and the Skapa-film voice preview. GPU-independent.
+    app.register_blueprint(tts_bp)
     # lb-eee: serve the no-build React frontend (the Bibliotek view) at / and
     # /bibliotek; repoints Flask's /static handler at the repo-root static/ dir.
     app.register_blueprint(views_bp)
