@@ -102,3 +102,7 @@ class Config:
         # P0.2 (lb-ah2): run the SQLite migrations on boot. Default on; a test
         # can disable it to avoid filesystem writes when it doesn't touch the DB.
         self.INIT_DB = _env_bool("LARBILD_INIT_DB", True)
+        # P10.3 (lb-qtr): full DB↔disk↔library reconcile on boot. Default on; the
+        # wiring also defaults it OFF under TESTING so a plain create_app() unit
+        # test doesn't walk the storage tree. Env can force it either way.
+        self.RECONCILE_STORAGE = _env_bool("LARBILD_RECONCILE_STORAGE", True)

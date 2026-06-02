@@ -49,18 +49,27 @@ def _init_database(app: Flask) -> None:
     safe. ``INIT_DB`` (default True) lets a test skip filesystem writes; tests
     that exercise the DB instead point ``DB_PATH`` at a temp file.
 
-    After migrations, reconcile orphaned ``running`` jobs (lb-qtr, partial): a
-    render left ``running`` by a crashed/restarted worker is marked ``failed``
-    so the durable record reflects reality instead of a phantom in-flight job.
-    Conservative + idempotent + best-effort (never blocks boot).
+    After migrations, two reconcile passes run (both conservative + idempotent +
+    best-effort — neither ever blocks boot):
+
+    1. Orphaned ``running`` jobs (lb-qtr, partial): a render left ``running`` by a
+       crashed/restarted worker is marked ``failed`` so the durable record
+       reflects reality instead of a phantom in-flight job.
+    2. Full storage reconcile (lb-qtr): DB ↔ disk ↔ library three-way
+       consistency — dangling library rows are flagged (soft ``missing_since``,
+       never deleted), orphaned files + mis-sorted assets are reported. Bounded +
+       skippable so it can't stall boot on a huge directory scan. Gated by
+       ``RECONCILE_STORAGE`` (default on; off under TESTING).
     """
     if not app.config.get("INIT_DB", True):
         return
     from .db import init_db
     from .jobs import reconcile_stuck_jobs
+    from .reconcile import reconcile_storage_on_boot
 
     init_db(app.config["DB_PATH"])
     reconcile_stuck_jobs()
+    reconcile_storage_on_boot(app)
 
 
 def _register_blueprints(app: Flask) -> None:
