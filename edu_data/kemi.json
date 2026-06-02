@@ -1,0 +1,2992 @@
+[
+  {
+    "begrepp": "Alkohol",
+    "forklaring": "Det är en kemisk förening som bygger på kol och väte, men med en specifik OH-grupp som ger den sina egenskaper. Exempel på detta är etanol som finns i dryck och metanol som är giftigt.",
+    "vardagligt_exempel": "När du dricker en läsk eller juice kan du ibland känna en svag doft av alkohol, även om mängden är mycket liten, eftersom vissa frukter innehåller naturligt förekommande alkoholer.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Aminosyra",
+    "forklaring": "Det är de små byggstenar som sätts ihop för att bilda proteiner i din kropp. Det finns tjugo olika sorter som fungerar som olika typer av legobitar.",
+    "vardagligt_exempel": "När du äter ett ägg eller en bit kyckling bryter din mage ner proteinerna till aminosyror som kroppen sedan använder för att bygga nya muskler.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Animaliskt fett",
+    "forklaring": "Detta är fett som kommer direkt från djur, till skillnad från fett som kommer från växter. Det är vanligt i kött, mejeriprodukter och smör.",
+    "vardagligt_exempel": "När du smörjer smör på ditt bröd eller äter en bit bacon äter du animaliskt fett eftersom det kommer från nötkreatur eller grisar.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Blodsockernivå",
+    "forklaring": "Detta är mängden druvsocker som cirkulerar i ditt blod vid en given tidpunkt. Kroppen håller denna nivå stabil för att cellerna ska få energi.",
+    "vardagligt_exempel": "Efter att du ätit en godisbit stiger din blodsockernivå snabbt, men när du börjar gå eller springa sjunker den igen eftersom musklerna använder sockret.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Bristsjukom",
+    "forklaring": "Det är en sjukdom som uppstår när kroppen inte får i sig tillräckligt med viktiga näringsämnen som vitaminer eller mineraler. Exempelvis kan brist på C-vitamin leda till skörbjugg.",
+    "vardagligt_exempel": "Om du inte äter tillräckligt med frukt och grönsaker över en längre period kan du få bristsjukdomen skörbjugg på grund av C-vitaminbrist.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Cellandning",
+    "forklaring": "Det är processen där dina celler bryter ner druvsocker tillsammans med syre för att producera energi. Vid detta process bildas koldioxid och vatten som biprodukter.",
+    "vardagligt_exempel": "När du springer en sprint behöver dina muskelceller massor med energi, så cellandningen ökar för att omvandla socker och syre till kraft.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Cellulosa",
+    "forklaring": "Det är en typ av kolhydrat som bygger på långa kedjor av druvsocker, men som människor inte kan smälta. Det finns rikligt i växternas cellväggar och fungerar som kostfiber.",
+    "vardagligt_exempel": "När du äter en äppelkärna eller en bit broccoli får du i dig cellulosa som hjälper din tarm att fungera bra, även om du inte kan bryta ner det till energi.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Enkelomättat fett",
+    "forklaring": "Det är en typ av fettmolekyl som har en dubbelbindning i sin struktur, vilket gör att den är flytande vid rumstemperatur. Det anses ofta vara hälsosammare än mättat fett.",
+    "vardagligt_exempel": "När du häller olivolja på din sallad får du i dig enkelomättat fett, eftersom olivoljan är flytande och har denna specifika kemiska struktur.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Enkla sockerarter",
+    "forklaring": "Detta är kolhydrater som består av bara en eller två sockermolekyler och ger snabb energi. De smakar sött och finns naturligt i frukt eller tillsatt i godis.",
+    "vardagligt_exempel": "När du äter en banan eller dricker en läsk får du i dig enkla sockerarter som ger dig en snabb energikick nästan direkt.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Enzym",
+    "forklaring": "Det är specialiserade proteiner som fungerar som biologiska katalysatorer och påskyndar kemiska reaktioner i kroppen. Utan dem skulle många livsviktiga processer gå för långsamt.",
+    "vardagligt_exempel": "När du tuggar mat påbörjas nedbrytningen av stärkelse i munnen tack vare enzymet amylas som finns i ditt saliv.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Fett",
+    "forklaring": "Fett är ett viktigt näringsämne som kroppen behöver för energi och funktion. Det består av en glycerolmolekyl som är bunden till tre fettsyror.",
+    "vardagligt_exempel": "När du äter en bit ost eller dricker mjölk får du i dig fett som bygger upp dina celler och ger dig energi.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Fettsyra",
+    "forklaring": "Fettsyror är de byggstenar som sitter fast på glycerolen i en fettmolekyl. De kan ha olika antal bindningar vilket påverkar om fettet är fast eller flytande.",
+    "vardagligt_exempel": "Olika fettsyror i maten du äter avgör om smöret är fast i kylskåpet eller om oljan i salladen är flytande.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Fleromättat fett",
+    "forklaring": "Detta är ett fett som innehåller flera dubbelbindningar mellan kolatomerna i fettsyrorna. Det gör oftast fettet flytande vid rumstemperatur.",
+    "vardagligt_exempel": "När du häller rapsolja eller solrosolja över din pasta får du i dig fleromättat fett som är bra för hjärtat.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Fotosyntes",
+    "forklaring": "Fotosyntes är processen där växter använder solljus för att skapa energi i form av sockerarter. Under detta process släpper växten ut syre som vi andas in.",
+    "vardagligt_exempel": "När du går i skogen och andas in frisk luft beror du på att träden har gjort fotosyntes och släppt ut syre.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Glycerol",
+    "forklaring": "Glycerol är en typ av alkohol som fungerar som basen i en fettmolekyl. Tre fettsyror fäster vid glycerolen för att bilda ett fett.",
+    "vardagligt_exempel": "Glycerol är den del av fettmolekylen som fungerar som en ankare där fettsyrorna fäster, likt huvudet på en fyrbenad stol.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Glykemiskt index",
+    "forklaring": "Glykemiskt index visar hur snabbt en kolhydrathaltig matvara höjer ditt blodsocker. Mat med högt GI ger en snabb energikick medan lågt GI ger jämnare energi.",
+    "vardagligt_exempel": "Om du äter en chokladkaka får du ett snabbt blodsockersväng med högt glykemiskt index, men havregryn ger en jämnare effekt.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Grundämne",
+    "forklaring": "Grundämnen är de allra minsta beståndsdelarna som allt i universum är uppbyggt av. Det finns 118 kända grundämnen varav 92 finns naturligt på jorden.",
+    "vardagligt_exempel": "Syre, kol och järn är alla grundämnen som tillsammans bygger upp allt från din luft till din kropp.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Hemoglobin",
+    "forklaring": "Hemoglobin är ett protein i dina röda blodkroppar som binder syre. Det fungerar som ett transportmedel som för syret från lungorna ut till hela kroppen.",
+    "vardagligt_exempel": "När du springer en sprintlopp hjälper hemoglobinet i ditt blod att leverera snabbt syre till dina trötta muskler.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Hormon",
+    "forklaring": "Hormoner är kemiska budbärare som kroppen använder för att skicka signaler mellan olika delar. De styr bland annat tillväxt, humör och ämnesomsättning.",
+    "vardagligt_exempel": "När du blir stressad släpper kroppen ut hormonet adrenalin som får dig att känna dig pigg och redo att agera.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Härdning",
+    "forklaring": "Härdning är en process där flytande, omättat fett görs fast genom att lägga till väte. Detta ändrar fettet så att det blir mer stabilt och hållbarare.",
+    "vardagligt_exempel": "När du köper margarin som är fast i förpackningen har det genomgått en härdning för att inte vara flytande som olja.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Koagulera",
+    "forklaring": "Detta är när vätska stelnar och blir fast, till exempel när blodet stelnar efter ett sår. Det sker också när protein i maten ändrar form och blir fastare.",
+    "vardagligt_exempel": "Du ser hur äggvitan blir vit och fast när du steker ett ägg i pannan.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Kolhydrat",
+    "forklaring": "Detta är en grupp näringsämnen som kroppen använder som bränsle för att få energi. De består av små sockermolekyler som sitter ihop i kedjor.",
+    "vardagligt_exempel": "När du äter en banan eller en skiva bröd får du snabbt energi från kolhydraterna.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Kostfiber",
+    "forklaring": "Detta är en typ av kolhydrat som kroppen inte kan bryta ner till energi. Den hjälper istället till att hålla magen igång och fungerar bra för tarmhälsan.",
+    "vardagligt_exempel": "Du känner magen bli nöjd när du äter fullkornsbröd eller grönsaker som innehåller mycket fibrer.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Laktos",
+    "forklaring": "Laktos är det naturliga socker som finns i mjölk och mejeriprodukter. Det är en enkel kolhydrat som kroppen normalt bryter ner för att få energi.",
+    "vardagligt_exempel": "När du dricker ett glas mjölk eller äter yoghurt intar du laktos.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Laktosintolerant",
+    "forklaring": "Detta innebär att du har svårt att smälta mjölksocker eftersom din kropp saknar det enzym som behövs för att bryta ner det. Det kan ge magbesvär som gaser eller illamående.",
+    "vardagligt_exempel": "Du väljer en laktosfri mjölk istället för vanlig mjölk för att slippa magknip.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Matspjälkning",
+    "forklaring": "Detta är processen där kroppen bryter ner maten till mycket små delar så att den kan tas upp i blodet. Det sker både mekaniskt i munnen och kemiskt i magsäcken.",
+    "vardagligt_exempel": "När du sväljer en smörgås och magen arbetar på att göra den till en flytande massa sker matspjälkning.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Mineral",
+    "forklaring": "Mineraler är grundämnen från naturen som vi behöver för att kroppen ska fungera, till exempel för starka ben och tänder. De finns naturligt i olika sorters mat och vatten.",
+    "vardagligt_exempel": "Du får mineraler som kalcium när du dricker mjölk eller äter grönkål.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Mättat fett",
+    "forklaring": "Detta är en typ av fett som är fast vid rumstemperatur och ofta kommer från djur. Fettet har bara enkelbindningar mellan kolatomerna i molekylerna.",
+    "vardagligt_exempel": "Smör och fläskkött innehåller mycket mättat fett som känns fast om det är kallt.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Omega 3",
+    "forklaring": "Omega 3 är en grupp nyttiga fetter som kroppen inte kan tillverka själv utan måste få i sig via maten. De är viktiga för hjärnan och hjärtats funktion.",
+    "vardagligt_exempel": "Du äter fet fisk som lax för att få i dig omega 3 som är bra för ditt hjärta.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Organisk kemi",
+    "forklaring": "Inom organisk kemi studerar man ämnen som bygger på kolatomer, vilket är grunden för allt liv. De flesta näringsämnen i maten, som kolhydrater och fett, ingår i detta område.",
+    "vardagligt_exempel": "När du lär dig hur sockermolekyler ser ut och fungerar studerar du organisk kemi.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Polysackarid",
+    "forklaring": "Detta är ett stort näringsämne som består av många små sockermolekyler som sitter ihop i långa kedjor. Exempel på sådana ämnen är stärkelse i potatis och cellulosa i växters fibrer.",
+    "vardagligt_exempel": "När du äter en potatis får du i dig polysackarider som kroppen sedan måste dela upp för att använda som energi.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Protein",
+    "forklaring": "Protein är ett viktigt näringsämne som bygger upp och reparerar dina muskler och andra vävnader. Det är också grunden för många viktiga ämnen i kroppen, som enzymer och hormoner.",
+    "vardagligt_exempel": "När du äter kyckling eller bönor får du i dig protein som hjälper dina muskler att växa och fungera.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Ribosom",
+    "forklaring": "Ribosomer är små delar inne i cellen som fungerar som minifabrikerna där protein tillverkas. De läser av instruktioner och bygger ihop aminosyror till nya proteiner.",
+    "vardagligt_exempel": "Tänk dig ribosomen som en liten arbetsbänk i din cell där byggstenarna för dina muskler sätts ihop.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Sackaros",
+    "forklaring": "Sackaros är det kemiska namnet för det vanliga socker vi använder i köket, som finns i strösocker och bitsocker. Det är en typ av kolhydrat som ger snabb energi.",
+    "vardagligt_exempel": "När du häller strösocker i ditt kaffe eller te är det sackaros du tillsätter.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Sammansatta sockerarter",
+    "forklaring": "Detta är sockerarter som är uppbyggda av två eller fler druvsockermolekyler som sitter ihop. Eftersom de är större och mer komplexa tar det lite längre tid för kroppen att bryta ner dem än för enkelt socker.",
+    "vardagligt_exempel": "När du äter en banan får du i dig sammansatta sockerarter som ger dig energi under en längre stund.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Snabba kolhydrater",
+    "forklaring": "Snabba kolhydrater är en typ av mat som kroppen kan bryta ner och ta upp som energi väldigt fort. Det ger dig ofta en snabb energikick, men den kan också försvinna snabbt igen.",
+    "vardagligt_exempel": "När du äter en chokladkaka får du snabba kolhydrater som ger dig en snabb energiboost.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Spjälka",
+    "forklaring": "Att spjälka betyder att sönderdela ett ämne så att dess beståndsdelar delas upp i mindre delar. I kroppen sker detta ofta för att göra maten smidigare att ta upp och använda.",
+    "vardagligt_exempel": "När du tuggar maten spjälkar du den mekaniskt, och i magen spjälkar enzymerna den kemiskt.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Spårämne",
+    "forklaring": "Spårämnen är mineraler som kroppen behöver i mycket små mängder för att fungera som den ska. Även om vi bara behöver lite av dem, är de avgörande för hälsan.",
+    "vardagligt_exempel": "Järn är ett spårämne som du får i dig från mat och som hjälper ditt blod att transportera syre.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Stärkelse",
+    "forklaring": "Stärkelse är en typ av kolhydrat som består av väldigt långa kedjor av druvsockermolekyler. Det är ett viktigt energilagret som finns i många växtbaserade livsmedel.",
+    "vardagligt_exempel": "När du äter bröd, pasta eller potatis får du i dig stärkelse som din kropp omvandlar till energi.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Transfett",
+    "forklaring": "Transfett är en typ av fett som anses vara ohälsosamt för hjärtat och blodkärlen. Det finns ofta i processad mat som chips och kakor.",
+    "vardagligt_exempel": "När du äter en påse chips får du i dig transfett som kan vara skadligt för din hälsa om du äter för mycket.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Vegetabiliskt fett",
+    "forklaring": "Detta är fett som hämtas direkt från växter istället för från djur. Du hittar det till exempel i olivolja och nötter.",
+    "vardagligt_exempel": "När du smörjer ditt bröd med rapsolja eller äter en handfull mandlar intar du vegetabiliskt fett.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Vitamin",
+    "forklaring": "Detta är små kemiska ämnen som kroppen behöver för att fungera bra och hålla sig frisk. Du får i dig dem genom att äta olika sorters frukt och grönt.",
+    "vardagligt_exempel": "När du äter en apelsin får du i dig C-vitamin som hjälper ditt immunförsvar.",
+    "area": "biokemi",
+    "area_name": "Biokemi",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-matkemi"
+  },
+  {
+    "begrepp": "Miljömärkning",
+    "forklaring": "Detta är en symbol eller ett märke på en produkt som berättar att den är gjord på ett skonsammare sätt för miljön. Det gör det lättare för dig att välja hållbara alternativ.",
+    "vardagligt_exempel": "När du handlar tvättmedel och väljer ett med Svanenmärket vet du att det är miljövänligt.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "miljomarkning-ovningar"
+  },
+  {
+    "begrepp": "Kretslopp",
+    "forklaring": "Ett kretslopp innebär att ämnen som vatten eller näringsämnen ständigt cirkulerar och återanvänds i naturen. Det finns inget slut på denna cirkel, allt går runt.",
+    "vardagligt_exempel": "När regn faller, samlas vattnet i åar och återförs till havet, vilket är en del av vattenkretsloppet.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "cirkular-ekonomi-ovningar"
+  },
+  {
+    "begrepp": "Cirkulär ekonomi",
+    "forklaring": "Detta är ett sätt att tänka där vi istället för att slänga saker försöker återanvända och reparera dem. Målet är att spara på naturens resurser genom att hålla material i bruk så länge som möjligt.",
+    "vardagligt_exempel": "Istället för att kasta en trasig stol ger du den till second hand-butiken så att någon annan kan använda den.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "cirkular-ekonomi-ovningar"
+  },
+  {
+    "begrepp": "Ekologisk",
+    "forklaring": "Något är ekologiskt om det är producerat enligt strikta regler som skyddar miljön och djuren. Det innebär ofta att man inte använder konstgödsel eller kemiska bekämpningsmedel.",
+    "vardagligt_exempel": "När du köper ekologiska potatisar vet du att de odlats utan skadliga kemikalier.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "ekologiskt-narproducerat-ovningar"
+  },
+  {
+    "begrepp": "Närproducerat",
+    "forklaring": "Detta betyder att maten har odlats eller tillverkats väldigt nära där du bor. Det minskar transporterna och därmed utsläppen som skadar miljön.",
+    "vardagligt_exempel": "Om du köper äpplen från en bondemarknad i din egen stad är de närproducerade.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "ekologiskt-narproducerat-ovningar"
+  },
+  {
+    "begrepp": "Mikroplast",
+    "forklaring": "Mikroplast består av väldigt små plastbitar som är mindre än fem millimeter. De finns ofta i vår miljö och kan vara svåra att se med blotta ögat.",
+    "vardagligt_exempel": "När du tvär en syntetisk tröja kan små plasttrådar lossna och hamna i avloppsvattnet.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "mikroplaster-ovningar"
+  },
+  {
+    "begrepp": "Biologisk nedbrytbar",
+    "forklaring": "Ett ämne är biologiskt nedbrytbart om naturliga processer, som bakterier, kan förmultna det. Då försvinner materialet utan att lämna kvar skadliga rester i naturen.",
+    "vardagligt_exempel": "En bananskal är biologiskt nedbrytbart eftersom det förmultnar snabbt i komposten.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "mikroplaster-ovningar"
+  },
+  {
+    "begrepp": "Näringskedja",
+    "forklaring": "En näringskedja visar i vilken ordning djur och växter äter varandra för att få energi. Det illustrerar vem som är föda för vem i ett ekosystem.",
+    "vardagligt_exempel": "En enkel näringskedja kan vara att gräset äts av en älg, som i sin tur kan bli jagad av en varg.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "mikroplaster-ovningar"
+  },
+  {
+    "begrepp": "Anrika",
+    "forklaring": "Det innebär att en substans blir mer koncentrerad och finns i högre mängd i en viss del av systemet. Detta sker ofta när ämnen samlas i levande organismer genom näringskedjan.",
+    "vardagligt_exempel": "Tänk dig att du dricker koncentrerad apelsinjuice från en tub istället för utspädd saft – det är samma princip där innehållet blir starkare.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "mikroplaster-ovningar"
+  },
+  {
+    "begrepp": "Miljögift",
+    "forklaring": "Det är ett skadligt ämne som sprids i naturen och skadar djur, växter och människor. Dessa gifter kan stanna kvar i miljön i mycket lång tid.",
+    "vardagligt_exempel": "Det liknar om du råkar spilla stark rengöringsmedel i en dammsugare och sedan andas in ångorna som blir farliga för din hälsa.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "miljogifter-ovningar"
+  },
+  {
+    "begrepp": "Freon",
+    "forklaring": "Det är en typ av gas som tidigare användes flitigt i kylskåp och luftkonditionering. Tyvärr bidrog den till att hålen i ozonskiktet blev större.",
+    "vardagligt_exempel": "Det är den gamla typen av gas som fanns i ditt barndomshems kylskåp, men som vi inte använder längre för att skydda atmosfären.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "miljogifter-ovningar"
+  },
+  {
+    "begrepp": "Ozonskikt",
+    "forklaring": "Detta är ett skyddande lager av gas uppe i atmosfären som fungerar som solkräm för jorden. Det absorberar den farliga ultravioletta strålningen från solen.",
+    "vardagligt_exempel": "Det fungerar precis som en osynlig parasoll som hindrar solen från att bränna huden på dig när du är ute och leker.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "miljogifter-ovningar"
+  },
+  {
+    "begrepp": "Kemikalie",
+    "forklaring": "Det är ett ämne som har tillverkats eller bearbetats av människor för olika ändamål. Alla ämnen är kemikalier, men begreppet används ofta om syntetiska produkter.",
+    "vardagligt_exempel": "När du blandar bakpulver med mjöl för att baka kakor använder du en kemikalie som får degens struktur att förändras.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "farliga-kemikalier-ovningar"
+  },
+  {
+    "begrepp": "Hormonstörande ämne",
+    "forklaring": "Detta är kemikalier som lurar kroppen att tro att de är naturliga hormoner. De kan därför störa kroppens normala växling och funktioner.",
+    "vardagligt_exempel": "Det är som om någon skickar falska meddelanden till din mobil som får den att göra saker den inte borde, som att stänga av sig själv vid fel tidpunkt.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "farliga-kemikalier-ovningar"
+  },
+  {
+    "begrepp": "Nanopartiklar",
+    "forklaring": "Detta är extremt små partiklar som är så mikroskopiska att de inte syns med blotta ögat. Deras lilla storlek gör att de kan tränga in i kroppen på nya sätt.",
+    "vardagligt_exempel": "Tänk dig att du maler ner en vanlig leksak till så små bitar att de skulle passa igenom hålen i ett vanligt sil, men ännu mindre.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "farliga-kemikalier-ovningar"
+  },
+  {
+    "begrepp": "Cocktaileffekten",
+    "forklaring": "Detta fenomen uppstår när flera olika kemikalier blandas och tillsammans blir farligare än var för sig. Varje enskilt ämne kan vara ofarligt i små mängder, men kombinationen ger en överraskande effekt.",
+    "vardagligt_exempel": "Det är som att dricka en liten bit choklad och en liten bit godis som var för sig är okej, men tillsammans får dig att må helt galet illa.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "farliga-kemikalier-ovningar"
+  },
+  {
+    "begrepp": "Mjukgörare",
+    "forklaring": "Detta är ämnen som tillsätts till plast för att göra materialet mjukare och mer smidigt. Utan dem skulle många plastprodukter vara hårda och spröda.",
+    "vardagligt_exempel": "Det fungerar precis som smör i en deg som gör att den blir mjuk och lätthanterlig istället för hård och krossig.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "farliga-kemikalier-ovningar"
+  },
+  {
+    "begrepp": "Farosymboler",
+    "forklaring": "Detta är standardiserade symboler på förpackningar som varnar för olika typer av faror. De visar snabbt om ett ämne är brandfarligt, frätande eller giftigt.",
+    "vardagligt_exempel": "Det är liknande som en varningsskylt på en väg som säger 'Försiktig halka' så att du vet att du måste gå långsammare.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "farliga-kemikalier-ovningar"
+  },
+  {
+    "begrepp": "Ftalater",
+    "forklaring": "Det är kemiska tillsatser som görs mjuka och smidiga så att plasten inte spricker lätt. Du hittar ofta dessa ämnen i mjuka plastprodukter som golvbeläggningar eller leksaker.",
+    "vardagligt_exempel": "När du böjer på en mjuk plastslang eller ett silikonfodral till din telefon känns det smidigt tack vare ftalater.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "farliga-kemikalier-ovningar"
+  },
+  {
+    "begrepp": "Global uppvärmning.",
+    "forklaring": "Detta är den långsiktiga temperaturökningen på jorden som beror på att vi släpper ut för mycket växthusgaser. Resultatet blir att klimatet förändras och vädret blir extremare.",
+    "vardagligt_exempel": "Du märker att sommarna blir hetare och att snön smälter tidigare på vintern än vad den brukade göra.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "global-uppvarmning-ovningar"
+  },
+  {
+    "begrepp": "Växthusgas",
+    "forklaring": "Detta är gaser i atmosfären som fungerar som ett täcke och håller kvar värme från solen. Utan dem skulle jorden frysa, men för mycket gör att det blir för varmt.",
+    "vardagligt_exempel": "Tänk dig att du sover under en tjock filt som håller värmen i kroppen, precis som växthusgaserna gör för jorden.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "global-uppvarmning-ovningar"
+  },
+  {
+    "begrepp": "Förstärkt växthuseffekt.",
+    "forklaring": "Detta sker när människan släpper ut extra mycket växthusgaser som gör att naturens naturliga värmetäcke blir för tjockt. Det leder till att jorden värms upp snabbare än vad klimatet normalt skulle göra.",
+    "vardagligt_exempel": "Det är som om du lägger på flera extra filtar när du redan är varm, vilket får dig att svettas och må dåligt.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "global-uppvarmning-ovningar"
+  },
+  {
+    "begrepp": "pH",
+    "forklaring": "pH är ett mått som visar hur surt eller basiskt en vätska är. Skalan går från 0 till 14, där 7 är neutralt.",
+    "vardagligt_exempel": "När du smakar på citronsaft är den sur (lågt pH), medan tvål är basisk (högt pH).",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "forsurning-ovningar"
+  },
+  {
+    "begrepp": "Neutralisera",
+    "forklaring": "Detta händer när en syra och en bas blandas och reagerar med varandra tills de blir neutrala. Resultatet blir att pH-värdet hamnar på 7, vilket varken är surt eller basiskt.",
+    "vardagligt_exempel": "Om du har fått surmjölk på tårtan kan du neutralisera syran genom att strö på lite bakpulver som är basiskt.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "forsurning-ovningar"
+  },
+  {
+    "begrepp": "Fossila bränslen",
+    "forklaring": "Detta är energikällor som olja, kol och naturgas som har bildats under miljontals år av gamla organiska rester. De finns lagrade under marken och måste grävas eller pumpas upp för att användas.",
+    "vardagligt_exempel": "När du tankar bilen med bensin eller när huset värms upp med gas använder du fossila bränslen.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "forsurning-ovningar"
+  },
+  {
+    "begrepp": "Försurning",
+    "forklaring": "Detta är ett tillstånd där naturens pH-värde sjunker och blir surare på grund av utsläpp från människan. Det skadar skogar, sjöar och vattenlevande djur.",
+    "vardagligt_exempel": "Du kan se försurning om träd i en skog dör eller om fiskar försvinner från en sjö som tidigare var frisk.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "forsurning-ovningar"
+  },
+  {
+    "begrepp": "Kalkning",
+    "forklaring": "Detta är en åtgärd där man tillsätter kalk för att motverka försurning genom att höja pH-värdet. Kalken neutraliserar syran i marken eller vattnet så att naturen kan återhämta sig.",
+    "vardagligt_exempel": "Som när du häller kalk i en sur sjö för att göra vattnet säkrare för fiskarna igen.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "forsurning-ovningar"
+  },
+  {
+    "begrepp": "Övergödning",
+    "forklaring": "Detta sker när för mycket näring, som kväve och fosfor, kommer ut i naturen från exempelvis jordbruk. Det får alger och växter att växa vilt och ta över, vilket skadar ekosystemet.",
+    "vardagligt_exempel": "Du kan se det som en grön hinna av alger som täcker hela ytan på en sjö och gör vattnet grumligt.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "overgodning-ovningar"
+  },
+  {
+    "begrepp": "Nedbrytare",
+    "forklaring": "Nedbrytare är små organismer som äter upp döda växter och djur. De bryter ner materialet till enkla näringsämnen som jorden kan ta upp igen.",
+    "vardagligt_exempel": "När du ser mögel på ett gammalt bröd eller kompost i trädgården är det svampar och bakterier som bryter ner maten.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "overgodning-ovningar"
+  },
+  {
+    "begrepp": "Organsim",
+    "forklaring": "En organism är något som lever och är uppbyggt av minst en cell. Det kan vara allt från en liten bakterie till ett stort djur eller en växt.",
+    "vardagligt_exempel": "Du, din hund, trädgårdsblommorna och till och med de små alger i dammen är alla olika typer av organismer.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "overgodning-ovningar"
+  },
+  {
+    "begrepp": "Biologisk mångfald",
+    "forklaring": "Biologisk mångfald handlar om hur många olika arter som finns och hur olika individerna inom en art kan vara. Det inkluderar också variationen i olika naturtyper.",
+    "vardagligt_exempel": "En skog med många olika träd, blommor, svampar och djur har större biologisk mångfald än en plantering med bara en sorts granar.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "overgodning-ovningar"
+  },
+  {
+    "begrepp": "Konstgödsel",
+    "forklaring": "Konstgödsel är näringsämnen som tillverkas i en fabrik för att gödsla jorden. Det innehåller ofta de tre viktigaste ämnena kväve, fosfor och kalium.",
+    "vardagligt_exempel": "När du köper en påse gödsel till din gräsmatta på byggvaruhuset är det oftast konstgödsel som du strör ut.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "overgodning-ovningar"
+  },
+  {
+    "begrepp": "Hållbar utveckling",
+    "forklaring": "Hållbar utveckling betyder att vi använder jordens resurser på ett sätt som räcker för framtiden. Vi får inte ta ut mer än naturen hinner producera eller återställa.",
+    "vardagligt_exempel": "Att bara fiska så mycket att det finns fisk kvar för nästa år är ett exempel på hållbart nyttjande av resurser.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "en-hallbar-utveckling-ovningar"
+  },
+  {
+    "begrepp": "Ekologisk hållbarhet",
+    "forklaring": "Ekologisk hållbarhet handlar om att skydda naturen och bevara livsmiljöerna. Det innebär att vi inte ska förorena miljön eller skada den biologiska mångfalden.",
+    "vardagligt_exempel": "Att välja att cykla istället för att köra bil för att minska utsläppen som skadar naturen är ekologiskt hållbart.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "en-hallbar-utveckling-ovningar"
+  },
+  {
+    "begrepp": "Ekonomisk hållbarhet",
+    "forklaring": "Ekonomisk hållbarhet innebär att vi kan tjäna pengar och utveckla samhället utan att förstöra naturen eller människor. Vinsten får inte komma på bekostnad av miljön.",
+    "vardagligt_exempel": "Ett företag som tillverkar hållbara skor men ändå gör vinst visar på ekonomisk hållbarhet.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "en-hallbar-utveckling-ovningar"
+  },
+  {
+    "begrepp": "Social hållbarhet",
+    "forklaring": "Social hållbarhet handlar om att skapa ett rättvist samhälle där alla människor har det bra. Alla ska ha tillgång till grundläggande välfärd och rättigheter.",
+    "vardagligt_exempel": "Att alla barn har rätt till gratis skola och sjukvård är ett exempel på social hållbarhet.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "en-hallbar-utveckling-ovningar"
+  },
+  {
+    "begrepp": "Ekosystem",
+    "forklaring": "Ett ekosystem är ett avgränsat område där växter, djur och andra organismer lever tillsammans. De påverkar varandra och delar samma miljö.",
+    "vardagligt_exempel": "En damm med fiskar, vattenväxter, insekter och mikroorganismer utgör tillsammans ett litet ekosystem.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "en-hallbar-utveckling-ovningar"
+  },
+  {
+    "begrepp": "Ekosystemstjänster",
+    "forklaring": "Ekosystemtjänster är de nyttor naturen ger oss människor utan att vi behöver betala för dem. Det inkluderar saker som ren luft, pollinering av växter och rent vatten.",
+    "vardagligt_exempel": "Att bin pollinerar dina äppelblommor så att det blir äpplen är en tjänst som naturen ger dig.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "en-hallbar-utveckling-ovningar"
+  },
+  {
+    "begrepp": "Seriekoppla",
+    "forklaring": "När du kopplar batterier efter varandra i en rad adderas deras spänning. Detta gör att du får en starkare total spänning än från ett enskilt batteri.",
+    "vardagligt_exempel": "Du lägger två AA-batterier i en fjärrkontroll för att få den att fungera ordentligt.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "batterier-ovning"
+  },
+  {
+    "begrepp": "Jonförening",
+    "forklaring": "Detta är en kemisk förening som består av positivt och negativt laddade joner som hålls ihop. Vanliga exempel är salt och andra kristallina ämnen.",
+    "vardagligt_exempel": "När du strör matolja på maten och sedan tillsätter salt, är det saltet som är en jonförening.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "batterier-ovning"
+  },
+  {
+    "begrepp": "Ackumulatorer",
+    "forklaring": "Detta är en typ av batteri som kan laddas om och användas många gånger igen. Istället för att kastas när strömmen tar slut kan du fylla på energin.",
+    "vardagligt_exempel": "Du laddar din mobiltelefon varje natt så att den har ström till nästa dag.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "batterier-ovning"
+  },
+  {
+    "begrepp": "Elektrolys",
+    "forklaring": "Detta är en process där man använder elektrisk ström för att tvinga fram en kemisk reaktion. Genom att skicka ström genom en vätska kan man dela upp ämnen.",
+    "vardagligt_exempel": "I skolan kan du använda ett batteri och penna för att dela upp vatten i gaser.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "elektrolys-ovning"
+  },
+  {
+    "begrepp": "Korrosion",
+    "forklaring": "Korrosion är när metaller reagerar med luften eller vatten och försämras över tid. Det vanligaste exemplet är när järn rostar och blir rostigt.",
+    "vardagligt_exempel": "Du märker att din cykel har rostiga fläckar om du låter den stå utomhus i regnet.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "elektrolys-ovning"
+  },
+  {
+    "begrepp": "Elektrod",
+    "forklaring": "En elektrod är den ledande delen som för in eller ut ström i en kemisk process. Vid elektrolys kallas de två polerna för elektroder.",
+    "vardagligt_exempel": "De två metallplattorna som du sänker ner i vattnet under ett elektrolysexperiment är elektroderna.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "elektrolys-ovning"
+  },
+  {
+    "begrepp": "Elektrolyt",
+    "forklaring": "Elektrolyten är den vätska eller lösning som innehåller fria joner och leder ström. Utan elektrolyten kan inte elektrolysen ske.",
+    "vardagligt_exempel": "När du löser upp salt i vatten för att skapa en ledande lösning till ditt experiment, är det vattnet med saltet som fungerar som elektrolyt.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "elektrolys-ovning"
+  },
+  {
+    "begrepp": "Oxidation",
+    "forklaring": "Oxidation sker när ett ämne avger elektroner under en kemisk reaktion. Det är ofta kopplat till att metaller reagerar med syre, som vid rostbildning.",
+    "vardagligt_exempel": "När ett äpple blir brunaktigt efter att du skär upp det, har oxidation skett.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "elektrolys-ovning"
+  },
+  {
+    "begrepp": "Reduktion",
+    "forklaring": "Reduktion är motsatsen till oxidation och sker när ett ämne tar upp elektroner. Detta händer ofta samtidigt som oxidation i en kemisk reaktion.",
+    "vardagligt_exempel": "I ett batteri sker reduktion vid den ena polen när elektronerna anländer dit.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "elektrolys-ovning"
+  },
+  {
+    "begrepp": "Galvaniskt element",
+    "forklaring": "Detta är en anordning som omvandlar kemisk energi till elektrisk ström genom två olika metaller och en jonlösning. Det är grunden för hur vanliga batteri fungerar.",
+    "vardagligt_exempel": "När du sätter in ett nytt batteri i din ficklampa skapas ström genom ett galvaniskt element.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "galvaniska-element-ovning"
+  },
+  {
+    "begrepp": "Jonlösning",
+    "forklaring": "Det är en vätska där ämnen har splittrats till laddade partiklar som kan röra sig fritt. Eftersom dessa joner är fria att färdas kan lösningen leda elektricitet.",
+    "vardagligt_exempel": "När du löser salt i vatten för att göra en saltlösning skapas en jonlösning som kan leda ström.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "galvaniska-element-ovning"
+  },
+  {
+    "begrepp": "Anod",
+    "forklaring": "Det är den positiva polen där atomer eller molekyler tappar elektroner. Denna process där elektroner lämnas kallas oxidation.",
+    "vardagligt_exempel": "När du laddar din mobil batteri är den pol där syrgas bildas anoden.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "galvaniska-element-ovning"
+  },
+  {
+    "begrepp": "Katod",
+    "forklaring": "Det är den pol där partiklar tar emot elektroner och där reduktion sker. Här sker alltså en minskning av laddningen.",
+    "vardagligt_exempel": "I ett vanligt batteri är katoden den pol där metalliskt koppar kan beläggas vid laddning.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "galvaniska-element-ovning"
+  },
+  {
+    "begrepp": "Redox-reaktion",
+    "forklaring": "Det är en kemisk process där elektroner överförs från ett ämne till ett annat samtidigt. En delämne oxideras medan det andra reduceras i samma ögonblick.",
+    "vardagligt_exempel": "När järn rostar sker en redox-reaktion där järnet reagerar med syre i luften.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "oxidation-reduktion-ovning"
+  },
+  {
+    "begrepp": "Kemisk reaktion",
+    "forklaring": "Här omvandlas ursprungsämnena till helt nya ämnen med egna egenskaper. Bindningarna mellan atomerna bryts och nya skapas.",
+    "vardagligt_exempel": "När du bakar en tårta och äggen stelnar i ugnen har en kemisk reaktion skett.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "oxidation-reduktion-ovning"
+  },
+  {
+    "begrepp": "Elektronskal",
+    "forklaring": "Detta är de olika banor eller nivåer runt atomkärnan där elektroner rör sig. Varje skal kan bara rymma ett visst maximalt antal elektroner.",
+    "vardagligt_exempel": "Tänk dig elektronskal som våningarna i en bostadsrättsfastighet där elektronerna bor.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "oxidation-reduktion-ovning"
+  },
+  {
+    "begrepp": "Spänningsserie",
+    "forklaring": "Det är en ordnad lista över metaller baserat på hur lätt de oxideras eller reagerar. Den visar vilka metaller som är mer eller mindre reaktiva än andra.",
+    "vardagligt_exempel": "Genom att titta i spänningsserien ser du att zink är mer reaktivt än koppar.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "spanningsserien-ovning"
+  },
+  {
+    "begrepp": "Valenselektroner",
+    "forklaring": "Detta är de elektroner som finns längst ut i atomens yttersta skal. Det är dessa elektroner som avgör hur atomen reagerar kemiskt.",
+    "vardagligt_exempel": "När två atomer ska binda sig med varandra är det alltid valenselektronerna som används först.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "spanningsserien-ovning"
+  },
+  {
+    "begrepp": "Jon",
+    "forklaring": "En jon är en atom eller molekyl som har en elektrisk laddning eftersom den har förlorat eller vunnit elektroner. Om den har förlorat elektroner blir den positiv och om den tagit upp dem blir den negativ.",
+    "vardagligt_exempel": "När du äter salt tar du i dig natriumjoner och klorjoner som är viktiga för kroppen.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "spanningsserien-ovning"
+  },
+  {
+    "begrepp": "Ädelmetall",
+    "forklaring": "Detta är metaller som är mycket stabila och gärna undviker att reagera med andra ämnen. De rostar eller korroderar därför inte lätt.",
+    "vardagligt_exempel": "Guld är en ädelmetall som behåller sin glans och inte mörknar även efter många år.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "spanningsserien-ovning"
+  },
+  {
+    "begrepp": "Kemisk förening",
+    "forklaring": "Detta är ett ämne som bildas när atomer från två eller flera olika grundämnen bindes samman. Du kan tänka dig det som en ny typ av substans med egna egenskaper.",
+    "vardagligt_exempel": "När du dricker vatten (H2O) dricker du en kemisk förening där väte och syre sitter ihop.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "spanningsserien-ovning"
+  },
+  {
+    "begrepp": "Grafit",
+    "forklaring": "Grafit är en form av rent kol som kännetecknas av att dess lager glider lätt över varandra. Det är därför det används både i blyertspennor och som smörjmedel.",
+    "vardagligt_exempel": "När du skriver med en blyertspenna lämnar grafitmolekyler från stiftet avtryck på pappret.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "framtidens-material-ovningar"
+  },
+  {
+    "begrepp": "Kristallstruktur",
+    "forklaring": "Detta beskriver hur atomer eller joner är ordnade i ett regelbundet, upprepande mönster i ett fast ämne. Salt är ett klassiskt exempel där jonerna ligger i en perfekt rutnätsstruktur.",
+    "vardagligt_exempel": "Om du tittar på ett saltkorn under ett mikroskop ser du att kristallerna har en tydlig, kubisk form.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "framtidens-material-ovningar"
+  },
+  {
+    "begrepp": "Amorf",
+    "forklaring": "Ett ämne är amorft när dess atomer sitter ihop på ett oregelbundet och kaotiskt sätt utan fast ordning. Till skillnad från kristaller saknar dessa ämnen en geometrisk struktur.",
+    "vardagligt_exempel": "Glas i ditt fönster är amorft eftersom molekylerna är fastnat i en slumpmässig ordning snarare än i mönster.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "framtidens-material-ovningar"
+  },
+  {
+    "begrepp": "Ytspänning",
+    "forklaring": "Ytspänning är en kraft som får vätskeytan att bete sig som en spänd hinna. Det gör att vissa insekter kan gå på vattnet utan att sjunka.",
+    "vardagligt_exempel": "Du kan försiktigt lägga en klippa på vattenytan i en skål så flyter den tack vare ytspänningen.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemikalier-i-hemmet-ovningar"
+  },
+  {
+    "begrepp": "Tensid",
+    "forklaring": "Tensider är molekyler i rengöringsmedel som har en ände som dras till fett och en ände som dras till vatten. De bryter ner fett och hjälper smutsen att lossna.",
+    "vardagligt_exempel": "När du diskar med diskmedel hjälper tensiderna till att få bort oljan från tallriken.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemikalier-i-hemmet-ovningar"
+  },
+  {
+    "begrepp": "Hydrofil",
+    "forklaring": "Hydrofila ämnen är vattenälskande och blandar sig lätt med vatten. De har en stark dragning till vattenmolekyler.",
+    "vardagligt_exempel": "Salt som löser sig snabbt i ditt vatten är ett exempel på ett hydrofilt ämne.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemikalier-i-hemmet-ovningar"
+  },
+  {
+    "begrepp": "Hydrofob",
+    "forklaring": "Hydrofoba ämnen är vattenavvisande och blandar sig inte med vatten. De tenderar att stöta bort vattenmolekyler istället.",
+    "vardagligt_exempel": "Om du häller olja i ett glas vatten flyter oljan ovanpå och blandas inte eftersom den är hydrofob.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemikalier-i-hemmet-ovningar"
+  },
+  {
+    "begrepp": "Pigment",
+    "forklaring": "Pigment är färgämnen som ger material deras färg. De absorberar vissa ljusvågor och reflekterar andra, vilket skapar den färg vi ser.",
+    "vardagligt_exempel": "Den röda färgen i ditt röda färgstift kommer från pigmentet i stiftet.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemikalier-i-hemmet-ovningar"
+  },
+  {
+    "begrepp": "Bindemedel",
+    "forklaring": "Bindemedlet är den del i målarfärg som håller ihop pigmentet och lösningsmedlet. Det ser till att färgen sitter kvar på väggen när den torkar.",
+    "vardagligt_exempel": "När du målar en vägg är det bindemedlet som gör att färgen inte flagnar av när den blir torr.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemikalier-i-hemmet-ovningar"
+  },
+  {
+    "begrepp": "Lösningsmedel",
+    "forklaring": "Det är en vätska som får andra ämnen att smälta samman med sig. Ett vanligt exempel är vatten som löser upp socker.",
+    "vardagligt_exempel": "När du blandar saftpulver med vatten i ett glas är det vattnet som fungerar som lösningsmedel.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemikalier-i-hemmet-ovningar"
+  },
+  {
+    "begrepp": "Livscykelanalys",
+    "forklaring": "Det är en metod för att räkna ut hur mycket en produkt skadar miljön från tillverkning till kassering. Det hjälper oss att se hela produkten historia.",
+    "vardagligt_exempel": "Du kan använda livscykelanalys för att jämföra om en bomullsklädesplagg eller en syntetisk tröja är bäst för miljön.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "livscykelanalys-ovningar"
+  },
+  {
+    "begrepp": "Resurs",
+    "forklaring": "Det är något som behövs för att kunna skapa något nytt, som energi eller material. Utan resurser går det inte att tillverka produkter.",
+    "vardagligt_exempel": "El och järnmalm är två resurser som krävs för att bygga en cykel.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "livscykelanalys-ovningar"
+  },
+  {
+    "begrepp": "Råvara",
+    "forklaring": "Det är ett naturmaterial som har plockats ut i naturen men inte bearbetats ännu. Det är grunden för många olika produkter.",
+    "vardagligt_exempel": "När du ser en grov stock i skogen är den en råvara som senare blir till papper.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "livscykelanalys-ovningar"
+  },
+  {
+    "begrepp": "Toxicitet",
+    "forklaring": "Det är ett vetenskapligt ord för hur giftigt ett ämne är. Det beskriver hur farligt det kan vara för levande organismer.",
+    "vardagligt_exempel": "Du bör inte dricka vätska från ett rengöringsmedel eftersom det har hög toxicitet.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "livscykelanalys-ovningar"
+  },
+  {
+    "begrepp": "Lignin",
+    "forklaring": "Det är ett naturligt ämne som fungerar som lim i trä och håller ihop cellerna. Det gör att träd kan stå raka och starka.",
+    "vardagligt_exempel": "Ligninet är anledningen till att en träpinne är hård och inte bara lös fiber.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "tra-ovningar"
+  },
+  {
+    "begrepp": "Deponering",
+    "forklaring": "Det innebär att man gräver ner avfall i marken på en särskild soptipp. Det är en metod för att hantera restavfall som inte kan återvinnas.",
+    "vardagligt_exempel": "När soporna läggs i en djup grop på soptippen kallas det för deponering.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "plast-och-miljo-ovningar"
+  },
+  {
+    "begrepp": "Monomer",
+    "forklaring": "Det är en liten byggsten som sätts ihop med många andra likadana för att bilda plast. De bildar långa kedjor som kallas polymerer.",
+    "vardagligt_exempel": "En monomer kan jämföras med en enskild pärla som träs på en snöre för att bli en halsband.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "plast-och-miljo-ovningar"
+  },
+  {
+    "begrepp": "Densitet",
+    "forklaring": "Detta mäter hur mycket massa ett ämne har i en viss volym, alltså hur kompakt det är. Det beräknas genom att dividera vikten med volymen.",
+    "vardagligt_exempel": "En sten sjunker i vatten eftersom den har högre densitet än vattnet.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "plast-och-miljo-ovningar"
+  },
+  {
+    "begrepp": "Separera",
+    "forklaring": "Det betyder att man delar upp en blandning så att de olika delarna blir enskilda igen. Det är ett viktigt steg i till exempel återvinning.",
+    "vardagligt_exempel": "När du sorterar ditt skräp i olika kärl för papper, plast och glas separerar du avfallet.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "plast-och-miljo-ovningar"
+  },
+  {
+    "begrepp": "Centrifugera",
+    "forklaring": "Du snurrar en vätska snabbt för att separera delar som har olika vikt. Tyngre partiklar hamnar längst ut medan lättare stannar närmare mitten.",
+    "vardagligt_exempel": "När du använder en salladskvarn för att torka salladen efter tvätt snurrar vattnet ut från bladen.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "plast-och-miljo-ovningar"
+  },
+  {
+    "begrepp": "Kraftvärmeverk",
+    "forklaring": "Detta är en anläggning som producerar både el och värme samtidigt som den förbränner bränsle. Överskottsvärmen från elproduktionen leds ut i fjärrvärmenätet.",
+    "vardagligt_exempel": "Din bostadsrättsförening får värme och varmvatten från ett kraftvärmeverk istället för att elda i varje lägenhet.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "plast-och-miljo-ovningar"
+  },
+  {
+    "begrepp": "Omättat kolväte",
+    "forklaring": "Detta är en typ av kolväte som innehåller minst en dubbel- eller trippelbindning mellan kolatomerna. Bindningarna gör molekylen reaktionsvillig och ofta flytande vid rumstemperatur.",
+    "vardagligt_exempel": "Vegetabiliska oljor som rapsolja består av omättade fettsyror och är flytande i kylskåpet.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "plast-ovningar"
+  },
+  {
+    "begrepp": "Polymer",
+    "forklaring": "En polymer är en stor molekyl som består av många små byggstenar, kallade monomerer, som sitter ihop i en lång kedja. Plaster är ett vanligt exempel på polymerer.",
+    "vardagligt_exempel": "När du tittar på en plastpåse ser du materialet som är uppbyggt av dessa långa molekylkedjor.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "plast-ovningar"
+  },
+  {
+    "begrepp": "Termoplast",
+    "forklaring": "Detta är en plast som blir mjuk och formbar när den värms upp och hårdnar igen när den svalnar. Du kan därför smälta och forma om termoplast flera gånger.",
+    "vardagligt_exempel": "En plastburk eller en leksak av plast kan smältas ner och göras om till nya produkter.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "plast-ovningar"
+  },
+  {
+    "begrepp": "Härdplast",
+    "forklaring": "Härdplast är en typ av plast som blir hård och stabil när den förstärks kemiskt, och den kan sedan inte mjuknas upp igen genom värme. Den är därför mycket tålig och kan inte formas om.",
+    "vardagligt_exempel": "Ett handtag på en gryta som inte smälter även om du glömmer det på spisen.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "plast-ovningar"
+  },
+  {
+    "begrepp": "Oxid",
+    "forklaring": "En oxid är en kemisk förening som innehåller syre bundet till ett annat grundämne. Många vanliga ämnen i naturen, som vatten och jordens skorpa, är oxider.",
+    "vardagligt_exempel": "Vatten (H2O) är i grunden en oxid där syre är bundet till väte.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "korrosion-ovningar"
+  },
+  {
+    "begrepp": "Rosta",
+    "forklaring": "Rostning är en kemisk process där järn reagerar med syre och bildar järnoxid. Detta leder till att järnet bryts ner och blir svagt och rödbrunt.",
+    "vardagligt_exempel": "En gammal cykel som legat ute i regnet får röda fläckar på ramen.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "korrosion-ovningar"
+  },
+  {
+    "begrepp": "Ärga",
+    "forklaring": "Att ärga innebär att koppar reagerar med syre och bildar en grön kemisk förening. Detta lager skyddar ibland kopparen vidare men ger den ett grönt utseende.",
+    "vardagligt_exempel": "Det gröna taket på en gammal kyrka eller en staty i parken är koppar som har ärgat.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "korrosion-ovningar"
+  },
+  {
+    "begrepp": "Offeranod",
+    "forklaring": "En offeranod är en metallbit som sätts fast vid ett annat metallföremål för att skydda det från korrosion. Den korroderar själv istället för det värdefulla föremålet.",
+    "vardagligt_exempel": "Båtars skrov har ofta block av magnesium som rostar upp istället för båtens aluminiumskrov.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "korrosion-ovningar"
+  },
+  {
+    "begrepp": "Varmförzinka",
+    "forklaring": "Metallen doppas i smält zink som stelnar till en hård hinna. Denna hinna skyddar metallen mot rost.",
+    "vardagligt_exempel": "Det är precis som när du målar en järngård, men zinklagret sitter fast bättre och skyddar längre.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "korrosion-ovningar"
+  },
+  {
+    "begrepp": "Slagg",
+    "forklaring": "Detta är det avfall som blir över när man smälter metaller ur malmen. Det skiljs från den rena metallen genom att det flyter ovanpå.",
+    "vardagligt_exempel": "Det liknar skummet som bildas när du kokar pasta och häller bort vattnet, men här är det ett fast restprodukt från metallframställning.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-koppar-ovningar"
+  },
+  {
+    "begrepp": "Smältpunkt",
+    "forklaring": "Det är den specifika temperatur då ett fast ämne blir flytande. Vid denna punkt förändras ämnets tillstånd från fast vätska.",
+    "vardagligt_exempel": "Det är samma temperatur som krävs för att smälta smör på pannan så att det blir flytande.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-aluminium-ovningar"
+  },
+  {
+    "begrepp": "Bauxit",
+    "forklaring": "Bauxit är en typ av malm som innehåller mycket aluminium. Det är den viktigaste källan för att framställa aluminiummetall.",
+    "vardagligt_exempel": "Det är den rödbruna sten du hittar i butiken som har använts för att skapa din aluminiumburk.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-aluminium-ovningar"
+  },
+  {
+    "begrepp": "Bergart",
+    "forklaring": "En bergart är en naturlig sten som består av en blandning av olika mineraler. De flesta stenar du ser runt omkring dig är bergarter.",
+    "vardagligt_exempel": "Graniten som trottoarklockan är gjord av är en typ av bergart som du kan se på gatan.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-jarn-ovningar"
+  },
+  {
+    "begrepp": "Malm",
+    "forklaring": "Malm är en bergart som innehåller så mycket metall att det löner sig att bryta ut den. Utan en tillräckligt hög metallhalt är det inte ekonomiskt möjligt att utvinna metallen.",
+    "vardagligt_exempel": "Det är som att hitta en skattkista med guld i berget istället för bara en liten glimt av guldglitter.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-jarn-ovningar"
+  },
+  {
+    "begrepp": "Koks",
+    "forklaring": "Koks är ett bränsle som främst består av kol och bildas genom att värma kol vid hög temperatur. Det används ofta som bränsle i masugnar.",
+    "vardagligt_exempel": "Det ser ut och känns som kol som används i grillen, men är speciellt framställt för höga temperaturer i industrin.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-jarn-ovningar"
+  },
+  {
+    "begrepp": "Masugn",
+    "forklaring": "Masugnen är en stor ugn som kan nå extremt höga temperaturer. I ugnen smälts järnmalm för att framställa råjärn.",
+    "vardagligt_exempel": "Det är som en jättestor ugn som är varm nog att smälta sten till flytande metall.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-jarn-ovningar"
+  },
+  {
+    "begrepp": "Råjärn",
+    "forklaring": "Råjärn är det järn som framställs direkt från malmen i masugnen. Det innehåller fortfarande för mycket kol för att vara smidbart stål.",
+    "vardagligt_exempel": "Det är den grova, spröda metall som kommer ut ur ugnen innan den bearbetas till något användbart som stål.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-jarn-ovningar"
+  },
+  {
+    "begrepp": "Färskning",
+    "forklaring": "Under färskningen sänks kolhalten i råjärnet genom att det oxideras. Detta gör järnet smidigare och omvandlar det till stål.",
+    "vardagligt_exempel": "Det är som att ta bort för mycket salt från en soppa så att den blir ätbar och god igen.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-jarn-ovningar"
+  },
+  {
+    "begrepp": "Legering",
+    "forklaring": "En legering är en blandning som skapas när man smälter samman två eller flera metaller. Detta görs ofta för att få materialet att bli starkare eller mer motståndskraftigt mot rost.",
+    "vardagligt_exempel": "När du ser ett snyggt armband som inte rostar, är det troligen gjort av en legering som guld eller silver blandat med andra metaller.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-jarn-ovningar"
+  },
+  {
+    "begrepp": "Keramer",
+    "forklaring": "Keramer är en grupp hålla material som ofta framställs av lera och glasartade ämnen som bränns vid hög värme. Kända exempel är porslin och olika sorters glas.",
+    "vardagligt_exempel": "När du dricker vatten ur ett genomskinligt glas eller äter mat från en porslinsskål använder du keramer.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "material-oversikt-ovningar"
+  },
+  {
+    "begrepp": "Oorganisk",
+    "forklaring": "Ett oorganiskt ämne är en kemisk substans som inte innehåller kolatomer i sin grundstruktur. Dessa ämnen finns ofta i mineraler och stenar snarare än i levande organismer.",
+    "vardagligt_exempel": "Salt som du strör på maten hemma är ett oorganiskt ämne eftersom det inte innehåller kol.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "material-oversikt-ovningar"
+  },
+  {
+    "begrepp": "Komposit",
+    "forklaring": "En komposit är ett material som skapas genom att kombinera två eller flera olika ämnen för att få bättre egenskaper. Resultatet blir ofta starkare eller lättare än de enskilda delarna.",
+    "vardagligt_exempel": "En golfklubba eller ett tennisracket är ofta tillverkat av kompositmaterial som kolfiber för att vara både starka och lätta.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "material-oversikt-ovningar"
+  },
+  {
+    "begrepp": "Molekylbindning",
+    "forklaring": "Vid en molekylbindning delar atomer på elektroner för att hålla ihop sig, likt att de har gemensam vårdnad. Detta skapar starka bindningar som binder ihop atomerna till en molekyl.",
+    "vardagligt_exempel": "När vattenmolekyler (H2O) håller ihop sig så att du kan ha ett glas vatten, sitter väte- och syreatomerna ihop via molekylbindningar.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "molekylbindningar-ovningar"
+  },
+  {
+    "begrepp": "Kovalent bindning",
+    "forklaring": "Kovalent bindning är ett annat namn för molekylbindning där atomer sitter ihop genom att dela på elektroner. Det är ett vanligt sätt för atomer att bilda stabila molekylstrukturer.",
+    "vardagligt_exempel": "Syrgasen du andas in (O2) består av två syreatomer som hålls samman av en kovalent bindning.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "molekylbindningar-ovningar"
+  },
+  {
+    "begrepp": "Elektronparbindning",
+    "forklaring": "Elektronparbindning är samma sak som molekylbindning, där atomer binder till varandra genom att dela ett par elektroner. Detta gör att atomerna får en stabilare elektronstruktur.",
+    "vardagligt_exempel": "När två väteatomer bildar en vätgas-molekyl delas elektronerna mellan dem i en elektronparbindning.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "molekylbindningar-ovningar"
+  },
+  {
+    "begrepp": "Ädelgasstruktur",
+    "forklaring": "En ädelgasstruktur innebär att ett atoms yttersta elektronskal är helt fyllt med elektroner. Detta gör atomen mycket stabil och kemiskt inert, likt ädelgaserna.",
+    "vardagligt_exempel": "När en natriumatom och en kloratom reagerar får båda en ädelgasstruktur, vilket gör att de bildar stabilt salt.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "molekylbindningar-ovningar"
+  },
+  {
+    "begrepp": "Valenselektron",
+    "forklaring": "Valenselektroner är de elektroner som befinner sig längst ut i atomens yttersta skal. Det är dessa elektroner som avgör hur atomen reagerar kemiskt med andra atomer.",
+    "vardagligt_exempel": "När du förklarar varför salt bildas, tittar du på valenselektronerna hos natrium och klor för att se hur de vill dela eller byta elektroner.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "molekylbindningar-ovningar"
+  },
+  {
+    "begrepp": "Elektron",
+    "forklaring": "En elektron är en mycket liten partikel med negativ laddning som finns i atomen. Den cirkulerar runt atomkärnan och bestämmer atomens kemiska egenskaper.",
+    "vardagligt_exempel": "Den elektricitet som strömmar genom laddkabeln till din mobiltelefon består av rörliga elektroner.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "atomkunskap-ovningar"
+  },
+  {
+    "begrepp": "Proton",
+    "forklaring": "Protonen är en positivt laddad partikel som sitter fast i atomens mitt, kärnan. Antalet protoner avgör vilket grundämne det är frågan om.",
+    "vardagligt_exempel": "Du kan tänka dig protonerna som de fasta tegelstenarna som bygger upp atomens kärna och ger den dess positiva laddning.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "atomkunskap-ovningar"
+  },
+  {
+    "begrepp": "Neutron",
+    "forklaring": "Neutronen är en partikel utan elektrisk laddning som också finns i atomkärnan tillsammans med protonerna. Den hjälper till att hålla kärnan stabil.",
+    "vardagligt_exempel": "Neutronerna fungerar som lim mellan protonerna i kärnan, fastän de själva inte har någon laddning.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "atomkunskap-ovningar"
+  },
+  {
+    "begrepp": "Energinivå",
+    "forklaring": "Energinivåer är de olika lagren eller skal runt atomkärnan där elektronerna rör sig. Ju längre bort från kärnan, desto högre energi har elektronen.",
+    "vardagligt_exempel": "Det är som trappstegen i ett hus där du måste ha mer energi för att klättra upp till en högre våning.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "atomkunskap-ovningar"
+  },
+  {
+    "begrepp": "Periodiska systemet",
+    "forklaring": "Detta är en tabell som listar alla kända grundämnen i en ordnad struktur baserat på deras egenskaper. Den hjälper kemister att förutsäga hur ämnena reagerar.",
+    "vardagligt_exempel": "Du använder det periodiska systemet ungefär som ett lexikon för att snabbt hitta information om olika grundämnen.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "atomkunskap-ovningar"
+  },
+  {
+    "begrepp": "Isotop",
+    "forklaring": "Isotoper är varianter av samma grundämne som har lika många protoner men olika många neutroner. Detta gör att de har olika massa men samma kemi.",
+    "vardagligt_exempel": "Det är som att ha två bilar av exakt samma modell där den ena väger lite mer på grund av extra utrustning.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "atomkunskap-ovningar"
+  },
+  {
+    "begrepp": "Radioaktiv",
+    "forklaring": "Ett ämne är radioaktivt när dess atomkärna är instabil och därför sänder ut strålning för att bli stabil. Under processen sönderfaller kärnan och kan bli till ett annat ämne.",
+    "vardagligt_exempel": "Det liknar en överpackad rycksäck som ständigt vill slänga ut saker för att bli lättare och stabilare.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "atomkunskap-ovningar"
+  },
+  {
+    "begrepp": "Syra",
+    "forklaring": "En syra är en kemisk förening som har ett pH-värde under 7 och innehåller fria vätejoner. Syror har ofta en skarp smak och kan vara frätande.",
+    "vardagligt_exempel": "När du dricker citronjuice känner du den sura smaken som kommer från syran i citronen.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "joner-syror-och-baser-ovningar"
+  },
+  {
+    "begrepp": "Bas",
+    "forklaring": "En bas är en förening med ett pH-värde över 7 som kan neutralisera syror. Många starka baser känns glatta och kan vara farliga om de kommer i kontakt med huden.",
+    "vardagligt_exempel": "Tvål som du använder i duschen är ofta basisk, vilket gör att den känns glatt mot huden.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "joner-syror-och-baser-ovningar"
+  },
+  {
+    "begrepp": "Vätejon",
+    "forklaring": "En vätejon (H+) bildas när en väteatom förlorar sin elektron och får en positiv laddning. Det är dessa joner som ger syror deras sura egenskaper.",
+    "vardagligt_exempel": "Vätejonerna är de små aktörerna i läskedrycken som får dig att rynka på näsan av syrlighet.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "joner-syror-och-baser-ovningar"
+  },
+  {
+    "begrepp": "Hydroxidjon",
+    "forklaring": "En hydroxidjon (OH-) består av syre och väte och har en negativ laddning. När den finns i lösning gör den miljön basisk.",
+    "vardagligt_exempel": "Hydroxidjonerna i diskmedlet hjälper till att bryta ner fett och gör lösningen basisk.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "joner-syror-och-baser-ovningar"
+  },
+  {
+    "begrepp": "Neutralisation",
+    "forklaring": "Detta sker när syra och bas reagerar med varandra så att de tar ut varandras effekt. Resultatet blir en neutral lösning med pH 7.",
+    "vardagligt_exempel": "Du kan använda en neutraliserande tablett för att lindra magbesvär efter att ha ätit något surt.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "joner-syror-och-baser-ovningar"
+  },
+  {
+    "begrepp": "Protolys",
+    "forklaring": "När en syra löses i vatten överför den en vätejon till vattenmolekylen. Detta skapar en hydroniumjon (H3O+) i lösningen.",
+    "vardagligt_exempel": "När du häller citronsaft i vatten frisätts syran och gör vätskan sur.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "joner-syror-och-baser-ovningar"
+  },
+  {
+    "begrepp": "Salt",
+    "forklaring": "Ett salt är en kemisk förening som består av positivt laddade joner och negativt laddade joner. Dessa hålls samman av starka elektriska krafter.",
+    "vardagligt_exempel": "Det vanliga bordsaltet du strör på pommes frites är ett exempel på ett salt.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "joner-syror-och-baser-ovningar"
+  },
+  {
+    "begrepp": "Reagens",
+    "forklaring": "Ett reagens är ett ämne som används i laboratoriet för att testa om ett annat ämne finns närvarande. Det ger ofta ett tydligt synligt svar som en färgändring.",
+    "vardagligt_exempel": "Du använder liknande tester för att kontrollera om poolvattnet har rätt kemisk balans.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "analysera-salter-ovningar"
+  },
+  {
+    "begrepp": "Fällning",
+    "forklaring": "En fällning bildas när två vätskor blandas och ett nytt ämne som inte löser sig fastnar. Det syns som ett molnigt sediment som sjunker till botten.",
+    "vardagligt_exempel": "Det liknar när grumliga partiklar bildas och sjunker ner om du blandar vissa rengöringsmedel.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "analysera-salter-ovningar"
+  },
+  {
+    "begrepp": "Svårlösligt salt",
+    "forklaring": "Detta är ett salt som inte går att lösa upp i vatten, utan stannar kvar som fast material. Det skiljer sig från vanligt salt som löser sig helt.",
+    "vardagligt_exempel": "Det är som sand som du lägger i vatten och som bara ligger kvar på botten utan att försvinna.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "analysera-salter-ovningar"
+  },
+  {
+    "begrepp": "Jonladdning",
+    "forklaring": "Jonladdning anger om en atom har förlorat eller vunnit elektroner och därmed fått en elektrisk laddning. Laddningen kan vara positiv eller negativ beroende på vad som hänt.",
+    "vardagligt_exempel": "Det är som statisk elektricitet som får ditt hår att resa sig, fast på atomnivå.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "bilda-salter-ovningar"
+  },
+  {
+    "begrepp": "Reaktionspil",
+    "forklaring": "Reaktionspilen används i kemiska formler för att visa riktningen från utgångsämnen till bildade produkter. Den markerar alltså vad som finns innan och efter reaktionen.",
+    "vardagligt_exempel": "Det fungerar som en pil i ett recept som visar att ingredienserna förvandlas till en färdig rätt.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "bilda-salter-ovningar"
+  },
+  {
+    "begrepp": "Sammansatt jon",
+    "forklaring": "En sammansatt jon består av två eller flera atomer som sitter ihop och tillsammans bär en laddning. Många negativa joner i kemin är av denna typ.",
+    "vardagligt_exempel": "Det kan liknas vid en liten grupp personer som håller ihop händer och agerar som en enhet.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "bilda-salter-ovningar"
+  },
+  {
+    "begrepp": "Jonbindning",
+    "forklaring": "Jonbindningen uppstår när elektroner flyttas från en atom till en annan, vilket skapar motsatta laddningar. Dessa laddningar drar åt varandra och binder ihop ämnena.",
+    "vardagligt_exempel": "Det är den kraft som håller ihop kristallstrukturen i ett korn bordsalt.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "jonbindning-ovningar"
+  },
+  {
+    "begrepp": "K- skal",
+    "forklaring": "Det är det allra innersta lagret runt atomkärnan som rymmer högst två elektroner. Det ligger närmast kärnan och fylls på först.",
+    "vardagligt_exempel": "Tänk dig en onionlök där det innersta lagret är så litet att det bara får plats två lökblad.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "jonbindning-ovningar"
+  },
+  {
+    "begrepp": "Halogen",
+    "forklaring": "Detta är en grupp grundämnen som saknar en elektron för att bli helt stabila. Därför är de väldigt reaktiva och gillar att bilda salter med andra ämnen.",
+    "vardagligt_exempel": "När du strör salt på maten använder du natriumklorid, där klor är en typ av halogen.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "jonbindning-ovningar"
+  },
+  {
+    "begrepp": "Metallbindning",
+    "forklaring": "I metaller rör sig elektroner fritt mellan atomerna som i ett moln, vilket håller ihop dem starkt. Detta gör att metaller leder ström och är formbara.",
+    "vardagligt_exempel": "När du böjer en metallsked utan att den går av beror det på att elektronmolnet håller ihop atomerna.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metallbindningar-ovningar"
+  },
+  {
+    "begrepp": "Alkalimetall",
+    "forklaring": "Dessa ämnen finns i grupp 1 och har precis en elektron i sitt yttersta skal. De är mycket reaktiva och reagerar kraftigt med vatten.",
+    "vardagligt_exempel": "Natrium i ditt kökssalt är en alkalimetall, men den är då bunden till klor så att den inte exploderar.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "periodiska-systemet-ovningar"
+  },
+  {
+    "begrepp": "Basisk",
+    "forklaring": "En lösning kallas basisk om dess pH-värde är högre än 7. Basiska ämnen är ofta glidiga att röra vid och kan vara frätande.",
+    "vardagligt_exempel": "Tvål och diskmedel är ofta basiska, vilket märks om de blir kladdiga på händerna.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "periodiska-systemet-ovningar"
+  },
+  {
+    "begrepp": "Atomnummer",
+    "forklaring": "Atomnumret berättar exakt hur många protoner som finns i atomkärnan. Det är detta nummer som avgör vilket grundämne det är frågan om.",
+    "vardagligt_exempel": "Om du räknar fem protoner i kärnan vet du att det är grundämnet bor som du tittar på.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "periodiska-systemet-ovningar"
+  },
+  {
+    "begrepp": "Saltbildare",
+    "forklaring": "Detta är ett annat namn för halogenerna i det periodiska systemet. De heter så eftersom de lätt binder sig till metaller för att bilda salt.",
+    "vardagligt_exempel": "Klor är en saltbildare som tillsammans med natrium bildar det vanliga bordsaltet.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "periodiska-systemet-ovningar"
+  },
+  {
+    "begrepp": "Ädelgas",
+    "forklaring": "Ädelgaser har ett helt fyllt yttersta elektronskal och är därför mycket stabila. De reagerar nästan aldrig med andra ämnen.",
+    "vardagligt_exempel": "Helium i ballongen är en ädelgas som inte brinner eller reagerar med luften runt omkring.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "periodiska-systemet-ovningar"
+  },
+  {
+    "begrepp": "Atmosfär",
+    "forklaring": "Atmosfären är det lager av gaser som omsluter jorden och sträcker sig upp mot rymden. Det är den luft vi andas och som skyddar oss från solstrålning.",
+    "vardagligt_exempel": "När du flyger i ett plan befinner du dig fortfarande i atmosfären, men den är tunnare där uppe.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "luftens-gaser-del2-ovningar"
+  },
+  {
+    "begrepp": "Luftfuktighet",
+    "forklaring": "Detta begrepp beskriver hur mycket vattenånga som finns blandat i luften vid en viss tidpunkt. Hög luftfuktighet gör att luften känns tung och fuktig.",
+    "vardagligt_exempel": "När det är dimmigt eller svettigt i ansiktet på en varm dag är luftfuktigheten hög.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "luftens-gaser-del2-ovningar"
+  },
+  {
+    "begrepp": "Uv-ljus",
+    "forklaring": "Detta är en form av osynligt ljus som har högre energi än det ljus vi ser. Det kan skada hudens celler och ge solbränna.",
+    "vardagligt_exempel": "Du märker att du får röd och öm hud om du ligger i solen för länge utan solkräm.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "luftens-gaser-del2-ovningar"
+  },
+  {
+    "begrepp": "Påvisa",
+    "forklaring": "Att genom ett experiment eller en undersökning bevisa att något är sant. I kemin gör man detta för att identifiera okända ämnen.",
+    "vardagligt_exempel": "Du använder en testremsa för att bevisa att vattnet i din vattenflaska är rent.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "pavisa-gaser-ovningar"
+  },
+  {
+    "begrepp": "Ofullständig förbränning",
+    "forklaring": "Det händer när eld inte får tillräckligt med syre för att brinna helt. Då bildas giftig kolmonoxid och sot istället för bara koldioxid.",
+    "vardagligt_exempel": "En gasolgrill som lågor gulaktigt och lämnar sot på grytan när luften inte kommer in ordentligt.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "luftfororeningar-ovningar"
+  },
+  {
+    "begrepp": "Partikel",
+    "forklaring": "Ett vetenskapligt ord för mycket små byggstenar som allt materia består av. Det kan vara atomer, molekyler eller till och med damm.",
+    "vardagligt_exempel": "Du ser små dammpartiklar dansa i solljuset som strålar in genom fönstret.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "luftfororeningar-ovningar"
+  },
+  {
+    "begrepp": "Smog",
+    "forklaring": "En förorenad luftblandning som ofta ser ut som dimma men innehåller rök och kemikalier. Det är vanligt i stora städer med mycket trafik.",
+    "vardagligt_exempel": "Du kan inte se långt över stan när tjock, grå rök från bilarna ligger lågt över gatorna.",
+    "area": "kemi_samhalle",
+    "area_name": "Kemi i samhället",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "luftfororeningar-ovningar"
+  },
+  {
+    "begrepp": "Brandtriangeln",
+    "forklaring": "En modell som visar de tre saker som måste finnas tillsammans för att eld ska uppstå. Det är bränsle, syre och värme.",
+    "vardagligt_exempel": "Du släcker en stearinljusflamma genom att blåsa på den, vilket kylner ner veken och stör balansen i triangeln.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "eld-ovningar"
+  },
+  {
+    "begrepp": "Antändningstemperatur",
+    "forklaring": "Den lägsta temperatur som ett ämne måste nå för att börja brinna av sig själv. Vid denna punkt krävs ingen gnista eller låga till för att elden ska starta.",
+    "vardagligt_exempel": "Papper börjar brinna om du lägger det mitt i en stark eld istället för att tända det med en tändsticka.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "eld-ovningar"
+  },
+  {
+    "begrepp": "Flampunkt",
+    "forklaring": "Den temperatur då en vätska avger tillräckligt med ångor för att antändas kortvarigt. Det är inte nödvändigtvis samma temperatur som när det börjar brinna ordentligt.",
+    "vardagligt_exempel": "Du ser en liten gnista vid bensinen när du tankar bilen på en mycket varm dag.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "eld-ovningar"
+  },
+  {
+    "begrepp": "Tryckvåg",
+    "forklaring": "En kraftig stötvåg i luften som skapas när en explosion expanderar snabbt. Den kan krossa fönster och skada öronen.",
+    "vardagligt_exempel": "Du känner ett tryck i öronen och ser rutor spricka när en fyrverkeripjäs exploderar nära dig.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "eld-ovningar"
+  },
+  {
+    "begrepp": "Lättmetall",
+    "forklaring": "En metall som väger mycket lite jämfört med sin volym, mindre än 5 kg per liter. Aluminium är ett exempel på en lättmetall.",
+    "vardagligt_exempel": "Du kan lyfta en stor aluminiumpanna i köket med bara en hand eftersom den är så lätt.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-ovningar"
+  },
+  {
+    "begrepp": "Tungmetall",
+    "forklaring": "Tungmetaller är metaller som väger mycket mer än vatten i samma volym. De känns ofta tunga när du håller dem i handen.",
+    "vardagligt_exempel": "När du lyfter en liten blyvikt märker du hur ovanligt tung den är jämfört med en plastbit i samma storlek.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metaller-ovningar"
+  },
+  {
+    "begrepp": "Polär",
+    "forklaring": "En polär molekyl har en sida som är positivt laddad och en sida som är negativt laddad. Detta gör att molekylerna kan dra till sig varandra som små magneter.",
+    "vardagligt_exempel": "Du kan se hur vattendroppar bildar runda bollar på en paraplyyta eftersom molekylerna håller ihop sig.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "vattnets-egenskaper-ovningar"
+  },
+  {
+    "begrepp": "Ytvatten",
+    "forklaring": "Ytvatten är det vatten som finns högst upp i en sjö eller ett hav och som är lätt att nå. Det är ofta det vatten som tas ut för att rena dricksvatten.",
+    "vardagligt_exempel": "När du går ner till strandkanten i en sjö och fyller en hink med vatten för att badet är det ytvatten du har tagit.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "vattnets-egenskaper-ovningar"
+  },
+  {
+    "begrepp": "Kapillärkraft",
+    "forklaring": "Detta är en kraft som får vätskor att klättra uppåt i mycket smala rör eller porer. Kraften vinner över gravitationen i de smala utrymmena.",
+    "vardagligt_exempel": "När du ställer en handduk i en skål med färgat vatten ser du hur färgen kryper upp i tyget mot marken.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "vattnets-egenskaper-ovningar"
+  },
+  {
+    "begrepp": "Värmekapacitet",
+    "forklaring": "Värmekapacitet beskriver hur mycket energi ett ämne behöver för att bli varmare eller kallare. Ämnen med hög värmekapacitet ändrar temperatur långsamt.",
+    "vardagligt_exempel": "Vatten i en kastrull tar lång tid att koka, medan en metallsked i samma vatten blir varm nästan direkt.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "vattnets-egenskaper-ovningar"
+  },
+  {
+    "begrepp": "Lösning",
+    "forklaring": "En lösning bildas när ett ämne, som salt eller socker, blandas upp i en vätska så att det försvinner ur sikte. De små partiklarna sprids jämnt i vätskan.",
+    "vardagligt_exempel": "När du rör om socker i ditt kaffe och det inte längre går att se kristallerna är det en lösning.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "vattnets-egenskaper-ovningar"
+  },
+  {
+    "begrepp": "pH-skala",
+    "forklaring": "pH-skalan är ett mått som visar hur surt eller basiskt något är. Den går vanligtvis från 0 till 14.",
+    "vardagligt_exempel": "Du kan använda en pH-skala för att avgöra om citronsaften är sur eller om tvättmedlet är basiskt.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "oversikt-ph-ovningar"
+  },
+  {
+    "begrepp": "Indikator",
+    "forklaring": "En indikator är ett ämne som ändrar färg beroende på om det finns i en sur eller basisk miljö. Det fungerar som en visuell varningsskylt.",
+    "vardagligt_exempel": "När du häller indikatorvätska i en lösning och den blir röd vet du direkt att det är surt.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "indikatorer-ovningar"
+  },
+  {
+    "begrepp": "pH-meter",
+    "forklaring": "En pH-meter är en elektronisk enhet som ger ett exakt siffervärde för surhetsgraden. Den är mer noggrann än färgindikatorer.",
+    "vardagligt_exempel": "Du sänker en liten sonder i poolvattnet och läser av skärmen för att se om pH-värdet är rätt.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "indikatorer-ovningar"
+  },
+  {
+    "begrepp": "BTB",
+    "forklaring": "BTB är en vanlig indikator som byter färg för att visa vätskans egenskaper. Den är blå i basiska lösningar och gul i sura.",
+    "vardagligt_exempel": "När du blåser genom ett sugrör i BTB-vätska ändras färgen från blå till gul eftersom koldioxiden gör vattnet surt.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "indikatorer-ovningar"
+  },
+  {
+    "begrepp": "Kungsvatten",
+    "forklaring": "Detta är en mycket stark och frätande syrablandning som tillverkas genom att blanda saltsyra och salpetersyra. Blandningen är så kraftfull att den kan lösa upp ädla metaller som guld.",
+    "vardagligt_exempel": "Du ser det kanske i filmer där tjuvar försöker smälta ner ett guldskattkista med en farlig vätska som rökungar.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "syror-ovningar"
+  },
+  {
+    "begrepp": "Växtsyra",
+    "forklaring": "Växtsyror är naturligt förekommande syror som finns i många växter och frukter. De ger ofta maten en syrlig smak som vi känner igen från naturen.",
+    "vardagligt_exempel": "När du tuggar på en sur citron eller dricker nyponsaft smakar det syrligt på grund av dessa syror.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "syror-ovningar"
+  },
+  {
+    "begrepp": "Organisk syra",
+    "forklaring": "Detta är en svag syra som ofta finns i levande organismer, som frukter och bär. Begreppet används ofta synonymt med växtsyra eftersom de kommer från naturen.",
+    "vardagligt_exempel": "Du känner igen det när ättika eller citronsaft får dig att rynka på näsan av syrlighet.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "syror-ovningar"
+  },
+  {
+    "begrepp": "Surt regn",
+    "forklaring": "Surt regn är nederbörd som har ett mycket lågt pH-värde på grund av föroreningar i luften. Det kan skada skogar, sjöar och byggnader eftersom det är frätande.",
+    "vardagligt_exempel": "Du kanske har hört att surt regn har gjort sjöar sura så att fiskar dör, eller att det äter upp sten på gamla kyrkor.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "baser-neutralisation-ovningar"
+  },
+  {
+    "begrepp": "Glaciär",
+    "forklaring": "En glaciär är en enorm massa av packad snö och is som bildas över lång tid. Den rör sig långsamt framåt eftersom sin egen enorma tyngd pressar isen.",
+    "vardagligt_exempel": "Tänk dig en jättestor isberg som ligger på land och långsamt kryper nerför en bergssida som en mycket seg flytande massa.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rena-dricksvatten-ovningar"
+  },
+  {
+    "begrepp": "Grundvatten",
+    "forklaring": "Grundvatten är det vatten som har trängt ner i marken och fyller luckorna i jorden och berg. Det är en viktig källa till vårt dricksvatten.",
+    "vardagligt_exempel": "När du dricker vatten ur kranen kommer det ofta från grundvatten som pumpas upp ur marken.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rena-dricksvatten-ovningar"
+  },
+  {
+    "begrepp": "Virtuellt vatten",
+    "forklaring": "Virtuellt vatten är den totala mängd vatten som har använts för att tillverka en produkt. Det inkluderar allt vatten som behövdes från odling till färdig vara.",
+    "vardagligt_exempel": "Du använder tusentals liter virtuellt vatten när du köper en ny t-shirt eftersom det så mycket vatten krävdes för att odla bomullen.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rena-dricksvatten-ovningar"
+  },
+  {
+    "begrepp": "Flockning",
+    "forklaring": "Flockning är ett steg i vattenrening där man tillsätter ämnen som fångar upp smuts och föroreningar. Dessa partiklar klumpar ihop sig och sjunker ner till botten.",
+    "vardagligt_exempel": "Det liknar när du rör om i en glas vatten med lera och tillsätter något som får lerpartiklarna att klumpa ihop sig och sjunka.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rena-dricksvatten-ovningar"
+  },
+  {
+    "begrepp": "Sedimentering",
+    "forklaring": "Sedimentering är en metod för att separera fasta partiklar från en vätska genom tyngdkraft. När blandningen står stilla sjunker de tunga partiklarna till botten.",
+    "vardagligt_exempel": "Du ser det när du låter en bägare med lerigt vatten stå orört tills leran hamnat längst ner och vattnet ovanpå blir klart.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rena-dricksvatten-ovningar"
+  },
+  {
+    "begrepp": "Filtrering",
+    "forklaring": "Filtrering innebär att man skiljer fasta partiklar från en vätska genom att låta den passera genom ett filter. Filteret håller tillbaka partiklarna medan vätskan rinner igenom.",
+    "vardagligt_exempel": "Det är precis som när du häller kaffebrygd genom ett filterpapper så att bara vätskan hamnar i koppen och kaffesumpen blir kvar.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rena-dricksvatten-ovningar"
+  },
+  {
+    "begrepp": "Mikroorgansim",
+    "forklaring": "Det är levande varelser som är så små att du inte kan se dem med blotta ögat. Du behöver ett mikroskop för att kunna titta på dem.",
+    "vardagligt_exempel": "Du kan inte se bakterier i ditt vatten eller på din handflata utan ett mikroskop.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rena-avloppsvatten-ovningar"
+  },
+  {
+    "begrepp": "Biogas",
+    "forklaring": "Det är en brännbar gas som görs av restprodukter från mat eller avfall. Den anses vara miljövänlig eftersom den inte ökar mängden koldioxid i luften.",
+    "vardagligt_exempel": "Biogas kan användas som bränsle för bussar och lastbilar istället för diesel.",
+    "area": "vatten",
+    "area_name": "Vatten, syror & baser",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rena-avloppsvatten-ovningar"
+  },
+  {
+    "begrepp": "Kemisk tecken",
+    "forklaring": "Det är en kort förkortning som står för ett visst grundämne. Tecknet börjar alltid med en stor bokstav och ibland följs det av en liten.",
+    "vardagligt_exempel": "Järn har det kemiska tecknet Fe och syre har O.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "luftens-gaser-ovningar"
+  },
+  {
+    "begrepp": "Sulfid",
+    "forklaring": "Det är en kemisk förening som alltid innehåller grundämnet svavel. Svavel ger ofta dessa ämnen en tydlig lukt.",
+    "vardagligt_exempel": "Ruttet ägg luktar illa eftersom det innehåller svavelhaltiga sulfider.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemiska-formler-ovningar"
+  },
+  {
+    "begrepp": "Katalysator",
+    "forklaring": "Det är ett ämne som gör att en kemisk reaktion går snabbare. Katalysatorn används upp och förändras inte själv under processen.",
+    "vardagligt_exempel": "Katalysatorn i en bil gör att avgaserna blir renare genom att påskynda kemiska reaktioner.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemiska-reaktioner-ovningar"
+  },
+  {
+    "begrepp": "Endoterm",
+    "forklaring": "Det är en kemisk reaktion som kräver energi för att ske. Den tar upp värme från omgivningen, vilket gör att det blir kallare runt omkring.",
+    "vardagligt_exempel": "När du löser en kallkompres i skolan svalnar den genom att ta upp värme från luften.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemiska-reaktioner-ovningar"
+  },
+  {
+    "begrepp": "Exoterm",
+    "forklaring": "Det är en kemisk reaktion som släpper ifrån sig värmeenergi. Under reaktionen blir det varmare i omgivningen.",
+    "vardagligt_exempel": "När du tänder en tändsticka avger den värme genom en exoterm reaktion.",
+    "area": "reaktioner",
+    "area_name": "Kemiska reaktioner",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemiska-reaktioner-ovningar"
+  },
+  {
+    "begrepp": "Filtrera",
+    "forklaring": "Det är en metod för att separera fasta partiklar från en vätska. Vätskan passerar genom filtret medan de fasta partiklarna stannar kvar.",
+    "vardagligt_exempel": "Du filtrerar kaffe genom att hälla varmt vatten över kaffesump i ett filter.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "separera-blandningar-ovningar"
+  },
+  {
+    "begrepp": "Sedimentera",
+    "forklaring": "Det sker när tunga fasta partiklar sjunker till botten i en vätska. Detta händer naturligt om vätskan står stilla.",
+    "vardagligt_exempel": "Om du låter lera i vatten stå orört en stund sjunker leret ner till botten.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "separera-blandningar-ovningar"
+  },
+  {
+    "begrepp": "Dekantera",
+    "forklaring": "Det är när du hällar försiktigt av en vätska för att lämna det fastna ämnet i botten. Du måste vara noggrann så att botteninnehållet inte hälls med.",
+    "vardagligt_exempel": "Du häller försiktigt av vattnet från kokta potatisar så att potatisen stannar i silen.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "separera-blandningar-ovningar"
+  },
+  {
+    "begrepp": "Indunsta",
+    "forklaring": "Du kokar bort vätskan så att det som var löst i den blir kvar som fast material. Det fungerar bra för att få fram salt ur saltvatten.",
+    "vardagligt_exempel": "När du lämnar en skål med saltvatten ute på solen och dagen efter hittar du kristaller av salt i botten.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "separera-blandningar-ovningar"
+  },
+  {
+    "begrepp": "Destillera",
+    "forklaring": "Du kokar vätskan till ånga och fångar upp den igen när den kyls ner till vätska, vilket separerar den från orenheter. Det ger dig ren vätska som är fri från det som tidigare var löst i den.",
+    "vardagligt_exempel": "När du får färskvatten från havsvatten på en båtur genom att koka vattnet och samla upp den rena ångan.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "separera-blandningar-ovningar"
+  },
+  {
+    "begrepp": "Blandning",
+    "forklaring": "Det är när två eller flera ämnen ligger tillsammans utan att reagera kemiskt med varandra. Du kan alltid separera dem igen till sina ursprungliga beståndsdelar.",
+    "vardagligt_exempel": "När du blandar sand och socker i en burk och sedan kan sila bort sanden för att få tillbaka det rena sockret.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "blandningar-ovningar"
+  },
+  {
+    "begrepp": "Mättad lösning",
+    "forklaring": "Detta händer när vätskan redan har löst upp så mycket ämne som möjligt och inte tar emot mer. Överblivet ämne sjunker då till botten eftersom det inte får plats i lösningen.",
+    "vardagligt_exempel": "När du rör i socker i ditt kaffe tills det inte löser sig längre och sockerkristaller ligger kvar på botten.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "blandningar-ovningar"
+  },
+  {
+    "begrepp": "Uppslamning",
+    "forklaring": "Det är en blandning där fasta partiklar inte löser sig utan hänger kvar i vätskan. Partiklarna kan ofta sedimentera eller silas bort eftersom de inte blir en del av vätskan.",
+    "vardagligt_exempel": "När du blandar jord eller lera med vatten och ser att partiklarna svävar runt men inte försvinner.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "blandningar-ovningar"
+  },
+  {
+    "begrepp": "Emulsion",
+    "forklaring": "Det är en blandning av två vätskor som normalt inte blandas, där den ena är uppdelad i små droppar i den andra. Ofta krävs ett ämne som hjälper dropparna att hålla sig svävande.",
+    "vardagligt_exempel": "När du skakar ihop olivolja och vinäger för en sås, eller dricker mjölk där fettet är fördelat i vattnet.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "blandningar-ovningar"
+  },
+  {
+    "begrepp": "Aerosol",
+    "forklaring": "Detta är när små vätskedroppar eller fasta partiklar svävar fritt i en gas som luft. Det ser vi ofta som dimma, rök eller spray från en burk.",
+    "vardagligt_exempel": "När du sprutar deodorant eller hårspray och ser en dimma av små droppar som sprids i luften.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "blandningar-ovningar"
+  },
+  {
+    "begrepp": "Partikelmodellen",
+    "forklaring": "Det är en förenklad modell där vi tänker oss att allt material består av otroligt små byggnadsstenar. Genom att studera hur dessa partiklar rör sig kan vi förklara ämnens egenskaper.",
+    "vardagligt_exempel": "När du föreställer dig att ett äpple är byggt av miljarder osynliga, små bollar som håller ihop sig.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "partikelmodellen-ovningar"
+  },
+  {
+    "begrepp": "Temperatur",
+    "forklaring": "Temperatur är ett mått på hur snabbt ämnets partiklar rör sig och vibrerar. Ju högre temperatur, desto snabbare och vildare rör sig partiklarna.",
+    "vardagligt_exempel": "När du känner att vattnet i duschen är varmt, vilket betyder att vattenmolekylerna rör sig snabbare än i kallt vatten.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "partikelmodellen-ovningar"
+  },
+  {
+    "begrepp": "Aggregationsform",
+    "forklaring": "Detta är det tillstånd ett ämne befinner sig i, som kan vara fast, flytande eller gas. Vilket tillstånd det är beror främst på hur varm eller kall det är.",
+    "vardagligt_exempel": "När isen (fast) smälter till vatten (flytande) och sedan kokar bort som ånga (gas) på en het spisplatta.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "partikelmodellen-ovningar"
+  },
+  {
+    "begrepp": "Kemisk förändring",
+    "forklaring": "Här omvandlas ämnen till helt nya substanser med andra egenskaper. Det sker alltid en kemisk reaktion där bindningar bryts och bildas på nytt.",
+    "vardagligt_exempel": "När du tänder ett tändsticka och det blir aska och rök har en kemisk förändring skett.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "partikelmodellen-ovningar"
+  },
+  {
+    "begrepp": "Fysikalisk förändring",
+    "forklaring": "Ämnets utseende eller form ändras, men det blir inte ett nytt ämne. Du kan ofta vända på förändringen, till exempel genom att frysa eller smälta.",
+    "vardagligt_exempel": "När du smälter en glass på sommaren ändras den från fast till flytande, men det är fortfarande glass.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "partikelmodellen-ovningar"
+  },
+  {
+    "begrepp": "Kemiskt tecken",
+    "forklaring": "Detta är en kort förkortning som används för att namnge grundämnen i kemin. Tecknet börjar alltid med en stor bokstav och kan ha en liten bokstav till.",
+    "vardagligt_exempel": "Du ser tecknet Cu på en gammal mynt, vilket står för grundämnet koppar.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "atomen-ovningar"
+  },
+  {
+    "begrepp": "Frätande",
+    "forklaring": "Ett ämne, ofta en stark syra eller bas, kan äta sönder eller lösa upp andra material som metall eller hud. Det innebär att materialet skadas eller förstörs vid kontakt.",
+    "vardagligt_exempel": "Om du häller ut stark rengöringsmedel på en metallkran kan den börja rosta eller få hål.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemisakerhet-ovningar"
+  },
+  {
+    "begrepp": "Oxiderande",
+    "forklaring": "Ett ämne som kan ge syre till andra material och därmed få dem att brinna lättare eller reagera kraftigt. Det är en fara eftersom det kan orsaka explosioner eller bränder.",
+    "vardagligt_exempel": "När du blandar vissa starka rengöringsmedel kan de släppa ifrån sig syre som gör att eld sprids snabbare.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemisakerhet-ovningar"
+  },
+  {
+    "begrepp": "Farosymbol",
+    "forklaring": "Detta är en bild på en förpackning som varnar dig för vilken typ av fara produkten utgör. Symbolen visar till exempel om ämnet är brandfarligt, giftigt eller frätande.",
+    "vardagligt_exempel": "Du ser en flamma på en sprayburk, vilket varnar dig för att inte spraya den nära öppen eld.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "illustration",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemisakerhet-ovningar"
+  },
+  {
+    "begrepp": "Analys",
+    "forklaring": "Inom kemin betyder det att man undersöker ett ämne för att se vilka delar det består av och i vilka mängder. Man 'plockar isär' informationen om ämnets uppbyggnad.",
+    "vardagligt_exempel": "En kemist analyserar ditt vattenprov för att se om det finns föroreningar eller mineraler i det.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemihistoria-ovningar"
+  },
+  {
+    "begrepp": "Syntes",
+    "forklaring": "Detta är processen att tillverka ett nytt ämne genom att sätta ihop grundämnen eller enklare ämnen. Det motsatta till analys är alltså att bygga ihop.",
+    "vardagligt_exempel": "När du blandar två vätskor i ett provrör och de reagerar och bildar en ny, fast substans har du syntetiserat något.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kemihistoria-ovningar"
+  },
+  {
+    "begrepp": "Kokpunkt",
+    "forklaring": "Detta är den specifika temperatur då ett flytande ämne börjar koka och går över till gasform. Vid denna temperatur bildas det bubblor av gas i vätskan.",
+    "vardagligt_exempel": "Vatten kokar och förvandlas till ånga när det når 100 grader i din kastrull.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "vad-ar-kemi-ovningar"
+  },
+  {
+    "begrepp": "Vattenlöslighet",
+    "forklaring": "Detta beskriver förmågan hos ett fast ämne att upplösas och blandas helt med vatten. Om ämnet är vattenlösligt försvinner det synligt och bildar en lösning.",
+    "vardagligt_exempel": "När du rör om socker i ditt kaffe löser sig sockret och försvinner, vilket visar att det är vattenlösligt.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "vad-ar-kemi-ovningar"
+  },
+  {
+    "begrepp": "Alkemi",
+    "forklaring": "Alkemi är den gamla föregångaren till modern kemi som fokuserade på att förvandla metaller och hitta livselixir. Det var en blandning av tidig vetenskap, filosofi och magi.",
+    "vardagligt_exempel": "Du kan tänka på alkemi som de mystiska experimenten i gamla fantasyfilmer där en trollkarl försöker göra guld ur bly.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "vad-ar-kemi-ovningar"
+  },
+  {
+    "begrepp": "Hypotes",
+    "forklaring": "En hypotes är din egen gissning om vad som kommer hända innan du börjar ett experiment. Den baseras på vad du redan vet eller tror är sant.",
+    "vardagligt_exempel": "Innan du testar om salt löser sig snabbare i varmt eller kallt vatten, gissar du att det går fortare i det varma.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "vad-ar-kemi-ovningar"
+  },
+  {
+    "begrepp": "Grupp (periodiska systemet)",
+    "forklaring": "En grupp är en lodrät kolumn i det periodiska systemet där alla grundämnen har samma antal elektroner ytterst. Detta gör att de har väldigt liknande kemiska egenskaper.",
+    "vardagligt_exempel": "Det är som att sätta ihop grundämnen i en familj där alla syskon har samma huvudegenskap, precis som att alla i en idrottslag spelar samma position.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-periodiska-systemet-2"
+  },
+  {
+    "begrepp": "Halvmetall",
+    "forklaring": "En halvmetall har egenskaper som ligger mittemellan metaller och icke-metaller. De kan leda ström under vissa förutsättningar men inte alltid.",
+    "vardagligt_exempel": "Det är som en halvöppen dörr som ibland släpper igenom ström och ibland inte, beroende på hur det är inställt.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-periodiska-systemet-2"
+  },
+  {
+    "begrepp": "Ickemetall",
+    "forklaring": "Ickemetaller är grundämnen som inte leder ström eller värle bra och är ofta spröda. De saknar den glans och formbarhet som kännetecknar metaller.",
+    "vardagligt_exempel": "Om du tar en bit kol eller svavel och försöker böja den, så knäcks den lätt istället för att böjas som en metall.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-periodiska-systemet-2"
+  },
+  {
+    "begrepp": "Metall",
+    "forklaring": "Metaller är grundämnen som leder ström och värme, kan smidas till olika former och har ofta en glansig yta. De är ofta starka och tåliga.",
+    "vardagligt_exempel": "Du ser metall varje dag när du äter med en silverbestick eller ser en aluminiumburk som glänser i solljuset.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-periodiska-systemet-2"
+  },
+  {
+    "begrepp": "Period (periodiska systemet)",
+    "forklaring": "En period är en vågrät rad i det periodiska systemet där alla grundämnen har samma antal elektronskal. Egenskaperna förändras gradvis från vänster till höger.",
+    "vardagligt_exempel": "Det är som att läsa en bok rad för rad, där varje rad innehåller grundämnen som har samma antal lager av elektroner runt kärnan.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-periodiska-systemet-2"
+  },
+  {
+    "begrepp": "Periodiskt system",
+    "forklaring": "Det periodiska systemet är en tabell som sorterar alla kända grundämnen efter deras egenskaper och atomnummer. Det fungerar som ett kartverktyg för kemister.",
+    "vardagligt_exempel": "Det är som en stor katalog eller ett bibliotek där varje grundämne har sin plats och sin egen beskrivning.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-periodiska-systemet-2"
+  },
+  {
+    "begrepp": "Fiber",
+    "forklaring": "En fiber är ett material som består av mycket långa, tunna trådar som är starka i längdled. Fibers kan vara naturliga eller syntetiska.",
+    "vardagligt_exempel": "När du drar i en tråd på din tröja och den inte går av direkt, då är det fibrerna som håller ihop tyget.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-materiallara"
+  },
+  {
+    "begrepp": "Kemisk bindning",
+    "forklaring": "En kemisk bindning är kraften som håller ihop atomer till molekyler eller kristaller. Det finns olika typer av bindningar som avgör hur atomerna sitter ihop.",
+    "vardagligt_exempel": "Det är som att atomerna håller i varandra för händerna så hårt att de inte kan släppa taget och bilda ett nytt ämne.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-materiallara"
+  },
+  {
+    "begrepp": "Grundämnesfamilj",
+    "forklaring": "Det är en grupp grundämnen som står under varandra i det periodiska systemet. De liknar varandra i sina kemiska egenskaper eftersom de har samma antal valenselektroner.",
+    "vardagligt_exempel": "Det är som att alla elever i en specifik klass har samma skoluniform, så de ser ut att tillhöra samma grupp.",
+    "area": "materia",
+    "area_name": "Materiens uppbyggnad",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "begrepp-periodiska-systemet"
+  },
+  {
+    "begrepp": "Crackning",
+    "forklaring": "Det är en process där långa kolvätemolekyler bryts sönder till kortare molekyler. Detta görs för att få fram bränslen som är mer efterfrågade och värdefulla.",
+    "vardagligt_exempel": "Det är som att klippa en lång tråd i många små bitar för att få fler användbara snören.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "branslen-for-fordon-ovningar"
+  },
+  {
+    "begrepp": "Råolja",
+    "forklaring": "Det är olja som pumpas upp ur marken direkt utan någon bearbetning. Den innehåller en blandning av olika ämnen som måste separeras senare.",
+    "vardagligt_exempel": "Det är som att dricka färskpressad juice direkt från pressen innan du sätter i den på en flaska och märker den.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "branslen-for-fordon-ovningar"
+  },
+  {
+    "begrepp": "Förnybart bränsle",
+    "forklaring": "Det är en energikälla som naturligt fylls på igen och därför inte tar slut. Exempel är sol, vind och vatten som ständigt finns tillgängliga.",
+    "vardagligt_exempel": "Det är som att använda solljus för att torka kläder, eftersom solen alltid kommer tillbaka nästa dag.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "branslen-for-fordon-ovningar"
+  },
+  {
+    "begrepp": "Hybridbil",
+    "forklaring": "Det är en bil som har två olika motorer, vanligtvis en bensinmotor och en elmotor. Den kan växla mellan eller kombinera dessa för att spara bränsle.",
+    "vardagligt_exempel": "Det är som att ha en cykel med en liten elmotor som hjälper dig när du tröttnar på att trampa.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "branslen-for-fordon-ovningar"
+  },
+  {
+    "begrepp": "Fossilt bränsle",
+    "forklaring": "Det är energikällor som bildades för miljontals år sedan av döda organismer och som finns lagrade under jorden. Eftersom det tar väldigt lång tid att bilda nytt är det en icke-förnybar resurs.",
+    "vardagligt_exempel": "Det är som att ha en spargris med mynt som tar slut när du spenderar dem, eftersom det tar år att tjäna ihop nya.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "fossila-branslen-ovningar"
+  },
+  {
+    "begrepp": "Jordskorpa",
+    "forklaring": "Det är jordens yttersta hårda skal som vi lever på. Det är bara en tunn hinna jämfört med jordens totala storlek, mellan 5 och 70 kilometer tjock.",
+    "vardagligt_exempel": "Det är som skalet på ett ägg, som är väldigt tunt i förhållande till hela ägget.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "fossila-branslen-ovningar"
+  },
+  {
+    "begrepp": "Fraktionerad destillation",
+    "forklaring": "Det är en metod för att separera en vätskeblandning baserat på hur högt varje ämne kokar. När blandningen hettas upp avdunstar delarna vid olika temperaturer och samlas upp var för sig.",
+    "vardagligt_exempel": "Det är som att sortera bollar efter storlek genom att släppa dem genom ett galler med hål som bara låter de små passera.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "fossila-branslen-ovningar"
+  },
+  {
+    "begrepp": "Oljeraffinaderi",
+    "forklaring": "Det är en fabrik där råolja bearbetas och omvandlas till användbara produkter som bensin och diesel. Här separeras de olika kolvätena från råoljan.",
+    "vardagligt_exempel": "Det är som en stor matberedning där råvaror som mjöl och ägg mixas till färdiga kakor.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "fossila-branslen-ovningar"
+  },
+  {
+    "begrepp": "Pipeline",
+    "forklaring": "Det är ett stort rörledningssystem som transporterar fossila bränslen som gas eller olja över långa sträckor. Det är ett effektivt sätt att flytta energin från utvinningsplatser till användning.",
+    "vardagligt_exempel": "Det är som ett sugerör som transporterar läsk från en stor tank direkt till din glasburk.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "fossila-branslen-ovningar"
+  },
+  {
+    "begrepp": "Torv",
+    "forklaring": "Torv är en typ av fossilt bränsle som bildas när växter, främst mossor, inte får ruttna helt färdigt. Det är alltså delvis sönderfallna växtdelar som ligger packade i marken.",
+    "vardagligt_exempel": "När du ser mossan som ligger blöt och mörk i en myrmark, är det torv som kan användas som bränsle.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "fossila-branslen-ovningar"
+  },
+  {
+    "begrepp": "Naturgas",
+    "forklaring": "Naturgas är ett fossilt bränsle som består av gaser som metan och etan, vilka vi borrar upp ur marken. Det används ofta för att värma upp hus eller laga mat.",
+    "vardagligt_exempel": "När du tändspelar på spisen hemma för att laga mat, använder du oftast naturgas som kommer från en gasledning.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "fossila-branslen-ovningar"
+  },
+  {
+    "begrepp": "Brunkol och stenkol",
+    "forklaring": "Båda är fossila bränslen som har bildats av gamla växter som lagrats i berg under mycket lång tid. Stenkol har legat djupare och längre än brunkol, vilket gör att det innehåller mer energi.",
+    "vardagligt_exempel": "Tänk på att stenkol är som en mer koncentrerad version av brunkol eftersom det har hunnit 'mognas' längre i jorden.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "fossila-branslen-ovningar"
+  },
+  {
+    "begrepp": "Sedimentär bergart",
+    "forklaring": "Detta är en bergart som skapas när sand, stenbitar eller annat material pressas ihop under väldigt lång tid. Trycket gör att partiklarna hålls samman som ett fast berg.",
+    "vardagligt_exempel": "När du trampar på sanden vid stranden och den håller formen, liknar det processen där sanden långsamt blir till bergart.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "fossila-branslen-ovningar"
+  },
+  {
+    "begrepp": "Kolväte",
+    "forklaring": "Ett kolväte är ett kemiskt ämne som enbart består av två grundämnen: kol och väte. Dessa ämnen sitter ihop i olika mönster och bildar molekyler.",
+    "vardagligt_exempel": "Propanen du använder i grillen för att grilla korv är ett exempel på ett kolväte.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "formelskrivning-forbranning-ovningar"
+  },
+  {
+    "begrepp": "Kemisk formel",
+    "forklaring": "En kemisk formel är ett kort sätt att skriva ner vilka grundämnen ett ämne innehåller och hur många atomer av varje sort som finns. Det fungerar som en exakt receptbeskrivning för ämnets sammansättning.",
+    "vardagligt_exempel": "När du ser H2O vet du direkt att vatten består av två väteatomer och en syreatom.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "formelskrivning-forbranning-ovningar"
+  },
+  {
+    "begrepp": "Balansera formler",
+    "forklaring": "Att balansera en formel betyder att du ser till att det finns exakt lika många atomer av varje slag före och efter en kemisk reaktion. Det är viktigt för att materialet ska vara lika mycket i slutet som i början.",
+    "vardagligt_exempel": "Det är som att se till att du har lika många legobitar till vänster som till höger när du bygger om en modell.",
+    "area": "kemins_metoder",
+    "area_name": "Kemins metoder",
+    "suggested_imageType": "foto",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "formelskrivning-forbranning-ovningar"
+  },
+  {
+    "begrepp": "Karboxylsyra",
+    "forklaring": "Karboxylsyra är en typ av syra som naturligt finns i växter och djur, och kallas ibland för organisk syra. Den har en specifik kemisk struktur som gör att den kan ge ifrån sig vätejoner.",
+    "vardagligt_exempel": "Ett vanligt exempel är ättiksyra i din hushållsättika, som är en karboxylsyra.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "karboxylsyror-estrar-ovningar"
+  },
+  {
+    "begrepp": "Ester",
+    "forklaring": "Estrar är kemiska ämnen som ofta har en stark och behaglig lukt, vilket gör dem populära i livsmedel. De används flitigt för att ge godis och läsk en fruktig smak och doft.",
+    "vardagligt_exempel": "Den doften av hallon eller apelsin som du känner i ett godis, kommer ofta från estrar.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "karboxylsyror-estrar-ovningar"
+  },
+  {
+    "begrepp": "Hydroxi – grupp",
+    "forklaring": "En hydroxigrupp består av en syreatom och en väteatom som sitter ihop, och skrivs som -OH i kemiska strukturer. När denna grupp finns i en molekyl gör den ofta att ämnet blir en alkohol.",
+    "vardagligt_exempel": "När du dricker en spritdrink med etanol, så innehåller den molekyler som har en hydroxigrupp.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkoholer-ovningar"
+  },
+  {
+    "begrepp": "Organisk",
+    "forklaring": "Detta begrepp används om ämnen som bygger på kolatomer. De flesta levande organismer och många syntetiska material räknas hit.",
+    "vardagligt_exempel": "När du äter en äpple eller använder en plastpåse hanterar du organiska ämnen.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkoholer-ovningar"
+  },
+  {
+    "begrepp": "Molekyl",
+    "forklaring": "En molekyl bildas när två eller fler atomer hänger ihop genom kemiska bindningar. Det är den minsta delen av ett ämne som behåller dess egenskaper.",
+    "vardagligt_exempel": "Vattenmolekyler (H2O) är de små enheter som tillsammans bildar vattnet du dricker.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkoholer-ovningar"
+  },
+  {
+    "begrepp": "Envärd, tvåvärd, trevärd",
+    "forklaring": "Dessa termer beskriver hur många hydroxylgrupper (OH-grupper) en alkoholmolekyl innehåller. En envärd alkohol har en grupp, en tvåvärd har två och en trevärd har tre.",
+    "vardagligt_exempel": "Etanol i alkoholhaltiga drycker är envärd, medan glycerin som finns i hudkräm är trevärd.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkoholer-ovningar"
+  },
+  {
+    "begrepp": "Träsprit",
+    "forklaring": "Träsprit är ett gammalt namn för metanol, den enklaste alkoholen. Det är mycket giftigt för människor även i små mängder.",
+    "vardagligt_exempel": "Du får aldrig dricka träsprit eftersom det kan leda till blindhet eller döden, till skillnad från den alkohol du kan få i drycker.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkoholer-ovningar"
+  },
+  {
+    "begrepp": "Molekylformel",
+    "forklaring": "En molekylformel visar vilka grundämnen som finns i en molekyl och hur många atomer av varje slag som ingår. Den ger dig en snabb överblick över sammansättningen utan att visa hur atomerna sitter ihop.",
+    "vardagligt_exempel": "Formeln C6H12O6 säger att sockermolekylen består av 6 kolatomer, 12 väteatomer och 6 syreatomer.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkoholer-ovningar"
+  },
+  {
+    "begrepp": "Strukturformel",
+    "forklaring": "En strukturformel är en ritning som visar hur atomerna i en molekyl är bundna till varandra. Den visar alltså molekylen utseende och bindningsmönster, inte bara vilka ämnen som finns.",
+    "vardagligt_exempel": "När du ritar en stjärna med prickar och streck för att visa hur elektronerna delas mellan atomer, använder du principer från strukturformler.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkoholer-ovningar"
+  },
+  {
+    "begrepp": "Alkener",
+    "forklaring": "Alkener är kolväten som innehåller minst en dubbelbindning mellan två kolatomer. De är viktiga byggstenar för att tillverka plast och andra material.",
+    "vardagligt_exempel": "Eten som används för att påskynda mognaden av bananer är en typ av alken.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkener-alkyner-ovningar"
+  },
+  {
+    "begrepp": "Alkyner",
+    "forklaring": "Alkyner är kolväten som kännetecknas av att de har minst en trippelbindning mellan kolatomerna. De är kemiskt reaktiva och används inom industri.",
+    "vardagligt_exempel": "Etyn, även kallat acetylen, används i svetsbrännor för att skapa mycket höga temperaturer.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkener-alkyner-ovningar"
+  },
+  {
+    "begrepp": "Metanserie",
+    "forklaring": "Metanserien är en följd av kolväten som skiljer sig åt med en kolatom och två väteatomer för varje steg. De börjar med metan och fortsätter med etan, propan och så vidare.",
+    "vardagligt_exempel": "Propan som finns i gasolflaskan för grillen är ett av de längre leden i metanserien.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkener-alkyner-ovningar"
+  },
+  {
+    "begrepp": "Dubbelbindning",
+    "forklaring": "En dubbelbindning innebär att två kolatomer delar två par av elektroner istället för ett, vilket gör bindningen starkare och styvare. Detta påverkar hur molekylen kan böjas och reagera.",
+    "vardagligt_exempel": "I eten sitter de två kolatomerna hårt ihop med en dubbelbindning, vilket gör att molekylen inte kan snurra fritt runt bindningen.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkener-alkyner-ovningar"
+  },
+  {
+    "begrepp": "Trippelbindning",
+    "forklaring": "Detta är en stark kemisk bindning där två atomer delar tre elektronpar med varandra. Det gör att atomerna sitter väldigt tätt ihop.",
+    "vardagligt_exempel": "Tänk dig att du och en kompis håller i varandras händer med båda armarna samt klamar fast er med en rem – det är en mycket starkare hållning än att bara hålla i en hand.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkener-alkyner-ovningar"
+  },
+  {
+    "begrepp": "Omättade kolväten",
+    "forklaring": "Detta är kolväten som har minst en dubbel- eller trippelbindning mellan kolatomerna. De kallas omättade eftersom de kan bilda fler bindningar med andra atomer.",
+    "vardagligt_exempel": "Det är som en tom plats på en parkbänk där det fortfarande finns utrymme för fler personer att sitta, till skillnad från en fullsatt bänk.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "alkener-alkyner-ovningar"
+  },
+  {
+    "begrepp": "Isomer",
+    "forklaring": "Isomerer är molekyler som har exakt samma antal och typ av atomer men som är uppbyggda på olika sätt. Även om ingredienserna är lika, blir egenskaperna olika.",
+    "vardagligt_exempel": "Det är precis som att bygga två olika hus av exakt samma LEGO-stenar – utseendet och funktionen blir olika trots att materialet är identiskt.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "isomerer-ovningar"
+  },
+  {
+    "begrepp": "Kolkedja",
+    "forklaring": "En kolkedja är en rad av kolatomer som sitter ihop som länkar i en kedja. Detta är ryggraden i nästan alla kolväten.",
+    "vardagligt_exempel": "Tänk dig en rad barn som håller i varandras händer och bildar en lång människo-kedja i idrottssalen.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "isomerer-ovningar"
+  },
+  {
+    "begrepp": "Alkaner",
+    "forklaring": "Alkaner är de enklaste kolvätena där kolatomerna är sammanbundna enbart med enkelbindningar. De är mycket stabila och förekommer ofta i bränslen.",
+    "vardagligt_exempel": "Det är som enkla, raka vägar utan korsningar eller svängar, vilket gör dem lätta att navigera i.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "isomerer-ovningar"
+  },
+  {
+    "begrepp": "Mättade kolväten",
+    "forklaring": "Dessa kolväten innehåller endast enkelbindningar mellan kolatomerna, vilket gör att de är 'mättade' med väte. De kan inte ta upp fler väteatomer utan att bindningarna bryts.",
+    "vardagligt_exempel": "Det är som en fullpackad ryggsäck där det inte ryms en enda bok till, eftersom alla fack är upptagna.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "isomerer-ovningar"
+  },
+  {
+    "begrepp": "Nomenklatur",
+    "forklaring": "Nomenklatur är det systematiserade regelsystemet vi använder för att ge kemiska ämnen unika och tydliga namn. Det säkerställer att alla vet exakt vilket ämne man pratar om.",
+    "vardagligt_exempel": "Det fungerar som ett standardiserat adressystem där varje hus har ett unikt nummer, så att postbudet alltid vet var det ska leverera.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "metanserien-ovningar"
+  },
+  {
+    "begrepp": "Förbränning",
+    "forklaring": "Förbränning är en kemisk reaktion där ett ämne reagerar snabbt med syre och frigör energi i form av värme och ljus. Vid förbränning av kolväten bildas ofta koldioxid och vatten.",
+    "vardagligt_exempel": "Det är samma typ av process som sker när du tänder på en tändsticka eller när en brasa glöder i en kamin.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kolets-kretslopp-ovningar"
+  },
+  {
+    "begrepp": "Förmultna",
+    "forklaring": "Förruttnelse är en långsam nedbrytning av organiskt material som sker tack vare mikroorganismer och svampar. Till skillnad från förbränning sker detta utan eld och oftast vid lägre temperaturer.",
+    "vardagligt_exempel": "Det är som när löv som ligger på marken under hösten långsamt försvinner och blir till jord under våren.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "kolets-kretslopp-ovningar"
+  },
+  {
+    "begrepp": "Oorganisk kemi",
+    "forklaring": "Inom den oorganiska kemin studerar man ämnen som vanligtvis inte innehåller kol-väte-bindningar. Det omfattar allt från metaller och salt till mineraler.",
+    "vardagligt_exempel": "Det är kemins gren som handlar om saker som salt i saltkaret, järn i en spik eller glas i ett fönster, snarare än levande organismer.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "det-unika-kolet-ovningar"
+  },
+  {
+    "begrepp": "Organism",
+    "forklaring": "En organism är något som lever, som till exempel en människa, ett djur eller en växt. De växer, äter och förökar sig.",
+    "vardagligt_exempel": "När du ser en katt som springer runt i trädgården är det en organism.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "det-unika-kolet-ovningar"
+  },
+  {
+    "begrepp": "Kemisk energi",
+    "forklaring": "Det är energi som lagras inne i ämnen som mat och bränsle. Du får energi av den när du äter eller när bensin brinner.",
+    "vardagligt_exempel": "När du äter en banan får du kemisk energi som gör att du orkar leka.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "det-unika-kolet-ovningar"
+  },
+  {
+    "begrepp": "Amorft kol",
+    "forklaring": "Detta är rent kol där atomerna ligger i en oordnad struktur utan fast form. Det finns till exempel i kolbitar och grafit.",
+    "vardagligt_exempel": "När du skriver med en vanlig blyerts penna lämnar du efter dig amorft kol på pappret.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rent-kol-ovningar"
+  },
+  {
+    "begrepp": "Aktivt kol",
+    "forklaring": "Det är rent kol med många små hål som kan suga åt sig smuts och dåliga lukter. Det används ofta för att rena vatten och luft.",
+    "vardagligt_exempel": "I ditt vattenfilter hemma sitter ofta aktivt kol som tar bort smaker och lukter ur vattnet.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rent-kol-ovningar"
+  },
+  {
+    "begrepp": "Por",
+    "forklaring": "En por är ett litet hål i ett fast material. Genom dessa hål kan vätskor eller gaser tränga in i materialet.",
+    "vardagligt_exempel": "En svamp har många porer som gör att den kan suga upp vatten.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rent-kol-ovningar"
+  },
+  {
+    "begrepp": "Kolfiber",
+    "forklaring": "Kolfiber är ett material som består av mycket tunna trådar av rent kol. Det är starkt och lätt, vilket gör det populärt i sportutrustning.",
+    "vardagligt_exempel": "Din cykelram eller tennisracket är kanske tillverkad av kolfiber för att vara både lätt och stark.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rent-kol-ovningar"
+  },
+  {
+    "begrepp": "Symmetrisk",
+    "forklaring": "Något är symmetriskt om det ser likadant ut på båda sidor om en mittlinje. Du kan ofta vika föremålet på mitten så att delarna stämmer överens.",
+    "vardagligt_exempel": "En fjärils vingar är symmetriska eftersom de ser likadana ut till vänster och höger.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rent-kol-ovningar"
+  },
+  {
+    "begrepp": "Fulleren",
+    "forklaring": "Fulleren är en form av rent kol som bildar specifika former, som en fotboll eller ett långt rör. Den vanligaste formen kallas buckminsterfulleren.",
+    "vardagligt_exempel": "En fulleren som ser ut som en fotboll består av 60 kolatomer som sitter ihop i hexagoner och pentagoner.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rent-kol-ovningar"
+  },
+  {
+    "begrepp": "Grafen",
+    "forklaring": "Grafen är en extremt tunn skiva av rent kol som bara är en enda atom tjock. Det är mycket starkt och leder elektricitet bra.",
+    "vardagligt_exempel": "Grafen är så tunt att du inte kan se det ens med ett vanligt mikroskop, men det är starkare än stål.",
+    "area": "organisk",
+    "area_name": "Organisk kemi",
+    "suggested_imageType": "diagram",
+    "source": "ugglansno.se (kemi) + förklaring/exempel omformulerade av lokal LLM",
+    "source_page": "rent-kol-ovningar"
+  }
+]

@@ -34,9 +34,16 @@ Env overrides:
                            registry key; P4 makes this an `auto` choice).
   LARBILD_RENDER_POLL_S    default 1.0 — ComfyUI history poll cadence.
   LARBILD_RENDER_TIMEOUT_S default 600.0 — give up on a single render after this.
+  LARBILD_DIFFUSION_IMAGE_TYPES  default 'foto,illustration,mikroskop,tvarsnitt'
+                           — the imageTypes whose thin prompt is replaced by a
+                           concept-aligned educational prompt (lb-edu-prompt).
+  LARBILD_FLUX_ROUTE_ENABLE      default 0 — when a FLUX render lane exists,
+                           flip on to route illustration/mikroskop/tvärsnitt to
+                           it (dormant/advisory until a FLUX target is wired).
 """
 from __future__ import annotations
 
+import json
 import logging
 import os
 import time
@@ -46,6 +53,7 @@ from typing import Any, Callable, Iterator, Optional
 
 from flask import current_app
 
+from . import edu_prompt as _edu_prompt
 from . import gpu_lock as _gpu_lock
 from . import vram_pause as _vram_pause
 from . import workflow as _workflow
@@ -77,6 +85,9 @@ log = logging.getLogger("larbild.render_worker")
 __all__ = [
     "render_job",
     "run_worker_loop",
+    "build_specific_prompt",
+    "flux_route_for",
+    "DIFFUSION_IMAGE_TYPES",
     "DEFERRED_LIVE_RENDER",
     "RenderError",
 ]
@@ -93,6 +104,38 @@ DEFERRED_LIVE_RENDER = (
 DEFAULT_BACKEND = os.environ.get("LARBILD_RENDER_BACKEND", "vm100")
 POLL_S = float(os.environ.get("LARBILD_RENDER_POLL_S", "1.0"))
 RENDER_TIMEOUT_S = float(os.environ.get("LARBILD_RENDER_TIMEOUT_S", "600.0"))
+
+# The DIFFUSION image types — the ones this render path produces with a
+# diffusion model (SDXL today). diagram / tidslinje / karta now go to the
+# PROCEDURAL engine (clean vector renders); foto / illustration / mikroskop /
+# tvärsnitt stay diffusion and are the ones the concept-aligned prompt engine
+# (lb-edu-prompt) improves. A job whose image_type is in this set has its thin
+# prompt replaced by a SPECIFIC, begrepp-grounded educational prompt before the
+# graph is assembled. (A type NOT in this set still renders via the same path,
+# just without the diffusion-specific prompt rewrite — defensive default.)
+DIFFUSION_IMAGE_TYPES = frozenset(
+    (os.environ.get("LARBILD_DIFFUSION_IMAGE_TYPES")
+     or "foto,illustration,mikroskop,tvarsnitt").replace(" ", "").split(",")
+)
+
+# FLUX-routing flag (P-follow-up). illustration / mikroskop / tvärsnitt render
+# noticeably cleaner on a FLUX model than on SDXL, so the design wants them on a
+# FLUX lane WHEN one exists. No FLUX render target is wired yet (the registry is
+# SDXL-only — vm100 3090 + vm153 B70), so this is a DORMANT routing hook: it is
+# OFF by default and, even when enabled, only annotates the job's intended lane
+# (meta['flux_route']) — it does NOT change the backend until a FLUX target is
+# registered. Flip LARBILD_FLUX_ROUTE_ENABLE=1 once a FLUX lane lands (tracked as
+# a follow-up bead) to make these types prefer it. Until then: SDXL + the right
+# per-cell LoRA (the taxonomy matrix), exactly as before.
+FLUX_ROUTE_ENABLE = (os.environ.get("LARBILD_FLUX_ROUTE_ENABLE", "0").strip().lower()
+                     in {"1", "true", "yes", "on"})
+FLUX_ROUTE_IMAGE_TYPES = frozenset(
+    (os.environ.get("LARBILD_FLUX_ROUTE_IMAGE_TYPES")
+     or "illustration,mikroskop,tvarsnitt").replace(" ", "").split(",")
+)
+# The FLUX render target key (in gpu_telemetry.RENDER_TARGETS) once it exists.
+# Absent today → no actual reroute; the flag stays advisory.
+FLUX_ROUTE_TARGET = os.environ.get("LARBILD_FLUX_ROUTE_TARGET", "flux")
 
 
 class RenderError(RuntimeError):
@@ -123,6 +166,127 @@ def _default_comfy_factory() -> ComfyUIClient:
 
 def _backend_label() -> str:
     return RENDER_TARGETS.get(DEFAULT_BACKEND, {}).get("label", DEFAULT_BACKEND)
+
+
+def _concept_from_job(job: dict) -> str:
+    """The begrepp (concept) a render should depict.
+
+    Resolution order, most-specific first:
+      1. an explicit ``begrepp`` in the submitted params blob (a funnel/batch can
+         send the concept name distinct from a free-form prompt),
+      2. the job ``title`` (the funnel's concept label),
+      3. the job ``prompt`` (the operator's typed text — usually just the concept).
+    The first non-empty wins. This is the seed the edu-prompt engine grounds the
+    image in (its förklaring + vardagligt_exempel are looked up from it).
+    """
+    params = job.get("params_json")
+    if params:
+        try:
+            blob = json.loads(params)
+            if isinstance(blob, dict):
+                cand = (blob.get("begrepp") or blob.get("concept") or "").strip()
+                if cand:
+                    return cand
+        except (ValueError, TypeError):  # pragma: no cover - malformed params
+            pass
+    title = (job.get("title") or "").strip()
+    if title:
+        return title
+    return (job.get("prompt") or "").strip()
+
+
+def _params_field(job: dict, *keys: str) -> Optional[str]:
+    """Pull the first present non-empty value for *keys* from params_json."""
+    params = job.get("params_json")
+    if not params:
+        return None
+    try:
+        blob = json.loads(params)
+    except (ValueError, TypeError):  # pragma: no cover - malformed params
+        return None
+    if not isinstance(blob, dict):
+        return None
+    for k in keys:
+        v = blob.get(k)
+        if isinstance(v, str) and v.strip():
+            return v.strip()
+    return None
+
+
+def build_specific_prompt(job: dict) -> tuple[str, Optional[str], dict]:
+    """Concept-aligned positive prompt (+ SFW negative) for a diffusion job.
+
+    For a DIFFUSION image type (:data:`DIFFUSION_IMAGE_TYPES`), the thin job
+    prompt is replaced by a SPECIFIC, begrepp-grounded educational prompt from
+    :func:`app.edu_prompt.build_edu_prompt` — driven by the 14B composer with a
+    rich template fallback, matched to the imageType style. The SFW negative
+    scaffold is used so the deformed/inappropriate failure modes are pushed away.
+
+    For a non-diffusion type (defensive — those normally never reach this still
+    worker), the original prompt + the default negative are returned unchanged.
+
+    Returns ``(positive, negative, edu_meta)`` where ``edu_meta`` records what
+    happened (source = llm|fallback, the concept, the flux-route intent) for the
+    library row / telemetry. ``negative`` is None to mean "let assemble_txt2img
+    use its default".
+    """
+    image_type = job.get("image_type")
+    original = job.get("prompt") or ""
+
+    if not image_type or image_type not in DIFFUSION_IMAGE_TYPES:
+        return original, None, {"edu_source": "passthrough", "image_type": image_type}
+
+    concept = _concept_from_job(job)
+    if not concept:
+        # No concept to ground on — keep the operator's prompt, still apply the
+        # SFW negative so a bare submit is at least scaffolded.
+        return original, _edu_prompt.SFW_NEGATIVE, {
+            "edu_source": "passthrough_no_concept", "image_type": image_type,
+        }
+
+    built = _edu_prompt.build_edu_prompt(
+        subject=job["subject"],
+        image_type=image_type,
+        begrepp=concept,
+        area=job.get("area"),
+        # A funnel/batch may carry the förklaring/exempel explicitly; else the
+        # engine back-fills them from the bundled begrepp dataset.
+        forklaring=_params_field(job, "forklaring", "förklaring"),
+        vardagligt_exempel=_params_field(job, "vardagligt_exempel", "exempel"),
+    )
+    edu_meta = {
+        "edu_source": built["source"],          # "llm" or "fallback"
+        "edu_error": built.get("error"),
+        "concept": concept,
+        "image_type": image_type,
+        "original_prompt": original,
+        "flux_route": flux_route_for(image_type),
+    }
+    log.info(
+        "render prompt for %s: concept=%r source=%s flux_route=%s",
+        job.get("id"), concept, built["source"], edu_meta["flux_route"],
+    )
+    return built["prompt"], _edu_prompt.SFW_NEGATIVE, edu_meta
+
+
+def flux_route_for(image_type: Optional[str]) -> Optional[str]:
+    """The FLUX render-target this image type SHOULD use, or None.
+
+    The FLUX-routing flag (a follow-up): illustration / mikroskop / tvärsnitt
+    render cleaner on FLUX. Returns the configured FLUX target key when the flag
+    is on AND a FLUX target is actually registered AND this type is FLUX-eligible;
+    otherwise None (SDXL stays the lane). Today no FLUX target is registered, so
+    this returns None and is a dormant, ready-to-flip hook — flipping
+    LARBILD_FLUX_ROUTE_ENABLE without a registered target still safely no-ops.
+    """
+    if not FLUX_ROUTE_ENABLE or not image_type:
+        return None
+    if image_type not in FLUX_ROUTE_IMAGE_TYPES:
+        return None
+    if FLUX_ROUTE_TARGET not in RENDER_TARGETS:
+        # Flag is on but no FLUX lane is wired yet — stay on SDXL, don't pretend.
+        return None
+    return FLUX_ROUTE_TARGET
 
 
 def _storage_dir() -> Path:
@@ -242,15 +406,28 @@ def render_job(
         write_job_state(job_id, {"job_id": job_id, "status": "running",
                                  "progress_step": 0, "progress_total": 1})
 
+        # Replace the thin job prompt with a SPECIFIC, begrepp-grounded
+        # educational prompt for a diffusion image type (lb-edu-prompt). This is
+        # the specificity fix: the positive now depicts the concept's actual
+        # content (förklaring + everyday example), matched to the imageType
+        # style, instead of a generic "pedagogiskt <type> av <concept>". For a
+        # non-diffusion type it returns the original prompt unchanged.
+        positive, negative, edu_meta = build_specific_prompt(job)
+
         # Build the graph. resolve_and_validate_lora is the SFW choke point: an
-        # off-allowlist LoRA raises here, before anything reaches the GPU.
+        # off-allowlist LoRA raises here, before anything reaches the GPU. The
+        # LoRA is STILL resolved server-side from (subject, imageType) — the
+        # concept-aligned prompt changes only the positive text, never the LoRA
+        # allowlist or the negative scaffold.
         workflow, meta = _workflow.assemble_txt2img(
             subject=job["subject"],
             image_type=job["image_type"],
-            prompt=job["prompt"] or "",
+            prompt=positive or job["prompt"] or "",
+            neg_prompt=negative,  # SFW negative for diffusion; None → default
             seed=job["seed"] if job["seed"] is not None else _default_seed(),
         )
         meta["area"] = job["area"]  # carry the sort key for the output path
+        meta["edu"] = edu_meta      # provenance: how the prompt was built
 
         # Acquire the SHARED VM100 lock, then pause VRAM, then submit. The lock
         # makes larbild wait while imagegen holds the 3090 (and vice-versa).
