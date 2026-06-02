@@ -2,16 +2,37 @@
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Hörselgång – kanalen in till trumhinnan</text>
 <text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Genomskärning av örat</text>
-<path d="M 110 170 C 70 165 60 250 95 300 C 110 330 145 330 150 305 C 165 320 190 305 180 285 C 200 280 200 250 182 248 C 195 225 175 200 150 210 C 150 180 135 168 110 170 Z" fill="#fcd9c8" stroke="#b45309" stroke-width="2"/>
-<text x="110" y="360" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Ytteröra</text>
-<path d="M 165 235 L 520 230 L 520 290 L 165 285 Z" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
-<text x="340" y="215" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Hörselgång (kanal)</text>
-<line x1="210.0" y1="260.0" x2="460.0" y2="260.0" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="470.0,260.0 460.0,265.5 460.0,254.5" fill="#2563eb"/>
-<text x="340" y="275" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">ljudet leds in</text>
-<line x1="522.0" y1="222.0" x2="540.0" y2="298.0" stroke="#7c2d12" stroke-width="5"/>
-<text x="575" y="200" font-family="Arial,sans-serif" font-size="12" fill="#7c2d12" text-anchor="middle" font-weight="bold">Trumhinna</text>
-<line x1="560.0" y1="215.0" x2="540.8" y2="241.9" stroke="#7c2d12" stroke-width="1.5"/>
-<polygon points="535.0,250.0 536.3,238.7 545.3,245.1" fill="#7c2d12"/>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hörselgången är den smala kanalen som leder ljudvågorna in till trumhinnan</text>
+
+<!-- outer ear (pinna) on the left -->
+<path d="M 120 175 C 78 168 66 258 104 310 C 120 342 158 340 162 312
+         C 178 328 204 312 192 290 C 214 286 214 254 194 252
+         C 208 228 186 202 160 214 C 160 182 146 172 120 175 Z"
+      fill="#fcd9c8" stroke="#b45309" stroke-width="2"/>
+<text x="118" y="368" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Ytteröra</text>
+
+<!-- ear canal (hörselgång): horizontal channel from pinna to inner end -->
+<path d="M 175 240 L 500 236 L 500 296 L 175 290 Z" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+<text x="335" y="220" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Hörselgång (kanal)</text>
+
+<!-- sound led in -->
+<line x1="210" y1="266" x2="455" y2="266" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="466,266 453,272 453,260" fill="#2563eb"/>
+<text x="330" y="282" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">ljudet leds in</text>
+
+<!-- eardrum (trumhinna) at the inner end, drawn clearly SLANTED/oblique -->
+<!-- membrane line tilted ~30 deg from vertical, spanning the canal mouth -->
+<line x1="486" y1="216" x2="540" y2="312" stroke="#7c2d12" stroke-width="6"/>
+<!-- faint frame ring around it to read as a stretched skin -->
+<ellipse cx="513" cy="264" rx="10" ry="52" fill="none" stroke="#92400e" stroke-width="1.4" stroke-dasharray="4,3" transform="rotate(29 513 264)"/>
+<text x="600" y="196" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle" font-weight="bold">Trumhinna</text>
+<text x="600" y="214" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">(sitter snett)</text>
+<line x1="575" y1="206" x2="536" y2="244" stroke="#7c2d12" stroke-width="1.5"/>
+<polygon points="528,252 533,239 542,247" fill="#7c2d12"/>
+
+<!-- it vibrates -->
+<path d="M 548 250 q 12 6 2 16" fill="none" stroke="#dc2626" stroke-width="1.8"/>
+<path d="M 556 266 q 12 6 2 16" fill="none" stroke="#dc2626" stroke-width="1.8"/>
+<text x="592" y="300" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">skakar av ljudet</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hörselgången leder ljudvågorna in till trumhinnan, som sitter snett längst in i kanalen</text>
 </svg>

@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
-<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Fiberoptik (ljus studsar inuti tråden)</text>
-<!-- The fiber: a horizontal tube, slightly curved -->
-<path d="M 80 180 Q 400 140 720 220 L 720 280 Q 400 200 80 240 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
-<text x="400" y="115" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Glastråd (optisk fiber)</text>
-<!-- Light zig-zagging by total internal reflection between top and bottom walls -->
-<polyline points="90,235 180,185 270,225 360,180 450,212 540,170 630,205 715,250"
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Fiberoptik (totalreflektion i glastråd)</text>
+<!-- Cladding (outer) -->
+<rect x="90" y="160" width="620" height="180" fill="#e0f2fe" stroke="#2563eb" stroke-width="2"/>
+<text x="400" y="135" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Glastråd (optisk fiber)</text>
+<!-- Core: the inner channel, walls at y=180 (top) and y=320 (bottom) -->
+<rect x="90" y="180" width="620" height="140" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.5"/>
+<text x="135" y="205" font-family="Arial,sans-serif" font-size="11" fill="#1e3a8a" text-anchor="middle">kärna</text>
+<!-- Light zig-zag: bounces land EXACTLY on the core walls y=180 and y=320, strictly inside -->
+<polyline points="90,250 195,180 335,320 475,180 615,320 710,250"
           fill="none" stroke="#dc2626" stroke-width="3"/>
-<polygon points="715,250 703,247 707,239" fill="#dc2626"/>
-<!-- Reflection dots at each bounce -->
-<circle cx="180" cy="185" r="4" fill="#f59e0b"/>
-<circle cx="270" cy="225" r="4" fill="#f59e0b"/>
-<circle cx="360" cy="180" r="4" fill="#f59e0b"/>
-<circle cx="450" cy="212" r="4" fill="#f59e0b"/>
-<circle cx="540" cy="170" r="4" fill="#f59e0b"/>
-<circle cx="630" cy="205" r="4" fill="#f59e0b"/>
-<text x="120" y="300" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Ljus in</text>
-<line x1="120" y1="288" x2="115" y2="245" stroke="#dc2626" stroke-width="1"/>
-<text x="700" y="300" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Ljus ut</text>
-<line x1="700" y1="288" x2="710" y2="258" stroke="#dc2626" stroke-width="1"/>
-<text x="400" y="360" font-family="Arial,sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle" font-weight="bold">Totalreflektion vid varje vägg</text>
-<text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Ljuset studsar mot väggarna och leds långa sträckor utan att läcka ut</text>
+<polygon points="710,250 697,243 700,235" fill="#dc2626"/>
+<!-- Reflection points marked on the walls -->
+<circle cx="195" cy="180" r="4.5" fill="#f59e0b"/>
+<circle cx="335" cy="320" r="4.5" fill="#f59e0b"/>
+<circle cx="475" cy="180" r="4.5" fill="#f59e0b"/>
+<circle cx="615" cy="320" r="4.5" fill="#f59e0b"/>
+<!-- Entry / exit labels -->
+<text x="95" y="360" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start" font-weight="bold">Ljus in</text>
+<text x="705" y="360" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="end" font-weight="bold">Ljus ut</text>
+<text x="400" y="388" font-family="Arial,sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle" font-weight="bold">Totalreflektion vid varje vägg — inget ljus läcker ut</text>
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Ljuset studsar mot kärnans väggar och leds långa sträckor inuti tråden</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Internet hemma kommer ofta via fiberoptik som skickar ljussignaler</text>
 </svg>

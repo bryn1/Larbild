@@ -1,29 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
-<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Bruten ljusstråle (luft → vatten)</text>
-<!-- Water container -->
-<rect x="250" y="240" width="300" height="200" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-<!-- Water surface line -->
-<line x1="250" y1="240" x2="550" y2="240" stroke="#2563eb" stroke-width="2.5"/>
-<text x="200" y="200" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Luft</text>
-<text x="200" y="350" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Vatten</text>
-<!-- Normal (dashed) at the point of entry (400,240) -->
-<line x1="400" y1="160" x2="400" y2="340" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,4"/>
-<text x="412" y="175" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="start">normal</text>
-<!-- Incoming ray in air: steeper from upper-left to (400,240) -->
-<line x1="290" y1="120" x2="400" y2="240" stroke="#dc2626" stroke-width="3"/>
-<polygon points="400,240 389,232 396,226" fill="#dc2626"/>
-<text x="305" y="135" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">Infallande</text>
-<!-- Refracted ray in water: bent TOWARD the normal (less steep from vertical) -->
-<line x1="400" y1="240" x2="470" y2="420" stroke="#dc2626" stroke-width="3"/>
-<polygon points="470,420 458,414 466,409" fill="#dc2626"/>
-<text x="505" y="400" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">Bruten stråle</text>
-<!-- Dotted continuation of original direction (where it WOULD have gone) -->
-<line x1="400" y1="240" x2="510" y2="360" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="3,4"/>
-<!-- Angle markers -->
-<path d="M 400 200 A 40 40 0 0 0 367 224" fill="none" stroke="#16a34a" stroke-width="1.5"/>
-<text x="362" y="205" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">i</text>
-<path d="M 400 285 A 45 45 0 0 0 417 326" fill="none" stroke="#16a34a" stroke-width="1.5"/>
-<text x="424" y="300" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">b</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ljuset ändrar riktning vid ytan — därför ser sugröret knäckt ut</text>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Bruten ljusstråle (luft &#8594; vatten)</text>
+<!-- Air above, water below; boundary at y=260 -->
+<rect x="150" y="80" width="500" height="180" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+<rect x="150" y="260" width="500" height="180" fill="#bfdbfe" stroke="#60a5fa" stroke-width="1.5"/>
+<text x="185" y="110" font-family="Arial,sans-serif" font-size="15" fill="#0369a1" text-anchor="middle" font-weight="bold">Luft</text>
+<text x="185" y="410" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Vatten</text>
+<!-- boundary surface line -->
+<line x1="150" y1="260" x2="650" y2="260" stroke="#475569" stroke-width="2.5"/>
+<text x="600" y="253" font-family="Arial,sans-serif" font-size="12" fill="#475569" text-anchor="middle">yta</text>
+<!-- Normal (dashed, vertical) through entry point (400,260) -->
+<line x1="400" y1="110" x2="400" y2="410" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6,5"/>
+<text x="410" y="128" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">normal</text>
+<!-- Incident ray in AIR: from upper-left, large angle (~48 deg) from normal, touching (400,260) -->
+<line x1="245" y1="120" x2="400" y2="260" stroke="#dc2626" stroke-width="3"/>
+<polygon points="400,260 386,251 391,243" fill="#dc2626"/>
+<text x="262" y="138" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">infallande stråle</text>
+<!-- Refracted ray in WATER: bent TOWARD normal, small angle (~26 deg), opposite side, touching (400,260) -->
+<line x1="400" y1="260" x2="470" y2="405" stroke="#dc2626" stroke-width="3"/>
+<polygon points="470,405 458,396 467,391" fill="#dc2626"/>
+<text x="520" y="385" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">bruten stråle</text>
+<!-- Dashed continuation of original direction (where it WOULD have gone, larger angle) -->
+<line x1="400" y1="260" x2="555" y2="400" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="3,4"/>
+<text x="590" y="402" font-family="Arial,sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">oböjd bana</text>
+<!-- Angle of incidence arc i (in air, between incident ray and upper normal) -->
+<path d="M 400 200 A 60 60 0 0 0 355 220" fill="none" stroke="#16a34a" stroke-width="1.8"/>
+<text x="368" y="208" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">i</text>
+<!-- Angle of refraction arc b (in water, between refracted ray and lower normal), smaller -->
+<path d="M 400 320 A 60 60 0 0 0 426 374" fill="none" stroke="#16a34a" stroke-width="1.8"/>
+<text x="424" y="332" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">b</text>
+<text x="400" y="458" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">In i tätare vatten bryts strålen mot normalen: vinkeln b är mindre än i</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Därför ser sugröret i glaset knäckt ut vid vattenytan</text>
 </svg>
