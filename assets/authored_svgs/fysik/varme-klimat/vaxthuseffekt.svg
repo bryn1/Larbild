@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Växthuseffekten</text>
+
+<!-- sky -->
+<rect x="60" y="60" width="680" height="330" fill="#eff6ff"/>
+<!-- ground -->
+<rect x="60" y="390" width="680" height="60" fill="#65a30d"/>
+<rect x="60" y="385" width="680" height="8" fill="#4d7c0f"/>
+<text x="400" y="425" font-family="Arial,sans-serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">Jordens yta</text>
+
+<!-- ===== Greenhouse-gas layer (dashed band high in the atmosphere) ===== -->
+<rect x="60" y="150" width="680" height="44" fill="#fde68a" opacity="0.55"/>
+<line x1="60" y1="150" x2="740" y2="150" stroke="#d97706" stroke-width="1.5" stroke-dasharray="8 5"/>
+<line x1="60" y1="194" x2="740" y2="194" stroke="#d97706" stroke-width="1.5" stroke-dasharray="8 5"/>
+<text x="400" y="178" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Lager av växthusgaser (t.ex. koldioxid)</text>
+
+<!-- ===== Sun (top-left) ===== -->
+<circle cx="120" cy="105" r="34" fill="#fbbf24" stroke="#f59e0b" stroke-width="3"/>
+<g stroke="#f59e0b" stroke-width="3">
+<line x1="120" y1="60" x2="120" y2="48"/>
+<line x1="75" y1="105" x2="63" y2="105"/>
+<line x1="88" y1="73" x2="79" y2="64"/>
+<line x1="152" y1="73" x2="161" y2="64"/>
+</g>
+<text x="120" y="158" font-family="Arial,sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle" font-weight="bold">Solen</text>
+
+<!-- ===== Incoming sunlight (yellow) passes THROUGH the gas layer to the ground ===== -->
+<line x1="155" y1="130" x2="300" y2="385" stroke="#f59e0b" stroke-width="3.5"/>
+<polygon points="300,385 287,372 296,366" fill="#f59e0b"/>
+<text x="195" y="270" font-family="Arial,sans-serif" font-size="12" fill="#f59e0b" font-weight="bold" transform="rotate(60 195 270)">solljus in</text>
+
+<!-- ===== Re-radiated IR from ground going UP (red) ===== -->
+<path d="M380 384 q-12 -60 8 -120 q12 -40 -4 -70" fill="none" stroke="#dc2626" stroke-width="3"/>
+<polygon points="384,194 374,208 391,208" fill="#dc2626"/>
+<text x="338" y="300" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" font-weight="bold">värme (IR)</text>
+
+<!-- ===== IR bounced BACK DOWN by the gas layer (red) - the trapped back-and-forth ===== -->
+<path d="M470 195 q14 60 -6 120 q-10 40 6 68" fill="none" stroke="#dc2626" stroke-width="3"/>
+<polygon points="476,383 466,368 483,368" fill="#dc2626"/>
+<text x="520" y="300" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" font-weight="bold">studsar tillbaka</text>
+
+<!-- a second bounce pair to emphasise back-and-forth -->
+<path d="M560 384 q-10 -50 6 -100 q8 -30 -2 -55" fill="none" stroke="#dc2626" stroke-width="2.5" opacity="0.8"/>
+<polygon points="564,194 555,207 571,207" fill="#dc2626" opacity="0.8"/>
+<path d="M640 195 q10 50 -4 100 q-8 30 4 56" fill="none" stroke="#dc2626" stroke-width="2.5" opacity="0.8"/>
+<polygon points="644,383 635,368 652,368" fill="#dc2626" opacity="0.8"/>
+
+<!-- only a little IR escapes to space -->
+<line x1="300" y1="150" x2="270" y2="95" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+<polygon points="270,95 270,110 282,103" fill="#dc2626"/>
+<text x="245" y="85" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">lite slipper ut</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" font-weight="bold">Solljuset värmer marken. Värmen studsar fram och tillbaka mot gaslagret och stannar kvar - jorden blir varmare.</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Betastrålning</text>
+
+<!-- BEFORE label -->
+<text x="200" y="95" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Före</text>
+<!-- nucleus before: cluster with a neutron highlighted -->
+<circle cx="200" cy="230" r="78" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="200" y="135" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">Atomkärna</text>
+<!-- protons (red, p+) -->
+<circle cx="180" cy="205" r="22" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
+<text x="180" y="211" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">p+</text>
+<circle cx="225" cy="255" r="22" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
+<text x="225" y="261" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">p+</text>
+<!-- neutron that will change (gray, n) highlighted -->
+<circle cx="225" cy="205" r="22" fill="#6b7280" stroke="#1d4ed8" stroke-width="3"/>
+<text x="225" y="211" font-family="Arial,sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">n</text>
+<circle cx="178" cy="252" r="22" fill="#6b7280" stroke="#374151" stroke-width="2"/>
+<text x="178" y="258" font-family="Arial,sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">n</text>
+
+<!-- big arrow to AFTER -->
+<line x1="295" y1="230" x2="378" y2="230" stroke="#1f2937" stroke-width="4"/>
+<polygon points="392,230 376,222 376,238" fill="#1f2937"/>
+<text x="343" y="215" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">sönderfall</text>
+
+<!-- AFTER label -->
+<text x="500" y="95" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Efter</text>
+<!-- nucleus after: the neutron became a proton -->
+<circle cx="500" cy="230" r="78" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="500" y="135" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">Atomkärna</text>
+<circle cx="480" cy="205" r="22" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
+<text x="480" y="211" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">p+</text>
+<circle cx="525" cy="255" r="22" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
+<text x="525" y="261" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">p+</text>
+<!-- the new proton (was a neutron) highlighted -->
+<circle cx="525" cy="205" r="22" fill="#dc2626" stroke="#1d4ed8" stroke-width="3"/>
+<text x="525" y="211" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">p+</text>
+<circle cx="478" cy="252" r="22" fill="#6b7280" stroke="#374151" stroke-width="2"/>
+<text x="478" y="258" font-family="Arial,sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">n</text>
+
+<!-- emitted beta particle (electron) flying off -->
+<line x1="555" y1="200" x2="690" y2="120" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="700,114 684,116 690,128" fill="#2563eb"/>
+<circle cx="710" cy="108" r="16" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="710" y="113" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">e−</text>
+<text x="640" y="95" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">betapartikel</text>
+
+<!-- explanation box: n -> p+ + e- -->
+<rect x="250" y="335" width="300" height="58" fill="white" stroke="#9ca3af" stroke-width="1.5" rx="6"/>
+<text x="400" y="360" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">neutron  →  proton (p+)  +  elektron (e−)</text>
+<text x="400" y="381" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">en neutron i kärnan blir en proton och skickar ut en elektron</text>
+
+<!-- shielding note -->
+<text x="400" y="425" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Betastrålning går längre i luften än alfastrålning men stoppas av en aluminiumplåt</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vid betastrålning förvandlas en neutron till en proton, och en snabb elektron (betapartikel) flyger ut</text>
+</svg>

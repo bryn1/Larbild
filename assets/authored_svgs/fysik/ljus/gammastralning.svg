@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Gammastrålning</text>
+
+<!-- ===== Unstable nucleus (left) ===== -->
+<circle cx="120" cy="250" r="42" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+<!-- protons (red) and neutrons (gray) clustered -->
+<circle cx="108" cy="240" r="11" fill="#dc2626"/>
+<circle cx="132" cy="238" r="11" fill="#9ca3af"/>
+<circle cx="116" cy="262" r="11" fill="#dc2626"/>
+<circle cx="138" cy="260" r="11" fill="#9ca3af"/>
+<!-- 'instability' wobble lines -->
+<line x1="120" y1="196" x2="120" y2="180" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="78" y1="220" x2="64" y2="210" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="162" y1="220" x2="176" y2="210" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="120" y="320" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Instabil atomkärna</text>
+<text x="120" y="338" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">skickar ut gammastrålning</text>
+
+<!-- ===== Gamma ray as wavy arrow ===== -->
+<path d="M168 250 q15 -12 30 0 q15 12 30 0 q15 -12 30 0 q15 12 30 0 q15 -12 30 0"
+      fill="none" stroke="#7c3aed" stroke-width="3"/>
+<polygon points="320,250 304,242 304,258" fill="#7c3aed"/>
+<text x="245" y="225" font-family="Arial,sans-serif" font-size="20" fill="#7c3aed" text-anchor="middle" font-weight="bold">gamma</text>
+
+<!-- ===== Three barriers showing penetration ===== -->
+<!-- Paper -->
+<rect x="380" y="180" width="14" height="150" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+<text x="387" y="350" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">Papper</text>
+<!-- Aluminium -->
+<rect x="470" y="180" width="22" height="150" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>
+<text x="481" y="350" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">Aluminium</text>
+<!-- Lead (thick, dark) -->
+<rect x="585" y="170" width="60" height="170" fill="#475569" stroke="#1e293b" stroke-width="3"/>
+<text x="615" y="360" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle" font-weight="bold">Bly (tjockt)</text>
+
+<!-- gamma passes paper -->
+<path d="M394 250 q15 -10 30 0 q15 10 30 0" fill="none" stroke="#7c3aed" stroke-width="3"/>
+<!-- gamma passes aluminium -->
+<path d="M492 250 q15 -10 30 0 q15 10 30 0" fill="none" stroke="#7c3aed" stroke-width="3"/>
+<polygon points="566,250 552,242 552,258" fill="#7c3aed"/>
+<!-- gamma STOPPED at lead (short stub + block mark) -->
+<line x1="566" y1="250" x2="585" y2="250" stroke="#7c3aed" stroke-width="3"/>
+<line x1="585" y1="232" x2="585" y2="268" stroke="#dc2626" stroke-width="4"/>
+<text x="700" y="246" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">stoppas</text>
+<text x="700" y="263" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">av bly</text>
+
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Gammastrålning går rakt igenom papper och aluminium</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Det krävs en tjock blyplatta för att stoppa den - därför är den så farlig</text>
+</svg>

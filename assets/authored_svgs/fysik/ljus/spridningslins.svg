@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Spridningslins (konkav lins)</text>
+
+<!-- optical axis -->
+<line x1="80" y1="250" x2="720" y2="250" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="708" y="242" font-family="Arial,sans-serif" font-size="11" fill="#9ca3af">axel</text>
+
+<!-- ===== Biconcave lens: thick edges, thin pinched middle (surfaces bow INWARD) ===== -->
+<!-- Top edge, then LEFT face curves right (into centre), bottom edge, then RIGHT face curves left -->
+<path d="M355 120 L405 120 Q372 250 405 380 L355 380 Q388 250 355 120 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<text x="380" y="108" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">tunn i mitten</text>
+<text x="380" y="402" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">tjock i kanterna</text>
+
+<!-- virtual focal point F on the INCOMING side (left), dashed -->
+<circle cx="215" cy="250" r="5" fill="#dc2626"/>
+<text x="215" y="278" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">F</text>
+<text x="215" y="296" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">skenbar brännpunkt</text>
+
+<!-- ===== Parallel rays in (blue) -> diverge after lens (green); dashed back-lines to F ===== -->
+<!-- ray 1 upper (enters lens, exits right face at y=175, x~400) -->
+<line x1="100" y1="175" x2="400" y2="175" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="270,175 256,169 256,181" fill="#2563eb"/>
+<line x1="400" y1="175" x2="700" y2="100" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="560,137 546,136 555,126" fill="#16a34a"/>
+<!-- dashed virtual back-line from diverged ray through F -->
+<line x1="400" y1="175" x2="215" y2="250" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+<!-- ray 2 lower (enters lens, exits right face at y=325, x~400) -->
+<line x1="100" y1="325" x2="400" y2="325" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="270,325 256,319 256,331" fill="#2563eb"/>
+<line x1="400" y1="325" x2="700" y2="400" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="560,363 546,364 555,374" fill="#16a34a"/>
+<line x1="400" y1="325" x2="215" y2="250" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+<!-- ray 3 along axis (passes straight) -->
+<line x1="100" y1="250" x2="700" y2="250" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="270,250 256,244 256,256" fill="#2563eb"/>
+
+<text x="150" y="165" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" font-weight="bold">parallella strålar</text>
+<text x="600" y="90" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" font-weight="bold">strålarna sprids isär</text>
+
+<text x="400" y="452" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">En spridningslins är tunn i mitten och sprider strålarna isär</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Strålarna verkar komma från en skenbar brännpunkt F framför linsen</text>
+</svg>

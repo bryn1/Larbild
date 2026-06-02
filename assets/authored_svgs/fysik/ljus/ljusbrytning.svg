@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Ljusbrytning</text>
+
+<!-- two media: air (top) and glass (bottom) -->
+<rect x="120" y="80" width="560" height="170" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+<rect x="120" y="250" width="560" height="170" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="150" y="110" font-family="Arial,sans-serif" font-size="14" fill="#0369a1" font-weight="bold">Luft</text>
+<text x="150" y="405" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" font-weight="bold">Glas</text>
+
+<!-- boundary surface -->
+<line x1="120" y1="250" x2="680" y2="250" stroke="#475569" stroke-width="2.5"/>
+<text x="630" y="244" font-family="Arial,sans-serif" font-size="12" fill="#475569">yta</text>
+
+<!-- normal (dashed) at point of incidence -->
+<line x1="400" y1="100" x2="400" y2="400" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6 5"/>
+<text x="408" y="118" font-family="Arial,sans-serif" font-size="12" fill="#6b7280">normal</text>
+
+<!-- ===== Incident ray (red) coming in at a LARGE angle from upper-left ===== -->
+<line x1="150" y1="120" x2="400" y2="250" stroke="#dc2626" stroke-width="3"/>
+<polygon points="300,198 282,196 292,210" fill="#dc2626"/>
+<text x="210" y="150" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" font-weight="bold">infallande stråle</text>
+
+<!-- angle of incidence arc (between incident ray and normal, above surface) -->
+<path d="M400 190 a60 60 0 0 0 -46 26" fill="none" stroke="#dc2626" stroke-width="1.8"/>
+<text x="372" y="200" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">i</text>
+
+<!-- ===== Refracted ray (blue) bending TOWARD the normal in glass ===== -->
+<line x1="400" y1="250" x2="520" y2="400" stroke="#2563eb" stroke-width="3"/>
+<polygon points="470,338 458,348 472,352" fill="#2563eb"/>
+<text x="560" y="360" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" font-weight="bold">bruten stråle</text>
+
+<!-- angle of refraction arc (between refracted ray and normal, below surface) -->
+<path d="M400 320 a70 70 0 0 0 28 18" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<text x="420" y="318" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">b</text>
+
+<text x="400" y="452" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">I tätare glas bryts strålen mot normalen: brytningsvinkeln b är mindre än infallsvinkeln i</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Röd = stråle i luften, blå = stråle i glaset. Normalen står vinkelrätt mot ytan.</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Seriekoppling</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle">Allt sitter efter varandra på samma ledning – en enda slinga</text>
+
+<!-- single loop rectangle -->
+<!-- top rail with two lamps on it -->
+<line x1="150" y1="150" x2="305" y2="150" stroke="#1f2937" stroke-width="3"/>
+<line x1="375" y1="150" x2="445" y2="150" stroke="#1f2937" stroke-width="3"/>
+<line x1="515" y1="150" x2="650" y2="150" stroke="#1f2937" stroke-width="3"/>
+<!-- right wire -->
+<line x1="650" y1="150" x2="650" y2="380" stroke="#1f2937" stroke-width="3"/>
+<!-- bottom rail -->
+<line x1="150" y1="380" x2="650" y2="380" stroke="#1f2937" stroke-width="3"/>
+<!-- left wire with gap for battery -->
+<line x1="150" y1="150" x2="150" y2="240" stroke="#1f2937" stroke-width="3"/>
+<line x1="150" y1="300" x2="150" y2="380" stroke="#1f2937" stroke-width="3"/>
+
+<!-- BATTERY on the left side - large and clear -->
+<line x1="125" y1="253" x2="175" y2="253" stroke="#1f2937" stroke-width="3"/>
+<line x1="137" y1="287" x2="163" y2="287" stroke="#1f2937" stroke-width="7"/>
+<text x="108" y="259" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">+</text>
+<text x="108" y="294" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="150" y="328" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
+<text x="200" y="259" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">lång linje = pluspol (+)</text>
+<text x="200" y="285" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">kort tjock linje = minuspol (−)</text>
+
+<!-- LAMP 1 on top rail -->
+<circle cx="340" cy="150" r="35" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
+<line x1="315" y1="125" x2="365" y2="175" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="365" y1="125" x2="315" y2="175" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="340" y="118" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">lampa 1</text>
+
+<!-- LAMP 2 on top rail -->
+<circle cx="480" cy="150" r="35" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
+<line x1="455" y1="125" x2="505" y2="175" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="505" y1="125" x2="455" y2="175" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="480" y="118" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">lampa 2</text>
+
+<!-- current arrows showing single direction round the loop -->
+<polygon points="600,150 590,145 590,155" fill="#dc2626"/>
+<polygon points="400,380 410,375 410,385" fill="#dc2626"/>
+<polygon points="650,270 645,260 655,260" fill="#dc2626"/>
+<text x="400" y="408" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">samma ström överallt i slingan</text>
+
+<text x="400" y="445" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Går en lampa sönder slocknar alla – kretsen bryts</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Strömmen måste gå igenom alla i tur och ordning</text>
+</svg>

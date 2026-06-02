@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Konvex spegel</text>
+
+<!-- optical axis -->
+<line x1="80" y1="250" x2="720" y2="250" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="708" y="242" font-family="Arial,sans-serif" font-size="11" fill="#9ca3af">axel</text>
+
+<!-- ===== Convex mirror: curve bulging LEFT toward the rays, reflective face on LEFT ===== -->
+<path d="M470 110 q90 140 0 280" fill="none" stroke="#1f2937" stroke-width="4"/>
+<!-- hatch marks on the BACK (right, non-reflective concave side) -->
+<line x1="517" y1="135" x2="532" y2="125" stroke="#6b7280" stroke-width="2"/>
+<line x1="532" y1="170" x2="548" y2="162" stroke="#6b7280" stroke-width="2"/>
+<line x1="540" y1="208" x2="557" y2="202" stroke="#6b7280" stroke-width="2"/>
+<line x1="543" y1="250" x2="560" y2="250" stroke="#6b7280" stroke-width="2"/>
+<line x1="540" y1="292" x2="557" y2="298" stroke="#6b7280" stroke-width="2"/>
+<line x1="532" y1="330" x2="548" y2="338" stroke="#6b7280" stroke-width="2"/>
+<line x1="517" y1="365" x2="532" y2="375" stroke="#6b7280" stroke-width="2"/>
+<text x="560" y="155" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">spegelns baksida</text>
+<text x="445" y="95" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle" font-weight="bold">speglande sida</text>
+
+<!-- virtual focal point F behind the mirror (dashed, on axis) -->
+<circle cx="600" cy="250" r="5" fill="#dc2626"/>
+<text x="600" y="278" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">F</text>
+<text x="600" y="296" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">skenbar brännpunkt</text>
+
+<!-- ===== Parallel rays in (blue) hit mirror and DIVERGE (green); dashed back-extensions to F ===== -->
+<!-- ray 1 (upper): hits at y~165 -->
+<line x1="120" y1="165" x2="487" y2="165" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="350,165 336,159 336,171" fill="#2563eb"/>
+<!-- reflected diverging upward-left -->
+<line x1="487" y1="165" x2="140" y2="80" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="300,124 286,124 296,113" fill="#16a34a"/>
+<!-- dashed virtual extension to F -->
+<line x1="487" y1="165" x2="600" y2="250" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="5 4"/>
+
+<!-- ray 2 (lower): hits at y~335 -->
+<line x1="120" y1="335" x2="487" y2="335" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="350,335 336,329 336,341" fill="#2563eb"/>
+<line x1="487" y1="335" x2="140" y2="420" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="300,376 286,376 296,387" fill="#16a34a"/>
+<line x1="487" y1="335" x2="600" y2="250" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="5 4"/>
+
+<text x="175" y="155" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" font-weight="bold">parallella strålar</text>
+<text x="205" y="100" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" font-weight="bold">strålarna sprids isär</text>
+
+<text x="400" y="455" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">En konvex spegel buktar utåt och sprider strålarna isär</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Strålarna verkar komma från en skenbar brännpunkt bakom spegeln</text>
+</svg>

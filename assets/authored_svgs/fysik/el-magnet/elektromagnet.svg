@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Elektromagnet</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">En tråd lindad runt en järnkärna blir magnet när strömmen går</text>
+
+<!-- iron core (gray bar) -->
+<rect x="250" y="225" width="300" height="40" rx="4" fill="#d1d5db" stroke="#6b7280" stroke-width="2"/>
+<text x="400" y="300" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">järnkärna</text>
+<line x1="400" y1="285" x2="400" y2="266" stroke="#6b7280" stroke-width="1"/>
+
+<!-- ONE continuous copper wire wound as loops: front arcs (over core) + back arcs (behind core) -->
+<!-- front arcs (in front of core, below center) -->
+<path d="M270 245 A18 24 0 0 0 306 245" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M306 245 A18 24 0 0 0 342 245" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M342 245 A18 24 0 0 0 378 245" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M378 245 A18 24 0 0 0 414 245" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M414 245 A18 24 0 0 0 450 245" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M450 245 A18 24 0 0 0 486 245" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M486 245 A18 24 0 0 0 522 245" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<!-- back arcs (behind core, above center) connecting the front loops into one spiral -->
+<path d="M270 245 A18 24 0 0 1 288 226" fill="none" stroke="#92400e" stroke-width="3" stroke-dasharray="4,3"/>
+<path d="M288 226 A18 24 0 0 1 324 226" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M324 226 A18 24 0 0 1 360 226" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M360 226 A18 24 0 0 1 396 226" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M396 226 A18 24 0 0 1 432 226" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M432 226 A18 24 0 0 1 468 226" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<path d="M468 226 A18 24 0 0 1 504 226" fill="none" stroke="#b45309" stroke-width="3.5"/>
+<text x="610" y="290" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle">koppartråd</text>
+<text x="610" y="307" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle">lindad i många varv</text>
+<line x1="558" y1="295" x2="510" y2="240" stroke="#7c2d12" stroke-width="1"/>
+
+<!-- wire leads down to the battery -->
+<line x1="270" y1="245" x2="270" y2="380" stroke="#b45309" stroke-width="3"/>
+<line x1="270" y1="380" x2="350" y2="380" stroke="#b45309" stroke-width="3"/>
+<line x1="450" y1="380" x2="522" y2="380" stroke="#b45309" stroke-width="3"/>
+<line x1="522" y1="380" x2="522" y2="245" stroke="#b45309" stroke-width="3"/>
+
+<!-- BATTERY symbol: long line = +, short thick line = -, with a gap -->
+<line x1="385" y1="358" x2="385" y2="402" stroke="#1f2937" stroke-width="3"/>
+<line x1="415" y1="368" x2="415" y2="392" stroke="#1f2937" stroke-width="6"/>
+<text x="378" y="348" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">+</text>
+<text x="422" y="348" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="400" y="425" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
+
+<!-- field lines arcing from N (left end) to S (right end), 3 arcs above -->
+<path d="M255 225 C255 130 545 130 545 225" fill="none" stroke="#6b7280" stroke-width="2"/>
+<line x1="396" y1="143" x2="404" y2="143" stroke="#6b7280" stroke-width="2"/>
+<polygon points="414,143 404,139.2 404,146.8" fill="#6b7280"/>
+<path d="M250 225 C220 90 580 90 550 225" fill="none" stroke="#6b7280" stroke-width="2"/>
+<line x1="395" y1="108" x2="405" y2="108" stroke="#6b7280" stroke-width="2"/>
+<polygon points="415,108 405,104.2 405,111.8" fill="#6b7280"/>
+<path d="M278 225 C290 165 510 165 522 225" fill="none" stroke="#6b7280" stroke-width="2"/>
+<line x1="396" y1="176" x2="404" y2="176" stroke="#6b7280" stroke-width="2"/>
+<polygon points="414,176 404,172.2 404,179.8" fill="#6b7280"/>
+
+<text x="225" y="220" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">N</text>
+<text x="575" y="220" font-family="Arial,sans-serif" font-size="20" fill="#2563eb" text-anchor="middle" font-weight="bold">S</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Stänger du av strömmen försvinner magnetismen</text>
+</svg>

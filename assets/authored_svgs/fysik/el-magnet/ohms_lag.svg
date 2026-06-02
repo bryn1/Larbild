@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Ohms lag</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle">Spänning, ström och resistans hänger ihop</text>
+
+<!-- big formula -->
+<text x="400" y="118" font-family="Arial,sans-serif" font-size="40" fill="#1e40af" text-anchor="middle" font-weight="bold">U = R · I</text>
+
+<!-- what each letter means -->
+<text x="400" y="152" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">U = spänning (volt, V)   ·   R = resistans (ohm, Ω)   ·   I = ström (ampere, A)</text>
+
+<!-- LEFT: simple circuit -->
+<text x="220" y="195" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Kretsen</text>
+<!-- wire loop rectangle -->
+<rect x="100" y="215" width="240" height="160" fill="none" stroke="#1f2937" stroke-width="3"/>
+<!-- mask the battery + resistor positions -->
+<rect x="90" y="280" width="20" height="40" fill="white"/>
+<rect x="200" y="205" width="60" height="20" fill="white"/>
+
+<!-- BATTERY on the left side: long(+)/short(-) -->
+<line x1="84" y1="288" x2="116" y2="288" stroke="#1f2937" stroke-width="3"/>
+<line x1="92" y1="312" x2="108" y2="312" stroke="#1f2937" stroke-width="6"/>
+<text x="70" y="293" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">+</text>
+<text x="70" y="318" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="100" y="350" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">U</text>
+
+<!-- RESISTOR on top side: rectangle labelled R -->
+<rect x="200" y="200" width="60" height="22" fill="#fef3c7" stroke="#1f2937" stroke-width="2.5"/>
+<text x="230" y="217" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">R</text>
+
+<!-- current arrow -->
+<polygon points="340,300 333,288 347,288" fill="#dc2626"/>
+<text x="358" y="300" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start" font-weight="bold">I</text>
+
+<!-- RIGHT: worked example -->
+<rect x="430" y="185" width="330" height="200" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="595" y="215" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Räkneexempel</text>
+<text x="595" y="248" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">Ett batteri ger U = 12 V</text>
+<text x="595" y="273" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">Resistansen är R = 4 Ω</text>
+<text x="595" y="305" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">Hur stor blir strömmen I?</text>
+<text x="595" y="340" font-family="Arial,sans-serif" font-size="18" fill="#16a34a" text-anchor="middle" font-weight="bold">I = U / R = 12 / 4 = 3 A</text>
+<text x="595" y="368" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Strömmen blir 3 ampere</text>
+
+<text x="400" y="425" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Större spänning → större ström.  Större resistans → mindre ström.</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ändras en av dem så ändras de andra också</text>
+</svg>

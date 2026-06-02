@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Prefix — gör enheten större eller mindre</text>
+
+<!-- column headers -->
+<text x="150" y="80" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Prefix</text>
+<text x="290" y="80" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Tecken</text>
+<text x="470" y="80" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Betyder (gånger)</text>
+<text x="680" y="80" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Exempel</text>
+<line x1="60" y1="90" x2="760" y2="90" stroke="#9ca3af" stroke-width="1.5"/>
+
+<!-- rows: larger (top, red) -> base -> smaller (bottom, blue) -->
+<!-- kilo -->
+<rect x="60" y="98" width="700" height="40" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+<text x="150" y="124" font-family="Arial,sans-serif" font-size="15" fill="#b91c1c" text-anchor="middle" font-weight="bold">kilo</text>
+<text x="290" y="124" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">k</text>
+<text x="470" y="124" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">1 000 (tusen)</text>
+<text x="680" y="124" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">1 km = 1 000 m</text>
+
+<!-- hekto -->
+<rect x="60" y="138" width="700" height="36" fill="white" stroke="#f3f4f6" stroke-width="1"/>
+<text x="150" y="162" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">hekto</text>
+<text x="290" y="162" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">h</text>
+<text x="470" y="162" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">100 (hundra)</text>
+<text x="680" y="162" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">1 hg = 100 g</text>
+
+<!-- BASE (grundenhet) -->
+<rect x="60" y="174" width="700" height="40" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+<text x="150" y="200" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">(grundenhet)</text>
+<text x="290" y="200" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">—</text>
+<text x="470" y="200" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">1</text>
+<text x="680" y="200" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">1 m, 1 g, 1 l</text>
+
+<!-- deci -->
+<rect x="60" y="214" width="700" height="36" fill="white" stroke="#f3f4f6" stroke-width="1"/>
+<text x="150" y="238" font-family="Arial,sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold">deci</text>
+<text x="290" y="238" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">d</text>
+<text x="470" y="238" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">0,1 (en tiondel)</text>
+<text x="680" y="238" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">1 dl = 0,1 l</text>
+
+<!-- centi -->
+<rect x="60" y="250" width="700" height="36" fill="white" stroke="#f3f4f6" stroke-width="1"/>
+<text x="150" y="274" font-family="Arial,sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold">centi</text>
+<text x="290" y="274" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">c</text>
+<text x="470" y="274" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">0,01 (en hundradel)</text>
+<text x="680" y="274" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">1 cm = 0,01 m</text>
+
+<!-- milli -->
+<rect x="60" y="286" width="700" height="36" fill="white" stroke="#f3f4f6" stroke-width="1"/>
+<text x="150" y="310" font-family="Arial,sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold">milli</text>
+<text x="290" y="310" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">m</text>
+<text x="470" y="310" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">0,001 (en tusendel)</text>
+<text x="680" y="310" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">1 mm = 0,001 m</text>
+
+<!-- mikro -->
+<rect x="60" y="322" width="700" height="40" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+<text x="150" y="348" font-family="Arial,sans-serif" font-size="14" fill="#1e3a8a" text-anchor="middle" font-weight="bold">mikro</text>
+<text x="290" y="348" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">µ</text>
+<text x="470" y="348" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">0,000001 (en miljondel)</text>
+<text x="680" y="348" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">1 µm = 0,000001 m</text>
+
+<!-- side arrows: bigger up, smaller down -->
+<line x1="40" y1="135" x2="40" y2="100" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="40,94 35,106 45,106" fill="#dc2626"/>
+<text x="28" y="120" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="bold" transform="rotate(-90 28 120)">större</text>
+
+<line x1="40" y1="325" x2="40" y2="360" stroke="#1d4ed8" stroke-width="2.5"/>
+<polygon points="40,366 35,354 45,354" fill="#1d4ed8"/>
+<text x="28" y="340" font-family="Arial,sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle" font-weight="bold" transform="rotate(-90 28 340)">mindre</text>
+
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Prefixet skrivs ihop med enheten: k + m = km (kilometer), m + g = mg (milligram)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ett prefix är en förstavelse framför en enhet som visar hur stor eller liten den är</text>
+</svg>

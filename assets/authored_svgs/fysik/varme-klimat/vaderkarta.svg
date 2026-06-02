@@ -1,35 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Väderkarta</text>
-<!-- map frame -->
-<rect x="60" y="60" width="680" height="350" fill="#f0f9ff" stroke="#94a3b8" stroke-width="2"/>
-<!-- isobars around High -->
-<circle cx="220" cy="200" r="40" fill="none" stroke="#6b7280" stroke-width="1.5"/>
-<circle cx="220" cy="200" r="75" fill="none" stroke="#6b7280" stroke-width="1.5"/>
-<circle cx="220" cy="200" r="110" fill="none" stroke="#6b7280" stroke-width="1.5"/>
-<text x="220" y="208" font-family="Arial,sans-serif" font-size="40" fill="#2563eb" text-anchor="middle" font-weight="bold">H</text>
-<text x="220" y="338" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">Högtryck</text>
-<text x="220" y="356" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">oftast soligt</text>
-<!-- isobars around Low -->
-<circle cx="560" cy="200" r="40" fill="none" stroke="#6b7280" stroke-width="1.5"/>
-<circle cx="560" cy="200" r="75" fill="none" stroke="#6b7280" stroke-width="1.5"/>
-<text x="560" y="208" font-family="Arial,sans-serif" font-size="40" fill="#dc2626" text-anchor="middle" font-weight="bold">L</text>
-<text x="560" y="300" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Lågtryck</text>
-<text x="560" y="318" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">moln och regn</text>
-<!-- warm front (red, half-circles) -->
-<path d="M 440 130 Q 490 160 540 130" fill="none" stroke="#dc2626" stroke-width="3"/>
-<path d="M 455 137 a 8 8 0 0 1 16 -4" fill="#dc2626"/>
-<path d="M 490 144 a 8 8 0 0 1 16 -6" fill="#dc2626"/>
-<!-- cold front (blue, triangles) -->
-<path d="M 620 150 L 660 240" fill="none" stroke="#2563eb" stroke-width="3"/>
-<polygon points="628,168 644,162 636,180" fill="#2563eb"/>
-<polygon points="642,200 658,194 650,212" fill="#2563eb"/>
-<text x="680" y="120" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">varmfront</text>
-<text x="700" y="255" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">kallfront</text>
-<!-- rain symbol -->
-<g stroke="#2563eb" stroke-width="2">
-<line x1="540" y1="250" x2="535" y2="265"/><line x1="555" y1="250" x2="550" y2="265"/><line x1="570" y1="250" x2="565" y2="265"/>
-</g>
-<text x="555" y="282" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">nederbörd</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En karta som visar var det är högtryck, lågtryck, fronter och nederbörd</text>
+
+<!-- map background -->
+<rect x="60" y="60" width="680" height="360" rx="8" fill="#f0fdf4" stroke="#9ca3af" stroke-width="2"/>
+
+<!-- ===== Isobars (concentric pressure lines) around HIGH ===== -->
+<circle cx="230" cy="220" r="40" fill="none" stroke="#6b7280" stroke-width="1.8"/>
+<circle cx="230" cy="220" r="75" fill="none" stroke="#6b7280" stroke-width="1.8"/>
+<circle cx="230" cy="220" r="110" fill="none" stroke="#6b7280" stroke-width="1.8"/>
+<text x="230" y="125" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">1024</text>
+<text x="230" y="157" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">1020</text>
+<!-- HIGH pressure marker -->
+<text x="230" y="232" font-family="Arial,sans-serif" font-size="46" fill="#2563eb" text-anchor="middle" font-weight="bold">H</text>
+<text x="230" y="270" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">Högtryck</text>
+<text x="230" y="288" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">torrt, soligt väder</text>
+
+<!-- ===== Isobars around LOW ===== -->
+<circle cx="560" cy="230" r="38" fill="none" stroke="#6b7280" stroke-width="1.8"/>
+<circle cx="560" cy="230" r="70" fill="none" stroke="#6b7280" stroke-width="1.8"/>
+<circle cx="560" cy="230" r="102" fill="none" stroke="#6b7280" stroke-width="1.8"/>
+<text x="560" y="148" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">1000</text>
+<text x="560" y="180" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">996</text>
+<!-- LOW pressure marker -->
+<text x="560" y="244" font-family="Arial,sans-serif" font-size="46" fill="#dc2626" text-anchor="middle" font-weight="bold">L</text>
+<text x="560" y="282" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Lågtryck</text>
+<text x="560" y="300" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">moln och regn</text>
+
+<!-- isobar label -->
+<text x="120" y="105" font-family="Arial,sans-serif" font-size="11" fill="#6b7280">isobarer (lika lufttryck)</text>
+
+<!-- ===== WARM FRONT (red, semicircles point in direction of movement) ===== -->
+<path d="M310 360 L470 360" fill="none" stroke="#dc2626" stroke-width="3"/>
+<path d="M325 360 a11 11 0 0 1 22 0" fill="#dc2626"/>
+<path d="M370 360 a11 11 0 0 1 22 0" fill="#dc2626"/>
+<path d="M415 360 a11 11 0 0 1 22 0" fill="#dc2626"/>
+<text x="390" y="390" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">Varmfront</text>
+
+<!-- ===== COLD FRONT (blue, triangles point in direction of movement) ===== -->
+<path d="M470 360 L630 360" fill="none" stroke="#2563eb" stroke-width="3"/>
+<polygon points="482,360 494,349 506,360" fill="#2563eb"/>
+<polygon points="527,360 539,349 551,360" fill="#2563eb"/>
+<polygon points="572,360 584,349 596,360" fill="#2563eb"/>
+<text x="552" y="390" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">Kallfront</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">H = högtryck (fint väder), L = lågtryck (regn). Fronter visar var varm och kall luft möts.</text>
 </svg>

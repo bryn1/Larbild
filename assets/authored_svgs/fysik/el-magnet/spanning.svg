@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Spänning</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle">Trycket som får strömmen att vilja röra sig (mäts i volt, V)</text>
+
+<!-- LEFT: a clear battery with labelled terminals + voltmeter across them -->
+<!-- battery body for context (a cell) -->
+<rect x="120" y="170" width="120" height="140" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<!-- + terminal nub on top -->
+<rect x="170" y="158" width="20" height="14" fill="#6b7280"/>
+
+<!-- schematic battery symbol overlaid: long line (+) top, short thick (-) bottom -->
+<line x1="150" y1="205" x2="210" y2="205" stroke="#1f2937" stroke-width="3"/>
+<line x1="162" y1="245" x2="198" y2="245" stroke="#1f2937" stroke-width="7"/>
+<text x="180" y="198" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="180" y="270" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="180" y="335" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
+
+<!-- terminal wires going up to a voltmeter -->
+<line x1="180" y1="205" x2="180" y2="120" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="180" y1="120" x2="330" y2="120" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="180" y1="245" x2="120" y2="245" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="120" y1="245" x2="120" y2="100" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="120" y1="100" x2="370" y2="100" stroke="#1f2937" stroke-width="2.5"/>
+
+<!-- VOLTMETER: circle with V -->
+<circle cx="350" cy="110" r="30" fill="white" stroke="#2563eb" stroke-width="3"/>
+<text x="350" y="120" font-family="Arial,sans-serif" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="bold">V</text>
+<text x="350" y="165" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">voltmeter</text>
+
+<!-- the measured value -->
+<text x="180" y="225" font-family="Arial,sans-serif" font-size="22" fill="#16a34a" text-anchor="middle" font-weight="bold">1,5 V</text>
+
+<!-- voltage label between terminals -->
+<path d="M250 205 C275 215 275 235 250 245" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="300" y="230" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">spänning U</text>
+
+<!-- RIGHT: water-pressure analogy -->
+<rect x="440" y="150" width="320" height="220" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="600" y="180" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Som vattentryck i en slang</text>
+<!-- water tank high -->
+<rect x="470" y="200" width="60" height="70" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+<line x1="500" y1="200" x2="500" y2="190" stroke="#2563eb" stroke-width="2"/>
+<text x="500" y="185" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">högt tryck</text>
+<!-- pipe down and along -->
+<line x1="530" y1="255" x2="690" y2="255" stroke="#2563eb" stroke-width="8"/>
+<polygon points="705,255 688,248 688,262" fill="#2563eb"/>
+<text x="640" y="245" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">vattnet rinner</text>
+<text x="600" y="320" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Högre tryck → vattnet rinner snabbare.</text>
+<text x="600" y="345" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Högre spänning → strömmen blir starkare.</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Spänning är trycket som får strömmen att vilja röra sig i en ledning</text>
+</svg>

@@ -1497,6 +1497,126 @@
     "ljus/negativ_lins": {
       "begrepp": "Negativ lins",
       "title": "Negativ lins (sprider ljus)"
+    },
+    "el-magnet/elektromagnet": {
+      "begrepp": "Elektromagnet",
+      "title": "Elektromagnet"
+    },
+    "el-magnet/elmotor": {
+      "begrepp": "Elmotor",
+      "title": "Elmotor"
+    },
+    "el-magnet/energiform": {
+      "begrepp": "Energiform",
+      "title": "Energiform"
+    },
+    "el-magnet/energiovergangar": {
+      "begrepp": "Energiövergångar",
+      "title": "Energiövergångar"
+    },
+    "el-magnet/generator": {
+      "begrepp": "Generator",
+      "title": "Generator"
+    },
+    "el-magnet/magnetism": {
+      "begrepp": "Magnetism",
+      "title": "Magnetism"
+    },
+    "el-magnet/mekanisk_energi": {
+      "begrepp": "Mekanisk energi",
+      "title": "Mekanisk energi"
+    },
+    "el-magnet/ohms_lag": {
+      "begrepp": "Ohms lag",
+      "title": "Ohms lag"
+    },
+    "el-magnet/parallellkoppling": {
+      "begrepp": "Parallellkoppling",
+      "title": "Parallellkoppling"
+    },
+    "el-magnet/seriekoppling": {
+      "begrepp": "Seriekoppling",
+      "title": "Seriekoppling"
+    },
+    "el-magnet/spanning": {
+      "begrepp": "Spänning",
+      "title": "Spänning"
+    },
+    "ljus/gammastralning": {
+      "begrepp": "Gammastrålning",
+      "title": "Gammastrålning"
+    },
+    "ljus/konkav": {
+      "begrepp": "Konkav",
+      "title": "Konkav"
+    },
+    "ljus/konvex": {
+      "begrepp": "Konvex",
+      "title": "Konvex"
+    },
+    "ljus/ljusbrytning": {
+      "begrepp": "Ljusbrytning",
+      "title": "Ljusbrytning"
+    },
+    "ljus/prisma": {
+      "begrepp": "Prisma",
+      "title": "Prisma"
+    },
+    "ljus/spridningslins": {
+      "begrepp": "Spridningslins",
+      "title": "Spridningslins"
+    },
+    "ljus/synligt_ljus": {
+      "begrepp": "Synligt ljus",
+      "title": "Synligt ljus"
+    },
+    "varme-klimat/distributionsnat": {
+      "begrepp": "Distributionsnät",
+      "title": "Distributionsnät"
+    },
+    "varme-klimat/transformator": {
+      "begrepp": "Transformator",
+      "title": "Transformator"
+    },
+    "varme-klimat/vaxthuseffekt": {
+      "begrepp": "Växthuseffekt",
+      "title": "Växthuseffekt"
+    },
+    "atom/betastralning": {
+      "begrepp": "Betastrålning",
+      "title": "Betastrålning"
+    },
+    "atom/halveringstid": {
+      "begrepp": "Halveringstid",
+      "title": "Halveringstid"
+    },
+    "grundfysik/atom": {
+      "begrepp": "Atom",
+      "title": "Atom"
+    },
+    "grundfysik/dimension": {
+      "begrepp": "Dimension",
+      "title": "Dimension"
+    },
+    "grundfysik/prefix": {
+      "begrepp": "Prefix",
+      "title": "Prefix"
+    },
+    "ljud/ljudvag": {
+      "begrepp": "Ljudvåg",
+      "title": "Ljudvåg"
+    },
+    "ljud/vaglangd": {
+      "begrepp": "Våglängd",
+      "title": "Våglängd"
+    },
+    "rorelse/tyngdpunkt": {
+      "begrepp": "Tyngdpunkt",
+      "title": "Tyngdpunkt"
+    },
+    "universum/gravitationskraft": {
+      "begrepp": "Gravitationskraft",
+      "title": "Gravitationskraft"
     }
   }
 }

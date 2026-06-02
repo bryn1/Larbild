@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Mekanisk energi</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Mekanisk energi = lägesenergi (potentiell) + rörelseenergi</text>
+
+<!-- pendulum support -->
+<rect x="150" y="95" width="500" height="12" fill="#6b7280"/>
+<circle cx="400" cy="107" r="6" fill="#1f2937"/>
+
+<!-- left high position (max lägesenergi) -->
+<line x1="400" y1="107" x2="235" y2="270" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5,4"/>
+<circle cx="235" cy="270" r="22" fill="#16a34a" stroke="#166534" stroke-width="2"/>
+<!-- bottom position (max rörelseenergi) -->
+<line x1="400" y1="107" x2="400" y2="340" stroke="#1f2937" stroke-width="2.5"/>
+<circle cx="400" cy="340" r="22" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<!-- right high position -->
+<line x1="400" y1="107" x2="565" y2="270" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5,4"/>
+<circle cx="565" cy="270" r="22" fill="#16a34a" stroke="#166534" stroke-width="2"/>
+
+<!-- swing direction arrows -->
+<path d="M270 255 Q335 295 380 332" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="388,338 374,333 380,322" fill="#2563eb"/>
+<path d="M420 332 Q465 295 530 255" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="538,250 525,256 532,267" fill="#2563eb"/>
+
+<!-- ground reference -->
+<line x1="150" y1="375" x2="650" y2="375" stroke="#6b7280" stroke-width="2"/>
+<rect x="150" y="375" width="500" height="10" fill="#d1d5db"/>
+
+<!-- labels for the two high points: max lägesenergi -->
+<text x="235" y="318" font-family="Arial,sans-serif" font-size="14" fill="#166534" text-anchor="middle" font-weight="bold">Högst upp:</text>
+<text x="235" y="336" font-family="Arial,sans-serif" font-size="13" fill="#166534" text-anchor="middle">mest lägesenergi</text>
+<text x="235" y="352" font-family="Arial,sans-serif" font-size="13" fill="#166534" text-anchor="middle">ingen rörelse</text>
+
+<text x="565" y="318" font-family="Arial,sans-serif" font-size="14" fill="#166534" text-anchor="middle" font-weight="bold">Högst upp:</text>
+<text x="565" y="336" font-family="Arial,sans-serif" font-size="13" fill="#166534" text-anchor="middle">mest lägesenergi</text>
+
+<!-- label for bottom: max rörelseenergi -->
+<text x="400" y="408" font-family="Arial,sans-serif" font-size="14" fill="#991b1b" text-anchor="middle" font-weight="bold">Längst ner: mest rörelseenergi, minst lägesenergi</text>
+
+<text x="400" y="440" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Energin pendlar fram och tillbaka, men summan är hela tiden lika stor</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Mekanisk energi finns när något rör sig eller är på väg att börja röra sig</text>
+</svg>

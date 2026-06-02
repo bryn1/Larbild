@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Parallellkoppling</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle">Lamporna sitter vid sidan av varandra – strömmen delar upp sig</text>
+
+<!-- Main loop: battery on the left, two parallel branches with lamps -->
+<!-- left vertical wire from battery -->
+<!-- top rail (ends at the last branch) -->
+<line x1="180" y1="130" x2="560" y2="130" stroke="#1f2937" stroke-width="3"/>
+<!-- bottom rail (ends at the last branch) -->
+<line x1="180" y1="400" x2="560" y2="400" stroke="#1f2937" stroke-width="3"/>
+<!-- left side wire (with gap for battery) -->
+<line x1="180" y1="130" x2="180" y2="235" stroke="#1f2937" stroke-width="3"/>
+<line x1="180" y1="295" x2="180" y2="400" stroke="#1f2937" stroke-width="3"/>
+
+<!-- BATTERY on left side -->
+<line x1="160" y1="248" x2="200" y2="248" stroke="#1f2937" stroke-width="3"/>
+<line x1="170" y1="282" x2="190" y2="282" stroke="#1f2937" stroke-width="6"/>
+<text x="148" y="253" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">+</text>
+<text x="148" y="288" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="130" y="270" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
+
+<!-- branch 1 (lamp at x=400) -->
+<line x1="400" y1="130" x2="400" y2="230" stroke="#1f2937" stroke-width="3"/>
+<circle cx="400" cy="265" r="35" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
+<line x1="375" y1="240" x2="425" y2="290" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="425" y1="240" x2="375" y2="290" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="400" y1="300" x2="400" y2="400" stroke="#1f2937" stroke-width="3"/>
+<text x="400" y="332" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">lampa 1</text>
+
+<!-- branch 2 (lamp at x=560) -->
+<line x1="560" y1="130" x2="560" y2="230" stroke="#1f2937" stroke-width="3"/>
+<circle cx="560" cy="265" r="35" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
+<line x1="535" y1="240" x2="585" y2="290" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="585" y1="240" x2="535" y2="290" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="560" y1="300" x2="560" y2="400" stroke="#1f2937" stroke-width="3"/>
+<text x="560" y="332" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">lampa 2</text>
+
+<!-- junction dots where branches meet the rails -->
+<circle cx="400" cy="130" r="4.5" fill="#1f2937"/>
+<circle cx="560" cy="130" r="4.5" fill="#1f2937"/>
+<circle cx="400" cy="400" r="4.5" fill="#1f2937"/>
+<circle cx="560" cy="400" r="4.5" fill="#1f2937"/>
+
+<!-- current arrows: main + splitting -->
+<polygon points="300,130 290,125 290,135" fill="#dc2626"/>
+<text x="300" y="120" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">strömmen delar sig</text>
+<polygon points="400,200 395,190 405,190" fill="#dc2626"/>
+<polygon points="560,200 555,190 565,190" fill="#dc2626"/>
+
+<text x="400" y="445" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Går en lampa sönder lyser den andra ändå</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Komponenterna sitter vid sidan av varandra och strömmen delar upp sig</text>
+</svg>

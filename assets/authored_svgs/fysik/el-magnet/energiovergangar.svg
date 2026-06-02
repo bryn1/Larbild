@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Energiövergångar</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Energin byter form – men försvinner aldrig (exempel: en glödlampa)</text>
+
+<!-- INPUT box: elektrisk energi -->
+<rect x="60" y="170" width="170" height="90" rx="8" fill="#fefce8" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="150,188 130,222 147,222 137,250 167,212 150,212 162,188" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+<text x="145" y="285" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Elektrisk energi</text>
+<text x="145" y="305" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">100 %</text>
+
+<!-- the lamp (converter) -->
+<circle cx="400" cy="215" r="42" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
+<line x1="372" y1="187" x2="428" y2="243" stroke="#f59e0b" stroke-width="2"/>
+<line x1="428" y1="187" x2="372" y2="243" stroke="#f59e0b" stroke-width="2"/>
+<text x="400" y="290" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">glödlampa</text>
+
+<!-- arrow IN: elektrisk -> lamp (direction shown) -->
+<line x1="232" y1="215" x2="346" y2="215" stroke="#1f2937" stroke-width="4"/>
+<polygon points="358,215 344,208 344,222" fill="#1f2937"/>
+
+<!-- arrows OUT showing distribution: big to värme, small to ljus -->
+<!-- to VÄRME (90%) - thick arrow up-right -->
+<line x1="438" y1="195" x2="585" y2="135" stroke="#dc2626" stroke-width="11"/>
+<polygon points="600,129 580,123 586,147" fill="#dc2626"/>
+<rect x="600" y="100" width="160" height="62" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+<text x="680" y="128" font-family="Arial,sans-serif" font-size="15" fill="#991b1b" text-anchor="middle" font-weight="bold">Värmeenergi</text>
+<text x="680" y="150" font-family="Arial,sans-serif" font-size="15" fill="#991b1b" text-anchor="middle" font-weight="bold">90 %</text>
+
+<!-- to LJUS (10%) - thin arrow down-right -->
+<line x1="438" y1="240" x2="588" y2="300" stroke="#f59e0b" stroke-width="4"/>
+<polygon points="600,305 582,294 580,309" fill="#f59e0b"/>
+<rect x="600" y="278" width="160" height="58" rx="8" fill="#fefce8" stroke="#f59e0b" stroke-width="2"/>
+<text x="680" y="304" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Ljusenergi</text>
+<text x="680" y="325" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">10 %</text>
+
+<!-- proportion bar showing energy distribution clearly -->
+<text x="400" y="378" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Så här fördelas energin:</text>
+<rect x="200" y="392" width="360" height="30" fill="#fef3c7" stroke="#6b7280" stroke-width="1.5"/>
+<rect x="200" y="392" width="324" height="30" fill="#fca5a5"/>
+<rect x="524" y="392" width="36" height="30" fill="#fde047"/>
+<text x="362" y="412" font-family="Arial,sans-serif" font-size="13" fill="#7f1d1d" text-anchor="middle" font-weight="bold">Värme 90 %</text>
+<text x="542" y="438" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Ljus 10 %</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Energiövergångar är när energin byter från en form till en annan</text>
+</svg>

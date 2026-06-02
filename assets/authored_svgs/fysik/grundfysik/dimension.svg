@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Dimension — längd, bredd och höjd</text>
+
+<!--
+  Cabinet projection of a cuboid (rätblock).
+  Front face: rectangle. Depth offset goes up-right at 30deg, half length.
+  Front face corners:
+    A front-bottom-left  (230, 360)
+    B front-bottom-right (470, 360)
+    C front-top-right    (470, 210)
+    D front-top-left     (230, 210)
+  Depth vector dx=+90, dy=-55 (up-right).
+    A' (320, 305)  B' (560, 305)  C' (560, 155)  D' (320, 155)
+-->
+
+<!-- back face (hidden edges, dashed light) -->
+<polygon points="320,305 560,305 560,155 320,155" fill="none" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="5,4"/>
+<!-- hidden connector from A to A' -->
+<line x1="230" y1="360" x2="320" y2="305" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="5,4"/>
+
+<!-- top face -->
+<polygon points="230,210 470,210 560,155 320,155" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2.5"/>
+<!-- right face -->
+<polygon points="470,210 560,155 560,305 470,360" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.5"/>
+<!-- front face -->
+<polygon points="230,210 470,210 470,360 230,360" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2.5"/>
+
+<!-- ===== dimension labels with arrows ===== -->
+
+<!-- LENGTH (längd) — along front-bottom edge A-B -->
+<line x1="230" y1="392" x2="470" y2="392" stroke="#dc2626" stroke-width="2"/>
+<polygon points="230,392 244,387 244,397" fill="#dc2626"/>
+<polygon points="470,392 456,387 456,397" fill="#dc2626"/>
+<line x1="230" y1="370" x2="230" y2="400" stroke="#dc2626" stroke-width="1.2"/>
+<line x1="470" y1="370" x2="470" y2="400" stroke="#dc2626" stroke-width="1.2"/>
+<text x="350" y="414" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Längd</text>
+
+<!-- HEIGHT (höjd) — along front-left edge A-D -->
+<line x1="200" y1="360" x2="200" y2="210" stroke="#15803d" stroke-width="2"/>
+<polygon points="200,360 195,346 205,346" fill="#15803d"/>
+<polygon points="200,210 195,224 205,224" fill="#15803d"/>
+<line x1="180" y1="360" x2="210" y2="360" stroke="#15803d" stroke-width="1.2"/>
+<line x1="180" y1="210" x2="210" y2="210" stroke="#15803d" stroke-width="1.2"/>
+<text x="150" y="290" font-family="Arial,sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold" transform="rotate(-90 150 290)">Höjd</text>
+
+<!-- WIDTH/DEPTH (bredd) — along depth edge B-B' -->
+<line x1="492" y1="372" x2="582" y2="317" stroke="#b45309" stroke-width="2"/>
+<polygon points="492,372 506,371 500,361" fill="#b45309"/>
+<polygon points="582,317 568,318 574,328" fill="#b45309"/>
+<text x="560" y="372" font-family="Arial,sans-serif" font-size="15" fill="#b45309" text-anchor="middle" font-weight="bold">Bredd</text>
+
+<!-- three-dimension explainer boxes -->
+<rect x="600" y="120" width="180" height="44" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5" rx="6"/>
+<text x="690" y="140" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">1:a dimensionen</text>
+<text x="690" y="157" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">längd (←→)</text>
+
+<rect x="600" y="174" width="180" height="44" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5" rx="6"/>
+<text x="690" y="194" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="middle" font-weight="bold">2:a dimensionen</text>
+<text x="690" y="211" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">+ höjd (↑↓)</text>
+
+<rect x="600" y="228" width="180" height="44" fill="#fffbeb" stroke="#b45309" stroke-width="1.5" rx="6"/>
+<text x="690" y="248" font-family="Arial,sans-serif" font-size="13" fill="#b45309" text-anchor="middle" font-weight="bold">3:e dimensionen</text>
+<text x="690" y="265" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">+ bredd (djup)</text>
+
+<text x="690" y="305" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Ett rätblock har</text>
+<text x="690" y="322" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">alla tre dimensioner</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En dimension är en riktning man kan mäta i. Ett rätblock mäts i längd, bredd och höjd</text>
+</svg>

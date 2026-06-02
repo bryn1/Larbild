@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Elens distributionsnät</text>
+
+<!-- ============ STAGE 1: Kraftverk + Stamnät (x ~ 40-210) ============ -->
+<!-- power plant -->
+<rect x="45" y="200" width="80" height="90" rx="4" fill="#e0e7ff" stroke="#1e40af" stroke-width="2.5"/>
+<rect x="60" y="170" width="18" height="30" fill="#9ca3af"/>
+<circle cx="69" cy="166" r="6" fill="#d1d5db" stroke="#6b7280"/>
+<text x="85" y="248" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="bold">Kraftverk</text>
+<text x="85" y="320" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">producerar el</text>
+
+<!-- big pylon (stamnät) -->
+<g stroke="#6b7280" stroke-width="3" fill="none">
+<line x1="180" y1="160" x2="160" y2="290"/>
+<line x1="180" y1="160" x2="200" y2="290"/>
+<line x1="155" y1="195" x2="205" y2="195"/>
+<line x1="150" y1="230" x2="210" y2="230"/>
+</g>
+<text x="180" y="320" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Stamnät</text>
+<text x="180" y="338" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">400 000 V</text>
+
+<!-- line to stage 2 -->
+<line x1="125" y1="230" x2="155" y2="220" stroke="#dc2626" stroke-width="2"/>
+<line x1="205" y1="195" x2="300" y2="220" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="300,220 286,213 287,227" fill="#dc2626"/>
+
+<!-- ============ STAGE 2: Transformator + Regionnät (x ~ 300-470) ============ -->
+<rect x="300" y="200" width="70" height="70" rx="4" fill="#eff6ff" stroke="#1e40af" stroke-width="2.5"/>
+<circle cx="324" cy="235" r="11" fill="none" stroke="#dc2626" stroke-width="2"/>
+<circle cx="346" cy="235" r="11" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="335" y="288" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">transformator</text>
+
+<!-- medium pylon (regionnät) -->
+<g stroke="#6b7280" stroke-width="2.5" fill="none">
+<line x1="430" y1="185" x2="415" y2="275"/>
+<line x1="430" y1="185" x2="445" y2="275"/>
+<line x1="412" y1="210" x2="448" y2="210"/>
+</g>
+<text x="430" y="305" font-family="Arial,sans-serif" font-size="13" fill="#d97706" text-anchor="middle" font-weight="bold">Regionnät</text>
+<text x="430" y="323" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">40 000 V</text>
+
+<line x1="370" y1="235" x2="408" y2="220" stroke="#d97706" stroke-width="2.5"/>
+<line x1="448" y1="210" x2="540" y2="230" stroke="#d97706" stroke-width="2.5"/>
+<polygon points="540,230 526,223 527,237" fill="#d97706"/>
+
+<!-- ============ STAGE 3: Transformatorstation + Lokalnät (x ~ 540-680) ============ -->
+<rect x="540" y="210" width="60" height="60" rx="4" fill="#eff6ff" stroke="#1e40af" stroke-width="2.5"/>
+<circle cx="560" cy="240" r="9" fill="none" stroke="#d97706" stroke-width="2"/>
+<circle cx="580" cy="240" r="9" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="570" y="288" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">station</text>
+
+<text x="630" y="200" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">Lokalnät</text>
+<text x="630" y="218" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">230 V</text>
+<line x1="600" y1="240" x2="660" y2="255" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="660,255 646,248 647,262" fill="#16a34a"/>
+
+<!-- ============ STAGE 4: Hus (x ~ 660-755, INSIDE canvas with right margin) ============ -->
+<rect x="668" y="250" width="78" height="56" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<polygon points="663,250 707,218 751,250" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<rect x="698" y="278" width="18" height="28" fill="#92400e"/>
+<text x="707" y="328" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">Hus</text>
+
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Kraftverk  →  stamnät  →  regionnät  →  lokalnät  →  hus</text>
+<text x="400" y="455" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" font-weight="bold">Spänningen sänks i flera steg på vägen från kraftverket hem till huset</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hög spänning passar för långa avstånd, låg spänning är säker i hemmet</text>
+</svg>

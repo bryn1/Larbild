@@ -1,24 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Magnetfält</text>
-<!-- bar magnet centered -->
-<rect x="320" y="225" width="80" height="60" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
-<rect x="400" y="225" width="80" height="60" fill="#2563eb" stroke="#1e3a8a" stroke-width="2"/>
-<text x="360" y="263" font-family="Arial,sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="bold">N</text>
-<text x="440" y="263" font-family="Arial,sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="bold">S</text>
-<!-- field lines: emerge from N (left), arc around, enter S (right). Outside the magnet the field points N -> S, i.e. left -> right along the top and bottom arcs. -->
-<g fill="none" stroke="#1f2937" stroke-width="1.8">
-<path d="M 340 225 C 320 120, 480 120, 460 225"/>
-<path d="M 345 225 C 330 165, 470 165, 455 225"/>
-<path d="M 340 285 C 320 380, 480 380, 460 285"/>
-<path d="M 345 285 C 330 335, 470 335, 455 285"/>
-</g>
-<!-- direction arrowheads sitting ON the arc apexes, pointing N->S (rightward) -->
-<polygon points="412,146 398,141 398,151" fill="#1f2937"/>
-<polygon points="412,354 398,349 398,359" fill="#1f2937"/>
-<polygon points="408,181 396,177 396,185" fill="#1f2937"/>
-<polygon points="408,329 396,325 396,333" fill="#1f2937"/>
-<text x="250" y="135" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">fältlinjer går från N till S</text>
-<text x="400" y="430" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Fältet är starkast närmast polerna</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Området runt magneten där järnföremål och andra magneter påverkas</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Fältlinjerna går alltid från nordpolen (N) till sydpolen (S)</text>
+
+<!-- bar magnet centered, N (red) left half, S (blue) right half -->
+<rect x="320" y="225" width="80" height="50" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<rect x="400" y="225" width="80" height="50" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="360" y="258" font-family="Arial,sans-serif" font-size="26" fill="white" text-anchor="middle" font-weight="bold">N</text>
+<text x="440" y="258" font-family="Arial,sans-serif" font-size="26" fill="white" text-anchor="middle" font-weight="bold">S</text>
+
+<!-- 7 field lines arcing N (x=320) to S (x=480), symmetric above + below the magnet -->
+<!-- pair 1: small arc, just above magnet -->
+<path d="M335 225 C360 175 440 175 465 225" fill="none" stroke="#6b7280" stroke-width="2"/>
+<line x1="396" y1="184.5" x2="404" y2="184.5" stroke="#6b7280" stroke-width="2"/>
+<polygon points="414,184.5 404,180.7 404,188.3" fill="#6b7280"/>
+<!-- pair 1 mirror below -->
+<path d="M335 275 C360 325 440 325 465 275" fill="none" stroke="#6b7280" stroke-width="2"/>
+<line x1="396" y1="315.5" x2="404" y2="315.5" stroke="#6b7280" stroke-width="2"/>
+<polygon points="414,315.5 404,311.7 404,319.3" fill="#6b7280"/>
+
+<!-- pair 2: medium arc -->
+<path d="M330 225 C330 120 470 120 470 225" fill="none" stroke="#6b7280" stroke-width="2"/>
+<line x1="395" y1="135" x2="405" y2="135" stroke="#6b7280" stroke-width="2"/>
+<polygon points="415,135 405,131.2 405,138.8" fill="#6b7280"/>
+<!-- pair 2 mirror below -->
+<path d="M330 275 C330 380 470 380 470 275" fill="none" stroke="#6b7280" stroke-width="2"/>
+<line x1="395" y1="365" x2="405" y2="365" stroke="#6b7280" stroke-width="2"/>
+<polygon points="415,365 405,361.2 405,368.8" fill="#6b7280"/>
+
+<!-- pair 3: large arc -->
+<path d="M325 225 C290 70 510 70 475 225" fill="none" stroke="#6b7280" stroke-width="2"/>
+<line x1="394" y1="92" x2="406" y2="92" stroke="#6b7280" stroke-width="2"/>
+<polygon points="416,92 406,88.2 406,95.8" fill="#6b7280"/>
+<!-- pair 3 mirror below -->
+<path d="M325 275 C290 430 510 430 475 275" fill="none" stroke="#6b7280" stroke-width="2"/>
+<line x1="394" y1="408" x2="406" y2="408" stroke="#6b7280" stroke-width="2"/>
+<polygon points="416,408 406,404.2 406,411.8" fill="#6b7280"/>
+
+<!-- one short line straight off each end (the field also goes around the poles) -->
+<line x1="320" y1="250" x2="250" y2="250" stroke="#6b7280" stroke-width="2"/>
+<polygon points="240,250 250,246.2 250,253.8" fill="#6b7280"/>
+<line x1="480" y1="250" x2="550" y2="250" stroke="#6b7280" stroke-width="2"/>
+<polygon points="560,250 550,246.2 550,253.8" fill="#6b7280"/>
+
+<text x="195" y="254" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">N</text>
+<text x="605" y="254" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">S</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Magnetfältet är området runt magneten där järn och andra magneter påverkas</text>
 </svg>
