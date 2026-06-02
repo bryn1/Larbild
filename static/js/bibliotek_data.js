@@ -113,6 +113,165 @@
     return `/skapa?${qs}`;
   }
 
+  /* ----------------------------------------------------------------------
+   * URL <-> browse-location (lb-review-regen: refresh/navigation fix)
+   * --------------------------------------------------------------------- */
+
+  /**
+   * Read the current Bibliotek browse location out of a query string.
+   *
+   * The SPA navigates by React state and (before this) never touched the URL,
+   * so a refresh inside a subject bounced back to the top-level grid. We now
+   * push the location to the URL (?subject=&area=[&imageType=]) and read it back
+   * on load to RESTORE where the owner was — reusing the exact same
+   * URLSearchParams parsing the Skapa deep-link added (skapaLink / skapa_data's
+   * readSelectionFromQuery).
+   *
+   * Pure: parses the given search string only (no window/DOM access — the view
+   * passes ``window.location.search``). Accepts the string with or without a
+   * leading "?". The values are taxonomy slugs, validated by the caller against
+   * the loaded tree before use (a stale/hand-edited URL can't select a bogus
+   * node — it just falls back to the top level). Returns
+   * ``{ subject|null, area|null, imageType|null }``.
+   */
+  function readLocationFromQuery(search) {
+    const out = { subject: null, area: null, imageType: null };
+    if (!search || typeof search !== "string") return out;
+    const params = new URLSearchParams(search.charAt(0) === "?" ? search.slice(1) : search);
+    out.subject = params.get("subject") || null;
+    // area is subject-scoped — only meaningful alongside a subject.
+    out.area = out.subject ? (params.get("area") || null) : null;
+    out.imageType = params.get("imageType") || params.get("image_type") || null;
+    return out;
+  }
+
+  /**
+   * Build the Bibliotek URL (path + query) for a browse location, so a refresh
+   * stays put. Mirrors skapaLink's encode-each-id discipline. The area/imageType
+   * are only ever included alongside a subject (areas are subject-scoped). Used
+   * with history.replaceState so navigating doesn't spam the back-stack but a
+   * reload restores the spot. Returns:
+   *   • "/bibliotek"                                  (top-level, no subject),
+   *   • "/bibliotek?subject=<s>"                       (subject only),
+   *   • "/bibliotek?subject=<s>&area=<a>"              (+ area),
+   *   • "/bibliotek?subject=<s>&area=<a>&imageType=<t>" (+ type).
+   */
+  function bibliotekUrl(subjectId, areaId, imageType) {
+    if (!subjectId) return "/bibliotek";
+    let qs = `subject=${encodeURIComponent(subjectId)}`;
+    if (areaId) {
+      qs += `&area=${encodeURIComponent(areaId)}`;
+      if (imageType) qs += `&imageType=${encodeURIComponent(imageType)}`;
+    }
+    return `/bibliotek?${qs}`;
+  }
+
+  /* ----------------------------------------------------------------------
+   * Review verdict helpers (lb-review-regen)
+   * --------------------------------------------------------------------- */
+
+  // review_ok tri-state: null = unreviewed (pending), 1 = OK, 0 = Inte-OK.
+  const REVIEW = { PENDING: null, OK: 1, NOTOK: 0 };
+
+  /** Swedish label for a verdict, for the tile/lightbox badge. */
+  function reviewLabel(ok) {
+    if (ok === 1) return "OK";
+    if (ok === 0) return "Inte OK";
+    return "Ej granskad";
+  }
+
+  /** CSS state class for a verdict badge (styled in components.css). */
+  function reviewClass(ok) {
+    if (ok === 1) return "ok";
+    if (ok === 0) return "notok";
+    return "pending";
+  }
+
+  /**
+   * The next verdict when the OK/Inte-OK toggle is clicked. Clicking the verdict
+   * that is already set clears it back to pending (null) — the atelier toggle
+   * behaviour; clicking the other verdict switches to it. Pure (kept here so the
+   * review control's one bit of state logic is unit-testable in lockstep with
+   * the JSX). ``current`` is the present review_ok; ``clicked`` is 1 or 0.
+   */
+  function toggleVerdict(current, clicked) {
+    return current === clicked ? null : clicked;
+  }
+
+  /** Does an item match a verdict filter ("all"|"pending"|"ok"|"notok")? Pure. */
+  function matchesReview(item, filter) {
+    if (!filter || filter === "all") return true;
+    const ok = item ? item.review_ok : undefined;
+    if (filter === "pending") return ok === null || ok === undefined;
+    if (filter === "ok") return ok === 1;
+    if (filter === "notok") return ok === 0;
+    return true;
+  }
+
+  /* ----------------------------------------------------------------------
+   * Version-chain helpers (lb-review-regen)
+   * --------------------------------------------------------------------- */
+
+  /**
+   * Walk a list of library items into version chains via ``parent_id``.
+   *
+   * A regenerate produces a new row whose ``parent_id`` is the row it was made
+   * from, so the items form forests of version chains. This groups a flat item
+   * list into one entry per chain ROOT, each carrying its ordered ``versions``
+   * (root first → newest last), so the gallery can show one tile per asset with
+   * a "v1 · v2 · v3" history and put the Regenerera button on the LATEST version.
+   *
+   * Robust to a partial page: an item whose parent isn't in the list is treated
+   * as its own root (the gallery is area-scoped + may be filtered, so a parent
+   * can legitimately be absent). Order within a chain is by ``created_at`` then
+   * id (stable); roots keep the order their newest version appears in the input
+   * (so a freshly-regenerated chain still surfaces near the top). Pure; never
+   * mutates the input. Returns ``[{ root, versions: [...], latest }]``.
+   */
+  function buildVersionChains(items) {
+    const list = Array.isArray(items) ? items : [];
+    const byId = new Map(list.map((it) => [it.id, it]));
+    // Find the root of an item by following parent_id while the parent is in the
+    // page; guard against a cycle (shouldn't happen — ON DELETE SET NULL + a
+    // forward-only chain — but never loop forever).
+    function rootOf(it) {
+      let cur = it;
+      const seen = new Set();
+      while (cur && cur.parent_id && byId.has(cur.parent_id) && !seen.has(cur.id)) {
+        seen.add(cur.id);
+        cur = byId.get(cur.parent_id);
+      }
+      return cur;
+    }
+    const chains = new Map(); // rootId -> versions[]
+    for (const it of list) {
+      const root = rootOf(it);
+      const key = root.id;
+      if (!chains.has(key)) chains.set(key, []);
+      chains.get(key).push(it);
+    }
+    const cmp = (a, b) => {
+      const at = a.created_at || "", bt = b.created_at || "";
+      if (at < bt) return -1;
+      if (at > bt) return 1;
+      return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
+    };
+    const out = [];
+    for (const [rootId, versions] of chains) {
+      versions.sort(cmp);
+      out.push({
+        root: byId.get(rootId) || versions[0],
+        versions,
+        latest: versions[versions.length - 1],
+      });
+    }
+    // Keep roots ordered by their latest version's position in the input
+    // (newest-first lists stay newest-first at the chain level).
+    const rank = new Map(list.map((it, i) => [it.id, i]));
+    out.sort((a, b) => (rank.get(a.latest.id) ?? 0) - (rank.get(b.latest.id) ?? 0));
+    return out;
+  }
+
   /**
    * Format a library item's ``generated_at`` for the full-size view.
    *
@@ -140,6 +299,7 @@
 
   return {
     PRIORITY_SUBJECTS,
+    REVIEW,
     orderSubjects,
     findSubject,
     findArea,
@@ -149,5 +309,12 @@
     subjSoft,
     skapaLink,
     fmtDate,
+    readLocationFromQuery,
+    bibliotekUrl,
+    reviewLabel,
+    reviewClass,
+    toggleVerdict,
+    matchesReview,
+    buildVersionChains,
   };
 });

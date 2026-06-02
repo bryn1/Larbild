@@ -1,5 +1,5 @@
 /* ============================================================================
-   Lärbild — Bibliotek view (lb-eee)
+   Lärbild — Bibliotek view (lb-eee + lb-review-regen)
    ----------------------------------------------------------------------------
    The 3-level browse: ämnen (subjects) → områden (areas) → bilder/filmer,
    with a Centralt-innehåll (LGR22 central content) panel for the selected area.
@@ -7,23 +7,28 @@
    ui.jsx) but wired to the live backend instead of the mock window.LB:
 
      • GET /api/library  — the auto-sorted tree + per-node asset counts (lb-5rc).
-                           This is the primary source: structure, counts, and
-                           the per-subject display fields (hue/glyph/blurb) all
-                           arrive in one call.
-     • GET /api/taxonomy — also fetched, as the broader bootstrap the design
-                           bootstraps from (image/video types etc.); the view
-                           tolerates it being unavailable.
+     • GET /api/library/items — the per-node gallery items, now carrying each
+                           item's review state (review_ok/comment/reviewed_at)
+                           and parent_id (the version chain). ?review= filters.
+     • GET /api/taxonomy — best-effort bootstrap (image/video types etc.).
+
+   lb-review-regen adds, mirroring the atelier /admin/review UX the owner knows:
+     • a review FILTER (Allt / Att granska / Inte OK) over the gallery,
+     • per-asset OK / Inte OK verdict + a comment, persisted via
+       POST /api/library/<id>/review,
+     • a "Regenerera" action (POST /api/library/<id>/regenerate) that enqueues a
+       NEW, linked version (parent_id) incorporating the owner's note — repeatable
+       across turns, with the version chain shown in the lightbox, and
+     • URL persistence: the browse location is pushed to the URL
+       (?subject=&area=[&imageType=]) and restored on load, so a refresh inside a
+       subject stays put instead of bouncing to the top (the reported nav bug).
 
    Pure data/ordering logic lives in bibliotek_data.js (window.LBData), unit-
    tested under node. This file is the React rendering layer. No build step —
    Babel-in-browser, matching the design's serving model.
-
-   Reuses the design-system component classes from static/css (subj-card,
-   area-rail, asset-grid, panel, crumb, tabs, empty) — no inline color/spacing
-   beyond the documented per-subject hue mechanism.
-   SFW-only: educational browse of the SFW library; no restricted feature.
+   SFW-only: educational browse + review of the SFW library; no restricted feature.
    ============================================================================ */
-const { useState, useEffect } = React;
+const { useState, useEffect, useCallback, useRef } = React;
 const D = window.LBData;
 
 /* ---------- minimal icon set (subset of the design's ui.jsx I) ---------- */
@@ -37,6 +42,9 @@ const I = {
   sparkle: <Ico d={<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" />} />,
   play:    <Ico d={<path d="M7 5l12 7-12 7z" />} fill="currentColor" sw={0} />,
   close:   <Ico d={<path d="M6 6l12 12M18 6L6 18" />} sw={2} size={20} />,
+  check:   <Ico d={<path d="M5 12l5 5L20 7" />} sw={2} size={15} />,
+  cross:   <Ico d={<path d="M6 6l12 12M18 6L6 18" />} sw={2} size={15} />,
+  redo:    <Ico d={<><path d="M21 12a9 9 0 1 1-3-6.7" /><path d="M21 4v5h-5" /></>} size={16} />,
 };
 
 /* ---------- LEVEL 1 card: one subject ---------- */
@@ -57,23 +65,39 @@ function SubjectCard({ s, onOpen }) {
   );
 }
 
-/* ---------- an asset tile (bild/film) ---------- */
-// The image src is the servable URL the API attaches (item.thumb_url / item.url,
-// each "/media/<file_path>"); falls back to building it from the stored relative
-// path for forward-compat with any caller that hasn't been updated. Clicking the
-// tile opens the full-size lightbox.
+/* ---------- a verdict badge (tile + lightbox) ---------- */
+function ReviewBadge({ ok, onTile }) {
+  // Pending verdicts get no tile badge (keeps the grid calm — only a decision
+  // shows); the lightbox always shows the current state for clarity.
+  if (onTile && (ok === null || ok === undefined)) return null;
+  return (
+    <span className={`rev-badge ${D.reviewClass(ok)}`}>
+      <span className="dot" />{D.reviewLabel(ok)}
+    </span>
+  );
+}
+
+/* ---------- an asset tile (one version chain → its latest version) ---------- */
+// The tile shows the LATEST version of a chain; a version-count pill marks a
+// chain with history. The image src is the servable URL the API attaches
+// (item.thumb_url / item.url, each "/media/<file_path>"); falls back to building
+// it from the stored relative path. Clicking opens the full-size lightbox.
 function assetThumbSrc(item) {
   return item.thumb_url || item.url ||
     ((item.thumb_path || item.file_path) ? `/media/${item.thumb_path || item.file_path}` : null);
 }
-function AssetCard({ item, subject, onOpen }) {
+function AssetCard({ chain, subject, onOpen }) {
+  const item = chain.latest;
   const src = assetThumbSrc(item);
+  const versionCount = chain.versions.length;
   return (
-    <div className="acard" onClick={() => onOpen && onOpen(item)}>
+    <div className="acard" onClick={() => onOpen && onOpen(chain)}>
       <div className="thumb">
         {src ? <img src={src} alt={item.title} loading="lazy" /> : null}
         <span className={`kind-tag ${item.kind === "film" ? "film" : ""}`}>{item.kind}</span>
         {item.kind === "film" && <span className="play">{I.play}</span>}
+        <ReviewBadge ok={item.review_ok} onTile />
+        {versionCount > 1 && <span className="ver-pill">v{versionCount}</span>}
       </div>
       <div className="ainfo">
         <div className="atitle">{item.title}</div>
@@ -87,17 +111,124 @@ function AssetCard({ item, subject, onOpen }) {
   );
 }
 
-/* ---------- full-size lightbox: one asset + its metadata ---------- */
-// Opened by clicking a tile. Shows the full-resolution image (item.url) and the
-// prompt + render provenance (LoRA, seed, backend, dimensions, generated_at).
-// Closes on the backdrop, the × button, or Escape. SFW educational artefact.
-function Lightbox({ item, subject, onClose }) {
+/* ---------- the review control block (lightbox) ---------- */
+// OK / Inte OK toggle + a comment textarea, persisted via POST
+// /api/library/<id>/review. Mirrors the atelier review UX. Optimistic on the
+// verdict (instant toggle), debounced-on-blur for the comment; the persisted
+// state flows back up via onPersist so the gallery tile + filter stay correct.
+function ReviewControl({ item, onPersist }) {
+  const [ok, setOk] = useState(item.review_ok ?? null);
+  const [comment, setComment] = useState(item.review_comment || "");
+  const [status, setStatus] = useState("idle"); // idle | saving | saved | err
+
+  // Re-sync when a different asset opens in the modal.
+  useEffect(() => {
+    setOk(item.review_ok ?? null);
+    setComment(item.review_comment || "");
+    setStatus("idle");
+  }, [item.id]);
+
+  const save = useCallback((body) => {
+    setStatus("saving");
+    return fetch(`/api/library/${encodeURIComponent(item.id)}/review`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    })
+      .then((r) => { if (!r.ok) throw new Error(`review ${r.status}`); return r.json(); })
+      .then((saved) => {
+        setStatus("saved");
+        // Reflect the persisted state upward (tile badge + filter recompute).
+        if (onPersist) onPersist(item.id, {
+          review_ok: saved.review_ok,
+          review_comment: saved.review_comment,
+          reviewed_at: saved.reviewed_at,
+        });
+        return saved;
+      })
+      .catch(() => setStatus("err"));
+  }, [item.id, onPersist]);
+
+  // Toggle a verdict: clicking the active one clears it back to pending (null).
+  // The decision lives in D.toggleVerdict (pure, unit-tested in lockstep).
+  const setVerdict = (val) => {
+    const next = D.toggleVerdict(ok, val);
+    setOk(next);
+    save({ review_ok: next });
+  };
+  const saveComment = () => {
+    if ((item.review_comment || "") === comment) return; // no change
+    save({ comment });
+  };
+
+  return (
+    <div className="lb-review">
+      <div className="rh">Granskning</div>
+      <div className="rev-buttons">
+        <button className={`rev-btn ok ${ok === 1 ? "active" : ""}`}
+          onClick={() => setVerdict(1)} aria-pressed={ok === 1}>
+          {I.check} OK
+        </button>
+        <button className={`rev-btn notok ${ok === 0 ? "active" : ""}`}
+          onClick={() => setVerdict(0)} aria-pressed={ok === 0}>
+          {I.cross} Inte OK
+        </button>
+      </div>
+      <textarea className="rev-comment" value={comment}
+        placeholder="Kommentar — vad ska ändras? (styr även en regenerering)"
+        onChange={(e) => setComment(e.target.value)} onBlur={saveComment} />
+      <div className="rev-actions">
+        <button className="btn sm" onClick={saveComment} disabled={status === "saving"}>Spara kommentar</button>
+        <span className={`rev-status ${status === "saved" ? "saved" : status === "err" ? "err" : ""}`}>
+          {status === "saving" ? "Sparar…" : status === "saved" ? "Sparat" : status === "err" ? "Kunde inte spara" : ""}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- the version chain strip (lightbox) ---------- */
+function VersionStrip({ chain, currentId, onPick }) {
+  if (!chain || chain.versions.length < 2) return null;
+  return (
+    <div className="lb-versions">
+      <div className="rh">Versioner · {chain.versions.length}</div>
+      <div className="ver-strip">
+        {chain.versions.map((v, i) => {
+          const src = assetThumbSrc(v);
+          return (
+            <div key={v.id} className={`ver-thumb ${v.id === currentId ? "current" : ""}`}
+              title={`v${i + 1}`} onClick={() => onPick(v)}>
+              {src ? <img src={src} alt={`v${i + 1}`} /> : null}
+              <span className="vn">v{i + 1}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ---------- full-size lightbox: one chain, the selected version + review ----------
+   Opened by clicking a tile (which passes its whole version chain). Shows the
+   selected version full-resolution + its provenance + the review control + the
+   version strip + a "Regenerera" button (only on the LATEST version — a regen
+   always extends the newest tip). Closes on the backdrop, the × button, or
+   Escape. SFW educational artefact. */
+function Lightbox({ chain, subject, onClose, onPersist, onRegenerated }) {
+  // Which version of the chain is on stage (defaults to the latest).
+  const [viewId, setViewId] = useState(chain.latest.id);
+  const [regen, setRegen] = useState({ phase: "idle", msg: "" }); // idle|busy|done|err
+
+  useEffect(() => { setViewId(chain.latest.id); setRegen({ phase: "idle", msg: "" }); }, [chain.latest.id]);
   useEffect(() => {
     const onKey = (e) => { if (e.key === "Escape") onClose(); };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
-  if (!item) return null;
+
+  const item = chain.versions.find((v) => v.id === viewId) || chain.latest;
+  const isLatest = item.id === chain.latest.id;
   const full = item.url || assetThumbSrc(item);
   const when = D.fmtDate ? D.fmtDate(item.generated_at) : (item.generated_at || "");
   const meta = [
@@ -107,6 +238,29 @@ function Lightbox({ item, subject, onClose }) {
     (item.width && item.height) && ["Mått", `${item.width}×${item.height}`],
     when && ["Skapad", when],
   ].filter(Boolean);
+
+  const regenerate = () => {
+    setRegen({ phase: "busy", msg: "Startar ny version…" });
+    // Regenerate from the version on stage; its current comment (if any) guides
+    // the new render server-side. A fresh comment can be left first in the review
+    // box (persisted), then it guides the regenerate.
+    fetch(`/api/library/${encodeURIComponent(item.id)}/regenerate`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({}),
+    })
+      .then((r) => r.json().then((b) => ({ ok: r.ok, status: r.status, b })))
+      .then(({ ok, status, b }) => {
+        if (!ok) {
+          setRegen({ phase: "err", msg: status === 429 ? "Renderkön är full — försök strax igen." : (b.error || "Kunde inte regenerera.") });
+          return;
+        }
+        setRegen({ phase: "done", msg: "Ny version i kö — den dyker upp här när den är klar." });
+        if (onRegenerated) onRegenerated(b.job_id); // let the view refresh the node
+      })
+      .catch(() => setRegen({ phase: "err", msg: "Kunde inte regenerera." }));
+  };
+
   return (
     <div className="lb-backdrop" onClick={onClose}>
       <div className="lb-modal" onClick={(e) => e.stopPropagation()}>
@@ -117,10 +271,14 @@ function Lightbox({ item, subject, onClose }) {
             : (full ? <img src={full} alt={item.title} /> : <div className="dim">Ingen bild</div>)}
         </div>
         <div className="lb-info">
-          <div className="lb-title serif">{item.title}</div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
+            <div className="lb-title serif">{item.title}</div>
+            <ReviewBadge ok={item.review_ok} />
+          </div>
           <div className="lb-sub mono">
             {subject ? subject.name : ""} · {item.area_name || item.area}
             {item.image_type ? " · " + item.image_type : ""}
+            {chain.versions.length > 1 ? ` · v${chain.versions.indexOf(item) + 1}/${chain.versions.length}` : ""}
           </div>
           {item.prompt && <div className="lb-prompt">{item.prompt}</div>}
           {meta.length > 0 && (
@@ -130,6 +288,30 @@ function Lightbox({ item, subject, onClose }) {
               ))}
             </dl>
           )}
+
+          {/* Review the version on stage (verdict + note). Films are reviewable
+              too; only regeneration is image-only (the button is gated below). */}
+          <ReviewControl item={item} onPersist={onPersist} />
+
+          {/* Regenerate — only the latest version of an image chain (a regen
+              extends the newest tip; films aren't regenerable in v1). */}
+          {item.kind === "bild" && (
+            <div className="rev-actions" style={{ marginTop: 14 }}>
+              <button className="btn primary" onClick={regenerate}
+                disabled={regen.phase === "busy" || !isLatest}
+                title={isLatest ? "Skapa en ny version utifrån kommentaren" : "Öppna senaste versionen för att regenerera"}>
+                {I.redo} Regenerera
+              </button>
+              {!isLatest && <span className="rev-status">Visar en äldre version</span>}
+              {regen.msg && (
+                <span className={`rev-status ${regen.phase === "err" ? "err" : regen.phase === "done" ? "saved" : ""}`}>
+                  {regen.msg}
+                </span>
+              )}
+            </div>
+          )}
+
+          <VersionStrip chain={chain} currentId={item.id} onPick={(v) => setViewId(v.id)} />
         </div>
       </div>
     </div>
@@ -143,14 +325,21 @@ function Bibliotek() {
   const [subjectId, setSubjectId] = useState(null);
   const [areaId, setAreaId] = useState(null);
   const [kind, setKind] = useState("all"); // all | bild | film
+  const [reviewFilter, setReviewFilter] = useState("all"); // all | pending | notok
   // Per-node item cache keyed by "<subject>/<area>" — the gallery's data, fetched
-  // lazily from /api/library/items when a node is opened (the count tree from
-  // /api/library has no items). `null` value = in-flight; array = loaded.
+  // lazily from /api/library/items when a node is opened. `null` = in-flight;
+  // array = loaded. A bump counter forces a re-fetch of the open node after a
+  // regenerate so the new version appears.
   const [itemsByNode, setItemsByNode] = useState({});
-  const [lightbox, setLightbox] = useState(null); // the asset open in the modal, or null
+  const [lightbox, setLightbox] = useState(null); // the version chain open in the modal, or null
+  // The deep-linked location read from the URL on first load (lb-review-regen):
+  // restored once the tree arrives so a refresh stays put. Captured in a ref so
+  // it's read exactly once (not re-applied on every render).
+  const initialLoc = useRef(D.readLocationFromQuery(
+    typeof window !== "undefined" ? window.location.search : ""));
+  const restored = useRef(false);
 
-  // Bootstrap from the live backend. /api/library is the primary source; the
-  // taxonomy call is best-effort (kept for parity with the design bootstrap).
+  // Bootstrap from the live backend. /api/library is the primary source.
   useEffect(() => {
     let alive = true;
     Promise.all([
@@ -162,6 +351,32 @@ function Bibliotek() {
     return () => { alive = false; };
   }, []);
 
+  // RESTORE the browse location from the URL once the tree is loaded — validated
+  // against the live taxonomy so a stale/bogus URL can't select an invalid node
+  // (it just lands at the top level). Runs once.
+  useEffect(() => {
+    if (!subjects || restored.current) return;
+    restored.current = true;
+    const loc = initialLoc.current;
+    const sub = loc.subject ? D.findSubject(subjects, loc.subject) : null;
+    if (!sub) return; // unknown/absent subject → stay at top level
+    setSubjectId(sub.id);
+    const ar = loc.area ? D.findArea(sub, loc.area) : null;
+    if (ar) setAreaId(ar.id);
+  }, [subjects]);
+
+  // PUSH the current location to the URL so a refresh stays put. replaceState
+  // (not pushState) so internal nav doesn't bloat the back-stack; a reload reads
+  // it back via initialLoc above. Skipped until the first restore has run, so we
+  // never stomp the deep-link before adopting it.
+  useEffect(() => {
+    if (!restored.current || typeof window === "undefined") return;
+    const url = D.bibliotekUrl(subjectId, areaId, null);
+    if (window.location.pathname + window.location.search !== url) {
+      window.history.replaceState(null, "", url);
+    }
+  }, [subjectId, areaId]);
+
   // Apply the active subject's hue to the page accent.
   const sub = subjects ? D.findSubject(subjects, subjectId) : null;
   useEffect(() => {
@@ -169,12 +384,34 @@ function Bibliotek() {
     document.documentElement.style.setProperty("--brand-h", h);
   }, [sub]);
 
+  // Merge a persisted review back into the item cache so the tile badge + the
+  // review filter recompute without a refetch (passed to the lightbox).
+  const applyReview = useCallback((id, patch) => {
+    setItemsByNode((prev) => {
+      const next = {};
+      for (const key of Object.keys(prev)) {
+        const arr = prev[key];
+        next[key] = Array.isArray(arr)
+          ? arr.map((it) => (it.id === id ? { ...it, ...patch } : it))
+          : arr;
+      }
+      return next;
+    });
+  }, []);
+
+  // Force a refetch of the open node (used after a regenerate so the queued new
+  // version shows once it renders — the owner can also just reopen the area).
+  const refetchOpenNode = useCallback(() => {
+    if (!sub) return;
+    const ids = areaId ? [areaId] : (sub.areas || []).filter((a) => (a.asset_count || 0) > 0).map((a) => a.id);
+    setItemsByNode((prev) => {
+      const next = { ...prev };
+      ids.forEach((aid) => { delete next[`${sub.id}/${aid}`]; });
+      return next;
+    });
+  }, [sub, areaId]);
+
   // Lazily fetch the gallery items for the open node from /api/library/items.
-  // When an area is selected → just that area; for "Alla områden" → every area
-  // that has assets (asset_count > 0), so the merged "all" view shows real
-  // images. Each node is fetched once and cached in itemsByNode; an empty node
-  // is never fetched (its asset_count is 0). Best-effort per area: one failed
-  // fetch leaves that node's cache empty without breaking the others.
   useEffect(() => {
     if (!sub) return;
     const wanted = (areaId
@@ -185,7 +422,6 @@ function Bibliotek() {
     if (toLoad.length === 0) return;
 
     let alive = true;
-    // Mark in-flight so we don't refetch while a request is pending.
     setItemsByNode((prev) => {
       const next = { ...prev };
       toLoad.forEach((aid) => { next[`${sub.id}/${aid}`] = null; });
@@ -251,18 +487,23 @@ function Bibliotek() {
 
   // ---------- LEVEL 2/3: inside a subject ----------
   const area = areaId ? D.findArea(sub, areaId) : null;
-  // Pull the gallery items from the lazily-fetched cache (itemsByNode), keyed by
-  // "<subject>/<area>". For one area → that node; for "Alla områden" → the merged
-  // items across every area with assets. Filtered by the kind tab.
   const nodeKey = (aid) => `${sub.id}/${aid}`;
   const relevantAreaIds = area
     ? [area.id]
     : (sub.areas || []).filter((a) => (a.asset_count || 0) > 0).map((a) => a.id);
-  // Loading until every relevant node has resolved to an array (null = in-flight,
-  // undefined = not yet requested → the effect above will request it).
   const itemsLoading = relevantAreaIds.some((aid) => !Array.isArray(itemsByNode[nodeKey(aid)]));
   let assets = relevantAreaIds.flatMap((aid) => itemsByNode[nodeKey(aid)] || []);
   if (kind !== "all") assets = assets.filter((it) => it.kind === kind);
+  if (reviewFilter !== "all") assets = assets.filter((it) => D.matchesReview(it, reviewFilter));
+  // Group into version chains — one tile per asset, latest version on top, with
+  // its history available in the lightbox. The filters above run on items first
+  // so a chain shows iff its latest matching version qualifies.
+  const chains = D.buildVersionChains(assets);
+  // Keep the lightbox's chain in sync with fresh data (e.g. after a review write
+  // or refetch) so its review state + version strip reflect the cache.
+  const liveLightboxChain = lightbox
+    ? (chains.find((c) => c.root.id === lightbox.root.id) || lightbox)
+    : null;
 
   return (
     <div className="page" data-screen-label={"Bibliotek · " + sub.name}>
@@ -278,13 +519,20 @@ function Bibliotek() {
             <span style={{ width: 44, height: 44, borderRadius: 12, display: "grid", placeItems: "center", fontSize: 24, background: D.subjSoft(sub), color: D.subjColor(sub, 0.45) }}>{sub.glyph}</span>
             {area ? area.name : sub.name}
           </h1>
-          <div className="caption">{(itemsLoading && kind === "all" ? (area ? (area.asset_count || 0) : (sub.asset_count || 0)) : assets.length)} objekt{area ? "" : " · " + (sub.areas || []).length + " områden"}</div>
+          <div className="caption">{(itemsLoading && kind === "all" && reviewFilter === "all" ? (area ? (area.asset_count || 0) : (sub.asset_count || 0)) : chains.length)} objekt{area ? "" : " · " + (sub.areas || []).length + " områden"}</div>
         </div>
         <div className="page-head-actions">
           <div className="tabs">
             <button className={`tab ${kind === "all" ? "active" : ""}`} onClick={() => setKind("all")}>Allt</button>
             <button className={`tab ${kind === "bild" ? "active" : ""}`} onClick={() => setKind("bild")}>Bilder</button>
             <button className={`tab ${kind === "film" ? "active" : ""}`} onClick={() => setKind("film")}>Filmer</button>
+          </div>
+          <span className="hsep" />
+          {/* Review filter — the atelier-style triage lens over the gallery. */}
+          <div className="tabs">
+            <button className={`tab ${reviewFilter === "all" ? "active" : ""}`} onClick={() => setReviewFilter("all")} title="Visa alla">Alla</button>
+            <button className={`tab ${reviewFilter === "pending" ? "active" : ""}`} onClick={() => setReviewFilter("pending")} title="Ej granskade">Att granska</button>
+            <button className={`tab ${reviewFilter === "notok" ? "active" : ""}`} onClick={() => setReviewFilter("notok")} title="Markerade Inte OK">Inte OK</button>
           </div>
           <span className="hsep" />
           <a className="btn primary" href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa här</a>
@@ -321,22 +569,38 @@ function Bibliotek() {
               </div>
             </div>
           )}
-          {assets.length ? (
+          {chains.length ? (
             <div className="asset-grid">
-              {assets.map((it) => <AssetCard key={it.id} item={it} subject={sub} onOpen={setLightbox} />)}
+              {chains.map((c) => <AssetCard key={c.root.id} chain={c} subject={sub} onOpen={setLightbox} />)}
             </div>
           ) : itemsLoading ? (
             <div className="empty"><div className="dim">Läser in bilder…</div></div>
           ) : (
             <div className="empty">
-              <div className="pull">Inga {kind === "film" ? "filmer" : kind === "bild" ? "bilder" : "objekt"} här ännu.</div>
-              <div className="dim" style={{ marginBottom: 16 }}>Allt du skapar för det här området hamnar automatiskt här.</div>
-              <a className="btn primary" style={{ margin: "0 auto" }} href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa det första</a>
+              <div className="pull">
+                {reviewFilter === "pending" ? "Inget kvar att granska här." :
+                  reviewFilter === "notok" ? "Inga objekt markerade Inte OK här." :
+                  `Inga ${kind === "film" ? "filmer" : kind === "bild" ? "bilder" : "objekt"} här ännu.`}
+              </div>
+              <div className="dim" style={{ marginBottom: 16 }}>
+                {reviewFilter !== "all" ? "Byt filter för att se fler objekt." : "Allt du skapar för det här området hamnar automatiskt här."}
+              </div>
+              {reviewFilter === "all" && (
+                <a className="btn primary" style={{ margin: "0 auto" }} href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa det första</a>
+              )}
             </div>
           )}
         </div>
       </div>
-      {lightbox && <Lightbox item={lightbox} subject={sub} onClose={() => setLightbox(null)} />}
+      {liveLightboxChain && (
+        <Lightbox
+          chain={liveLightboxChain}
+          subject={sub}
+          onClose={() => setLightbox(null)}
+          onPersist={applyReview}
+          onRegenerated={refetchOpenNode}
+        />
+      )}
     </div>
   );
 }

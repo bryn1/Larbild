@@ -262,6 +262,7 @@ def enqueue_job(
     backend: Optional[str] = None,
     params: Optional[dict] = None,
     batch_id: Optional[str] = None,
+    parent_id: Optional[str] = None,
 ) -> str:
     """Persist a durable jobs row, seed live Redis state, push onto the queue.
 
@@ -275,6 +276,11 @@ def enqueue_job(
     from a batch submission, so aggregate progress can be read straight off the
     jobs table; a single-submit job leaves it NULL. The column is added by
     migration 0003 (run on boot), so it is always present here.
+
+    ``parent_id`` (lb-review-regen) links this job to the ``library`` row it was
+    regenerated FROM, so the render worker can copy the link onto the new library
+    row and extend the version chain. A first-time render leaves it NULL. The
+    column is added by migration 0005 (run on boot), so it is always present.
 
     The render worker (lb-ocx) BRPOPs ``QUEUE_KEY``, renders, and writes
     progress/terminal states back via :func:`write_job_state`. The LoRA is NOT
@@ -294,11 +300,11 @@ def enqueue_job(
             INSERT INTO jobs
                 (id, kind, status, subject, area, image_type, video_type,
                  title, prompt, lora, lora_strength, seed, backend, params_json,
-                 batch_id)
-            VALUES (?, ?, 'queued', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                 batch_id, parent_id)
+            VALUES (?, ?, 'queued', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (job_id, kind, subject, area, image_type, video_type, title, prompt,
-             lora, lora_strength, seed, backend, params_json, batch_id),
+             lora, lora_strength, seed, backend, params_json, batch_id, parent_id),
         )
 
     # Live state (SSE reads this immediately on connect = RESUME).

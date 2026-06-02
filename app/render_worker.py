@@ -164,6 +164,12 @@ def _autosort_to_library(job: dict, meta: dict, rel_path: Path) -> str:
     render provenance (prompt, LoRA, seed, backend, dims). ``file_path`` is the
     STORAGE_DIR-relative path under ``output/``. Written BEFORE the job is marked
     done + linked, so the jobs.library_id FK is satisfied.
+
+    A regenerate carries ``jobs.parent_id`` — the library row this render was made
+    FROM — which is copied onto the new row's ``parent_id`` so the version chain
+    is preserved across the async queue→worker hop (lb-review-regen). A first-time
+    render leaves it NULL (an original / chain root). ``job.get`` is used so an
+    older job row (pre-0005, no parent_id column) still inserts cleanly.
     """
     lib_id = new_id()
     lora = meta.get("lora") or {}
@@ -173,8 +179,8 @@ def _autosort_to_library(job: dict, meta: dict, rel_path: Path) -> str:
             INSERT INTO library
                 (id, kind, subject, area, image_type, video_type, title, job_id,
                  file_path, prompt, lora, lora_strength, seed, backend,
-                 width, height, workflow_json, created_at)
-            VALUES (?, 'bild', ?, ?, ?, NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?)
+                 width, height, workflow_json, parent_id, created_at)
+            VALUES (?, 'bild', ?, ?, ?, NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)
             """,
             (
                 lib_id,
@@ -188,6 +194,7 @@ def _autosort_to_library(job: dict, meta: dict, rel_path: Path) -> str:
                 meta.get("seed"),
                 _backend_label(),
                 meta.get("width"), meta.get("height"),
+                job.get("parent_id"),
                 now_iso(),
             ),
         )
