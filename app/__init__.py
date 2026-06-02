@@ -65,6 +65,7 @@ def _register_blueprints(app: Flask) -> None:
     package import time.
     """
     from .gpu_telemetry import gpu_bp
+    from .routes.films import films_bp
     from .routes.health import health_bp
     from .routes.jobs import jobs_bp
     from .routes.library import library_bp
@@ -103,6 +104,12 @@ def _register_blueprints(app: Flask) -> None:
     # ({text, voice} -> audio/wav, voices sv-standard | sv-lattlast) backs the
     # film voice-over (lb-4vw) and the Skapa-film voice preview. GPU-independent.
     app.register_blueprint(tts_bp)
+    # lb-4vw: film pipeline — POST /api/films (enqueue a storyboard→keyframes→
+    # narration→ffmpeg-mux film, 202), GET /api/films/templates (the 6 film
+    # templates), GET /api/films/<id>[/events] (state + SSE; a film is a jobs row
+    # so it reuses the still-job SSE). The LoRA is backend-authoritative per
+    # keyframe (SFW guard); live keyframe render is deferred (imagegen sweep).
+    app.register_blueprint(films_bp)
     # lb-eee: serve the no-build React frontend (the Bibliotek view) at / and
     # /bibliotek; repoints Flask's /static handler at the repo-root static/ dir.
     app.register_blueprint(views_bp)
