@@ -396,3 +396,156 @@ def test_brpop_timeout_is_under_socket_timeout():
     # gpu_lock.make_redis_client builds the worker's real connection with
     # socket_timeout=5; the loop must block for less than that.
     assert rw.BRPOP_TIMEOUT_S < 5
+
+
+# ── STRUCTURED imageTypes route to the PROCEDURAL engine, NOT the GPU ────────
+# (lb-proc) A diagram/schema/tidslinje/molekyl render is deterministic CPU work
+# (graphviz/matplotlib/RDKit) — it must NEVER acquire the gpu_lock, pause VRAM, or
+# submit to ComfyUI, yet must still auto-sort into the SAME library tree.
+
+
+def _png_magic_ok(path):
+    return path.is_file() and path.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
+
+
+def test_diagram_job_renders_procedurally_without_touching_the_gpu(app, fake_redis):
+    with app.app_context():
+        # a 'diagram' job, with begrepp/förklaring riding in params (params_json)
+        job_id = jobs.enqueue_job(
+            kind="bild", subject="fysik", area="grundfysik", image_type="diagram",
+            prompt="diagram of evaporation", seed=1,
+            params={"begrepp": "Avdunstning", "forklaring": "Vatten blir ånga."},
+        )
+        client = MockComfyClient()
+        lock = LockSpy(held=True)
+        pause = PauseSpy()
+
+        lib_id = rw.render_job(
+            job_id, comfy_factory=lambda: client,
+            gpu_lock_cm=lock, vram_pause_cm=pause, poll_s=0.0,
+        )
+
+        # the GPU path was BYPASSED entirely
+        assert client.submitted == [], "ComfyUI must not be used for a diagram"
+        assert client.viewed == []
+        assert lock.calls == [], "gpu_lock must not be acquired for a diagram"
+        assert pause.calls == [], "vram_pause must not be entered for a diagram"
+
+        # a library row was written, auto-sorted under the diagram bucket
+        with connect() as conn:
+            row = conn.execute("SELECT * FROM library WHERE id = ?",
+                               (lib_id,)).fetchone()
+        assert row is not None
+        assert row["subject"] == "fysik" and row["area"] == "grundfysik"
+        assert row["image_type"] == "diagram" and row["kind"] == "bild"
+        assert row["file_path"].startswith("output/fysik/grundfysik/diagram/")
+        assert row["file_path"].endswith(".png")
+        # honest provenance: drawn on CPU, not diffused; the spec is persisted
+        assert row["backend"] == rw.PROCEDURAL_BACKEND
+        assert row["lora"] is None
+        assert row["workflow_json"] and "block-diagram" in row["workflow_json"]
+        # the Swedish labels reached the render (stored as the "prompt" provenance)
+        assert "Inflöde" in (row["prompt"] or "")
+        assert "Utflöde" in (row["prompt"] or "")
+
+        # the PNG is really on disk in the isolated output dir
+        from pathlib import Path
+        out = Path(app.config["STORAGE_DIR"]) / row["file_path"]
+        assert _png_magic_ok(out), "a valid PNG must be written to disk"
+
+        # job is done + linked, SSE state published
+        jrow = jobs.get_job_row(job_id)
+        assert jrow["status"] == "done" and jrow["library_id"] == lib_id
+        assert jobs.read_job_state(job_id)["status"] == "done"
+
+
+def test_molecule_job_routes_procedurally(app, fake_redis):
+    with app.app_context():
+        job_id = jobs.enqueue_job(
+            kind="bild", subject="kemi", area="materia", image_type="molekyl",
+            prompt="x", params={"begrepp": "Vatten"},
+        )
+        client = MockComfyClient()
+        lib_id = rw.render_job(job_id, comfy_factory=lambda: client,
+                               gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(),
+                               poll_s=0.0)
+        assert client.submitted == []  # no GPU
+        with connect() as conn:
+            row = conn.execute("SELECT * FROM library WHERE id = ?",
+                               (lib_id,)).fetchone()
+        assert row["image_type"] == "molekyl"
+        assert "molecule" in (row["workflow_json"] or "")
+
+
+def test_tidslinje_job_routes_procedurally(app, fake_redis):
+    with app.app_context():
+        job_id = jobs.enqueue_job(
+            kind="bild", subject="historia", area="x", image_type="tidslinje",
+            prompt="x", params={"begrepp": "Franska revolutionen"},
+        )
+        client = MockComfyClient()
+        lib_id = rw.render_job(job_id, comfy_factory=lambda: client,
+                               gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(),
+                               poll_s=0.0)
+        assert client.submitted == []
+        from pathlib import Path
+        with connect() as conn:
+            fp = conn.execute("SELECT file_path FROM library WHERE id=?",
+                              (lib_id,)).fetchone()["file_path"]
+        assert _png_magic_ok(Path(app.config["STORAGE_DIR"]) / fp)
+
+
+def test_diffusion_imagetype_still_uses_comfyui(app, fake_redis):
+    # An 'illustration' (a diffusion type) MUST still go through ComfyUI + the
+    # gpu_lock — the procedural route is ONLY for structured types.
+    with app.app_context():
+        job_id = _enqueue_bild(image_type="illustration")
+        client = MockComfyClient()
+        lock = LockSpy(held=True)
+        pause = PauseSpy()
+        rw.render_job(job_id, comfy_factory=lambda: client,
+                      gpu_lock_cm=lock, vram_pause_cm=pause, poll_s=0.0)
+        # the GPU path WAS used for a diffusion type
+        assert len(client.submitted) == 1
+        assert lock.calls and pause.calls
+        with connect() as conn:
+            row = conn.execute("SELECT backend FROM library WHERE job_id=?",
+                               (job_id,)).fetchone()
+        assert "3090" in (row["backend"] or "")  # the GPU label, not procedural
+
+
+def test_procedural_render_failure_marks_job_failed(app, fake_redis, monkeypatch):
+    # If the procedural engine raises, the job is marked failed (same contract as
+    # the GPU path) — not left hanging as 'running'.
+    from app import procedural as proc
+
+    def _boom(**kw):
+        raise proc.ProceduralError("render exploded")
+    monkeypatch.setattr(proc, "render_concept", _boom)
+
+    with app.app_context():
+        job_id = jobs.enqueue_job(kind="bild", subject="fysik", area="ljud",
+                                  image_type="diagram", prompt="x",
+                                  params={"begrepp": "Ljud"})
+        with pytest.raises(rw.RenderError):
+            rw.render_job(job_id, comfy_factory=lambda: MockComfyClient(),
+                          gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(), poll_s=0.0)
+        st = jobs.read_job_state(job_id)
+        assert st["status"] == "failed"
+
+
+def test_diagram_job_without_params_falls_back_to_title(app, fake_redis):
+    # A plain diagram submission (no begrepp in params) still renders: begrepp
+    # falls back to the job title, so an old/minimal client isn't broken.
+    with app.app_context():
+        job_id = jobs.enqueue_job(kind="bild", subject="fysik", area="el-magnet",
+                                  image_type="diagram", title="Elektrisk krets",
+                                  prompt="x")
+        lib_id = rw.render_job(job_id, comfy_factory=lambda: MockComfyClient(),
+                               gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(),
+                               poll_s=0.0)
+        with connect() as conn:
+            row = conn.execute("SELECT prompt FROM library WHERE id=?",
+                               (lib_id,)).fetchone()
+        # the title became the diagram's process label
+        assert "Elektrisk krets" in (row["prompt"] or "")

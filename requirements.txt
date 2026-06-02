@@ -19,3 +19,19 @@ bcrypt>=4.0             # owner login
 cryptography>=42.0      # session / secret crypto
 pillow>=10.0            # image post-processing (pnginfo embed, thumbnails)
 numpy>=1.26             # image array ops
+
+# ── Procedural diagram engine (app/procedural.py, lb-proc) ──────────────────
+# Structured imageTypes (diagram / schema / tidslinje / molekyl / reaction) are
+# rendered DETERMINISTICALLY on CPU instead of via diffusion — clean white-bg
+# läroboksstil PNGs with legible Swedish labels (the structured-content quality
+# fix). CPU-only, so a diagram renders even while the VM100 3090 is busy.
+#
+# IMPORTANT — graphviz also needs the SYSTEM `dot` binary (not just this Python
+# wrapper). On the Sibbis deploy host run:
+#     sudo apt-get install -y graphviz
+# (Without `dot`, app/procedural.py auto-falls back to a matplotlib box+arrow
+#  renderer, so block diagrams still render — but install `dot` for the cleaner
+#  graphviz routing.)
+matplotlib>=3.7         # plots/graphs, force diagrams, timelines, mpl fallbacks
+graphviz>=0.20          # block/flow/concept/cycle diagrams (needs apt `dot` too)
+rdkit>=2023.9           # kemi molecules: SMILES → bond-accurate skeletal formula

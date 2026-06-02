@@ -37,6 +37,7 @@ Env overrides:
 """
 from __future__ import annotations
 
+import json
 import logging
 import os
 import time
@@ -47,6 +48,7 @@ from typing import Any, Callable, Iterator, Optional
 from flask import current_app
 
 from . import gpu_lock as _gpu_lock
+from . import procedural as _procedural
 from . import vram_pause as _vram_pause
 from . import workflow as _workflow
 from .comfyui import ComfyResult, ComfyUIClient, default_comfyui_url, extract_output_images
@@ -78,8 +80,13 @@ __all__ = [
     "render_job",
     "run_worker_loop",
     "DEFERRED_LIVE_RENDER",
+    "PROCEDURAL_BACKEND",
     "RenderError",
 ]
+
+# Backend label for a procedural (CPU) render — distinct from the GPU labels so
+# the Bibliotek + library row honestly say "this diagram was drawn, not diffused".
+PROCEDURAL_BACKEND = "procedural · CPU"
 
 # Flag the single thing this bead does NOT do — a real GPU render. Kept as a
 # module constant so it's discoverable + greppable; the live validation is a
@@ -173,6 +180,11 @@ def _autosort_to_library(job: dict, meta: dict, rel_path: Path) -> str:
     """
     lib_id = new_id()
     lora = meta.get("lora") or {}
+    # backend + workflow_json ride on meta so the SAME insert serves both engines:
+    # a diffusion render leaves them unset (→ the vm100 label + NULL spec), a
+    # procedural render passes "procedural · CPU" + the DiagramSpec JSON. Keeping
+    # one insert means the auto-sort / Bibliotek browse is identical for both.
+    backend = meta.get("backend") or _backend_label()
     with connect() as conn:
         conn.execute(
             """
@@ -180,7 +192,7 @@ def _autosort_to_library(job: dict, meta: dict, rel_path: Path) -> str:
                 (id, kind, subject, area, image_type, video_type, title, job_id,
                  file_path, prompt, lora, lora_strength, seed, backend,
                  width, height, workflow_json, parent_id, created_at)
-            VALUES (?, 'bild', ?, ?, ?, NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)
+            VALUES (?, 'bild', ?, ?, ?, NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 lib_id,
@@ -192,8 +204,9 @@ def _autosort_to_library(job: dict, meta: dict, rel_path: Path) -> str:
                 lora.get("name"),
                 lora.get("strength"),
                 meta.get("seed"),
-                _backend_label(),
+                backend,
                 meta.get("width"), meta.get("height"),
+                meta.get("workflow_json"),
                 job.get("parent_id"),
                 now_iso(),
             ),
@@ -238,6 +251,16 @@ def render_job(
         # silently dropping a film job.
         raise RenderError(f"render_job handles kind='bild' only, got {job['kind']!r}")
 
+    # ── ROUTE: structured imageTypes go to the PROCEDURAL engine, NOT the GPU ──
+    # A schematic diagram / tidslinje / molekyl / reaction is exact structure +
+    # real Swedish labels — diffusion garbles both (the owner's report). These
+    # render deterministically on CPU (graphviz/matplotlib/RDKit), so they work
+    # even while the VM100 3090 is busy with imagegen/chat, and never need the
+    # gpu_lock / vram_pause / ComfyUI path below. (MODEL_LIBRARY.md §6 procedural-
+    # first.) The PNG still auto-sorts into the same library tree.
+    if _procedural.is_structured_image_type(job["image_type"]):
+        return _render_procedural_job(job)
+
     try:
         write_job_state(job_id, {"job_id": job_id, "status": "running",
                                  "progress_step": 0, "progress_total": 1})
@@ -278,6 +301,96 @@ def render_job(
         write_job_state(job_id, {"job_id": job_id, "status": "failed",
                                  "error": f"SFW guard: {e}"})
         raise RenderError(str(e)) from e
+    except Exception as e:  # noqa: BLE001
+        write_job_state(job_id, {"job_id": job_id, "status": "failed", "error": str(e)})
+        raise RenderError(str(e)) from e
+
+
+def _concept_from_job(job: dict) -> dict:
+    """Pull the begrepp / förklaring / optional diagram spec out of a job row.
+
+    The structured-diagram inputs ride in the job's ``params_json`` blob (the
+    full submission, lb-3gi) so no schema change is needed: a submission for a
+    diagram can carry ``begrepp`` / ``forklaring`` (the skola-begrepp shape) and
+    optionally a ready ``diagram_spec`` (authored by an Opus step) or
+    ``use_llm: true`` (ask the 14B composer to enrich the spec). Sensible
+    fallbacks keep an old/plain submission renderable: begrepp falls back to the
+    job ``title`` then ``prompt``; förklaring defaults empty (the templates don't
+    require it).
+    """
+    params: dict = {}
+    raw = job.get("params_json")
+    if raw:
+        try:
+            params = json.loads(raw) or {}
+        except (TypeError, ValueError):
+            params = {}
+    begrepp = (params.get("begrepp") or job.get("title")
+               or (job.get("prompt") or "")[:60] or "").strip()
+    return {
+        "begrepp": begrepp,
+        "forklaring": (params.get("forklaring") or params.get("förklaring") or "").strip(),
+        "spec": params.get("diagram_spec"),  # an explicit spec, or None
+        "use_llm": bool(params.get("use_llm")),
+    }
+
+
+def _render_procedural_job(job: str | dict) -> str:
+    """Render a structured-imageType job deterministically + auto-sort it.
+
+    The CPU/procedural twin of the GPU happy path: build the concept inputs from
+    the job row, render a clean labeled PNG via :func:`app.procedural.render_concept`
+    (graphviz/matplotlib/RDKit — no gpu_lock, no vram_pause, no ComfyUI), write it
+    into the isolated output dir auto-sorted by subject/area/imageType, insert the
+    ``library`` row, link it onto the job, and publish ``done`` for the SSE stream.
+    Returns the new library row id. On failure writes ``failed`` + raises
+    :class:`RenderError`, exactly like the GPU path — so the API/SSE contract is
+    identical regardless of which engine produced the image.
+    """
+    job_id = job["id"]
+    try:
+        write_job_state(job_id, {"job_id": job_id, "status": "running",
+                                 "progress_step": 0, "progress_total": 1})
+
+        concept = _concept_from_job(job)
+        # Deterministic filename (no ComfyUI to name it). Stable + sortable.
+        filename = f"diagram_{job_id[:8]}.png"
+        meta_image_type = job["image_type"]
+        rel = Path(job["subject"]) / job["area"] / meta_image_type / filename
+        dest = _storage_dir() / rel
+
+        _path, used_spec = _procedural.render_concept(
+            subject=job["subject"], area=job["area"], image_type=meta_image_type,
+            begrepp=concept["begrepp"], forklaring=concept["forklaring"],
+            dest=dest, spec=concept["spec"], use_llm=concept["use_llm"],
+        )
+
+        # Build the same meta shape _autosort_to_library reads. The "prompt" we
+        # persist is the human-readable diagram description (the labels) — that's
+        # the provenance for a procedural render, in place of a diffusion prompt.
+        meta = {
+            "area": job["area"],
+            "image_type": meta_image_type,
+            "prompt": " · ".join(used_spec.all_labels())[:500],
+            "seed": None,
+            "width": _procedural.CANVAS_W,
+            "height": _procedural.CANVAS_H,
+            "lora": None,
+            "backend": PROCEDURAL_BACKEND,
+            # The full spec is kept as workflow provenance (mirrors workflow_json
+            # for a diffusion render) so a regenerate/audit can replay it.
+            "workflow_json": json.dumps(used_spec.to_dict(), ensure_ascii=False),
+        }
+        lib_id = _autosort_to_library(job, meta, rel)
+
+        write_job_state(job_id, {
+            "job_id": job_id, "status": "done", "library_id": lib_id,
+            "width": meta["width"], "height": meta["height"],
+        })
+        log.info("procedural render %s done → library %s (%s/%s/%s, kind=%s)",
+                 job_id, lib_id, job["subject"], job["area"], meta_image_type,
+                 used_spec.kind)
+        return lib_id
     except Exception as e:  # noqa: BLE001
         write_job_state(job_id, {"job_id": job_id, "status": "failed", "error": str(e)})
         raise RenderError(str(e)) from e

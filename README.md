@@ -51,6 +51,27 @@ static/     Built React frontend assets served by Flask
 docs/       Architecture, build plan, design handoff notes
 ```
 
+## System dependencies (Sibbis deploy)
+
+Python deps install from `requirements.txt` (`pip install -r requirements.txt`).
+Two things ALSO need OS packages on the deploy host:
+
+```bash
+sudo apt-get install -y graphviz ffmpeg
+```
+
+- **graphviz** — the `dot` binary backs the procedural block/flow/concept/cycle
+  diagram renderer (`app/procedural.py`). Without it the engine auto-falls back
+  to a matplotlib box+arrow renderer (diagrams still render), so install it for
+  the cleaner graphviz routing. The Python `graphviz` wrapper is in
+  `requirements.txt`; it needs this binary.
+- **ffmpeg** — the film/lesson mux step.
+
+The procedural diagram engine (structured imageTypes: `diagram` / `schema` /
+`tidslinje` / `molekyl` / `reaction`) is **CPU-only** — graphviz + matplotlib +
+RDKit draw the structure with real Swedish labels, no GPU. It renders even while
+the VM100 3090 is busy with diffusion. RDKit ships as a pure pip wheel (no apt).
+
 ## Build plan & design
 
 - Build plan: `docs/BUILD_PLAN.md` (phases P0–P10, ~40 beads, acceptance criteria)
