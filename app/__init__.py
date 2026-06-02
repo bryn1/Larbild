@@ -85,6 +85,7 @@ def _register_blueprints(app: Flask) -> None:
     from .routes.films import films_bp
     from .routes.health import health_bp
     from .routes.jobs import jobs_bp
+    from .routes.lessons import lessons_bp
     from .routes.library import library_bp
     from .routes.lora import lora_bp
     from .routes.media import media_bp
@@ -141,6 +142,15 @@ def _register_blueprints(app: Flask) -> None:
     # so it reuses the still-job SSE). The LoRA is backend-authoritative per
     # keyframe (SFW guard); live keyframe render is deferred (imagegen sweep).
     app.register_blueprint(films_bp)
+    # lb-lesson: the Lärbild pedagogical-video funnel — POST /api/lessons (enqueue
+    # a manuscript → per-beat keyframe+bildtext+narration → merge → a level-tagged
+    # lesson/short VIDEO in the library, 202), GET /api/lessons/schema (the
+    # manuscript schema the Opus step produces), POST /api/lessons/preview (parse +
+    # estimate, no render), GET /api/lessons/<id>[/events] (state + SSE; a lesson is
+    # a jobs row so it reuses the still-job SSE). allLevels renders all 3 levels
+    # from one keyframe render. The LoRA is backend-authoritative per keyframe (SFW
+    # guard); live keyframe render is deferred (imagegen sweep). Built on P6 (film).
+    app.register_blueprint(lessons_bp)
     # lb-eee: serve the no-build React frontend (the Bibliotek view) at / and
     # /bibliotek; repoints Flask's /static handler at the repo-root static/ dir.
     app.register_blueprint(views_bp)

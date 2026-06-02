@@ -86,6 +86,20 @@ function assetThumbSrc(item) {
   return item.thumb_url || item.url ||
     ((item.thumb_path || item.file_path) ? `/media/${item.thumb_path || item.file_path}` : null);
 }
+// Which library kinds are VIDEO (rendered with a <video> + a play badge): the P6
+// film plus the lb-lesson pedagogical kinds (a per-delområde 'lesson' overview +
+// a per-begrepp/family 'short'). Kept pure + in lockstep with the node test
+// (tests/bibliotek_kind.test.mjs) so the kind→media decision is pinned without a
+// DOM/Babel runtime.
+function isVideoKind(kind) {
+  return kind === "film" || kind === "lesson" || kind === "short";
+}
+// The Swedish display label for a lesson/short's level tag (the three school
+// levels; null/absent → no label). Shown on a video card so the three level-
+// versions of one delområde overview are distinguishable at a glance.
+function levelLabel(level) {
+  return ({ enkel: "Enkel", utvecklad: "Utvecklad", valutvecklad: "Välutvecklad" })[level] || null;
+}
 function AssetCard({ chain, subject, onOpen }) {
   const item = chain.latest;
   const src = assetThumbSrc(item);
@@ -94,8 +108,9 @@ function AssetCard({ chain, subject, onOpen }) {
     <div className="acard" onClick={() => onOpen && onOpen(chain)}>
       <div className="thumb">
         {src ? <img src={src} alt={item.title} loading="lazy" /> : null}
-        <span className={`kind-tag ${item.kind === "film" ? "film" : ""}`}>{item.kind}</span>
-        {item.kind === "film" && <span className="play">{I.play}</span>}
+        <span className={`kind-tag ${isVideoKind(item.kind) ? "film" : ""}`}>{item.kind}</span>
+        {isVideoKind(item.kind) && <span className="play">{I.play}</span>}
+        {levelLabel(item.level) && <span className="level-pill">{levelLabel(item.level)}</span>}
         <ReviewBadge ok={item.review_ok} onTile />
         {versionCount > 1 && <span className="ver-pill">v{versionCount}</span>}
       </div>
@@ -266,7 +281,7 @@ function Lightbox({ chain, subject, onClose, onPersist, onRegenerated }) {
       <div className="lb-modal" onClick={(e) => e.stopPropagation()}>
         <button className="lb-close" onClick={onClose} aria-label="Stäng">{I.close}</button>
         <div className="lb-stage">
-          {item.kind === "film"
+          {isVideoKind(item.kind)
             ? <video src={full} controls style={{ maxWidth: "100%", maxHeight: "72vh" }} />
             : (full ? <img src={full} alt={item.title} /> : <div className="dim">Ingen bild</div>)}
         </div>
@@ -324,7 +339,7 @@ function Bibliotek() {
   const [error, setError] = useState(null);
   const [subjectId, setSubjectId] = useState(null);
   const [areaId, setAreaId] = useState(null);
-  const [kind, setKind] = useState("all"); // all | bild | film
+  const [kind, setKind] = useState("all"); // all | bild | film | lektion (lesson+short)
   const [reviewFilter, setReviewFilter] = useState("all"); // all | pending | notok
   // Per-node item cache keyed by "<subject>/<area>" — the gallery's data, fetched
   // lazily from /api/library/items when a node is opened. `null` = in-flight;
@@ -512,7 +527,11 @@ function Bibliotek() {
     : (sub.areas || []).filter((a) => (a.asset_count || 0) > 0).map((a) => a.id);
   const itemsLoading = relevantAreaIds.some((aid) => !Array.isArray(itemsByNode[nodeKey(aid)]));
   let assets = relevantAreaIds.flatMap((aid) => itemsByNode[nodeKey(aid)] || []);
-  if (kind !== "all") assets = assets.filter((it) => it.kind === kind);
+  // The "lektion" tab groups the lb-lesson pedagogical videos (a per-delområde
+  // 'lesson' overview + a per-begrepp/family 'short'); the other tabs match an
+  // exact kind. "all" applies no kind filter.
+  if (kind === "lektion") assets = assets.filter((it) => it.kind === "lesson" || it.kind === "short");
+  else if (kind !== "all") assets = assets.filter((it) => it.kind === kind);
   if (reviewFilter !== "all") assets = assets.filter((it) => D.matchesReview(it, reviewFilter));
   // Group into version chains — one tile per asset, latest version on top, with
   // its history available in the lightbox. The filters above run on items first
@@ -545,6 +564,7 @@ function Bibliotek() {
             <button className={`tab ${kind === "all" ? "active" : ""}`} onClick={() => setKind("all")}>Allt</button>
             <button className={`tab ${kind === "bild" ? "active" : ""}`} onClick={() => setKind("bild")}>Bilder</button>
             <button className={`tab ${kind === "film" ? "active" : ""}`} onClick={() => setKind("film")}>Filmer</button>
+            <button className={`tab ${kind === "lektion" ? "active" : ""}`} onClick={() => setKind("lektion")}>Lektioner</button>
           </div>
           <span className="hsep" />
           {/* Review filter — the atelier-style triage lens over the gallery. */}
@@ -599,7 +619,7 @@ function Bibliotek() {
               <div className="pull">
                 {reviewFilter === "pending" ? "Inget kvar att granska här." :
                   reviewFilter === "notok" ? "Inga objekt markerade Inte OK här." :
-                  `Inga ${kind === "film" ? "filmer" : kind === "bild" ? "bilder" : "objekt"} här ännu.`}
+                  `Inga ${kind === "film" ? "filmer" : kind === "bild" ? "bilder" : kind === "lektion" ? "lektioner" : "objekt"} här ännu.`}
               </div>
               <div className="dim" style={{ marginBottom: 16 }}>
                 {reviewFilter !== "all" ? "Byt filter för att se fler objekt." : "Allt du skapar för det här området hamnar automatiskt här."}

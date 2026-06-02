@@ -44,7 +44,9 @@ __all__ = [
     "FfmpegMissing",
     "Shot",
     "mux_film",
+    "mux_lesson",
     "build_ffmpeg_command",
+    "build_lesson_ffmpeg_command",
     "ffmpeg_available",
 ]
 
@@ -234,6 +236,178 @@ def mux_film(
     out_path.parent.mkdir(parents=True, exist_ok=True)
     argv = build_ffmpeg_command(shots, narration_wav, out_path,
                                 fps=fps, width=width, height=height)
+    try:
+        proc = run(argv, timeout_s)
+    except FileNotFoundError as e:
+        raise FfmpegMissing(f"ffmpeg binary {FFMPEG_BIN!r} not found: {e}") from e
+
+    rc = getattr(proc, "returncode", 1)
+    if rc != 0:
+        err = (getattr(proc, "stderr", "") or "")[-500:]
+        raise MuxError(f"ffmpeg exited {rc}: {err}")
+    if not out_path.is_file():
+        raise MuxError(f"ffmpeg reported success but no output at {out_path}")
+    return out_path
+
+
+# ── lesson merge: the per-delområde OVERVIEW video (lb-lesson) ───────────────
+#
+# A lesson is the SAME Ken-Burns-over-stills + voice-over model as a film, with
+# two differences the merge cares about:
+#   1. the keyframes are already CAPTIONED (the bildtext burned on by
+#      app.caption, one per beat) — so a Shot's image is the captioned frame; and
+#   2. the narration is CONTINUOUS across many beats (the assembly concatenates
+#      every beat's spoken line into one WAV, timed so each beat's hold ==
+#      its narration segment) — so the audio is laid over the whole concat just
+#      like a film, but the clip is long (5-10 min).
+# The owner asked for "smooth transitions": when `transition_s > 0` the beats are
+# joined with a short crossfade (xfade) instead of a hard concat. The narration
+# is unchanged (one continuous track over the whole timeline). transition_s=0
+# reproduces the film-style hard concat.
+
+# A short, even default crossfade reads as a gentle scene change without eating
+# narration time (the xfade overlaps the OUTGOING shot's tail with the next
+# shot's head, so total video time shrinks by transition_s per join — the
+# assembly accounts for this when it builds the matching narration track).
+LESSON_TRANSITION_S = float(os.environ.get("LARBILD_LESSON_TRANSITION_S", "0.6"))
+
+
+def build_lesson_ffmpeg_command(
+    shots: Sequence[Shot],
+    narration_wav: Optional[Path],
+    out_path: Path,
+    *,
+    transition_s: float = LESSON_TRANSITION_S,
+    fps: int = FILM_FPS,
+    width: int = FILM_WIDTH,
+    height: int = FILM_HEIGHT,
+) -> list[str]:
+    """ffmpeg argv to merge captioned beat-shots (+ narration) into a lesson mp4.
+
+    Each beat is one ``-loop 1 -t <dur> -i <captioned-image>`` input with its
+    Ken-Burns ``zoompan``; consecutive beats are joined with an ``xfade`` of
+    ``transition_s`` (a smooth dissolve) when it is > 0, else a hard ``concat``
+    (identical to :func:`build_ffmpeg_command`). The continuous narration WAV is
+    mapped as the audio track. Pure command construction (no process started), so
+    the transition math + filter graph are unit-testable without ffmpeg.
+
+    The ``xfade`` ``offset`` for join *i* is the cumulative visible duration up to
+    that point: ``sum(dur[0..i]) - i*transition_s`` (each prior crossfade overlaps
+    ``transition_s``, shortening the timeline). With ``transition_s = 0`` or a
+    single shot the graph degrades to the plain concat.
+    """
+    if not shots:
+        raise MuxError("no beats to mux")
+
+    # transition longer than the shortest shot would make xfade offsets go
+    # negative / overlap badly — clamp it so the graph is always valid.
+    if transition_s > 0 and len(shots) > 1:
+        shortest = min(s.duration_s for s in shots)
+        transition_s = min(transition_s, max(0.0, shortest * 0.5))
+
+    # No usable transition → reuse the film concat graph verbatim.
+    if transition_s <= 0 or len(shots) == 1:
+        return build_ffmpeg_command(
+            shots, narration_wav, out_path, fps=fps, width=width, height=height
+        )
+
+    argv: list[str] = [FFMPEG_BIN, "-y"]
+    for shot in shots:
+        argv += ["-loop", "1", "-t", f"{shot.duration_s:.3f}", "-i", str(shot.image_path)]
+
+    audio_input_index: Optional[int] = None
+    if narration_wav is not None:
+        audio_input_index = len(shots)
+        argv += ["-i", str(narration_wav)]
+
+    # Per-shot Ken-Burns → [v0]..[vN].
+    filters = []
+    for i, shot in enumerate(shots):
+        kb = _zoompan_filter(shot.ken_burns, shot.duration_s, fps, width, height)
+        filters.append(f"[{i}:v]{kb}[v{i}]")
+
+    # Chain xfades: [v0][v1]xfade->[x1]; [x1][v2]xfade->[x2]; … last label = vout.
+    prev = "v0"
+    cum = float(shots[0].duration_s)
+    for i in range(1, len(shots)):
+        out_label = "vout" if i == len(shots) - 1 else f"x{i}"
+        offset = cum - transition_s
+        if offset < 0:
+            offset = 0.0
+        filters.append(
+            f"[{prev}][v{i}]xfade=transition=fade:duration={transition_s:.3f}:"
+            f"offset={offset:.3f}[{out_label}]"
+        )
+        prev = out_label
+        cum += float(shots[i].duration_s) - transition_s
+
+    argv += ["-filter_complex", ";".join(filters), "-map", "[vout]"]
+    if audio_input_index is not None:
+        argv += ["-map", f"{audio_input_index}:a"]
+    argv += [
+        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", str(fps),
+        "-profile:v", "high", "-preset", "medium",
+    ]
+    if audio_input_index is not None:
+        argv += ["-c:a", "aac", "-b:a", "128k", "-shortest"]
+    argv += [str(out_path)]
+    return argv
+
+
+def lesson_video_duration_s(shots: Sequence[Shot], transition_s: float = LESSON_TRANSITION_S) -> float:
+    """The visible duration of the merged lesson video (accounts for crossfades).
+
+    ``sum(durations) - (n-1)*effective_transition``. The assembly uses this to
+    build a narration track that matches the merged timeline (so the voice-over
+    and the visuals stay in sync across many beats). Mirrors the clamp in
+    :func:`build_lesson_ffmpeg_command`.
+    """
+    if not shots:
+        return 0.0
+    total = sum(s.duration_s for s in shots)
+    if transition_s > 0 and len(shots) > 1:
+        shortest = min(s.duration_s for s in shots)
+        transition_s = min(transition_s, max(0.0, shortest * 0.5))
+        total -= transition_s * (len(shots) - 1)
+    return max(total, 0.0)
+
+
+def mux_lesson(
+    shots: Sequence[Shot],
+    narration_wav: Optional[Path],
+    out_path: Path,
+    *,
+    run: Optional[RunFn] = None,
+    transition_s: float = LESSON_TRANSITION_S,
+    fps: int = FILM_FPS,
+    width: int = FILM_WIDTH,
+    height: int = FILM_HEIGHT,
+    timeout_s: float = FFMPEG_TIMEOUT_S,
+) -> Path:
+    """Merge captioned beat-shots + continuous narration into a lesson mp4.
+
+    The lesson-flavoured sibling of :func:`mux_film`: validates every (captioned)
+    keyframe + the narration WAV exist, builds the xfade/concat graph
+    (:func:`build_lesson_ffmpeg_command`), and runs it via the injected ``run``
+    (production = real ffmpeg; tests = a stub recording argv + writing a stub
+    mp4). Raises :class:`MuxError` / :class:`FfmpegMissing` on failure. On success
+    the (5-10 min) overview mp4 exists at ``out_path``.
+    """
+    run = run or _subprocess_run
+    if not shots:
+        raise MuxError("no beats to mux")
+    for shot in shots:
+        if not Path(shot.image_path).is_file():
+            raise MuxError(f"beat image not found: {shot.image_path}")
+    if narration_wav is not None and not Path(narration_wav).is_file():
+        raise MuxError(f"narration wav not found: {narration_wav}")
+
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    argv = build_lesson_ffmpeg_command(
+        shots, narration_wav, out_path,
+        transition_s=transition_s, fps=fps, width=width, height=height,
+    )
     try:
         proc = run(argv, timeout_s)
     except FileNotFoundError as e:
