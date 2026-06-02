@@ -54,6 +54,24 @@ from .db import connect, new_id, now_iso
 from .gpu_telemetry import RENDER_TARGETS
 from .jobs import QUEUE_KEY, get_job_row, get_redis, write_job_state
 
+# redis exception types for the BRPOP idle/connectivity handling (hq-wc6i).
+# Imported defensively: redis is a hard dep for the worker, but the module is
+# also imported in tests/dev boxes where it may be absent — fall back to the
+# builtin TimeoutError + a never-matching sentinel so import never fails and the
+# loop's except-clauses still parse. (The real socket read timeout surfaces as
+# redis.exceptions.TimeoutError, which subclasses RedisError, NOT builtin
+# TimeoutError — so the fallback alias matters only when redis is missing.)
+try:  # pragma: no cover - exercised implicitly wherever redis is installed
+    from redis.exceptions import (
+        ConnectionError as RedisConnectionError,
+        TimeoutError as RedisTimeoutError,
+    )
+except ImportError:  # pragma: no cover - redis absent (dev/CI without the dep)
+    RedisTimeoutError = TimeoutError  # builtin
+
+    class RedisConnectionError(Exception):  # type: ignore[no-redef]
+        """Sentinel when redis isn't importable — never raised by a fake."""
+
 log = logging.getLogger("larbild.render_worker")
 
 __all__ = [
@@ -288,18 +306,52 @@ def _default_seed() -> int:
     return secrets.randbelow(2**31)
 
 
-def run_worker_loop(stop: Optional[Callable[[], bool]] = None) -> None:  # pragma: no cover
+# BRPOP server-side block timeout. The Redis connection (gpu_lock.make_redis_client)
+# sets socket_timeout=5; a BRPOP that blocks for the SAME duration races that read
+# timeout — the socket can raise redis.exceptions.TimeoutError at ~5s instead of
+# BRPOP returning None when idle (hq-wc6i). We hold the block strictly UNDER the
+# socket timeout for margin, AND treat any read timeout as an idle no-op below, so
+# an idle worker can NEVER crash-loop regardless of timing or network jitter.
+BRPOP_TIMEOUT_S = int(os.environ.get("LARBILD_BRPOP_TIMEOUT_S", "2"))
+
+
+def run_worker_loop(stop: Optional[Callable[[], bool]] = None) -> None:
     """Production BRPOP loop: pull job ids off the queue and render them.
 
-    NOT exercised during lb-ocx (no live GPU). ``stop`` is an optional predicate
-    to break the loop (for a future supervised run). Each job is rendered under
-    the SHARED gpu_lock so it coexists with imagegen on the VM100 3090.
+    ``stop`` is an optional predicate to break the loop (for a supervised run /
+    tests). Each job is rendered under the SHARED gpu_lock so it coexists with
+    imagegen on the VM100 3090.
+
+    Idle-resilient (hq-wc6i): when the queue is empty the worker must keep
+    looping, not die. Two things can signal "nothing to do":
+      * BRPOP returns ``None`` (its block elapsed with an empty list), or
+      * the connection's ``socket_timeout`` fires first and BRPOP raises
+        :class:`redis.exceptions.TimeoutError` — a read timeout, NOT a render
+        failure.
+    Both are handled identically: continue the loop. Only a genuine connection
+    loss surfaces (logged + a short backoff) so systemd's Restart=on-failure
+    stays a real-failure mechanism, not an idle-spin.
     """
     log.info("render worker loop starting; backend=%s. %s",
              DEFAULT_BACKEND, DEFERRED_LIVE_RENDER)
     r = get_redis()
     while stop is None or not stop():
-        popped = r.brpop(QUEUE_KEY, timeout=5)
+        try:
+            popped = r.brpop(QUEUE_KEY, timeout=BRPOP_TIMEOUT_S)
+        except RedisTimeoutError:
+            # The socket read timeout fired before BRPOP's server-side block
+            # returned None — an IDLE tick, not an error. Loop again. (This is
+            # the hq-wc6i idle-crash fix: previously this propagated out of
+            # main() and systemd crash-looped the worker every ~socket_timeout
+            # seconds whenever the queue was empty.)
+            continue
+        except RedisConnectionError as e:
+            # A real connectivity problem (Redis down / network gone). Back off
+            # briefly and retry rather than busy-spinning; a persistent outage
+            # still surfaces in the log.
+            log.warning("render worker: redis connection error, retrying: %s", e)
+            time.sleep(min(BRPOP_TIMEOUT_S, 5))
+            continue
         if popped is None:
             continue
         _key, job_id = popped

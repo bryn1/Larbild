@@ -312,3 +312,87 @@ def test_live_render_is_deferred():
     # the default factory pointing at the vm100 render target.
     factory_target = rw.RENDER_TARGETS[rw.DEFAULT_BACKEND]
     assert factory_target["http"].endswith(":8188")
+
+
+# ── run_worker_loop is idle-resilient (hq-wc6i: no crash-loop when empty) ───
+
+
+class _BrpopRaisesTimeoutRedis(FakeRedis):
+    """A FakeRedis whose BRPOP raises redis.exceptions.TimeoutError on an empty
+    queue — exactly what the real connection does when its socket_timeout fires
+    before BRPOP's server-side block returns None (the hq-wc6i crash trigger).
+
+    A non-empty queue pops normally (FIFO), so the loop can still drain a job
+    enqueued between idle ticks.
+    """
+
+    def __init__(self):
+        super().__init__()
+        self.idle_brpops = 0
+
+    def brpop(self, key, timeout=0):
+        lst = self.lists.get(key)
+        if lst:
+            return (key, lst.pop())
+        # Idle: model the socket read timeout racing the BRPOP block.
+        self.idle_brpops += 1
+        from redis.exceptions import TimeoutError as RedisTimeoutError
+        raise RedisTimeoutError("Timeout reading from socket")
+
+
+def _stop_after(n):
+    """A `stop` predicate that returns True on the n-th call (bounds the loop)."""
+    state = {"calls": 0}
+
+    def _pred():
+        state["calls"] += 1
+        return state["calls"] > n
+    return _pred
+
+
+def test_idle_brpop_timeout_does_not_crash_loop(app, monkeypatch):
+    # Regression for hq-wc6i: an idle BRPOP that raises redis.exceptions.
+    # TimeoutError must be swallowed as an idle tick, NOT propagate out of
+    # run_worker_loop (which previously crash-looped the worker via systemd).
+    fake = _BrpopRaisesTimeoutRedis()
+    jobs.set_redis(fake)
+    try:
+        with app.app_context():
+            # Loop a handful of purely-idle iterations, then stop. If the fix
+            # regresses, the first idle BRPOP raises and this call blows up.
+            rw.run_worker_loop(stop=_stop_after(5))
+    finally:
+        jobs.set_redis(None)
+    # The loop really did spin on the empty queue (and survived every raise).
+    assert fake.idle_brpops >= 1
+
+
+def test_loop_still_renders_a_job_after_idle_timeouts(app, monkeypatch):
+    # Belt-and-braces: after idle TimeoutErrors, a job pushed onto the queue is
+    # still drained + rendered — the fix keeps the loop alive, it doesn't wedge.
+    fake = _BrpopRaisesTimeoutRedis()
+    jobs.set_redis(fake)
+
+    # Stub the render so we assert the loop reaches it (no GPU). Record the id.
+    rendered: list[str] = []
+    monkeypatch.setattr(rw, "render_job", lambda jid, **kw: rendered.append(jid))
+
+    try:
+        with app.app_context():
+            job_id = _enqueue_bild()  # one job sits on the queue
+            # First brpop pops the job (queue non-empty → no raise); the loop
+            # then stops before the next (idle) iteration would raise.
+            rw.run_worker_loop(stop=_stop_after(1))
+    finally:
+        jobs.set_redis(None)
+    assert rendered == [job_id]
+
+
+def test_brpop_timeout_is_under_socket_timeout():
+    # Defense-in-depth half of the hq-wc6i fix: the BRPOP block is held strictly
+    # below the connection's socket_timeout so the read timeout doesn't fire on
+    # an idle tick in the first place (the except-clause is the safety net).
+    from app import gpu_lock
+    # gpu_lock.make_redis_client builds the worker's real connection with
+    # socket_timeout=5; the loop must block for less than that.
+    assert rw.BRPOP_TIMEOUT_S < 5
