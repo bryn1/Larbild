@@ -87,6 +87,14 @@ _ITEM_COLUMNS = (
     # The library row this one was regenerated FROM (NULL = an original); the
     # frontend walks it to show the version chain.
     "parent_id",
+    # SVG-baseline provenance (migration 0007 / lb-svg-baseline): where the row
+    # came from, the kept vector source, and whether it's the preferred version
+    # for its bucket. ``source='skola-svg-baseline'`` rows are the hand-authored
+    # concept diagrams imported from the skola rig; the UI reads ``preferred`` to
+    # surface them first and ``svg_source_path`` to offer the true vector.
+    "source",
+    "svg_source_path",
+    "preferred",
 )
 
 # Map a ?review= filter value to a SQL predicate over review_ok. "pending" =
@@ -252,6 +260,11 @@ def _row_to_item(row) -> dict[str, Any]:
     d = {k: row[k] for k in _ITEM_COLUMNS}
     d["url"] = _media_url(row["file_path"])
     d["thumb_url"] = _media_url(row["thumb_path"]) or d["url"]
+    # The true vector source (when this is an SVG-baseline row) — served via the
+    # same /media route so the UI can offer "open/edit as vector"; None for a
+    # raster-only asset. The PNG ``url`` stays the default <img> src so existing
+    # tiles are unchanged; ``svg_url`` is the extra capability.
+    d["svg_url"] = _media_url(row["svg_source_path"]) if "svg_source_path" in row.keys() else None
     area_node = taxonomy.area(row["subject"], row["area"])
     d["area_name"] = (area_node["name"] if area_node else None) or row["area"]
     # Stable display alias the frontend already reads.
@@ -298,7 +311,13 @@ def _node_items(
     review_clause = _REVIEW_FILTER_SQL.get(review or "")
     if review_clause:
         sql += f" AND {review_clause}"
-    sql += " ORDER BY created_at DESC, id DESC"
+    # Preferred-first (lb-svg-baseline): a ``preferred=1`` row — the hand-authored
+    # SVG concept-diagram baseline — sorts ahead of an organically rendered asset
+    # in the same bucket, so the owner sees the exact vector diagram on top while
+    # any batch render for the same concept stays available below. Within each
+    # preference tier the existing newest-first order holds. ``COALESCE`` keeps a
+    # NULL ``preferred`` (every pre-0007 / batch row) at the un-preferred tier.
+    sql += " ORDER BY COALESCE(preferred, 0) DESC, created_at DESC, id DESC"
     with connect() as conn:
         rows = conn.execute(sql, params).fetchall()
     return [_row_to_item(r) for r in rows]
