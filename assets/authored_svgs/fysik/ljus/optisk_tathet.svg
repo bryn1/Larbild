@@ -1,22 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Optisk täthet</text>
-<rect x="120" y="270" width="560" height="170" fill="#dbeafe" stroke="#2563eb" stroke-width="2" opacity="0.45"/>
-<text x="620" y="300" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">Vatten</text>
-<text x="620" y="316" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(hög täthet)</text>
-<text x="620" y="255" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Luft (låg täthet)</text>
-<line x1="400" y1="150" x2="400" y2="420" stroke="#bbb" stroke-width="1" stroke-dasharray="8,5"/>
-<text x="455" y="165" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Normal</text>
-<line x1="250" y1="165" x2="391.0" y2="263.7" stroke="#dc2626" stroke-width="2.5"/>
-<polygon points="400,270 389.2,267.9 394.3,260.6" fill="#dc2626"/>
-<text x="290" y="200" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Infallande</text>
-<line x1="400" y1="270" x2="451.1" y2="404.7" stroke="#16a34a" stroke-width="2.5"/>
-<polygon points="455,415 447.2,407.2 455.6,404.0" fill="#16a34a"/>
-<text x="490" y="400" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">Bryts mot normalen</text>
-<path d="M 400.0 224.0 A 46 46 0 0 0 362.3 243.6" stroke="#dc2626" stroke-width="1.5" fill="none"/>
-<text x="369.5" y="216.5" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle">i</text>
-<path d="M 400.0 316.0 A 46 46 0 0 0 416.3 313.0" stroke="#16a34a" stroke-width="1.5" fill="none"/>
-<text x="411.9" y="339.9" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle">r</text>
-<text x="400" y="250" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">i större än r</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Högre optisk täthet bromsar ljuset mer — strålen bryts mot normalen</text>
+<!-- Two media: low optical density (top), high optical density (bottom). Boundary at y=260. -->
+<rect x="110" y="80" width="450" height="180" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+<rect x="110" y="260" width="450" height="170" fill="#bfdbfe" stroke="#60a5fa" stroke-width="1.5"/>
+<text x="140" y="110" font-family="Arial,sans-serif" font-size="14" fill="#0369a1" font-weight="bold">Liten optisk täthet</text>
+<text x="140" y="128" font-family="Arial,sans-serif" font-size="12" fill="#0369a1">(t.ex. luft)</text>
+<text x="140" y="410" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" font-weight="bold">Stor optisk täthet</text>
+<text x="140" y="392" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">(t.ex. glas)</text>
+<!-- Boundary surface -->
+<line x1="110" y1="260" x2="560" y2="260" stroke="#475569" stroke-width="2.5"/>
+<!-- Normal: dashed, vertical, through point of incidence (370,260) -->
+<line x1="370" y1="100" x2="370" y2="420" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6,5"/>
+<text x="378" y="118" font-family="Arial,sans-serif" font-size="12" fill="#6b7280">normal</text>
+<!-- Incident ray (red): from upper-left, large angle i, touching (370,260) -->
+<line x1="215" y1="128" x2="370" y2="260" stroke="#dc2626" stroke-width="3"/>
+<polygon points="370,260 354,252 359,243" fill="#dc2626"/>
+<text x="232" y="146" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" font-weight="bold">infallande stråle</text>
+<!-- Refracted ray (blue): bent TOWARD normal, small angle r, touching (370,260) -->
+<line x1="370" y1="260" x2="454" y2="419" stroke="#2563eb" stroke-width="3"/>
+<polygon points="454,419 441,411 450,405" fill="#2563eb"/>
+<text x="470" y="408" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" font-weight="bold">bruten stråle</text>
+<!-- Angle of incidence arc i: LEFT side above surface -->
+<path d="M 370 192 A 68 68 0 0 0 318 217" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="332" y="202" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">i</text>
+<!-- Angle of refraction arc r: RIGHT side below surface (smaller) -->
+<path d="M 402 320 A 68 68 0 0 0 370 328" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="398" y="312" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">r</text>
+<!-- i > r relationship moved clearly into open space at the right, away from the rays -->
+<rect x="600" y="210" width="160" height="80" rx="8" fill="#f8fafc" stroke="#16a34a" stroke-width="1.8"/>
+<text x="680" y="245" font-family="Arial,sans-serif" font-size="26" fill="#16a34a" text-anchor="middle" font-weight="bold">i &gt; r</text>
+<text x="680" y="272" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">större täthet</text>
+<text x="680" y="287" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">ger mindre vinkel</text>
+<text x="400" y="455" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Ju större optisk täthet, desto mer bryts ljuset mot normalen</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">In i det tätare ämnet blir brytningsvinkeln r mindre än infallsvinkeln i</text>
 </svg>

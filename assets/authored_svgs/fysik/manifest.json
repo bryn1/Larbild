@@ -288,7 +288,7 @@
     },
     "ljus/uv_ljus": {
       "begrepp": "UV-ljus",
-      "title": "UV-ljus (ultraviolett)"
+      "title": "UV-ljus"
     },
     "ljus/oversynthet": {
       "begrepp": "Översynthet",
@@ -888,7 +888,7 @@
     },
     "el-magnet/ampere": {
       "begrepp": "Ampere",
-      "title": "Ampere (A) – elektrisk ström"
+      "title": "Ampere (A)"
     },
     "el-magnet/attrahera": {
       "begrepp": "Attrahera",
@@ -900,7 +900,7 @@
     },
     "el-magnet/diameter": {
       "begrepp": "Diameter",
-      "title": "Diameter (d = 2 · r)"
+      "title": "Diameter (d = 2·r)"
     },
     "el-magnet/elastisk_energi": {
       "begrepp": "Elastisk energi",
@@ -1464,11 +1464,11 @@
     },
     "ljus/infallsvinkel": {
       "begrepp": "Infallsvinkel",
-      "title": "Infallsvinkel (i = r vid reflektion)"
+      "title": "Infallsvinkel (i = r)"
     },
     "ljus/infrarod_stralning": {
       "begrepp": "Infraröd strålning",
-      "title": "Infraröd strålning (osynlig värme)"
+      "title": "Infraröd strålning"
     },
     "ljus/laser": {
       "begrepp": "Laser",

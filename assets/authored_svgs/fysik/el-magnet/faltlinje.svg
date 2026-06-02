@@ -1,36 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Fältlinje (magnetfält)</text>
-<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Visar åt vilket håll magnetfältet drar – från N till S</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Fältlinjerna går ut från N, runt om, och in i S – de korsar aldrig varandra</text>
 
-<!-- bar magnet centered -->
+<!-- bar magnet centered: N (left) red, S (right) blue -->
 <rect x="320" y="240" width="80" height="60" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
 <rect x="400" y="240" width="80" height="60" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
 <text x="360" y="278" font-family="Arial,sans-serif" font-size="26" fill="white" text-anchor="middle" font-weight="bold">N</text>
 <text x="440" y="278" font-family="Arial,sans-serif" font-size="26" fill="white" text-anchor="middle" font-weight="bold">S</text>
 
-<!-- field lines: arcs from N (left) to S (right) above and below -->
-<!-- outer arc top -->
-<path d="M360 240 C360 110 440 110 440 240" fill="none" stroke="#6b7280" stroke-width="2"/>
-<polygon points="400,113 393,124 407,124" fill="#6b7280"/>
-<!-- mid arc top -->
-<path d="M360 240 C360 150 440 150 440 240" fill="none" stroke="#6b7280" stroke-width="2"/>
-<polygon points="400,150 393,161 407,161" fill="#6b7280"/>
-<!-- outer arc bottom -->
-<path d="M360 300 C360 430 440 430 440 300" fill="none" stroke="#6b7280" stroke-width="2"/>
-<polygon points="400,427 393,416 407,416" fill="#6b7280"/>
-<!-- mid arc bottom -->
-<path d="M360 300 C360 390 440 390 440 300" fill="none" stroke="#6b7280" stroke-width="2"/>
-<polygon points="400,390 393,379 407,379" fill="#6b7280"/>
+<!-- Field lines: each starts at the N face, arcs out and around, and ends at the S face.
+     Arrowheads sit at the apex pointing in the direction of travel (left->right, N to S). -->
 
-<!-- wide top arc reaching out -->
-<path d="M340 240 C300 90 500 90 460 240" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
-<polygon points="400,93 393,104 407,104" fill="#9ca3af"/>
-<path d="M340 300 C300 450 500 450 460 300" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
-<polygon points="400,447 393,436 407,436" fill="#9ca3af"/>
+<!-- TOP arcs (above magnet): emerge upward from N, arch over, descend into S. Arrow at apex points RIGHT. -->
+<!-- inner top arc -->
+<path d="M360 240 C360 165 440 165 440 240" fill="none" stroke="#6b7280" stroke-width="2"/>
+<polygon points="412,165 398,159 398,173" fill="#6b7280"/>
+<!-- mid top arc -->
+<path d="M345 240 C330 120 470 120 455 240" fill="none" stroke="#6b7280" stroke-width="2"/>
+<polygon points="412,121 398,115 398,129" fill="#6b7280"/>
+<!-- outer top arc -->
+<path d="M330 240 C290 80 510 80 470 240" fill="none" stroke="#9ca3af" stroke-width="1.8"/>
+<polygon points="412,82 398,76 398,90" fill="#9ca3af"/>
 
-<text x="150" y="270" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">Nordpol</text>
-<text x="650" y="270" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Sydpol</text>
+<!-- BOTTOM arcs (below magnet): emerge downward from N? No: field continues N->around->S,
+     so under the magnet it travels from S region back? For a bar magnet the EXTERNAL line goes N -> out -> S
+     on BOTH top and bottom. Bottom arcs: leave N (bottom-left of N face), dip down, enter S.
+     Direction of travel along the bottom is left->right (N to S). Arrow at bottom apex points RIGHT. -->
+<!-- inner bottom arc: arrow at apex points RIGHT (toward S) -->
+<path d="M360 300 C360 375 440 375 440 300" fill="none" stroke="#6b7280" stroke-width="2"/>
+<polygon points="412,375 398,369 398,381" fill="#6b7280"/>
+<!-- mid bottom arc -->
+<path d="M345 300 C330 420 470 420 455 300" fill="none" stroke="#6b7280" stroke-width="2"/>
+<polygon points="412,419 398,413 398,425" fill="#6b7280"/>
+<!-- outer bottom arc -->
+<path d="M330 300 C290 460 510 460 470 300" fill="none" stroke="#9ca3af" stroke-width="1.8"/>
+<polygon points="412,458 398,452 398,464" fill="#9ca3af"/>
 
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Järnfilspån runt en magnet lägger sig längs fältlinjerna i bågar från N till S</text>
+<text x="200" y="245" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Nordpol (N)</text>
+<text x="200" y="265" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">linjerna går UT</text>
+<text x="600" y="245" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">Sydpol (S)</text>
+<text x="600" y="265" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">linjerna går IN</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Pilarna pekar från N till S på utsidan – järnfilspån lägger sig längs linjerna</text>
 </svg>

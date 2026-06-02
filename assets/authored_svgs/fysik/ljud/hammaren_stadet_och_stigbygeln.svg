@@ -1,26 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Hammaren, städet och stigbygeln</text>
-<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">De tre hörselbenen i mellanörat</text>
-<line x1="150.0" y1="160.0" x2="150.0" y2="320.0" stroke="#b45309" stroke-width="4"/>
-<text x="150" y="345" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Trumhinna</text>
-<line x1="95.0" y1="240.0" x2="135.0" y2="240.0" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="145.0,240.0 135.0,245.5 135.0,234.5" fill="#2563eb"/>
-<text x="110" y="225" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">ljud</text>
-<line x1="152.0" y1="240.0" x2="250.0" y2="200.0" stroke="#7c3aed" stroke-width="8"/>
-<circle cx="250.0" cy="200.0" r="14.0" fill="#c4b5fd" stroke="#7c3aed" stroke-width="2"/>
-<text x="250" y="165" font-family="Arial,sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="bold">Hammaren</text>
-<line x1="255.0" y1="205.0" x2="360.0" y2="235.0" stroke="#1d4ed8" stroke-width="8"/>
-<circle cx="360.0" cy="235.0" r="14.0" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
-<text x="360" y="280" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="bold">Städet</text>
-<line x1="365.0" y1="232.0" x2="455.0" y2="215.0" stroke="#16a34a" stroke-width="8"/>
-<path d="M 455 200 L 470 205 L 470 225 L 455 230 Z" fill="#86efac" stroke="#15803d" stroke-width="2"/>
-<text x="460" y="175" font-family="Arial,sans-serif" font-size="12" fill="#15803d" text-anchor="middle" font-weight="bold">Stigbygeln</text>
-<path d="M 560 240 m 0 0 a 45 45 0 1 1 -2 -2 a 32 32 0 1 1 4 0 a 18 18 0 1 1 -3 0" fill="none" stroke="#0891b2" stroke-width="3"/>
-<circle cx="560.0" cy="240.0" r="50.0" fill="none" stroke="#0891b2" stroke-width="3"/>
-<circle cx="560.0" cy="240.0" r="33.0" fill="none" stroke="#0891b2" stroke-width="2.5"/>
-<circle cx="560.0" cy="240.0" r="17.0" fill="none" stroke="#0891b2" stroke-width="2"/>
-<text x="560" y="320" font-family="Arial,sans-serif" font-size="12" fill="#0e7490" text-anchor="middle">Hörselsnäcka</text>
-<text x="400" y="400" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Trumhinnan → hammaren → städet → stigbygeln → snäckan</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">De tre små benen för vidare trumhinnans rörelse in till hörselsnäckan</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hörselbenen för vidare ljudet till hörselsnäckan</text>
+
+<!-- ===== Trumhinna (eardrum) ===== -->
+<line x1="120" y1="150" x2="120" y2="330" stroke="#b45309" stroke-width="4"/>
+<text x="120" y="355" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Trumhinna</text>
+
+<!-- incoming sound -->
+<line x1="58" y1="240" x2="105" y2="240" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="115,240 104,245.5 104,234.5" fill="#2563eb"/>
+<text x="80" y="225" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">ljud</text>
+
+<!-- ===== Hammaren (malleus) - attached to eardrum ===== -->
+<line x1="122" y1="240" x2="215" y2="195" stroke="#7c3aed" stroke-width="9"/>
+<circle cx="215" cy="195" r="15" fill="#c4b5fd" stroke="#7c3aed" stroke-width="2.5"/>
+<text x="215" y="162" font-family="Arial,sans-serif" font-size="13" fill="#7c3aed" text-anchor="middle" font-weight="bold">Hammaren</text>
+
+<!-- ===== Städet (incus) ===== -->
+<line x1="220" y1="200" x2="330" y2="232" stroke="#1d4ed8" stroke-width="9"/>
+<circle cx="330" cy="232" r="15" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.5"/>
+<text x="330" y="278" font-family="Arial,sans-serif" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="bold">Städet</text>
+
+<!-- ===== Stigbygeln (stapes) - footplate against oval window / cochlea ===== -->
+<line x1="335" y1="229" x2="455" y2="215" stroke="#16a34a" stroke-width="9"/>
+<path d="M 455 198 L 472 204 L 472 226 L 455 232 Z" fill="#86efac" stroke="#15803d" stroke-width="2.5"/>
+<text x="448" y="172" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="middle" font-weight="bold">Stigbygeln</text>
+
+<!-- vibration passed from stapes footplate into the cochlea -->
+<line x1="475" y1="222" x2="522" y2="234" stroke="#0891b2" stroke-width="2.5"/>
+<polygon points="531,236 519,240 521,229" fill="#0891b2"/>
+
+<!-- ===== Hörselsnäckan (cochlea) drawn as a golden / Fibonacci spiral ===== -->
+<path d="M 530.0 238.0 L 532.1 243.9 L 534.7 249.5 L 537.6 254.7 L 540.9 259.5 L 544.5 263.9 L 548.4 267.8 L 552.4 271.3 L 556.7 274.3 L 561.1 276.9 L 565.6 279.0 L 570.1 280.7 L 574.6 282.0 L 579.1 282.8 L 583.5 283.2 L 587.9 283.3 L 592.1 282.9 L 596.1 282.3 L 600.0 281.3 L 603.7 280.0 L 607.1 278.4 L 610.3 276.6 L 613.3 274.5 L 616.0 272.3 L 618.4 269.9 L 620.6 267.4 L 622.5 264.8 L 624.0 262.0 L 625.4 259.3 L 626.4 256.5 L 627.2 253.7 L 627.7 250.9 L 628.0 248.2 L 628.0 245.5 L 627.8 242.9 L 627.4 240.4 L 626.7 238.0 L 625.9 235.7 L 625.0 233.6 L 623.8 231.6 L 622.6 229.8 L 621.2 228.1 L 619.7 226.6 L 618.2 225.3 L 616.5 224.1 L 614.9 223.1 L 613.2 222.3 L 611.4 221.7 L 609.7 221.2 L 608.0 220.9 L 606.3 220.7 L 604.6 220.7 L 603.0 220.8 L 601.5 221.1 L 600.0 221.5 L 598.6 222.0 L 597.3 222.6 L 596.1 223.3 L 594.9 224.0 L 593.9 224.9 L 593.0 225.8 L 592.1 226.8 L 591.4 227.8 L 590.8 228.8 L 590.3 229.9 L 589.9 230.9 L 589.6 232.0 L 589.4 233.1 L 589.3 234.1 L 589.3 235.1 L 589.4 236.1 L 589.6 237.1 L 589.8 238.0 L 590.1 238.9 L 590.5 239.7 L 590.9 240.4 L 591.4 241.1 L 591.9 241.8 L 592.5 242.3 L 593.1 242.9 L 593.7 243.3 L 594.3 243.7 L 595.0 244.0 L 595.6 244.2 L 596.3 244.4 L 597.0 244.5 L 597.6 244.6 L 598.2 244.6 L 598.8 244.6 L 599.4 244.5 L 600.0 244.3 L 600.5 244.1 L 601.0 243.9 L 601.5 243.6 L 601.9 243.3 L 602.3 243.0 L 602.7 242.7 L 603.0 242.3 L 603.3 241.9 L 603.5 241.5 L 603.7 241.1 L 603.9 240.7 L 604.0 240.3 L 604.0 239.9 L 604.1 239.5 L 604.1 239.1 L 604.1 238.7 L 604.0 238.3 L 603.9 238.0 L 603.8 237.7 L 603.6 237.4 L 603.5 237.1 L 603.3 236.8 L 603.1 236.6 L 602.9 236.3 L 602.7 236.1 L 602.4 236.0 L 602.2 235.8 L 601.9 235.7 L 601.7 235.6 L 601.4 235.5 L 601.2 235.5 L 600.9 235.5 L 600.7 235.5 L 600.4 235.5 L 600.2 235.5 L 600.0 235.6 L 599.8 235.7 L 599.6 235.7 L 599.4 235.9 L 599.3 236.0 L 599.1 236.1 L 599.0 236.2 L 598.9 236.4 L 598.7 236.5 L 598.7 236.7 L 598.6 236.8 L 598.5 237.0 L 598.5 237.1 L 598.5 237.3 L 598.4 237.4 L 598.4 237.6 L 598.5 237.7 L 598.5 237.9 L 598.5 238.0 L 598.6 238.1 L 598.6 238.2 L 598.7 238.4 L 598.7 238.5 L 598.8 238.6 L 598.9 238.6 L 599.0 238.7 L 599.1 238.8 L 599.2 238.8 L 599.3 238.9 L 599.4 238.9 L 599.5 238.9 L 599.6 239.0 L 599.6 239.0 L 599.7 239.0 L 599.8 239.0 L 599.9 238.9 L 600.0 238.9 L 600.1 238.9 L 600.2 238.9 L 600.2 238.8 L 600.3 238.8 L 600.3 238.7 L 600.4 238.7 L 600.4 238.6 L 600.5 238.6 L 600.5 238.5 L 600.5 238.5 L 600.6 238.4 L 600.6 238.3 L 600.6 238.3 L 600.6 238.2 L 600.6 238.2 L 600.6 238.1 L 600.6 238.1 L 600.6 238.0" fill="none" stroke="#0891b2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="585" y="320" font-family="Arial,sans-serif" font-size="13" fill="#0e7490" text-anchor="middle" font-weight="bold">Hörselsnäckan</text>
+<text x="585" y="338" font-family="Arial,sans-serif" font-size="11" fill="#0e7490" text-anchor="middle">(spiralformad – som en gyllene spiral)</text>
+
+<!-- ===== Flow summary ===== -->
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Trumhinnan → hammaren → städet → stigbygeln → snäckan</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">De tre små hörselbenen för trumhinnans vibrationer in i den spiralformade snäckan</text>
 </svg>

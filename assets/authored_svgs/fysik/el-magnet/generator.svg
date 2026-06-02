@@ -1,52 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Generator</text>
-<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Vrid en spole i ett magnetfält → det bildas ström (rörelse → el)</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Vrid en spole i ett magnetfält så bildas ström (rörelse blir el)</text>
 
 <!-- N magnet (left) -->
-<rect x="90" y="160" width="60" height="160" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
-<text x="120" y="248" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle" font-weight="bold">N</text>
+<rect x="70" y="130" width="60" height="170" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<text x="100" y="225" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle" font-weight="bold">N</text>
 <!-- S magnet (right) -->
-<rect x="320" y="160" width="60" height="160" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
-<text x="350" y="248" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle" font-weight="bold">S</text>
+<rect x="330" y="130" width="60" height="170" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="360" y="225" font-family="Arial,sans-serif" font-size="30" fill="white" text-anchor="middle" font-weight="bold">S</text>
 
-<!-- field lines N -> S between magnets -->
-<line x1="155" y1="200" x2="315" y2="200" stroke="#9ca3af" stroke-width="1.5"/>
-<polygon points="245,200 235,196.5 235,203.5" fill="#9ca3af"/>
-<line x1="155" y1="280" x2="315" y2="280" stroke="#9ca3af" stroke-width="1.5"/>
-<polygon points="245,280 235,276.5 235,283.5" fill="#9ca3af"/>
+<!-- field lines N -> S between magnets (straight, arrows pointing right) -->
+<line x1="135" y1="165" x2="325" y2="165" stroke="#9ca3af" stroke-width="1.8"/>
+<polygon points="245,165 233,160 233,170" fill="#9ca3af"/>
+<line x1="135" y1="265" x2="325" y2="265" stroke="#9ca3af" stroke-width="1.8"/>
+<polygon points="245,265 233,260 233,270" fill="#9ca3af"/>
+<text x="450" y="245" font-family="Arial,sans-serif" font-size="13" fill="#9ca3af" text-anchor="middle">fältlinjer (N → S)</text>
 
-<!-- rotating coil -->
-<rect x="210" y="190" width="60" height="100" fill="none" stroke="#b45309" stroke-width="4"/>
-<line x1="240" y1="160" x2="240" y2="190" stroke="#6b7280" stroke-width="3"/>
-<line x1="240" y1="290" x2="240" y2="320" stroke="#6b7280" stroke-width="3"/>
-<text x="240" y="148" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">spole</text>
+<!-- rotating coil (clean rectangle loop) between the poles -->
+<rect x="200" y="170" width="60" height="100" fill="none" stroke="#b45309" stroke-width="4"/>
+<!-- axle through the coil -->
+<line x1="230" y1="130" x2="230" y2="170" stroke="#6b7280" stroke-width="3"/>
+<line x1="230" y1="270" x2="230" y2="305" stroke="#6b7280" stroke-width="3"/>
+<text x="230" y="120" font-family="Arial,sans-serif" font-size="13" fill="#b45309" text-anchor="middle" font-weight="bold">spole</text>
 
-<!-- crank / rotation (the movement that drives it) -->
-<circle cx="240" cy="350" r="6" fill="#6b7280"/>
-<path d="M205 335 A45 45 0 0 1 205 365" fill="none" stroke="#16a34a" stroke-width="3"/>
-<polygon points="205,365 197,355 211,353" fill="#16a34a"/>
-<text x="150" y="355" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">vrids runt</text>
+<!-- rotation arrow: a clean circular arc with one arrowhead, around the axle -->
+<circle cx="230" cy="332" r="5" fill="#6b7280"/>
+<path d="M261 332 A31 31 0 1 1 254 311" fill="none" stroke="#16a34a" stroke-width="3"/>
+<polygon points="254,311 263,322 247,320" fill="#16a34a"/>
+<text x="120" y="337" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">spolen</text>
+<text x="120" y="356" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">vrids runt</text>
 
-<!-- leads out to the bulb on the right -->
-<line x1="210" y1="290" x2="210" y2="410" stroke="#b45309" stroke-width="3"/>
-<line x1="210" y1="410" x2="630" y2="410" stroke="#b45309" stroke-width="3"/>
-<line x1="270" y1="290" x2="270" y2="385" stroke="#b45309" stroke-width="3"/>
-<line x1="270" y1="385" x2="630" y2="385" stroke="#b45309" stroke-width="3"/>
+<!-- leads out to the lamp on the right -->
+<line x1="200" y1="270" x2="200" y2="430" stroke="#b45309" stroke-width="3"/>
+<line x1="200" y1="430" x2="630" y2="430" stroke="#b45309" stroke-width="3"/>
+<line x1="260" y1="270" x2="260" y2="400" stroke="#b45309" stroke-width="3"/>
+<line x1="260" y1="400" x2="630" y2="400" stroke="#b45309" stroke-width="3"/>
 
 <!-- induced current arrow -->
-<polygon points="430,385 420,380 420,390" fill="#dc2626"/>
-<text x="430" y="375" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">ström som bildas</text>
+<line x1="420" y1="400" x2="470" y2="400" stroke="#dc2626" stroke-width="3"/>
+<polygon points="482,400 468,393 468,407" fill="#dc2626"/>
+<text x="450" y="388" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">ström som bildas</text>
 
-<!-- LAMP symbol: circle with X -->
-<circle cx="630" cy="397.5" r="35" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
-<line x1="605" y1="372.5" x2="655" y2="422.5" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="655" y1="372.5" x2="605" y2="422.5" stroke="#f59e0b" stroke-width="2.5"/>
+<!-- LAMP symbol: circle with X, in series between the two leads -->
+<circle cx="630" cy="415" r="32" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
+<line x1="607" y1="392" x2="653" y2="438" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="653" y1="392" x2="607" y2="438" stroke="#f59e0b" stroke-width="2.5"/>
 <!-- glow rays -->
-<line x1="630" y1="350" x2="630" y2="338" stroke="#facc15" stroke-width="3"/>
-<line x1="680" y1="397.5" x2="694" y2="397.5" stroke="#facc15" stroke-width="3"/>
-<line x1="665" y1="362" x2="675" y2="352" stroke="#facc15" stroke-width="3"/>
-<text x="630" y="462" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">lampan lyser</text>
+<line x1="630" y1="372" x2="630" y2="362" stroke="#facc15" stroke-width="3"/>
+<line x1="678" y1="415" x2="690" y2="415" stroke="#facc15" stroke-width="3"/>
+<line x1="664" y1="381" x2="673" y2="372" stroke="#facc15" stroke-width="3"/>
+<text x="630" y="468" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">lampan lyser</text>
 
-<text x="400" y="345" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En generator är nästan som en elmotor baklänges</text>
+<text x="555" y="160" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En generator är som</text>
+<text x="555" y="178" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">en elmotor baklänges</text>
 </svg>

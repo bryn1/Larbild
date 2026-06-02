@@ -1,38 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
-<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Automatsäkring</text>
-<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Bryter strömmen vid för hög ström</text>
+<text x="400" y="33" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Automatsäkring</text>
+<text x="400" y="60" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Fungerar som en strömbrytare: bryter ledaren när strömmen blir för hög</text>
 
-<!-- NORMAL: breaker ON, current flows -->
-<rect x="90" y="130" width="280" height="220" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" rx="6"/>
-<text x="230" y="158" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">Normal ström – PÅ</text>
-<rect x="180" y="185" width="60" height="90" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="4"/>
-<text x="210" y="215" font-family="Arial,sans-serif" font-size="13" fill="#166534" text-anchor="middle">PÅ</text>
-<rect x="195" y="225" width="30" height="20" fill="#16a34a" rx="3"/>
-<!-- closed circuit line -->
-<line x1="110" y1="310" x2="180" y2="310" stroke="#1f2937" stroke-width="3"/>
-<line x1="180" y1="310" x2="180" y2="290" stroke="#1f2937" stroke-width="3"/>
-<line x1="180" y1="290" x2="240" y2="290" stroke="#1f2937" stroke-width="3"/>
-<line x1="240" y1="290" x2="240" y2="310" stroke="#1f2937" stroke-width="3"/>
-<line x1="240" y1="310" x2="350" y2="310" stroke="#1f2937" stroke-width="3"/>
-<line x1="270" y1="293" x2="300" y2="293" stroke="#dc2626" stroke-width="3"/>
-<polygon points="310,293 300,297 300,289" fill="#dc2626"/>
-<text x="230" y="335" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">Strömmen går runt</text>
+<!-- ============ LEFT: breaker ON, contact closed, current flows ============ -->
+<rect x="60" y="90" width="320" height="300" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" rx="8"/>
+<text x="220" y="118" font-family="Arial,sans-serif" font-size="16" fill="#16a34a" text-anchor="middle" font-weight="bold">PÅ – ledaren är hel</text>
 
-<!-- OVERLOAD: breaker tripped, broken -->
-<rect x="430" y="130" width="280" height="220" fill="#fef2f2" stroke="#dc2626" stroke-width="2" rx="6"/>
-<text x="570" y="158" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">För mycket ström – AV</text>
-<rect x="520" y="185" width="60" height="90" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="4"/>
-<text x="550" y="215" font-family="Arial,sans-serif" font-size="13" fill="#991b1b" text-anchor="middle">AV</text>
-<rect x="535" y="248" width="30" height="20" fill="#dc2626" rx="3"/>
-<!-- broken circuit -->
-<line x1="450" y1="310" x2="520" y2="310" stroke="#1f2937" stroke-width="3"/>
-<line x1="520" y1="310" x2="520" y2="295" stroke="#1f2937" stroke-width="3"/>
-<line x1="580" y1="295" x2="580" y2="310" stroke="#1f2937" stroke-width="3"/>
-<line x1="580" y1="310" x2="690" y2="310" stroke="#1f2937" stroke-width="3"/>
-<text x="550" y="290" font-family="Arial,sans-serif" font-size="24" fill="#dc2626" text-anchor="middle" font-weight="bold">/</text>
-<text x="570" y="335" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Bruten – strömmen stoppas</text>
+<!-- incoming wire from left -->
+<line x1="80" y1="230" x2="160" y2="230" stroke="#1f2937" stroke-width="3"/>
+<!-- fixed contact dots -->
+<circle cx="160" cy="230" r="6" fill="#1f2937"/>
+<circle cx="280" cy="230" r="6" fill="#1f2937"/>
+<!-- CLOSED switch lever: bridges the two contacts (horizontal) -->
+<line x1="160" y1="230" x2="280" y2="230" stroke="#16a34a" stroke-width="5"/>
+<!-- outgoing wire to right -->
+<line x1="280" y1="230" x2="360" y2="230" stroke="#1f2937" stroke-width="3"/>
+<!-- toggle handle (down = on) -->
+<line x1="220" y1="230" x2="220" y2="285" stroke="#166534" stroke-width="6"/>
+<rect x="205" y="285" width="30" height="20" rx="4" fill="#16a34a"/>
+<text x="220" y="330" font-family="Arial,sans-serif" font-size="13" fill="#166534" text-anchor="middle">vippan nere = på</text>
 
-<text x="400" y="400" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">För många apparater → för hög ström → säkringen slår ifrån</text>
+<!-- current arrow flows through -->
+<line x1="100" y1="195" x2="150" y2="195" stroke="#dc2626" stroke-width="3"/>
+<polygon points="162,195 148,188 148,202" fill="#dc2626"/>
+<text x="200" y="180" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">strömmen går igenom</text>
+<line x1="290" y1="195" x2="340" y2="195" stroke="#dc2626" stroke-width="3"/>
+<polygon points="352,195 338,188 338,202" fill="#dc2626"/>
+<text x="220" y="365" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">Kontakten är sluten → kretsen är hel</text>
+
+<!-- ============ RIGHT: breaker TRIPPED, contact open, current stops ============ -->
+<rect x="420" y="90" width="320" height="300" fill="#fef2f2" stroke="#dc2626" stroke-width="2" rx="8"/>
+<text x="580" y="118" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">AV – ledaren bryts</text>
+
+<!-- incoming wire from left -->
+<line x1="440" y1="230" x2="520" y2="230" stroke="#1f2937" stroke-width="3"/>
+<!-- fixed contact dots, with a clear GAP between them -->
+<circle cx="520" cy="230" r="6" fill="#1f2937"/>
+<circle cx="640" cy="230" r="6" fill="#1f2937"/>
+<!-- OPEN switch lever: lifted up, no longer bridging the contacts -->
+<line x1="520" y1="230" x2="610" y2="178" stroke="#dc2626" stroke-width="5"/>
+<!-- outgoing wire to right -->
+<line x1="640" y1="230" x2="720" y2="230" stroke="#1f2937" stroke-width="3"/>
+<!-- toggle handle (up = off) -->
+<line x1="580" y1="230" x2="580" y2="290" stroke="#991b1b" stroke-width="6"/>
+<rect x="565" y="290" width="30" height="20" rx="4" fill="#dc2626"/>
+<text x="580" y="332" font-family="Arial,sans-serif" font-size="13" fill="#991b1b" text-anchor="middle">vippan upp = av</text>
+
+<!-- gap marker -->
+<text x="592" y="252" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">glapp</text>
+
+<!-- current stopped: arrow into the gap, blocked -->
+<line x1="455" y1="195" x2="500" y2="195" stroke="#dc2626" stroke-width="3"/>
+<polygon points="512,195 498,188 498,202" fill="#dc2626"/>
+<!-- block bar at the gap -->
+<line x1="565" y1="172" x2="595" y2="202" stroke="#dc2626" stroke-width="4"/>
+<line x1="595" y1="172" x2="565" y2="202" stroke="#dc2626" stroke-width="4"/>
+<text x="660" y="360" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">Kontakten öppnas →</text>
+<text x="660" y="378" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">strömmen stoppas</text>
+
+<text x="400" y="445" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">För hög ström → vippan slår upp → kontakten öppnas → strömmen bryts</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En knapp i elskåpet som bryter strömmen om det går för mycket ström</text>
 </svg>

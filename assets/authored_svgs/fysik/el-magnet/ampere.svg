@@ -1,40 +1,69 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Ampere (A) – elektrisk ström</text>
-<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Ström = laddning som passerar per sekund</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Ström = laddning (elektroner) som passerar per sekund</text>
 
-<!-- battery -->
-<rect x="90" y="250" width="60" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="3"/>
-<text x="120" y="285" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">Batteri</text>
-<text x="120" y="303" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">+    −</text>
+<!-- closed circuit loop: rectangle 150,150 -> 650,150 -> 650,360 -> 150,360 -->
+<!-- top rail (with ammeter gap 360..440) -->
+<line x1="150" y1="150" x2="360" y2="150" stroke="#1f2937" stroke-width="3"/>
+<line x1="440" y1="150" x2="650" y2="150" stroke="#1f2937" stroke-width="3"/>
+<!-- right rail (with lamp gap 250..310) -->
+<line x1="650" y1="150" x2="650" y2="225" stroke="#1f2937" stroke-width="3"/>
+<line x1="650" y1="335" x2="650" y2="360" stroke="#1f2937" stroke-width="3"/>
+<!-- bottom rail -->
+<line x1="650" y1="360" x2="150" y2="360" stroke="#1f2937" stroke-width="3"/>
+<!-- left rail (with battery gap 220..290) -->
+<line x1="150" y1="150" x2="150" y2="220" stroke="#1f2937" stroke-width="3"/>
+<line x1="150" y1="290" x2="150" y2="360" stroke="#1f2937" stroke-width="3"/>
 
-<!-- wires -->
-<line x1="150" y1="265" x2="640" y2="265" stroke="#1f2937" stroke-width="3"/>
-<line x1="640" y1="265" x2="640" y2="380" stroke="#1f2937" stroke-width="3"/>
-<line x1="640" y1="380" x2="120" y2="380" stroke="#1f2937" stroke-width="3"/>
-<line x1="120" y1="380" x2="120" y2="320" stroke="#1f2937" stroke-width="3"/>
+<!-- BATTERY on left rail: long line = + , short thick line = - -->
+<line x1="125" y1="232" x2="175" y2="232" stroke="#1f2937" stroke-width="3"/>
+<line x1="137" y1="266" x2="163" y2="266" stroke="#1f2937" stroke-width="7"/>
+<text x="108" y="238" font-family="Arial,sans-serif" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="108" y="274" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="150" y="305" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
 
-<!-- lamp -->
-<circle cx="640" cy="200" r="26" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
-<line x1="630" y1="190" x2="650" y2="210" stroke="#f59e0b" stroke-width="2"/>
-<line x1="650" y1="190" x2="630" y2="210" stroke="#f59e0b" stroke-width="2"/>
-<line x1="640" y1="226" x2="640" y2="265" stroke="#1f2937" stroke-width="3"/>
-<text x="690" y="205" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Lampa</text>
+<!-- AMMETER A in series on top rail -->
+<circle cx="400" cy="150" r="28" fill="white" stroke="#16a34a" stroke-width="3"/>
+<text x="400" y="159" font-family="Arial,sans-serif" font-size="24" fill="#16a34a" text-anchor="middle" font-weight="bold">A</text>
+<text x="400" y="118" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">amperemeter</text>
 
-<!-- ammeter A in series -->
-<circle cx="400" cy="265" r="28" fill="white" stroke="#16a34a" stroke-width="3"/>
-<text x="400" y="273" font-family="Arial,sans-serif" font-size="22" fill="#16a34a" text-anchor="middle" font-weight="bold">A</text>
-<text x="400" y="325" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">Amperemeter</text>
+<!-- LAMP wired IN SERIES on the right rail (circle with X, both terminals on the wire) -->
+<circle cx="650" cy="280" r="30" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
+<line x1="629" y1="259" x2="671" y2="301" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="671" y1="259" x2="629" y2="301" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="708" y="285" font-family="Arial,sans-serif" font-size="13" fill="#b45309" text-anchor="middle">lampa</text>
 
-<!-- electrons flowing -->
-<circle cx="250" cy="265" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
-<text x="250" y="269" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
-<circle cx="520" cy="265" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
-<text x="520" y="269" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
-<line x1="290" y1="248" x2="330" y2="248" stroke="#dc2626" stroke-width="3"/>
-<polygon points="340,248 330,252 330,244" fill="#dc2626"/>
-<text x="315" y="240" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">ström I</text>
+<!-- ELECTRON FLOW: e- leave the minus pole, travel round the loop, back to plus.
+     conventional current is opposite; here we show electron direction (e-) as the comment asks. -->
+<!-- left rail downward? electrons exit - pole (bottom-left), go DOWN-then-along bottom toward right, up right side, back along top to + .
+     Direction of e- around loop (counter-clockwise here): bottom rail left->right, right rail up, top rail right->left, left rail down into - pole. -->
 
-<text x="400" y="430" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">1 A = 1 coulomb laddning per sekund</text>
+<!-- e- on bottom rail moving right -->
+<circle cx="300" cy="360" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="300" y="364" font-family="Arial,sans-serif" font-size="9" fill="white" text-anchor="middle">e-</text>
+<line x1="380" y1="360" x2="430" y2="360" stroke="#2563eb" stroke-width="3"/>
+<polygon points="442,360 428,353 428,367" fill="#2563eb"/>
+
+<!-- e- on right rail moving up (below lamp) -->
+<circle cx="650" cy="345" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="650" y="349" font-family="Arial,sans-serif" font-size="9" fill="white" text-anchor="middle">e-</text>
+
+<!-- e- on top rail moving left -->
+<circle cx="540" cy="150" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="540" y="154" font-family="Arial,sans-serif" font-size="9" fill="white" text-anchor="middle">e-</text>
+<line x1="300" y1="150" x2="250" y2="150" stroke="#2563eb" stroke-width="3"/>
+<polygon points="238,150 252,143 252,157" fill="#2563eb"/>
+
+<!-- e- on left rail moving down toward - pole -->
+<circle cx="150" cy="335" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="150" y="339" font-family="Arial,sans-serif" font-size="9" fill="white" text-anchor="middle">e-</text>
+
+<!-- direction-of-electrons key -->
+<line x1="240" y1="408" x2="290" y2="408" stroke="#2563eb" stroke-width="3"/>
+<polygon points="302,408 288,401 288,415" fill="#2563eb"/>
+<text x="430" y="413" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">e− rör sig från minuspolen runt kretsen</text>
+
+<text x="400" y="448" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">1 A = 1 coulomb laddning per sekund</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ampere mäter hur mycket laddning som rinner genom sladden varje sekund</text>
 </svg>

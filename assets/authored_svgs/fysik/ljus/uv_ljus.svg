@@ -1,61 +1,61 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
-<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">UV-ljus (ultraviolett)</text>
-<circle cx="130" cy="140" r="30" fill="#f59e0b"/>
-<line x1="166.0" y1="140.0" x2="180.0" y2="140.0" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="161.2" y1="158.0" x2="173.3" y2="165.0" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="148.0" y1="171.2" x2="155.0" y2="183.3" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="130.0" y1="176.0" x2="130.0" y2="190.0" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="112.0" y1="171.2" x2="105.0" y2="183.3" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="98.8" y1="158.0" x2="86.7" y2="165.0" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="94.0" y1="140.0" x2="80.0" y2="140.0" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="98.8" y1="122.0" x2="86.7" y2="115.0" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="112.0" y1="108.8" x2="105.0" y2="96.7" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="130.0" y1="104.0" x2="130.0" y2="90.0" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="148.0" y1="108.8" x2="155.0" y2="96.7" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="161.2" y1="122.0" x2="173.3" y2="115.0" stroke="#f59e0b" stroke-width="2.5"/>
-<text x="130" y="210" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Solen</text>
-<line x1="180" y1="140" x2="510.0" y2="164.3" stroke="#7c3aed" stroke-width="2"/>
-<polygon points="520,165 510.6,168.4 511.2,160.3" fill="#7c3aed"/>
-<line x1="180" y1="165" x2="510.0" y2="189.3" stroke="#7c3aed" stroke-width="2"/>
-<polygon points="520,190 510.6,193.4 511.2,185.3" fill="#7c3aed"/>
-<line x1="180" y1="190" x2="510.0" y2="214.3" stroke="#7c3aed" stroke-width="2"/>
-<polygon points="520,215 510.6,218.4 511.2,210.3" fill="#7c3aed"/>
-<text x="355" y="135" font-family="Arial,sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle">UV-strålar (osynliga)</text>
-<rect x="560" y="150" width="120" height="80" fill="#fcd5b5" stroke="#c2855a" stroke-width="2"/>
-<text x="620" y="248" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Hud</text>
-<rect x="548" y="150" width="12" height="80" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
-<text x="595" y="138" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">Solkräm skyddar</text>
-<text x="655" y="205" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(blockerar UV)</text>
-<rect x="60" y="300" width="90" height="60" fill="#94a3b8" opacity="0.32" stroke="#94a3b8" stroke-width="1"/>
-<text x="105.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Radiovågor</text>
-<rect x="150" y="300" width="70" height="60" fill="#a78bfa" opacity="0.32" stroke="#a78bfa" stroke-width="1"/>
-<text x="185.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Mikrovågor</text>
-<rect x="220" y="300" width="80" height="60" fill="#ef4444" opacity="0.32" stroke="#ef4444" stroke-width="1"/>
-<text x="260.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Infraröd</text>
-<rect x="300.0" y="300" width="10.6" height="60" fill="#dc2626" opacity="0.75"/>
-<rect x="310.0" y="300" width="10.6" height="60" fill="#f97316" opacity="0.75"/>
-<rect x="320.0" y="300" width="10.6" height="60" fill="#eab308" opacity="0.75"/>
-<rect x="330.0" y="300" width="10.6" height="60" fill="#22c55e" opacity="0.75"/>
-<rect x="340.0" y="300" width="10.6" height="60" fill="#3b82f6" opacity="0.75"/>
-<rect x="350.0" y="300" width="10.6" height="60" fill="#6366f1" opacity="0.75"/>
-<rect x="360.0" y="300" width="10.6" height="60" fill="#8b5cf6" opacity="0.75"/>
-<text x="335.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Synligt</text>
-<rect x="370" y="300" width="60" height="60" fill="#7c3aed" opacity="0.32" stroke="#7c3aed" stroke-width="1"/>
-<text x="400.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">UV</text>
-<rect x="430" y="300" width="70" height="60" fill="#2563eb" opacity="0.32" stroke="#2563eb" stroke-width="1"/>
-<text x="465.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Röntgen</text>
-<rect x="500" y="300" width="70" height="60" fill="#1e3a5f" opacity="0.32" stroke="#1e3a5f" stroke-width="1"/>
-<text x="535.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Gamma</text>
-<line x1="558" y1="404" x2="78.0" y2="404.0" stroke="#9ca3af" stroke-width="1.5"/>
-<polygon points="68,404 77.1,399.9 77.1,408.1" fill="#9ca3af"/>
-<text x="400" y="401" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Våglängd ökar</text>
-<line x1="68" y1="426" x2="548.0" y2="426.0" stroke="#9ca3af" stroke-width="1.5"/>
-<polygon points="558,426 548.9,430.1 548.9,421.9" fill="#9ca3af"/>
-<text x="400" y="423" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Frekvens ökar</text>
-<rect x="368" y="298" width="64" height="64" fill="none" stroke="#f59e0b" stroke-width="3"/>
-<line x1="400.0" y1="274" x2="400.0" y2="286.0" stroke="#f59e0b" stroke-width="2.5"/>
-<polygon points="400.0,295 396.3,286.8 403.7,286.8" fill="#f59e0b"/>
-<text x="400.0" y="269" font-family="Arial,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle" font-weight="bold">Här!</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">UV-ljus är osynlig strålning från solen som kan ge solbränna — solkräm skyddar huden</text>
+<text x="400" y="33" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">UV-ljus</text>
+<!-- ===== Compact spectrum reference strip: UV is just RIGHT of violet ===== -->
+<rect x="150" y="58" width="50" height="26" fill="#64748b"/>
+<rect x="200" y="58" width="50" height="26" fill="#b91c1c"/>
+<rect x="250" y="58" width="14" height="26" fill="#ef4444"/>
+<rect x="264" y="58" width="14" height="26" fill="#f97316"/>
+<rect x="278" y="58" width="14" height="26" fill="#facc15"/>
+<rect x="292" y="58" width="14" height="26" fill="#22c55e"/>
+<rect x="306" y="58" width="13" height="26" fill="#3b82f6"/>
+<rect x="319" y="58" width="14" height="26" fill="#7c3aed"/>
+<rect x="333" y="58" width="50" height="26" fill="#6d28d9"/>
+<rect x="383" y="58" width="50" height="26" fill="#4338ca"/>
+<rect x="433" y="58" width="50" height="26" fill="#312e81"/>
+<rect x="150" y="58" width="333" height="26" fill="none" stroke="#1f2937" stroke-width="1.3"/>
+<text x="175" y="76" font-family="Arial,sans-serif" font-size="9" fill="white" text-anchor="middle">Infraröd</text>
+<text x="290" y="100" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">synligt</text>
+<text x="358" y="76" font-family="Arial,sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">UV</text>
+<text x="408" y="76" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">Röntgen</text>
+<text x="458" y="76" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">Gamma</text>
+<text x="600" y="76" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">UV ligger strax till höger om violett</text>
+
+<!-- ===== Sun (left) -> UV rays -> sunscreen on skin (right) ===== -->
+<!-- Sun -->
+<circle cx="130" cy="270" r="48" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+<g stroke="#f59e0b" stroke-width="3">
+<line x1="130" y1="200" x2="130" y2="180"/>
+<line x1="80" y1="220" x2="66" y2="206"/>
+<line x1="180" y1="220" x2="194" y2="206"/>
+<line x1="62" y1="270" x2="42" y2="270"/>
+<line x1="80" y1="320" x2="66" y2="334"/>
+<line x1="180" y1="320" x2="194" y2="334"/>
+<line x1="130" y1="340" x2="130" y2="360"/>
+</g>
+<text x="130" y="275" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Solen</text>
+<!-- UV rays travelling toward the skin -->
+<line x1="195" y1="240" x2="470" y2="225" stroke="#7c3aed" stroke-width="3"/>
+<polygon points="470,225 455,221 457,233" fill="#7c3aed"/>
+<line x1="195" y1="270" x2="470" y2="270" stroke="#7c3aed" stroke-width="3"/>
+<polygon points="470,270 456,264 456,276" fill="#7c3aed"/>
+<line x1="195" y1="300" x2="470" y2="315" stroke="#7c3aed" stroke-width="3"/>
+<polygon points="470,315 457,307 455,319" fill="#7c3aed"/>
+<text x="320" y="200" font-family="Arial,sans-serif" font-size="14" fill="#7c3aed" text-anchor="middle" font-weight="bold">UV-strålning</text>
+
+<!-- Sunscreen layer (yellow band) on the skin surface -->
+<rect x="478" y="170" width="26" height="200" rx="6" fill="#fde68a" stroke="#d97706" stroke-width="2.5"/>
+<!-- Skin behind the sunscreen -->
+<rect x="504" y="170" width="150" height="200" fill="#fed7aa" stroke="#fb923c" stroke-width="1.5"/>
+<text x="585" y="160" font-family="Arial,sans-serif" font-size="13" fill="#9a3412" text-anchor="middle" font-weight="bold">Huden</text>
+<!-- "solkräm skyddar" label on the sunscreen, with "blockerar UV" placed right next to it -->
+<text x="491" y="395" font-family="Arial,sans-serif" font-size="12" fill="#d97706" text-anchor="middle" font-weight="bold">solkräm</text>
+<text x="491" y="411" font-family="Arial,sans-serif" font-size="12" fill="#d97706" text-anchor="middle" font-weight="bold">skyddar</text>
+<text x="491" y="429" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">(blockerar UV)</text>
+<!-- show that few rays get past: stub arrows stopped at the sunscreen -->
+<text x="585" y="270" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">UV stoppas</text>
+<text x="585" y="286" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">vid solkrämen</text>
+
+<text x="400" y="455" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Solen sänder ut UV-strålning som kan skada huden</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Solkräm blockerar UV-ljuset och skyddar huden</text>
 </svg>

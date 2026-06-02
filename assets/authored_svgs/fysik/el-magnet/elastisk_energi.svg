@@ -1,32 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Elastisk energi</text>
-<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Energi lagrad i något hoptryckt eller utsträckt</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Energi som lagras i något hoptryckt – frigörs när det släpps</text>
 
-<!-- wall left -->
-<rect x="90" y="130" width="20" height="200" fill="#6b7280"/>
-<!-- relaxed spring, top -->
-<text x="240" y="150" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Avslappnad fjäder</text>
-<path d="M110 175 L150 175 L160 160 L180 190 L200 160 L220 190 L240 160 L260 190 L280 160 L300 190 L310 175 L350 175" fill="none" stroke="#2563eb" stroke-width="3"/>
-<rect x="350" y="160" width="30" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-<text x="500" y="180" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ingen lagrad energi</text>
+<!-- ================= TOP ROW: compressed spring stores energy ================= -->
+<text x="180" y="118" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">1. Hoptryckt fjäder</text>
+<!-- wall on the left -->
+<rect x="70" y="130" width="22" height="120" fill="#6b7280"/>
+<!-- compressed spring: tight zig-zag (short, many coils) from wall to the ball -->
+<path d="M92 190 L116 190 L122 174 L134 206 L146 174 L158 206 L170 174 L182 206 L194 174 L206 206 L212 190 L236 190"
+      fill="none" stroke="#dc2626" stroke-width="3.5"/>
+<!-- ball being held compressed -->
+<circle cx="258" cy="190" r="22" fill="#fca5a5" stroke="#dc2626" stroke-width="2.5"/>
+<!-- a hand/holder bar keeping it compressed -->
+<rect x="283" y="160" width="16" height="60" rx="3" fill="#6b7280"/>
+<!-- compression arrow pushing left -->
+<line x1="340" y1="190" x2="305" y2="190" stroke="#991b1b" stroke-width="3"/>
+<polygon points="295,190 307,185 307,195" fill="#991b1b"/>
+<text x="430" y="180" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Elastisk energi lagras</text>
+<text x="430" y="202" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">i den hoptryckta fjädern</text>
 
-<!-- compressed spring, middle -->
-<text x="240" y="250" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Hoptryckt fjäder</text>
-<path d="M110 280 L135 280 L141 268 L153 292 L165 268 L177 292 L189 268 L201 292 L213 268 L225 292 L231 280 L255 280" fill="none" stroke="#dc2626" stroke-width="3"/>
-<rect x="255" y="265" width="30" height="30" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
-<!-- compression arrows -->
-<line x1="340" y1="280" x2="295" y2="280" stroke="#dc2626" stroke-width="3"/>
-<polygon points="285,280 297,275 297,285" fill="#dc2626"/>
-<text x="430" y="276" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Elastisk energi</text>
-<text x="430" y="294" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">lagras i fjädern</text>
+<!-- big down arrow between rows -->
+<line x1="180" y1="245" x2="180" y2="285" stroke="#1f2937" stroke-width="3"/>
+<polygon points="180,298 173,284 187,284" fill="#1f2937"/>
+<text x="245" y="278" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">släpps loss</text>
 
-<!-- release: kinetic -->
-<text x="240" y="350" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Släpps loss</text>
-<rect x="255" y="335" width="30" height="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-<line x1="295" y1="350" x2="360" y2="350" stroke="#16a34a" stroke-width="4"/>
-<polygon points="372,350 358,344 358,356" fill="#16a34a"/>
-<text x="470" y="354" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">→ rörelseenergi</text>
+<!-- ================= BOTTOM ROW: released spring pushes ball away ================= -->
+<text x="180" y="338" font-family="Arial,sans-serif" font-size="16" fill="#16a34a" text-anchor="middle" font-weight="bold">2. Fjädern släpps</text>
+<!-- wall on the left -->
+<rect x="70" y="350" width="22" height="120" fill="#6b7280"/>
+<!-- RELAXED / extended spring: longer, looser coils (the spring IS drawn on release) -->
+<path d="M92 410 L120 410 L130 388 L150 432 L170 388 L190 432 L210 388 L230 432 L250 388 L270 432 L280 410 L320 410"
+      fill="none" stroke="#16a34a" stroke-width="3.5"/>
+<!-- ball flying off to the right with motion lines -->
+<circle cx="430" cy="410" r="22" fill="#86efac" stroke="#16a34a" stroke-width="2.5"/>
+<line x1="375" y1="402" x2="395" y2="402" stroke="#16a34a" stroke-width="2.5"/>
+<line x1="368" y1="410" x2="392" y2="410" stroke="#16a34a" stroke-width="2.5"/>
+<line x1="375" y1="418" x2="395" y2="418" stroke="#16a34a" stroke-width="2.5"/>
+<!-- motion arrow -->
+<line x1="460" y1="410" x2="540" y2="410" stroke="#16a34a" stroke-width="4"/>
+<polygon points="554,410 538,402 538,418" fill="#16a34a"/>
+<text x="640" y="400" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">Energin blir</text>
+<text x="640" y="422" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">rörelseenergi</text>
 
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En spänd fjäder eller ett utdraget gummiband lagrar elastisk energi</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En spänd fjäder eller ett utdraget gummiband lagrar elastisk energi</text>
 </svg>

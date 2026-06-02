@@ -5,44 +5,44 @@
 
 <!-- single loop rectangle -->
 <!-- top rail with two lamps on it -->
-<line x1="150" y1="150" x2="305" y2="150" stroke="#1f2937" stroke-width="3"/>
-<line x1="375" y1="150" x2="445" y2="150" stroke="#1f2937" stroke-width="3"/>
-<line x1="515" y1="150" x2="650" y2="150" stroke="#1f2937" stroke-width="3"/>
+<line x1="150" y1="160" x2="305" y2="160" stroke="#1f2937" stroke-width="3"/>
+<line x1="375" y1="160" x2="445" y2="160" stroke="#1f2937" stroke-width="3"/>
+<line x1="515" y1="160" x2="650" y2="160" stroke="#1f2937" stroke-width="3"/>
 <!-- right wire -->
-<line x1="650" y1="150" x2="650" y2="380" stroke="#1f2937" stroke-width="3"/>
+<line x1="650" y1="160" x2="650" y2="385" stroke="#1f2937" stroke-width="3"/>
 <!-- bottom rail -->
-<line x1="150" y1="380" x2="650" y2="380" stroke="#1f2937" stroke-width="3"/>
+<line x1="150" y1="385" x2="650" y2="385" stroke="#1f2937" stroke-width="3"/>
 <!-- left wire with gap for battery -->
-<line x1="150" y1="150" x2="150" y2="240" stroke="#1f2937" stroke-width="3"/>
-<line x1="150" y1="300" x2="150" y2="380" stroke="#1f2937" stroke-width="3"/>
+<line x1="150" y1="160" x2="150" y2="245" stroke="#1f2937" stroke-width="3"/>
+<line x1="150" y1="305" x2="150" y2="385" stroke="#1f2937" stroke-width="3"/>
 
 <!-- BATTERY on the left side - large and clear -->
-<line x1="125" y1="253" x2="175" y2="253" stroke="#1f2937" stroke-width="3"/>
-<line x1="137" y1="287" x2="163" y2="287" stroke="#1f2937" stroke-width="7"/>
-<text x="108" y="259" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">+</text>
-<text x="108" y="294" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
-<text x="150" y="328" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
-<text x="200" y="259" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">lång linje = pluspol (+)</text>
-<text x="200" y="285" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">kort tjock linje = minuspol (−)</text>
+<line x1="125" y1="258" x2="175" y2="258" stroke="#1f2937" stroke-width="3"/>
+<line x1="137" y1="292" x2="163" y2="292" stroke="#1f2937" stroke-width="7"/>
+<text x="108" y="264" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="108" y="299" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="150" y="333" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
+<text x="200" y="264" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">lång linje = pluspol (+)</text>
+<text x="200" y="290" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">kort tjock linje = minuspol (−)</text>
 
-<!-- LAMP 1 on top rail -->
-<circle cx="340" cy="150" r="35" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
-<line x1="315" y1="125" x2="365" y2="175" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="365" y1="125" x2="315" y2="175" stroke="#f59e0b" stroke-width="2.5"/>
-<text x="340" y="118" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">lampa 1</text>
+<!-- LAMP 1 on top rail (label moved UP, clear of the circle) -->
+<circle cx="340" cy="160" r="35" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
+<line x1="315" y1="135" x2="365" y2="185" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="365" y1="135" x2="315" y2="185" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="340" y="105" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">lampa 1</text>
 
-<!-- LAMP 2 on top rail -->
-<circle cx="480" cy="150" r="35" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
-<line x1="455" y1="125" x2="505" y2="175" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="505" y1="125" x2="455" y2="175" stroke="#f59e0b" stroke-width="2.5"/>
-<text x="480" y="118" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">lampa 2</text>
+<!-- LAMP 2 on top rail (label moved UP, clear of the circle) -->
+<circle cx="480" cy="160" r="35" fill="#fff7ed" stroke="#f59e0b" stroke-width="3"/>
+<line x1="455" y1="135" x2="505" y2="185" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="505" y1="135" x2="455" y2="185" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="480" y="105" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">lampa 2</text>
 
 <!-- current arrows showing single direction round the loop -->
-<polygon points="600,150 590,145 590,155" fill="#dc2626"/>
-<polygon points="400,380 410,375 410,385" fill="#dc2626"/>
-<polygon points="650,270 645,260 655,260" fill="#dc2626"/>
-<text x="400" y="408" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">samma ström överallt i slingan</text>
+<polygon points="600,160 590,155 590,165" fill="#dc2626"/>
+<polygon points="400,385 410,380 410,390" fill="#dc2626"/>
+<polygon points="650,275 645,265 655,265" fill="#dc2626"/>
+<text x="400" y="412" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">samma ström överallt i slingan</text>
 
-<text x="400" y="445" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Går en lampa sönder slocknar alla – kretsen bryts</text>
+<text x="400" y="448" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Går en lampa sönder slocknar alla – kretsen bryts</text>
 <text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Strömmen måste gå igenom alla i tur och ordning</text>
 </svg>

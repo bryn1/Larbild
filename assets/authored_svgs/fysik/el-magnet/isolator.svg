@@ -1,26 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Isolator</text>
-<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Ett material som stoppar strömmen – t.ex. plast eller gummi</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Ett material som stoppar strömmen – t.ex. plast eller gummi</text>
 
 <!-- cross section of a cable -->
-<text x="400" y="120" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Genomskärning av en sladd</text>
-<circle cx="400" cy="250" r="120" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
-<circle cx="400" cy="250" r="55" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
-<text x="400" y="248" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">Koppar</text>
-<text x="400" y="266" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">(ledare)</text>
+<text x="300" y="105" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Genomskärning av en sladd</text>
+<!-- outer ring = plastic insulator -->
+<circle cx="300" cy="265" r="135" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+<!-- inner core = copper conductor -->
+<circle cx="300" cy="265" r="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="300" y="262" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">Koppar</text>
+<text x="300" y="282" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">(ledare)</text>
 
-<!-- label isolator plast -->
-<line x1="490" y1="160" x2="430" y2="195" stroke="#dc2626" stroke-width="1.5"/>
-<text x="585" y="158" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Plast (isolator)</text>
-<text x="585" y="178" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">stoppar strömmen</text>
+<!-- label: plast (isolator) -->
+<text x="300" y="430" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Plast = isolator (stoppar strömmen)</text>
 
-<!-- current trying to escape but blocked -->
-<line x1="400" y1="250" x2="510" y2="320" stroke="#16a34a" stroke-width="3"/>
-<text x="400" y="430" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">Strömmen kan inte ta sig ut</text>
-<!-- a blocked symbol at the plast layer -->
-<line x1="495" y1="312" x2="520" y2="338" stroke="#dc2626" stroke-width="3"/>
-<line x1="520" y1="312" x2="495" y2="338" stroke="#dc2626" stroke-width="3"/>
+<!-- GREEN arrow: current trying to flow OUTWARD from the copper core toward the edge -->
+<line x1="300" y1="265" x2="300" y2="155" stroke="#16a34a" stroke-width="6"/>
+<polygon points="300,142 291,160 309,160" fill="#16a34a"/>
+<text x="380" y="200" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">strömmen vill ut →</text>
+
+<!-- RED X right at the plastic layer, blocking the green arrow -->
+<line x1="278" y1="148" x2="322" y2="192" stroke="#dc2626" stroke-width="7"/>
+<line x1="322" y1="148" x2="278" y2="192" stroke="#dc2626" stroke-width="7"/>
+
+<!-- RIGHT info panel: clear legend for the two marks -->
+<rect x="500" y="150" width="270" height="230" rx="12" fill="#f9fafb" stroke="#6b7280" stroke-width="2"/>
+<text x="635" y="182" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">Vad betyder tecknen?</text>
+<line x1="525" y1="196" x2="745" y2="196" stroke="#d1d5db" stroke-width="1.5"/>
+
+<!-- green legend -->
+<line x1="525" y1="235" x2="565" y2="235" stroke="#16a34a" stroke-width="6"/>
+<polygon points="577,235 563,228 563,242" fill="#16a34a"/>
+<text x="595" y="231" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="start" font-weight="bold">grön pil =</text>
+<text x="595" y="249" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">strömmen vill röra sig</text>
+
+<!-- red legend -->
+<line x1="528" y1="295" x2="562" y2="329" stroke="#dc2626" stroke-width="6"/>
+<line x1="562" y1="295" x2="528" y2="329" stroke="#dc2626" stroke-width="6"/>
+<text x="595" y="305" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start" font-weight="bold">rött kryss =</text>
+<text x="595" y="323" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">strömmen stoppas här</text>
+<text x="635" y="360" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Plasten släpper inte igenom</text>
 
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Plasten runt sladden gör att du inte får stöt när du tar i den</text>
 </svg>

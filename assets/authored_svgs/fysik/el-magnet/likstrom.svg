@@ -1,25 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
-<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Likström (DC) — alltid samma håll</text>
-<rect x="120" y="160" width="40" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-<text x="140" y="150" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">Batteri</text>
-<text x="140" y="205" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">+</text>
-<text x="140" y="233" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
-<polyline points="160,170 320,170 320,200" fill="none" stroke="#1f2937" stroke-width="2"/>
-<polyline points="160,230 320,230 320,200" fill="none" stroke="#1f2937" stroke-width="2"/>
-<circle cx="320" cy="200" r="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-<line x1="307" y1="187" x2="333" y2="213" stroke="#f59e0b" stroke-width="2"/>
-<line x1="333" y1="187" x2="307" y2="213" stroke="#f59e0b" stroke-width="2"/>
-<line x1="220.0" y1="170.0" x2="270.0" y2="170.0" stroke="#dc2626" stroke-width="2.5"/>
-<polygon points="280.0,170.0 270.0,174.2 270.0,165.8" fill="#dc2626"/>
-<text x="250" y="162" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">I</text>
-<line x1="430" y1="250" x2="660" y2="250" stroke="#1f2937" stroke-width="2"/>
-<line x1="430" y1="250" x2="430" y2="140" stroke="#1f2937" stroke-width="2"/>
-<text x="660" y="268" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="end">tid</text>
-<text x="422" y="140" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="end">ström</text>
-<line x1="430" y1="180" x2="650" y2="180" stroke="#dc2626" stroke-width="3"/>
-<text x="540" y="170" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">konstant</text>
-<text x="400" y="350" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Batterier ger likström: strömmen byter aldrig riktning</text>
-<text x="400" y="380" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Exempel: ficklampa, fjärrkontroll, mobilbatteri</text>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Likström (DC)</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Strömmen går hela tiden åt samma håll och är lika stor</text>
+
+<!-- ============ LEFT: simple DC circuit with clear current arrows ============ -->
+<text x="200" y="105" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Kretsen</text>
+<!-- loop rectangle 110,150 -> 300,150 -> 300,330 -> 110,330 with battery gap on left -->
+<line x1="110" y1="150" x2="300" y2="150" stroke="#1f2937" stroke-width="3"/>
+<line x1="300" y1="150" x2="300" y2="240" stroke="#1f2937" stroke-width="3"/>
+<line x1="300" y1="300" x2="300" y2="330" stroke="#1f2937" stroke-width="3"/>
+<line x1="300" y1="330" x2="110" y2="330" stroke="#1f2937" stroke-width="3"/>
+<line x1="110" y1="150" x2="110" y2="200" stroke="#1f2937" stroke-width="3"/>
+<line x1="110" y1="260" x2="110" y2="330" stroke="#1f2937" stroke-width="3"/>
+
+<!-- battery on left rail: long + / short - -->
+<line x1="85" y1="212" x2="135" y2="212" stroke="#1f2937" stroke-width="3"/>
+<line x1="97" y1="248" x2="123" y2="248" stroke="#1f2937" stroke-width="7"/>
+<text x="68" y="218" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="68" y="254" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="110" y="355" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
+
+<!-- lamp on right rail (circle with X) -->
+<circle cx="300" cy="270" r="28" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="280" y1="250" x2="320" y2="290" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="320" y1="250" x2="280" y2="290" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="345" y="274" font-family="Arial,sans-serif" font-size="13" fill="#b45309" text-anchor="middle">lampa</text>
+
+<!-- clear current arrows, always same direction round the loop -->
+<line x1="170" y1="150" x2="220" y2="150" stroke="#dc2626" stroke-width="4"/>
+<polygon points="234,150 218,142 218,158" fill="#dc2626"/>
+<line x1="240" y1="330" x2="190" y2="330" stroke="#dc2626" stroke-width="4"/>
+<polygon points="176,330 192,322 192,338" fill="#dc2626"/>
+<text x="205" y="138" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">ström I</text>
+
+<!-- ============ RIGHT: I-t graph with labelled axes ============ -->
+<text x="580" y="105" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Strömmen över tid</text>
+<!-- axes: origin at (450,330) -->
+<line x1="450" y1="130" x2="450" y2="330" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="450" y1="330" x2="730" y2="330" stroke="#1f2937" stroke-width="2.5"/>
+<!-- y axis arrow + label -->
+<polygon points="450,124 445,136 455,136" fill="#1f2937"/>
+<text x="450" y="118" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">ström I</text>
+<!-- x axis arrow + label -->
+<polygon points="736,330 724,325 724,335" fill="#1f2937"/>
+<text x="700" y="352" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">tid t</text>
+<!-- y-axis: y label for x axis -->
+<text x="592" y="352" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(x-axel)</text>
+<text x="412" y="230" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" transform="rotate(-90 412 230)">(y-axel)</text>
+
+<!-- constant current line -->
+<line x1="450" y1="200" x2="725" y2="200" stroke="#dc2626" stroke-width="4"/>
+<line x1="445" y1="200" x2="455" y2="200" stroke="#1f2937" stroke-width="2.5"/>
+<text x="440" y="205" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="end" font-weight="bold">I</text>
+<text x="588" y="190" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">konstant – samma hela tiden</text>
+
+<text x="400" y="405" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Batterier ger likström: strömmen byter aldrig riktning</text>
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Exempel: ficklampa, fjärrkontroll, mobilbatteri</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Likström går hela tiden åt samma håll i kretsen</text>
 </svg>

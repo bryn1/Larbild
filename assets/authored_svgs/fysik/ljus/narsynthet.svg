@@ -1,40 +1,66 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
-<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Närsynthet (myopi)</text>
-<ellipse cx="380" cy="270" rx="165" ry="145" stroke="#1f2937" stroke-width="2" fill="white"/>
-<path d="M 228 210 Q 196 270 228 330" stroke="#2563eb" stroke-width="3" fill="none"/>
-<line x1="252" y1="213" x2="252" y2="250" stroke="#16a34a" stroke-width="3"/>
-<line x1="252" y1="290" x2="252" y2="327" stroke="#16a34a" stroke-width="3"/>
-<ellipse cx="288" cy="270" rx="15" ry="42" stroke="#2563eb" stroke-width="2" fill="#dbeafe" opacity="0.5"/>
-<path d="M 445 150 Q 552 270 445 390" stroke="#dc2626" stroke-width="3" fill="none"/>
-<line x1="40" y1="220" x2="217.0" y2="220.0" stroke="#dc2626" stroke-width="1.8"/>
-<polygon points="226,220 217.8,223.7 217.8,216.3" fill="#dc2626"/>
-<line x1="40" y1="245" x2="217.0" y2="245.0" stroke="#dc2626" stroke-width="1.8"/>
-<polygon points="226,245 217.8,248.7 217.8,241.3" fill="#dc2626"/>
-<line x1="40" y1="270" x2="217.0" y2="270.0" stroke="#dc2626" stroke-width="1.8"/>
-<polygon points="226,270 217.8,273.7 217.8,266.3" fill="#dc2626"/>
-<line x1="40" y1="295" x2="217.0" y2="295.0" stroke="#dc2626" stroke-width="1.8"/>
-<polygon points="226,295 217.8,298.7 217.8,291.3" fill="#dc2626"/>
-<line x1="40" y1="320" x2="217.0" y2="320.0" stroke="#dc2626" stroke-width="1.8"/>
-<polygon points="226,320 217.8,323.7 217.8,316.3" fill="#dc2626"/>
-<line x1="290" y1="230" x2="470" y2="270" stroke="#dc2626" stroke-width="1.5"/>
-<line x1="290" y1="250" x2="470" y2="270" stroke="#dc2626" stroke-width="1.5"/>
-<line x1="290" y1="270" x2="470" y2="270" stroke="#dc2626" stroke-width="1.5"/>
-<line x1="290" y1="290" x2="470" y2="270" stroke="#dc2626" stroke-width="1.5"/>
-<line x1="290" y1="310" x2="470" y2="270" stroke="#dc2626" stroke-width="1.5"/>
-<line x1="470" y1="270" x2="540" y2="285.6" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
-<line x1="470" y1="270" x2="540" y2="277.8" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
-<line x1="470" y1="270" x2="540" y2="270.0" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
-<line x1="470" y1="270" x2="540" y2="262.2" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
-<line x1="470" y1="270" x2="540" y2="254.4" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
-<circle cx="470" cy="270" r="4" fill="#dc2626"/>
-<text x="470" y="256" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">Fokus</text>
-<text x="196" y="200" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">Hornhinna</text>
-<text x="252" y="200" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">Iris</text>
-<text x="288" y="345" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">Lins</text>
-<text x="265" y="270" font-family="Arial,sans-serif" font-size="10" fill="#1f2937" text-anchor="middle">Pupill</text>
-<text x="600" y="200" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">Näthinna</text>
-<text x="400" y="80" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Ljuset fokuseras FÖRE näthinnan</text>
-<text x="400" y="445" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ögat är för långt — bilden blir suddig på långt håll</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Närsynt: nära syns skarpt, långt bort blir suddigt (minuslins korrigerar)</text>
+<text x="400" y="33" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Närsynthet (myopi)</text>
+<!-- divider between the two panels -->
+<line x1="400" y1="70" x2="400" y2="410" stroke="#e5e7eb" stroke-width="1.5"/>
+
+<!-- ============ PANEL 1 (left): uncorrected myopic eye ============ -->
+<text x="205" y="92" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Utan glasögon</text>
+<!-- Elongated eyeball (too long front-to-back) -->
+<ellipse cx="215" cy="240" rx="130" ry="98" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+<!-- Eye lens near the front (left) -->
+<ellipse cx="118" cy="240" rx="11" ry="40" fill="#93c5fd" stroke="#1e40af" stroke-width="2"/>
+<text x="100" y="300" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">lins</text>
+<!-- Retina along the back (right) inner wall -->
+<path d="M 322 175 A 98 98 0 0 1 322 305" fill="none" stroke="#16a34a" stroke-width="4" opacity="0.8"/>
+<text x="345" y="244" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">näthinna</text>
+<!-- Two parallel rays come in, refract at lens, converge to a focus IN FRONT of retina, then diverge -->
+<!-- upper ray -->
+<line x1="40" y1="212" x2="118" y2="212" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="118,212 104,206 104,218" fill="#dc2626"/>
+<line x1="118" y1="212" x2="235" y2="240" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="235" y1="240" x2="312" y2="258" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="312,258 298,250 295,261" fill="#dc2626"/>
+<!-- lower ray -->
+<line x1="40" y1="268" x2="118" y2="268" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="118,268 104,262 104,274" fill="#dc2626"/>
+<line x1="118" y1="268" x2="235" y2="240" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="235" y1="240" x2="312" y2="222" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="312,222 298,219 301,230" fill="#dc2626"/>
+<!-- focus point in front of retina -->
+<circle cx="235" cy="240" r="5" fill="#dc2626"/>
+<text x="235" y="368" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">skärpan hamnar</text>
+<text x="235" y="383" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">framför näthinnan</text>
+
+<!-- ============ PANEL 2 (right): corrected with concave lens ============ -->
+<text x="595" y="92" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Med konkav glasögonlins</text>
+<!-- Concave (diverging) correcting lens placed in front of the eye -->
+<path d="M 462 188 Q 480 240 462 292 L 488 292 Q 470 240 488 188 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="475" y="178" font-family="Arial,sans-serif" font-size="10" fill="#2563eb" text-anchor="middle">konkav lins</text>
+<!-- Elongated eyeball -->
+<ellipse cx="600" cy="240" rx="130" ry="98" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+<!-- Eye lens near the front -->
+<ellipse cx="503" cy="240" rx="11" ry="40" fill="#93c5fd" stroke="#1e40af" stroke-width="2"/>
+<!-- Retina at the back -->
+<path d="M 707 175 A 98 98 0 0 1 707 305" fill="none" stroke="#16a34a" stroke-width="4" opacity="0.8"/>
+<text x="730" y="244" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">näthinna</text>
+<!-- Rays: enter, the concave lens spreads them slightly, then eye lens converges them onto the retina -->
+<!-- upper ray -->
+<line x1="420" y1="212" x2="465" y2="212" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="465,212 451,206 451,218" fill="#2563eb"/>
+<line x1="465" y1="212" x2="503" y2="203" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="503" y1="203" x2="700" y2="240" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="700,240 686,234 685,245" fill="#2563eb"/>
+<!-- lower ray -->
+<line x1="420" y1="268" x2="465" y2="268" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="465,268 451,262 451,274" fill="#2563eb"/>
+<line x1="465" y1="268" x2="503" y2="277" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="503" y1="277" x2="700" y2="240" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="700,240 685,235 686,246" fill="#2563eb"/>
+<!-- focus on retina -->
+<circle cx="700" cy="240" r="5" fill="#16a34a"/>
+<text x="600" y="375" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">skärpan hamnar nu på näthinnan</text>
+
+<text x="400" y="452" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Vid närsynthet är ögat för långt — bilden blir skarp framför näthinnan</text>
+<text x="400" y="476" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En konkav (spridande) lins flyttar skärpan bakåt så att den hamnar på näthinnan</text>
 </svg>

@@ -1,24 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Överljudsfart – snabbare än ljudet</text>
-<line x1="60.0" y1="280.0" x2="740.0" y2="280.0" stroke="#e5e7eb" stroke-width="1"/>
-<circle cx="180.0" cy="280.0" r="70.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
-<circle cx="270.0" cy="280.0" r="58.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
-<circle cx="350.0" cy="280.0" r="46.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
-<circle cx="420.0" cy="280.0" r="34.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
-<circle cx="478.0" cy="280.0" r="22.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
-<text x="220" y="175" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">Ljudvågor hinner inte undan</text>
-<line x1="560.0" y1="280.0" x2="150.0" y2="175.0" stroke="#dc2626" stroke-width="2.5"/>
-<line x1="560.0" y1="280.0" x2="150.0" y2="385.0" stroke="#dc2626" stroke-width="2.5"/>
-<text x="300" y="360" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Tryckvåg (chockvåg)</text>
-<path d="M 520 270 L 600 270 L 632 280 L 600 290 L 520 290 L 540 280 Z" fill="#64748b" stroke="#1f2937" stroke-width="2"/>
-<path d="M 560 272 L 540 248 L 575 272 Z" fill="#475569" stroke="#1f2937" stroke-width="1.5"/>
-<path d="M 560 288 L 540 312 L 575 288 Z" fill="#475569" stroke="#1f2937" stroke-width="1.5"/>
-<path d="M 520 280 L 505 258 L 532 280 Z" fill="#475569" stroke="#1f2937" stroke-width="1.5"/>
-<line x1="635.0" y1="280.0" x2="705.0" y2="280.0" stroke="#16a34a" stroke-width="3"/>
-<polygon points="715.0,280.0 705.0,285.5 705.0,274.5" fill="#16a34a"/>
-<text x="690" y="262" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="bold">snabbt</text>
-<path d="M 150 175 l 14 18 l 20 -8 l -10 22 l 18 14 l -24 2 l 2 22 l -16 -16 l -18 12 l 8 -22 l -20 -6 l 20 -10 l -6 -22 l 16 12 Z" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
-<text x="150" y="198" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">KNALL!</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Föremålet rör sig snabbare än ljudet – vågorna pressas ihop och en kraftig knall hörs</text>
+<text x="400" y="60" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ljudvågorna hinner inte undan utan hopar sig framför planet</text>
+
+<!-- ===== Mach cone (the shock cone the wavefronts pile up into) ===== -->
+<polygon points="648,275 469.1,115 469.1,435" fill="#fee2e2" opacity="0.45"/>
+<line x1="648" y1="275" x2="469.1" y2="115" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="648" y1="275" x2="469.1" y2="435" stroke="#dc2626" stroke-width="2.5"/>
+
+<!-- ===== Sound wavefronts: circles emitted from earlier positions, all tangent to the cone, piling up toward the nose ===== -->
+<circle cx="462" cy="275" r="124.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<circle cx="498" cy="275" r="100.0" fill="none" stroke="#2563eb" stroke-width="1.9"/>
+<circle cx="532" cy="275" r="77.3" fill="none" stroke="#2563eb" stroke-width="2.0"/>
+<circle cx="562" cy="275" r="57.3" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<circle cx="588" cy="275" r="40.0" fill="none" stroke="#2563eb" stroke-width="2.4"/>
+<circle cx="610" cy="275" r="25.3" fill="none" stroke="#2563eb" stroke-width="2.6"/>
+<circle cx="630" cy="275" r="12.0" fill="none" stroke="#2563eb" stroke-width="2.6"/>
+
+<text x="300" y="150" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Ljudvågor (varje ring = en utsänd våg)</text>
+
+<!-- ===== Pile-up / overlap emphasis right in front of the nose ===== -->
+<text x="555" y="100" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Vågorna läggs ovanpå varandra</text>
+<line x1="575" y1="108" x2="600" y2="248" stroke="#dc2626" stroke-width="1.5"/>
+<polygon points="602,257 593,246 605,244" fill="#dc2626"/>
+
+<!-- ===== KNALL burst at the nose where the pile-up forms the shock (drawn first, under the jet nose) ===== -->
+<polygon points="648,275 666,244 670,270 700,256 678,278 706,292 678,288 692,318 664,298 660,330 648,300 628,322 636,292 610,300 632,278 614,262 640,270" fill="#f59e0b" stroke="#b45309" stroke-width="1.5" opacity="0.95"/>
+
+<!-- ===== Jet at the apex of the cone (nose = 648,275), pointing right ===== -->
+<polygon points="648,275 596,270 560,270 520,250 548,270 505,270 492,258 500,270 470,270 470,280 500,280 492,292 505,280 548,280 520,300 560,280 596,280" fill="#475569" stroke="#1f2937" stroke-width="1.5"/>
+
+<text x="648" y="345" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">KNALL!</text>
+
+<!-- forward motion arrow (placed below to avoid the burst) -->
+<line x1="690" y1="200" x2="752" y2="200" stroke="#16a34a" stroke-width="3"/>
+<polygon points="762,200 751,205.5 751,194.5" fill="#16a34a"/>
+<text x="722" y="188" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="bold">snabbare än ljud</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Planet kör ifrån sina egna ljudvågor – de packas ihop framför till en chockvåg som ger en kraftig knall</text>
 </svg>

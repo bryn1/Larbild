@@ -1,26 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Diameter</text>
-<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Längsta avståndet tvärs över en cirkel, genom mitten</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Längsta avståndet tvärs över en cirkel, genom mitten</text>
 
-<!-- circle -->
-<circle cx="400" cy="270" r="150" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<!-- circle moved to the left to make room for a fact box -->
+<circle cx="270" cy="265" r="135" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
 
 <!-- centre point -->
-<circle cx="400" cy="270" r="5" fill="#1e40af"/>
-<text x="400" y="258" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">mittpunkt</text>
+<circle cx="270" cy="265" r="5" fill="#1e40af"/>
+<text x="270" y="252" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">mittpunkt</text>
 
 <!-- diameter line through centre -->
-<line x1="250" y1="270" x2="550" y2="270" stroke="#dc2626" stroke-width="3"/>
-<line x1="250" y1="262" x2="250" y2="278" stroke="#dc2626" stroke-width="3"/>
-<line x1="550" y1="262" x2="550" y2="278" stroke="#dc2626" stroke-width="3"/>
-<text x="400" y="305" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">diameter (d)</text>
+<line x1="135" y1="265" x2="405" y2="265" stroke="#dc2626" stroke-width="3"/>
+<line x1="135" y1="255" x2="135" y2="275" stroke="#dc2626" stroke-width="3"/>
+<line x1="405" y1="255" x2="405" y2="275" stroke="#dc2626" stroke-width="3"/>
+<text x="270" y="300" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">diameter (d)</text>
 
 <!-- radius for contrast -->
-<line x1="400" y1="270" x2="506" y2="164" stroke="#16a34a" stroke-width="2.5"/>
-<text x="478" y="205" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">radie (r)</text>
+<line x1="270" y1="265" x2="365" y2="170" stroke="#16a34a" stroke-width="2.5"/>
+<text x="345" y="208" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">radie (r)</text>
 
-<text x="400" y="385" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">d = 2 · r</text>
-<text x="400" y="412" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Diametern är dubbelt så lång som radien</text>
+<!-- FACT BOX beside the circle -->
+<rect x="470" y="150" width="290" height="230" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="615" y="185" font-family="Arial,sans-serif" font-size="17" fill="#1e40af" text-anchor="middle" font-weight="bold">Faktaruta</text>
+<line x1="500" y1="200" x2="730" y2="200" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="615" y="245" font-family="Arial,sans-serif" font-size="34" fill="#1e40af" text-anchor="middle" font-weight="bold">d = 2 · r</text>
+<text x="615" y="288" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">d = diameter</text>
+<text x="615" y="312" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle">r = radie (halva diametern)</text>
+<text x="615" y="350" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Diametern är dubbelt så</text>
+<text x="615" y="370" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">lång som radien</text>
+
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En tjockare sladd har större diameter och klarar mer ström</text>
 </svg>
