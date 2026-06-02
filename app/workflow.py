@@ -154,9 +154,9 @@ def flux_allowlist() -> frozenset[str]:
     The FLUX twin of :func:`allowlist`: the set of every name in
     ``taxonomy.FLUX_LORA`` (the Lärbild-allowlisted FLUX adapters). The FLUX
     render path validates against THIS set, so an off-list FLUX LoRA — e.g. one
-    of imagegen's NSFW FLUX adapters that also live on the box — can never enter a
-    FLUX render. Strictly SFW educational, the same fail-closed guard as the SDXL
-    lane, on a separate set because the two lanes' adapters are not
+    of imagegen's restricted FLUX adapters that also live on the box — can never
+    enter a FLUX render. Strictly SFW educational, the same fail-closed guard as
+    the SDXL lane, on a separate set because the two lanes' adapters are not
     interchangeable.
     """
     return taxonomy.flux_lora_names()
@@ -227,7 +227,7 @@ def resolve_and_validate_flux_lora(subject: str, image_type: str) -> Optional[di
       * :class:`WorkflowError` — unknown subject or image type.
       * :class:`LoraNotAllowedError` — a resolved FLUX LoRA off the FLUX allowlist
         (unreachable via resolve_flux_lora; fails closed if the SFW invariant
-        breaks — the NSFW-isolation boundary on the FLUX lane).
+        breaks — the restricted-asset isolation boundary on the FLUX lane).
 
     Returns ``None`` for a type with no FLUX LoRA — the caller renders LoRA-free.
     """

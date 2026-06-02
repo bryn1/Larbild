@@ -105,7 +105,7 @@ LORA_MATRIX: Mapping[str, Mapping[str, Any]] = _DATA["loraMatrix"]
 # taxonomy SoT without mutating the frozen JSON.
 #
 # STRICTLY SFW: these are the ONLY FLUX LoRAs the FLUX path may inject. The
-# imagegen / NSFW FLUX LoRAs that also live on the box (loras/bondage/*,
+# imagegen / restricted FLUX LoRAs that also live on the box (loras/bondage/*,
 # loras/faces/*, …) are NEVER listed here — :func:`resolve_flux_lora` only ever
 # returns a name from this map, and app.workflow enforces a FLUX allowlist built
 # from it, so an off-list FLUX LoRA can never reach a render (the same fail-closed
@@ -218,7 +218,7 @@ def flux_lora_names() -> frozenset[str]:
 
     The single set the FLUX render path is allowed to reference — the FLUX twin
     of ``baseLora ∪ loraMatrix``. app.workflow builds its FLUX allowlist from this
-    so an off-list (e.g. NSFW) FLUX LoRA can never enter a render.
+    so an off-list (e.g. restricted) FLUX LoRA can never enter a render.
     """
     return frozenset(c["name"] for c in FLUX_LORA.values())
 

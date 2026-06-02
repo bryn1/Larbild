@@ -248,15 +248,26 @@ def build_specific_prompt(job: dict) -> tuple[str, Optional[str], dict]:
     if not image_type or image_type not in DIFFUSION_IMAGE_TYPES:
         return original, None, {"edu_source": "passthrough", "image_type": image_type}
 
+    # Is this job going to render on the FLUX lane? If so, build the FLUX-tuned
+    # positive (scene-led, begrepp NOT named — FLUX renders a leading Swedish
+    # concept name as literal text) + the harder FLUX no-text negative. Otherwise
+    # the SDXL edu prompt + SFW negative, exactly as before. The route decision is
+    # the single source of truth (flux_route_for), so the prompt + the graph
+    # always agree on which lane this is.
+    flux_route = flux_route_for(image_type)
+
     concept = _concept_from_job(job)
     if not concept:
         # No concept to ground on — keep the operator's prompt, still apply the
-        # SFW negative so a bare submit is at least scaffolded.
-        return original, _edu_prompt.SFW_NEGATIVE, {
+        # lane-appropriate SFW negative so a bare submit is at least scaffolded.
+        neg = _edu_prompt.FLUX_SFW_NEGATIVE if flux_route else _edu_prompt.SFW_NEGATIVE
+        return original, neg, {
             "edu_source": "passthrough_no_concept", "image_type": image_type,
+            "flux_route": flux_route,
         }
 
-    built = _edu_prompt.build_edu_prompt(
+    builder = _edu_prompt.build_flux_edu_prompt if flux_route else _edu_prompt.build_edu_prompt
+    built = builder(
         subject=job["subject"],
         image_type=image_type,
         begrepp=concept,
@@ -266,19 +277,20 @@ def build_specific_prompt(job: dict) -> tuple[str, Optional[str], dict]:
         forklaring=_params_field(job, "forklaring", "förklaring"),
         vardagligt_exempel=_params_field(job, "vardagligt_exempel", "exempel"),
     )
+    negative = _edu_prompt.FLUX_SFW_NEGATIVE if flux_route else _edu_prompt.SFW_NEGATIVE
     edu_meta = {
         "edu_source": built["source"],          # "llm" or "fallback"
         "edu_error": built.get("error"),
         "concept": concept,
         "image_type": image_type,
         "original_prompt": original,
-        "flux_route": flux_route_for(image_type),
+        "flux_route": flux_route,
     }
     log.info(
         "render prompt for %s: concept=%r source=%s flux_route=%s",
         job.get("id"), concept, built["source"], edu_meta["flux_route"],
     )
-    return built["prompt"], _edu_prompt.SFW_NEGATIVE, edu_meta
+    return built["prompt"], negative, edu_meta
 
 
 def flux_route_for(image_type: Optional[str]) -> Optional[str]:

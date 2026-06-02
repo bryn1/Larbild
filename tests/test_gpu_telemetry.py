@@ -17,12 +17,18 @@ def _app():
     return create_app({"TESTING": True, "INIT_DB": False})
 
 
-def test_render_targets_registry_has_both_gpus():
-    assert set(tel.RENDER_TARGETS) == {"vm100", "vm153"}
+def test_render_targets_registry_has_gpus_and_flux_lane():
+    # vm100 + vm153 GPUs + the FLUX render lane (lb FLUX lane). The FLUX target
+    # is a distinct render-TARGET (it selects the FLUX graph), NOT a distinct
+    # host — it shares vm100's ComfyUI endpoint (one box, one 3090).
+    assert set(tel.RENDER_TARGETS) == {"vm100", "vm153", "flux"}
     assert tel.RENDER_TARGETS["vm100"]["ws"] == "ws://192.168.5.230:8188"
     assert tel.RENDER_TARGETS["vm153"]["ws"] == "ws://192.168.5.123:8188"
     assert tel.RENDER_TARGETS["vm100"]["accel"] == "cuda"
     assert tel.RENDER_TARGETS["vm153"]["accel"] == "vulkan"
+    # the flux lane points at the SAME vm100 ComfyUI + is tagged model=flux
+    assert tel.RENDER_TARGETS["flux"]["http"] == tel.RENDER_TARGETS["vm100"]["http"]
+    assert tel.RENDER_TARGETS["flux"]["model"] == "flux"
 
 
 def test_refresh_once_updates_state_on_success(monkeypatch):
