@@ -190,3 +190,40 @@ test("buildJobPayload adds an optional title when non-blank", () => {
   });
   assert.equal("title" in noTitle, false);
 });
+
+/* ---------- POST /api/jobs response interpretation (lb-5wp) ---------- */
+
+test("interpretSubmitResponse: 202 with a job_id → ok + jobId", () => {
+  assert.deepEqual(
+    S.interpretSubmitResponse(202, { job_id: "job-abc", status: "queued" }),
+    { ok: true, jobId: "job-abc" },
+  );
+});
+
+test("interpretSubmitResponse: 400 surfaces the server's specific error", () => {
+  const res = S.interpretSubmitResponse(400, { error: "unknown area 'x' for subject 'fysik'", valid_areas: [] });
+  assert.equal(res.ok, false);
+  assert.match(res.message, /Ogiltigt val/);
+  assert.match(res.message, /unknown area 'x'/);
+  // a 400 without a body still yields a safe message
+  const bare = S.interpretSubmitResponse(400, null);
+  assert.equal(bare.ok, false);
+  assert.equal(bare.message, "Ogiltigt val.");
+});
+
+test("interpretSubmitResponse: 429 includes the queue depth/limit when present", () => {
+  const res = S.interpretSubmitResponse(429, { error: "render queue is full", depth: 64, limit: 64 });
+  assert.equal(res.ok, false);
+  assert.match(res.message, /Renderkön är full/);
+  assert.match(res.message, /64\/64/);
+  // without depth/limit it still reads cleanly
+  const bare = S.interpretSubmitResponse(429, {});
+  assert.match(bare.message, /Renderkön är full/);
+});
+
+test("interpretSubmitResponse: 503 + unexpected statuses fail closed (never ok)", () => {
+  assert.equal(S.interpretSubmitResponse(503, { error: "down" }).ok, false);
+  assert.equal(S.interpretSubmitResponse(500, null).ok, false);
+  // a 202 with no job_id is a contract slip → not ok
+  assert.equal(S.interpretSubmitResponse(202, { status: "queued" }).ok, false);
+});

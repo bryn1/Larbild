@@ -22,9 +22,11 @@
    area-rail, opt-grid/opt, suggest, field, range, panel, chip, btn) — no inline
    colour/spacing beyond the documented per-subject hue (--brand-h) mechanism.
 
-   The submit (POST /api/jobs) and live SSE progress are layered on in the
-   stacked branches lb-5wp (P3.2) and lb-b1r (P3.3); this branch establishes the
-   funnel + the resolved-LoRA preview the user reviews before submitting.
+   Submit (POST /api/jobs, lb-5wp / P3.2): on Generera the funnel builds the job
+   payload via SkapaData.buildJobPayload (no client LoRA — the worker resolves +
+   allowlist-validates it server-side), POSTs it, and captures the returned job
+   id. A 4xx/429 is surfaced as a clear Swedish message; the button is locked
+   while a submit is in flight. Live SSE progress is layered on in lb-b1r (P3.3).
    SFW-only: educational image funnel; no restricted feature, model, or marker.
    ============================================================================ */
 const { useState, useEffect, useRef } = React;
@@ -97,6 +99,40 @@ function LoraSuggest({ state, subject, imageType }) {
   );
 }
 
+/* submit status (lb-5wp): the result of the POST /api/jobs round-trip. The live
+   render progress (queued→running→done) is layered on by lb-b1r; here we confirm
+   acceptance (job id) or show the validation/queue error. */
+function SubmitStatus({ submit, onReset }) {
+  if (submit.phase === "idle") return null;
+  if (submit.phase === "submitting") {
+    return (
+      <div className="panel" style={{ padding: "12px 14px", marginTop: 12 }}>
+        <div className="mono dim" style={{ fontSize: 11 }}>Skickar…</div>
+      </div>
+    );
+  }
+  if (submit.phase === "error") {
+    return (
+      <div className="panel" style={{ padding: "12px 14px", marginTop: 12, borderColor: "var(--danger)" }}>
+        <div className="upper" style={{ color: "var(--danger)", marginBottom: 6 }}>Kunde inte skapa</div>
+        <div style={{ fontSize: 12.5, color: "var(--ink-2)", lineHeight: 1.4 }}>{submit.message}</div>
+        <button type="button" className="btn sm ghost" style={{ marginTop: 10 }} onClick={onReset}>Försök igen</button>
+      </div>
+    );
+  }
+  // submitted (202) — accepted + queued. lb-b1r replaces this body with live SSE.
+  return (
+    <div className="panel" style={{ padding: "12px 14px", marginTop: 12 }}>
+      <div className="upper" style={{ color: "var(--brand-ink)", marginBottom: 6 }}>Köad</div>
+      <div className="row">
+        <span className="mono dim grow" style={{ fontSize: 10 }}>jobb {submit.jobId}</span>
+        <span className="chip accent plain" style={{ fontSize: 11 }}>i kö</span>
+      </div>
+      <button type="button" className="btn sm ghost" style={{ marginTop: 10 }} onClick={onReset}>Skapa en till</button>
+    </div>
+  );
+}
+
 /* ---------- the Skapa funnel view ---------- */
 function Skapa() {
   // taxonomy bootstrap (the SoT)
@@ -115,6 +151,13 @@ function Skapa() {
 
   // resolved LoRA (backend-authoritative) — { loading } | { error } | { lora }
   const [loraState, setLoraState] = useState({ loading: false });
+
+  // submit lifecycle (lb-5wp): the funnel's POST /api/jobs round-trip.
+  //   { phase: "idle" }
+  //   { phase: "submitting" }
+  //   { phase: "submitted", jobId }   ← accepted (202); lb-b1r tails its SSE
+  //   { phase: "error", message }     ← 4xx/429/503, a Swedish sentence to show
+  const [submit, setSubmit] = useState({ phase: "idle" });
 
   // ---- bootstrap the taxonomy ----
   useEffect(() => {
@@ -179,11 +222,39 @@ function Skapa() {
   const ready = S.submitReadiness({ subject, area, imageType: typeObj, prompt });
   const dest = S.destinationLabel(subject, area);
 
-  // ---- submit hook: filled in by lb-5wp (POST /api/jobs) + lb-b1r (SSE). ----
-  // On this branch the funnel is complete through "ready to submit"; clicking
-  // Generera is a no-op placeholder so the funnel renders + behaves without the
-  // job pipeline yet. The stacked branches replace onGenerate.
-  const onGenerate = () => { /* lb-5wp: POST /api/jobs with S.buildJobPayload(...) */ };
+  // ---- submit: POST /api/jobs (lb-5wp) ----
+  // Build the payload from the current selection (slugs + params; never a LoRA),
+  // POST it, and capture the job id. The backend re-validates the whole
+  // selection (and resolves/allowlist-checks the LoRA itself); a 4xx/429 comes
+  // back as a structured error we turn into one Swedish sentence. The button is
+  // locked while a submit is in flight so a double-click can't enqueue twice.
+  const onGenerate = () => {
+    if (!ready.ok || submit.phase === "submitting") return;
+    const payload = S.buildJobPayload({
+      subject: subjectSlug,
+      area: areaSlug,
+      imageType: typeSlug,
+      prompt,
+      seed,
+      count,
+    });
+    setSubmit({ phase: "submitting" });
+    fetch("/api/jobs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    })
+      .then((r) => r.json().catch(() => null).then((j) => ({ status: r.status, body: j })))
+      .then(({ status, body }) => {
+        const res = S.interpretSubmitResponse(status, body);
+        if (res.ok) setSubmit({ phase: "submitted", jobId: res.jobId });
+        else setSubmit({ phase: "error", message: res.message });
+      })
+      .catch((e) => setSubmit({ phase: "error", message: `Nätverksfel: ${e}` }));
+  };
+
+  // A fresh render: clear the submit state so the funnel returns to its form.
+  const onReset = () => setSubmit({ phase: "idle" });
 
   // ---------- boot states ----------
   if (bootError) {
@@ -322,9 +393,15 @@ function Skapa() {
 
           <button type="button" className="btn primary"
             style={{ width: "100%", justifyContent: "center", padding: "13px 0", fontSize: 15, marginTop: 18 }}
-            disabled={!ready.ok} onClick={onGenerate}>
-            {SI.sparkle} {ready.ok ? (count > 1 ? `Generera ${count} bilder` : "Generera 1 bild") : `Generera (${ready.reason})`}
+            disabled={!ready.ok || submit.phase === "submitting"} onClick={onGenerate}>
+            {SI.sparkle} {submit.phase === "submitting"
+              ? "Skickar…"
+              : ready.ok
+                ? (count > 1 ? `Generera ${count} bilder` : "Generera 1 bild")
+                : `Generera (${ready.reason})`}
           </button>
+
+          <SubmitStatus submit={submit} onReset={onReset} />
         </div>
       </div>
     </div>

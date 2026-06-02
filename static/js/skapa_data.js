@@ -193,6 +193,47 @@
     return Math.max(1, Math.min(8, Math.trunc(n)));
   }
 
+  /**
+   * Interpret a POST /api/jobs response (lb-3gi / lb-5wp) into a funnel result.
+   *
+   * The endpoint returns:
+   *   • 202 {job_id, status:"queued"}            → accepted, start tailing SSE.
+   *   • 400 {error, valid_*}                     → a bad selection (client mirror
+   *                                                 should have caught it; the
+   *                                                 server is the authority).
+   *   • 429 {error, depth, limit}                → the render queue is full.
+   *   • 503 / other                              → transient backend trouble.
+   *
+   * Returns a normalised, render-ready shape:
+   *   { ok: true,  jobId }
+   *   { ok: false, message }   // a short Swedish sentence safe to show as-is
+   *
+   * Pure: takes the HTTP status + already-parsed JSON body (or null when the
+   * body wasn't JSON) and never touches the network — so it is unit-testable and
+   * the view's fetch wrapper stays a thin shell around it. The server's own
+   * `error` text is surfaced when present (it is already specific, e.g. "unknown
+   * area 'x' for subject 'fysik'"); a friendly fallback covers the rest.
+   */
+  function interpretSubmitResponse(status, body) {
+    const b = body || {};
+    if (status === 202 && b.job_id) {
+      return { ok: true, jobId: b.job_id };
+    }
+    if (status === 429) {
+      const depth = b.depth, limit = b.limit;
+      const detail = (depth != null && limit != null) ? ` (${depth}/${limit} i kö)` : "";
+      return { ok: false, message: `Renderkön är full — försök igen strax${detail}.` };
+    }
+    if (status === 400) {
+      return { ok: false, message: b.error ? `Ogiltigt val: ${b.error}` : "Ogiltigt val." };
+    }
+    if (status === 503) {
+      return { ok: false, message: b.error || "Tjänsten är tillfälligt otillgänglig." };
+    }
+    // any other status (incl. a 202 with no job_id — a contract slip)
+    return { ok: false, message: b.error || `Kunde inte skapa jobbet (HTTP ${status}).` };
+  }
+
   return {
     PRIORITY_SUBJECTS,
     DEFAULT_HUE,
@@ -207,5 +248,6 @@
     buildJobPayload,
     normalizeSeed,
     clampCount,
+    interpretSubmitResponse,
   };
 });
