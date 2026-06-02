@@ -229,7 +229,14 @@
    * mutates the input. Returns ``[{ root, versions: [...], latest }]``.
    */
   function buildVersionChains(items) {
-    const list = Array.isArray(items) ? items : [];
+    // Defensive: drop anything that isn't a usable item object (null/undefined/
+    // non-object, or missing an id). The gallery renders one tile per chain keyed
+    // by the root id, so an item with no id can't be a chain key — and letting one
+    // malformed row in would throw here (it.id on null) and blank the WHOLE
+    // gallery. Skipping it instead keeps every good image visible. (review/
+    // parent_id being null is normal for an unreviewed original and is fine.)
+    const list = (Array.isArray(items) ? items : []).filter(
+      (it) => it && typeof it === "object" && it.id != null);
     const byId = new Map(list.map((it) => [it.id, it]));
     // Find the root of an item by following parent_id while the parent is in the
     // page; guard against a cycle (shouldn't happen — ON DELETE SET NULL + a

@@ -411,6 +411,20 @@ function Bibliotek() {
     });
   }, [sub, areaId]);
 
+  // The node the user is currently looking at, captured in a ref so a resolving
+  // items fetch can tell "is this still the open node?" WITHOUT being cancelled
+  // by the effect re-running. This effect writes itemsByNode (the in-flight null
+  // marker), and itemsByNode is in its dependency list (so a regenerate-refetch
+  // re-fires it), which means the effect tears down + re-runs on its OWN cache
+  // write. A per-run `alive = false` cleanup would then fire BEFORE the fetch it
+  // started resolves, and `if (!alive) return` would throw the items away —
+  // leaving the cache stuck on null forever and the gallery stuck on
+  // "Läser in bilder…". So we guard on navigation identity (sub/area), not on
+  // the effect's churn: a late response is ignored only if the open node changed.
+  const openNodeToken = `${subjectId || ""}|${areaId || ""}`;
+  const openNodeRef = useRef(openNodeToken);
+  openNodeRef.current = openNodeToken;
+
   // Lazily fetch the gallery items for the open node from /api/library/items.
   useEffect(() => {
     if (!sub) return;
@@ -421,26 +435,31 @@ function Bibliotek() {
     const toLoad = wanted.filter((aid) => itemsByNode[`${sub.id}/${aid}`] === undefined);
     if (toLoad.length === 0) return;
 
-    let alive = true;
+    // The node these fetches belong to; if navigation moves elsewhere before they
+    // resolve, the late responses are dropped (stale-nav guard) — but the effect
+    // simply re-running (e.g. its own null-marker write) does NOT cancel them.
+    const fetchToken = openNodeRef.current;
     setItemsByNode((prev) => {
       const next = { ...prev };
       toLoad.forEach((aid) => { next[`${sub.id}/${aid}`] = null; });
       return next;
     });
     toLoad.forEach((aid) => {
+      const key = `${sub.id}/${aid}`;
       const qs = `subject=${encodeURIComponent(sub.id)}&area=${encodeURIComponent(aid)}`;
+      // Resolve the cache for this node, ALWAYS clearing its loading (null) state —
+      // even if the response is unusable — so one bad node can't hang the gallery.
+      // Only the still-in-flight (null) slot is written, so a stale-node response
+      // that lost the nav race can't clobber freshly-loaded data for the same key.
+      const settle = (items) => {
+        if (openNodeRef.current !== fetchToken) return; // navigated away — ignore
+        setItemsByNode((prev) => (prev[key] === null ? { ...prev, [key]: items } : prev));
+      };
       fetch(`/api/library/items?${qs}`)
         .then((r) => (r.ok ? r.json() : { items: [] }))
-        .then((data) => {
-          if (!alive) return;
-          setItemsByNode((prev) => ({ ...prev, [`${sub.id}/${aid}`]: data.items || [] }));
-        })
-        .catch(() => {
-          if (!alive) return;
-          setItemsByNode((prev) => ({ ...prev, [`${sub.id}/${aid}`]: [] }));
-        });
+        .then((data) => settle(Array.isArray(data && data.items) ? data.items : []))
+        .catch(() => settle([]));
     });
-    return () => { alive = false; };
   }, [sub, areaId, itemsByNode]);
 
   if (error) {
