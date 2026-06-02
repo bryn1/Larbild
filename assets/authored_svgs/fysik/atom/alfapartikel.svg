@@ -16,14 +16,14 @@
 <text x="420" y="180" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">skjuts ut</text>
 <!-- the emitted alpha particle: 2 protons (red) + 2 neutrons (gray) -->
 <circle cx="560" cy="210" r="55" fill="#eff6ff" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3"/>
-<circle cx="545" cy="195" r="15" fill="#dc2626"/><text x="545" y="200" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">p⁺</text>
+<circle cx="545" cy="195" r="15" fill="#dc2626"/><text x="545" y="200" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">p+</text>
 <circle cx="578" cy="198" r="15" fill="#6b7280"/><text x="578" y="203" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle">n</text>
 <circle cx="545" cy="228" r="15" fill="#6b7280"/><text x="545" y="233" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle">n</text>
-<circle cx="578" cy="230" r="15" fill="#dc2626"/><text x="578" y="235" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">p⁺</text>
+<circle cx="578" cy="230" r="15" fill="#dc2626"/><text x="578" y="235" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">p+</text>
 <text x="640" y="215" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="start" font-weight="bold">α</text>
 <text x="560" y="295" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">2 protoner + 2 neutroner</text>
 <!-- legend -->
-<circle cx="300" cy="430" r="9" fill="#dc2626"/><text x="315" y="435" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start">proton (p⁺)</text>
+<circle cx="300" cy="430" r="9" fill="#dc2626"/><text x="315" y="435" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start">proton (p+)</text>
 <circle cx="450" cy="430" r="9" fill="#6b7280"/><text x="465" y="435" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start">neutron (n)</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En tung bit som skjuts ut från en atomkärna — två protoner och två neutroner ihop</text>
 </svg>
