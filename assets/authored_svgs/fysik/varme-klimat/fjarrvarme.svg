@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Fjärrvärme</text>
+<!-- ground line -->
+<line x1="40" y1="300" x2="760" y2="300" stroke="#92400e" stroke-width="2"/>
+<rect x="40" y="300" width="720" height="120" fill="#fef3c7" opacity="0.4"/>
+<text x="120" y="395" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">rör under marken</text>
+<!-- Central plant -->
+<rect x="70" y="170" width="150" height="130" fill="#e5e7eb" stroke="#4b5563" stroke-width="2"/>
+<rect x="120" y="110" width="28" height="60" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<path d="M 134 110 q -6 -22 8 -34 q -10 18 4 30" fill="none" stroke="#9ca3af" stroke-width="3"/>
+<text x="145" y="245" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Värme-</text>
+<text x="145" y="263" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">central</text>
+<!-- Hot supply pipe (red) going right -->
+<line x1="220" y1="330" x2="700" y2="330" stroke="#dc2626" stroke-width="7"/>
+<polygon points="700,330 688,324 688,336" fill="#dc2626"/>
+<text x="450" y="322" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">varmt vatten ut →</text>
+<!-- Cold return pipe (blue) going left -->
+<line x1="700" y1="370" x2="220" y2="370" stroke="#2563eb" stroke-width="7"/>
+<polygon points="220,370 232,364 232,376" fill="#2563eb"/>
+<text x="450" y="392" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">← avkylt vatten tillbaka</text>
+<!-- Houses -->
+<g>
+<rect x="360" y="220" width="80" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<polygon points="355,220 400,185 445,220" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<line x1="400" y1="300" x2="400" y2="328" stroke="#dc2626" stroke-width="3"/>
+</g>
+<g>
+<rect x="560" y="210" width="90" height="90" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<polygon points="555,210 605,172 655,210" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<line x1="605" y1="300" x2="605" y2="328" stroke="#dc2626" stroke-width="3"/>
+</g>
+<text x="500" y="160" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Husen får värme och varmvatten</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Varmt vatten produceras i en central och pumpas ut till många hus genom rör under marken</text>
+</svg>

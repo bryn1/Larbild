@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kortslutning</text>
+<!-- Outer circuit wires (black) -->
+<g stroke="#1f2937" stroke-width="3" fill="none">
+<!-- left vertical from battery to top -->
+<polyline points="180,330 180,160 560,160"/>
+<!-- right side down to lamp top -->
+<polyline points="560,160 560,210"/>
+<!-- lamp bottom back to battery -->
+<polyline points="560,270 560,330 180,330"/>
+</g>
+<!-- Battery -->
+<line x1="160" y1="310" x2="160" y2="350" stroke="#1f2937" stroke-width="3"/>
+<line x1="180" y1="320" x2="180" y2="340" stroke="#1f2937" stroke-width="6"/>
+<text x="150" y="305" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">+</text>
+<text x="150" y="375" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Batteri</text>
+<!-- Lamp -->
+<circle cx="560" cy="240" r="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<line x1="540" y1="220" x2="580" y2="260" stroke="#f59e0b" stroke-width="2"/>
+<line x1="580" y1="220" x2="540" y2="260" stroke="#f59e0b" stroke-width="2"/>
+<text x="620" y="245" font-family="Arial,sans-serif" font-size="14" fill="#f59e0b" text-anchor="start">Lampa</text>
+<!-- The short-circuit wire (red) bypassing the lamp -->
+<polyline points="370,160 370,330" fill="none" stroke="#dc2626" stroke-width="4"/>
+<text x="370" y="250" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">genväg</text>
+<text x="370" y="135" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">strömmen tar genvägen</text>
+<text x="370" y="115" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">istället för genom lampan</text>
+<!-- big current arrows along the shortcut -->
+<polygon points="370,210 363,222 377,222" fill="#dc2626"/>
+<polygon points="370,290 363,302 377,302" fill="#dc2626"/>
+<!-- heat / danger near shortcut -->
+<g stroke="#dc2626" stroke-width="2" fill="none">
+<path d="M 410 220 q 8 -10 0 -20 q -8 -10 0 -20"/>
+<path d="M 425 225 q 8 -10 0 -20 q -8 -10 0 -20"/>
+</g>
+<text x="445" y="200" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start" font-weight="bold">het!</text>
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Strömmen blir mycket stark och tråden kan bli farligt varm</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">När strömmen tar en genväg utan att gå genom det den ska</text>
+</svg>

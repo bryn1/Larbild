@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Acceleration (a = Δv / Δt)</text>
+<!-- road -->
+<line x1="60" y1="250" x2="740" y2="250" stroke="#1f2937" stroke-width="2"/>
+<!-- three snapshots of the same car, faster each time -->
+<!-- car 1 (slow) -->
+<g>
+<rect x="90" y="210" width="70" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<circle cx="110" cy="245" r="9" fill="#1f2937"/><circle cx="145" cy="245" r="9" fill="#1f2937"/>
+<line x1="160" y1="200" x2="195" y2="200" stroke="#dc2626" stroke-width="3"/>
+<polygon points="205,200 193,195 193,205" fill="#dc2626"/>
+<text x="125" y="180" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">t = 0 s</text>
+<text x="183" y="225" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">v liten</text>
+</g>
+<!-- car 2 (medium) -->
+<g>
+<rect x="330" y="210" width="70" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<circle cx="350" cy="245" r="9" fill="#1f2937"/><circle cx="385" cy="245" r="9" fill="#1f2937"/>
+<line x1="400" y1="200" x2="470" y2="200" stroke="#dc2626" stroke-width="3"/>
+<polygon points="480,200 468,195 468,205" fill="#dc2626"/>
+<text x="365" y="180" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">t = 2 s</text>
+</g>
+<!-- car 3 (fast) -->
+<g>
+<rect x="570" y="210" width="70" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<circle cx="590" cy="245" r="9" fill="#1f2937"/><circle cx="625" cy="245" r="9" fill="#1f2937"/>
+<line x1="640" y1="200" x2="740" y2="200" stroke="#dc2626" stroke-width="3"/>
+<polygon points="750,200 738,195 738,205" fill="#dc2626"/>
+<text x="605" y="180" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">t = 4 s</text>
+<text x="690" y="225" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">v stor</text>
+</g>
+<text x="400" y="300" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Farten ökar → bilen accelererar</text>
+<text x="400" y="350" font-family="Arial,sans-serif" font-size="26" fill="#1e40af" text-anchor="middle" font-weight="bold">a = Δv / Δt</text>
+<text x="400" y="395" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Enhet: m/s² (meter per sekund i kvadrat)</text>
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Acceleration sker också om farten minskar eller riktningen ändras</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Acceleration är hur snabbt farten ändras</text>
+</svg>

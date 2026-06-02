@@ -1,0 +1,70 @@
+{
+  "_about": "Manifest for Claude-authored fysik concept-diagram SVGs (lb-authored-svg). Maps <area>/<slug> -> {begrepp (canonical larbild concept name, exact match to fysik.json), title (library display title, may carry a qualifier/formula)}. The area is the on-disk parent dir = authoritative Bibliotek node. Imported by scripts/import_skola_svgs.py --authored.",
+  "subject": "fysik",
+  "items": {
+    "universum/solformorkelse": {
+      "begrepp": "Solförmörkelse",
+      "title": "Solförmörkelse"
+    },
+    "universum/solflack": {
+      "begrepp": "Solfläck",
+      "title": "Solfläck"
+    },
+    "grundfysik/densitet": {
+      "begrepp": "Densitet",
+      "title": "Densitet (ρ = m / V)"
+    },
+    "grundfysik/dynamometer": {
+      "begrepp": "Dynamometer",
+      "title": "Dynamometer (fjädervåg)"
+    },
+    "varme-klimat/fjarrvarme": {
+      "begrepp": "Fjärrvärme",
+      "title": "Fjärrvärme"
+    },
+    "varme-klimat/vaderkarta": {
+      "begrepp": "Väderkarta",
+      "title": "Väderkarta"
+    },
+    "el-magnet/magnetfalt": {
+      "begrepp": "Magnetfält",
+      "title": "Magnetfält"
+    },
+    "el-magnet/kortslutning": {
+      "begrepp": "Kortslutning",
+      "title": "Kortslutning"
+    },
+    "atom/alfapartikel": {
+      "begrepp": "Alfapartikel",
+      "title": "Alfapartikel (α)"
+    },
+    "atom/jon": {
+      "begrepp": "Jon",
+      "title": "Jon"
+    },
+    "ljus/lins": {
+      "begrepp": "Lins",
+      "title": "Lins (samlande lins)"
+    },
+    "ljus/totalreflektion": {
+      "begrepp": "Totalreflektion",
+      "title": "Totalreflektion"
+    },
+    "ljud/eko": {
+      "begrepp": "Eko",
+      "title": "Eko"
+    },
+    "ljud/ultraljud": {
+      "begrepp": "Ultraljud",
+      "title": "Ultraljud"
+    },
+    "rorelse/friktion": {
+      "begrepp": "Friktion",
+      "title": "Friktion"
+    },
+    "rorelse/acceleration": {
+      "begrepp": "Acceleration",
+      "title": "Acceleration (a = Δv / Δt)"
+    }
+  }
+}

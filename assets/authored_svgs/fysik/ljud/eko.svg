@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Eko</text>
+<!-- Person on the left -->
+<circle cx="120" cy="220" r="18" fill="#fcd34d" stroke="#92400e" stroke-width="2"/>
+<line x1="120" y1="238" x2="120" y2="300" stroke="#92400e" stroke-width="3"/>
+<line x1="120" y1="255" x2="98" y2="280" stroke="#92400e" stroke-width="3"/>
+<line x1="120" y1="255" x2="142" y2="280" stroke="#92400e" stroke-width="3"/>
+<line x1="120" y1="300" x2="104" y2="340" stroke="#92400e" stroke-width="3"/>
+<line x1="120" y1="300" x2="136" y2="340" stroke="#92400e" stroke-width="3"/>
+<text x="120" y="370" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Du ropar</text>
+<!-- Cliff / wall on the right -->
+<rect x="660" y="100" width="80" height="320" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<text x="700" y="440" font-family="Arial,sans-serif" font-size="13" fill="#4b5563" text-anchor="middle">bergvägg</text>
+<!-- Outgoing wavefronts (red, moving right) -->
+<g fill="none" stroke="#dc2626" stroke-width="2">
+<path d="M 170 200 A 40 40 0 0 1 170 280"/>
+<path d="M 230 195 A 50 50 0 0 1 230 285"/>
+<path d="M 300 190 A 60 60 0 0 1 300 290"/>
+</g>
+<text x="280" y="155" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">ljud ut →</text>
+<polygon points="345,240 333,234 333,246" fill="#dc2626"/>
+<!-- Reflected wavefronts (blue, coming back) -->
+<g fill="none" stroke="#2563eb" stroke-width="2">
+<path d="M 630 200 A 40 40 0 0 0 630 280"/>
+<path d="M 560 195 A 50 50 0 0 0 560 285"/>
+<path d="M 490 190 A 60 60 0 0 0 490 290"/>
+</g>
+<text x="540" y="345" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">← ekot tillbaka</text>
+<polygon points="455,240 467,234 467,246" fill="#2563eb"/>
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Ljudet studsar mot väggen och kommer tillbaka en stund senare</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ett eko hörs som en egen upprepning av ljudet</text>
+</svg>

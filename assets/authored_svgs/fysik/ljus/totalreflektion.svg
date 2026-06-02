@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Totalreflektion</text>
+<!-- water/glass below the boundary, air above -->
+<rect x="60" y="240" width="680" height="170" fill="#dbeafe" opacity="0.6"/>
+<line x1="60" y1="240" x2="740" y2="240" stroke="#2563eb" stroke-width="2.5"/>
+<text x="690" y="225" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="end">luft</text>
+<text x="690" y="265" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="end">vatten / glas</text>
+<!-- normal at the hit point (x=400,y=240) -->
+<line x1="400" y1="160" x2="400" y2="340" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="408" y="175" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">normal</text>
+<!-- incoming ray from inside the water, shallow (large) angle to normal -->
+<line x1="230" y1="380" x2="400" y2="240" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="400,240 388,243 393,251" fill="#dc2626"/>
+<text x="270" y="350" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">infallande stråle</text>
+<!-- reflected ray (equal angle, back into the water) -->
+<line x1="400" y1="240" x2="570" y2="380" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="570,380 558,373 553,381" fill="#dc2626"/>
+<text x="540" y="350" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">allt ljus studsar tillbaka</text>
+<!-- angle marks (equal in/out) -->
+<path d="M 400 290 A 50 50 0 0 1 372 252" fill="none" stroke="#16a34a" stroke-width="2"/>
+<path d="M 400 290 A 50 50 0 0 0 428 252" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="362" y="300" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">v</text>
+<text x="438" y="300" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">v</text>
+<!-- a faint blocked ray attempting to leave (crossed out) -->
+<line x1="400" y1="240" x2="470" y2="180" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,3"/>
+<line x1="455" y1="178" x2="475" y2="198" stroke="#dc2626" stroke-width="2"/>
+<text x="500" y="180" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">inget ljus går ut</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">När ljuset träffar ytan i en flack vinkel studsar allt tillbaka i stället för att gå ut</text>
+</svg>

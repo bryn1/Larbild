@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Friktion</text>
+<!-- ground (rough) -->
+<line x1="60" y1="250" x2="740" y2="250" stroke="#1f2937" stroke-width="2"/>
+<g stroke="#92400e" stroke-width="1.5">
+<path d="M 70 250 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8 l 6 8 l 6 -8" fill="none"/>
+</g>
+<text x="650" y="280" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">ojämn yta</text>
+<!-- block -->
+<rect x="280" y="170" width="130" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="345" y="215" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle">föremål</text>
+<!-- applied force F (right) -->
+<line x1="410" y1="200" x2="500" y2="200" stroke="#16a34a" stroke-width="3"/>
+<polygon points="510,200 498,195 498,205" fill="#16a34a"/>
+<text x="465" y="188" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">F (dras)</text>
+<!-- friction force (left, opposing) at the contact surface -->
+<line x1="280" y1="240" x2="190" y2="240" stroke="#dc2626" stroke-width="3"/>
+<polygon points="180,240 192,235 192,245" fill="#dc2626"/>
+<text x="225" y="228" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">friktion</text>
+<text x="345" y="135" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Friktionen är motriktad rörelsen</text>
+<!-- comparison strip at bottom -->
+<line x1="60" y1="360" x2="740" y2="360" stroke="#9ca3af" stroke-width="1"/>
+<text x="220" y="400" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Ojämn yta</text>
+<text x="220" y="422" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">stor friktion</text>
+<text x="580" y="400" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Slät yta (t.ex. is)</text>
+<text x="580" y="422" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">liten friktion</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Motståndet när två ytor glider mot varandra — ojämnare ytor ger mer friktion</text>
+</svg>

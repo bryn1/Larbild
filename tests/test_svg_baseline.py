@@ -309,6 +309,164 @@ def test_imported_rows_surface_preferred_first_in_library_api(
     assert items[1]["preferred"] in (0, None)
 
 
+# ── 4) authored-svg gap-fill lane ────────────────────────────────────────────
+
+
+# A fysik concept set covering the authored fixtures, with authoritative areas.
+_AUTHORED_FYSIK = [
+    {"begrepp": "Eko", "area": "ljud"},
+    {"begrepp": "Friktion", "area": "rorelse"},
+    {"begrepp": "Densitet", "area": "grundfysik"},
+]
+
+
+@pytest.fixture
+def authored_tree(tmp_path):
+    """A tiny authored-SVG tree + manifest: two good entries (one with a title
+    qualifier) plus a fysik.json fixture covering them."""
+    import json
+
+    root = tmp_path / "authored" / "fysik"
+    _write(root / "ljud", "eko.svg", _GOOD_SVG.replace("Densitet", "Eko"))
+    _write(root / "rorelse", "friktion.svg", _GOOD_SVG.replace("Densitet", "Friktion"))
+    manifest = root / "manifest.json"
+    manifest.write_text(json.dumps({
+        "subject": "fysik",
+        "items": {
+            "ljud/eko": {"begrepp": "Eko", "title": "Eko"},
+            # title carries a qualifier; begrepp stays the canonical concept name
+            "rorelse/friktion": {"begrepp": "Friktion", "title": "Friktion (motstånd)"},
+        },
+    }, ensure_ascii=False), encoding="utf-8")
+    fysik = tmp_path / "fysik.json"
+    fysik.write_text(json.dumps(_AUTHORED_FYSIK), encoding="utf-8")
+    return root, manifest, fysik
+
+
+def test_resolve_authored_maps_manifest_entries(authored_tree):
+    root, manifest, fysik = authored_tree
+    plans = list(import_skola.resolve_authored(str(root), str(manifest), str(fysik)))
+    assert len(plans) == 2
+    by_key = {p["svg"]: p for p in plans}
+    assert by_key["ljud/eko"]["mapped"] and by_key["ljud/eko"]["area"] == "ljud"
+    assert by_key["ljud/eko"]["begrepp"] == "Eko"
+    # the title qualifier rides along, begrepp stays canonical
+    assert by_key["rorelse/friktion"]["title"] == "Friktion (motstånd)"
+    assert by_key["rorelse/friktion"]["begrepp"] == "Friktion"
+
+
+def test_resolve_authored_flags_wrong_area_and_missing_svg(tmp_path):
+    import json
+
+    root = tmp_path / "authored" / "fysik"
+    # Good SVG file on disk, but the manifest files it under the WRONG area.
+    _write(root / "ljud", "densitet.svg", _GOOD_SVG)
+    manifest = root / "manifest.json"
+    manifest.write_text(json.dumps({
+        "subject": "fysik",
+        "items": {
+            "ljud/densitet": {"begrepp": "Densitet", "title": "Densitet"},  # really grundfysik
+            "ljud/saknas": {"begrepp": "Eko", "title": "Eko"},              # no SVG on disk
+        },
+    }, ensure_ascii=False), encoding="utf-8")
+    fysik = tmp_path / "fysik.json"
+    fysik.write_text(json.dumps(_AUTHORED_FYSIK), encoding="utf-8")
+
+    plans = {p["svg"]: p for p in
+             import_skola.resolve_authored(str(root), str(manifest), str(fysik))}
+    assert plans["ljud/densitet"]["mapped"] is False
+    assert "grundfysik" in plans["ljud/densitet"]["reason"]
+    assert plans["ljud/saknas"]["mapped"] is False
+    assert "not found" in plans["ljud/saknas"]["reason"]
+
+
+def test_authored_import_end_to_end_writes_preferred_authored_rows(authored_tree):
+    root, manifest, fysik = authored_tree
+    import sqlite3 as _sqlite
+
+    tmp = root.parent.parent
+    db = tmp / "larbild.db"
+    storage = tmp / "storage"
+    os.environ["LARBILD_DB_PATH"] = str(db)
+    os.environ["LARBILD_STORAGE"] = str(storage)
+    try:
+        summary = import_skola.run_authored_import(
+            str(root), str(manifest), str(fysik), dry_run=False, force=False
+        )
+        # idempotent re-run
+        again = import_skola.run_authored_import(
+            str(root), str(manifest), str(fysik), dry_run=False, force=False
+        )
+    finally:
+        os.environ.pop("LARBILD_DB_PATH", None)
+        os.environ.pop("LARBILD_STORAGE", None)
+
+    assert summary["inserted"] == 2 and summary["errors"] == 0
+    assert summary["skipped_unmapped"] == 0
+    assert again["inserted"] == 0 and again["exists"] == 2  # no dupes
+
+    conn = _sqlite.connect(db)
+    conn.row_factory = _sqlite.Row
+    rows = conn.execute(
+        "SELECT * FROM library WHERE source = ? ORDER BY area",
+        (import_skola.AUTHORED_SOURCE_TAG,),
+    ).fetchall()
+    assert len(rows) == 2
+    for r in rows:
+        assert r["image_type"] == "diagram" and r["preferred"] == 1
+        assert r["kind"] == "bild"
+        assert r["backend"] == import_skola.AUTHORED_BACKEND_LABEL
+        assert r["svg_source_path"].endswith("__authored-svg.svg")
+        assert r["file_path"].endswith("__authored-svg.png")
+        assert (storage / r["file_path"]).exists()
+        assert (storage / r["svg_source_path"]).exists()
+    by_area = {r["area"]: r for r in rows}
+    assert by_area["ljud"]["title"] == "Eko"
+    assert by_area["rorelse"]["title"] == "Friktion (motstånd)"
+    conn.close()
+
+
+def test_authored_rows_surface_preferred_first_with_authored_source(authored_tree):
+    from app import create_app
+    from app.db import connect
+
+    root, manifest, fysik = authored_tree
+    tmp = root.parent.parent
+    db = tmp / "larbild.db"
+    storage = tmp / "storage"
+    os.environ["LARBILD_DB_PATH"] = str(db)
+    os.environ["LARBILD_STORAGE"] = str(storage)
+    try:
+        import_skola.run_authored_import(str(root), str(manifest), str(fysik),
+                                         dry_run=False, force=False)
+        app = create_app({"TESTING": True, "DB_PATH": str(db),
+                          "STORAGE_DIR": storage})
+        # a NON-preferred batch-style row in the same bucket sorts after the authored one
+        with connect(db) as conn:
+            conn.execute(
+                "INSERT INTO library (id, kind, subject, area, image_type, title, "
+                "file_path, backend, created_at) VALUES "
+                "(?, 'bild', 'fysik', 'ljud', 'diagram', 'Eko (diffusion)', "
+                "?, 'vm100 · 3090', datetime('now'))",
+                (str(uuid.uuid4()), f"output/fysik/ljud/diagram/{uuid.uuid4()}.png"),
+            )
+        resp = app.test_client().get(
+            "/api/library/items?subject=fysik&area=ljud&imageType=diagram"
+        )
+    finally:
+        os.environ.pop("LARBILD_DB_PATH", None)
+        os.environ.pop("LARBILD_STORAGE", None)
+
+    assert resp.status_code == 200
+    items = resp.get_json()["items"]
+    assert len(items) == 2
+    first = items[0]
+    assert first["preferred"] == 1
+    assert first["source"] == import_skola.AUTHORED_SOURCE_TAG
+    assert first["svg_url"] and first["svg_url"].endswith("__authored-svg.svg")
+    assert items[1]["preferred"] in (0, None)
+
+
 # ── opportunistic full-corpus checks against the real skola SVGs ─────────────
 
 

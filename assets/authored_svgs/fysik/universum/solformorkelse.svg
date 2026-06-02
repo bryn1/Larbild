@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Solförmörkelse</text>
+<!-- Sun -->
+<circle cx="110" cy="250" r="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<text x="110" y="255" font-family="Arial,sans-serif" font-size="16" fill="#92400e" text-anchor="middle" font-weight="bold">Sol</text>
+<!-- Shadow cone (umbra) from sun edges past the moon to Earth -->
+<polygon points="110,190 110,310 480,255 480,245" fill="#9ca3af" opacity="0.18"/>
+<line x1="110" y1="190" x2="490" y2="248" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,4"/>
+<line x1="110" y1="310" x2="490" y2="252" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,4"/>
+<!-- Moon -->
+<circle cx="470" cy="250" r="26" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<text x="470" y="220" font-family="Arial,sans-serif" font-size="14" fill="#4b5563" text-anchor="middle">Måne</text>
+<!-- Earth -->
+<circle cx="660" cy="250" r="55" fill="#2563eb" stroke="#1e40af" stroke-width="3"/>
+<text x="660" y="180" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Jord</text>
+<!-- Umbra spot on Earth -->
+<ellipse cx="615" cy="250" rx="9" ry="22" fill="#1f2937"/>
+<line x1="560" y1="320" x2="612" y2="270" stroke="#1f2937" stroke-width="1.5"/>
+<text x="540" y="335" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Här blir det mörkt</text>
+<text x="540" y="350" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">mitt på dagen</text>
+<!-- explanation -->
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Månen står mellan solen och jorden och kastar sin skugga på jorden</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">När månen skuggar solen blir det plötsligt mörkare mitt på dagen</text>
+</svg>
