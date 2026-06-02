@@ -24,6 +24,6 @@
 <text x="660" y="88" font-family="Arial,sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="bold">Avlägsen galax</text>
 <line x1="634.0" y1="114.0" x2="468.8" y2="142.2" stroke="#fbbf24" stroke-width="2.5"/>
 <polygon points="458.0,144.0 467.8,136.2 469.9,148.1" fill="#fbbf24"/>
-<text x="400" y="250" font-family="Arial,sans-serif" font-size="14" fill="#15803d" text-anchor="middle" font-weight="bold">Inga moln eller lampor stör  →  skarpare bilder</text>
+<text x="400" y="222" font-family="Arial,sans-serif" font-size="14" fill="#15803d" text-anchor="middle" font-weight="bold">Inga moln eller lampor stör  →  skarpare bilder</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ett rymdteleskop kretsar runt jorden där varken moln eller ljus stör bilderna</text>
 </svg>

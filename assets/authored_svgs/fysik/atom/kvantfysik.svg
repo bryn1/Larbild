@@ -17,6 +17,5 @@
 <circle cx="620" cy="256" r="9" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
 <text x="620" y="259.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
 <text x="580" y="390" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">bara bestämda nivåer</text>
-<line x1="700" y1="250" x2="715" y2="230" stroke="#dc2626" stroke-width="2"/>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Kvantfysiken beskriver atomens inre — energin finns i bestämda steg</text>
 </svg>

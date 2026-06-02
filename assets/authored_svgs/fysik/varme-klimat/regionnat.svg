@@ -37,7 +37,11 @@
 
 <!-- hierarchy ladder -->
 <text x="400" y="350" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Elnätets nivåer (efter spänning):</text>
-<text x="400" y="380" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Stamnät  →  <tspan fill="#dc2626" font-weight="bold">Regionnät</tspan>  →  Lokalnät (lägst)</text>
+<text x="285" y="380" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="end">Stamnät</text>
+<text x="315" y="380" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">→</text>
+<text x="400" y="380" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Regionnät</text>
+<text x="485" y="380" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">→</text>
+<text x="515" y="380" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="start">Lokalnät (lägst)</text>
 
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Strömmen till din skola tar vägen via regionnätet innan den når byggnaden</text>
 </svg>

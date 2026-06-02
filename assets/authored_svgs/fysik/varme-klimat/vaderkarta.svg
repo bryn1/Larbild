@@ -9,8 +9,8 @@
 <circle cx="230" cy="220" r="40" fill="none" stroke="#6b7280" stroke-width="1.8"/>
 <circle cx="230" cy="220" r="75" fill="none" stroke="#6b7280" stroke-width="1.8"/>
 <circle cx="230" cy="220" r="110" fill="none" stroke="#6b7280" stroke-width="1.8"/>
-<text x="230" y="125" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">1024</text>
-<text x="230" y="157" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">1020</text>
+<text x="230" y="125" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">1020</text>
+<text x="230" y="157" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">1024</text>
 <!-- HIGH pressure marker -->
 <text x="230" y="232" font-family="Arial,sans-serif" font-size="46" fill="#2563eb" text-anchor="middle" font-weight="bold">H</text>
 <text x="230" y="270" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">Högtryck</text>

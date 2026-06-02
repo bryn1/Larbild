@@ -7,10 +7,10 @@
 <!-- Core: the inner channel, walls at y=180 (top) and y=320 (bottom) -->
 <rect x="90" y="180" width="620" height="140" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.5"/>
 <text x="135" y="205" font-family="Arial,sans-serif" font-size="11" fill="#1e3a8a" text-anchor="middle">kärna</text>
-<!-- Light zig-zag: bounces land EXACTLY on the core walls y=180 and y=320, strictly inside -->
-<polyline points="90,250 195,180 335,320 475,180 615,320 710,250"
+<!-- Light zig-zag: every segment at 45deg; bounces land EXACTLY on the core walls y=180 and y=320 -->
+<polyline points="90,285 195,180 335,320 475,180 615,320 710,225"
           fill="none" stroke="#dc2626" stroke-width="3"/>
-<polygon points="710,250 697,243 700,235" fill="#dc2626"/>
+<polygon points="710,225 705.0,237.0 698.0,230.0" fill="#dc2626"/>
 <!-- Reflection points marked on the walls -->
 <circle cx="195" cy="180" r="4.5" fill="#f59e0b"/>
 <circle cx="335" cy="320" r="4.5" fill="#f59e0b"/>

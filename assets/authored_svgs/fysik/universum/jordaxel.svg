@@ -16,7 +16,7 @@
 <text x="410.16887569509174" y="389.8031100419918" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="end">Sydpol</text>
 <line x1="470" y1="100" x2="470" y2="400" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5,4"/>
 <path d="M 470 120 A 130 130 0 0 0 521.8 130.8" stroke="#16a34a" stroke-width="1.5" fill="none"/>
-<text x="540" y="122" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="start" font-weight="bold">ca 23,5°</text>
+<text x="535" y="155" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="start" font-weight="bold">ca 23,5°</text>
 <line x1="375" y1="250" x2="565" y2="250" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
 <text x="640" y="250" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">Lutningen ger oss</text>
 <text x="640" y="270" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="bold">olika årstider</text>

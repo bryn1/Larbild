@@ -3,7 +3,7 @@
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Styrstavar i en kärnreaktor</text>
 <!-- Reactor vessel -->
 <rect x="250" y="90" width="300" height="330" rx="14" fill="#eff6ff" stroke="#1e40af" stroke-width="3"/>
-<text x="490" y="135" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Reaktorhärd</text>
+<text x="340" y="405" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Reaktorhärd</text>
 <!-- Fuel rods (amber) -->
 <rect x="285" y="150" width="18" height="230" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
 <rect x="345" y="150" width="18" height="230" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>

@@ -10,8 +10,9 @@
 <text x="245" y="312" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">järn:  56 u</text>
 <rect x="430" y="180" width="250" height="150" fill="white" stroke="#16a34a" stroke-width="2" rx="6"/>
 <text x="555" y="208" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="bold">Mycket mindre än ett gram</text>
-<text x="555" y="245" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">1 u ≈ 0,000 000 000</text>
-<text x="555" y="268" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">000 000 000 0017 g</text>
+<text x="555" y="240" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">1 u ≈ 0,000 000 000 000</text>
+<text x="555" y="261" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">000 000 000</text>
+<text x="555" y="282" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">001 66 g</text>
 <text x="555" y="305" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(en pytteliten massa)</text>
 <text x="400" y="370" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Kemister väger atomer i unit, precis som mjöl vägs i gram</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Unit (u) är en massenhet för atomer, mycket mindre än ett gram</text>
