@@ -159,3 +159,42 @@ def create_portrait():
         return jsonify({"error": str(exc), "code": exc.code}), exc.status
 
     return jsonify(record), 201
+
+
+@portraits_bp.get("/api/portraits/<face_id>")
+def get_portrait(face_id: str):
+    """One portrait reference, with a server-recomputed ``consent_ok``. 404 if gone."""
+    record = portraits.get_portrait(face_id)
+    if record is None:
+        return jsonify({"error": "unknown portrait", "code": "not_found"}), 404
+    return jsonify(record), 200
+
+
+@portraits_bp.post("/api/portraits/<face_id>/use")
+def use_portrait(face_id: str):
+    """Gate a compositor USE of a portrait reference (lb-wdu).
+
+    The server RE-COMPUTES ``consentOk`` from the DB on every call (never from a
+    client flag) and returns ``403`` if the reference is not currently
+    consent-OK — unknown ref → ``404``. A reference is usable only when
+    :func:`app.portraits.consent_ok` is true (not revoked, and adult or
+    guardian-consented minor). Every outcome — allowed or denied — appends a
+    ``face_usage_log`` audit row.
+
+    This endpoint is the ONLY sanctioned way for the later swap compositor bead
+    to obtain a reference: it must POST here first and proceed only on a 200. A
+    ``consentOk`` in the request body is ignored — consent is recomputed here.
+    """
+    data = _body()
+    job_id = (data.get("job_id") or "").strip() or None
+    try:
+        result = portraits.record_usage(face_id, job_id=job_id)
+    except portraits.ConsentError as exc:
+        return jsonify({"error": str(exc), "code": exc.code}), exc.status
+    return jsonify({
+        "ok": True,
+        "face_id": face_id,
+        "audit_id": result["audit_id"],
+        "consent_ok": True,  # recomputed + true, else we would have 403'd above
+        "portrait": result["face"],
+    }), 200
