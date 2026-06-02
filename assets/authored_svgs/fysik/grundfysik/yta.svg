@@ -3,39 +3,37 @@
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Yta (storleken på ett platt område)</text>
 <text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ytan mäts i kvadratmeter (m²)</text>
 
-<!-- A tabletop / floor area shown as a grid of unit squares -->
-<rect x="220" y="110" width="360" height="240" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
-<!-- grid lines: 6 columns x 4 rows of 1 m² squares -->
-<line x1="280" y1="110" x2="280" y2="350" stroke="#f59e0b" stroke-width="1"/>
-<line x1="340" y1="110" x2="340" y2="350" stroke="#f59e0b" stroke-width="1"/>
-<line x1="400" y1="110" x2="400" y2="350" stroke="#f59e0b" stroke-width="1"/>
-<line x1="460" y1="110" x2="460" y2="350" stroke="#f59e0b" stroke-width="1"/>
-<line x1="520" y1="110" x2="520" y2="350" stroke="#f59e0b" stroke-width="1"/>
-<line x1="220" y1="170" x2="580" y2="170" stroke="#f59e0b" stroke-width="1"/>
-<line x1="220" y1="230" x2="580" y2="230" stroke="#f59e0b" stroke-width="1"/>
-<line x1="220" y1="290" x2="580" y2="290" stroke="#f59e0b" stroke-width="1"/>
-<!-- one square highlighted as the unit -->
-<rect x="220" y="110" width="60" height="60" fill="#fbbf24" stroke="#b45309" stroke-width="1.5"/>
-<text x="250" y="145" font-family="Arial,sans-serif" font-size="11" fill="#7c2d12" text-anchor="middle">1 m²</text>
+<!-- a realistic tabletop: 2,0 m long x 1,2 m wide -->
+<rect x="240" y="120" width="320" height="192" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+<!-- light grid: 5 cols x 3 rows of 0,4 m squares -->
+<line x1="304" y1="120" x2="304" y2="312" stroke="#f59e0b" stroke-width="1"/>
+<line x1="368" y1="120" x2="368" y2="312" stroke="#f59e0b" stroke-width="1"/>
+<line x1="432" y1="120" x2="432" y2="312" stroke="#f59e0b" stroke-width="1"/>
+<line x1="496" y1="120" x2="496" y2="312" stroke="#f59e0b" stroke-width="1"/>
+<line x1="240" y1="184" x2="560" y2="184" stroke="#f59e0b" stroke-width="1"/>
+<line x1="240" y1="248" x2="560" y2="248" stroke="#f59e0b" stroke-width="1"/>
+<!-- one unit square highlighted -->
+<rect x="240" y="120" width="64" height="64" fill="#fbbf24" stroke="#b45309" stroke-width="1.5"/>
+<text x="272" y="157" font-family="Arial,sans-serif" font-size="10" fill="#7c2d12" text-anchor="middle">0,4 m</text>
 
-<!-- width measurement (bottom, green) -->
-<line x1="220" y1="375" x2="580" y2="375" stroke="#16a34a" stroke-width="2"/>
-<line x1="220" y1="367" x2="220" y2="383" stroke="#16a34a" stroke-width="2"/>
-<line x1="580" y1="367" x2="580" y2="383" stroke="#16a34a" stroke-width="2"/>
-<text x="400" y="397" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">längd = 6 m</text>
+<text x="400" y="222" font-family="Arial,sans-serif" font-size="15" fill="#7c2d12" text-anchor="middle" font-weight="bold">Bordets yta</text>
 
-<!-- height measurement (left, green) -->
-<line x1="195" y1="110" x2="195" y2="350" stroke="#16a34a" stroke-width="2"/>
-<line x1="187" y1="110" x2="203" y2="110" stroke="#16a34a" stroke-width="2"/>
-<line x1="187" y1="350" x2="203" y2="350" stroke="#16a34a" stroke-width="2"/>
-<text x="150" y="235" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">bredd</text>
-<text x="150" y="253" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">= 4 m</text>
+<!-- length measurement (bottom) -->
+<line x1="240" y1="335" x2="560" y2="335" stroke="#16a34a" stroke-width="2"/>
+<line x1="240" y1="327" x2="240" y2="343" stroke="#16a34a" stroke-width="2"/>
+<line x1="560" y1="327" x2="560" y2="343" stroke="#16a34a" stroke-width="2"/>
+<text x="400" y="357" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">längd = 2,0 m</text>
 
-<text x="400" y="225" font-family="Arial,sans-serif" font-size="14" fill="#7c2d12" text-anchor="middle">Bordets yta</text>
+<!-- width measurement (left) -->
+<line x1="215" y1="120" x2="215" y2="312" stroke="#16a34a" stroke-width="2"/>
+<line x1="207" y1="120" x2="223" y2="120" stroke="#16a34a" stroke-width="2"/>
+<line x1="207" y1="312" x2="223" y2="312" stroke="#16a34a" stroke-width="2"/>
+<text x="150" y="210" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">bredd</text>
+<text x="150" y="228" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">= 1,2 m</text>
 
 <!-- area formula result -->
-<rect x="180" y="425" width="440" height="45" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5" rx="4"/>
-<text x="400" y="453" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Yta = längd × bredd = 6 × 4 = 24 m²</text>
+<rect x="170" y="395" width="460" height="48" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="400" y="425" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Yta = längd × bredd = 2,0 × 1,2 = 2,4 m²</text>
 
-<text x="400" y="490" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ytan är storleken på ett platt område, mätt i kvadratmeter</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ytan är storleken på ett platt område, mätt i kvadratmeter</text>
 </svg>

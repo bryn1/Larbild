@@ -1,20 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Angreppspunkt</text>
-<line x1="200.0" y1="82.0" x2="200.0" y2="368.0" stroke="#6b7280" stroke-width="3"/>
-<rect x="200" y="90" width="320" height="270" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5" rx="3"/>
-<text x="360.0" y="225.0" font-family="Arial,sans-serif" font-size="18" fill="#2563eb" text-anchor="middle" font-weight="bold">DÖRR</text>
-<circle cx="200.0" cy="225.0" r="6.0" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
-<text x="200" y="390" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Gångjärn (vridpunkt)</text>
-<circle cx="502.0" cy="225.0" r="7.0" fill="#f59e0b" stroke="#991b1b" stroke-width="2"/>
-<rect x="498" y="203.0" width="9" height="44" fill="#6b7280" stroke="#1f2937" stroke-width="1" rx="3"/>
-<line x1="512.0" y1="225.0" x2="602.0" y2="225.0" stroke="#dc2626" stroke-width="4"/>
-<polygon points="617.0,225.0 602.0,233.2 602.0,216.8" fill="#dc2626"/>
-<text x="572" y="211.0" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Kraft F</text>
-<circle cx="502.0" cy="225.0" r="16.0" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="4,3"/>
-<line x1="640.0" y1="130.0" x2="528.3" y2="205.4" stroke="#f59e0b" stroke-width="2"/>
-<polygon points="520.0,211.0 525.2,200.8 531.4,210.0" fill="#f59e0b"/>
-<text x="640" y="118" font-family="Arial,sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle" font-weight="bold">Angreppspunkt</text>
-<text x="640" y="102" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">— där kraften tar tag</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Angreppspunkten är platsen där en kraft tar tag på föremålet</text>
+
+<!-- door frame (hinge side) -->
+<line x1="170" y1="80" x2="170" y2="380" stroke="#6b7280" stroke-width="5"/>
+<!-- door slab -->
+<rect x="170" y="95" width="300" height="250" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5" rx="3"/>
+<text x="320" y="230" font-family="Arial,sans-serif" font-size="20" fill="#2563eb" text-anchor="middle" font-weight="bold">DÖRR</text>
+
+<!-- hinge (vridpunkt) -->
+<circle cx="170" cy="220" r="7" fill="#6b7280" stroke="#1f2937" stroke-width="2"/>
+<text x="170" y="402" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Gångjärn (vridpunkt)</text>
+
+<!-- handle -->
+<rect x="445" y="208" width="10" height="34" fill="#6b7280" stroke="#1f2937" stroke-width="1.2" rx="3"/>
+
+<!-- BIG clear angreppspunkt dot where the force grabs -->
+<circle cx="455" cy="220" r="13" fill="#f59e0b" stroke="#991b1b" stroke-width="3"/>
+<circle cx="455" cy="220" r="22" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="5,4"/>
+
+<!-- force arrow starting exactly at the point -->
+<line x1="468" y1="220" x2="600" y2="220" stroke="#dc2626" stroke-width="6"/>
+<polygon points="622,220 600,231 600,209" fill="#dc2626"/>
+<text x="560" y="200" font-family="Arial,sans-serif" font-size="17" fill="#dc2626" text-anchor="middle" font-weight="bold">Kraft F</text>
+
+<!-- callout label pointing to the dot -->
+<line x1="560" y1="120" x2="468" y2="208" stroke="#f59e0b" stroke-width="2"/>
+<polygon points="461,215 466,202 473,210" fill="#f59e0b"/>
+<text x="595" y="110" font-family="Arial,sans-serif" font-size="18" fill="#b45309" text-anchor="middle" font-weight="bold">Angreppspunkt</text>
+<text x="595" y="132" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">— där kraften tar tag</text>
+
+<text x="400" y="445" font-family="Arial,sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold">Långt från gångjärnet → dörren öppnas lätt</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Angreppspunkten är platsen på föremålet där kraften tar tag</text>
 </svg>

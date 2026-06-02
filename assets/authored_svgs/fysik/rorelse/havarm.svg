@@ -1,21 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
-<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Hävarm</text>
-<line x1="220.0" y1="280.0" x2="600.0" y2="280.0" stroke="#6b7280" stroke-width="10"/>
-<line x1="220.0" y1="280.0" x2="600.0" y2="280.0" stroke="#1f2937" stroke-width="2"/>
-<polygon points="202.0,262.0 238.0,262.0 238.0,298.0 202.0,298.0" fill="#f59e0b" stroke="#991b1b" stroke-width="2"/>
-<circle cx="220.0" cy="280.0" r="6.0" fill="#1f2937" stroke="#1f2937" stroke-width="2"/>
-<text x="220" y="320" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Vridpunkt</text>
-<text x="220" y="336" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">(mutter)</text>
-<line x1="600.0" y1="262.0" x2="600.0" y2="209.0" stroke="#dc2626" stroke-width="4"/>
-<polygon points="600.0,195.0 607.7,209.0 592.3,209.0" fill="#dc2626"/>
-<text x="600" y="182" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Kraft F</text>
-<line x1="220.0" y1="370.0" x2="600.0" y2="370.0" stroke="#16a34a" stroke-width="2"/>
-<line x1="220.0" y1="363.0" x2="220.0" y2="377.0" stroke="#16a34a" stroke-width="2"/>
-<line x1="600.0" y1="363.0" x2="600.0" y2="377.0" stroke="#16a34a" stroke-width="2"/>
-<text x="410.0" y="390" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle">Hävarm (avstånd till vridpunkten)</text>
-<rect x="150" y="380" width="500" height="56" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
-<text x="400" y="404" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Längre hävarm  →  större vridverkan</text>
-<text x="400" y="424" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(muttern lossnar lättare med långt skaft)</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hävarmen är avståndet från vridpunkten till kraften — längre arm ger mer vridverkan</text>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Hävarm (kraft × hävarm = vridmoment)</text>
+
+<!-- wrench shaft -->
+<line x1="180" y1="250" x2="560" y2="250" stroke="#6b7280" stroke-width="11"/>
+<line x1="180" y1="250" x2="560" y2="250" stroke="#1f2937" stroke-width="2"/>
+<!-- nut head at pivot -->
+<polygon points="162,232 198,232 198,268 162,268" fill="#f59e0b" stroke="#991b1b" stroke-width="2"/>
+<circle cx="180" cy="250" r="6" fill="#1f2937" stroke="#1f2937" stroke-width="2"/>
+<text x="180" y="290" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vridpunkt</text>
+<text x="180" y="307" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">(mutter)</text>
+
+<!-- force F downward at the far end -->
+<line x1="560" y1="232" x2="560" y2="160" stroke="#dc2626" stroke-width="5"/>
+<polygon points="560,144 551,160 569,160" fill="#dc2626"/>
+<text x="560" y="128" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Kraft F = 50 N</text>
+
+<!-- lever-arm distance bracket -->
+<line x1="180" y1="335" x2="560" y2="335" stroke="#16a34a" stroke-width="2"/>
+<line x1="180" y1="328" x2="180" y2="342" stroke="#16a34a" stroke-width="2"/>
+<line x1="560" y1="328" x2="560" y2="342" stroke="#16a34a" stroke-width="2"/>
+<text x="370" y="356" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle">Hävarm = 0,4 m (avstånd till vridpunkten)</text>
+
+<!-- Nm calculation box -->
+<rect x="150" y="380" width="500" height="62" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+<text x="400" y="408" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">Vridmoment = kraft × hävarm</text>
+<text x="400" y="431" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">M = 50 N × 0,4 m = 20 Nm (newtonmeter)</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Längre hävarm ger större vridmoment — vridmomentet mäts i newtonmeter (Nm)</text>
 </svg>

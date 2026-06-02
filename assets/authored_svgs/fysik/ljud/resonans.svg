@@ -1,16 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Resonans – svänger kraftigt vid rätt takt</text>
-<line x1="90.0" y1="250.0" x2="710.0" y2="250.0" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
-<polyline points="90.0,250.0 91.9,248.6 93.9,247.1 95.8,245.7 97.8,244.4 99.7,243.1 101.6,242.1 103.6,241.2 105.5,240.6 107.4,240.3 109.4,240.2 111.3,240.5 113.2,241.0 115.2,241.9 117.1,243.0 119.1,244.5 121.0,246.1 122.9,247.9 124.9,249.9 126.8,251.9 128.8,253.9 130.7,255.9 132.6,257.8 134.6,259.4 136.5,260.9 138.4,262.0 140.4,262.8 142.3,263.2 144.2,263.3 146.2,262.9 148.1,262.1 150.1,260.9 152.0,259.3 153.9,257.5 155.9,255.3 157.8,252.9 159.8,250.3 161.7,247.7 163.6,245.1 165.6,242.6 167.5,240.2 169.4,238.1 171.4,236.2 173.3,234.8 175.2,233.8 177.2,233.3 179.1,233.3 181.1,233.8 183.0,234.8 184.9,236.3 186.9,238.2 188.8,240.6 190.8,243.3 192.7,246.2 194.6,249.4 196.6,252.6 198.5,255.8 200.4,258.9 202.4,261.8 204.3,264.4 206.2,266.6 208.2,268.4 210.1,269.6 212.1,270.2 214.0,270.2 215.9,269.6 217.9,268.4 219.8,266.6 221.8,264.3 223.7,261.5 225.6,258.3 227.6,254.7 229.5,251.0 231.4,247.2 233.4,243.3 235.3,239.7 237.2,236.2 239.2,233.2 241.1,230.6 243.1,228.5 245.0,227.1 246.9,226.3 248.9,226.3 250.8,227.0 252.8,228.4 254.7,230.4 256.6,233.2 258.6,236.4 260.5,240.2 262.4,244.2 264.4,248.6 266.3,253.0 268.2,257.4 270.2,261.7 272.1,265.6 274.1,269.2 276.0,272.2 277.9,274.6 279.9,276.2 281.8,277.1 283.8,277.2 285.7,276.4 287.6,274.9 289.6,272.5 291.5,269.5 293.4,265.7 295.4,261.5 297.3,256.9 299.2,251.9 301.2,246.9 303.1,241.9 305.1,237.0 307.0,232.5 308.9,228.5 310.9,225.1 312.8,222.4 314.8,220.4 316.7,219.4 318.6,219.3 320.6,220.1 322.5,221.8 324.4,224.5 326.4,227.9 328.3,232.0 330.2,236.8 332.2,242.0 334.1,247.5 336.1,253.1 338.0,258.7 339.9,264.1 341.9,269.2 343.8,273.7 345.8,277.6 347.7,280.7 349.6,282.8 351.6,284.0 353.5,284.2 355.4,283.3 357.4,281.5 359.3,278.6 361.2,274.8 363.2,270.3 365.1,265.0 367.1,259.3 369.0,253.2 370.9,247.0 372.9,240.7 374.8,234.7 376.8,229.1 378.7,224.1 380.6,219.8 382.6,216.3 384.5,213.9 386.4,212.5 388.4,212.3 390.3,213.2 392.2,215.2 394.2,218.3 396.1,222.4 398.1,227.4 400.0,233.1 401.9,239.4 403.9,246.0 405.8,252.9 407.8,259.7 409.7,266.3 411.6,272.5 413.6,278.1 415.5,282.8 417.4,286.6 419.4,289.3 421.3,290.9 423.2,291.2 425.2,290.3 427.1,288.2 429.1,284.8 431.0,280.4 432.9,275.1 434.9,268.9 436.8,262.0 438.8,254.8 440.7,247.3 442.6,239.9 444.6,232.7 446.5,226.0 448.4,219.9 450.4,214.7 452.3,210.5 454.2,207.5 456.2,205.7 458.1,205.3 460.1,206.2 462.0,208.4 463.9,212.0 465.9,216.7 467.8,222.5 469.8,229.1 471.7,236.5 473.6,244.3 475.6,252.3 477.5,260.4 479.4,268.2 481.4,275.5 483.3,282.1 485.2,287.8 487.2,292.4 489.1,295.7 491.1,297.7 493.0,298.3 494.9,297.3 496.9,295.0 498.8,291.2 500.8,286.2 502.7,280.1 504.6,272.9 506.6,265.1 508.5,256.7 510.4,248.0 512.4,239.4 514.3,231.0 516.2,223.1 518.2,215.9 520.1,209.8 522.1,204.8 524.0,201.1 525.9,198.9 527.9,198.2 529.8,199.1 531.8,201.6 533.7,205.5 535.6,210.8 537.6,217.3 539.5,224.9 541.4,233.3 543.4,242.2 545.3,251.5 547.2,260.8 549.2,269.8 551.1,278.3 553.1,286.0 555.0,292.6 556.9,298.0 558.9,302.0 560.8,304.5 562.8,305.3 564.7,304.4 566.6,301.9 568.6,297.8 570.5,292.2 572.4,285.3 574.4,277.3 576.3,268.4 578.2,258.9 580.2,249.0 582.1,239.2 584.1,229.5 586.0,220.5 587.9,212.2 589.9,205.1 591.8,199.2 593.8,194.9 595.7,192.2 597.6,191.2 599.6,192.1 601.5,194.6 603.4,198.9 605.4,204.7 607.3,212.0 609.2,220.4 611.2,229.8 613.1,239.9 615.1,250.3 617.0,260.8 618.9,271.1 620.9,280.7 622.8,289.5 624.8,297.2 626.7,303.5 628.6,308.2 630.6,311.1 632.5,312.2 634.4,311.5 636.4,308.9 638.3,304.5 640.2,298.4 642.2,290.8 644.1,281.9 646.1,272.0 648.0,261.4 649.9,250.4 651.9,239.2 653.8,228.4 655.8,218.1 657.7,208.8 659.6,200.6 661.6,193.9 663.5,188.8 665.4,185.6 667.4,184.3 669.3,184.9 671.2,187.6 673.2,192.1 675.1,198.5 677.1,206.4 679.0,215.7 680.9,226.1 682.9,237.2 684.8,248.9 686.8,260.6 688.7,272.1 690.6,282.9 692.6,292.9 694.5,301.5 696.4,308.7 698.4,314.2 700.3,317.7 702.2,319.2 704.2,318.6 706.1,316.0 708.1,311.3 710.0,304.7" fill="none" stroke="#dc2626" stroke-width="2.5"/>
-<path d="M 90 242 L 710 188" fill="none" stroke="#fca5a5" stroke-width="1.5" stroke-dasharray="5,4"/>
-<path d="M 90 258 L 710 312" fill="none" stroke="#fca5a5" stroke-width="1.5" stroke-dasharray="5,4"/>
-<text x="160" y="150" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">liten svängning</text>
-<line x1="360.0" y1="150.0" x2="590.0" y2="150.0" stroke="#dc2626" stroke-width="2"/>
-<polygon points="600.0,150.0 590.0,155.5 590.0,144.5" fill="#dc2626"/>
-<text x="640" y="150" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="bold">allt större</text>
-<rect x="150" y="360" width="500" height="75" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="6"/>
-<text x="400" y="388" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Träffas ett föremål i precis rätt takt</text>
-<text x="400" y="412" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">byggs svängningen upp och blir större och större</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Resonans är när rätt frekvens får ett föremål att svänga allt kraftigare</text>
+
+<!-- ===== LEFT: tuning fork on a resonance box (resonanslåda) ===== -->
+<text x="195" y="78" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">Resonanslåda</text>
+
+<!-- resonance box (hollow) -->
+<rect x="120" y="300" width="150" height="90" fill="#fde9b5" stroke="#b45309" stroke-width="3" rx="6"/>
+<rect x="134" y="314" width="122" height="62" fill="none" stroke="#b45309" stroke-width="1.4" rx="4" stroke-dasharray="5,4"/>
+<text x="195" y="350" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">luften inne</text>
+<text x="195" y="366" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">svänger med</text>
+
+<!-- tuning fork (stamgaffel) standing on the box -->
+<rect x="190" y="285" width="12" height="18" fill="#9ca3af" stroke="#374151" stroke-width="1.5"/>
+<rect x="175" y="160" width="9" height="128" rx="3" fill="#9ca3af" stroke="#374151" stroke-width="1.5"/>
+<rect x="208" y="160" width="9" height="128" rx="3" fill="#9ca3af" stroke="#374151" stroke-width="1.5"/>
+<rect x="175" y="284" width="42" height="9" rx="3" fill="#9ca3af" stroke="#374151" stroke-width="1.5"/>
+<text x="196" y="150" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">stämgaffel</text>
+
+<!-- vibration arcs (it swings) -->
+<path d="M 224 200 A 26 26 0 0 1 224 168" fill="none" stroke="#16a34a" stroke-width="2"/>
+<path d="M 234 210 A 38 38 0 0 1 234 158" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="260" y="190" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="start" font-weight="bold">starkt</text>
+<text x="260" y="208" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="start" font-weight="bold">ljud</text>
+
+<text x="195" y="412" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Lådan svänger i samma takt</text>
+<text x="195" y="430" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">→ ljudet blir mycket starkare</text>
+
+<!-- divider -->
+<line x1="320" y1="70" x2="320" y2="440" stroke="#e5e7eb" stroke-width="2"/>
+
+<!-- ===== RIGHT: growing-amplitude wave (clean envelope) ===== -->
+<text x="560" y="78" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Knuffar i rätt takt → större svängning</text>
+
+<!-- centre baseline -->
+<line x1="360" y1="250" x2="760" y2="250" stroke="#d1d5db" stroke-width="1.2" stroke-dasharray="4,3"/>
+
+<!-- growing amplitude envelope (two diverging dashed guide lines) -->
+<line x1="360" y1="244" x2="752" y2="150" stroke="#fca5a5" stroke-width="1.5" stroke-dasharray="6,5"/>
+<line x1="360" y1="256" x2="752" y2="350" stroke="#fca5a5" stroke-width="1.5" stroke-dasharray="6,5"/>
+
+<!-- the swing wave with growing amplitude, drawn as a smooth path of quadratic bumps -->
+<path d="M 360 250
+         Q 384 238 408 250 Q 432 262 456 250
+         Q 482 232 508 250 Q 534 268 560 250
+         Q 588 222 616 250 Q 644 278 672 250
+         Q 702 206 732 250 Q 748 272 760 250"
+      fill="none" stroke="#dc2626" stroke-width="3"/>
+
+<text x="395" y="300" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">liten</text>
+<text x="710" y="395" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">allt större</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Resonans: drivs något i sin egen takt (frekvens) byggs svängningen upp och blir allt kraftigare</text>
 </svg>

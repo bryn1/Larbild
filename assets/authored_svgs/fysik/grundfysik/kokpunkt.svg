@@ -1,47 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
-<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kokpunkt (vätska kokar, blir gas)</text>
-<rect x="148" y="100" width="24" height="260" rx="12" fill="#f3f4f6" stroke="#1f2937" stroke-width="2"/>
-<circle cx="160" cy="378" r="22" fill="#dc2626" stroke="#1f2937" stroke-width="2"/>
-<rect x="153" y="143.3" width="14" height="218.7" fill="#dc2626"/>
-<circle cx="160" cy="378" r="16" fill="#dc2626"/>
-<line x1="172" y1="360.0" x2="182" y2="360.0" stroke="#1f2937" stroke-width="1.5"/>
-<text x="204" y="364.0" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">0 °C</text>
-<line x1="172" y1="251.7" x2="182" y2="251.7" stroke="#1f2937" stroke-width="1.5"/>
-<text x="204" y="255.66666666666669" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">50 °C</text>
-<line x1="172" y1="143.3" x2="182" y2="143.3" stroke="#1f2937" stroke-width="1.5"/>
-<text x="204" y="147.33333333333334" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start" font-weight="bold">100 °C</text>
-<rect x="255" y="127.3" width="115" height="32" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-<text x="312" y="147.33333333333334" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Kokpunkt</text>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kokpunkt — vatten kokar vid 100 °C</text>
+
+<!-- thermometer -->
+<rect x="120" y="100" width="24" height="250" rx="12" fill="#f3f4f6" stroke="#1f2937" stroke-width="2"/>
+<circle cx="132" cy="368" r="22" fill="#dc2626" stroke="#1f2937" stroke-width="2"/>
+<rect x="125" y="143" width="14" height="218" fill="#dc2626"/>
+<circle cx="132" cy="368" r="16" fill="#dc2626"/>
+<line x1="144" y1="350" x2="154" y2="350" stroke="#1f2937" stroke-width="1.5"/>
+<text x="176" y="354" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">0 °C</text>
+<line x1="144" y1="246" x2="154" y2="246" stroke="#1f2937" stroke-width="1.5"/>
+<text x="176" y="250" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">50 °C</text>
+<line x1="144" y1="143" x2="154" y2="143" stroke="#1f2937" stroke-width="1.5"/>
+<text x="176" y="147" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start" font-weight="bold">100 °C</text>
+<rect x="250" y="127" width="130" height="32" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="315" y="148" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Kokpunkt</text>
+
+<!-- pot of WATER -->
 <rect x="470" y="230" width="230" height="130" fill="#dbeafe" stroke="#1f2937" stroke-width="2.5"/>
-<line x1="470" y1="252" x2="700" y2="252" stroke="#2563eb" stroke-width="2"/>
-<circle cx="575.8" cy="309.3" r="6.7" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="578.3" cy="304.7" r="5.3" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="523.8" cy="305.0" r="5.5" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="641.8" cy="268.3" r="4.2" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="505.6" cy="331.2" r="5.8" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="496.1" cy="346.4" r="6.9" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="614.9" cy="314.2" r="3.6" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="490.9" cy="306.5" r="3.2" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="524.9" cy="281.3" r="3.1" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="578.0" cy="298.8" r="6.4" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="588.7" cy="316.3" r="5.0" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="616.5" cy="300.2" r="4.1" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="681.5" cy="347.6" r="6.4" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="625.3" cy="287.7" r="3.9" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="544.1" cy="266.2" r="6.1" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<circle cx="565.7" cy="334.5" r="4.5" fill="white" stroke="#2563eb" stroke-width="1.2"/>
-<path d="M 522.0 218.0 Q 524.0 212.0 526.0 218.0 Q 528.0 224.0 530.0 218.0 Q 532.0 212.0 534.0 218.0 Q 536.0 224.0 538.0 218.0" fill="none" stroke="#9ca3af" stroke-width="2"/>
-<path d="M 530 218 q 10 -22 0 -42" fill="none" stroke="#9ca3af" stroke-width="2"/>
-<path d="M 577.0 218.0 Q 579.0 212.0 581.0 218.0 Q 583.0 224.0 585.0 218.0 Q 587.0 212.0 589.0 218.0 Q 591.0 224.0 593.0 218.0" fill="none" stroke="#9ca3af" stroke-width="2"/>
-<path d="M 585 218 q 10 -22 0 -42" fill="none" stroke="#9ca3af" stroke-width="2"/>
-<path d="M 632.0 218.0 Q 634.0 212.0 636.0 218.0 Q 638.0 224.0 640.0 218.0 Q 642.0 212.0 644.0 218.0 Q 646.0 224.0 648.0 218.0" fill="none" stroke="#9ca3af" stroke-width="2"/>
-<path d="M 640 218 q 10 -22 0 -42" fill="none" stroke="#9ca3af" stroke-width="2"/>
-<text x="585.0" y="198" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">ånga (gas)</text>
+<line x1="470" y1="255" x2="700" y2="255" stroke="#2563eb" stroke-width="2"/>
+<!-- clear WATER label inside the pot -->
+<text x="585" y="300" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">VATTEN</text>
+<text x="585" y="328" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">(H₂O)</text>
+<!-- bubbles throughout -->
+<circle cx="505" cy="345" r="6" fill="white" stroke="#2563eb" stroke-width="1.2"/>
+<circle cx="530" cy="335" r="5" fill="white" stroke="#2563eb" stroke-width="1.2"/>
+<circle cx="640" cy="343" r="6" fill="white" stroke="#2563eb" stroke-width="1.2"/>
+<circle cx="665" cy="330" r="5" fill="white" stroke="#2563eb" stroke-width="1.2"/>
+<circle cx="555" cy="350" r="4" fill="white" stroke="#2563eb" stroke-width="1.2"/>
+<circle cx="610" cy="348" r="5" fill="white" stroke="#2563eb" stroke-width="1.2"/>
+<!-- steam -->
+<path d="M 540 226 q 10 -22 0 -42" fill="none" stroke="#9ca3af" stroke-width="2"/>
+<path d="M 585 226 q 10 -22 0 -42" fill="none" stroke="#9ca3af" stroke-width="2"/>
+<path d="M 630 226 q 10 -22 0 -42" fill="none" stroke="#9ca3af" stroke-width="2"/>
+<text x="585" y="170" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">vattenånga (gas)</text>
+<!-- flame under pot -->
 <path d="M 540 390 Q 531 368 540 362 Q 549 368 540 390 Z" fill="#f59e0b" stroke="#dc2626" stroke-width="1.5"/>
 <path d="M 585 390 Q 576 368 585 362 Q 594 368 585 390 Z" fill="#f59e0b" stroke="#dc2626" stroke-width="1.5"/>
 <path d="M 630 390 Q 621 368 630 362 Q 639 368 630 390 Z" fill="#f59e0b" stroke="#dc2626" stroke-width="1.5"/>
-<text x="718" y="378" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start" font-weight="bold">värme</text>
-<text x="400" y="425" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Vid kokpunkten bildas bubblor i hela vätskan, inte bara vid ytan</text>
+<text x="585" y="408" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">värme</text>
+
+<text x="400" y="440" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Vid 100 °C kokar vattnet — bubblor bildas i hela vätskan och vatten blir ånga</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Kokpunkten är temperaturen där en vätska kokar och blir gas</text>
 </svg>

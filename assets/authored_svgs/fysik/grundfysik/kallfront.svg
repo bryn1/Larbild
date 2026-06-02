@@ -1,29 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
-<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kallfront (kall luft tränger in)</text>
-<rect x="0" y="380" width="800" height="120" fill="#a3a3a3"/>
-<line x1="0" y1="380" x2="800" y2="380" stroke="#1f2937" stroke-width="2"/>
-<path d="M 280 380 Q 360 200 520 130 L 800 130 L 800 380 Z" fill="#fde68a" fill-opacity="0.8"/>
-<text x="640" y="250" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Varm luft</text>
-<line x1="560.0" y1="300.0" x2="595.9" y2="210.2" stroke="#dc2626" stroke-width="2.5"/>
-<polygon points="600.0,200.0 600.5,212.1 591.3,208.4" fill="#dc2626"/>
-<text x="610" y="250" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="start">stiger</text>
-<path d="M 0 380 L 0 150 Q 150 200 300 380 Z" fill="#93c5fd" fill-opacity="0.85"/>
-<text x="110" y="270" font-family="Arial,sans-serif" font-size="15" fill="#1e3a8a" text-anchor="middle" font-weight="bold">Kall luft</text>
-<line x1="150.0" y1="350.0" x2="237.0" y2="350.0" stroke="#2563eb" stroke-width="3.5"/>
-<polygon points="250.0,350.0 237.0,355.9 237.0,344.1" fill="#2563eb"/>
-<text x="120" y="335" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="start">fronten rör sig</text>
-<ellipse cx="380" cy="160" rx="55" ry="28" fill="#6b7280"/>
-<ellipse cx="430" cy="150" rx="45" ry="26" fill="#6b7280"/>
-<line x1="330" y1="195" x2="324" y2="230" stroke="#2563eb" stroke-width="2"/>
-<line x1="348" y1="195" x2="342" y2="230" stroke="#2563eb" stroke-width="2"/>
-<line x1="366" y1="195" x2="360" y2="230" stroke="#2563eb" stroke-width="2"/>
-<line x1="384" y1="195" x2="378" y2="230" stroke="#2563eb" stroke-width="2"/>
-<line x1="402" y1="195" x2="396" y2="230" stroke="#2563eb" stroke-width="2"/>
-<line x1="420" y1="195" x2="414" y2="230" stroke="#2563eb" stroke-width="2"/>
-<line x1="438" y1="195" x2="432" y2="230" stroke="#2563eb" stroke-width="2"/>
-<line x1="456" y1="195" x2="450" y2="230" stroke="#2563eb" stroke-width="2"/>
-<text x="400" y="255" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">regn</text>
-<text x="400" y="420" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle">Kall luft tränger in under den varma och lyfter den → regn och blåst</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En kallfront är gränsen där kall luft tränger in under varm luft</text>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kallfront (kall luft tränger in under)</text>
+
+<!-- sky background -->
+<rect x="0" y="55" width="800" height="335" fill="#fffbeb"/>
+
+<!-- ground -->
+<rect x="0" y="390" width="800" height="60" fill="#a3a3a3"/>
+<line x1="0" y1="390" x2="800" y2="390" stroke="#1f2937" stroke-width="2"/>
+
+<!-- WARM air sits on the right and gets LIFTED up over the cold wedge at the front -->
+<path d="M 360 390 L 800 390 L 800 80 L 360 80 Q 300 150 250 280 Q 320 350 360 390 Z" fill="#fde68a" fill-opacity="0.85"/>
+<text x="600" y="200" font-family="Arial,sans-serif" font-size="17" fill="#92400e" text-anchor="middle" font-weight="bold">Varm luft</text>
+<text x="600" y="224" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">(lättare — lyfts uppåt)</text>
+<!-- warm air rising arrow up the front slope -->
+<line x1="310" y1="320" x2="345" y2="200" stroke="#dc2626" stroke-width="3"/>
+<polygon points="349,188 339,201 332,193" fill="#dc2626"/>
+<text x="300" y="160" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">varm luft stiger</text>
+
+<!-- COLD air: dense wedge hugging the ground on the LEFT, tapering to a thin leading edge -->
+<!-- that slides IN UNDER the warm air on the right -->
+<path d="M 0 390 L 0 130 Q 120 180 250 280 Q 300 320 360 390 Z" fill="#3b82f6" fill-opacity="0.88"/>
+<text x="110" y="300" font-family="Arial,sans-serif" font-size="17" fill="white" text-anchor="middle" font-weight="bold">Kall luft</text>
+<text x="110" y="324" font-family="Arial,sans-serif" font-size="12" fill="#dbeafe" text-anchor="middle">(tyngre — kryper in under)</text>
+
+<!-- emphasise the wedge going UNDER: arrow along the ground pushing right, beneath warm air -->
+<line x1="200" y1="368" x2="330" y2="368" stroke="#1e3a8a" stroke-width="4"/>
+<polygon points="345,368 330,374 330,362" fill="#1e3a8a"/>
+<text x="250" y="358" font-family="Arial,sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle" font-weight="bold">tränger in under</text>
+
+<!-- rain cloud + rain at the steep front -->
+<ellipse cx="330" cy="120" rx="55" ry="26" fill="#6b7280"/>
+<ellipse cx="380" cy="112" rx="42" ry="24" fill="#6b7280"/>
+<line x1="305" y1="150" x2="299" y2="180" stroke="#2563eb" stroke-width="2"/>
+<line x1="325" y1="150" x2="319" y2="180" stroke="#2563eb" stroke-width="2"/>
+<line x1="345" y1="150" x2="339" y2="180" stroke="#2563eb" stroke-width="2"/>
+<line x1="365" y1="150" x2="359" y2="180" stroke="#2563eb" stroke-width="2"/>
+<line x1="385" y1="150" x2="379" y2="180" stroke="#2563eb" stroke-width="2"/>
+<text x="345" y="205" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">regn</text>
+
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Den tunga kalla luften kilar in UNDER den varma och lyfter den → regn och blåst</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En kallfront är gränsen där kall luft tränger in under varm luft</text>
 </svg>

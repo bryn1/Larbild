@@ -1,23 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Medelhastighet</text>
-<text x="400" y="88" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">v̄ = total sträcka / total tid</text>
-<line x1="120.0" y1="200.0" x2="680.0" y2="200.0" stroke="#1f2937" stroke-width="3"/>
-<circle cx="120.0" cy="200.0" r="5.0" fill="#16a34a" stroke="#1f2937" stroke-width="2"/>
-<text x="120" y="222" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">Hem</text>
-<circle cx="680.0" cy="200.0" r="5.0" fill="#dc2626" stroke="#1f2937" stroke-width="2"/>
-<text x="680" y="222" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Skolan</text>
-<circle cx="400.0" cy="170.0" r="9.0" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
-<line x1="400.0" y1="179.0" x2="400.0" y2="200.0" stroke="#1f2937" stroke-width="2"/>
+<text x="400" y="88" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">v = total sträcka / total tid</text>
+
+<!-- route line -->
+<line x1="120" y1="200" x2="680" y2="200" stroke="#1f2937" stroke-width="3"/>
+<circle cx="120" cy="200" r="6" fill="#16a34a" stroke="#1f2937" stroke-width="2"/>
+<text x="120" y="224" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">Hem</text>
+<circle cx="680" cy="200" r="6" fill="#dc2626" stroke="#1f2937" stroke-width="2"/>
+<text x="680" y="224" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Skolan</text>
+
+<!-- red light stop -->
+<circle cx="400" cy="170" r="9" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<line x1="400" y1="179" x2="400" y2="200" stroke="#1f2937" stroke-width="2"/>
 <text x="400" y="156" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Rödljus (du stannar)</text>
-<line x1="120.0" y1="244.0" x2="680.0" y2="244.0" stroke="#16a34a" stroke-width="2"/>
-<line x1="120.0" y1="237.0" x2="120.0" y2="251.0" stroke="#16a34a" stroke-width="2"/>
-<line x1="680.0" y1="237.0" x2="680.0" y2="251.0" stroke="#16a34a" stroke-width="2"/>
+
+<!-- distance bracket -->
+<line x1="120" y1="244" x2="680" y2="244" stroke="#16a34a" stroke-width="2"/>
+<line x1="120" y1="237" x2="120" y2="251" stroke="#16a34a" stroke-width="2"/>
+<line x1="680" y1="237" x2="680" y2="251" stroke="#16a34a" stroke-width="2"/>
 <text x="400" y="262" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">total sträcka = 2000 m</text>
+
+<!-- worked example box -->
 <rect x="160" y="300" width="480" height="130" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
 <text x="400" y="328" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Exempel:  s = 2000 m,   t = 500 s (stopp inräknat)</text>
-<text x="400" y="362" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">v̄ = 2000 / 500 = 4 m/s</text>
+<text x="400" y="362" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">v = 2000 / 500 = 4 m/s</text>
 <text x="400" y="394" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Stoppet vid rödljuset räknas med i tiden</text>
 <text x="400" y="414" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">— därför lägre än den högsta farten under resan</text>
+
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Medelhastighet är hela sträckan delad med hela tiden — stopp räknas med</text>
 </svg>

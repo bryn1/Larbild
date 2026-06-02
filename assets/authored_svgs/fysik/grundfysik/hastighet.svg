@@ -1,20 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Hastighet (v = s / t)</text>
-<line x1="100" y1="200" x2="700" y2="200" stroke="#1f2937" stroke-width="3"/>
-<line x1="100" y1="200" x2="700" y2="200" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="20,16"/>
-<circle cx="180" cy="193" r="16" fill="none" stroke="#1f2937" stroke-width="3"/>
-<circle cx="230" cy="193" r="16" fill="none" stroke="#1f2937" stroke-width="3"/>
-<path d="M 180 193 L 205 175 L 230 193 M 205 175 L 210 161" fill="none" stroke="#2563eb" stroke-width="2.5"/>
-<line x1="250.0" y1="175.0" x2="318.0" y2="175.0" stroke="#dc2626" stroke-width="3"/>
-<polygon points="330.0,175.0 318.0,180.4 318.0,169.6" fill="#dc2626"/>
-<text x="290" y="162" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">v</text>
-<line x1="180" y1="235" x2="600" y2="235" stroke="#16a34a" stroke-width="2"/>
-<line x1="180" y1="228" x2="180" y2="242" stroke="#16a34a" stroke-width="2"/>
-<line x1="600" y1="228" x2="600" y2="242" stroke="#16a34a" stroke-width="2"/>
-<text x="390" y="258" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">sträcka s = 100 m</text>
-<text x="400" y="320" font-family="Arial,sans-serif" font-size="26" fill="#1e40af" text-anchor="middle" font-weight="bold">v = s / t</text>
-<text x="400" y="358" font-family="Arial,sans-serif" font-size="20" fill="#1e40af" text-anchor="middle" font-weight="bold">v = 100 m / 20 s = 5 m/s</text>
-<text x="400" y="392" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Hastighet mäts t.ex. i m/s eller km/h</text>
+
+<!-- road -->
+<line x1="100" y1="190" x2="700" y2="190" stroke="#1f2937" stroke-width="3"/>
+<line x1="100" y1="190" x2="700" y2="190" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="20,16"/>
+
+<!-- car -->
+<circle cx="170" cy="183" r="16" fill="none" stroke="#1f2937" stroke-width="3"/>
+<circle cx="220" cy="183" r="16" fill="none" stroke="#1f2937" stroke-width="3"/>
+<path d="M 170 183 L 195 165 L 220 183 M 195 165 L 200 151" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<!-- velocity arrow -->
+<line x1="245" y1="165" x2="318" y2="165" stroke="#dc2626" stroke-width="3"/>
+<polygon points="330,165 318,170.4 318,159.6" fill="#dc2626"/>
+<text x="288" y="152" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">v</text>
+
+<!-- distance measurement s -->
+<line x1="170" y1="225" x2="600" y2="225" stroke="#16a34a" stroke-width="2"/>
+<line x1="170" y1="218" x2="170" y2="232" stroke="#16a34a" stroke-width="2"/>
+<line x1="600" y1="218" x2="600" y2="232" stroke="#16a34a" stroke-width="2"/>
+<text x="385" y="248" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">sträcka s = 100 m</text>
+
+<!-- explicit time t = 20 s as its own quantity -->
+<rect x="120" y="280" width="240" height="80" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="240" y="312" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">Tiden det tog:</text>
+<text x="240" y="345" font-family="Arial,sans-serif" font-size="26" fill="#1e40af" text-anchor="middle" font-weight="bold">t = 20 s</text>
+
+<!-- worked formula -->
+<rect x="400" y="280" width="280" height="80" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="540" y="312" font-family="Arial,sans-serif" font-size="20" fill="#1e40af" text-anchor="middle" font-weight="bold">v = s / t</text>
+<text x="540" y="345" font-family="Arial,sans-serif" font-size="20" fill="#1e40af" text-anchor="middle" font-weight="bold">= 100 / 20 = 5 m/s</text>
+
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Cykeln åker 100 m på 20 s → hastigheten är 5 m/s</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hastighet är hur långt något rör sig på en viss tid</text>
 </svg>

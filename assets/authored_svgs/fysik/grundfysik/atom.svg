@@ -2,59 +2,46 @@
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Atom — kärna och elektronskal</text>
 
-<!-- electron shells (orbits) -->
-<circle cx="350" cy="250" r="90" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
-<circle cx="350" cy="250" r="150" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
+<!-- one electron shell (orbit) -->
+<circle cx="300" cy="250" r="130" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
 
-<!-- nucleus -->
-<circle cx="350" cy="250" r="46" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>
-<!-- protons (red, p+) -->
-<circle cx="335" cy="238" r="18" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
-<text x="335" y="244" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">p+</text>
-<circle cx="368" cy="262" r="18" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
-<text x="368" y="268" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">p+</text>
-<!-- neutron (gray, n) -->
-<circle cx="335" cy="265" r="18" fill="#6b7280" stroke="#374151" stroke-width="2"/>
-<text x="335" y="271" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">n</text>
-<circle cx="368" cy="235" r="18" fill="#6b7280" stroke="#374151" stroke-width="2"/>
-<text x="368" y="241" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">n</text>
+<!-- nucleus: 2 protons + 2 neutrons -->
+<circle cx="300" cy="250" r="48" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>
+<circle cx="285" cy="237" r="18" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
+<text x="285" y="243" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">p+</text>
+<circle cx="318" cy="263" r="18" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
+<text x="318" y="269" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">p+</text>
+<circle cx="285" cy="267" r="18" fill="#6b7280" stroke="#374151" stroke-width="2"/>
+<text x="285" y="273" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">n</text>
+<circle cx="318" cy="233" r="18" fill="#6b7280" stroke="#374151" stroke-width="2"/>
+<text x="318" y="239" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">n</text>
 
-<!-- electrons on inner shell (e-) -->
-<circle cx="350" cy="160" r="13" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
-<text x="350" y="165" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
-<circle cx="350" cy="340" r="13" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
-<text x="350" y="345" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
-<!-- electrons on outer shell -->
-<circle cx="350" cy="100" r="13" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
-<text x="350" y="105" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
-<circle cx="244" cy="356" r="13" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
-<text x="244" y="361" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
-<circle cx="456" cy="356" r="13" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
-<text x="456" y="361" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
+<!-- exactly 2 electrons on the shell (matches 2 protons) -->
+<circle cx="300" cy="120" r="14" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="300" y="125" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
+<circle cx="300" cy="380" r="14" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="300" y="385" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
+
+<!-- count box: protons = electrons -->
+<rect x="490" y="120" width="290" height="130" rx="8" fill="white" stroke="#16a34a" stroke-width="2.5"/>
+<text x="635" y="148" font-family="Arial,sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold">Neutral atom</text>
+<circle cx="520" cy="178" r="12" fill="#dc2626"/>
+<text x="520" y="183" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">p+</text>
+<text x="545" y="183" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">2 protoner (+)</text>
+<circle cx="520" cy="212" r="12" fill="#2563eb"/>
+<text x="520" y="217" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
+<text x="545" y="217" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">2 elektroner (−)</text>
+<text x="635" y="240" font-family="Arial,sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold">lika många: 2 = 2</text>
 
 <!-- callout: nucleus -->
-<line x1="350" y1="204" x2="350" y2="250" stroke="#92400e" stroke-width="0"/>
-<line x1="396" y1="232" x2="470" y2="180" stroke="#b45309" stroke-width="1.5"/>
-<text x="540" y="176" font-family="Arial,sans-serif" font-size="14" fill="#b45309" text-anchor="middle" font-weight="bold">Atomkärna</text>
-<text x="540" y="195" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">protoner + neutroner</text>
+<line x1="348" y1="232" x2="470" y2="300" stroke="#b45309" stroke-width="1.5"/>
+<text x="560" y="300" font-family="Arial,sans-serif" font-size="14" fill="#b45309" text-anchor="middle" font-weight="bold">Atomkärna</text>
+<text x="560" y="319" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">protoner + neutroner</text>
 
 <!-- callout: electron -->
-<line x1="363" y1="340" x2="470" y2="370" stroke="#1e40af" stroke-width="1.5"/>
-<text x="540" y="368" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Elektroner</text>
-<text x="540" y="387" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">snurrar i skal runt kärnan</text>
+<line x1="314" y1="380" x2="470" y2="370" stroke="#1e40af" stroke-width="1.5"/>
+<text x="560" y="368" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Elektroner</text>
+<text x="560" y="387" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">i skal runt kärnan</text>
 
-<!-- charge legend -->
-<rect x="600" y="225" width="170" height="120" fill="white" stroke="#9ca3af" stroke-width="1.5" rx="6"/>
-<text x="685" y="248" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Laddning</text>
-<circle cx="625" cy="275" r="11" fill="#dc2626"/>
-<text x="625" y="280" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">p+</text>
-<text x="645" y="280" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="start">proton: plus (+)</text>
-<circle cx="625" cy="305" r="11" fill="#2563eb"/>
-<text x="625" y="310" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
-<text x="645" y="310" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="start">elektron: minus (−)</text>
-<circle cx="625" cy="333" r="11" fill="#6b7280"/>
-<text x="625" y="338" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">n</text>
-<text x="645" y="338" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="start">neutron: ingen (0)</text>
-
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En atom har en kärna med protoner (p+) och neutroner (n), och elektroner (e−) i skal runt om</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">I en neutral atom är antalet protoner (p+) lika med antalet elektroner (e−)</text>
 </svg>

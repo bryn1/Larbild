@@ -3,35 +3,61 @@
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Strömning (vätska eller gas i rörelse)</text>
 <text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Många partiklar rör sig åt samma håll — ett flöde</text>
 
-<!-- A pipe / channel containing the flow -->
+<!-- pipe / channel -->
 <rect x="90" y="150" width="620" height="200" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
 <text x="120" y="142" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="start">Rör / kanal</text>
 
-<!-- Streamlines: smooth horizontal flow lines with arrowheads pointing right -->
-<line x1="120" y1="185" x2="650" y2="185" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="662,185 650,189 650,181" fill="#2563eb"/>
-<line x1="120" y1="220" x2="650" y2="220" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="662,220 650,224 650,216" fill="#2563eb"/>
-<line x1="120" y1="255" x2="650" y2="255" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="662,255 650,259 650,251" fill="#2563eb"/>
-<line x1="120" y1="290" x2="650" y2="290" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="662,290 650,294 650,286" fill="#2563eb"/>
-<line x1="120" y1="325" x2="650" y2="325" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="662,325 650,329 650,321" fill="#2563eb"/>
+<!-- Particles, each WITH its own motion arrow attached (dot + short arrow to the right) -->
+<!-- row 1 -->
+<g>
+<circle cx="140" cy="185" r="7" fill="#1e40af"/>
+<line x1="147" y1="185" x2="178" y2="185" stroke="#1e40af" stroke-width="2.5"/>
+<polygon points="188,185 178,189 178,181" fill="#1e40af"/>
+</g>
+<g>
+<circle cx="300" cy="185" r="7" fill="#1e40af"/>
+<line x1="307" y1="185" x2="338" y2="185" stroke="#1e40af" stroke-width="2.5"/>
+<polygon points="348,185 338,189 338,181" fill="#1e40af"/>
+</g>
+<g>
+<circle cx="470" cy="185" r="7" fill="#1e40af"/>
+<line x1="477" y1="185" x2="508" y2="185" stroke="#1e40af" stroke-width="2.5"/>
+<polygon points="518,185 508,189 508,181" fill="#1e40af"/>
+</g>
+<!-- row 2 -->
+<g>
+<circle cx="210" cy="240" r="7" fill="#1e40af"/>
+<line x1="217" y1="240" x2="248" y2="240" stroke="#1e40af" stroke-width="2.5"/>
+<polygon points="258,240 248,244 248,236" fill="#1e40af"/>
+</g>
+<g>
+<circle cx="380" cy="240" r="7" fill="#1e40af"/>
+<line x1="387" y1="240" x2="418" y2="240" stroke="#1e40af" stroke-width="2.5"/>
+<polygon points="428,240 418,244 418,236" fill="#1e40af"/>
+</g>
+<g>
+<circle cx="550" cy="240" r="7" fill="#1e40af"/>
+<line x1="557" y1="240" x2="588" y2="240" stroke="#1e40af" stroke-width="2.5"/>
+<polygon points="598,240 588,244 588,236" fill="#1e40af"/>
+</g>
+<!-- row 3 -->
+<g>
+<circle cx="140" cy="300" r="7" fill="#1e40af"/>
+<line x1="147" y1="300" x2="178" y2="300" stroke="#1e40af" stroke-width="2.5"/>
+<polygon points="188,300 178,304 178,296" fill="#1e40af"/>
+</g>
+<g>
+<circle cx="310" cy="300" r="7" fill="#1e40af"/>
+<line x1="317" y1="300" x2="348" y2="300" stroke="#1e40af" stroke-width="2.5"/>
+<polygon points="358,300 348,304 348,296" fill="#1e40af"/>
+</g>
+<g>
+<circle cx="480" cy="300" r="7" fill="#1e40af"/>
+<line x1="487" y1="300" x2="518" y2="300" stroke="#1e40af" stroke-width="2.5"/>
+<polygon points="528,300 518,304 518,296" fill="#1e40af"/>
+</g>
 
-<!-- Particles riding the flow (small dots) -->
-<circle cx="200" cy="185" r="5" fill="#1e40af"/>
-<circle cx="350" cy="220" r="5" fill="#1e40af"/>
-<circle cx="280" cy="290" r="5" fill="#1e40af"/>
-<circle cx="450" cy="255" r="5" fill="#1e40af"/>
-<circle cx="520" cy="325" r="5" fill="#1e40af"/>
-<circle cx="400" cy="185" r="5" fill="#1e40af"/>
-
-<!-- Direction label -->
 <text x="400" y="395" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">Strömningsriktning →</text>
-
-<!-- Everyday example caption: cold air from fridge -->
-<text x="400" y="430" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">T.ex. kall luft som strömmar ut ur kylskåpet</text>
-
+<text x="400" y="425" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">Varje partikel rör sig — pilen sitter på partikeln</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vid strömning rör sig partiklarna i en vätska eller gas tillsammans åt samma håll</text>
 </svg>

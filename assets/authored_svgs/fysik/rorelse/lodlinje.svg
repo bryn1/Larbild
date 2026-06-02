@@ -1,19 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Lodlinje</text>
-<circle cx="400.0" cy="95.0" r="8.0" fill="#6b7280" stroke="#1f2937" stroke-width="2"/>
-<text x="400" y="81" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Du håller stilla</text>
-<line x1="400.0" y1="95.0" x2="400.0" y2="360.0" stroke="#f59e0b" stroke-width="3"/>
-<polygon points="386.0,360.0 414.0,360.0 400.0,394.0" fill="#6b7280" stroke="#1f2937" stroke-width="2"/>
-<text x="426" y="378" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">Tyngd (mutter)</text>
-<line x1="400.0" y1="95.0" x2="400.0" y2="420.0" stroke="#6b7280" stroke-width="1" stroke-dasharray="5,4"/>
-<polyline points="140.0,430.0 660.0,395.0" fill="none" stroke="#92400e" stroke-width="4" stroke-linejoin="round"/>
-<text x="180" y="450" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="start">(marken kan luta — lodlinjen pekar ändå rakt ner)</text>
-<line x1="470.0" y1="200.0" x2="470.0" y2="308.0" stroke="#dc2626" stroke-width="3"/>
-<polygon points="470.0,320.0 463.4,308.0 476.6,308.0" fill="#dc2626"/>
-<text x="486" y="260" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">Tyngdkraften drar</text>
-<text x="486" y="276" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">rakt nedåt</text>
-<text x="314" y="230" font-family="Arial,sans-serif" font-size="13" fill="#f59e0b" text-anchor="end" font-weight="bold">Lodrät linje</text>
-<text x="314" y="246" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">mot jordens mitt</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En lodlinje är lodrät rakt ner mot jordens mitt — den visar var tyngdkraften drar</text>
+
+<!-- fixed hand/holder at top -->
+<rect x="355" y="78" width="90" height="16" fill="#6b7280" stroke="#1f2937" stroke-width="2" rx="3"/>
+<text x="400" y="71" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Du håller stilla</text>
+
+<!-- the plumb string: a clear vertical line -->
+<line x1="400" y1="94" x2="400" y2="360" stroke="#f59e0b" stroke-width="4"/>
+
+<!-- plumb bob (tyngd) -->
+<polygon points="384,360 416,360 400,398" fill="#6b7280" stroke="#1f2937" stroke-width="2.5"/>
+<text x="430" y="382" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">Tyngd (lod)</text>
+
+<!-- big clear label for the plumb line itself -->
+<text x="250" y="200" font-family="Arial,sans-serif" font-size="16" fill="#b45309" text-anchor="middle" font-weight="bold">Lodlinje</text>
+<text x="250" y="222" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">lodrät — rakt nedåt</text>
+<line x1="305" y1="205" x2="394" y2="205" stroke="#f59e0b" stroke-width="1.5"/>
+
+<!-- gravity arrow straight down, parallel to the line -->
+<line x1="500" y1="150" x2="500" y2="330" stroke="#dc2626" stroke-width="5"/>
+<polygon points="500,346 491,330 509,330" fill="#dc2626"/>
+<text x="516" y="250" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start" font-weight="bold">Tyngdkraften</text>
+<text x="516" y="270" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start">drar rakt ner</text>
+
+<!-- tilted ground to show the line stays vertical regardless of slope -->
+<line x1="120" y1="430" x2="680" y2="395" stroke="#92400e" stroke-width="5" stroke-linecap="round"/>
+<line x1="150" y1="432" x2="138" y2="446" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="250" y1="426" x2="238" y2="440" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="350" y1="420" x2="338" y2="434" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="450" y1="413" x2="438" y2="427" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="550" y1="407" x2="538" y2="421" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="640" y1="401" x2="628" y2="415" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="250" y="455" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Marken kan luta — lodlinjen pekar ändå rakt ner</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En lodlinje är lodrät rakt ner mot jordens mitt — den visar var tyngdkraften drar</text>
 </svg>
