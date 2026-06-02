@@ -88,7 +88,7 @@ class Config:
         self.LARBILD_ENV = os.environ.get("LARBILD_ENV", "production")
         # Canonical LAN bind. P0.3's deploy script + larbild.service serve here.
         self.HOST = os.environ.get("LARBILD_HOST", "0.0.0.0")
-        self.PORT = int(os.environ.get("LARBILD_PORT", "6767"))
+        self.PORT = int(os.environ.get("LARBILD_PORT", "6868"))
 
         # ── Foundational paths ────────────────────────────────────────
         # Resolved (not created) here so every phase reads one source of

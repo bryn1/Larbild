@@ -1,5 +1,5 @@
 # Lärbild — SFW educational image/film studio — BUILD PLAN
-*(owner-only LAN tool, 1 teacher, åk 7-9/LGR22, sibbis:6767, output fills sk2. Planned 2026-06-01. Design: Sibbis `/tmp/sfw_design/handoff/` from `sfw imaggen.zip` on backup-disk/docs.)*
+*(owner-only LAN tool, 1 teacher, åk 7-9/LGR22, sibbis:6868, output fills sk2. Planned 2026-06-01. Design: Sibbis `/tmp/sfw_design/handoff/` from `sfw imaggen.zip` on backup-disk/docs.)*
 
 ## Core finding: ~70% a fork of imagegen's backend
 Reuse (fork the infra modules from `/home/lektove/imagegen-repo/sibbis-app/`): GPU telemetry+routing (`api_gpus.py`), cross-host GPU lock (`gpu_lock.py` — **SHARE the same `lock:vm100-3090` key** so larbild+imagegen+chat don't OOM each other), vram_pause, Redis queue+SSE (`job_status.py`), ComfyUI client+workflow assembly+LoRA injection (`video.py`), ffmpeg mux, pnginfo embed, deploy pipeline (`deploy-sibbis.sh`→git-pull-on-Sibbis), AND **the consent-face schema (`faces`/`face_usage_log` CHECK-constraint pattern) — near-perfect template for Porträtt**.
@@ -8,7 +8,7 @@ NET-NEW: LGR22 taxonomy (production data — 17 subjects×102 areas+central, 8 i
 ## Rig: NEW `larbild` rig (NOT sk2). sk2=the Skola app repo (bryn1/skola, VM500); Lärbild is a distinct Flask app on Sibbis whose OUTPUT fills Skola content. Fresh repo `bryn1/larbild`, vendor/fork imagegen modules — NEVER a branch, never merge (CI guard rejects NSFW imports).
 
 ## Phases (P0→P10), ~40 atomic beads
-- **P0 Foundation** (crit): larbild repo + Flask shell (strip NSFW blueprints), SQLite+migrations, deploy script + larbild.service port 6767, isolated storage, UFW LAN-only.
+- **P0 Foundation** (crit): larbild repo + Flask shell (strip NSFW blueprints), SQLite+migrations, deploy script + larbild.service port 6868, isolated storage, UFW LAN-only.
 - **P1 Bridge+1GPU** (crit): fork ComfyUI client+LoRA injection, queue+POST /api/jobs+SSE, first real render on vm100, reuse gpu_lock+vram_pause.
 - **P2 Taxonomy+Library-read** (crit, ‖P1): ship taxonomy as prod data, resolveLora (backend-authoritative), /api/library, Bibliotek 3-level view + Centralt-innehåll panel, designsystem tokens.
 - **P3 Skapa bild+autoLoRA+autosort** (crit): funnel UI, param builder+submit (server-validate LoRA), live progress→auto-sort writeback.
@@ -21,7 +21,7 @@ NET-NEW: LGR22 taxonomy (production data — 17 subjects×102 areas+central, 8 i
 - **P10 Polish+acceptance**: designsystem fidelity, full SFW+GDPR isolation audit, reconcile-on-boot.
 Critical path: P0→P1→P3→P4→P10, gated by P9 (LoRA availability) + P7 (consent correctness).
 
-## Hard isolation (5 planes): separate repo (no merge, CI guard); **dedicated SFW-only model dir + backend LoRA allowlist** (reject any LoRA not in baseLora∪loraMatrix → NSFW injection impossible even via crafted request); separate storage/DB/port 6767; ChromaDB 3rd isolated instance IF built (recommend DEFER semantic search in v1); SFW-only checkpoints = output safety (not prompt filtering). SHARE ONLY the gpu_lock+vram_pause coordination (mutual exclusion, not data).
+## Hard isolation (5 planes): separate repo (no merge, CI guard); **dedicated SFW-only model dir + backend LoRA allowlist** (reject any LoRA not in baseLora∪loraMatrix → NSFW injection impossible even via crafted request); separate storage/DB/port 6868; ChromaDB 3rd isolated instance IF built (recommend DEFER semantic search in v1); SFW-only checkpoints = output safety (not prompt filtering). SHARE ONLY the gpu_lock+vram_pause coordination (mutual exclusion, not data).
 
 ## Consent/GDPR (Porträtt): DB CHECK floor `CHECK(is_minor=0 OR guardian_consent IS NOT NULL)` (physically can't persist minor w/o guardian) + API gate on create + API gate on use (server-recomputed consentOk, else 403) + ReActor only vs consented refs + audit row per use + GDPR delete cascades refs off disk + UI surfaces only consentOk.
 

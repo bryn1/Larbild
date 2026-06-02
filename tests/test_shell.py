@@ -16,7 +16,7 @@ def test_factory_builds_app():
     assert app is not None
     assert app.config["TESTING"] is True
     # Canonical LAN port survives config load.
-    assert app.config["PORT"] == 6767
+    assert app.config["PORT"] == 6868
 
 
 def test_healthz_ok():

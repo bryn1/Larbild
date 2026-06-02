@@ -5,7 +5,7 @@
 Lärbild is a single-teacher LAN tool for generating curriculum-aligned (åk 7-9 / LGR22)
 educational images and short films. Its output fills Skola (`sk2`) teaching content.
 
-- **Deploys to:** Sibbis, port **6767** (LAN-only, UFW-gated)
+- **Deploys to:** Sibbis, port **6868** (LAN-only, UFW-gated)
 - **Audience:** one teacher, owner-only — no public access, no multi-user
 - **Priority subjects:** fysik, teknik, kemi, biologi (science first), then the rest of LGR22
 - **Output safety model:** SFW is enforced by the *checkpoints + a backend LoRA allowlist*,
@@ -25,7 +25,7 @@ Five isolation planes:
 1. Separate repo (no merge; CI guard rejects NSFW imports)
 2. Dedicated SFW-only model dir + backend LoRA allowlist (reject any LoRA not in
    `baseLora ∪ loraMatrix` → NSFW injection impossible even via a crafted request)
-3. Separate storage / DB / port (6767)
+3. Separate storage / DB / port (6868)
 4. ChromaDB: a 3rd isolated instance **only if** semantic search is built (deferred in v1)
 5. SFW-only checkpoints are the actual safety boundary (output safety, not prompt filtering)
 

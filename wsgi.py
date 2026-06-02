@@ -2,11 +2,11 @@
 
 Production (gunicorn)::
 
-    gunicorn -w 2 -b 0.0.0.0:6767 wsgi:app
+    gunicorn -w 2 -b 0.0.0.0:6868 wsgi:app
 
 Dev (Flask)::
 
-    FLASK_APP=app:create_app flask run --port 6767
+    FLASK_APP=app:create_app flask run --port 6868
     # or simply:
     python wsgi.py
 """
