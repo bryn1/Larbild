@@ -87,6 +87,32 @@
     return `oklch(0.95 0.05 ${h})`;
   }
 
+  /**
+   * The Skapa-funnel link carrying the current browse context (lb-skapafix).
+   *
+   * The "Skapa här" / "Skapa det första" buttons hand the teacher straight into
+   * the create funnel pre-scoped to where they were browsing. The Bibliotek
+   * subject/area `id` values ARE the taxonomy slugs the funnel selects on (the
+   * /api/library tree keys nodes by the same slug the /api/taxonomy SoT uses), so
+   * they pass through verbatim as ``?subject=<id>&area=<id>``. skapa.jsx reads
+   * these on bootstrap and pre-selects the funnel (falling back to its science
+   * default when a param is absent/unknown).
+   *
+   * Pure URL assembly; url-encodes each id (defensive — slugs are simple, but
+   * never inject). Returns:
+   *   • "/skapa"                          when no subject is given (top-level
+   *                                        "Skapa bild" — let the funnel default),
+   *   • "/skapa?subject=<s>"              with a subject but no area,
+   *   • "/skapa?subject=<s>&area=<a>"     with both.
+   * The area is only ever included alongside a subject (areas are subject-scoped).
+   */
+  function skapaLink(subjectId, areaId) {
+    if (!subjectId) return "/skapa";
+    let qs = `subject=${encodeURIComponent(subjectId)}`;
+    if (areaId) qs += `&area=${encodeURIComponent(areaId)}`;
+    return `/skapa?${qs}`;
+  }
+
   return {
     PRIORITY_SUBJECTS,
     orderSubjects,
@@ -96,5 +122,6 @@
     centralText,
     subjColor,
     subjSoft,
+    skapaLink,
   };
 });

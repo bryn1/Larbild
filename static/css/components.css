@@ -114,6 +114,7 @@
   display: inline-flex; align-items: center; gap: 8px;
   padding: 9px 15px; border-radius: 9px; font-size: var(--text-sm); font-weight: var(--weight-medium);
   border: 1px solid var(--border-2); background: var(--surface); color: var(--ink);
+  text-decoration: none; /* anchors styled as buttons (e.g. "Skapa här", "Visa i biblioteket") get no underline */
   transition: background 120ms, border-color 120ms, box-shadow 120ms;
   box-shadow: var(--shadow-sm);
 }

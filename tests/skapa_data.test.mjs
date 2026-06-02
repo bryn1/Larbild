@@ -289,3 +289,49 @@ test("bibliotekLink targets /bibliotek with encoded subject+area, falls back saf
   // slugs are url-encoded (defensive — taxonomy slugs are simple, but never inject)
   assert.equal(S.bibliotekLink("a b", "c&d"), "/bibliotek?subject=a%20b&area=c%26d");
 });
+
+/* ---------- the deep-link the Bibliotek "Skapa här" buttons carry in (lb-skapafix) ---------- */
+
+test("readSelectionFromQuery picks a valid subject+area from the URL", () => {
+  const t = tax();
+  assert.deepEqual(
+    S.readSelectionFromQuery("?subject=fysik&area=ljud", t),
+    { subjectSlug: "fysik", areaSlug: "ljud" });
+  // leading "?" is optional
+  assert.deepEqual(
+    S.readSelectionFromQuery("subject=fysik&area=ljus", t),
+    { subjectSlug: "fysik", areaSlug: "ljus" });
+});
+
+test("readSelectionFromQuery keeps the subject but drops an absent area", () => {
+  const t = tax();
+  assert.deepEqual(
+    S.readSelectionFromQuery("?subject=kemi", t),
+    { subjectSlug: "kemi", areaSlug: null });
+});
+
+test("readSelectionFromQuery rejects an area that isn't in the chosen subject", () => {
+  const t = tax();
+  // "ljud" is a fysik area, NOT a kemi area → area dropped, subject kept
+  assert.deepEqual(
+    S.readSelectionFromQuery("?subject=kemi&area=ljud", t),
+    { subjectSlug: "kemi", areaSlug: null });
+});
+
+test("readSelectionFromQuery ignores an unknown subject entirely (area too)", () => {
+  const t = tax();
+  assert.deepEqual(
+    S.readSelectionFromQuery("?subject=nope&area=ljud", t),
+    { subjectSlug: null, areaSlug: null });
+});
+
+test("readSelectionFromQuery returns nulls for empty / malformed / missing input", () => {
+  const t = tax();
+  assert.deepEqual(S.readSelectionFromQuery("", t), { subjectSlug: null, areaSlug: null });
+  assert.deepEqual(S.readSelectionFromQuery("?", t), { subjectSlug: null, areaSlug: null });
+  assert.deepEqual(S.readSelectionFromQuery(null, t), { subjectSlug: null, areaSlug: null });
+  assert.deepEqual(S.readSelectionFromQuery(undefined, t), { subjectSlug: null, areaSlug: null });
+  // no taxonomy → nothing validates
+  assert.deepEqual(S.readSelectionFromQuery("?subject=fysik", null), { subjectSlug: null, areaSlug: null });
+  assert.deepEqual(S.readSelectionFromQuery("?subject=fysik", {}), { subjectSlug: null, areaSlug: null });
+});

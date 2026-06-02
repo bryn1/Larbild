@@ -137,7 +137,7 @@ function Bibliotek() {
             <div className="caption">{D.totalAssets(subjects)} objekt · {subjects.length} ämnen · sorterat enligt LGR22 åk 7–9</div>
           </div>
           <div className="page-head-actions">
-            <button className="btn primary">{I.plus} Skapa bild</button>
+            <a className="btn primary" href={D.skapaLink()}>{I.plus} Skapa bild</a>
           </div>
         </div>
         <div className="page-body">
@@ -179,7 +179,7 @@ function Bibliotek() {
             <button className={`tab ${kind === "film" ? "active" : ""}`} onClick={() => setKind("film")}>Filmer</button>
           </div>
           <span className="hsep" />
-          <button className="btn primary">{I.plus} Skapa här</button>
+          <a className="btn primary" href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa här</a>
         </div>
       </div>
 
@@ -221,7 +221,7 @@ function Bibliotek() {
             <div className="empty">
               <div className="pull">Inga {kind === "film" ? "filmer" : kind === "bild" ? "bilder" : "objekt"} här ännu.</div>
               <div className="dim" style={{ marginBottom: 16 }}>Allt du skapar för det här området hamnar automatiskt här.</div>
-              <button className="btn primary" style={{ margin: "0 auto" }}>{I.plus} Skapa det första</button>
+              <a className="btn primary" style={{ margin: "0 auto" }} href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa det första</a>
             </div>
           )}
         </div>

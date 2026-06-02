@@ -59,6 +59,16 @@ def test_static_funnel_js_served_and_wired_to_live_endpoints():
     assert "/api/jobs" in src
     assert "/events" in src
     assert "EventSource" in src
+    # lb-skapafix: the funnel honours the ?subject=&area= deep-link the Bibliotek
+    # "Skapa här" buttons hand in (pre-scoping the funnel to the browse context).
+    assert "readSelectionFromQuery" in src
+    assert "window.location.search" in src
+
+
+def test_funnel_data_reads_the_deeplink_query():
+    """The pure funnel data layer exposes the deep-link reader (lb-skapafix)."""
+    data_js = _client().get("/static/js/skapa_data.js").get_data(as_text=True)
+    assert "readSelectionFromQuery" in data_js
 
 
 def test_funnel_js_has_no_nsfw_marker():

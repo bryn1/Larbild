@@ -212,6 +212,11 @@ function Skapa() {
   const [typeSlug, setTypeSlug] = useState(null);
   const [prompt, setPrompt] = useState("");
 
+  // A deep-linked area (from ?area=, lb-skapafix) waiting to survive the
+  // subject→area reset that the initial setSubjectSlug triggers. Consumed once by
+  // the reset effect; null in the normal (user-driven) case.
+  const pendingAreaRef = useRef(null);
+
   // params
   const [seed, setSeed] = useState("");
   const [count, setCount] = useState(1);
@@ -240,11 +245,24 @@ function Skapa() {
       .then((data) => {
         if (!alive) return;
         setTax(data);
-        // Default to the first science subject + first image type so the funnel
-        // opens on a meaningful starting state (area is left unchosen on purpose
-        // — picking the area is the teacher's first deliberate funnel step).
+        // Honour a pre-scoped selection deep-linked from the Bibliotek "Skapa
+        // här" buttons (?subject=&area=, lb-skapafix) — validated against the
+        // taxonomy so a stale/bogus URL can't select an invalid node. When a
+        // param is absent/unknown we fall back to the first science subject (and
+        // leave the area unchosen, so picking it stays the teacher's deliberate
+        // funnel step). The image type always defaults to the first type.
         const ordered = S.orderSubjects(data.subjects || []);
-        if (ordered.length) setSubjectSlug(ordered[0].slug);
+        const ctx = S.readSelectionFromQuery(
+          typeof window !== "undefined" ? window.location.search : "", data);
+        if (ctx.subjectSlug) {
+          // Stash the deep-linked area so the subject→area reset effect adopts it
+          // instead of nulling it (the reset is meant for *user* subject changes,
+          // not this initial deep-link). See the reset effect below.
+          pendingAreaRef.current = ctx.areaSlug || null;
+          setSubjectSlug(ctx.subjectSlug);
+        } else if (ordered.length) {
+          setSubjectSlug(ordered[0].slug);
+        }
         if ((data.imageTypes || []).length) setTypeSlug(data.imageTypes[0].slug);
       })
       .catch((e) => { if (alive) setBootError(String(e)); });
@@ -265,8 +283,14 @@ function Skapa() {
   }, [hue]);
 
   // reset the area whenever the subject changes (areas are subject-scoped, so a
-  // stale area slug would be invalid for the new subject)
-  useEffect(() => { setAreaSlug(null); }, [subjectSlug]);
+  // stale area slug would be invalid for the new subject) — EXCEPT when a deep-
+  // linked area is pending for this exact subject set (lb-skapafix): then adopt
+  // it instead of nulling, so "Skapa här" from inside an area lands pre-scoped.
+  useEffect(() => {
+    const pending = pendingAreaRef.current;
+    pendingAreaRef.current = null; // consume once; later user changes still reset
+    setAreaSlug(pending);
+  }, [subjectSlug]);
 
   // ---- resolve the LoRA whenever (subject, imageType) changes ----
   // POST /api/resolve-lora is the single authority; the funnel only displays the

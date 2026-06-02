@@ -96,3 +96,21 @@ test("subjColor / subjSoft build OKLCH from the subject hue (default 268)", () =
 test("PRIORITY_SUBJECTS is exactly the four science subjects", () => {
   assert.deepEqual(D.PRIORITY_SUBJECTS, ["fysik", "teknik", "kemi", "biologi"]);
 });
+
+/* ---------- the Skapa deep-link the "Skapa här" buttons use (lb-skapafix) ---------- */
+
+test("skapaLink carries the browse context into the funnel route", () => {
+  // top-level "Skapa bild": no context → bare funnel route (funnel defaults)
+  assert.equal(D.skapaLink(), "/skapa");
+  assert.equal(D.skapaLink(null), "/skapa");
+  assert.equal(D.skapaLink(undefined, "ljud"), "/skapa"); // area without subject is dropped
+  // a subject alone (browsing a subject, no area picked)
+  assert.equal(D.skapaLink("fysik"), "/skapa?subject=fysik");
+  assert.equal(D.skapaLink("fysik", null), "/skapa?subject=fysik");
+  // subject + area (the "Skapa här" case from inside an area)
+  assert.equal(D.skapaLink("fysik", "ljud"), "/skapa?subject=fysik&area=ljud");
+});
+
+test("skapaLink url-encodes both ids (defensive — never inject)", () => {
+  assert.equal(D.skapaLink("a b", "c&d"), "/skapa?subject=a%20b&area=c%26d");
+});

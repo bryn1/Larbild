@@ -315,6 +315,44 @@
     return `/bibliotek?${qs}`;
   }
 
+  /**
+   * Read a pre-scoped funnel selection from the page's URL query (lb-skapafix).
+   *
+   * The Bibliotek "Skapa här" buttons deep-link into the funnel as
+   * ``/skapa?subject=<slug>&area=<slug>`` (the library tree keys nodes by the
+   * same slug the taxonomy uses). On bootstrap the funnel calls this to honour
+   * that context — but ONLY for values that exist in the live taxonomy SoT, so a
+   * stale or hand-edited URL can never select an invalid node (the server would
+   * reject it anyway, and a bogus area would otherwise blank the funnel).
+   *
+   * Validation rules (the taxonomy is the authority):
+   *   • subject is kept only if it resolves to a real subject; else null.
+   *   • area is kept only if subject is valid AND the area is one of THAT
+   *     subject's areas (areas are subject-scoped); else null.
+   *   • a missing param is simply null — the caller keeps its own default.
+   *
+   * Pure: parses the given query string against the passed taxonomy object; no
+   * `window`/DOM access (the view passes ``window.location.search``). Accepts the
+   * search string with or without a leading "?". Returns
+   * ``{ subjectSlug|null, areaSlug|null }``.
+   */
+  function readSelectionFromQuery(search, taxonomy) {
+    const out = { subjectSlug: null, areaSlug: null };
+    if (!search || typeof search !== "string") return out;
+    const params = new URLSearchParams(search.charAt(0) === "?" ? search.slice(1) : search);
+    const subjects = (taxonomy && taxonomy.subjects) || [];
+
+    const wantSubject = params.get("subject");
+    const subject = wantSubject ? findSubject(subjects, wantSubject) : null;
+    if (!subject) return out; // unknown/absent subject → ignore area too
+    out.subjectSlug = subject.slug;
+
+    const wantArea = params.get("area");
+    const area = wantArea ? findArea(subject, wantArea) : null;
+    if (area) out.areaSlug = area.slug;
+    return out;
+  }
+
   return {
     PRIORITY_SUBJECTS,
     DEFAULT_HUE,
@@ -333,6 +371,7 @@
     progressPercent,
     describeJobState,
     bibliotekLink,
+    readSelectionFromQuery,
     STATUS_LABELS,
     TERMINAL_STATUSES,
   };
