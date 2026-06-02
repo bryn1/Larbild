@@ -482,7 +482,7 @@ def render_job(
         raise RenderError(str(e)) from e
 
 
-def _concept_from_job(job: dict) -> dict:
+def _concept_spec_from_job(job: dict) -> dict:
     """Pull the begrepp / förklaring / optional diagram spec out of a job row.
 
     The structured-diagram inputs ride in the job's ``params_json`` blob (the
@@ -528,7 +528,7 @@ def _render_procedural_job(job: str | dict) -> str:
         write_job_state(job_id, {"job_id": job_id, "status": "running",
                                  "progress_step": 0, "progress_total": 1})
 
-        concept = _concept_from_job(job)
+        concept = _concept_spec_from_job(job)
         # Deterministic filename (no ComfyUI to name it). Stable + sortable.
         filename = f"diagram_{job_id[:8]}.png"
         meta_image_type = job["image_type"]

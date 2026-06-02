@@ -142,16 +142,23 @@ def test_render_path_uses_llm_when_enabled(app, fake_redis):
 # ── a non-diffusion job keeps its original prompt (passthrough) ─────────────
 
 
-def test_non_diffusion_job_prompt_is_unchanged(app, fake_redis):
-    # diagram is NOT a diffusion type (it goes procedural) — the render path must
-    # NOT rewrite its prompt if such a job reaches the still worker.
+def test_non_diffusion_job_routes_procedural_not_diffusion(app, fake_redis):
+    # diagram is a STRUCTURED type: once the procedural engine (lb-procedural-
+    # diagrams) is merged alongside the edu-prompt engine, render_job routes a
+    # diagram job to the CPU procedural path FIRST and it never reaches the
+    # diffusion/ComfyUI lane — so the edu-prompt rewrite can't touch it and the
+    # mock ComfyUI client is never called. (Pre-merge, with no procedural module,
+    # this job fell through to diffusion and the test asserted the prompt was
+    # left unchanged; the composed design makes that even stronger — diagram
+    # bypasses diffusion entirely.)
     with app.app_context():
         thin = "pedagogiskt diagram av en ljudvåg, vektorstil"
         job_id = jobs.enqueue_job(kind="bild", subject="fysik", area="ljud",
                                   image_type="diagram", prompt=thin, seed=3)
         client = MockComfyClient()
         _render(job_id, client)
-        assert _submitted_positive(client) == thin   # untouched
+        # routed to procedural → diffusion graph was never assembled/submitted
+        assert client.submitted == []
 
 
 # ── build_specific_prompt unit behaviour ────────────────────────────────────
