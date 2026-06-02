@@ -77,9 +77,12 @@ log = logging.getLogger("larbild.edu_prompt")
 
 __all__ = [
     "build_edu_prompt",
+    "build_flux_edu_prompt",
+    "FLUX_SFW_NEGATIVE",
     "batch_compose",
     "compose_via_llm",
     "fallback_prompt",
+    "flux_fallback_prompt",
     "lookup_begrepp",
     "image_type_style",
     "SFW_NEGATIVE",
@@ -145,6 +148,21 @@ SFW_NEGATIVE = os.environ.get(
     "multiple unrelated scenes, "
     "gore, blood, violence, weapon, suggestive, revealing clothing, "
     "not safe for school, inappropriate for children",
+)
+
+# A HARDER no-text negative for the FLUX lane. FLUX renders text *well* — which
+# backfires for a deliberately text-free educational image: when the positive
+# names the Swedish concept ("Ljud") FLUX will literally WRITE it (a measured
+# bake-off failure: "Ljud" → the word "Liud" drawn as 3D letters). The FLUX
+# positive is built to NOT lead with the raw begrepp (build_flux_edu_prompt /
+# flux_fallback_prompt), and this negative belts-and-braces it by pushing away
+# any rendered text/words/letters more forcefully than the SDXL negative (where
+# SDXL garbles text anyway). SFW-guard safe (no restricted token).
+FLUX_SFW_NEGATIVE = os.environ.get(
+    "LARBILD_FLUX_NEGATIVE",
+    SFW_NEGATIVE + ", any text, any words, any letters, any numbers, "
+    "written title, written caption, watermark, signage, lettering, "
+    "the concept name written out, typographic poster, book cover",
 )
 
 # Persona-free educational framing — the learning from imagegen is that a
@@ -666,6 +684,112 @@ def build_edu_prompt(
         result["error"] = llm.get("error")
 
     result["prompt"] = fallback_prompt(
+        subject=subject, area=area, image_type=image_type, begrepp=begrepp,
+        forklaring=forklaring, vardagligt_exempel=vardagligt_exempel,
+    )
+    return result
+
+
+def flux_fallback_prompt(
+    *,
+    subject: str,
+    area: Optional[str],
+    image_type: Optional[str],
+    begrepp: str,
+    forklaring: Optional[str],
+    vardagligt_exempel: Optional[str] = None,
+) -> str:
+    """A FLUX-tuned deterministic prompt — leads with the SCENE, never the begrepp.
+
+    The FLUX twin of :func:`fallback_prompt`, with one critical difference proven
+    by the bake-off: it does NOT put the raw Swedish concept name at the head of
+    the prompt as "a depiction of <begrepp>". FLUX renders text so well that a
+    leading Swedish concept name gets drawn as literal letters in the image
+    ("Ljud" → the word "Liud"). Instead this leads with the *förklaring* (the
+    concept's concrete content, in the original language but framed as a scene the
+    model should DRAW, not write) + the imageType style, so FLUX depicts the
+    phenomenon. When no förklaring is available it falls back to a neutral
+    "a clear scientific illustration of the subject <area>" rather than naming the
+    begrepp. The SFW framing + quality tail are appended as in the SDXL path.
+
+    Pure string assembly; always returns a non-empty line.
+    """
+    style = image_type_style(image_type)
+    parts: list[str] = []
+    if forklaring:
+        # The förklaring is the concept's content — make it the depicted scene.
+        # No "<begrepp>:" prefix, so the model draws the thing, not the word.
+        parts.append(f"a clear scientific depiction of: {_trim(forklaring, 240)}")
+    else:
+        # No explanation to ground on — describe a neutral subject scene WITHOUT
+        # naming the concept, so FLUX still has no Swedish word to render.
+        topic = f" in {area}" if area else ""
+        parts.append(f"a clear scientific {subject} illustration{topic}")
+    parts.append(style)
+    parts.append(EDU_FRAMING)
+    parts.append(QUALITY_BASELINE)
+    seen: set[str] = set()
+    cleaned: list[str] = []
+    for p in parts:
+        p = (p or "").strip().rstrip(",")
+        if p and p.lower() not in seen:
+            seen.add(p.lower())
+            cleaned.append(p)
+    return ", ".join(cleaned)
+
+
+def build_flux_edu_prompt(
+    *,
+    subject: str,
+    image_type: Optional[str],
+    begrepp: str,
+    area: Optional[str] = None,
+    forklaring: Optional[str] = None,
+    vardagligt_exempel: Optional[str] = None,
+    use_llm: Optional[bool] = None,
+    llm_url: Optional[str] = None,
+    llm_model: Optional[str] = None,
+    llm_timeout: Optional[float] = None,
+) -> dict[str, Any]:
+    """Build a FLUX-tuned SFW educational positive prompt.
+
+    Same contract + return shape as :func:`build_edu_prompt`, but tuned for the
+    FLUX lane's prompt-adherence (which is the whole reason to route to FLUX) and
+    its text-rendering quirk. The 14B composer path is reused unchanged — its
+    system prompt already emits an English, comma-separated SCENE description that
+    never leads with (or asks to write) the Swedish concept name, so an LLM result
+    is already FLUX-safe. Only the deterministic FALLBACK differs: it uses
+    :func:`flux_fallback_prompt` (scene-led, begrepp NOT named) instead of the
+    SDXL fallback (which leads with the begrepp and would make FLUX write it).
+
+    Returns ``{prompt, source, error, llm}`` exactly like build_edu_prompt.
+    """
+    if not begrepp or not str(begrepp).strip():
+        raise ValueError("begrepp (the concept to depict) is required")
+    subject = (subject or "").strip()
+    begrepp = str(begrepp).strip()
+
+    begrepp, forklaring, vardagligt_exempel, area = _resolve_fields(
+        subject, begrepp, forklaring, vardagligt_exempel, area
+    )
+
+    result: dict[str, Any] = {"prompt": "", "source": "fallback", "error": None, "llm": None}
+
+    want_llm = _llm_enabled() if use_llm is None else use_llm
+    if want_llm:
+        llm = compose_via_llm(
+            subject=subject, area=area, image_type=image_type, begrepp=begrepp,
+            forklaring=forklaring, vardagligt_exempel=vardagligt_exempel,
+            url=llm_url, model=llm_model, timeout=llm_timeout,
+        )
+        result["llm"] = llm
+        if llm.get("prompt") and not llm.get("error"):
+            result["prompt"] = _finalize(llm["prompt"], image_type=image_type)
+            result["source"] = "llm"
+            return result
+        result["error"] = llm.get("error")
+
+    result["prompt"] = flux_fallback_prompt(
         subject=subject, area=area, image_type=image_type, begrepp=begrepp,
         forklaring=forklaring, vardagligt_exempel=vardagligt_exempel,
     )

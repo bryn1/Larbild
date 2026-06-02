@@ -204,9 +204,12 @@ def test_flux_route_is_dormant_by_default():
 
 def test_flux_route_stays_safe_when_flag_on_but_no_lane(monkeypatch):
     # even with the flag ON, if no FLUX target is registered the route is None
-    # (we never pretend a lane exists) — illustration stays on SDXL.
+    # (we never pretend a lane exists) — illustration stays on SDXL. The FLUX lane
+    # is now registered by default (gpu_telemetry.RENDER_TARGETS), so simulate the
+    # no-lane state by monkeypatching a registry WITHOUT the flux target.
     monkeypatch.setattr(rw, "FLUX_ROUTE_ENABLE", True)
-    # ensure the configured FLUX target key is absent from the registry
+    no_flux = {k: v for k, v in rw.RENDER_TARGETS.items() if k != rw.FLUX_ROUTE_TARGET}
+    monkeypatch.setattr(rw, "RENDER_TARGETS", no_flux)
     assert rw.FLUX_ROUTE_TARGET not in rw.RENDER_TARGETS
     assert rw.flux_route_for("illustration") is None
 

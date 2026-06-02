@@ -213,6 +213,94 @@ def test_uses_the_real_shared_lock_key_by_default():
     assert gpu_lock.LOCK_KEY == "lock:vm100-3090"
 
 
+# ── FLUX-lane routing (lb FLUX lane) ────────────────────────────────────────
+
+
+@pytest.fixture
+def flux_route_on(monkeypatch):
+    """Turn the FLUX route ON for the eligible imageTypes (the deploy state).
+
+    flux_route_for reads these module globals; a 'flux' RENDER_TARGET is already
+    registered in gpu_telemetry, so flipping the flag is enough.
+    """
+    monkeypatch.setattr(rw, "FLUX_ROUTE_ENABLE", True)
+    monkeypatch.setattr(rw, "FLUX_ROUTE_IMAGE_TYPES",
+                        frozenset({"illustration", "mikroskop", "tvarsnitt"}))
+    assert "flux" in rw.RENDER_TARGETS  # the target must exist for routing to fire
+
+
+def test_flux_route_off_by_default_uses_sdxl_graph(app, fake_redis):
+    # With the flag default-off, an illustration job renders on the SDXL graph
+    # (EmptyLatentImage, no DualCLIPLoader) — the dormant hook stays dormant.
+    with app.app_context():
+        job_id = _enqueue_bild(image_type="illustration")
+        client = MockComfyClient()
+        rw.render_job(job_id, comfy_factory=lambda: client,
+                      gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(), poll_s=0.0)
+        g = client.submitted[0]
+        classes = {n["class_type"] for n in g.values()}
+        assert "DualCLIPLoader" not in classes
+        assert "EmptyLatentImage" in classes  # SDXL latent
+        with connect() as conn:
+            row = conn.execute("SELECT backend FROM library WHERE job_id = ?",
+                               (job_id,)).fetchone()
+        assert "FLUX" not in (row["backend"] or "")
+
+
+def test_flux_route_on_submits_flux_graph(app, fake_redis, flux_route_on):
+    # With the flag on, an illustration job renders on the FLUX graph: the
+    # DualCLIPLoader(type=flux) + EmptySD3LatentImage + FluxGuidance node set,
+    # and the library row's backend says FLUX.
+    with app.app_context():
+        job_id = _enqueue_bild(image_type="illustration", prompt="sound waves")
+        client = MockComfyClient()
+        rw.render_job(job_id, comfy_factory=lambda: client,
+                      gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(), poll_s=0.0)
+        g = client.submitted[0]
+        classes = {n["class_type"] for n in g.values()}
+        assert "DualCLIPLoader" in classes
+        assert "EmptySD3LatentImage" in classes  # FLUX latent, NOT SDXL's
+        assert "FluxGuidance" in classes
+        assert "EmptyLatentImage" not in classes
+        # the DualCLIPLoader is in flux mode
+        clip = next(n for n in g.values() if n["class_type"] == "DualCLIPLoader")
+        assert clip["inputs"]["type"] == "flux"
+        with connect() as conn:
+            row = conn.execute("SELECT backend FROM library WHERE job_id = ?",
+                               (job_id,)).fetchone()
+        assert "FLUX" in (row["backend"] or "")
+
+
+def test_flux_route_uses_flux_negative_and_no_begrepp_lead(app, fake_redis, flux_route_on):
+    # On the FLUX route, build_specific_prompt uses the FLUX negative + a
+    # scene-led positive that does NOT lead with the raw Swedish begrepp (the
+    # text-leak fix). With the LLM off (conftest default) the deterministic FLUX
+    # fallback is used.
+    with app.app_context():
+        job_id = _enqueue_bild(image_type="illustration", prompt="Ljud")
+        job = jobs.get_job_row(job_id)
+        positive, negative, meta = rw.build_specific_prompt(job)
+        assert meta["flux_route"] == "flux"
+        # FLUX negative scaffold is applied (the harder no-text one)
+        assert negative == rw._edu_prompt.FLUX_SFW_NEGATIVE
+        assert "any words" in negative
+        # the positive must NOT start by naming the concept as the subject
+        # (FLUX would render the word). The SDXL fallback would say
+        # "a clear depiction of Ljud as the main subject"; the FLUX one must not.
+        assert not positive.lower().startswith("a clear depiction of ljud")
+
+
+def test_flux_route_off_keeps_sdxl_prompt_path(app, fake_redis):
+    # Route off → the SDXL builder + SFW negative (regression guard for the
+    # default path).
+    with app.app_context():
+        job_id = _enqueue_bild(image_type="illustration", prompt="Ljud")
+        job = jobs.get_job_row(job_id)
+        positive, negative, meta = rw.build_specific_prompt(job)
+        assert meta["flux_route"] is None
+        assert negative == rw._edu_prompt.SFW_NEGATIVE
+
+
 def test_render_proceeds_when_lock_falls_back(app, fake_redis):
     # held=False models "imagegen holds the lock / Redis down". The worker logs
     # + proceeds (matching gpu_lock's degrade-don't-block contract) rather than
