@@ -53,3 +53,16 @@ def index():
 def bibliotek():
     """Explicit Bibliotek route (same SPA shell; the view owns its own nav)."""
     return _index_response()
+
+
+@views_bp.get("/skapa")
+def skapa():
+    """Serve the "Skapa bild" funnel page (lb-e1p, P3.1).
+
+    Its own no-build React shell (static/skapa.html): it loads the same design-
+    system CSS and React CDN, plus the funnel scripts (skapa_data.js +
+    skapa.jsx), which bootstrap from the live SoT endpoints (/api/taxonomy,
+    /api/resolve-lora) and submit to /api/jobs. A separate shell keeps the
+    Bibliotek SPA untouched. SFW-only: educational image funnel.
+    """
+    return send_from_directory(_STATIC_DIR, "skapa.html")
