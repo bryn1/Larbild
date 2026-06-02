@@ -101,12 +101,15 @@ def test_diffusion_job_renders_with_concept_specific_prompt(app, fake_redis):
         positive = _submitted_positive(client)
         # NOT the bare input — it was rewritten into a specific educational prompt
         assert positive != "Ljud"
-        assert "Ljud" in positive                       # concept still named
-        assert "scientific illustration" in positive    # imageType style
+        assert "Ljud" in positive                          # concept still named
+        assert "scientific textbook illustration" in positive  # text-free imageType style
         # the förklaring content (from the bundled dataset) was woven in
         low = positive.lower()
         assert "vibration" in low or "våg" in low or "vag" in low
-        assert "school textbook" in low                 # SFW framing
+        assert "school textbook" in low                    # SFW framing
+        # lb render-loop 2026-06: the bundled example ("cykelklocka …") must NOT
+        # leak into the rendered prompt (that produced a bicycle for "Ljud").
+        assert "cykel" not in low and "cykelklocka" not in low
 
         # the SFW negative scaffold was applied to the graph
         assert "inappropriate for children" in wf_neg(client).lower() \

@@ -125,16 +125,24 @@ def _llm_enabled() -> bool:
 # forbids restricted tokens inside string literals in app/).
 QUALITY_BASELINE = os.environ.get(
     "LARBILD_EDU_QUALITY_BASELINE",
-    "clean educational textbook illustration, accurate, clearly readable, "
-    "high detail, good lighting, neutral background",
+    # "clearly readable" dropped (lb render-loop 2026-06) — it nudged SDXL to
+    # add (garbled) text; the diffusion image is deliberately text-free.
+    "clean educational textbook quality, accurate, high detail, good lighting, "
+    "neutral background",
 )
 
 SFW_NEGATIVE = os.environ.get(
     "LARBILD_EDU_NEGATIVE",
     # Render-quality negatives + an explicit child-safe / school-appropriate
     # exclusion. No restricted token appears here (SFW-guard safe).
+    # lb render-loop 2026-06: also pushes away embedded text (SDXL garbles it —
+    # labels are the procedural/caption path's job) and the unrelated everyday
+    # props that used to leak from the example field (vehicles, busy collages).
     "lowres, blurry, watermark, text errors, garbled text, signature, "
+    "text, words, letters, numbers, caption, label, typography, logo, brand, "
     "jpeg artifacts, deformed, extra limbs, bad anatomy, "
+    "unrelated objects, vehicle, car, bicycle, busy background, collage, "
+    "multiple unrelated scenes, "
     "gore, blood, violence, weapon, suggestive, revealing clothing, "
     "not safe for school, inappropriate for children",
 )
@@ -154,25 +162,31 @@ EDU_FRAMING = (
 # engine / base LoRA); this map covers the DIFFUSION imageTypes the fix targets
 # plus safe defaults for the rest, so an unexpected type still yields a sane
 # educational style instead of an empty one.
+#
+# NOTE (lb render-loop 2026-06): "labelled / labels / annotations" removed from
+# every clause — SDXL garbles embedded text, and labels are drawn by the
+# procedural path / caption overlay, not by the diffusion model. Each clause
+# ends with a plain neutral background + an explicit "no text" so the render
+# stays a clean, text-free educational picture.
 _IMAGE_TYPE_STYLE: dict[str, str] = {
     "foto": (
-        "photorealistic educational photograph, realistic science classroom or "
-        "laboratory setting, natural lighting, documentary realism, sharp focus"
+        "realistic educational science photograph of the actual subject, "
+        "natural lighting, sharp focus, documentary realism, plain neutral "
+        "background, no text"
     ),
     "illustration": (
-        "clean scientific illustration, flat vector textbook style, clearly "
-        "labelled structures, distinct outlines, limited educational colour "
-        "palette, diagrammatic clarity"
+        "clean scientific textbook illustration, flat vector style, distinct "
+        "outlines, limited educational colour palette, diagrammatic clarity, "
+        "plain neutral background, no text"
     ),
     "mikroskop": (
-        "microscope view, micrograph style, cellular and microscopic detail, "
-        "stained-specimen look as seen under a light microscope, circular field "
-        "of view, scientific imaging"
+        "light-microscope micrograph, stained specimen, cellular and microscopic "
+        "detail, circular field of view, scientific microscopy, no text"
     ),
     "tvarsnitt": (
-        "labelled cross-section cutaway, internal structure revealed, "
-        "scientific cutaway diagram, each layer and part distinct and labelled, "
-        "textbook anatomy/geology cutaway style"
+        "clean scientific cross-section cutaway, internal structure revealed, "
+        "each layer and part visually distinct, textbook anatomy/geology cutaway "
+        "style, no text"
     ),
     # graceful defaults for the non-diffusion / unmapped types
     "diagram": (
@@ -304,27 +318,50 @@ def _resolve_fields(
 # concept fields in the user message.
 EDU_SYSTEM_PROMPT = os.environ.get(
     "LARBILD_EDU_SYSTEM_PROMPT",
-    """You are a prompt engineer for an educational text-to-image model. You \
-turn a single Swedish school concept (åk 7-9 science) into ONE precise image \
-prompt that DEPICTS THAT EXACT CONCEPT for a school textbook.
+    # Rewritten (lb render-loop, 2026-06): three measured failure modes are
+    # designed out — (a) the everyday example leaking literally into the image
+    # (e.g. "cykelklocka" → a bicycle for the concept "Ljud"), (b) embedded text
+    # SDXL can't render (the model was asked for "labels in Swedish" and garbled
+    # them), and (c) abstract/generic results for forces & categories. The
+    # everyday example is therefore NOT given to the composer, text is forbidden
+    # in the image, and the concept is anchored as the dominant subject.
+    """You are a prompt engineer for an educational text-to-image diffusion \
+model (SDXL). You turn ONE Swedish school science concept (begrepp, ages 13-16) \
+into ONE precise English image prompt that DEPICTS THAT EXACT CONCEPT as the \
+single dominant subject of the picture, for a school textbook.
 
 You are given STRUCTURED FIELDS: the subject, the concept (begrepp), its \
-explanation (förklaring), an everyday example (vardagligt exempel), and the \
-required visual style for the image type.
+explanation (förklaring), and the required visual style for the image type.
 
 Compose ONE positive prompt for the image model. Rules:
+- LEAD the prompt with the concept itself as the depicted subject, named as a \
+concrete noun phrase (e.g. "a single animal cell, cross-section, nucleus and \
+organelles" / "a cutaway of the human ear" / "iron filings forming field lines \
+around a bar magnet"). The concept noun MUST dominate the image.
+- Depict the actual physical thing, structure, or process the explanation \
+describes — be concrete and specific to THIS concept, never a generic picture \
+of the subject.
+- Do NOT depict any unrelated everyday object, brand, vehicle, person, or \
+anecdotal scene. If the concept is abstract (a force, a sound, a phenomenon), \
+depict its STANDARD scientific visualization with a concrete source object \
+(e.g. sound = a vibrating bell or tuning fork with concentric wavefront arcs \
+emanating; magnetism = a bar magnet with curved field lines and iron filings; \
+gravity = an object visibly falling with a downward arrow), NOT a real-world \
+anecdote. If the concept is a GENERIC category (an element, an organelle, a \
+molecule), depict ONE specific concrete exemplar in detail (e.g. element = a \
+single carbon atom with protons and electrons in shells; organelle = one \
+mitochondrion with its cristae) rather than a vague icon.
 - Write in English, as a single line of comma-separated descriptive phrases \
 (image-prompt style), NOT Swedish prose and NOT a sentence.
-- Make it SPECIFIC TO THIS CONCEPT: depict the actual thing the explanation \
-describes — the concrete objects, structures, forces, processes, or scene the \
-concept is about — not a generic picture of the subject. Use the everyday \
-example to ground it in a concrete, recognisable scene when it helps.
-- Match the required visual style exactly (e.g. photoreal lab, clean labelled \
-illustration, micrograph, labelled cutaway).
+- Match the required visual style exactly (e.g. photoreal science photograph, \
+clean scientific illustration, micrograph, cross-section cutaway).
+- Do NOT ask for ANY text, words, letters, numbers, labels, captions, or \
+annotations in the image — the diffusion model cannot render text correctly, \
+and labels are added separately. Never write "with labels" or "annotated in \
+Swedish". Use the standard textbook visual cues (arrows, field lines, \
+wavefronts, orbital shells) WITHOUT any written text.
 - It must be strictly SFW and appropriate for 13-16 year olds: educational, \
 neutral, no nudity, no gore, no violence, no identifiable real person.
-- Include clear labels / annotations where they aid understanding, in the \
-described style.
 - Do NOT add a checkpoint/score prefix, no "masterpiece", no LoRA names, no \
 quality tags (those are added separately).
 - Output ONLY the single comma-separated prompt line — no preamble, no \
@@ -341,7 +378,17 @@ def _serialize_fields(
     forklaring: Optional[str],
     vardagligt_exempel: Optional[str],
 ) -> str:
-    """Compact labelled text block fed to the composer as the user message."""
+    """Compact labelled text block fed to the composer as the user message.
+
+    NOTE (lb render-loop 2026-06): ``vardagligt_exempel`` is DELIBERATELY NOT
+    included. The everyday example is for captions/narration, not the picture —
+    measured render tests showed it leaking literally into the image (the
+    example "Ljudet från din cykelklocka …" made the composer emit "vibrating
+    bell, labeled cyclist's clock" and the SDXL render became a bell/bicycle for
+    the concept "Ljud"; "bollen rullade nerför backen till staketet" turned
+    "Tyngdkraft" into a ball rolling to a fence). The parameter is kept in the
+    signature for call-site compatibility but is not sent to the composer.
+    """
     lines = [f"Subject (ämne): {subject}"]
     if area:
         lines.append(f"Area (område): {area}")
@@ -351,8 +398,6 @@ def _serialize_fields(
     lines.append(f"Concept (begrepp): {begrepp}")
     if forklaring:
         lines.append(f"Explanation (förklaring): {forklaring}")
-    if vardagligt_exempel:
-        lines.append(f"Everyday example (vardagligt exempel): {vardagligt_exempel}")
     return "\n".join(lines)
 
 
@@ -506,9 +551,14 @@ def fallback_prompt(
     is given (the engine's last-resort path so a render is never blocked).
     """
     style = image_type_style(image_type)
+    # Lead with the concept as the dominant subject (lb render-loop 2026-06),
+    # then the imageType style, then the förklaring as the scene description.
+    # The vardagligt_exempel is intentionally NOT used here — it leaks literally
+    # into the picture (see _serialize_fields); the parameter is kept for
+    # call-site compatibility only.
     parts: list[str] = [
+        f"a clear depiction of {begrepp} as the main subject of the image",
         style,
-        f"educational depiction of the concept '{begrepp}'",
     ]
     if area:
         parts.append(f"topic area: {area}")
@@ -517,8 +567,6 @@ def fallback_prompt(
         # description so the image depicts the actual thing, lightly trimmed so
         # the prompt stays a reasonable length for SDXL's CLIP.
         parts.append(f"showing: {_trim(forklaring, 240)}")
-    if vardagligt_exempel:
-        parts.append(f"concrete everyday scene: {_trim(vardagligt_exempel, 200)}")
     parts.append(EDU_FRAMING)
     parts.append(QUALITY_BASELINE)
     # de-dup while preserving order, drop blanks

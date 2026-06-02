@@ -60,17 +60,42 @@ def test_fallback_prompt_is_specific_to_the_concept():
     )
     assert r["source"] == "fallback"
     p = r["prompt"]
-    # concept named
+    # concept named + anchored as the main subject
     assert "Newtons andra lag" in p
+    assert "main subject" in p.lower()
     # the förklaring content (the actual physics) is woven in — specificity
     assert "F=ma" in p or "massan" in p
-    # the everyday example grounds it in a concrete scene
-    assert "kundvagn" in p
-    # the imageType style is present
-    assert "scientific illustration" in p
+    # the imageType style is present (text-free illustration style)
+    assert "scientific textbook illustration" in p
     # SFW educational framing + quality baseline appended
     assert "school textbook" in p.lower()
     assert "neutral background" in p
+
+
+def test_fallback_prompt_does_not_leak_the_everyday_example():
+    # lb render-loop 2026-06: the vardagligt_exempel must NOT leak into the
+    # diffusion prompt — that turned "Ljud" into a bicycle/bell. The example is
+    # accepted (call-site compat) but never depicted.
+    r = ep.build_edu_prompt(
+        subject="fysik", image_type="illustration", begrepp="Ljud",
+        forklaring="Vibrationer som sprider sig som vågor genom luft.",
+        vardagligt_exempel="Ljudet från din cykelklocka når fotgängaren framför dig.",
+        use_llm=False,
+    )
+    p = r["prompt"].lower()
+    assert "cykelklocka" not in p and "cykel" not in p   # example object did not leak
+    assert "fotgängare" not in p
+    assert "ljud" in p                                    # the concept is still there
+
+
+def test_diffusion_styles_are_text_free():
+    # Every diffusion imageType style must forbid embedded text (SDXL garbles it;
+    # labels are the procedural/caption path's job).
+    for itype in ("foto", "illustration", "mikroskop", "tvarsnitt"):
+        assert "no text" in ep.image_type_style(itype)
+        assert "labelled" not in ep.image_type_style(itype)
+    # the SFW negative also pushes text + unrelated leak-props away
+    assert "text" in ep.SFW_NEGATIVE and "bicycle" in ep.SFW_NEGATIVE
 
 
 def test_fallback_backfills_forklaring_from_bundled_dataset():
