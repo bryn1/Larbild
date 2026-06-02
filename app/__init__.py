@@ -48,12 +48,19 @@ def _init_database(app: Flask) -> None:
     Reconcile-on-boot: idempotent, so every gunicorn worker calling this is
     safe. ``INIT_DB`` (default True) lets a test skip filesystem writes; tests
     that exercise the DB instead point ``DB_PATH`` at a temp file.
+
+    After migrations, reconcile orphaned ``running`` jobs (lb-qtr, partial): a
+    render left ``running`` by a crashed/restarted worker is marked ``failed``
+    so the durable record reflects reality instead of a phantom in-flight job.
+    Conservative + idempotent + best-effort (never blocks boot).
     """
     if not app.config.get("INIT_DB", True):
         return
     from .db import init_db
+    from .jobs import reconcile_stuck_jobs
 
     init_db(app.config["DB_PATH"])
+    reconcile_stuck_jobs()
 
 
 def _register_blueprints(app: Flask) -> None:

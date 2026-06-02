@@ -57,6 +57,7 @@ __all__ = [
     "write_job_state",
     "queue_depth",
     "get_job_row",
+    "reconcile_stuck_jobs",
 ]
 
 # larbild-namespaced keys — disjoint from imagegen's vm100:image_gen:* keyspace.
@@ -312,3 +313,58 @@ def enqueue_job(
         raise
     log.info("enqueued render job %s kind=%s subject=%s/%s", job_id, kind, subject, area)
     return job_id
+
+
+def reconcile_stuck_jobs() -> list[str]:
+    """Boot-time reconcile of orphaned ``running`` jobs (lb-qtr, partial).
+
+    A job in ``running`` was mid-render in a worker process that has since died
+    (a crash / restart). The render is in-process + queue-driven, so nothing will
+    ever re-drive it — it would otherwise hang forever as "running" in the UI/SSE.
+    On boot we mark every such job ``failed`` with a clear reason and stamp
+    ``finished_at``, so the durable record (and the SSE fallback that reads it)
+    reflects reality instead of a phantom in-flight render.
+
+    Deliberately conservative — it touches ONLY ``running`` jobs:
+      * ``queued`` jobs are left alone: a fresh worker can still BRPOP and run
+        them (they are not owned by a dead process), so failing them would lose
+        legitimately-pending work.
+      * terminal jobs (done/failed/cancelled) are already settled.
+
+    Idempotent: a second boot finds no ``running`` rows (the first run failed
+    them) and is a no-op. Returns the ids reconciled this call. Best-effort — a
+    DB error is logged, never raised, so a reconcile hiccup can't block boot.
+    """
+    reason = "reconciled on boot: worker process restarted while rendering"
+    try:
+        with connect() as conn:
+            rows = conn.execute(
+                "SELECT id FROM jobs WHERE status = 'running'"
+            ).fetchall()
+            stuck = [r["id"] for r in rows]
+            if stuck:
+                conn.execute(
+                    "UPDATE jobs SET status = 'failed', "
+                    "error = COALESCE(error, ?), "
+                    "finished_at = COALESCE(finished_at, ?) "
+                    "WHERE status = 'running'",
+                    (reason, now_iso()),
+                )
+    except Exception as e:  # noqa: BLE001 — reconcile must never block boot
+        log.warning("reconcile_stuck_jobs failed: %s", e)
+        return []
+
+    # Reflect the terminal state into the live Redis store too, so a tab that
+    # reconnects to the SSE sees 'failed' rather than a stale 'running' blob.
+    for job_id in stuck:
+        try:
+            r = get_redis()
+            r.set(_state_key(job_id),
+                  json.dumps({"job_id": job_id, "status": "failed", "error": reason}),
+                  ex=JOB_STATE_TTL_S)
+        except Exception:  # noqa: BLE001 — Redis mirror is best-effort
+            pass
+    if stuck:
+        log.info("reconcile_stuck_jobs: marked %d orphaned running job(s) failed",
+                 len(stuck))
+    return stuck

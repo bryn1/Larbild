@@ -1,0 +1,40 @@
+# SFW isolation guard — the pre-merge gate (lb-5sx, P0.6).
+#
+# Lärbild is STRICTLY SFW. This workflow runs the authoritative SFW guard on
+# every push + pull request; a forbidden NSFW model/LoRA/module, an imagegen
+# import, or a restricted asset filename in the shipped tree (app/ + static/)
+# fails the job, so a violating branch cannot be merged. This is isolation
+# plane #1 (risk R6: accidental repo merge / NSFW leak).
+#
+# Make this a REQUIRED status check on the default branch (Settings → Branches →
+# branch protection) so refinery / a merge cannot land a branch that fails it.
+name: sfw-guard
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  sfw-guard:
+    name: SFW isolation guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # The guard is dependency-free (stdlib only) — a single shell step.
+      - name: Scan app/ + static/ for NSFW / imagegen leaks
+        run: python3 scripts/sfw_guard.py
+
+      # Belt-and-braces: also run the guard's own test suite + the shell guard.
+      - name: Install test deps
+        run: pip install pytest
+
+      - name: Run SFW guard tests
+        run: python3 -m pytest tests/test_sfw_guard.py tests/test_shell.py -q
