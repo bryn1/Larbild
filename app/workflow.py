@@ -75,8 +75,16 @@ DEFAULT_SCHEDULER = "karras"
 DEFAULT_NEG_PROMPT = (
     "lowres, blurry, watermark, text, signature, jpeg artifacts, deformed"
 )
-# A neutral SFW filename prefix for SaveImage so outputs sort under larbild/.
-SAVE_PREFIX = "larbild"
+# SFW SaveImage prefix. ComfyUI on VM100 has output/ symlinked to the shared
+# vm153 NFS root (/mnt/vm153-output), where imagegen also writes — a bare prefix
+# dropped raw saves at that shared root next to imagegen's dirs. Nesting the
+# prefix under larbild/raw/ makes ComfyUI write into larbild's OWN isolated
+# folder (the subfolder is created relative to ComfyUI's output dir), keeping
+# the raw ComfyUI byproducts inside larbild/ and off the shared root. The
+# worker's downloaded copy (auto-sorted under STORAGE_DIR/output/...) stays
+# authoritative; these raw saves are a redundant ComfyUI-side byproduct kept for
+# provenance.
+SAVE_PREFIX = "larbild/raw/larbild"
 
 
 class WorkflowError(RuntimeError):
