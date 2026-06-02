@@ -35,3 +35,11 @@ numpy>=1.26             # image array ops
 matplotlib>=3.7         # plots/graphs, force diagrams, timelines, mpl fallbacks
 graphviz>=0.20          # block/flow/concept/cycle diagrams (needs apt `dot` too)
 rdkit>=2023.9           # kemi molecules: SMILES → bond-accurate skeletal formula
+
+# ── SVG concept-diagram baseline (scripts/import_skola_svgs.py, lb-svg-baseline)
+# Rasterises the 123 hand-authored skola concept SVGs → white-bg library PNGs
+# (the kept vector is also stored for later serving/edit). Needs the SYSTEM
+# libcairo (``libcairo.so.2`` — present on the Sibbis host) like graphviz needs
+# `dot`; cairocffi pulls it in. The browser-lenient sources are sanitised
+# in-memory before rasterising (the import handles raw </& and dangling markers).
+cairosvg>=2.7           # SVG → PNG for the imported concept-diagram baseline
