@@ -256,6 +256,32 @@ def build_specific_prompt(job: dict) -> tuple[str, Optional[str], dict]:
     # always agree on which lane this is.
     flux_route = flux_route_for(image_type)
 
+    # ── PRE-COMPOSED (baked) prompt fast-path (lb batch render-all) ──
+    # A large unattended batch (the full begrepp set) pre-generates every
+    # diffusion prompt in ONE composer pass up front (the no-VRAM-contention
+    # recipe — edu_prompt.batch_compose), then BAKES the final positive onto each
+    # enqueued job's params blob as ``precomposed_prompt``. When present, render
+    # WITHOUT re-invoking the 14B composer here: the composer service (:8091) can
+    # then stay DOWN for the whole render drain, so ComfyUI never swaps VRAM with
+    # it 700+ times. We still apply the lane-appropriate SFW negative (never let a
+    # baked positive skip the negative scaffold), and record the provenance. The
+    # baked text is a finished positive (style + framing + quality already folded
+    # in by the batch pass), so it is used verbatim. Absent → the live compose
+    # path below runs exactly as before (a UI single-submit is unaffected).
+    precomposed = _params_field(job, "precomposed_prompt", "baked_prompt")
+    if precomposed:
+        negative = _edu_prompt.FLUX_SFW_NEGATIVE if flux_route else _edu_prompt.SFW_NEGATIVE
+        edu_meta = {
+            "edu_source": "precomposed",
+            "concept": _concept_from_job(job),
+            "image_type": image_type,
+            "original_prompt": original,
+            "flux_route": flux_route,
+        }
+        log.info("render prompt for %s: concept=%r source=precomposed flux_route=%s",
+                 job.get("id"), edu_meta["concept"], flux_route)
+        return precomposed, negative, edu_meta
+
     concept = _concept_from_job(job)
     if not concept:
         # No concept to ground on — keep the operator's prompt, still apply the

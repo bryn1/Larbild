@@ -192,6 +192,54 @@ def test_concept_prefers_explicit_begrepp_param(app):
         assert meta["concept"] == "Ljud"       # the param won over the prose
 
 
+def test_precomposed_prompt_is_used_verbatim_without_composer(app, monkeypatch):
+    # A baked batch job carries the finished positive in params; the worker must
+    # use it verbatim and NEVER call the 14B composer (the whole point of baking).
+    with app.app_context():
+        import json as _json
+        called = {"n": 0}
+        def _boom(*a, **k):  # the composer must not be touched
+            called["n"] += 1
+            raise AssertionError("composer was called for a precomposed job")
+        monkeypatch.setattr(ep, "build_edu_prompt", _boom)
+        monkeypatch.setattr(ep, "build_flux_edu_prompt", _boom)
+        monkeypatch.setattr(ep, "compose_via_llm", _boom)
+        baked = "a single animal cell, cross-section, organelles, micrograph, no text"
+        job = {"id": "j", "subject": "biologi", "area": "celler",
+               "image_type": "mikroskop", "prompt": "Cell", "title": "Cell",
+               "params_json": _json.dumps({"begrepp": "Cell",
+                                           "precomposed_prompt": baked}),
+               "seed": 1}
+        pos, neg, meta = rw.build_specific_prompt(job)
+        assert pos == baked                       # verbatim, not recomposed
+        assert meta["edu_source"] == "precomposed"
+        assert meta["concept"] == "Cell"
+        assert neg == ep.SFW_NEGATIVE             # SFW negative still applied
+        assert called["n"] == 0
+
+
+def test_precomposed_prompt_applies_flux_negative_on_flux_lane(app, monkeypatch):
+    # When the job's imageType routes to FLUX, a baked prompt must still get the
+    # harder FLUX no-text negative (never skip the SFW scaffold).
+    with app.app_context():
+        import json as _json
+        monkeypatch.setattr(rw, "FLUX_ROUTE_ENABLE", True)
+        fake_targets = dict(rw.RENDER_TARGETS)
+        fake_targets[rw.FLUX_ROUTE_TARGET] = {"label": "flux-lane", "http": "x"}
+        monkeypatch.setattr(rw, "RENDER_TARGETS", fake_targets)
+        baked = "iron filings forming field lines around a bar magnet, clean illustration"
+        job = {"id": "j", "subject": "fysik", "area": "magnetism",
+               "image_type": "illustration", "prompt": "Magnetism", "title": "Magnetism",
+               "params_json": _json.dumps({"begrepp": "Magnetism",
+                                           "precomposed_prompt": baked}),
+               "seed": 1}
+        pos, neg, meta = rw.build_specific_prompt(job)
+        assert pos == baked
+        assert meta["edu_source"] == "precomposed"
+        assert meta["flux_route"] == rw.FLUX_ROUTE_TARGET
+        assert neg == ep.FLUX_SFW_NEGATIVE
+
+
 # ── the FLUX-routing flag is dormant until a FLUX lane exists ───────────────
 
 
