@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Halvledare</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Leder ström ibland – mittemellan ledare och isolator</text>
+
+<!-- conductor -->
+<rect x="80" y="150" width="180" height="110" fill="#dcfce7" stroke="#16a34a" stroke-width="3" rx="6"/>
+<text x="170" y="180" font-family="Arial,sans-serif" font-size="16" fill="#166534" text-anchor="middle" font-weight="bold">Ledare</text>
+<text x="170" y="208" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">t.ex. koppar</text>
+<text x="170" y="235" font-family="Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle">Leder alltid ström</text>
+
+<!-- semiconductor -->
+<rect x="310" y="150" width="180" height="110" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" rx="6"/>
+<text x="400" y="180" font-family="Arial,sans-serif" font-size="16" fill="#b45309" text-anchor="middle" font-weight="bold">Halvledare</text>
+<text x="400" y="208" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">t.ex. kisel</text>
+<text x="400" y="235" font-family="Arial,sans-serif" font-size="12" fill="#b45309" text-anchor="middle">Leder ibland</text>
+
+<!-- insulator -->
+<rect x="540" y="150" width="180" height="110" fill="#fee2e2" stroke="#dc2626" stroke-width="3" rx="6"/>
+<text x="630" y="180" font-family="Arial,sans-serif" font-size="16" fill="#991b1b" text-anchor="middle" font-weight="bold">Isolator</text>
+<text x="630" y="208" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">t.ex. plast</text>
+<text x="630" y="235" font-family="Arial,sans-serif" font-size="12" fill="#991b1b" text-anchor="middle">Leder aldrig ström</text>
+
+<!-- scale arrow -->
+<line x1="100" y1="300" x2="700" y2="300" stroke="#6b7280" stroke-width="2"/>
+<text x="170" y="325" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">leder bra</text>
+<text x="630" y="325" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">leder inte</text>
+<polygon points="100,300 112,295 112,305" fill="#6b7280"/>
+<polygon points="700,300 688,295 688,305" fill="#6b7280"/>
+
+<!-- chip -->
+<rect x="330" y="360" width="140" height="60" fill="#1f2937" rx="4"/>
+<text x="400" y="395" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle">Datachipp</text>
+<text x="400" y="445" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Halvledare styr var strömmen går i mobilens chipp</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Grunden i all modern elektronik – kan styras att leda eller inte</text>
+</svg>

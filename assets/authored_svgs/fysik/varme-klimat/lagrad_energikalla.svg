@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Lagrad energikälla</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Energin finns sparad och kan användas när vi vill</text>
+
+<!-- Three example stores -->
+<!-- Wood -->
+<rect x="80" y="120" width="180" height="180" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" rx="6"/>
+<text x="170" y="148" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Ved</text>
+<rect x="120" y="170" width="100" height="18" fill="#92400e" rx="3"/>
+<rect x="120" y="192" width="100" height="18" fill="#a16207" rx="3"/>
+<rect x="120" y="214" width="100" height="18" fill="#92400e" rx="3"/>
+<text x="170" y="270" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">energi i bränslet</text>
+<text x="170" y="288" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">frigörs när det brinner</text>
+
+<!-- Oil -->
+<rect x="310" y="120" width="180" height="180" fill="#f3f4f6" stroke="#6b7280" stroke-width="2" rx="6"/>
+<text x="400" y="148" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Olja</text>
+<rect x="360" y="165" width="80" height="80" fill="#9ca3af" stroke="#4b5563" stroke-width="2" rx="4"/>
+<ellipse cx="400" cy="165" rx="40" ry="8" fill="#6b7280"/>
+<text x="400" y="270" font-family="Arial,sans-serif" font-size="12" fill="#4b5563" text-anchor="middle">lagrad kemisk energi</text>
+<text x="400" y="288" font-family="Arial,sans-serif" font-size="12" fill="#4b5563" text-anchor="middle">i flytande bränsle</text>
+
+<!-- Battery -->
+<rect x="540" y="120" width="180" height="180" fill="#ecfdf5" stroke="#16a34a" stroke-width="2" rx="6"/>
+<text x="630" y="148" font-family="Arial,sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold">Batteri</text>
+<rect x="590" y="165" width="80" height="60" fill="#16a34a" stroke="#15803d" stroke-width="2" rx="4"/>
+<rect x="620" y="158" width="20" height="9" fill="#15803d"/>
+<text x="630" y="205" font-family="Arial,sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">+ −</text>
+<text x="630" y="270" font-family="Arial,sans-serif" font-size="12" fill="#15803d" text-anchor="middle">el sparad inuti</text>
+<text x="630" y="288" font-family="Arial,sans-serif" font-size="12" fill="#15803d" text-anchor="middle">används vid behov</text>
+
+<!-- Arrow: stored -> used -->
+<line x1="200" y1="360" x2="560" y2="360" stroke="#dc2626" stroke-width="3"/>
+<polygon points="570,360 558,355 558,365" fill="#dc2626"/>
+<text x="380" y="350" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">lagrad nu  →  används senare</text>
+
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Vedträna i pannrummet är en lagrad energikälla tills du tänder brasan</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Skillnad mot vind och sol som bara finns just när det blåser eller solen lyser</text>
+</svg>

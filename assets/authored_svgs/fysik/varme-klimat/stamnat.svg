@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Stamnät</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Landets största elledningar med mycket hög spänning — flyttar el långa sträckor</text>
+
+<!-- Power plant -->
+<rect x="50" y="180" width="110" height="80" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="4"/>
+<text x="105" y="215" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="middle" font-weight="bold">Kraftverk</text>
+<text x="105" y="235" font-family="Arial,sans-serif" font-size="11" fill="#15803d" text-anchor="middle">i norr</text>
+
+<!-- STAMNÄT: tall pylons + thick red highlighted line -->
+<g stroke="#6b7280" stroke-width="3">
+<line x1="230" y1="120" x2="230" y2="260"/>
+<line x1="195" y1="145" x2="265" y2="145"/>
+<line x1="195" y1="170" x2="265" y2="170"/>
+<line x1="430" y1="120" x2="430" y2="260"/>
+<line x1="395" y1="145" x2="465" y2="145"/>
+<line x1="395" y1="170" x2="465" y2="170"/>
+</g>
+<line x1="160" y1="150" x2="230" y2="135" stroke="#dc2626" stroke-width="4"/>
+<line x1="230" y1="135" x2="430" y2="135" stroke="#dc2626" stroke-width="4"/>
+<line x1="430" y1="135" x2="560" y2="200" stroke="#dc2626" stroke-width="4"/>
+<rect x="250" y="95" width="160" height="26" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5" rx="3"/>
+<text x="330" y="113" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">STAMNÄT 400 000 V</text>
+
+<!-- Step-down to region -->
+<rect x="560" y="180" width="100" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="4"/>
+<text x="610" y="208" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle" font-weight="bold">Transformator</text>
+<text x="610" y="228" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">sänker spänning</text>
+
+<line x1="660" y1="215" x2="710" y2="215" stroke="#9ca3af" stroke-width="2"/>
+<polygon points="720,215 708,210 708,220" fill="#9ca3af"/>
+<text x="715" y="245" font-family="Arial,sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">regionnät</text>
+
+<!-- ladder showing hierarchy -->
+<text x="400" y="320" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Elnätets nivåer (efter spänning):</text>
+<text x="400" y="350" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Stamnät (högst) → Regionnät → Lokalnät (lägst)</text>
+<text x="400" y="380" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Hög spänning gör att lite energi går förlorad på den långa vägen</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Elen från vattenkraften i norr åker genom stamnätet hela vägen ner till din tv</text>
+</svg>

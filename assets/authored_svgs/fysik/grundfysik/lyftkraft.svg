@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Lyftkraft</text>
+<!-- water tank -->
+<rect x="150" y="180" width="500" height="250" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+<!-- water surface line -->
+<line x1="150" y1="220" x2="650" y2="220" stroke="#2563eb" stroke-width="2"/>
+<text x="170" y="210" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="start">vattenyta</text>
+<!-- floating object (ball / badring), partly submerged -->
+<circle cx="400" cy="240" r="55" fill="#f59e0b" stroke="#b45309" stroke-width="3"/>
+<text x="400" y="246" font-family="Arial,sans-serif" font-size="14" fill="#7c2d12" text-anchor="middle" font-weight="bold">föremål</text>
+<!-- weight arrow DOWN (red) from centre -->
+<line x1="370" y1="240" x2="370" y2="360" stroke="#dc2626" stroke-width="4"/>
+<polygon points="370,372 362,355 378,355" fill="#dc2626"/>
+<text x="345" y="320" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Tyngd</text>
+<!-- buoyancy arrow UP (green) from below -->
+<line x1="430" y1="240" x2="430" y2="120" stroke="#16a34a" stroke-width="4"/>
+<polygon points="430,108 422,125 438,125" fill="#16a34a"/>
+<text x="465" y="165" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">Lyftkraft</text>
+<!-- water displaced arrows around the submerged part (small upward) -->
+<line x1="360" y1="295" x2="360" y2="275" stroke="#16a34a" stroke-width="2"/><polygon points="360,268 356,277 364,277" fill="#16a34a"/>
+<line x1="400" y1="300" x2="400" y2="280" stroke="#16a34a" stroke-width="2"/><polygon points="400,273 396,282 404,282" fill="#16a34a"/>
+<line x1="440" y1="295" x2="440" y2="275" stroke="#16a34a" stroke-width="2"/><polygon points="440,268 436,277 444,277" fill="#16a34a"/>
+<text x="400" y="415" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Lyftkraft större än tyngd → föremålet flyter</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vätskan puttar upp föremålet med en lyftkraft underifrån</text>
+</svg>

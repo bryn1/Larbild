@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Marslandare (robot på Mars)</text>
+<rect x="40" y="70" width="720" height="250" fill="#fde2c8"/>
+<rect x="40" y="300" width="720" height="120" fill="#c2410c"/>
+<path d="M 40 300 q 180 -26 360 0 q 180 26 360 0 L 760 300 Z" fill="#9a3412"/>
+<ellipse cx="130" cy="312" rx="14" ry="6" fill="#7c2d12"/>
+<ellipse cx="250" cy="312" rx="14" ry="6" fill="#7c2d12"/>
+<ellipse cx="520" cy="312" rx="14" ry="6" fill="#7c2d12"/>
+<ellipse cx="660" cy="312" rx="14" ry="6" fill="#7c2d12"/>
+<rect x="340" y="240" width="120" height="44" rx="6" fill="#e5e7eb" stroke="#374151" stroke-width="2"/>
+<circle cx="355" cy="290" r="13" fill="#1f2937"/>
+<circle cx="355" cy="290" r="5" fill="#6b7280"/>
+<circle cx="385" cy="290" r="13" fill="#1f2937"/>
+<circle cx="385" cy="290" r="5" fill="#6b7280"/>
+<circle cx="415" cy="290" r="13" fill="#1f2937"/>
+<circle cx="415" cy="290" r="5" fill="#6b7280"/>
+<circle cx="445" cy="290" r="13" fill="#1f2937"/>
+<circle cx="445" cy="290" r="5" fill="#6b7280"/>
+<line x1="430" y1="240" x2="430" y2="200" stroke="#374151" stroke-width="3"/>
+<rect x="422" y="188" width="22" height="16" rx="3" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="433" y="180" font-family="Arial,sans-serif" font-size="9" fill="#1e40af" text-anchor="middle">kamera</text>
+<rect x="322" y="226" width="40" height="10" fill="#1e40af"/>
+<line x1="340" y1="264" x2="300" y2="288" stroke="#374151" stroke-width="3"/>
+<circle cx="300" cy="288" r="5" fill="#16a34a"/>
+<text x="290" y="310" font-family="Arial,sans-serif" font-size="10" fill="#15803d" text-anchor="middle">arm samlar prover</text>
+<text x="620" y="130" font-family="Arial,sans-serif" font-size="14" fill="#9a3412" text-anchor="middle" font-weight="bold">Planeten Mars</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En marslandare är en robot som landar på Mars, tar bilder och samlar information om ytan</text>
+</svg>

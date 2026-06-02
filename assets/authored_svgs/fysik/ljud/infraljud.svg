@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Infraljud – för låg frekvens att höra</text>
+<line x1="80.0" y1="300.0" x2="720.0" y2="300.0" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="720.0" y1="300.0" x2="735.0" y2="300.0" stroke="#1f2937" stroke-width="2"/>
+<polygon points="745.0,300.0 735.0,305.5 735.0,294.5" fill="#1f2937"/>
+<text x="740" y="325" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Hz</text>
+<rect x="80" y="260" width="200" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="0"/>
+<rect x="280" y="260" width="280" height="40" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="0"/>
+<rect x="560" y="260" width="160" height="40" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="0"/>
+<text x="180" y="285" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">INFRALJUD</text>
+<text x="420" y="285" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="middle" font-weight="bold">Vi kan höra</text>
+<text x="640" y="285" font-family="Arial,sans-serif" font-size="13" fill="#991b1b" text-anchor="middle" font-weight="bold">Ultraljud</text>
+<line x1="280.0" y1="295.0" x2="280.0" y2="312.0" stroke="#1f2937" stroke-width="2"/>
+<line x1="560.0" y1="295.0" x2="560.0" y2="312.0" stroke="#1f2937" stroke-width="2"/>
+<text x="280" y="328" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">20 Hz</text>
+<text x="560" y="328" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">20 000 Hz</text>
+<line x1="180.0" y1="250.0" x2="180.0" y2="248.0" stroke="#2563eb" stroke-width="2"/>
+<polygon points="180.0,258.0 174.5,248.0 185.5,248.0" fill="#2563eb"/>
+<text x="180" y="240" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">under 20 Hz</text>
+<text x="180" y="375" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">T.ex. elefanters läten –</text>
+<text x="180" y="393" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">örat hör ingenting</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Infraljud har så låg frekvens (under 20 Hz) att människans öra inte kan höra det</text>
+</svg>

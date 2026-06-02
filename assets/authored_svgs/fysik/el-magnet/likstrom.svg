@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Likström (DC) — alltid samma håll</text>
+<rect x="120" y="160" width="40" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="140" y="150" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">Batteri</text>
+<text x="140" y="205" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">+</text>
+<text x="140" y="233" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<polyline points="160,170 320,170 320,200" fill="none" stroke="#1f2937" stroke-width="2"/>
+<polyline points="160,230 320,230 320,200" fill="none" stroke="#1f2937" stroke-width="2"/>
+<circle cx="320" cy="200" r="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="307" y1="187" x2="333" y2="213" stroke="#f59e0b" stroke-width="2"/>
+<line x1="333" y1="187" x2="307" y2="213" stroke="#f59e0b" stroke-width="2"/>
+<line x1="220.0" y1="170.0" x2="270.0" y2="170.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="280.0,170.0 270.0,174.2 270.0,165.8" fill="#dc2626"/>
+<text x="250" y="162" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">I</text>
+<line x1="430" y1="250" x2="660" y2="250" stroke="#1f2937" stroke-width="2"/>
+<line x1="430" y1="250" x2="430" y2="140" stroke="#1f2937" stroke-width="2"/>
+<text x="660" y="268" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="end">tid</text>
+<text x="422" y="140" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="end">ström</text>
+<line x1="430" y1="180" x2="650" y2="180" stroke="#dc2626" stroke-width="3"/>
+<text x="540" y="170" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">konstant</text>
+<text x="400" y="350" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Batterier ger likström: strömmen byter aldrig riktning</text>
+<text x="400" y="380" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Exempel: ficklampa, fjärrkontroll, mobilbatteri</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Likström går hela tiden åt samma håll i kretsen</text>
+</svg>

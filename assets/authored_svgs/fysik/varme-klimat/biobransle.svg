@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Biobränsle – förnybart kretslopp</text>
+
+<!-- circular cycle, center 400,270 radius 150 -->
+<circle cx="400" cy="270" r="150" fill="none" stroke="#d1d5db" stroke-width="2" stroke-dasharray="6,5"/>
+
+<!-- Top: tree/plant grows -->
+<line x1="400" y1="135" x2="400" y2="105" stroke="#92400e" stroke-width="6"/>
+<circle cx="400" cy="100" r="26" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<text x="400" y="75" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="middle" font-weight="bold">1. Träd / växt</text>
+<text x="400" y="58" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">tar upp CO₂ och växer</text>
+
+<!-- Right: harvest / wood logs -->
+<rect x="510" y="250" width="40" height="14" fill="#92400e" rx="6"/>
+<rect x="510" y="270" width="40" height="14" fill="#a16207" rx="6"/>
+<rect x="520" y="290" width="40" height="14" fill="#92400e" rx="6"/>
+<text x="560" y="255" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="start" font-weight="bold">2. Ved / pellets</text>
+<text x="560" y="273" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="start">skördas som bränsle</text>
+
+<!-- Bottom: burning / stove -->
+<rect x="370" y="400" width="60" height="40" fill="#6b7280" stroke="#374151" stroke-width="2" rx="3"/>
+<path d="M 390 400 Q 385 385 395 380 Q 392 392 400 388 Q 408 378 405 370 Q 420 388 410 400 Z" fill="#f59e0b" stroke="#dc2626" stroke-width="1.5"/>
+<text x="400" y="465" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">3. Brinner → värme + CO₂</text>
+
+<!-- Left: CO2 released and re-absorbed -->
+<text x="240" y="255" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="end" font-weight="bold">4. CO₂ tas upp igen</text>
+<text x="240" y="273" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">av nya växter</text>
+
+<!-- curved arrows along the circle (clockwise) -->
+<!-- top-right arc arrowhead near 520,180 -->
+<path d="M 470 160 A 150 150 0 0 1 535 215" fill="none" stroke="#16a34a" stroke-width="3"/>
+<polygon points="540,222 527,217 533,210" fill="#16a34a"/>
+<!-- right-bottom arc -->
+<path d="M 525 330 A 150 150 0 0 1 460 388" fill="none" stroke="#dc2626" stroke-width="3"/>
+<polygon points="452,392 462,382 466,392" fill="#dc2626"/>
+<!-- bottom-left arc -->
+<path d="M 335 380 A 150 150 0 0 1 268 322" fill="none" stroke="#2563eb" stroke-width="3"/>
+<polygon points="263,315 276,320 270,328" fill="#2563eb"/>
+<!-- left-top arc -->
+<path d="M 270 215 A 150 150 0 0 1 335 158" fill="none" stroke="#15803d" stroke-width="3"/>
+<polygon points="343,154 333,164 329,154" fill="#15803d"/>
+
+<text x="400" y="270" font-family="Arial,sans-serif" font-size="14" fill="#15803d" text-anchor="middle" font-weight="bold">Kretslopp</text>
+<text x="400" y="290" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">kan odlas på nytt</text>
+
+<text x="400" y="490" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Bränsle från växter och djur – ny CO₂ binds när man planterar mer</text>
+</svg>

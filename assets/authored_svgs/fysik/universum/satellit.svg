@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Satellit i omloppsbana</text>
+<circle cx="400" cy="270" r="55" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<path d="M 370 250 q 20 -10 45 -2 q -15 12 -45 2 Z" fill="#16a34a" opacity="0.85"/>
+<path d="M 395 288 q 25 -6 38 6 q -22 10 -38 -6 Z" fill="#16a34a" opacity="0.85"/>
+<text x="400" y="274" font-family="Arial,sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">Planet</text>
+<ellipse cx="400" cy="270" rx="175" ry="120" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="7,5"/>
+<text x="400" y="140" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Omloppsbana</text>
+<rect x="534.4" y="193.2" width="18" height="16" fill="#9ca3af" stroke="#374151" stroke-width="1.5"/>
+<rect x="513.4" y="196.2" width="18" height="10" fill="#1e3a8a" stroke="#374151" stroke-width="1"/>
+<rect x="555.4" y="196.2" width="18" height="10" fill="#1e3a8a" stroke="#374151" stroke-width="1"/>
+<text x="549.3516077505735" y="179.17082763787448" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">Satellit</text>
+<line x1="543.4" y1="201.2" x2="501.2" y2="159.9" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="493.3,152.2 504.7,156.4 497.7,163.4" fill="#dc2626"/>
+<text x="501.3392486923614" y="156.19364987687572" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">fart (v)</text>
+<line x1="543.4" y1="201.2" x2="499.2" y2="222.4" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="489.3,227.1 497.0,217.9 501.3,226.8" fill="#16a34a"/>
+<text x="459.26322755930255" y="241.14094755066125" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">tyngdkraft</text>
+<circle cx="240.0" cy="282.0" r="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="240" y="306" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Månen (naturlig)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En satellit kretsar runt en planet — naturlig (månen) eller byggd (GPS, kartappen)</text>
+</svg>

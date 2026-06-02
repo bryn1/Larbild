@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Tyngdkraft (drar allt neråt mot marken)</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Därför faller saker när man släpper dem</text>
+
+<!-- Ball at top, falling -->
+<circle cx="250" cy="120" r="26" fill="#f59e0b" stroke="#b45309" stroke-width="2.5"/>
+<text x="250" y="125" font-family="Arial,sans-serif" font-size="12" fill="#7c2d12" text-anchor="middle" font-weight="bold">boll</text>
+
+<!-- Big downward force arrow from the ball -->
+<line x1="250" y1="150" x2="250" y2="320" stroke="#dc2626" stroke-width="5"/>
+<polygon points="250,338 242,318 258,318" fill="#dc2626"/>
+<text x="275" y="240" font-family="Arial,sans-serif" font-size="18" fill="#dc2626" text-anchor="start" font-weight="bold">Tyngdkraft</text>
+<text x="275" y="263" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start">drar neråt</text>
+
+<!-- motion dashed trail showing the ball fell -->
+<line x1="250" y1="150" x2="250" y2="100" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+<!-- Several other objects also pulled down (small arrows) to show "allt" -->
+<circle cx="520" cy="130" r="16" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<line x1="520" y1="150" x2="520" y2="225" stroke="#dc2626" stroke-width="3"/>
+<polygon points="520,238 514,225 526,225" fill="#dc2626"/>
+<text x="520" y="120" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">äpple</text>
+
+<circle cx="620" cy="170" r="20" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<line x1="620" y1="192" x2="620" y2="260" stroke="#dc2626" stroke-width="3"/>
+<polygon points="620,273 614,260 626,260" fill="#dc2626"/>
+<text x="620" y="162" font-family="Arial,sans-serif" font-size="11" fill="#15803d" text-anchor="middle">sten</text>
+
+<!-- The Earth (ground) at the bottom -->
+<path d="M 60 390 Q 400 350 740 390 L 740 460 L 60 460 Z" fill="#16a34a" stroke="#15803d" stroke-width="2.5"/>
+<rect x="60" y="430" width="680" height="30" fill="#92400e"/>
+<text x="400" y="425" font-family="Arial,sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">JORDEN (marken)</text>
+<text x="400" y="452" font-family="Arial,sans-serif" font-size="12" fill="#fde68a" text-anchor="middle">jorden drar alla föremål mot sin mitt</text>
+
+<text x="400" y="490" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Tyngdkraften drar alla föremål neråt mot jordens yta</text>
+</svg>

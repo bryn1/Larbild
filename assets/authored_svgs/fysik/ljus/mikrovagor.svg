@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Mikrovågor värmer mat</text>
+<!-- Microwave oven box -->
+<rect x="120" y="90" width="430" height="280" fill="#f1f5f9" stroke="#475569" stroke-width="3" rx="6"/>
+<!-- inner cavity -->
+<rect x="150" y="120" width="280" height="220" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+<!-- control panel on the right -->
+<rect x="450" y="120" width="80" height="220" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+<circle cx="490" cy="160" r="18" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+<rect x="465" y="200" width="50" height="14" fill="#94a3b8"/>
+<rect x="465" y="225" width="50" height="14" fill="#94a3b8"/>
+<!-- Magnetron source at top emitting microwaves -->
+<rect x="240" y="120" width="40" height="20" fill="#dc2626"/>
+<text x="260" y="115" font-family="Arial,sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">källa</text>
+<!-- Microwaves (wavy lines) coming down onto food -->
+<path d="M 220 150 Q 235 170 220 190 T 220 230" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<path d="M 290 150 Q 305 170 290 190 T 290 230" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<path d="M 360 150 Q 375 170 360 190 T 360 230" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="330" y="200" font-family="Arial,sans-serif" font-size="12" fill="#f59e0b" text-anchor="start">Mikrovågor</text>
+<!-- Food plate at bottom of cavity -->
+<ellipse cx="290" cy="300" rx="90" ry="20" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+<ellipse cx="290" cy="294" rx="55" ry="12" fill="#f97316" stroke="#9a3412" stroke-width="1.5"/>
+<text x="290" y="335" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">Maten</text>
+<!-- Right panel: water molecule vibrating -->
+<text x="660" y="130" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Vattenmolekyl</text>
+<circle cx="660" cy="200" r="22" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="660" y="205" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle">O</text>
+<circle cx="628" cy="172" r="13" fill="#93c5fd" stroke="#1e40af" stroke-width="1.5"/>
+<text x="628" y="177" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">H</text>
+<circle cx="692" cy="172" r="13" fill="#93c5fd" stroke="#1e40af" stroke-width="1.5"/>
+<text x="692" y="177" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">H</text>
+<line x1="645" y1="183" x2="635" y2="178" stroke="#1e40af" stroke-width="2"/>
+<line x1="675" y1="183" x2="685" y2="178" stroke="#1e40af" stroke-width="2"/>
+<!-- vibration arrows -->
+<path d="M 615 215 q -12 8 0 16" fill="none" stroke="#dc2626" stroke-width="2"/>
+<polygon points="615,231 620,222 610,224" fill="#dc2626"/>
+<path d="M 705 215 q 12 8 0 16" fill="none" stroke="#dc2626" stroke-width="2"/>
+<polygon points="705,231 700,222 710,224" fill="#dc2626"/>
+<text x="660" y="265" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">rör sig snabbare</text>
+<text x="660" y="280" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">→ blir varm</text>
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Mikrovågor får vattenmolekylerna i maten att röra sig snabbare</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Kortare våglängd än radiovågor — därför blir gårdagens pasta varm</text>
+</svg>

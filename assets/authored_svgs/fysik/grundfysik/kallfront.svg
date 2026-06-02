@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kallfront (kall luft tränger in)</text>
+<rect x="0" y="380" width="800" height="120" fill="#a3a3a3"/>
+<line x1="0" y1="380" x2="800" y2="380" stroke="#1f2937" stroke-width="2"/>
+<path d="M 280 380 Q 360 200 520 130 L 800 130 L 800 380 Z" fill="#fde68a" fill-opacity="0.8"/>
+<text x="640" y="250" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Varm luft</text>
+<line x1="560.0" y1="300.0" x2="595.9" y2="210.2" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="600.0,200.0 600.5,212.1 591.3,208.4" fill="#dc2626"/>
+<text x="610" y="250" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="start">stiger</text>
+<path d="M 0 380 L 0 150 Q 150 200 300 380 Z" fill="#93c5fd" fill-opacity="0.85"/>
+<text x="110" y="270" font-family="Arial,sans-serif" font-size="15" fill="#1e3a8a" text-anchor="middle" font-weight="bold">Kall luft</text>
+<line x1="150.0" y1="350.0" x2="237.0" y2="350.0" stroke="#2563eb" stroke-width="3.5"/>
+<polygon points="250.0,350.0 237.0,355.9 237.0,344.1" fill="#2563eb"/>
+<text x="120" y="335" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="start">fronten rör sig</text>
+<ellipse cx="380" cy="160" rx="55" ry="28" fill="#6b7280"/>
+<ellipse cx="430" cy="150" rx="45" ry="26" fill="#6b7280"/>
+<line x1="330" y1="195" x2="324" y2="230" stroke="#2563eb" stroke-width="2"/>
+<line x1="348" y1="195" x2="342" y2="230" stroke="#2563eb" stroke-width="2"/>
+<line x1="366" y1="195" x2="360" y2="230" stroke="#2563eb" stroke-width="2"/>
+<line x1="384" y1="195" x2="378" y2="230" stroke="#2563eb" stroke-width="2"/>
+<line x1="402" y1="195" x2="396" y2="230" stroke="#2563eb" stroke-width="2"/>
+<line x1="420" y1="195" x2="414" y2="230" stroke="#2563eb" stroke-width="2"/>
+<line x1="438" y1="195" x2="432" y2="230" stroke="#2563eb" stroke-width="2"/>
+<line x1="456" y1="195" x2="450" y2="230" stroke="#2563eb" stroke-width="2"/>
+<text x="400" y="255" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">regn</text>
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle">Kall luft tränger in under den varma och lyfter den → regn och blåst</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En kallfront är gränsen där kall luft tränger in under varm luft</text>
+</svg>

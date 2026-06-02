@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Vit dvärg — het, liten stjärnrest</text>
+<circle cx="250" cy="250" r="70" fill="#fde68a" opacity="0.20"/>
+<polygon points="308.0,250.0 284.8,259.3 300.2,279.0 275.5,275.5 279.0,300.2 259.3,284.8 250.0,308.0 240.7,284.8 221.0,300.2 224.5,275.5 199.8,279.0 215.2,259.3 192.0,250.0 215.2,240.7 199.8,221.0 224.5,224.5 221.0,199.8 240.7,215.2 250.0,192.0 259.3,215.2 279.0,199.8 275.5,224.5 300.2,221.0 284.8,240.7" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<circle cx="250" cy="250" r="42" fill="#fefce8" stroke="#fde047" stroke-width="2"/>
+<text x="250" y="254" font-family="Arial,sans-serif" font-size="13" fill="#a16207" text-anchor="middle" font-weight="bold">het</text>
+<text x="250" y="340" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Vit dvärg</text>
+<text x="250" y="358" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">lyser svagt, svalnar långsamt</text>
+<text x="600" y="120" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Storlek ≈ jorden</text>
+<circle cx="555" cy="220" r="40" fill="#fefce8" stroke="#fde047" stroke-width="2"/>
+<text x="555" y="224" font-family="Arial,sans-serif" font-size="10" fill="#a16207" text-anchor="middle">vit dvärg</text>
+<circle cx="655" cy="220" r="40" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<path d="M 642 210 q 12 -6 26 -1 q -9 8 -26 1 Z" fill="#16a34a"/>
+<text x="655" y="224" font-family="Arial,sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">jorden</text>
+<text x="600" y="285" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">men väldigt tung</text>
+<text x="400" y="415" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">Det som blir kvar när en stjärna som solen har slocknat</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Som glödande kol kvar i brasan — den lyser kvar ett tag efter att lågorna slocknat</text>
+</svg>

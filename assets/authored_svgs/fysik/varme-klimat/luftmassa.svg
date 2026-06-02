@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Luftmassa</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En stor mängd luft med ungefär samma temperatur och fuktighet</text>
+
+<!-- map ground -->
+<rect x="60" y="350" width="680" height="80" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="middle">Marken (landet)</text>
+
+<!-- COLD air mass (blue blob), moving south -->
+<ellipse cx="240" cy="200" rx="150" ry="90" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="240" y="175" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Kall luftmassa</text>
+<text x="240" y="200" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">samma låga temperatur</text>
+<text x="240" y="220" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">i hela molnet av luft</text>
+
+<!-- WARM air mass (amber blob) -->
+<ellipse cx="580" cy="210" rx="140" ry="85" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="580" y="185" font-family="Arial,sans-serif" font-size="16" fill="#92400e" text-anchor="middle" font-weight="bold">Varm luftmassa</text>
+<text x="580" y="210" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">samma höga temperatur</text>
+<text x="580" y="230" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">överallt i massan</text>
+
+<!-- motion arrow (cold moving in) -->
+<line x1="240" y1="300" x2="240" y2="345" stroke="#2563eb" stroke-width="3"/>
+<polygon points="240,352 235,340 245,340" fill="#2563eb"/>
+<text x="155" y="335" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">rör sig söderut</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En kall luftmassa från norr kom in och plötsligt behövde jag mössa</text>
+</svg>

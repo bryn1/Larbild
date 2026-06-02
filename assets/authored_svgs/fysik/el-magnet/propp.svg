@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Propp (säkring)</text>
+<text x="245" y="175" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Normalt</text>
+<line x1="120" y1="220" x2="200" y2="220" stroke="#1f2937" stroke-width="2.5"/>
+<rect x="200" y="205" width="90" height="30" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="208" y1="220" x2="282" y2="220" stroke="#7c2d12" stroke-width="2"/>
+<line x1="290" y1="220" x2="370" y2="220" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="140.0" y1="220.0" x2="175.0" y2="220.0" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="185.0,220.0 175.0,224.2 175.0,215.8" fill="#2563eb"/>
+<text x="245" y="258" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">tråden hel → ström går</text>
+<text x="245" y="320" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">För mycket ström</text>
+<line x1="120" y1="365" x2="200" y2="365" stroke="#1f2937" stroke-width="2.5"/>
+<rect x="200" y="350" width="90" height="30" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="208" y1="365" x2="235" y2="365" stroke="#7c2d12" stroke-width="2"/>
+<line x1="255" y1="365" x2="282" y2="365" stroke="#7c2d12" stroke-width="2"/>
+<line x1="237" y1="358" x2="241" y2="372" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="249" y1="358" x2="253" y2="372" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="290" y1="365" x2="370" y2="365" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="140.0" y1="365.0" x2="187.0" y2="365.0" stroke="#dc2626" stroke-width="5"/>
+<polygon points="200.0,365.0 187.0,370.5 187.0,359.5" fill="#dc2626"/>
+<text x="245" y="403" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">tråden smälter → strömmen bryts</text>
+<text x="560" y="240" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Proppen skyddar</text>
+<text x="560" y="265" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">sladdarna från</text>
+<text x="560" y="285" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">att bli farligt</text>
+<text x="560" y="305" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">varma</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En propp bryter strömmen om den blir för stark</text>
+</svg>

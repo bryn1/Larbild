@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Tyngdacceleration</text>
+<!-- hand/release point -->
+<text x="330" y="80" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">släpps från vila</text>
+<!-- dashed fall line -->
+<line x1="330" y1="95" x2="330" y2="420" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+<!-- ground -->
+<line x1="120" y1="420" x2="540" y2="420" stroke="#1f2937" stroke-width="3"/>
+<!-- ball at t=0 (y=100) -->
+<circle cx="330" cy="100" r="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<line x1="380" y1="100" x2="380" y2="118" stroke="#dc2626" stroke-width="3"/>
+<polygon points="380,126 376,118 384,118" fill="#dc2626"/>
+<text x="405" y="105" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="start">t = 0 s</text>
+<text x="405" y="121" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">v = 0 m/s</text>
+<!-- ball at t=1 (y=125, gap 25) -->
+<circle cx="330" cy="125" r="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<line x1="380" y1="125" x2="380" y2="158" stroke="#dc2626" stroke-width="3"/>
+<polygon points="380,166 376,158 384,158" fill="#dc2626"/>
+<text x="405" y="130" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="start">t = 1 s</text>
+<text x="405" y="146" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">v = 9,8 m/s</text>
+<!-- ball at t=2 (y=200, gap 75) -->
+<circle cx="330" cy="200" r="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<line x1="380" y1="200" x2="380" y2="248" stroke="#dc2626" stroke-width="3"/>
+<polygon points="380,256 376,248 384,248" fill="#dc2626"/>
+<text x="405" y="205" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="start">t = 2 s</text>
+<text x="405" y="221" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">v = 19,6 m/s</text>
+<!-- ball at t=3 (y=325, gap 125) -->
+<circle cx="330" cy="325" r="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<line x1="380" y1="325" x2="380" y2="388" stroke="#dc2626" stroke-width="3"/>
+<polygon points="380,396 376,388 384,388" fill="#dc2626"/>
+<text x="405" y="330" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="start">t = 3 s</text>
+<text x="405" y="346" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">v = 29,4 m/s</text>
+<!-- "growing gaps" bracket annotation on the left -->
+<text x="175" y="150" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">avstånden</text>
+<text x="175" y="166" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">blir större</text>
+<line x1="245" y1="125" x2="230" y2="125" stroke="#16a34a" stroke-width="1.5"/>
+<line x1="245" y1="200" x2="230" y2="200" stroke="#16a34a" stroke-width="1.5"/>
+<line x1="245" y1="325" x2="230" y2="325" stroke="#16a34a" stroke-width="1.5"/>
+<line x1="237" y1="125" x2="237" y2="325" stroke="#16a34a" stroke-width="1.5"/>
+<!-- g value box (amber) -->
+<rect x="575" y="200" width="180" height="90" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="4"/>
+<text x="665" y="235" font-family="Arial,sans-serif" font-size="20" fill="#92400e" text-anchor="middle" font-weight="bold">g ≈ 9,8 m/s²</text>
+<text x="665" y="262" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">farten ökar med</text>
+<text x="665" y="278" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">9,8 m/s varje sekund</text>
+<!-- bottom caption -->
+<text x="400" y="470" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ett fritt fallande föremål ökar farten lika mycket varje sekund</text>
+</svg>

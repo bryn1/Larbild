@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Komet (isklump med svans)</text>
+<circle cx="120" cy="220" r="38" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="120" y="224" font-family="Arial,sans-serif" font-size="11" fill="#b45309" text-anchor="middle">Solen</text>
+<ellipse cx="400" cy="250" rx="320" ry="120" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6,5" fill="none"/>
+<circle cx="300" cy="165" r="9" fill="#93c5fd" stroke="#2563eb" stroke-width="1.5"/>
+<text x="300" y="149" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">kärna (is)</text>
+<line x1="300" y1="165" x2="433.3" y2="96.2" stroke="#bfdbfe" stroke-width="5" stroke-linecap="round"/>
+<line x1="300" y1="165" x2="449.0" y2="147.6" stroke="#bfdbfe" stroke-width="5" stroke-linecap="round"/>
+<line x1="300" y1="165" x2="453.0" y2="118.2" stroke="#dbeafe" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+<text x="463.0162513682142" y="124.24503430415676" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="start">svans</text>
+<line x1="160.0" y1="200.0" x2="277.2" y2="173.0" stroke="#f59e0b" stroke-width="1.5"/>
+<polygon points="286.0,171.0 278.1,177.0 276.3,169.1" fill="#f59e0b"/>
+<text x="220" y="250" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">svansen pekar bort från solen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En komet är en isklump i lång bana — nära solen smälter isen och bildar en lysande svans</text>
+</svg>

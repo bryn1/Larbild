@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Buller – oönskat, störande ljud</text>
+<text x="230" y="95" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Oregelbundet, starkt ljud</text>
+<polyline points="70.0,180.6 79.2,216.6 87.8,203.9 98.7,151.4 110.8,149.1 122.2,152.7 131.0,191.7 145.6,158.6 155.4,214.0 170.9,208.5 182.1,252.4 190.5,239.4 200.8,160.9 209.8,178.9 224.3,164.9 236.9,215.3 247.9,205.3 256.4,151.6 266.1,219.8 277.5,179.6 290.2,194.9 300.6,232.4 314.2,171.9 326.8,202.8 341.8,225.2 352.1,252.8 361.0,191.0 375.1,161.7 387.0,149.3 400.3,229.1 412.9,241.3 423.4,221.5" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="60.0" y1="200.0" x2="440.0" y2="200.0" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="445.0" y1="200.0" x2="490.0" y2="200.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="500.0,200.0 490.0,205.5 490.0,194.5" fill="#dc2626"/>
+<path d="M 560 150 C 600 145 610 185 590 210 C 600 235 575 255 555 245 C 545 258 525 250 528 232 C 512 230 512 210 525 208 C 518 188 535 170 560 175 Z" fill="#fcd9c8" stroke="#b45309" stroke-width="2"/>
+<circle cx="555.0" cy="205.0" r="8.0" fill="#7c2d12" stroke="none" stroke-width="0"/>
+<text x="560" y="285" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Örat</text>
+<rect x="150" y="320" width="500" height="95" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="6"/>
+<text x="400" y="345" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Buller kan ge:</text>
+<text x="400" y="368" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">trötthet   •   irritation   •   svårt att höra</text>
+<text x="400" y="392" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">skadad hörsel om det pågår länge</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Buller är ljud man inte vill ha – starkt eller långvarigt buller skadar hörseln</text>
+</svg>

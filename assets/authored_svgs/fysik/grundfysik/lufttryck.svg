@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Lufttryck</text>
+<!-- sky gradient column -->
+<defs>
+<linearGradient id="skygrad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#eff6ff"/>
+<stop offset="1" stop-color="#60a5fa"/>
+</linearGradient>
+</defs>
+<rect x="80" y="70" width="640" height="320" fill="url(#skygrad)"/>
+<!-- ground -->
+<rect x="80" y="385" width="640" height="40" fill="#a16207"/>
+<!-- mountain -->
+<polygon points="500,385 600,150 700,385" fill="#6b7280"/>
+<polygon points="565,235 600,150 635,235" fill="#f3f4f6"/>
+<!-- person at sea level (left) -->
+<circle cx="180" cy="360" r="10" fill="#1f2937"/>
+<rect x="173" y="370" width="14" height="15" fill="#1f2937"/>
+<!-- downward arrows pressing on sea-level person (many, long = high pressure) -->
+<line x1="160" y1="120" x2="160" y2="335" stroke="#dc2626" stroke-width="3"/><polygon points="160,345 153,330 167,330" fill="#dc2626"/>
+<line x1="180" y1="120" x2="180" y2="335" stroke="#dc2626" stroke-width="3"/><polygon points="180,345 173,330 187,330" fill="#dc2626"/>
+<line x1="200" y1="120" x2="200" y2="335" stroke="#dc2626" stroke-width="3"/><polygon points="200,345 193,330 207,330" fill="#dc2626"/>
+<text x="180" y="110" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Mycket luft ovanför</text>
+<text x="180" y="408" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Vid havet: högt tryck</text>
+<!-- person on mountain top -->
+<circle cx="600" cy="135" r="9" fill="#1f2937"/>
+<rect x="594" y="144" width="12" height="13" fill="#1f2937"/>
+<!-- fewer/shorter arrows on mountain person (low pressure) -->
+<line x1="590" y1="95" x2="590" y2="115" stroke="#2563eb" stroke-width="2.5"/><polygon points="590,123 584,112 596,112" fill="#2563eb"/>
+<line x1="610" y1="95" x2="610" y2="115" stroke="#2563eb" stroke-width="2.5"/><polygon points="610,123 604,112 616,112" fill="#2563eb"/>
+<text x="600" y="85" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">Lite luft ovanför</text>
+<text x="600" y="445" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">På berget: lägre tryck</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Luftens tyngd trycker på oss — mer luft ovanför ger högre lufttryck</text>
+</svg>

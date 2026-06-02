@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Gränshastighet</text>
+<circle cx="300.0" cy="210.0" r="16.0" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<rect x="286" y="226" width="28" height="50" fill="#2563eb" stroke="#1e40af" stroke-width="2" rx="6"/>
+<line x1="286.0" y1="236.0" x2="256.0" y2="256.0" stroke="#1e40af" stroke-width="5"/>
+<line x1="314.0" y1="236.0" x2="344.0" y2="256.0" stroke="#1e40af" stroke-width="5"/>
+<line x1="292.0" y1="276.0" x2="278.0" y2="316.0" stroke="#1e40af" stroke-width="6"/>
+<line x1="308.0" y1="276.0" x2="322.0" y2="316.0" stroke="#1e40af" stroke-width="6"/>
+<text x="300" y="342" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">Fallskärmshoppare</text>
+<line x1="300.0" y1="345.0" x2="300.0" y2="394.0" stroke="#dc2626" stroke-width="4.5"/>
+<polygon points="300.0,410.0 291.2,394.0 308.8,394.0" fill="#dc2626"/>
+<text x="300" y="432" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Tyngdkraft (nedåt)</text>
+<line x1="300.0" y1="190.0" x2="300.0" y2="141.0" stroke="#16a34a" stroke-width="4.5"/>
+<polygon points="300.0,125.0 308.8,141.0 291.2,141.0" fill="#16a34a"/>
+<text x="300" y="112" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">Luftmotstånd (uppåt)</text>
+<rect x="500" y="200" width="260" height="130" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+<text x="630" y="230" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Krafterna är lika stora</text>
+<text x="630" y="258" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Luftmotstånd = Tyngdkraft</text>
+<text x="630" y="290" font-family="Arial,sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold">→ farten ökar inte mer</text>
+<text x="630" y="312" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="middle">= gränshastighet</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Gränshastighet: luftmotståndet är lika stort som tyngdkraften, farten slutar öka</text>
+</svg>

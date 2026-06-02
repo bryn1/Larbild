@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Nervsystemet — kroppens signalnät</text>
+<circle cx="400" cy="95" r="32" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<path d="M 382 95 q 6 -14 18 -8 q 12 -6 18 8 q 4 12 -9 14 q -9 8 -18 0 q -14 0 -9 -14 z" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+<text x="470" y="95" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">hjärna</text>
+<line x1="466.0" y1="95.0" x2="443.0" y2="95.0" stroke="#6b7280" stroke-width="1.5"/>
+<polygon points="436.0,95.0 443.0,91.5 443.0,98.5" fill="#6b7280"/>
+<path d="M 345 135 L 455 135 L 442 320 L 358 320 Z" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<line x1="400" y1="127" x2="400" y2="315" stroke="#2563eb" stroke-width="5"/>
+<text x="330" y="230" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="end">ryggmärg</text>
+<line x1="334.0" y1="230.0" x2="387.0" y2="230.0" stroke="#6b7280" stroke-width="1.5"/>
+<polygon points="394.0,230.0 387.0,233.5 387.0,226.5" fill="#6b7280"/>
+<line x1="400" y1="170" x2="345" y2="188" stroke="#2563eb" stroke-width="2"/>
+<line x1="400" y1="170" x2="455" y2="188" stroke="#2563eb" stroke-width="2"/>
+<line x1="400" y1="210" x2="345" y2="228" stroke="#2563eb" stroke-width="2"/>
+<line x1="400" y1="210" x2="455" y2="228" stroke="#2563eb" stroke-width="2"/>
+<line x1="400" y1="250" x2="345" y2="268" stroke="#2563eb" stroke-width="2"/>
+<line x1="400" y1="250" x2="455" y2="268" stroke="#2563eb" stroke-width="2"/>
+<line x1="400" y1="290" x2="345" y2="308" stroke="#2563eb" stroke-width="2"/>
+<line x1="400" y1="290" x2="455" y2="308" stroke="#2563eb" stroke-width="2"/>
+<line x1="350 " y1="150" x2="280" y2="250" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="450" y1="150" x2="520" y2="250" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="370" y1="320" x2="350" y2="420" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="430" y1="320" x2="450" y2="420" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="390.0" y1="110.0" x2="290.5" y2="237.9" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="285.0,245.0 287.0,235.1 294.1,240.7" fill="#dc2626"/>
+<text x="220" y="180" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">signal</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Signaler färdas mellan hjärnan och kroppen via ryggmärg och nerver</text>
+</svg>

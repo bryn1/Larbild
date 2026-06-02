@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Jordaxeln (lutar — ger årstider)</text>
+<circle cx="90" cy="250" r="38" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="90" y="254" font-family="Arial,sans-serif" font-size="11" fill="#b45309" text-anchor="middle">Solen</text>
+<line x1="130.0" y1="238.0" x2="232.1" y2="221.3" stroke="#fbbf24" stroke-width="1.5"/>
+<polygon points="240.0,220.0 232.7,224.8 231.5,217.7" fill="#fbbf24"/>
+<line x1="130.0" y1="250.0" x2="232.0" y2="250.0" stroke="#fbbf24" stroke-width="1.5"/>
+<polygon points="240.0,250.0 232.0,253.6 232.0,246.4" fill="#fbbf24"/>
+<line x1="130.0" y1="262.0" x2="232.1" y2="278.7" stroke="#fbbf24" stroke-width="1.5"/>
+<polygon points="240.0,280.0 231.5,282.3 232.7,275.2" fill="#fbbf24"/>
+<circle cx="470" cy="250" r="95" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+<circle cx="470" cy="250" r="95" fill="none" stroke="#2563eb" stroke-width="2"/>
+<line x1="523.8" y1="126.2" x2="416.2" y2="373.8" stroke="#dc2626" stroke-width="3"/>
+<text x="529.8311243049083" y="122.19688995800826" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="start">Nordpol</text>
+<text x="410.16887569509174" y="389.8031100419918" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="end">Sydpol</text>
+<line x1="470" y1="100" x2="470" y2="400" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5,4"/>
+<path d="M 470 120 A 130 130 0 0 0 521.8 130.8" stroke="#16a34a" stroke-width="1.5" fill="none"/>
+<text x="540" y="122" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="start" font-weight="bold">ca 23,5°</text>
+<line x1="375" y1="250" x2="565" y2="250" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="640" y="250" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">Lutningen ger oss</text>
+<text x="640" y="270" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="bold">olika årstider</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Jordaxeln är den tänkta linjen jorden snurrar runt — den lutar, och därför får vi årstider</text>
+</svg>

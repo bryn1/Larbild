@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Lodlinje</text>
+<circle cx="400.0" cy="95.0" r="8.0" fill="#6b7280" stroke="#1f2937" stroke-width="2"/>
+<text x="400" y="81" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Du håller stilla</text>
+<line x1="400.0" y1="95.0" x2="400.0" y2="360.0" stroke="#f59e0b" stroke-width="3"/>
+<polygon points="386.0,360.0 414.0,360.0 400.0,394.0" fill="#6b7280" stroke="#1f2937" stroke-width="2"/>
+<text x="426" y="378" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">Tyngd (mutter)</text>
+<line x1="400.0" y1="95.0" x2="400.0" y2="420.0" stroke="#6b7280" stroke-width="1" stroke-dasharray="5,4"/>
+<polyline points="140.0,430.0 660.0,395.0" fill="none" stroke="#92400e" stroke-width="4" stroke-linejoin="round"/>
+<text x="180" y="450" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="start">(marken kan luta — lodlinjen pekar ändå rakt ner)</text>
+<line x1="470.0" y1="200.0" x2="470.0" y2="308.0" stroke="#dc2626" stroke-width="3"/>
+<polygon points="470.0,320.0 463.4,308.0 476.6,308.0" fill="#dc2626"/>
+<text x="486" y="260" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">Tyngdkraften drar</text>
+<text x="486" y="276" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">rakt nedåt</text>
+<text x="314" y="230" font-family="Arial,sans-serif" font-size="13" fill="#f59e0b" text-anchor="end" font-weight="bold">Lodrät linje</text>
+<text x="314" y="246" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">mot jordens mitt</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En lodlinje är lodrät rakt ner mot jordens mitt — den visar var tyngdkraften drar</text>
+</svg>

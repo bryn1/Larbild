@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Rörelseenergi (E = ½ · m · v²)</text>
+<line x1="80" y1="320" x2="720" y2="320" stroke="#1f2937" stroke-width="2"/>
+<circle cx="200" cy="300" r="18" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<line x1="225.0" y1="300.0" x2="280.0" y2="300.0" stroke="#dc2626" stroke-width="2"/>
+<polygon points="290.0,300.0 280.0,304.2 280.0,295.8" fill="#dc2626"/>
+<text x="255" y="288" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">långsam v</text>
+<text x="200" y="350" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">liten rörelseenergi</text>
+<circle cx="200" cy="220" r="18" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<line x1="225.0" y1="220.0" x2="346.0" y2="220.0" stroke="#dc2626" stroke-width="5"/>
+<polygon points="360.0,220.0 346.0,225.9 346.0,214.1" fill="#dc2626"/>
+<text x="300" y="206" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">snabb v</text>
+<text x="200" y="195" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">stor rörelseenergi</text>
+<text x="560" y="230" font-family="Arial,sans-serif" font-size="24" fill="#1e40af" text-anchor="middle" font-weight="bold">E = ½ · m · v²</text>
+<text x="560" y="262" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">m = massa</text>
+<text x="560" y="284" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">v = fart</text>
+<text x="560" y="312" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Enhet: joule (J)</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Ju snabbare och tyngre, desto mer rörelseenergi</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Rörelseenergi har ett föremål när det rör sig</text>
+</svg>

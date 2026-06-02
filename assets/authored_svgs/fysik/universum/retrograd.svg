@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Retrograd rörelse — verkar gå baklänges</text>
+<circle cx="370.5" cy="232.3" r="1.6" fill="#cbd5e1"/>
+<circle cx="370.1" cy="318.0" r="1.2" fill="#cbd5e1"/>
+<circle cx="204.5" cy="218.5" r="2.0" fill="#cbd5e1"/>
+<circle cx="470.7" cy="124.0" r="1.6" fill="#cbd5e1"/>
+<circle cx="278.1" cy="96.3" r="2.0" fill="#cbd5e1"/>
+<circle cx="483.4" cy="242.7" r="1.6" fill="#cbd5e1"/>
+<circle cx="688.1" cy="259.6" r="2.0" fill="#cbd5e1"/>
+<circle cx="493.0" cy="250.7" r="2.0" fill="#cbd5e1"/>
+<circle cx="129.2" cy="80.3" r="1.2" fill="#cbd5e1"/>
+<circle cx="461.8" cy="295.7" r="1.6" fill="#cbd5e1"/>
+<circle cx="363.1" cy="314.3" r="2.0" fill="#cbd5e1"/>
+<circle cx="234.9" cy="155.3" r="1.2" fill="#cbd5e1"/>
+<circle cx="500.7" cy="202.6" r="1.6" fill="#cbd5e1"/>
+<circle cx="342.2" cy="229.9" r="1.2" fill="#cbd5e1"/>
+<circle cx="528.8" cy="161.4" r="1.2" fill="#cbd5e1"/>
+<circle cx="408.0" cy="78.6" r="2.0" fill="#cbd5e1"/>
+<circle cx="565.1" cy="186.1" r="1.6" fill="#cbd5e1"/>
+<circle cx="329.6" cy="347.8" r="2.0" fill="#cbd5e1"/>
+<circle cx="90.3" cy="130.8" r="1.2" fill="#cbd5e1"/>
+<circle cx="381.4" cy="354.3" r="1.6" fill="#cbd5e1"/>
+<circle cx="350.3" cy="234.2" r="1.2" fill="#cbd5e1"/>
+<circle cx="572.7" cy="148.2" r="1.2" fill="#cbd5e1"/>
+<circle cx="282.9" cy="74.4" r="1.6" fill="#cbd5e1"/>
+<circle cx="560.0" cy="104.2" r="1.2" fill="#cbd5e1"/>
+<circle cx="528.3" cy="73.2" r="1.6" fill="#cbd5e1"/>
+<circle cx="584.2" cy="121.5" r="2.0" fill="#cbd5e1"/>
+<circle cx="206.8" cy="217.6" r="2.0" fill="#cbd5e1"/>
+<circle cx="567.1" cy="191.6" r="1.6" fill="#cbd5e1"/>
+<circle cx="162.2" cy="192.0" r="1.2" fill="#cbd5e1"/>
+<circle cx="90.3" cy="320.7" r="2.0" fill="#cbd5e1"/>
+<circle cx="278.6" cy="326.6" r="1.2" fill="#cbd5e1"/>
+<circle cx="206.1" cy="358.8" r="2.0" fill="#cbd5e1"/>
+<circle cx="487.9" cy="99.1" r="1.2" fill="#cbd5e1"/>
+<circle cx="222.2" cy="144.9" r="2.0" fill="#cbd5e1"/>
+<circle cx="294.0" cy="155.9" r="1.2" fill="#cbd5e1"/>
+<circle cx="136.1" cy="130.5" r="2.0" fill="#cbd5e1"/>
+<circle cx="240.7" cy="244.4" r="1.6" fill="#cbd5e1"/>
+<circle cx="475.7" cy="106.9" r="2.0" fill="#cbd5e1"/>
+<circle cx="389.9" cy="236.6" r="1.6" fill="#cbd5e1"/>
+<circle cx="203.4" cy="114.7" r="1.2" fill="#cbd5e1"/>
+<polyline points="120.0,300.0 220.0,250.0 330.0,230.0 430.0,250.0 470.0,300.0 430.0,350.0 380.0,330.0 420.0,270.0 530.0,250.0 640.0,230.0 700.0,210.0" fill="none" stroke="#2563eb" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="330.0,230.0 319.4,238.6 317.0,225.7" fill="#2563eb"/>
+<polygon points="380.0,330.0 393.6,328.3 388.7,340.6" fill="#dc2626"/>
+<polygon points="700.0,210.0 690.7,220.1 686.5,207.5" fill="#2563eb"/>
+<circle cx="420.0" cy="270.0" r="9.0" fill="#f97316" stroke="#991b1b" stroke-width="2"/>
+<text x="420" y="252" font-family="Arial,sans-serif" font-size="12" fill="#f97316" text-anchor="middle" font-weight="bold">Planet</text>
+<text x="210" y="235" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">framåt</text>
+<text x="400" y="372" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">verkar gå baklänges</text>
+<text x="620" y="215" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">framåt igen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Retrograd är när en himlakropp ser ut att röra sig baklänges på himlen</text>
+</svg>

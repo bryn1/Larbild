@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Motstånd (bromsar strömmen)</text>
+<line x1="120" y1="240" x2="300" y2="240" stroke="#1f2937" stroke-width="2.5"/>
+<polyline points="300,240 320,220 340,260 360,220 380,260 400,220 420,260 440,240" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="440" y1="240" x2="680" y2="240" stroke="#1f2937" stroke-width="2.5"/>
+<text x="360" y="205" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Motstånd</text>
+<path d="M 340 195 q 6 -10 0 -18 q -6 -8 0 -16" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M 365 195 q 6 -10 0 -18 q -6 -8 0 -16" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M 390 195 q 6 -10 0 -18 q -6 -8 0 -16" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="365" y="150" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">blir varmt</text>
+<line x1="160.0" y1="240.0" x2="208.0" y2="240.0" stroke="#2563eb" stroke-width="4"/>
+<polygon points="220.0,240.0 208.0,245.0 208.0,235.0" fill="#2563eb"/>
+<text x="190" y="228" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">stor ström</text>
+<line x1="600.0" y1="240.0" x2="641.0" y2="240.0" stroke="#2563eb" stroke-width="2"/>
+<polygon points="650.0,240.0 641.0,243.8 641.0,236.2" fill="#2563eb"/>
+<text x="625" y="228" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">mindre</text>
+<text x="400" y="330" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Ju större motstånd (ohm), desto mindre ström kommer fram</text>
+<text x="400" y="360" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Glödtråden i en lampa är ett motstånd som blir så varmt att det lyser</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ett motstånd gör det svårare för strömmen att passera</text>
+</svg>

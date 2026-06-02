@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Gravitationskraft</text>
+<circle cx="400.0" cy="640.0" r="250.0" fill="#bfdbfe" stroke="#2563eb" stroke-width="3"/>
+<text x="400" y="425" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Jorden</text>
+<circle cx="400.0" cy="150.0" r="16.0" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<rect x="398" y="128" width="4" height="8" fill="#92400e" stroke="#1f2937" stroke-width="2" rx="0"/>
+<polygon points="402.0,132.0 416.0,126.0 408.0,138.0" fill="#16a34a" stroke="none" stroke-width="1"/>
+<text x="434" y="146" font-family="Arial,sans-serif" font-size="13" fill="#991b1b" text-anchor="start">Äpple</text>
+<line x1="400.0" y1="170.0" x2="400.0" y2="254.0" stroke="#dc2626" stroke-width="4.5"/>
+<polygon points="400.0,270.0 391.2,254.0 408.8,254.0" fill="#dc2626"/>
+<text x="418" y="228" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start" font-weight="bold">Gravitationskraft</text>
+<text x="418" y="246" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="start">(drar nedåt mot jorden)</text>
+<text x="400" y="325" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Alla föremål med massa dras mot varandra</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Gravitationskraften drar föremål mot varandra — allt dras ner mot marken</text>
+</svg>

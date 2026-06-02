@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kilowatt (kW) – enhet för effekt</text>
+<text x="400" y="80" font-family="Arial,sans-serif" font-size="30" fill="#1e40af" text-anchor="middle" font-weight="bold">1 kW = 1000 W</text>
+<text x="400" y="110" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Effekt = hur mycket energi per sekund</text>
+
+<!-- comparison bars of power -->
+<text x="120" y="165" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start">LED-lampa</text>
+<rect x="250" y="152" width="20" height="20" fill="#16a34a" stroke="#15803d" stroke-width="1"/>
+<text x="290" y="167" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="start">10 W = 0,01 kW</text>
+
+<text x="120" y="225" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start">Mobilladdare</text>
+<rect x="250" y="212" width="20" height="20" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+<text x="290" y="227" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="start">10 W = 0,01 kW</text>
+
+<text x="120" y="285" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start">Brödrost</text>
+<rect x="250" y="272" width="200" height="20" fill="#f59e0b" stroke="#b45309" stroke-width="1"/>
+<text x="470" y="287" font-family="Arial,sans-serif" font-size="13" fill="#b45309" text-anchor="start">1000 W = 1 kW</text>
+
+<text x="120" y="345" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start">Hårfön</text>
+<rect x="250" y="332" width="300" height="20" fill="#dc2626" stroke="#991b1b" stroke-width="1"/>
+<text x="565" y="347" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start">2000 W = 2 kW</text>
+
+<text x="400" y="410" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Ju högre effekt (kW), desto mer energi varje sekund</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hårfönen drar ungefär 2 kilowatt när håret torkas på morgonen</text>
+</svg>

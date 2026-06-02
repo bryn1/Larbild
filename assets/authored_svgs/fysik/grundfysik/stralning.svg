@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Strålning (värmeöverföring utan material)</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Energin sprids genom luft och tomrum — inget ämne behöver röra sig</text>
+
+<!-- Heat source: campfire / glowing object on the left -->
+<circle cx="190" cy="270" r="55" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<circle cx="190" cy="270" r="34" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+<circle cx="190" cy="270" r="16" fill="#f97316" stroke="#ea580c" stroke-width="2"/>
+<text x="190" y="350" font-family="Arial,sans-serif" font-size="14" fill="#ea580c" text-anchor="middle" font-weight="bold">Varm källa</text>
+<text x="190" y="370" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(lägereld)</text>
+
+<!-- Radiation arrows fanning outward to the right toward the person -->
+<line x1="250" y1="225" x2="470" y2="160" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="482,156.5 470.5,158.0 471.5,150.0" fill="#dc2626"/>
+<line x1="252" y1="248" x2="475" y2="210" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="487,208 475.5,210.5 474.0,202.5" fill="#dc2626"/>
+<line x1="254" y1="270" x2="478" y2="270" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="490,270 478,274 478,266" fill="#dc2626"/>
+<line x1="252" y1="292" x2="475" y2="330" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="487,332 474.0,337.5 475.5,329.5" fill="#dc2626"/>
+<line x1="250" y1="315" x2="470" y2="380" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="482,383.5 471.5,390.0 470.5,382.0" fill="#dc2626"/>
+<text x="358" y="135" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Värmestrålning →</text>
+
+<!-- "tomrum / luft" label between source and receiver -->
+<text x="360" y="295" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" font-style="italic">tomrum / luft</text>
+
+<!-- Receiver: a face/hand feeling the warmth -->
+<circle cx="600" cy="270" r="48" fill="#fde68a" stroke="#d97706" stroke-width="2.5"/>
+<circle cx="585" cy="258" r="5" fill="#1f2937"/>
+<circle cx="615" cy="258" r="5" fill="#1f2937"/>
+<path d="M 580 285 Q 600 300 620 285" stroke="#1f2937" stroke-width="2.5" fill="none"/>
+<text x="600" y="350" font-family="Arial,sans-serif" font-size="14" fill="#d97706" text-anchor="middle" font-weight="bold">Du känner värmen</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Strålning förflyttar värme utan att luften eller något annat material behöver flytta sig</text>
+</svg>

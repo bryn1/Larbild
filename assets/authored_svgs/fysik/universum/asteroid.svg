@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Asteroid (stenklump runt solen)</text>
+<circle cx="60" cy="250" r="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="60" y="254" font-family="Arial,sans-serif" font-size="10" fill="#b45309" text-anchor="middle">Sol</text>
+<path d="M 60.0 120.0 A 130 130 0 0 1 60.0 380.0" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
+<path d="M 261.7 120.0 A 240 240 0 0 1 261.7 380.0" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
+<path d="M 604.7 120.0 A 560 560 0 0 1 604.7 380.0" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
+<circle cx="190" cy="250" r="5" fill="#16a34a"/>
+<text x="190" y="273" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="bold">Jorden</text>
+<circle cx="300" cy="250" r="7" fill="#dc2626"/>
+<text x="300" y="275" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="bold">Mars</text>
+<circle cx="620" cy="250" r="18" fill="#f59e0b"/>
+<text x="620" y="286" font-family="Arial,sans-serif" font-size="11" fill="#f59e0b" text-anchor="middle" font-weight="bold">Jupiter</text>
+<circle cx="424.8" cy="183.7" r="2.0" fill="#6b7280"/>
+<circle cx="374.5" cy="256.8" r="3.0" fill="#6b7280"/>
+<circle cx="476.6" cy="327.8" r="2.5" fill="#6b7280"/>
+<circle cx="367.5" cy="237.4" r="2.0" fill="#6b7280"/>
+<circle cx="408.1" cy="259.7" r="2.0" fill="#6b7280"/>
+<circle cx="525.4" cy="178.5" r="2.5" fill="#6b7280"/>
+<circle cx="486.1" cy="265.8" r="2.0" fill="#6b7280"/>
+<circle cx="475.4" cy="230.4" r="2.5" fill="#6b7280"/>
+<circle cx="369.3" cy="318.1" r="3.0" fill="#6b7280"/>
+<circle cx="443.8" cy="257.7" r="3.0" fill="#6b7280"/>
+<circle cx="472.1" cy="284.6" r="2.0" fill="#6b7280"/>
+<circle cx="476.3" cy="276.4" r="3.0" fill="#6b7280"/>
+<circle cx="379.5" cy="290.3" r="2.0" fill="#6b7280"/>
+<circle cx="483.8" cy="249.3" r="3.5" fill="#6b7280"/>
+<circle cx="515.4" cy="243.5" r="3.5" fill="#6b7280"/>
+<circle cx="432.3" cy="202.2" r="2.5" fill="#6b7280"/>
+<circle cx="499.8" cy="201.4" r="3.0" fill="#6b7280"/>
+<circle cx="465.0" cy="321.3" r="3.5" fill="#6b7280"/>
+<circle cx="417.6" cy="341.2" r="2.0" fill="#6b7280"/>
+<circle cx="462.4" cy="186.3" r="3.0" fill="#6b7280"/>
+<circle cx="390.4" cy="247.9" r="2.0" fill="#6b7280"/>
+<circle cx="552.4" cy="169.7" r="3.0" fill="#6b7280"/>
+<circle cx="428.0" cy="221.5" r="3.5" fill="#6b7280"/>
+<circle cx="476.0" cy="241.7" r="2.0" fill="#6b7280"/>
+<circle cx="548.9" cy="245.1" r="2.0" fill="#6b7280"/>
+<circle cx="372.1" cy="288.3" r="3.5" fill="#6b7280"/>
+<circle cx="416.9" cy="228.3" r="3.0" fill="#6b7280"/>
+<circle cx="364.5" cy="242.7" r="2.5" fill="#6b7280"/>
+<circle cx="482.2" cy="248.8" r="2.5" fill="#6b7280"/>
+<circle cx="513.6" cy="179.6" r="2.5" fill="#6b7280"/>
+<circle cx="439.6" cy="329.2" r="3.5" fill="#6b7280"/>
+<circle cx="376.1" cy="240.3" r="3.0" fill="#6b7280"/>
+<circle cx="536.7" cy="310.7" r="3.0" fill="#6b7280"/>
+<circle cx="501.3" cy="342.4" r="3.5" fill="#6b7280"/>
+<circle cx="551.5" cy="183.7" r="2.5" fill="#6b7280"/>
+<circle cx="390.3" cy="280.1" r="2.0" fill="#6b7280"/>
+<circle cx="457.0" cy="266.9" r="3.0" fill="#6b7280"/>
+<circle cx="416.4" cy="182.7" r="3.0" fill="#6b7280"/>
+<circle cx="482.0" cy="215.5" r="2.5" fill="#6b7280"/>
+<circle cx="498.1" cy="252.9" r="2.0" fill="#6b7280"/>
+<circle cx="451.3" cy="320.5" r="3.5" fill="#6b7280"/>
+<circle cx="439.6" cy="229.9" r="3.5" fill="#6b7280"/>
+<circle cx="486.9" cy="166.8" r="2.0" fill="#6b7280"/>
+<circle cx="556.9" cy="238.7" r="2.0" fill="#6b7280"/>
+<circle cx="428.0" cy="165.0" r="2.0" fill="#6b7280"/>
+<circle cx="473.4" cy="257.0" r="3.0" fill="#6b7280"/>
+<polygon points="455,150 470,144 482,154 478,168 462,170 450,162" fill="#6b7280" stroke="#374151" stroke-width="1.5"/>
+<line x1="500.0" y1="130.0" x2="478.5" y2="145.4" stroke="#374151" stroke-width="1.5"/>
+<polygon points="472.0,150.0 476.4,142.4 480.6,148.3" fill="#374151"/>
+<text x="545" y="122" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">en asteroid</text>
+<text x="460" y="380" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle" font-weight="bold">Asteroidbälte</text>
+<text x="460" y="400" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">(massor av stenklumpar mellan Mars och Jupiter)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En asteroid är en stenklump i bana runt solen — de flesta finns mellan Mars och Jupiter</text>
+</svg>

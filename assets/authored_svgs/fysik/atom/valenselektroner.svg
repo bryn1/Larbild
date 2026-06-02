@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Valenselektroner — de yttersta elektronerna</text>
+<circle cx="320" cy="250" r="26" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="320" y="254" font-family="Arial,sans-serif" font-size="10" fill="#92400e" text-anchor="middle">kärna</text>
+<circle cx="320" cy="250" r="70" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4" fill="none"/>
+<text x="404" y="254" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">K</text>
+<circle cx="320" cy="250" r="130" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4" fill="none"/>
+<text x="464" y="254" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">L</text>
+<circle cx="390.0" cy="250.0" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="390.0" y="253.0" font-family="Arial,sans-serif" font-size="7" fill="white" text-anchor="middle">e−</text>
+<circle cx="250.0" cy="250.0" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="250.0" y="253.0" font-family="Arial,sans-serif" font-size="7" fill="white" text-anchor="middle">e−</text>
+<circle cx="411.9" cy="158.1" r="10" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<text x="411.9238815542512" y="161.07611844574882" font-family="Arial,sans-serif" font-size="7" fill="white" text-anchor="middle">e−</text>
+<circle cx="228.1" cy="158.1" r="10" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<text x="228.07611844574882" y="161.07611844574882" font-family="Arial,sans-serif" font-size="7" fill="white" text-anchor="middle">e−</text>
+<circle cx="228.1" cy="341.9" r="10" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<text x="228.07611844574882" y="344.9238815542512" font-family="Arial,sans-serif" font-size="7" fill="white" text-anchor="middle">e−</text>
+<circle cx="411.9" cy="341.9" r="10" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<text x="411.9238815542511" y="344.9238815542512" font-family="Arial,sans-serif" font-size="7" fill="white" text-anchor="middle">e−</text>
+<rect x="540" y="180" width="210" height="150" fill="white" stroke="#dc2626" stroke-width="2" rx="4"/>
+<circle cx="565" cy="215" r="10" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<text x="585" y="219" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start" font-weight="bold">valenselektroner</text>
+<text x="645" y="245" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">= ytterst i atomen</text>
+<text x="645" y="272" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Bestämmer hur atomen</text>
+<text x="645" y="292" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">reagerar med andra atomer</text>
+<circle cx="565" cy="315" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="585" y="319" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">inre elektroner</text>
+<text x="320" y="410" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Exempel: kol (C) har 4 valenselektroner</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Valenselektronerna ligger ytterst och styr atomens kemiska reaktioner</text>
+</svg>

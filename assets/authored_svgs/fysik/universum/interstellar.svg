@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Interstellär rymd (mellan stjärnorna)</text>
+<rect x="60" y="70" width="680" height="320" rx="10" fill="#0f172a"/>
+<polygon points="180.0,202.0 184.7,213.5 197.1,214.4 187.6,222.5 190.6,234.6 180.0,228.0 169.4,234.6 172.4,222.5 162.9,214.4 175.3,213.5" fill="#fbbf24"/>
+<circle cx="180" cy="220" r="46" stroke="#475569" stroke-width="1" stroke-dasharray="3,4" fill="none"/>
+<circle cx="226" cy="220" r="6" fill="#60a5fa"/>
+<circle cx="180" cy="220" r="70" stroke="#475569" stroke-width="1" stroke-dasharray="3,4" fill="none"/>
+<circle cx="110" cy="220" r="5" fill="#34d399"/>
+<text x="180" y="315" font-family="Arial,sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">solsystem A</text>
+<polygon points="620.0,202.0 624.7,213.5 637.1,214.4 627.6,222.5 630.6,234.6 620.0,228.0 609.4,234.6 612.4,222.5 602.9,214.4 615.3,213.5" fill="#fbbf24"/>
+<circle cx="620" cy="220" r="46" stroke="#475569" stroke-width="1" stroke-dasharray="3,4" fill="none"/>
+<circle cx="666" cy="220" r="6" fill="#60a5fa"/>
+<circle cx="620" cy="220" r="70" stroke="#475569" stroke-width="1" stroke-dasharray="3,4" fill="none"/>
+<circle cx="550" cy="220" r="5" fill="#34d399"/>
+<text x="620" y="315" font-family="Arial,sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">solsystem B</text>
+<circle cx="330" cy="150" r="1.6" fill="white"/>
+<circle cx="400" cy="200" r="1.6" fill="white"/>
+<circle cx="470" cy="160" r="1.6" fill="white"/>
+<circle cx="360" cy="290" r="1.6" fill="white"/>
+<circle cx="440" cy="300" r="1.6" fill="white"/>
+<circle cx="400" cy="250" r="1.6" fill="white"/>
+<circle cx="350" cy="210" r="1.6" fill="white"/>
+<circle cx="450" cy="230" r="1.6" fill="white"/>
+<line x1="270.0" y1="360.0" x2="520.0" y2="360.0" stroke="#f59e0b" stroke-width="2"/>
+<polygon points="530.0,360.0 520.0,364.5 520.0,355.5" fill="#f59e0b"/>
+<line x1="530.0" y1="360.0" x2="280.0" y2="360.0" stroke="#f59e0b" stroke-width="2"/>
+<polygon points="270.0,360.0 280.0,355.5 280.0,364.5" fill="#f59e0b"/>
+<text x="400" y="350" font-family="Arial,sans-serif" font-size="12" fill="#fcd34d" text-anchor="middle">enorm tom rymd</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Interstellär betyder mellan stjärnorna — de väldiga, nästan tomma områdena utanför solsystemen</text>
+</svg>

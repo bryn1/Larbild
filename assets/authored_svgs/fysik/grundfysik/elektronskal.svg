@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Elektronskal (banor runt kärnan)</text>
+<circle cx="380" cy="255" r="24" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="380" y="259" font-family="Arial,sans-serif" font-size="10" fill="#92400e" text-anchor="middle">kärna</text>
+<circle cx="380" cy="255" r="70" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="462" y="259" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" font-weight="bold">K</text>
+<circle cx="380.0" cy="185.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="380.0" y="188.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="380.0" cy="325.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="380.0" y="328.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="380" cy="255" r="120" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="512" y="259" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" font-weight="bold">L</text>
+<circle cx="380.0" cy="135.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="380.0" y="138.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="295.1" cy="170.1" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="295.1471862576143" y="173.1471862576143" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="260.0" cy="255.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="260.0" y="258.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="295.1" cy="339.9" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="295.1471862576143" y="342.8528137423857" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="380.0" cy="375.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="380.0" y="378.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="464.9" cy="339.9" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="464.8528137423857" y="342.8528137423857" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="500.0" cy="255.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="500.0" y="258.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="464.9" cy="170.1" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="464.8528137423857" y="173.14718625761432" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="380" cy="255" r="170" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="562" y="259" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" font-weight="bold">M</text>
+<circle cx="380.0" cy="85.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="380.0" y="88.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="232.8" cy="170.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="232.7756813566454" y="173.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="232.8" cy="340.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="232.77568135664544" y="343.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="380.0" cy="425.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="379.99999999999994" y="428.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="527.2" cy="340.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="527.2243186433545" y="343.00000000000006" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<circle cx="527.2" cy="170.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.2"/>
+<text x="527.2243186433545" y="173.0" font-family="Arial,sans-serif" font-size="6.5" fill="white" text-anchor="middle">e−</text>
+<text x="150" y="380" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">K: max 2 e−</text>
+<text x="330" y="380" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">L: max 8 e−</text>
+<text x="510" y="380" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">M: max 18 e−</text>
+<text x="400" y="415" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Det yttersta skalet bestämmer hur atomen reagerar</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Elektronskal är tänkta banor där elektronerna håller till</text>
+</svg>

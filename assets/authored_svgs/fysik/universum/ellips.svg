@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Ellips (oval bana)</text>
+<ellipse cx="400" cy="240" rx="250" ry="130" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+<line x1="150" y1="240" x2="650" y2="240" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5,4"/>
+<line x1="400" y1="110" x2="400" y2="370" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5,4"/>
+<circle cx="186.5" cy="240" r="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="186.4584349593738" y="244" font-family="Arial,sans-serif" font-size="10" fill="#b45309" text-anchor="middle">Sol</text>
+<circle cx="613.5" cy="240" r="4" fill="#6b7280"/>
+<text x="186.4584349593738" y="278" font-family="Arial,sans-serif" font-size="11" fill="#b45309" text-anchor="middle">brännpunkt</text>
+<text x="613.5415650406262" y="264" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">brännpunkt</text>
+<circle cx="591.5" cy="156.4" r="9" fill="#16a34a"/>
+<text x="599.5111107797445" y="144.4376107407499" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="start">planet</text>
+<path d="M 591.5 79.3 A 250 250 0 0 0 485.5 5.1" stroke="#16a34a" stroke-width="2" fill="none"/>
+<polygon points="485.5,5.1 496.4,4.3 493.4,12.7" fill="#16a34a"/>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En ellips är en tillplattad cirkel — planeter går i ellipser med solen i en brännpunkt</text>
+</svg>

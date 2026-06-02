@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Ultraviolett (UV) strålning</text>
+<defs><linearGradient id="vis" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="50%" stop-color="#16a34a"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs>
+<rect x="90" y="150" width="136.4" height="50" fill="#991b1b"/>
+<text x="158.2" y="179.0" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle">infrarött</text>
+<rect x="226.4" y="150" width="248.0" height="50" fill="url(#vis)"/>
+<text x="350.4" y="218" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">synligt ljus</text>
+<rect x="474.4" y="150" width="136.4" height="50" fill="#6d28d9"/>
+<text x="542.6" y="179.0" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">UV</text>
+<rect x="610.8" y="150" width="99.2" height="50" fill="#312e81"/>
+<text x="660.4" y="179.0" font-family="Arial,sans-serif" font-size="10" fill="white" text-anchor="middle">röntgen</text>
+<text x="90" y="138" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="start">lång våglängd</text>
+<text x="710" y="138" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">kort våglängd</text>
+<line x1="474.4" y1="206" x2="610.8" y2="206" stroke="#6d28d9" stroke-width="2"/>
+<text x="542.6" y="224" font-family="Arial,sans-serif" font-size="11" fill="#6d28d9" text-anchor="middle">starkare än ögat kan se</text>
+<circle cx="170" cy="330" r="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="204.0" y1="330.0" x2="216.0" y2="330.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="199.4" y1="347.0" x2="209.8" y2="353.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="187.0" y1="359.4" x2="193.0" y2="369.8" stroke="#f59e0b" stroke-width="2"/>
+<line x1="170.0" y1="364.0" x2="170.0" y2="376.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="153.0" y1="359.4" x2="147.0" y2="369.8" stroke="#f59e0b" stroke-width="2"/>
+<line x1="140.6" y1="347.0" x2="130.2" y2="353.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="136.0" y1="330.0" x2="124.0" y2="330.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="140.6" y1="313.0" x2="130.2" y2="307.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="153.0" y1="300.6" x2="147.0" y2="290.2" stroke="#f59e0b" stroke-width="2"/>
+<line x1="170.0" y1="296.0" x2="170.0" y2="284.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="187.0" y1="300.6" x2="193.0" y2="290.2" stroke="#f59e0b" stroke-width="2"/>
+<line x1="199.4" y1="313.0" x2="209.8" y2="307.0" stroke="#f59e0b" stroke-width="2"/>
+<text x="170" y="335" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">sol</text>
+<line x1="215.0" y1="340.0" x2="351.1" y2="358.8" stroke="#6d28d9" stroke-width="2.5"/>
+<polygon points="360.0,360.0 350.5,363.2 351.7,354.3" fill="#6d28d9"/>
+<text x="290" y="335" font-family="Arial,sans-serif" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="bold">UV-strålar</text>
+<rect x="380" y="345" width="300" height="30" fill="#fde68a" stroke="#d97706" stroke-width="2" rx="4"/>
+<text x="530" y="365" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">huden — kan brännas</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">UV är osynligt ljus med kortare våglängd än violett; det bränner huden</text>
+</svg>

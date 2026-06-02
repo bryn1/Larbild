@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Ohm (Ω) — enhet för resistans</text>
+<text x="400" y="90" font-family="Arial,sans-serif" font-size="30" fill="#1e40af" text-anchor="middle" font-weight="bold">R = U / I</text>
+<text x="400" y="120" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Resistans = spänning / ström</text>
+<text x="400" y="145" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Enhet: ohm (Ω)</text>
+<rect x="120" y="200" width="250" height="150" rx="6" fill="white" stroke="#16a34a" stroke-width="2"/>
+<text x="245" y="230" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Låg resistans</text>
+<text x="245" y="252" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">10 Ω</text>
+<line x1="160.0" y1="300.0" x2="316.0" y2="300.0" stroke="#2563eb" stroke-width="6"/>
+<polygon points="330.0,300.0 316.0,305.9 316.0,294.1" fill="#2563eb"/>
+<text x="245" y="335" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">stor ström</text>
+<rect x="430" y="200" width="250" height="150" rx="6" fill="white" stroke="#dc2626" stroke-width="2"/>
+<text x="555" y="230" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Hög resistans</text>
+<text x="555" y="252" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">1000 Ω</text>
+<line x1="470.0" y1="300.0" x2="550.0" y2="300.0" stroke="#2563eb" stroke-width="2"/>
+<polygon points="560.0,300.0 550.0,304.2 550.0,295.8" fill="#2563eb"/>
+<text x="555" y="335" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">liten ström</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Ju fler ohm, desto mindre ström kommer fram</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ohm mäter hur mycket en komponent bromsar strömmen</text>
+</svg>

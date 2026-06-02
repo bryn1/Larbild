@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Induktion</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">En magnet som rör sig nära en spole skapar ström i spolen</text>
+
+<!-- coil: series of loops -->
+<ellipse cx="470" cy="210" rx="18" ry="55" fill="none" stroke="#b45309" stroke-width="3"/>
+<ellipse cx="500" cy="210" rx="18" ry="55" fill="none" stroke="#b45309" stroke-width="3"/>
+<ellipse cx="530" cy="210" rx="18" ry="55" fill="none" stroke="#b45309" stroke-width="3"/>
+<ellipse cx="560" cy="210" rx="18" ry="55" fill="none" stroke="#b45309" stroke-width="3"/>
+<text x="515" y="300" font-family="Arial,sans-serif" font-size="13" fill="#b45309" text-anchor="middle">Spole (lindad tråd)</text>
+
+<!-- wires to ammeter -->
+<line x1="470" y1="265" x2="470" y2="330" stroke="#1f2937" stroke-width="3"/>
+<line x1="470" y1="330" x2="620" y2="330" stroke="#1f2937" stroke-width="3"/>
+<line x1="560" y1="265" x2="560" y2="360" stroke="#1f2937" stroke-width="3"/>
+<line x1="560" y1="360" x2="680" y2="360" stroke="#1f2937" stroke-width="3"/>
+<circle cx="650" cy="345" r="26" fill="white" stroke="#16a34a" stroke-width="3"/>
+<text x="650" y="353" font-family="Arial,sans-serif" font-size="20" fill="#16a34a" text-anchor="middle" font-weight="bold">A</text>
+<text x="650" y="395" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">ström mäts</text>
+
+<!-- bar magnet moving toward coil -->
+<rect x="120" y="185" width="70" height="50" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<rect x="190" y="185" width="70" height="50" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="155" y="218" font-family="Arial,sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">N</text>
+<text x="225" y="218" font-family="Arial,sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">S</text>
+
+<!-- motion arrow -->
+<line x1="280" y1="210" x2="400" y2="210" stroke="#16a34a" stroke-width="4"/>
+<polygon points="415,210 399,203 399,217" fill="#16a34a"/>
+<text x="345" y="195" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">rör sig</text>
+
+<text x="400" y="445" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Magneten måste röra sig – står den stilla bildas ingen ström</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Induktion används i kraftverk och i induktionsspisen</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Extremofil (liv på extrema platser)</text>
+<rect x="80" y="90" width="180" height="180" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<text x="170" y="115" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Stark hetta</text>
+<text x="170" y="135" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">het källa</text>
+<ellipse cx="170" cy="195" rx="34" ry="22" fill="white" stroke="#dc2626" stroke-width="2"/>
+<circle cx="160" cy="190" r="5" fill="#dc2626"/>
+<circle cx="182" cy="200" r="4" fill="#dc2626"/>
+<path d="M 204 195 q 24 -6 30 10 q 6 14 -10 16" stroke="#dc2626" stroke-width="2" fill="none"/>
+<text x="170" y="250" font-family="Arial,sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">extremofil lever här</text>
+<rect x="310" y="90" width="180" height="180" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="400" y="115" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">Stark kyla</text>
+<text x="400" y="135" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">is</text>
+<ellipse cx="400" cy="195" rx="34" ry="22" fill="white" stroke="#2563eb" stroke-width="2"/>
+<circle cx="390" cy="190" r="5" fill="#2563eb"/>
+<circle cx="412" cy="200" r="4" fill="#2563eb"/>
+<path d="M 434 195 q 24 -6 30 10 q 6 14 -10 16" stroke="#2563eb" stroke-width="2" fill="none"/>
+<text x="400" y="250" font-family="Arial,sans-serif" font-size="10" fill="#2563eb" text-anchor="middle">extremofil lever här</text>
+<rect x="540" y="90" width="180" height="180" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="630" y="115" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Stark syra</text>
+<text x="630" y="135" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">surt vatten</text>
+<ellipse cx="630" cy="195" rx="34" ry="22" fill="white" stroke="#16a34a" stroke-width="2"/>
+<circle cx="620" cy="190" r="5" fill="#16a34a"/>
+<circle cx="642" cy="200" r="4" fill="#16a34a"/>
+<path d="M 664 195 q 24 -6 30 10 q 6 14 -10 16" stroke="#16a34a" stroke-width="2" fill="none"/>
+<text x="630" y="250" font-family="Arial,sans-serif" font-size="10" fill="#16a34a" text-anchor="middle">extremofil lever här</text>
+<text x="400" y="320" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Forskare letar efter liknande liv på andra planeter</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En extremofil är en organism som klarar extrem hetta, kyla eller syra där annat liv dör</text>
+</svg>

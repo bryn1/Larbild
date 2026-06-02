@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Hornhinnan längst fram i ögat</text>
+<!-- Eyeball -->
+<circle cx="400" cy="250" r="150" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+<!-- Cornea bulge at front (left) — HIGHLIGHTED -->
+<path d="M 268 190 Q 222 250 268 310" fill="#fef3c7" stroke="#f59e0b" stroke-width="4"/>
+<text x="150" y="150" font-family="Arial,sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle" font-weight="bold">Hornhinna</text>
+<text x="150" y="168" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(genomskinlig, hård)</text>
+<line x1="180" y1="160" x2="240" y2="215" stroke="#f59e0b" stroke-width="1"/>
+<!-- Lens -->
+<ellipse cx="300" cy="250" rx="15" ry="42" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+<text x="300" y="160" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">Lins</text>
+<line x1="300" y1="208" x2="300" y2="172" stroke="#1e40af" stroke-width="1"/>
+<!-- Retina back wall -->
+<path d="M 505 145 A 150 150 0 0 1 505 355" fill="none" stroke="#dc2626" stroke-width="4" opacity="0.5"/>
+<text x="610" y="250" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Näthinna</text>
+<line x1="572" y1="250" x2="552" y2="250" stroke="#dc2626" stroke-width="1"/>
+<!-- Incoming ray that bends at the cornea -->
+<line x1="100" y1="210" x2="244" y2="232" stroke="#16a34a" stroke-width="2.5"/>
+<!-- bent (refracted) at cornea, then toward lens/retina -->
+<line x1="244" y1="232" x2="300" y2="250" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="305,251 293,247 294,255" fill="#16a34a"/>
+<text x="150" y="200" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">Ljus bryts</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hornhinnan släpper in ljuset och böjer det innan det når linsen</text>
+</svg>

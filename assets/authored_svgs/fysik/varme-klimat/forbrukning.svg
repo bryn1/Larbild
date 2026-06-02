@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Förbrukning av energi</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hur mycket energi som används under en viss tid</text>
+
+<!-- bar chart: appliances and their use -->
+<!-- axes -->
+<line x1="120" y1="100" x2="120" y2="400" stroke="#1f2937" stroke-width="2"/>
+<line x1="120" y1="400" x2="700" y2="400" stroke="#1f2937" stroke-width="2"/>
+<text x="70" y="250" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" transform="rotate(-90 70 250)">Energi som används</text>
+
+<!-- bar 1: LED lamp (small) -->
+<rect x="160" y="350" width="80" height="50" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<text x="200" y="425" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">LED-lampa</text>
+<text x="200" y="442" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">liten</text>
+
+<!-- bar 2: TV (medium) -->
+<rect x="290" y="270" width="80" height="130" fill="#f59e0b" stroke="#b45309" stroke-width="2"/>
+<text x="330" y="425" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">TV</text>
+
+<!-- bar 3: oven (large) -->
+<rect x="420" y="180" width="80" height="220" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<text x="460" y="425" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Ugn</text>
+<text x="460" y="442" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">hög förbrukning</text>
+
+<!-- bar 4: standby (tiny but constant) -->
+<rect x="550" y="375" width="80" height="25" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<text x="590" y="425" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Standby</text>
+<text x="590" y="442" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">dygnet runt</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ju mer en apparat används, desto högre blir energiförbrukningen</text>
+</svg>

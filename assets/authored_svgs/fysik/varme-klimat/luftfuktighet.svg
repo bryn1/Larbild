@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Luftfuktighet</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hur mycket vattenånga som finns i luften</text>
+
+<!-- LOW humidity box -->
+<rect x="80" y="110" width="280" height="220" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="220" y="140" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">Låg luftfuktighet</text>
+<!-- few water dots -->
+<circle cx="150" cy="190" r="5" fill="#2563eb"/>
+<circle cx="270" cy="220" r="5" fill="#2563eb"/>
+<circle cx="200" cy="270" r="5" fill="#2563eb"/>
+<circle cx="300" cy="300" r="5" fill="#2563eb"/>
+<text x="220" y="315" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">lite vattenånga · känns torrt</text>
+
+<!-- HIGH humidity box -->
+<rect x="440" y="110" width="280" height="220" fill="#dbeafe" stroke="#1e40af" stroke-width="2" rx="6"/>
+<text x="580" y="140" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Hög luftfuktighet</text>
+<!-- many water dots -->
+<circle cx="490" cy="180" r="5" fill="#1e40af"/>
+<circle cx="540" cy="200" r="5" fill="#1e40af"/>
+<circle cx="600" cy="175" r="5" fill="#1e40af"/>
+<circle cx="660" cy="195" r="5" fill="#1e40af"/>
+<circle cx="510" cy="230" r="5" fill="#1e40af"/>
+<circle cx="570" cy="245" r="5" fill="#1e40af"/>
+<circle cx="640" cy="235" r="5" fill="#1e40af"/>
+<circle cx="690" cy="225" r="5" fill="#1e40af"/>
+<circle cx="480" cy="270" r="5" fill="#1e40af"/>
+<circle cx="550" cy="285" r="5" fill="#1e40af"/>
+<circle cx="620" cy="275" r="5" fill="#1e40af"/>
+<circle cx="680" cy="290" r="5" fill="#1e40af"/>
+<text x="580" y="315" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">mycket vattenånga · känns kvavt</text>
+
+<!-- key -->
+<circle cx="320" cy="370" r="5" fill="#1e40af"/>
+<text x="345" y="375" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">= en vattenångmolekyl i luften</text>
+
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Mäts ofta i procent (%) — relativ luftfuktighet</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Efter duschen är luftfuktigheten så hög att spegeln immar igen</text>
+</svg>

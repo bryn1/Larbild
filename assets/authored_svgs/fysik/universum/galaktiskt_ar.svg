@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Galaktiskt år (varv runt galaxen)</text>
+<circle cx="320" cy="250" r="26" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<text x="320" y="254" font-family="Arial,sans-serif" font-size="9" fill="#92400e" text-anchor="middle">galaxens</text>
+<text x="320" y="265" font-family="Arial,sans-serif" font-size="9" fill="#92400e" text-anchor="middle">mitt</text>
+<ellipse cx="320" cy="250" rx="170" ry="150" fill="#eef2ff" stroke="none"/>
+<circle cx="320" cy="250" r="26" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<text x="320" y="254" font-family="Arial,sans-serif" font-size="9" fill="#92400e" text-anchor="middle">galaxens</text>
+<text x="320" y="265" font-family="Arial,sans-serif" font-size="9" fill="#92400e" text-anchor="middle">mitt</text>
+<circle cx="320" cy="250" r="150" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
+<circle cx="442.9" cy="164.0" r="9" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+<text x="454.8728066433488" y="155.9635345473431" font-family="Arial,sans-serif" font-size="11" fill="#b45309" text-anchor="start">solen</text>
+<path d="M 442.9 164.0 A 150 150 0 0 0 358.8 105.1" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+<polygon points="358.8,105.1 370.7,103.2 368.2,112.7" fill="#2563eb"/>
+<rect x="520" y="160" width="240" height="180" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="640" y="190" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Ett varv tar</text>
+<text x="640" y="220" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">ca 225–250</text>
+<text x="640" y="245" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">miljoner år</text>
+<text x="640" y="285" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Ett vanligt år</text>
+<text x="640" y="305" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">= 1 varv runt solen</text>
+<text x="640" y="325" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">(mycket kortare!)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ett galaktiskt år är tiden för solen att åka ett helt varv runt mitten av Vintergatan</text>
+</svg>

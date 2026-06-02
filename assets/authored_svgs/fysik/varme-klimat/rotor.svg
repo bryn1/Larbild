@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Rotor</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Den del av en maskin som snurrar — till exempel bladen på ett vindkraftverk</text>
+
+<!-- Tower -->
+<polygon points="295,420 305,420 302,200 298,200" fill="#9ca3af" stroke="#6b7280" stroke-width="2"/>
+<rect x="120" y="420" width="360" height="14" fill="#a8a29e"/>
+
+<!-- Hub (centre of rotation) -->
+<circle cx="300" cy="195" r="14" fill="#6b7280" stroke="#374151" stroke-width="2"/>
+
+<!-- Three rotor blades (the rotor) -->
+<g fill="#dbeafe" stroke="#2563eb" stroke-width="2">
+<polygon points="300,195 312,90 300,75 290,90"/>
+<polygon points="300,195 392,250 412,250 400,235"/>
+<polygon points="300,195 208,250 188,250 200,235"/>
+</g>
+
+<!-- rotation arrow (curved) - apex computed on circle r=70 around hub -->
+<path d="M 370 195 A 70 70 0 0 1 300 265" fill="none" stroke="#dc2626" stroke-width="3"/>
+<polygon points="300,265 311,259 305,272" fill="#dc2626"/>
+<text x="400" y="170" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">snurrar</text>
+
+<!-- Label for rotor blades -->
+<line x1="312" y1="90" x2="430" y2="90" stroke="#2563eb" stroke-width="1"/>
+<text x="500" y="95" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">Rotorblad</text>
+<line x1="314" y1="195" x2="430" y2="195" stroke="#374151" stroke-width="1"/>
+<text x="490" y="200" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">nav (rotorns axel)</text>
+
+<!-- Wind arrows -->
+<g stroke="#16a34a" stroke-width="3">
+<line x1="560" y1="300" x2="640" y2="300"/>
+<line x1="560" y1="330" x2="640" y2="330"/>
+</g>
+<polygon points="650,300 638,295 638,305" fill="#16a34a"/>
+<polygon points="650,330 638,325 638,335" fill="#16a34a"/>
+<text x="600" y="285" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">vind</text>
+
+<text x="400" y="463" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Vinden driver rotorn → axeln snurrar generatorn inuti och el bildas</text>
+<text x="400" y="487" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">När det blåser snurrar rotorn på vindkraftverket du ser från fönstret</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Fria radikaler (saknar en elektron)</text>
+<circle cx="280" cy="240" r="50" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
+<text x="280" y="238" font-family="Arial,sans-serif" font-size="13" fill="#991b1b" text-anchor="middle">molekyl</text>
+<circle cx="326.98463103929544" cy="222.89899283371656" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="326.98463103929544" y="226.39899283371656" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="305.0" cy="196.69872981077808" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="305.0" y="200.19872981077808" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="271.3175911166535" cy="190.7596123493896" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="271.3175911166535" y="194.2596123493896" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="241.6977778440511" cy="207.86061951567302" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="241.6977778440511" y="211.36061951567302" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="230.0" cy="240.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="230.0" y="243.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="241.6977778440511" cy="272.139380484327" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="241.6977778440511" y="275.639380484327" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="305.0" cy="283.30127018922195" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="305.0" y="286.80127018922195" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="326.98463103929544" cy="257.1010071662834" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="326.98463103929544" y="260.6010071662834" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="271.3175911166535" cy="289.2403876506104" r="8" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3,2"/>
+<line x1="301.3" y1="329.2" x2="282.7" y2="304.4" stroke="#dc2626" stroke-width="2"/>
+<polygon points="277.3,297.2 279.5,306.8 285.9,302.0" fill="#dc2626"/>
+<text x="341.3175911166535" y="344.2403876506104" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">här saknas en elektron</text>
+<rect x="540" y="200" width="120" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="600" y="232" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">frisk</text>
+<text x="600" y="250" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">cell</text>
+<path d="M 511.6 202.0 A 90 90 0 0 1 518.6 255.6" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="518.6,255.6 515.9,245.0 524.8,246.6" fill="#dc2626"/>
+<text x="470" y="175" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">rycker e- från cellen</text>
+<text x="400" y="360" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Fria radikaler är mycket reaktiva och kan skada celler i kroppen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En fri radikal saknar en elektron och vill ta en från något annat</text>
+</svg>

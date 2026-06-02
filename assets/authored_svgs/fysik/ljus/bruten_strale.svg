@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Bruten ljusstråle (luft → vatten)</text>
+<!-- Water container -->
+<rect x="250" y="240" width="300" height="200" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<!-- Water surface line -->
+<line x1="250" y1="240" x2="550" y2="240" stroke="#2563eb" stroke-width="2.5"/>
+<text x="200" y="200" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Luft</text>
+<text x="200" y="350" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Vatten</text>
+<!-- Normal (dashed) at the point of entry (400,240) -->
+<line x1="400" y1="160" x2="400" y2="340" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="412" y="175" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="start">normal</text>
+<!-- Incoming ray in air: steeper from upper-left to (400,240) -->
+<line x1="290" y1="120" x2="400" y2="240" stroke="#dc2626" stroke-width="3"/>
+<polygon points="400,240 389,232 396,226" fill="#dc2626"/>
+<text x="305" y="135" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">Infallande</text>
+<!-- Refracted ray in water: bent TOWARD the normal (less steep from vertical) -->
+<line x1="400" y1="240" x2="470" y2="420" stroke="#dc2626" stroke-width="3"/>
+<polygon points="470,420 458,414 466,409" fill="#dc2626"/>
+<text x="505" y="400" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">Bruten stråle</text>
+<!-- Dotted continuation of original direction (where it WOULD have gone) -->
+<line x1="400" y1="240" x2="510" y2="360" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="3,4"/>
+<!-- Angle markers -->
+<path d="M 400 200 A 40 40 0 0 0 367 224" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+<text x="362" y="205" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">i</text>
+<path d="M 400 285 A 45 45 0 0 0 417 326" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+<text x="424" y="300" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">b</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ljuset ändrar riktning vid ytan — därför ser sugröret knäckt ut</text>
+</svg>

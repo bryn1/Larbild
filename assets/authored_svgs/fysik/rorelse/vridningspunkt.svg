@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Vridningspunkt</text>
+<!-- ground -->
+<line x1="80" y1="380" x2="720" y2="380" stroke="#1f2937" stroke-width="3"/>
+<!-- triangular support (fulcrum) -->
+<polygon points="400,250 360,378 440,378" fill="#6b7280" stroke="#374151" stroke-width="2"/>
+<!-- the seesaw plank (tilted), pivoting at (400,250) -->
+<g transform="rotate(-12 400 250)">
+<rect x="140" y="240" width="520" height="20" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+<!-- left load (heavy, low side) -->
+<rect x="170" y="195" width="55" height="45" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="3"/>
+<!-- right load (light, high side) -->
+<rect x="585" y="205" width="40" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="3"/>
+</g>
+<!-- pivot point highlighted (amber dot) -->
+<circle cx="400" cy="250" r="8" fill="#f59e0b" stroke="#92400e" stroke-width="2"/>
+<text x="400" y="225" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">vridningspunkt</text>
+<!-- rotation arrows around the pivot (both directions) -->
+<path d="M 470 200 A 90 90 0 0 1 490 250" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+<polygon points="490,250 481.5,247 487.4,241" fill="#dc2626"/>
+<path d="M 330 300 A 90 90 0 0 1 310 250" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+<polygon points="310,250 318.5,253 312.6,259" fill="#dc2626"/>
+<text x="540" y="200" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">roterar</text>
+<!-- distance measurements (green) along a horizontal reference line below -->
+<line x1="180" y1="410" x2="400" y2="410" stroke="#16a34a" stroke-width="2"/>
+<line x1="180" y1="402" x2="180" y2="418" stroke="#16a34a" stroke-width="2"/>
+<line x1="400" y1="402" x2="400" y2="418" stroke="#16a34a" stroke-width="2"/>
+<text x="290" y="432" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">avstånd till vridningspunkten</text>
+<line x1="400" y1="410" x2="600" y2="410" stroke="#16a34a" stroke-width="2"/>
+<line x1="600" y1="402" x2="600" y2="418" stroke="#16a34a" stroke-width="2"/>
+<text x="500" y="432" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">avstånd till vridningspunkten</text>
+<!-- bottom caption -->
+<text x="400" y="468" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vridningspunkten är den punkt som hävstången roterar runt</text>
+</svg>

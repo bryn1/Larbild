@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Parallella strålar</text>
+<line x1="120" y1="180" x2="648.0" y2="180.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="660,180 649.0,184.9 649.0,175.1" fill="#dc2626"/>
+<line x1="120" y1="250" x2="648.0" y2="250.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="660,250 649.0,254.9 649.0,245.1" fill="#dc2626"/>
+<line x1="120" y1="320" x2="648.0" y2="320.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="660,320 649.0,324.9 649.0,315.1" fill="#dc2626"/>
+<line x1="150" y1="180" x2="150" y2="250" stroke="#16a34a" stroke-width="2"/>
+<line x1="144" y1="180" x2="156" y2="180" stroke="#16a34a" stroke-width="2"/>
+<line x1="144" y1="250" x2="156" y2="250" stroke="#16a34a" stroke-width="2"/>
+<line x1="150" y1="250" x2="150" y2="320" stroke="#16a34a" stroke-width="2"/>
+<line x1="144" y1="250" x2="156" y2="250" stroke="#16a34a" stroke-width="2"/>
+<line x1="144" y1="320" x2="156" y2="320" stroke="#16a34a" stroke-width="2"/>
+<text x="115" y="215" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">d</text>
+<text x="115" y="285" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">d</text>
+<text x="640" y="215" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">lika stort</text>
+<text x="640" y="285" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">lika stort</text>
+<text x="400" y="390" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Avståndet är alltid lika stort — strålarna möts aldrig</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Parallella linjer går åt samma håll och möts aldrig, hur långt de än fortsätter</text>
+</svg>

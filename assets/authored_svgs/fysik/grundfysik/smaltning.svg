@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Smältning — fast blir vätska</text>
+<!-- BEFORE: ice cube (solid) -->
+<text x="170" y="100" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Fast (is)</text>
+<rect x="120" y="150" width="110" height="110" fill="#bfdbfe" stroke="#1e40af" stroke-width="3"/>
+<!-- ordered particles (lattice) in solid -->
+<circle cx="145" cy="175" r="9" fill="#2563eb"/><circle cx="175" cy="175" r="9" fill="#2563eb"/><circle cx="205" cy="175" r="9" fill="#2563eb"/>
+<circle cx="145" cy="205" r="9" fill="#2563eb"/><circle cx="175" cy="205" r="9" fill="#2563eb"/><circle cx="205" cy="205" r="9" fill="#2563eb"/>
+<circle cx="145" cy="235" r="9" fill="#2563eb"/><circle cx="175" cy="235" r="9" fill="#2563eb"/><circle cx="205" cy="235" r="9" fill="#2563eb"/>
+<text x="175" y="290" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">partiklar i fast</text>
+<text x="175" y="306" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">ordning</text>
+<!-- arrow + heat -->
+<line x1="270" y1="205" x2="380" y2="205" stroke="#dc2626" stroke-width="4"/>
+<polygon points="395,205 378,213 378,197" fill="#dc2626"/>
+<text x="332" y="190" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">värme</text>
+<path d="M 332 230 q -6 -12 3 -20 q 4 8 8 0 q 5 12 -3 22 Z" fill="#dc2626"/>
+<text x="332" y="270" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">tillförs</text>
+<!-- AFTER: liquid water -->
+<text x="560" y="100" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Vätska (vatten)</text>
+<path d="M 500 150 L 620 150 L 620 260 L 500 260 Z" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
+<rect x="500" y="195" width="120" height="65" fill="#93c5fd" stroke="#1e40af" stroke-width="2"/>
+<!-- loose, moving particles in liquid -->
+<circle cx="520" cy="215" r="9" fill="#2563eb"/><circle cx="555" cy="225" r="9" fill="#2563eb"/><circle cx="590" cy="212" r="9" fill="#2563eb"/>
+<circle cx="535" cy="245" r="9" fill="#2563eb"/><circle cx="575" cy="248" r="9" fill="#2563eb"/><circle cx="605" cy="238" r="9" fill="#2563eb"/>
+<text x="560" y="290" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">partiklarna rör</text>
+<text x="560" y="306" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">sig fritt</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Vid smältpunkten räcker värmen för att bryta upp den fasta ordningen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Smältning: ett fast ämne värms upp och blir flytande</text>
+</svg>

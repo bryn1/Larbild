@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Protuberans — båge av het gas på solen</text>
+<circle cx="400.0" cy="760.0" r="460.0" fill="#fb923c" stroke="#ea580c" stroke-width="3"/>
+<circle cx="270.0" cy="328.8" r="3.1098654996442376" fill="#f59e0b"/>
+<circle cx="452.0" cy="313.8" r="2.1965865777194393" fill="#f59e0b"/>
+<circle cx="169.1" cy="378.1" r="2.778062042984023" fill="#f59e0b"/>
+<circle cx="270.1" cy="335.3" r="3.4107905225673436" fill="#f59e0b"/>
+<circle cx="565.7" cy="340.2" r="3.9172044216324857" fill="#f59e0b"/>
+<circle cx="229.1" cy="344.7" r="4.60413592142989" fill="#f59e0b"/>
+<circle cx="411.6" cy="312.5" r="4.014234426108778" fill="#f59e0b"/>
+<circle cx="190.6" cy="364.6" r="3.7732987487939527" fill="#f59e0b"/>
+<circle cx="299.3" cy="313.7" r="4.596581710936837" fill="#f59e0b"/>
+<circle cx="386.4" cy="312.3" r="4.636438400766445" fill="#f59e0b"/>
+<circle cx="505.5" cy="327.6" r="3.184890212002232" fill="#f59e0b"/>
+<circle cx="549.0" cy="333.5" r="4.806760165113563" fill="#f59e0b"/>
+<circle cx="587.5" cy="343.6" r="2.4079065806020066" fill="#f59e0b"/>
+<circle cx="261.8" cy="337.5" r="3.308485599882288" fill="#f59e0b"/>
+<circle cx="464.0" cy="310.7" r="3.5217289514871783" fill="#f59e0b"/>
+<circle cx="342.4" cy="310.6" r="3.7552223222160905" fill="#f59e0b"/>
+<circle cx="441.8" cy="316.6" r="4.0459464099049" fill="#f59e0b"/>
+<circle cx="605.6" cy="364.2" r="4.972968934606445" fill="#f59e0b"/>
+<circle cx="486.7" cy="312.6" r="4.581912599348804" fill="#f59e0b"/>
+<circle cx="620.9" cy="373.3" r="3.7073225104229706" fill="#f59e0b"/>
+<circle cx="507.7" cy="317.9" r="4.494823790820062" fill="#f59e0b"/>
+<circle cx="437.2" cy="307.5" r="2.190381731435688" fill="#f59e0b"/>
+<circle cx="571.1" cy="350.1" r="2.265554279329185" fill="#f59e0b"/>
+<circle cx="549.0" cy="333.0" r="2.452296123358429" fill="#f59e0b"/>
+<circle cx="297.9" cy="324.6" r="4.618301073884604" fill="#f59e0b"/>
+<circle cx="181.0" cy="367.6" r="2.1348207304881086" fill="#f59e0b"/>
+<circle cx="509.5" cy="320.1" r="4.642715921742074" fill="#f59e0b"/>
+<circle cx="630.6" cy="372.5" r="4.995526836127329" fill="#f59e0b"/>
+<circle cx="303.6" cy="313.4" r="3.7992884263898024" fill="#f59e0b"/>
+<circle cx="172.4" cy="365.7" r="3.2238084068509725" fill="#f59e0b"/>
+<circle cx="456.1" cy="307.7" r="2.1273074741636124" fill="#f59e0b"/>
+<circle cx="581.1" cy="344.1" r="4.8759782792253645" fill="#f59e0b"/>
+<circle cx="594.1" cy="351.0" r="3.381228898537714" fill="#f59e0b"/>
+<circle cx="410.1" cy="311.1" r="3.7869507152059114" fill="#f59e0b"/>
+<circle cx="429.7" cy="311.7" r="4.82186376627189" fill="#f59e0b"/>
+<circle cx="403.5" cy="308.1" r="4.160933756432415" fill="#f59e0b"/>
+<circle cx="268.9" cy="325.6" r="4.933391949345906" fill="#f59e0b"/>
+<circle cx="410.6" cy="309.8" r="2.034372459092657" fill="#f59e0b"/>
+<circle cx="357.5" cy="312.1" r="2.060158670913798" fill="#f59e0b"/>
+<circle cx="457.9" cy="314.6" r="2.180241531883169" fill="#f59e0b"/>
+<circle cx="464.0" cy="313.1" r="4.037844194114326" fill="#f59e0b"/>
+<circle cx="326.5" cy="318.0" r="4.214102867756103" fill="#f59e0b"/>
+<circle cx="167.4" cy="366.4" r="4.02806092846213" fill="#f59e0b"/>
+<circle cx="624.8" cy="365.0" r="3.3689363889091375" fill="#f59e0b"/>
+<circle cx="446.9" cy="308.9" r="3.0918652680198706" fill="#f59e0b"/>
+<circle cx="305.9" cy="317.0" r="3.7868645175726092" fill="#f59e0b"/>
+<text x="400" y="360" font-family="Arial,sans-serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">Solens yta</text>
+<path d="M 288.7 313.7 Q 400.0 173.7 511.3 313.7" fill="none" stroke="#ef4444" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 288.7 313.7 Q 400.0 173.7 511.3 313.7" fill="none" stroke="#fca5a5" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="399.99999999999994" y="161.66396591304158" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Het gas i en båge</text>
+<path d="M 276.7 313.7 Q 400.0 151.7 523.3 313.7" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6,5" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="615.0" y1="150.0" x2="510.0" y2="140.9" stroke="#2563eb" stroke-width="2"/>
+<polygon points="500.0,140.0 510.4,135.4 509.5,146.3" fill="#2563eb"/>
+<text x="620" y="148" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="start" font-weight="bold">Följer solens</text>
+<text x="620" y="165" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="start" font-weight="bold">magnetfält</text>
+<rect x="0" y="458" width="800" height="42" fill="white" stroke="none" stroke-width="2" rx="0"/>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En protuberans är en båge av het gas som sticker ut från solens yta</text>
+</svg>

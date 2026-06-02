@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kommunicerande kärl</text>
+<!-- horizontal connecting pipe at bottom -->
+<rect x="150" y="380" width="500" height="30" fill="#dbeafe" stroke="#1e40af" stroke-width="3"/>
+<!-- vessel 1: wide -->
+<path d="M 150 380 L 150 130 L 230 130 L 230 380" fill="none" stroke="#1e40af" stroke-width="3"/>
+<!-- vessel 2: narrow -->
+<path d="M 340 380 L 340 130 L 380 130 L 380 380" fill="none" stroke="#1e40af" stroke-width="3"/>
+<!-- vessel 3: slanted/wide top -->
+<path d="M 480 380 L 480 130 L 600 130 L 560 380" fill="none" stroke="#1e40af" stroke-width="3"/>
+<!-- water fill (same level y=230) -->
+<rect x="153" y="230" width="74" height="148" fill="#93c5fd"/>
+<rect x="343" y="230" width="34" height="148" fill="#93c5fd"/>
+<path d="M 483 230 L 580 230 L 558.5 378 L 483 378 Z" fill="#93c5fd"/>
+<rect x="153" y="380" width="494" height="27" fill="#93c5fd"/>
+<!-- common water level dashed line -->
+<line x1="120" y1="230" x2="680" y2="230" stroke="#dc2626" stroke-width="2" stroke-dasharray="8,5"/>
+<text x="700" y="226" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start">Samma</text>
+<text x="700" y="243" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start">höjd</text>
+<!-- height measure markers -->
+<line x1="120" y1="230" x2="120" y2="408" stroke="#16a34a" stroke-width="2"/>
+<line x1="113" y1="230" x2="127" y2="230" stroke="#16a34a" stroke-width="2"/>
+<line x1="113" y1="408" x2="127" y2="408" stroke="#16a34a" stroke-width="2"/>
+<text x="100" y="324" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">h</text>
+<!-- vessel labels -->
+<text x="190" y="150" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">bred</text>
+<text x="360" y="150" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">smal</text>
+<text x="535" y="150" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">lutande</text>
+<text x="400" y="450" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Vätskan ställer sig lika högt oavsett kärlets form eller bredd</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Behållare som hänger ihop nedtill kallas kommunicerande kärl</text>
+</svg>

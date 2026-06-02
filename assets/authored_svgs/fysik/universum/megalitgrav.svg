@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Megalitgrav (dös av stora stenblock)</text>
+<rect x="80" y="360" width="640" height="30" fill="#e7e5e4" stroke="none" stroke-width="2" rx="0"/>
+<line x1="80.0" y1="360.0" x2="720.0" y2="360.0" stroke="#92400e" stroke-width="2"/>
+<polygon points="250.0,360.0 260.0,200.0 320.0,195.0 335.0,360.0" fill="#9ca3af" stroke="#6b7280" stroke-width="2.5"/>
+<polygon points="470.0,360.0 485.0,195.0 545.0,200.0 555.0,360.0" fill="#9ca3af" stroke="#6b7280" stroke-width="2.5"/>
+<polygon points="225.0,200.0 575.0,180.0 600.0,135.0 245.0,150.0" fill="#a8a29e" stroke="#6b7280" stroke-width="2.5"/>
+<line x1="290.0" y1="215.0" x2="300.0" y2="345.0" stroke="#6b7280" stroke-width="1"/>
+<line x1="505.0" y1="215.0" x2="512.0" y2="345.0" stroke="#6b7280" stroke-width="1"/>
+<line x1="330.0" y1="175.0" x2="470.0" y2="162.0" stroke="#6b7280" stroke-width="1"/>
+<line x1="700.0" y1="150.0" x2="611.0" y2="157.1" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="600.0,158.0 610.5,151.1 611.4,163.2" fill="#dc2626"/>
+<text x="705" y="150" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start" font-weight="bold">Takhäll</text>
+<line x1="150.0" y1="250.0" x2="247.2" y2="268.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="258.0,270.0 246.1,273.9 248.3,262.0" fill="#dc2626"/>
+<text x="145" y="250" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="end" font-weight="bold">Bärande</text>
+<text x="145" y="268" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="end" font-weight="bold">stenblock</text>
+<text x="400" y="300" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Gravkammare</text>
+<text x="400" y="320" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">(här begravdes de döda)</text>
+<text x="400" y="415" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Byggd för flera tusen år sedan av enorma stenar</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En megalitgrav är en grav byggd av väldigt stora stenar</text>
+</svg>

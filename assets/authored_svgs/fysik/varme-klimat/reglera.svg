@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Reglera</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Att styra eller justera något så det blir precis lagom</text>
+
+<!-- Dam reservoir -->
+<rect x="60" y="120" width="220" height="180" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="170" y="160" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Damm</text>
+<text x="170" y="180" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">(vatten lagrat)</text>
+<g fill="#2563eb" opacity="0.5">
+<circle cx="110" cy="220" r="4"/><circle cx="160" cy="240" r="4"/><circle cx="220" cy="210" r="4"/><circle cx="190" cy="260" r="4"/>
+</g>
+
+<!-- Dam wall with adjustable gate (lucka) -->
+<rect x="280" y="120" width="40" height="240" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<!-- the gate / sluss -->
+<rect x="280" y="230" width="40" height="50" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<text x="300" y="205" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">Lucka</text>
+<!-- up/down adjust arrows on the gate -->
+<line x1="340" y1="215" x2="340" y2="240" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="340,208 335,220 345,220" fill="#dc2626"/>
+<line x1="340" y1="295" x2="340" y2="270" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="340,302 335,290 345,290" fill="#dc2626"/>
+<text x="375" y="258" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="start">öppnas /</text>
+<text x="375" y="274" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="start">stängs</text>
+
+<!-- Water flow out (adjustable) -->
+<line x1="320" y1="255" x2="430" y2="255" stroke="#2563eb" stroke-width="5"/>
+<polygon points="440,255 426,248 426,262" fill="#2563eb"/>
+<text x="380" y="240" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">flöde justeras</text>
+
+<!-- Turbine / power -->
+<circle cx="500" cy="255" r="38" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<line x1="500" y1="217" x2="500" y2="293" stroke="#16a34a" stroke-width="2"/>
+<line x1="462" y1="255" x2="538" y2="255" stroke="#16a34a" stroke-width="2"/>
+<text x="500" y="315" font-family="Arial,sans-serif" font-size="12" fill="#15803d" text-anchor="middle" font-weight="bold">Turbin → el</text>
+
+<!-- regulate scale: less/lagom/more -->
+<rect x="120" y="370" width="560" height="60" fill="#f9fafb" stroke="#6b7280" stroke-width="1.5" rx="4"/>
+<text x="200" y="395" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">lite el</text>
+<text x="400" y="395" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">LAGOM (regleras)</text>
+<text x="600" y="395" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">mycket el</text>
+<line x1="160" y1="412" x2="640" y2="412" stroke="#6b7280" stroke-width="2"/>
+<polygon points="150,412 162,407 162,417" fill="#6b7280"/>
+<polygon points="650,412 638,407 638,417" fill="#6b7280"/>
+<circle cx="400" cy="412" r="6" fill="#16a34a"/>
+
+<text x="400" y="468" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Personalen kan reglera vattenflödet så elen räcker när alla lagar middag</text>
+</svg>

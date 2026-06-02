@@ -380,6 +380,47 @@ def test_resolve_authored_flags_wrong_area_and_missing_svg(tmp_path):
     assert "not found" in plans["ljud/saknas"]["reason"]
 
 
+def test_resolve_authored_exact_begrepp_precedence_disambiguates_normalize_collision(
+    tmp_path,
+):
+    """Two concepts that normalize to the SAME key but live in different areas
+    (distinguished only by punctuation the normaliser drops) must each resolve to
+    their own area via exact-begrepp precedence — not collapse onto the first-wins
+    ``by_norm`` entry.
+
+    Mirrors the real fysik.json case: it carries both ``"Elektromagnetisk
+    strålning"`` (area=atom) and ``"Elektromagnetisk strålning."`` (area=universum),
+    which ``normalize()`` folds to one key; without exact precedence the universum
+    authored SVG would be wrongly flagged as belonging to atom.
+    """
+    import json
+
+    root = tmp_path / "authored" / "fysik"
+    _write(root / "atom", "em.svg", _GOOD_SVG.replace("Densitet", "EM"))
+    _write(root / "universum", "em.svg", _GOOD_SVG.replace("Densitet", "EM"))
+    manifest = root / "manifest.json"
+    manifest.write_text(json.dumps({
+        "subject": "fysik",
+        "items": {
+            "atom/em": {"begrepp": "Elektromagnetisk strålning", "title": "EM"},
+            "universum/em": {"begrepp": "Elektromagnetisk strålning.", "title": "EM"},
+        },
+    }, ensure_ascii=False), encoding="utf-8")
+    fysik = tmp_path / "fysik.json"
+    # atom entry FIRST → it wins the first-wins normalized index; the universum
+    # entry can only resolve via exact-begrepp precedence.
+    fysik.write_text(json.dumps([
+        {"begrepp": "Elektromagnetisk strålning", "area": "atom"},
+        {"begrepp": "Elektromagnetisk strålning.", "area": "universum"},
+    ]), encoding="utf-8")
+
+    plans = {p["svg"]: p for p in
+             import_skola.resolve_authored(str(root), str(manifest), str(fysik))}
+    assert plans["atom/em"]["mapped"] is True and plans["atom/em"]["area"] == "atom"
+    assert (plans["universum/em"]["mapped"] is True
+            and plans["universum/em"]["area"] == "universum")
+
+
 def test_authored_import_end_to_end_writes_preferred_authored_rows(authored_tree):
     root, manifest, fysik = authored_tree
     import sqlite3 as _sqlite

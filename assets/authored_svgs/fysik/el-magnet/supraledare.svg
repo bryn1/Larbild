@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Supraledare (noll motstånd, mycket kallt)</text>
+<rect x="120" y="150" width="24" height="180" rx="12" fill="#e5e7eb" stroke="#1f2937" stroke-width="2"/>
+<rect x="124" y="250" width="16" height="76" rx="8" fill="#2563eb"/>
+<circle cx="132" cy="335" r="16" fill="#2563eb" stroke="#1f2937" stroke-width="2"/>
+<text x="132" y="140" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">kallt</text>
+<text x="170" y="200" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="start" font-weight="bold">−196 °C</text>
+<text x="170" y="222" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">(mycket kall vätska)</text>
+<line x1="300.0" y1="290.0" x2="506.0" y2="290.0" stroke="#2563eb" stroke-width="6"/>
+<polygon points="520.0,290.0 506.0,295.9 506.0,284.1" fill="#2563eb"/>
+<text x="410" y="278" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">ström utan motstånd</text>
+<text x="410" y="320" font-family="Arial,sans-serif" font-size="18" fill="#16a34a" text-anchor="middle" font-weight="bold">0 Ω</text>
+<rect x="300" y="180" width="220" height="40" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="410" y="205" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">magnettåg svävar</text>
+<line x1="290" y1="235" x2="530" y2="235" stroke="#6b7280" stroke-width="3"/>
+<line x1="340.0" y1="232.0" x2="340.0" y2="229.0" stroke="#16a34a" stroke-width="2"/>
+<polygon points="340.0,222.0 342.9,229.0 337.1,229.0" fill="#16a34a"/>
+<line x1="410.0" y1="232.0" x2="410.0" y2="229.0" stroke="#16a34a" stroke-width="2"/>
+<polygon points="410.0,222.0 412.9,229.0 407.1,229.0" fill="#16a34a"/>
+<line x1="480.0" y1="232.0" x2="480.0" y2="229.0" stroke="#16a34a" stroke-width="2"/>
+<polygon points="480.0,222.0 482.9,229.0 477.1,229.0" fill="#16a34a"/>
+<text x="400" y="380" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Släpper igenom ström helt utan motstånd — men bara när det är extremt kallt</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En supraledare har inget motstånd vid mycket låg temperatur</text>
+</svg>

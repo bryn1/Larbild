@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Värmepanna</text>
+<!-- Boiler vessel -->
+<rect x="120" y="120" width="200" height="220" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<text x="220" y="150" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Värmepanna</text>
+<!-- water inside (wavy line) -->
+<path d="M135 220 q20 -10 40 0 t40 0 t40 0 t40 0" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<text x="220" y="205" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">vatten värms upp</text>
+<!-- burner / flame at bottom inside -->
+<path d="M195 315 q10 -26 30 -10 q-5 -16 10 -20 q-2 20 14 14 q-7 26 -27 22 q-22 0 -27 -22 z" fill="#dc2626" stroke="#b91c1c" stroke-width="1"/>
+<text x="220" y="335" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">bränsle brinner</text>
+<!-- Hot water out (top, red) -->
+<line x1="320" y1="170" x2="560" y2="170" stroke="#dc2626" stroke-width="6"/>
+<polygon points="572,170 556,176 556,164" fill="#dc2626"/>
+<text x="440" y="158" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">varmt vatten ut</text>
+<!-- Radiator -->
+<rect x="575" y="150" width="150" height="120" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<g stroke="#dc2626" stroke-width="3">
+<line x1="595" y1="165" x2="595" y2="255"/>
+<line x1="618" y1="165" x2="618" y2="255"/>
+<line x1="641" y1="165" x2="641" y2="255"/>
+<line x1="664" y1="165" x2="664" y2="255"/>
+<line x1="687" y1="165" x2="687" y2="255"/>
+<line x1="710" y1="165" x2="710" y2="255"/>
+</g>
+<text x="650" y="290" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Element</text>
+<!-- Cold water return (bottom, blue) -->
+<line x1="560" y1="300" x2="320" y2="300" stroke="#2563eb" stroke-width="5"/>
+<polygon points="308,300 324,294 324,306" fill="#2563eb"/>
+<line x1="650" y1="270" x2="650" y2="300" stroke="#2563eb" stroke-width="5"/>
+<line x1="650" y1="300" x2="565" y2="300" stroke="#2563eb" stroke-width="5"/>
+<text x="440" y="320" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">avkylt vatten tillbaka</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Bränsle brinner  →  värmer vattnet  →  varmt vatten ut i elementen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Bränsle brinner och värmer vatten som skickas ut i elementen</text>
+</svg>

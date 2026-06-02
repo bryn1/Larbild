@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Block (talja)</text>
+<rect x="150" y="70" width="500" height="16" fill="#6b7280" stroke="#1f2937" stroke-width="1.5" rx="2"/>
+<line x1="150.0" y1="70.0" x2="650.0" y2="70.0" stroke="#1f2937" stroke-width="0"/>
+<line x1="168.5" y1="70.0" x2="160.5" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="187.0" y1="70.0" x2="179.0" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="205.6" y1="70.0" x2="197.6" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="224.1" y1="70.0" x2="216.1" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="242.6" y1="70.0" x2="234.6" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="261.1" y1="70.0" x2="253.1" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="279.6" y1="70.0" x2="271.6" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="298.1" y1="70.0" x2="290.1" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="316.7" y1="70.0" x2="308.7" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="335.2" y1="70.0" x2="327.2" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="353.7" y1="70.0" x2="345.7" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="372.2" y1="70.0" x2="364.2" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="390.7" y1="70.0" x2="382.7" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="409.3" y1="70.0" x2="401.3" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="427.8" y1="70.0" x2="419.8" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="446.3" y1="70.0" x2="438.3" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="464.8" y1="70.0" x2="456.8" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="483.3" y1="70.0" x2="475.3" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="501.9" y1="70.0" x2="493.9" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="520.4" y1="70.0" x2="512.4" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="538.9" y1="70.0" x2="530.9" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="557.4" y1="70.0" x2="549.4" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="575.9" y1="70.0" x2="567.9" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="594.4" y1="70.0" x2="586.4" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="613.0" y1="70.0" x2="605.0" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="631.5" y1="70.0" x2="623.5" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="650.0" y1="70.0" x2="642.0" y2="79.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="400.0" y1="86.0" x2="400.0" y2="114.0" stroke="#1f2937" stroke-width="4"/>
+<circle cx="400.0" cy="150.0" r="36.0" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<circle cx="400.0" cy="150.0" r="6.0" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
+<circle cx="400.0" cy="150.0" r="30.0" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="364.0" y1="150.0" x2="364.0" y2="380.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="436.0" y1="150.0" x2="436.0" y2="330.0" stroke="#f59e0b" stroke-width="3"/>
+<polyline points="364.0,150.0 364.0,148.1 364.2,146.2 364.4,144.4 364.8,142.5 365.2,140.7 365.8,138.9 366.4,137.1 367.1,135.4 367.9,133.7 368.8,132.0 369.8,130.4 370.9,128.8 372.0,127.3 373.2,125.9 374.5,124.5 375.9,123.2 377.3,122.0 378.8,120.9 380.4,119.8 382.0,118.8 383.7,117.9 385.4,117.1 387.1,116.4 388.9,115.8 390.7,115.2 392.5,114.8 394.4,114.4 396.2,114.2 398.1,114.0 400.0,114.0 401.9,114.0 403.8,114.2 405.6,114.4 407.5,114.8 409.3,115.2 411.1,115.8 412.9,116.4 414.6,117.1 416.3,117.9 418.0,118.8 419.6,119.8 421.2,120.9 422.7,122.0 424.1,123.2 425.5,124.5 426.8,125.9 428.0,127.3 429.1,128.8 430.2,130.4 431.2,132.0 432.1,133.7 432.9,135.4 433.6,137.1 434.2,138.9 434.8,140.7 435.2,142.5 435.6,144.4 435.8,146.2 436.0,148.1 436.0,150.0" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="402" y="330" width="68" height="60" fill="#fde68a" stroke="#f59e0b" stroke-width="2.5" rx="3"/>
+<text x="436" y="366" font-family="Arial,sans-serif" font-size="14" fill="#991b1b" text-anchor="middle" font-weight="bold">Vikt</text>
+<line x1="436.0" y1="296.0" x2="436.0" y2="315.0" stroke="#dc2626" stroke-width="3"/>
+<polygon points="436.0,326.0 429.9,315.0 442.1,315.0" fill="#dc2626"/>
+<text x="436" y="288" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Tyngd</text>
+<line x1="364.0" y1="350.0" x2="364.0" y2="397.0" stroke="#dc2626" stroke-width="3.5"/>
+<polygon points="364.0,410.0 356.9,397.0 371.1,397.0" fill="#dc2626"/>
+<text x="364" y="432" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">Du drar nedåt</text>
+<line x1="506.0" y1="392.0" x2="506.0" y2="338.0" stroke="#16a34a" stroke-width="3"/>
+<polygon points="506.0,326.0 512.6,338.0 499.4,338.0" fill="#16a34a"/>
+<text x="522" y="366" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="start" font-weight="bold">Lasten</text>
+<text x="522" y="382" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="start">lyfts upp</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ett block är ett hjul med spår — det byter riktning på dragkraften</text>
+</svg>

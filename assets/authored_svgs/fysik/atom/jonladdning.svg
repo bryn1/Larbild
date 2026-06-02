@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Jonladdning (plus eller minus)</text>
+<circle cx="230" cy="230" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="230" y="234" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">Na</text>
+<circle cx="230" cy="230" r="48" fill="none" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="5,3"/>
+<circle cx="278" cy="230" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="278" y="233.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<line x1="288.0" y1="230.0" x2="342.4" y2="194.9" stroke="#2563eb" stroke-width="2.2"/>
+<polygon points="350.0,190.0 340.3,191.5 344.6,198.2" fill="#2563eb"/>
+<text x="325" y="180" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">lämnar 1 e-</text>
+<text x="230" y="308" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Natriumatom</text>
+<rect x="150" y="330" width="170" height="56" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="235" y="354" font-family="Arial,sans-serif" font-size="18" fill="#1e40af" text-anchor="middle" font-weight="bold">Na+</text>
+<text x="235" y="376" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">laddning +1 (positiv)</text>
+<circle cx="580" cy="230" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="580" y="234" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">Cl</text>
+<circle cx="580" cy="230" r="48" fill="none" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="5,3"/>
+<circle cx="621.569219381653" cy="206.0" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="621.569219381653" y="209.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="580.0" cy="182.0" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="580.0" y="185.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="538.430780618347" cy="206.0" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="538.430780618347" y="209.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="538.430780618347" cy="254.0" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="538.430780618347" y="257.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="580.0" cy="278.0" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="580.0" y="281.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="621.569219381653" cy="254.00000000000003" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="621.569219381653" y="257.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="628.0" cy="230.0" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="628.0" y="233.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="470" cy="190" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="470" y="193.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<line x1="480.0" y1="194.0" x2="516.1" y2="213.7" stroke="#2563eb" stroke-width="2.2"/>
+<polygon points="524.0,218.0 518.0,210.2 514.2,217.2" fill="#2563eb"/>
+<text x="490" y="180" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">tar upp 1 e-</text>
+<text x="580" y="308" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Kloratom</text>
+<rect x="495" y="330" width="170" height="56" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="6"/>
+<text x="580" y="354" font-family="Arial,sans-serif" font-size="18" fill="#991b1b" text-anchor="middle" font-weight="bold">Cl-</text>
+<text x="580" y="376" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">laddning -1 (negativ)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Jonladdningen beror på hur många elektroner atomen tappat eller tagit upp</text>
+</svg>

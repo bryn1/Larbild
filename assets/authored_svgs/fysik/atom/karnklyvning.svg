@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kärnklyvning (fission)</text>
+<line x1="70.0" y1="200.0" x2="141.0" y2="200.0" stroke="#6b7280" stroke-width="2.5"/>
+<polygon points="150.0,200.0 141.0,204.5 141.0,195.5" fill="#6b7280"/>
+<text x="80" y="188" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">neutron</text>
+<circle cx="200" cy="200" r="42" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<circle cx="182" cy="190" r="6" fill="#dc2626"/>
+<circle cx="200" cy="182" r="6" fill="#2563eb"/>
+<circle cx="218" cy="192" r="6" fill="#dc2626"/>
+<circle cx="178" cy="208" r="6" fill="#2563eb"/>
+<circle cx="196" cy="202" r="6" fill="#dc2626"/>
+<circle cx="214" cy="212" r="6" fill="#2563eb"/>
+<circle cx="222" cy="198" r="6" fill="#dc2626"/>
+<circle cx="202" cy="218" r="6" fill="#2563eb"/>
+<circle cx="188" cy="178" r="6" fill="#dc2626"/>
+<circle cx="212" cy="180" r="6" fill="#2563eb"/>
+<circle cx="180" cy="198" r="6" fill="#dc2626"/>
+<circle cx="200" cy="200" r="6" fill="#2563eb"/>
+<text x="200" y="270" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Tung kärna (t.ex. uran)</text>
+<line x1="258.0" y1="200.0" x2="321.0" y2="200.0" stroke="#16a34a" stroke-width="3"/>
+<polygon points="330.0,200.0 321.0,204.5 321.0,195.5" fill="#16a34a"/>
+<text x="294" y="188" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">delas</text>
+<circle cx="430" cy="150" r="26" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<circle cx="420" cy="144" r="5" fill="#dc2626"/>
+<circle cx="436" cy="142" r="5" fill="#2563eb"/>
+<circle cx="440" cy="156" r="5" fill="#dc2626"/>
+<circle cx="424" cy="158" r="5" fill="#2563eb"/>
+<circle cx="430" cy="150" r="5" fill="#dc2626"/>
+<circle cx="418" cy="154" r="5" fill="#2563eb"/>
+<circle cx="430" cy="250" r="26" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<circle cx="420" cy="244" r="5" fill="#dc2626"/>
+<circle cx="436" cy="242" r="5" fill="#2563eb"/>
+<circle cx="440" cy="256" r="5" fill="#dc2626"/>
+<circle cx="424" cy="258" r="5" fill="#2563eb"/>
+<circle cx="430" cy="250" r="5" fill="#dc2626"/>
+<circle cx="418" cy="254" r="5" fill="#2563eb"/>
+<text x="430" y="110" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Två mindre kärnor</text>
+<line x1="465.0" y1="150.0" x2="551.4" y2="122.7" stroke="#6b7280" stroke-width="2"/>
+<polygon points="560.0,120.0 552.8,127.0 550.1,118.4" fill="#6b7280"/>
+<circle cx="560" cy="120" r="6" fill="#6b7280"/>
+<line x1="465.0" y1="200.0" x2="566.0" y2="200.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="575.0,200.0 566.0,204.5 566.0,195.5" fill="#6b7280"/>
+<circle cx="575" cy="200" r="6" fill="#6b7280"/>
+<line x1="465.0" y1="250.0" x2="551.6" y2="281.9" stroke="#6b7280" stroke-width="2"/>
+<polygon points="560.0,285.0 550.0,286.1 553.1,277.7" fill="#6b7280"/>
+<circle cx="560" cy="285" r="6" fill="#6b7280"/>
+<text x="640" y="200" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">fria neutroner</text>
+<line x1="264.0" y1="370.0" x2="280.0" y2="370.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="262.1" y1="377.0" x2="276.0" y2="385.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="257.0" y1="382.1" x2="265.0" y2="396.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="250.0" y1="384.0" x2="250.0" y2="400.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="243.0" y1="382.1" x2="235.0" y2="396.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="237.9" y1="377.0" x2="224.0" y2="385.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="236.0" y1="370.0" x2="220.0" y2="370.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="237.9" y1="363.0" x2="224.0" y2="355.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="243.0" y1="357.9" x2="235.0" y2="344.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="250.0" y1="356.0" x2="250.0" y2="340.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="257.0" y1="357.9" x2="265.0" y2="344.0" stroke="#f59e0b" stroke-width="3"/>
+<line x1="262.1" y1="363.0" x2="276.0" y2="355.0" stroke="#f59e0b" stroke-width="3"/>
+<text x="300" y="377" font-family="Arial,sans-serif" font-size="22" fill="#dc2626" text-anchor="start" font-weight="bold">+ mycket ENERGI</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En tung atomkärna delas i två och frigör mycket energi</text>
+</svg>

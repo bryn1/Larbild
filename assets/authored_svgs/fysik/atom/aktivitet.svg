@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Aktivitet (sönderfall per sekund)</text>
+<circle cx="250" cy="250" r="38" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="250" y="246" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Radioaktiv</text>
+<text x="250" y="262" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">kärna</text>
+<line x1="292.5" y1="238.6" x2="348.5" y2="223.6" stroke="#dc2626" stroke-width="2"/>
+<polygon points="356.3,221.5 347.6,220.2 349.4,227.0" fill="#dc2626"/>
+<line x1="275.2" y1="214.0" x2="308.5" y2="166.4" stroke="#dc2626" stroke-width="2"/>
+<polygon points="313.1,159.9 305.6,164.4 311.4,168.5" fill="#dc2626"/>
+<line x1="238.6" y1="207.5" x2="223.6" y2="151.5" stroke="#dc2626" stroke-width="2"/>
+<polygon points="221.5,143.7 220.2,152.4 227.0,150.6" fill="#dc2626"/>
+<line x1="211.9" y1="228.0" x2="161.7" y2="199.0" stroke="#dc2626" stroke-width="2"/>
+<polygon points="154.7,195.0 159.9,202.0 163.4,196.0" fill="#dc2626"/>
+<line x1="208.7" y1="265.0" x2="154.2" y2="284.9" stroke="#dc2626" stroke-width="2"/>
+<polygon points="146.6,287.6 155.3,288.2 153.0,281.6" fill="#dc2626"/>
+<line x1="235.0" y1="291.3" x2="215.1" y2="345.8" stroke="#dc2626" stroke-width="2"/>
+<polygon points="212.4,353.4 218.4,347.0 211.8,344.7" fill="#dc2626"/>
+<line x1="278.3" y1="283.7" x2="315.6" y2="328.1" stroke="#dc2626" stroke-width="2"/>
+<polygon points="320.7,334.3 318.2,325.9 312.9,330.4" fill="#dc2626"/>
+<line x1="291.3" y1="265.0" x2="345.8" y2="284.9" stroke="#dc2626" stroke-width="2"/>
+<polygon points="353.4,287.6 347.0,281.6 344.7,288.2" fill="#dc2626"/>
+<text x="250" y="340" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">strålar ut</text>
+<rect x="470" y="200" width="220" height="120" fill="white" stroke="#16a34a" stroke-width="2" rx="6"/>
+<text x="580" y="230" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Mätare</text>
+<text x="580" y="268" font-family="Arial,sans-serif" font-size="30" fill="#1f2937" text-anchor="middle" font-weight="bold">1 200</text>
+<text x="580" y="300" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">sönderfall / sekund</text>
+<line x1="360.0" y1="250.0" x2="455.0" y2="250.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="465.0,250.0 455.0,246.0 455.0,254.0" fill="#6b7280"/>
+<text x="412" y="240" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">räknas</text>
+<text x="400" y="390" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Enhet: becquerel (Bq)   1 Bq = 1 sönderfall per sekund</text>
+<text x="400" y="418" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Hög aktivitet = många sönderfall = mer strålning just nu</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Aktivitet är antalet atomkärnor som sönderfaller varje sekund</text>
+</svg>

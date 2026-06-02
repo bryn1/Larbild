@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Reaktorhärd</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Den innersta delen av en kärnreaktor där bränslet klyvs och mycket värme skapas</text>
+
+<!-- Reactor vessel (outer) -->
+<rect x="120" y="100" width="260" height="290" rx="20" fill="#f3f4f6" stroke="#6b7280" stroke-width="3"/>
+<text x="250" y="125" font-family="Arial,sans-serif" font-size="13" fill="#4b5563" text-anchor="middle" font-weight="bold">Reaktortank</text>
+
+<!-- Core (härd) inside - hot -->
+<rect x="180" y="170" width="140" height="160" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="6"/>
+<text x="250" y="160" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Reaktorhärd</text>
+<!-- fuel rods -->
+<g fill="#92400e">
+<rect x="195" y="185" width="10" height="130"/>
+<rect x="220" y="185" width="10" height="130"/>
+<rect x="245" y="185" width="10" height="130"/>
+<rect x="270" y="185" width="10" height="130"/>
+<rect x="295" y="185" width="10" height="130"/>
+</g>
+<text x="250" y="350" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">bränslestavar</text>
+
+<!-- heat waves out of core -->
+<g stroke="#dc2626" stroke-width="2" fill="none">
+<path d="M 330 200 q 12 -10 24 0 q 12 10 24 0"/>
+<path d="M 330 230 q 12 -10 24 0 q 12 10 24 0"/>
+<path d="M 330 260 q 12 -10 24 0 q 12 10 24 0"/>
+</g>
+<text x="360" y="160" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start" font-weight="bold">värme</text>
+
+<!-- arrow to water -> steam -> turbine -->
+<line x1="385" y1="240" x2="430" y2="240" stroke="#1f2937" stroke-width="3"/>
+<polygon points="440,240 428,235 428,245" fill="#1f2937"/>
+
+<rect x="445" y="200" width="120" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+<text x="505" y="232" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Vattnet kokar</text>
+<text x="505" y="252" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">→ ånga</text>
+
+<line x1="565" y1="240" x2="610" y2="240" stroke="#1f2937" stroke-width="3"/>
+<polygon points="620,240 608,235 608,245" fill="#1f2937"/>
+
+<circle cx="680" cy="240" r="38" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<line x1="680" y1="202" x2="680" y2="278" stroke="#16a34a" stroke-width="2"/>
+<line x1="642" y1="240" x2="718" y2="240" stroke="#16a34a" stroke-width="2"/>
+<text x="680" y="300" font-family="Arial,sans-serif" font-size="12" fill="#15803d" text-anchor="middle" font-weight="bold">Turbin → el</text>
+
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Härden = hjärtat i reaktorn, där kärnklyvningen ger värmen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Värmen från reaktorhärden kokar vattnet som sen driver turbinen som ger dig el</text>
+</svg>

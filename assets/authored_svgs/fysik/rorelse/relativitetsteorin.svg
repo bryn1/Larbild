@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Relativitetsteorin</text>
+<circle cx="200.0" cy="245.0" r="68.0" fill="white" stroke="#2563eb" stroke-width="3"/>
+<circle cx="200.0" cy="245.0" r="4.0" fill="#2563eb" stroke="#1f2937" stroke-width="2"/>
+<line x1="200.0" y1="185.0" x2="200.0" y2="177.0" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="230.0" y1="193.0" x2="234.0" y2="186.1" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="252.0" y1="215.0" x2="258.9" y2="211.0" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="260.0" y1="245.0" x2="268.0" y2="245.0" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="252.0" y1="275.0" x2="258.9" y2="279.0" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="230.0" y1="297.0" x2="234.0" y2="303.9" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="200.0" y1="305.0" x2="200.0" y2="313.0" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="170.0" y1="297.0" x2="166.0" y2="303.9" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="148.0" y1="275.0" x2="141.1" y2="279.0" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="140.0" y1="245.0" x2="132.0" y2="245.0" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="148.0" y1="215.0" x2="141.1" y2="211.0" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="170.0" y1="193.0" x2="166.0" y2="186.1" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="200.0" y1="245.0" x2="170.6" y2="262.0" stroke="#1f2937" stroke-width="3.5"/>
+<line x1="200.0" y1="245.0" x2="200.0" y2="192.0" stroke="#1f2937" stroke-width="2.5"/>
+<text x="200" y="337" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">Du på jorden</text>
+<text x="200" y="360" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">tiden går normalt</text>
+<circle cx="600.0" cy="245.0" r="68.0" fill="white" stroke="#dc2626" stroke-width="3"/>
+<circle cx="600.0" cy="245.0" r="4.0" fill="#dc2626" stroke="#1f2937" stroke-width="2"/>
+<line x1="600.0" y1="185.0" x2="600.0" y2="177.0" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="630.0" y1="193.0" x2="634.0" y2="186.1" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="652.0" y1="215.0" x2="658.9" y2="211.0" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="660.0" y1="245.0" x2="668.0" y2="245.0" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="652.0" y1="275.0" x2="658.9" y2="279.0" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="630.0" y1="297.0" x2="634.0" y2="303.9" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="600.0" y1="305.0" x2="600.0" y2="313.0" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="570.0" y1="297.0" x2="566.0" y2="303.9" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="548.0" y1="275.0" x2="541.1" y2="279.0" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="540.0" y1="245.0" x2="532.0" y2="245.0" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="548.0" y1="215.0" x2="541.1" y2="211.0" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="570.0" y1="193.0" x2="566.0" y2="186.1" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="600.0" y1="245.0" x2="629.4" y2="262.0" stroke="#1f2937" stroke-width="3.5"/>
+<line x1="600.0" y1="245.0" x2="600.0" y2="192.0" stroke="#1f2937" stroke-width="2.5"/>
+<text x="600" y="337" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Kompis i raket</text>
+<text x="600" y="360" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">tiden går långsammare</text>
+<polygon points="354.0,235.0 434.0,217.0 450.0,235.0 434.0,253.0" fill="#cbd5e1" stroke="#1f2937" stroke-width="2"/>
+<polygon points="354.0,235.0 338.0,223.0 338.0,247.0" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/>
+<line x1="458.0" y1="235.0" x2="496.0" y2="235.0" stroke="#16a34a" stroke-width="3"/>
+<polygon points="508.0,235.0 496.0,241.6 496.0,228.4" fill="#16a34a"/>
+<text x="400" y="190" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="middle" font-weight="bold">nära ljusets fart</text>
+<text x="400" y="408" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Tid och sträcka upplevs olika beroende på hur snabbt du rör dig</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Einsteins teori: nära ljusets fart åldras den som färdas långsammare</text>
+</svg>

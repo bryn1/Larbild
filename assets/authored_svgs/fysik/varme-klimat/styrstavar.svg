@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Styrstavar i en kärnreaktor</text>
+<!-- Reactor vessel -->
+<rect x="250" y="90" width="300" height="330" rx="14" fill="#eff6ff" stroke="#1e40af" stroke-width="3"/>
+<text x="490" y="135" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Reaktorhärd</text>
+<!-- Fuel rods (amber) -->
+<rect x="285" y="150" width="18" height="230" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<rect x="345" y="150" width="18" height="230" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<rect x="437" y="150" width="18" height="230" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<rect x="497" y="150" width="18" height="230" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<!-- Control rods (gray) lowered partway between fuel -->
+<rect x="318" y="60" width="16" height="250" rx="4" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<rect x="392" y="60" width="16" height="250" rx="4" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<rect x="466" y="60" width="16" height="250" rx="4" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<!-- down arrow showing rods lowered -->
+<line x1="400" y1="68" x2="400" y2="48" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="400,78 396,68 404,68" fill="#dc2626"/>
+<text x="430" y="58" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">sänks ner</text>
+<!-- Neutrons captured (red dots) near control rods -->
+<circle cx="360" cy="220" r="5" fill="#dc2626"/>
+<circle cx="380" cy="260" r="5" fill="#dc2626"/>
+<circle cx="416" cy="300" r="5" fill="#dc2626"/>
+<circle cx="448" cy="230" r="5" fill="#dc2626"/>
+<!-- captured arrow into a control rod -->
+<line x1="372" y1="240" x2="392" y2="245" stroke="#dc2626" stroke-width="2"/>
+<polygon points="400,246 390,242 391,250" fill="#dc2626"/>
+<!-- Legend -->
+<rect x="120" y="430" width="16" height="16" fill="#9ca3af" stroke="#4b5563" stroke-width="1.5"/>
+<text x="144" y="443" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="start">Styrstav</text>
+<rect x="290" y="430" width="16" height="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+<text x="314" y="443" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="start">Bränslestav</text>
+<circle cx="498" cy="438" r="6" fill="#dc2626"/>
+<text x="512" y="443" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="start">Neutron som fångas</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Styrstavarna fångar upp neutroner och bromsar kärnklyvningen</text>
+</svg>

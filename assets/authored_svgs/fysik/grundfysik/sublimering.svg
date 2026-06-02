@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Sublimering (fast ämne → gas direkt)</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ämnet hoppar förbi vätskeformen och blir gas på en gång</text>
+
+<!-- LEFT: solid (fast form) -->
+<rect x="80" y="150" width="180" height="150" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+<text x="170" y="135" font-family="Arial,sans-serif" font-size="15" fill="#2563eb" text-anchor="middle" font-weight="bold">Fast form</text>
+<!-- ordered, tightly packed particles -->
+<circle cx="110" cy="185" r="9" fill="#1e40af"/><circle cx="140" cy="185" r="9" fill="#1e40af"/><circle cx="170" cy="185" r="9" fill="#1e40af"/><circle cx="200" cy="185" r="9" fill="#1e40af"/><circle cx="230" cy="185" r="9" fill="#1e40af"/>
+<circle cx="110" cy="215" r="9" fill="#1e40af"/><circle cx="140" cy="215" r="9" fill="#1e40af"/><circle cx="170" cy="215" r="9" fill="#1e40af"/><circle cx="200" cy="215" r="9" fill="#1e40af"/><circle cx="230" cy="215" r="9" fill="#1e40af"/>
+<circle cx="110" cy="245" r="9" fill="#1e40af"/><circle cx="140" cy="245" r="9" fill="#1e40af"/><circle cx="170" cy="245" r="9" fill="#1e40af"/><circle cx="200" cy="245" r="9" fill="#1e40af"/><circle cx="230" cy="245" r="9" fill="#1e40af"/>
+<circle cx="110" cy="275" r="9" fill="#1e40af"/><circle cx="140" cy="275" r="9" fill="#1e40af"/><circle cx="170" cy="275" r="9" fill="#1e40af"/><circle cx="200" cy="275" r="9" fill="#1e40af"/><circle cx="230" cy="275" r="9" fill="#1e40af"/>
+<text x="170" y="320" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">t.ex. torris, snö</text>
+
+<!-- ARROW: solid straight to gas, labelled SUBLIMERING -->
+<line x1="275" y1="225" x2="535" y2="225" stroke="#dc2626" stroke-width="3"/>
+<polygon points="548,225 535,230 535,220" fill="#dc2626"/>
+<text x="405" y="210" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">SUBLIMERING</text>
+<text x="405" y="245" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(ingen vätska däremellan)</text>
+
+<!-- skipped liquid form shown crossed out below -->
+<rect x="330" y="300" width="150" height="80" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,3" rx="4"/>
+<text x="405" y="335" font-family="Arial,sans-serif" font-size="13" fill="#9ca3af" text-anchor="middle">Vätskeform</text>
+<text x="405" y="355" font-family="Arial,sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">(hoppas över)</text>
+<line x1="335" y1="305" x2="475" y2="375" stroke="#dc2626" stroke-width="2"/>
+<line x1="475" y1="305" x2="335" y2="375" stroke="#dc2626" stroke-width="2"/>
+
+<!-- RIGHT: gas (gasform) -->
+<rect x="550" y="150" width="180" height="150" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="4"/>
+<text x="640" y="135" font-family="Arial,sans-serif" font-size="15" fill="#b45309" text-anchor="middle" font-weight="bold">Gasform</text>
+<!-- spread-out, scattered particles -->
+<circle cx="580" cy="180" r="7" fill="#b45309"/><circle cx="660" cy="175" r="7" fill="#b45309"/><circle cx="710" cy="200" r="7" fill="#b45309"/>
+<circle cx="600" cy="230" r="7" fill="#b45309"/><circle cx="690" cy="245" r="7" fill="#b45309"/><circle cx="630" cy="270" r="7" fill="#b45309"/>
+<circle cx="565" cy="265" r="7" fill="#b45309"/><circle cx="715" cy="280" r="7" fill="#b45309"/>
+<text x="640" y="320" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">partiklarna sprids fritt</text>
+
+<text x="400" y="440" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">Snön kan minska genom sublimering även i minusgrader</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vid sublimering övergår ett fast ämne direkt till gas utan att först bli vätska</text>
+</svg>

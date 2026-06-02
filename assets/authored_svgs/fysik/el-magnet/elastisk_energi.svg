@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Elastisk energi</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Energi lagrad i något hoptryckt eller utsträckt</text>
+
+<!-- wall left -->
+<rect x="90" y="130" width="20" height="200" fill="#6b7280"/>
+<!-- relaxed spring, top -->
+<text x="240" y="150" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Avslappnad fjäder</text>
+<path d="M110 175 L150 175 L160 160 L180 190 L200 160 L220 190 L240 160 L260 190 L280 160 L300 190 L310 175 L350 175" fill="none" stroke="#2563eb" stroke-width="3"/>
+<rect x="350" y="160" width="30" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="500" y="180" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ingen lagrad energi</text>
+
+<!-- compressed spring, middle -->
+<text x="240" y="250" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Hoptryckt fjäder</text>
+<path d="M110 280 L135 280 L141 268 L153 292 L165 268 L177 292 L189 268 L201 292 L213 268 L225 292 L231 280 L255 280" fill="none" stroke="#dc2626" stroke-width="3"/>
+<rect x="255" y="265" width="30" height="30" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<!-- compression arrows -->
+<line x1="340" y1="280" x2="295" y2="280" stroke="#dc2626" stroke-width="3"/>
+<polygon points="285,280 297,275 297,285" fill="#dc2626"/>
+<text x="430" y="276" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Elastisk energi</text>
+<text x="430" y="294" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">lagras i fjädern</text>
+
+<!-- release: kinetic -->
+<text x="240" y="350" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Släpps loss</text>
+<rect x="255" y="335" width="30" height="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<line x1="295" y1="350" x2="360" y2="350" stroke="#16a34a" stroke-width="4"/>
+<polygon points="372,350 358,344 358,356" fill="#16a34a"/>
+<text x="470" y="354" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">→ rörelseenergi</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En spänd fjäder eller ett utdraget gummiband lagrar elastisk energi</text>
+</svg>

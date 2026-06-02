@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Excitera en atom</text>
+<text x="180" y="95" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">1. Energi tillförs</text>
+<circle cx="180" cy="230" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+<circle cx="180" cy="230" r="38" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5,3"/>
+<circle cx="180" cy="230" r="66" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5,3"/>
+<line x1="100.0" y1="230.0" x2="135.0" y2="230.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="145.0,230.0 135.0,225.5 135.0,234.5" fill="#dc2626"/>
+<text x="95" y="215" font-family="Arial,sans-serif" font-size="10" fill="#dc2626" text-anchor="start">el / värme</text>
+<circle cx="180" cy="192" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="180" y="195.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<line x1="214.0" y1="200.0" x2="220.1" y2="175.8" stroke="#2563eb" stroke-width="2"/>
+<polygon points="222.0,168.0 216.7,174.9 223.5,176.6" fill="#2563eb"/>
+<text x="180" y="156" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle"></text>
+<text x="180" y="320" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">elektron hoppar upp</text>
+<text x="400" y="95" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">2. Exciterad</text>
+<circle cx="400" cy="230" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+<circle cx="400" cy="230" r="38" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5,3"/>
+<circle cx="400" cy="230" r="66" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5,3"/>
+<circle cx="400" cy="164" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="400" y="167.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<text x="400" y="320" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">instabilt läge</text>
+<text x="620" y="95" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">3. Faller tillbaka</text>
+<circle cx="620" cy="230" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+<circle cx="620" cy="230" r="38" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5,3"/>
+<circle cx="620" cy="230" r="66" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5,3"/>
+<circle cx="620" cy="192" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="620" y="195.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<line x1="598.0" y1="170.0" x2="598.0" y2="178.0" stroke="#2563eb" stroke-width="2"/>
+<polygon points="598.0,186.0 601.5,178.0 594.5,178.0" fill="#2563eb"/>
+<polyline points="638.0,200.0 640.0,195.7 642.0,192.2 644.0,190.3 646.0,190.3 648.0,192.2 650.0,195.7 652.0,200.0 654.0,204.3 656.0,207.8 658.0,209.7 660.0,209.7 662.0,207.8 664.0,204.3 666.0,200.0 668.0,195.7 670.0,192.2 672.0,190.3 674.0,190.3 676.0,192.2 678.0,195.7 680.0,200.0 682.0,204.3 684.0,207.8 686.0,209.7 688.0,209.7 690.0,207.8 692.0,204.3 694.0,200.0 696.0,195.7 698.0,192.2 700.0,190.3 702.0,190.3 704.0,192.2 706.0,195.7 708.0,200.0 710.0,204.3 712.0,207.8 714.0,209.7 716.0,209.7 718.0,207.8 720.0,204.3" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="712.0" y1="200.0" x2="731.0" y2="200.0" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="740.0,200.0 731.0,196.0 731.0,204.0" fill="#f59e0b"/>
+<text x="620" y="320" font-family="Arial,sans-serif" font-size="11" fill="#b45309" text-anchor="middle">ljus skickas ut</text>
+<line x1="258.0" y1="230.0" x2="308.0" y2="230.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="318.0,230.0 308.0,226.0 308.0,234.0" fill="#6b7280"/>
+<line x1="478.0" y1="230.0" x2="528.0" y2="230.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="538.0,230.0 528.0,226.0 528.0,234.0" fill="#6b7280"/>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Att excitera = ge energi så en elektron hoppar upp; vid återfall skickas ljus ut</text>
+</svg>

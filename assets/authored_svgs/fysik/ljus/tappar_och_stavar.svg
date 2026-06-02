@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Tappar och stavar</text>
+<text x="400" y="70" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Ljuskänsliga celler i näthinnan</text>
+<line x1="120" y1="300" x2="680" y2="300" stroke="#c2855a" stroke-width="4"/>
+<text x="400" y="395" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Näthinnans yta</text>
+<polygon points="161,300 179,300 170,245" fill="#dc2626" opacity="0.8" stroke="#1f2937" stroke-width="1"/>
+<polygon points="195,300 213,300 204,245" fill="#16a34a" opacity="0.8" stroke="#1f2937" stroke-width="1"/>
+<polygon points="229,300 247,300 238,245" fill="#2563eb" opacity="0.8" stroke="#1f2937" stroke-width="1"/>
+<polygon points="263,300 281,300 272,245" fill="#dc2626" opacity="0.8" stroke="#1f2937" stroke-width="1"/>
+<polygon points="297,300 315,300 306,245" fill="#16a34a" opacity="0.8" stroke="#1f2937" stroke-width="1"/>
+<polygon points="331,300 349,300 340,245" fill="#2563eb" opacity="0.8" stroke="#1f2937" stroke-width="1"/>
+<text x="255" y="225" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Tappar</text>
+<text x="255" y="240" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">ser färg i ljus</text>
+<circle cx="255" cy="150" r="16" fill="#f59e0b"/>
+<line x1="273.0" y1="150.0" x2="282.0" y2="150.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="267.7" y1="162.7" x2="274.1" y2="169.1" stroke="#f59e0b" stroke-width="2"/>
+<line x1="255.0" y1="168.0" x2="255.0" y2="177.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="242.3" y1="162.7" x2="235.9" y2="169.1" stroke="#f59e0b" stroke-width="2"/>
+<line x1="237.0" y1="150.0" x2="228.0" y2="150.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="242.3" y1="137.3" x2="235.9" y2="130.9" stroke="#f59e0b" stroke-width="2"/>
+<line x1="255.0" y1="132.0" x2="255.0" y2="123.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="267.7" y1="137.3" x2="274.1" y2="130.9" stroke="#f59e0b" stroke-width="2"/>
+<text x="255" y="185" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">ljus</text>
+<rect x="465" y="240" width="10" height="60" rx="5" fill="#9ca3af" stroke="#1f2937" stroke-width="1"/>
+<rect x="491" y="240" width="10" height="60" rx="5" fill="#9ca3af" stroke="#1f2937" stroke-width="1"/>
+<rect x="517" y="240" width="10" height="60" rx="5" fill="#9ca3af" stroke="#1f2937" stroke-width="1"/>
+<rect x="543" y="240" width="10" height="60" rx="5" fill="#9ca3af" stroke="#1f2937" stroke-width="1"/>
+<rect x="569" y="240" width="10" height="60" rx="5" fill="#9ca3af" stroke="#1f2937" stroke-width="1"/>
+<rect x="595" y="240" width="10" height="60" rx="5" fill="#9ca3af" stroke="#1f2937" stroke-width="1"/>
+<rect x="621" y="240" width="10" height="60" rx="5" fill="#9ca3af" stroke="#1f2937" stroke-width="1"/>
+<text x="560" y="220" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Stavar</text>
+<text x="560" y="235" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">ser i mörker (svartvitt)</text>
+<circle cx="560" cy="150" r="15" fill="#d1d5db"/>
+<circle cx="567" cy="146" r="13" fill="white"/>
+<text x="560" y="185" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">mörker</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Tappar ser färg när det är ljust; stavar fungerar bäst i mörker och ser i svartvitt</text>
+</svg>

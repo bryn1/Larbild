@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Meteorologi — läran om vädret</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Man undersöker luft, moln, vind och hur de påverkar varandra</text>
+
+<!-- centre label -->
+<circle cx="400" cy="250" r="62" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+<text x="400" y="245" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Vädret</text>
+<text x="400" y="266" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">studeras</text>
+
+<!-- Element 1: Sun (top-left) -->
+<circle cx="180" cy="140" r="34" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="180" y="145" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="bold">Sol</text>
+<text x="180" y="195" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">temperatur</text>
+<line x1="218" y1="170" x2="345" y2="225" stroke="#9ca3af" stroke-width="2"/>
+
+<!-- Element 2: Clouds (top-right) -->
+<ellipse cx="620" cy="140" rx="46" ry="22" fill="#9ca3af"/>
+<text x="620" y="145" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Moln</text>
+<text x="620" y="190" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">fukt &amp; nederbörd</text>
+<line x1="582" y1="165" x2="455" y2="225" stroke="#9ca3af" stroke-width="2"/>
+
+<!-- Element 3: Wind (bottom-left) -->
+<g stroke="#2563eb" stroke-width="3" fill="none">
+<path d="M 150 350 q 40 -18 80 0"/>
+<path d="M 150 370 q 40 -18 80 0"/>
+</g>
+<text x="190" y="405" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">Vind</text>
+<line x1="245" y1="350" x2="350" y2="290" stroke="#9ca3af" stroke-width="2"/>
+
+<!-- Element 4: Pressure gauge (bottom-right) -->
+<circle cx="615" cy="350" r="34" fill="white" stroke="#16a34a" stroke-width="2"/>
+<line x1="615" y1="350" x2="635" y2="332" stroke="#dc2626" stroke-width="2.5"/>
+<circle cx="615" cy="350" r="3" fill="#dc2626"/>
+<text x="615" y="405" font-family="Arial,sans-serif" font-size="12" fill="#15803d" text-anchor="middle" font-weight="bold">Lufttryck</text>
+<line x1="582" y1="335" x2="455" y2="285" stroke="#9ca3af" stroke-width="2"/>
+
+<text x="400" y="450" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Allt hänger ihop — det är detta meteorologin studerar</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">I meteorologi lärde vi oss varför det bildas dimma över sjön på morgonen</text>
+</svg>

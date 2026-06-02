@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Sluten krets</text>
+<!-- circuit wire rectangle -->
+<rect x="200" y="130" width="400" height="240" fill="none" stroke="#1f2937" stroke-width="4"/>
+<!-- battery on left side -->
+<line x1="200" y1="220" x2="180" y2="220" stroke="#1f2937" stroke-width="4"/>
+<line x1="180" y1="200" x2="180" y2="240" stroke="#dc2626" stroke-width="5"/>
+<line x1="160" y1="210" x2="160" y2="230" stroke="#1f2937" stroke-width="5"/>
+<line x1="160" y1="220" x2="200" y2="220" stroke="#1f2937" stroke-width="4"/>
+<rect x="135" y="248" width="50" height="60" fill="none"/>
+<text x="190" y="195" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="148" y="200" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="150" y="280" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Batteri</text>
+<!-- lamp on right side: circle with X -->
+<circle cx="600" cy="250" r="28" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<line x1="580" y1="230" x2="620" y2="270" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="620" y1="230" x2="580" y2="270" stroke="#f59e0b" stroke-width="2.5"/>
+<!-- light rays (lamp is ON) -->
+<line x1="600" y1="210" x2="600" y2="195" stroke="#f59e0b" stroke-width="3"/>
+<line x1="640" y1="250" x2="658" y2="250" stroke="#f59e0b" stroke-width="3"/>
+<line x1="628" y1="222" x2="642" y2="208" stroke="#f59e0b" stroke-width="3"/>
+<text x="600" y="320" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Lampa (lyser)</text>
+<!-- switch on top side: CLOSED (contact made) -->
+<circle cx="370" cy="130" r="5" fill="#1f2937"/>
+<circle cx="430" cy="130" r="5" fill="#1f2937"/>
+<line x1="370" y1="130" x2="428" y2="130" stroke="#16a34a" stroke-width="4"/>
+<text x="400" y="110" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">Strömbrytare (sluten)</text>
+<!-- current direction arrows (around loop, conventional + to -) -->
+<polygon points="500,126 480,118 480,134" fill="#2563eb"/>
+<polygon points="604,200 596,182 612,182" fill="#2563eb"/>
+<polygon points="300,374 320,366 320,382" fill="#2563eb"/>
+<polygon points="196,300 188,318 204,318" fill="#2563eb"/>
+<text x="400" y="392" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Strömmen går runt hela vägen</text>
+<text x="400" y="445" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Kretsen är obruten → strömmen kan gå runt → lampan lyser</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En sluten krets är en hel bana från batteriets ena pol till den andra</text>
+</svg>

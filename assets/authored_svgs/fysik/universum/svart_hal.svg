@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Svart hål — inte ens ljus tar sig ut</text>
+<circle cx="380" cy="250" r="155" fill="#fde68a" opacity="0.14"/>
+<ellipse cx="380" cy="250" rx="150" ry="40" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.55"/>
+<circle cx="380" cy="250" r="80" fill="#111827" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="380" y="155" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">Händelsehorisont</text>
+<path d="M 110 150 q 110 30 175 95" fill="none" stroke="#facc15" stroke-width="2.5"/>
+<line x1="280.0" y1="240.0" x2="298.4" y2="234.7" stroke="#facc15" stroke-width="2.5"/>
+<polygon points="308.0,232.0 299.6,239.1 297.1,230.4" fill="#facc15"/>
+<text x="120" y="138" font-family="Arial,sans-serif" font-size="12" fill="#a16207" text-anchor="start">ljus som kommer nära...</text>
+<path d="M 380 172 q 60 -70 30 -130" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="410.0" y1="45.0" x2="395.1" y2="90.5" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="392.0,100.0 390.8,89.1 399.4,91.9" fill="#dc2626"/>
+<text x="475" y="100" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">ljus kan inte</text>
+<text x="475" y="116" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start" font-weight="bold">ta sig ut: NEJ</text>
+<text x="380" y="254" font-family="Arial,sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">svart hål</text>
+<text x="400" y="415" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">Tyngdkraften är så stark att allt som kommer för nära dras in</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Som lillebrors garderob — sockorna som åker in kommer aldrig ut igen</text>
+</svg>

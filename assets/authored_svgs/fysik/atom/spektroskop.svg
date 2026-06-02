@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Spektroskop — delar upp ljuset</text>
+<rect x="60" y="235" width="180" height="14" fill="#d1d5db" stroke="#9ca3af" stroke-width="1"/>
+<text x="150" y="225" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">vitt ljus</text>
+<line x1="120.0" y1="242.0" x2="222.0" y2="242.0" stroke="#374151" stroke-width="2"/>
+<polygon points="230.0,242.0 222.0,246.0 222.0,238.0" fill="#374151"/>
+<polygon points="300,310 360,180 420,310" fill="#dbeafe" stroke="#2563eb" stroke-width="2" opacity="0.8"/>
+<text x="360" y="330" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">prisma</text>
+<line x1="400" y1="250" x2="637.7" y2="216.6" stroke="#dc2626" stroke-width="3"/>
+<line x1="400" y1="250" x2="639.7" y2="237.4" stroke="#f59e0b" stroke-width="3"/>
+<line x1="400" y1="250" x2="639.9" y2="258.4" stroke="#eab308" stroke-width="3"/>
+<line x1="400" y1="250" x2="638.2" y2="279.2" stroke="#16a34a" stroke-width="3"/>
+<line x1="400" y1="250" x2="634.8" y2="299.9" stroke="#0891b2" stroke-width="3"/>
+<line x1="400" y1="250" x2="629.5" y2="320.2" stroke="#2563eb" stroke-width="3"/>
+<line x1="400" y1="250" x2="622.5" y2="339.9" stroke="#7c3aed" stroke-width="3"/>
+<rect x="650" y="150" width="18" height="200" fill="#111827"/>
+<rect x="650" y="165" width="18" height="20" fill="#dc2626"/>
+<rect x="650" y="191" width="18" height="20" fill="#f59e0b"/>
+<rect x="650" y="217" width="18" height="20" fill="#eab308"/>
+<rect x="650" y="243" width="18" height="20" fill="#16a34a"/>
+<rect x="650" y="269" width="18" height="20" fill="#0891b2"/>
+<rect x="650" y="295" width="18" height="20" fill="#2563eb"/>
+<rect x="650" y="321" width="18" height="20" fill="#7c3aed"/>
+<text x="659" y="370" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">spektrum</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ljuset delas upp i sina färger så man kan se ämnets mönster</text>
+</svg>

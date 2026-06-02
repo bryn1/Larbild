@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Hörselsnäckan – gör ljud till nervsignaler</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Det snäckformade organet i innerörat</text>
+<rect x="110" y="200" width="22" height="60" fill="#86efac" stroke="#15803d" stroke-width="2" rx="3"/>
+<text x="121" y="280" font-family="Arial,sans-serif" font-size="11" fill="#15803d" text-anchor="middle">Stigbygel</text>
+<line x1="135.0" y1="230.0" x2="190.0" y2="230.0" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="200.0,230.0 190.0,235.5 190.0,224.5" fill="#2563eb"/>
+<text x="168" y="215" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">vibration</text>
+<circle cx="380.0" cy="250.0" r="95.0" fill="#cffafe" stroke="#0891b2" stroke-width="3"/>
+<circle cx="380.0" cy="250.0" r="70.0" fill="white" stroke="#0891b2" stroke-width="2.5"/>
+<circle cx="380.0" cy="250.0" r="46.0" fill="#cffafe" stroke="#0891b2" stroke-width="2.5"/>
+<circle cx="380.0" cy="250.0" r="24.0" fill="white" stroke="#0891b2" stroke-width="2"/>
+<circle cx="380.0" cy="250.0" r="8.0" fill="#0891b2" stroke="none" stroke-width="0"/>
+<text x="380" y="380" font-family="Arial,sans-serif" font-size="12" fill="#0e7490" text-anchor="middle">Vätskefylld snäcka</text>
+<line x1="478.0" y1="250.0" x2="550.0" y2="250.0" stroke="#7c3aed" stroke-width="2.5"/>
+<polygon points="560.0,250.0 550.0,255.5 550.0,244.5" fill="#7c3aed"/>
+<text x="520" y="235" font-family="Arial,sans-serif" font-size="11" fill="#7c3aed" text-anchor="middle">nervsignal</text>
+<path d="M 575 215 Q 620 210 640 240 Q 660 270 690 255" fill="none" stroke="#c4b5fd" stroke-width="6"/>
+<circle cx="685.0" cy="250.0" r="18.0" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="685" y="255" font-family="Arial,sans-serif" font-size="16" fill="#7c3aed" text-anchor="middle" font-weight="bold">→</text>
+<text x="685" y="295" font-family="Arial,sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="bold">Hjärnan</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hörselsnäckan gör om vibrationer till nervsignaler som hjärnan tolkar som ljud</text>
+</svg>

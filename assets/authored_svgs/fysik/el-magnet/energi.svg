@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Energi</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Det som behövs för att något ska hända</text>
+
+<!-- source: breakfast -->
+<rect x="80" y="200" width="150" height="100" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5" rx="6"/>
+<text x="155" y="245" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Frukost</text>
+<text x="155" y="270" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">(lagrad energi)</text>
+
+<!-- arrow -->
+<line x1="240" y1="250" x2="330" y2="250" stroke="#16a34a" stroke-width="4"/>
+<polygon points="345,250 329,243 329,257" fill="#16a34a"/>
+<text x="290" y="235" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">energi</text>
+
+<!-- result: things happen -->
+<rect x="360" y="160" width="180" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="450" y="192" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle">Röra sig (cykla)</text>
+<rect x="360" y="225" width="180" height="50" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="6"/>
+<text x="450" y="257" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle">Värmas upp</text>
+<rect x="360" y="290" width="180" height="50" fill="#fff7ed" stroke="#f59e0b" stroke-width="2" rx="6"/>
+<text x="450" y="322" font-family="Arial,sans-serif" font-size="14" fill="#b45309" text-anchor="middle">Lysa</text>
+
+<text x="640" y="255" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Något</text>
+<text x="640" y="273" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">händer</text>
+
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Energi mäts i joule (J)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Energi kan inte försvinna – den omvandlas bara från en form till en annan</text>
+</svg>

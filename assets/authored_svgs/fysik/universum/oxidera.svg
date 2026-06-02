@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Oxidera — ett ämne reagerar med syre</text>
+<rect x="90" y="150" width="180" height="130" fill="#f1f5f9" stroke="#6b7280" stroke-width="2" rx="8"/>
+<text x="180" y="175" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle" font-weight="bold">FÖRE</text>
+<rect x="120" y="205" width="120" height="36" fill="#94a3b8" stroke="#475569" stroke-width="2" rx="4"/>
+<rect x="126" y="210" width="40" height="8" fill="#cbd5e1" stroke="none" stroke-width="2" rx="0"/>
+<text x="180" y="262" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Blank metall (järn)</text>
+<text x="320" y="230" font-family="Arial,sans-serif" font-size="30" fill="#1f2937" text-anchor="middle" font-weight="bold">+</text>
+<circle cx="370.0" cy="215.0" r="13.0" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/>
+<circle cx="388.0" cy="215.0" r="13.0" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/>
+<text x="379" y="219" font-family="Arial,sans-serif" font-size="11" fill="#15803d" text-anchor="middle" font-weight="bold">O</text>
+<text x="379" y="250" font-family="Arial,sans-serif" font-size="12" fill="#15803d" text-anchor="middle" font-weight="bold">Syre (O₂)</text>
+<line x1="420.0" y1="215.0" x2="497.0" y2="215.0" stroke="#dc2626" stroke-width="3"/>
+<polygon points="510.0,215.0 497.0,222.2 497.0,207.8" fill="#dc2626"/>
+<text x="465" y="200" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">reagerar</text>
+<rect x="530" y="150" width="180" height="130" fill="#fef2f2" stroke="#b91c1c" stroke-width="2" rx="8"/>
+<text x="620" y="175" font-family="Arial,sans-serif" font-size="14" fill="#b91c1c" text-anchor="middle" font-weight="bold">EFTER</text>
+<rect x="560" y="205" width="120" height="36" fill="#b45309" stroke="#7c2d12" stroke-width="2" rx="4"/>
+<circle cx="568.0" cy="232.0" r="4.0" fill="#92400e" stroke="none" stroke-width="2"/>
+<circle cx="590.0" cy="232.0" r="4.0" fill="#92400e" stroke="none" stroke-width="2"/>
+<circle cx="615.0" cy="223.0" r="4.0" fill="#92400e" stroke="none" stroke-width="2"/>
+<circle cx="640.0" cy="232.0" r="4.0" fill="#92400e" stroke="none" stroke-width="2"/>
+<circle cx="660.0" cy="232.0" r="4.0" fill="#92400e" stroke="none" stroke-width="2"/>
+<text x="620" y="262" font-family="Arial,sans-serif" font-size="12" fill="#7c2d12" text-anchor="middle" font-weight="bold">Rost</text>
+<text x="400" y="360" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Järn rostar — eller ett äpple blir brunt i snittytan</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Att oxidera betyder att ett ämne reagerar med syre</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Lumen (lm) — allt ljus åt alla håll</text>
+<!-- Bulb in the centre -->
+<circle cx="400" cy="240" r="38" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<rect x="388" y="276" width="24" height="16" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+<text x="400" y="246" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="bold">LED</text>
+<!-- Rays radiating in ALL directions -->
+<line x1="400" y1="195" x2="400" y2="120" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="400,112 395,124 405,124" fill="#f59e0b"/>
+<line x1="400" y1="285" x2="400" y2="360" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="400,368 395,356 405,356" fill="#f59e0b"/>
+<line x1="355" y1="240" x2="260" y2="240" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="252,240 264,235 264,245" fill="#f59e0b"/>
+<line x1="445" y1="240" x2="540" y2="240" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="548,240 536,235 536,245" fill="#f59e0b"/>
+<line x1="372" y1="208" x2="305" y2="145" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="299,140 311,142 305,151" fill="#f59e0b"/>
+<line x1="428" y1="208" x2="495" y2="145" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="501,140 489,142 495,151" fill="#f59e0b"/>
+<line x1="372" y1="272" x2="305" y2="335" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="299,340 305,329 311,338" fill="#f59e0b"/>
+<line x1="428" y1="272" x2="495" y2="335" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="501,340 495,329 489,338" fill="#f59e0b"/>
+<!-- total flux label -->
+<text x="610" y="235" font-family="Arial,sans-serif" font-size="16" fill="#16a34a" text-anchor="middle" font-weight="bold">lm</text>
+<text x="610" y="257" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">lumen =</text>
+<text x="610" y="273" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">allt ljus ihop</text>
+<text x="400" y="410" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Lumen mäter den totala mängden ljus lampan skickar ut åt alla håll</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">På LED-lampans förpackning står hur många lumen den ger</text>
+</svg>

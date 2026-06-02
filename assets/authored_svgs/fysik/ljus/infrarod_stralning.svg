@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Infraröd strålning (osynlig värme)</text>
+<!-- Mini spectrum showing IR sits just past red -->
+<rect x="180" y="80" width="100" height="34" fill="#dc2626"/>
+<rect x="280" y="80" width="160" height="34" fill="#7f1d1d"/>
+<rect x="180" y="80" width="260" height="34" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+<text x="230" y="102" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle">Rött</text>
+<text x="360" y="102" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle">Infrarött</text>
+<text x="470" y="100" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="start">längre våglängd än rött</text>
+<!-- Warm object: a radiator/heater on the left emitting IR waves -->
+<rect x="110" y="200" width="70" height="120" fill="#fca5a5" stroke="#dc2626" stroke-width="2" rx="4"/>
+<line x1="125" y1="200" x2="125" y2="320" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="140" y1="200" x2="140" y2="320" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="155" y1="200" x2="155" y2="320" stroke="#dc2626" stroke-width="1.5"/>
+<line x1="170" y1="200" x2="170" y2="320" stroke="#dc2626" stroke-width="1.5"/>
+<text x="145" y="345" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Varmt föremål</text>
+<!-- IR waves radiating right toward a hand -->
+<path d="M 200 230 Q 240 210 280 230 T 360 230" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<path d="M 200 260 Q 240 240 280 260 T 360 260" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<path d="M 200 290 Q 240 270 280 290 T 360 290" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="370,230 358,226 360,234" fill="#f59e0b"/>
+<polygon points="370,260 358,256 360,264" fill="#f59e0b"/>
+<polygon points="370,290 358,286 360,294" fill="#f59e0b"/>
+<text x="285" y="200" font-family="Arial,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">Infraröd strålning</text>
+<!-- A simple hand / sensor on the right feeling the warmth -->
+<rect x="430" y="225" width="90" height="70" fill="#fde68a" stroke="#b45309" stroke-width="2" rx="10"/>
+<text x="475" y="265" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Känns som</text>
+<text x="475" y="282" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">värme</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Ögat kan inte se infrarött ljus — men huden känner det som värme</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">TV-fjärrkontrollen skickar infraröd strålning som ögat inte kan se</text>
+</svg>

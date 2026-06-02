@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Atmosfär (luftlagret runt jorden)</text>
+<circle cx="400" cy="720" r="565" fill="#eff6ff" stroke="none"/>
+<circle cx="400" cy="720" r="532" fill="#dbeafe" stroke="none"/>
+<circle cx="400" cy="720" r="502" fill="#bfdbfe" stroke="none"/>
+<circle cx="400" cy="720" r="470" fill="#86efac" stroke="#15803d" stroke-width="2"/>
+<line x1="660" y1="155" x2="660" y2="250" stroke="#16a34a" stroke-width="2"/>
+<line x1="654" y1="155" x2="666" y2="155" stroke="#16a34a" stroke-width="2"/>
+<line x1="654" y1="250" x2="666" y2="250" stroke="#16a34a" stroke-width="2"/>
+<text x="668" y="205" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="start" font-weight="bold">Atmosfär</text>
+<text x="400" y="130" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Rymden (nästan ingen luft)</text>
+<text x="400" y="215" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Atmosfären — luft och gaser</text>
+<text x="400" y="290" font-family="Arial,sans-serif" font-size="14" fill="#15803d" text-anchor="middle" font-weight="bold">Jordytan</text>
+<polygon points="250,200 285,205 250,210 258,205" fill="#1f2937"/>
+<line x1="262" y1="205" x2="272" y2="198" stroke="#1f2937" stroke-width="2"/>
+<line x1="262" y1="205" x2="272" y2="212" stroke="#1f2937" stroke-width="2"/>
+<text x="220" y="205" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">flygplan</text>
+<line x1="520" y1="95" x2="495" y2="160" stroke="#f59e0b" stroke-width="2"/>
+<line x1="560" y1="95" x2="535" y2="160" stroke="#f59e0b" stroke-width="2"/>
+<line x1="600" y1="95" x2="575" y2="160" stroke="#f59e0b" stroke-width="2"/>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Atmosfären är luftlagret som omger jorden och håller oss vid liv</text>
+</svg>

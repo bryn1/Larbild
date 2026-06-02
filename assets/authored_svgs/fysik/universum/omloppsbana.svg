@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Omloppsbana — vägen runt något i rymden</text>
+<circle cx="400.0" cy="265.0" r="40.0" fill="#2563eb" stroke="#1e40af" stroke-width="2.5"/>
+<ellipse cx="394.0" cy="261.0" rx="22.0" ry="12.0" fill="#16a34a" stroke="none" stroke-width="2"/>
+<ellipse cx="414.0" cy="279.0" rx="14.0" ry="8.0" fill="#16a34a" stroke="none" stroke-width="2"/>
+<text x="400" y="270" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Jorden</text>
+<ellipse cx="400.0" cy="265.0" rx="230.0" ry="130.0" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="7,5"/>
+<circle cx="630.0" cy="265.0" r="15.0" fill="#d6d3d1" stroke="#6b7280" stroke-width="2"/>
+<circle cx="627.0" cy="262.0" r="3.0" fill="#6b7280" stroke="#1f2937" stroke-width="2"/>
+<circle cx="634.0" cy="269.0" r="2.5" fill="#6b7280" stroke="#1f2937" stroke-width="2"/>
+<text x="630" y="299" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Månen</text>
+<line x1="400.0" y1="135.0" x2="369.9" y2="139.5" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="360.0,141.0 369.1,134.1 370.7,145.0" fill="#dc2626"/>
+<line x1="400.0" y1="395.0" x2="430.1" y2="390.5" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="440.0,389.0 430.9,395.9 429.3,385.0" fill="#dc2626"/>
+<text x="400" y="120" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">Rörelsens riktning</text>
+<text x="160" y="215" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="end" font-weight="bold">Omlopps-</text>
+<text x="160" y="232" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="end" font-weight="bold">bana</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En omloppsbana är vägen ett föremål följer när det åker runt något annat</text>
+</svg>

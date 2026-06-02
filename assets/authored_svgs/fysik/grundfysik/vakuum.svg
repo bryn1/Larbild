@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Vakuum (nästan inga luftmolekyler)</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">I vakuum finns nästan inget att höra ljud genom — ljud kan inte färdas</text>
+
+<!-- LEFT: normal air, full of molecules, sound travels -->
+<rect x="80" y="110" width="280" height="250" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="220" y="100" font-family="Arial,sans-serif" font-size="15" fill="#2563eb" text-anchor="middle" font-weight="bold">Vanlig luft</text>
+<!-- many molecules -->
+<circle cx="120" cy="150" r="6" fill="#2563eb"/><circle cx="180" cy="140" r="6" fill="#2563eb"/><circle cx="250" cy="160" r="6" fill="#2563eb"/><circle cx="320" cy="145" r="6" fill="#2563eb"/>
+<circle cx="150" cy="200" r="6" fill="#2563eb"/><circle cx="220" cy="195" r="6" fill="#2563eb"/><circle cx="290" cy="210" r="6" fill="#2563eb"/><circle cx="340" cy="185" r="6" fill="#2563eb"/>
+<circle cx="110" cy="250" r="6" fill="#2563eb"/><circle cx="190" cy="255" r="6" fill="#2563eb"/><circle cx="260" cy="245" r="6" fill="#2563eb"/><circle cx="330" cy="260" r="6" fill="#2563eb"/>
+<circle cx="140" cy="310" r="6" fill="#2563eb"/><circle cx="210" cy="300" r="6" fill="#2563eb"/><circle cx="280" cy="315" r="6" fill="#2563eb"/><circle cx="345" cy="305" r="6" fill="#2563eb"/>
+<!-- a bell that rings, with sound waves through the molecules -->
+<path d="M 140 165 Q 130 130 165 130 Q 200 130 190 165 Z" fill="#fbbf24" stroke="#b45309" stroke-width="1.5"/>
+<path d="M 215 170 Q 235 200 215 230" stroke="#16a34a" stroke-width="2" fill="none"/>
+<path d="M 245 165 Q 270 200 245 235" stroke="#16a34a" stroke-width="2" fill="none"/>
+<text x="220" y="345" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">Ljud hörs: JA</text>
+
+<!-- RIGHT: vacuum, empty, sound cannot travel -->
+<rect x="440" y="110" width="280" height="250" fill="#f9fafb" stroke="#6b7280" stroke-width="2" stroke-dasharray="6,4" rx="6"/>
+<text x="580" y="100" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle" font-weight="bold">Vakuum</text>
+<text x="580" y="220" font-family="Arial,sans-serif" font-size="15" fill="#9ca3af" text-anchor="middle" font-style="italic">(tomt — inga partiklar)</text>
+<!-- same bell but sound waves crossed out -->
+<path d="M 500 175 Q 490 140 525 140 Q 560 140 550 175 Z" fill="#fbbf24" stroke="#b45309" stroke-width="1.5"/>
+<path d="M 575 180 Q 595 210 575 240" stroke="#dc2626" stroke-width="2" fill="none" opacity="0.4"/>
+<line x1="560" y1="155" x2="640" y2="235" stroke="#dc2626" stroke-width="3"/>
+<line x1="640" y1="155" x2="560" y2="235" stroke="#dc2626" stroke-width="3"/>
+<text x="580" y="345" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Inget ljud hörs: NEJ</text>
+
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">Termosen håller kakaon varm — vakuum mellan väggarna stoppar värmen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vakuum är ett utrymme nästan utan luftmolekyler, så ljud inte kan färdas där</text>
+</svg>

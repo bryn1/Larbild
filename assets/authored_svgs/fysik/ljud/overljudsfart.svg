@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Överljudsfart – snabbare än ljudet</text>
+<line x1="60.0" y1="280.0" x2="740.0" y2="280.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="180.0" cy="280.0" r="70.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<circle cx="270.0" cy="280.0" r="58.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<circle cx="350.0" cy="280.0" r="46.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<circle cx="420.0" cy="280.0" r="34.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<circle cx="478.0" cy="280.0" r="22.0" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<text x="220" y="175" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">Ljudvågor hinner inte undan</text>
+<line x1="560.0" y1="280.0" x2="150.0" y2="175.0" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="560.0" y1="280.0" x2="150.0" y2="385.0" stroke="#dc2626" stroke-width="2.5"/>
+<text x="300" y="360" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Tryckvåg (chockvåg)</text>
+<path d="M 520 270 L 600 270 L 632 280 L 600 290 L 520 290 L 540 280 Z" fill="#64748b" stroke="#1f2937" stroke-width="2"/>
+<path d="M 560 272 L 540 248 L 575 272 Z" fill="#475569" stroke="#1f2937" stroke-width="1.5"/>
+<path d="M 560 288 L 540 312 L 575 288 Z" fill="#475569" stroke="#1f2937" stroke-width="1.5"/>
+<path d="M 520 280 L 505 258 L 532 280 Z" fill="#475569" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="635.0" y1="280.0" x2="705.0" y2="280.0" stroke="#16a34a" stroke-width="3"/>
+<polygon points="715.0,280.0 705.0,285.5 705.0,274.5" fill="#16a34a"/>
+<text x="690" y="262" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="bold">snabbt</text>
+<path d="M 150 175 l 14 18 l 20 -8 l -10 22 l 18 14 l -24 2 l 2 22 l -16 -16 l -18 12 l 8 -22 l -20 -6 l 20 -10 l -6 -22 l 16 12 Z" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+<text x="150" y="198" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">KNALL!</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Föremålet rör sig snabbare än ljudet – vågorna pressas ihop och en kraftig knall hörs</text>
+</svg>

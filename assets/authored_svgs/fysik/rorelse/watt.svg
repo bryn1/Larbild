@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Watt — enhet för effekt</text>
+<!-- main formula -->
+<text x="400" y="85" font-family="Arial,sans-serif" font-size="30" fill="#1e40af" text-anchor="middle" font-weight="bold">P = E / t</text>
+<text x="400" y="115" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Effekt = energi / tid</text>
+<text x="400" y="142" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">1 watt (W) = 1 joule per sekund (J/s)</text>
+<!-- worked example header -->
+<text x="400" y="180" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Fler watt = mer energi varje sekund</text>
+<!-- LED row (green, low watt) -->
+<rect x="120" y="205" width="560" height="65" fill="white" stroke="#16a34a" stroke-width="2" rx="2"/>
+<text x="180" y="243" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="start" font-weight="bold">LED-lampa</text>
+<text x="410" y="243" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">9 J varje sekund</text>
+<text x="600" y="243" font-family="Arial,sans-serif" font-size="16" fill="#16a34a" text-anchor="middle" font-weight="bold">= 9 W</text>
+<!-- Glödlampa row (red, high watt) -->
+<rect x="120" y="290" width="560" height="65" fill="white" stroke="#dc2626" stroke-width="2" rx="2"/>
+<text x="180" y="328" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="start" font-weight="bold">Glödlampa</text>
+<text x="410" y="328" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">60 J varje sekund</text>
+<text x="600" y="328" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">= 60 W</text>
+<!-- comparison note (amber highlight) -->
+<rect x="120" y="375" width="560" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="4"/>
+<text x="400" y="406" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle">Glödlampan drar mer ström och blir varmare än LED-lampan</text>
+<!-- bottom caption -->
+<text x="400" y="468" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Watt visar hur mycket energi något använder eller ger ifrån sig per sekund</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Organiska ämnen bygger på kol (C)</text>
+<line x1="260" y1="240" x2="170" y2="170" stroke="#1f2937" stroke-width="3"/>
+<line x1="260" y1="240" x2="350" y2="170" stroke="#1f2937" stroke-width="3"/>
+<line x1="260" y1="240" x2="170" y2="320" stroke="#1f2937" stroke-width="3"/>
+<line x1="260" y1="240" x2="350" y2="320" stroke="#1f2937" stroke-width="3"/>
+<circle cx="260" cy="240" r="30" fill="#374151" stroke="#111827" stroke-width="2"/>
+<text x="260" y="246" font-family="Arial,sans-serif" font-size="22" fill="white" text-anchor="middle" font-weight="bold">C</text>
+<circle cx="170" cy="170" r="20" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="170" y="176" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">H</text>
+<circle cx="350" cy="170" r="20" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="350" y="176" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">H</text>
+<circle cx="170" cy="320" r="20" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="170" y="326" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">H</text>
+<circle cx="350" cy="320" r="20" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="350" y="326" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">H</text>
+<text x="260" y="360" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Metan, CH₄</text>
+<text x="260" y="385" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(enklaste organiska molekylen)</text>
+<rect x="500" y="150" width="230" height="180" fill="white" stroke="#16a34a" stroke-width="2" rx="4"/>
+<text x="615" y="178" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">Organiskt = innehåller kol</text>
+<text x="615" y="210" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Finns i allt levande:</text>
+<text x="615" y="235" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">• växter och djur</text>
+<text x="615" y="258" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">• mat och bränsle</text>
+<text x="615" y="281" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">• plast och socker</text>
+<text x="615" y="312" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle" font-weight="bold">Kol = grundämne nr 6</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Organiska ämnen bygger på grundämnet kol och finns i allt levande</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Svaveldioxid (SO₂) och surt regn</text>
+<!-- Step 1: burning coal/oil -->
+<rect x="60" y="120" width="150" height="120" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="135" y="150" font-family="Arial,sans-serif" font-size="14" fill="#b45309" text-anchor="middle" font-weight="bold">Förbränning</text>
+<text x="135" y="172" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">av olja och kol</text>
+<text x="135" y="190" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">som har svavel</text>
+<!-- small flame -->
+<path d="M110 215 q8 -20 25 -8 q-4 -14 8 -18 q-2 18 12 12 q-6 22 -22 18 q-18 0 -23 -16 z" fill="#dc2626" stroke="#b91c1c" stroke-width="1"/>
+<!-- arrow 1 -->
+<line x1="215" y1="180" x2="290" y2="180" stroke="#1e40af" stroke-width="3"/>
+<polygon points="302,180 290,185 290,175" fill="#1e40af"/>
+<!-- Step 2: SO2 gas -->
+<rect x="300" y="120" width="150" height="120" rx="6" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"/>
+<text x="375" y="165" font-family="Arial,sans-serif" font-size="20" fill="#374151" text-anchor="middle" font-weight="bold">SO₂</text>
+<text x="375" y="192" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">giftig gas</text>
+<text x="375" y="210" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">stiger upp i luften</text>
+<!-- arrow 2 -->
+<line x1="455" y1="180" x2="530" y2="180" stroke="#1e40af" stroke-width="3"/>
+<polygon points="542,180 530,185 530,175" fill="#1e40af"/>
+<text x="498" y="168" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">+ vatten</text>
+<!-- Step 3: acid rain cloud -->
+<ellipse cx="650" cy="150" rx="80" ry="38" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<text x="650" y="155" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Surt regn</text>
+<!-- rain drops -->
+<line x1="610" y1="195" x2="606" y2="215" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="635" y1="195" x2="631" y2="218" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="660" y1="195" x2="656" y2="215" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="685" y1="195" x2="681" y2="218" stroke="#2563eb" stroke-width="2.5"/>
+<!-- ground + damaged tree -->
+<rect x="560" y="300" width="200" height="20" fill="#16a34a"/>
+<line x1="640" y1="300" x2="640" y2="255" stroke="#92400e" stroke-width="6"/>
+<line x1="640" y1="270" x2="620" y2="255" stroke="#92400e" stroke-width="3"/>
+<line x1="640" y1="278" x2="662" y2="262" stroke="#92400e" stroke-width="3"/>
+<text x="650" y="345" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">skadar skog, sjöar och</text>
+<text x="650" y="362" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">byggnader</text>
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Svavel i bränslet → SO₂ → surt regn</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">När olja och kol med svavel eldas bildas svaveldioxid som gör regnet surt</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Förnybar energikälla</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Fylls på av naturen snabbare än vi hinner använda den</text>
+
+<!-- cycle ring center 400,260 r 150 -->
+<circle cx="400" cy="260" r="150" fill="none" stroke="#16a34a" stroke-width="3" stroke-dasharray="2,0"/>
+
+<!-- Sun top -->
+<circle cx="400" cy="125" r="32" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<line x1="400" y1="85" x2="400" y2="72" stroke="#f59e0b" stroke-width="3"/>
+<line x1="380" y1="100" x2="372" y2="92" stroke="#f59e0b" stroke-width="3"/>
+<line x1="420" y1="100" x2="428" y2="92" stroke="#f59e0b" stroke-width="3"/>
+<text x="470" y="120" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Sol</text>
+
+<!-- Wind right -->
+<line x1="535" y1="290" x2="535" y2="240" stroke="#6b7280" stroke-width="4"/>
+<circle cx="535" cy="240" r="4" fill="#2563eb"/>
+<line x1="535" y1="240" x2="535" y2="218" stroke="#2563eb" stroke-width="3"/>
+<line x1="535" y1="240" x2="554" y2="252" stroke="#2563eb" stroke-width="3"/>
+<line x1="535" y1="240" x2="516" y2="252" stroke="#2563eb" stroke-width="3"/>
+<text x="575" y="245" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">Vind</text>
+
+<!-- Forest / skog bottom -->
+<line x1="400" y1="395" x2="400" y2="365" stroke="#92400e" stroke-width="5"/>
+<polygon points="400,330 378,375 422,375" fill="#16a34a"/>
+<polygon points="400,348 382,382 418,382" fill="#15803d"/>
+<text x="400" y="425" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="middle" font-weight="bold">Skog</text>
+
+<!-- Water left -->
+<path d="M 250 240 Q 270 255 250 270 Q 270 285 250 295" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="265" cy="265" r="22" fill="none" stroke="#1e40af" stroke-width="2"/>
+<text x="220" y="245" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Vatten</text>
+
+<!-- center label -->
+<circle cx="400" cy="260" r="62" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="400" y="255" font-family="Arial,sans-serif" font-size="14" fill="#15803d" text-anchor="middle" font-weight="bold">FÖRNYBAR</text>
+<text x="400" y="275" font-family="Arial,sans-serif" font-size="11" fill="#15803d" text-anchor="middle">fylls på</text>
+<text x="400" y="290" font-family="Arial,sans-serif" font-size="11" fill="#15803d" text-anchor="middle">av naturen</text>
+
+<!-- curved arrows around the ring (clockwise) -->
+<path d="M 470 175 A 150 150 0 0 1 535 230" fill="none" stroke="#16a34a" stroke-width="3"/>
+<polygon points="540,237 528,232 533,224" fill="#16a34a"/>
+<path d="M 525 345 A 150 150 0 0 1 460 400" fill="none" stroke="#16a34a" stroke-width="3"/>
+<polygon points="452,404 462,394 466,404" fill="#16a34a"/>
+<path d="M 335 400 A 150 150 0 0 1 268 340" fill="none" stroke="#16a34a" stroke-width="3"/>
+<polygon points="263,333 276,338 270,346" fill="#16a34a"/>
+<path d="M 270 230 A 150 150 0 0 1 335 173" fill="none" stroke="#16a34a" stroke-width="3"/>
+<polygon points="343,169 333,179 329,169" fill="#16a34a"/>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Sol, vind, vatten och skog – naturen fyller på dem hela tiden</text>
+</svg>

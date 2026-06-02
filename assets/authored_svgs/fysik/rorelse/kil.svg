@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kil</text>
+<rect x="250" y="300" width="130" height="140" fill="#c8945c" stroke="#92400e" stroke-width="2.5" rx="0"/>
+<rect x="420" y="300" width="130" height="140" fill="#c8945c" stroke="#92400e" stroke-width="2.5" rx="0"/>
+<line x1="258.0" y1="330.0" x2="372.0" y2="330.0" stroke="#92400e" stroke-width="1"/>
+<line x1="428.0" y1="330.0" x2="542.0" y2="330.0" stroke="#92400e" stroke-width="1"/>
+<line x1="258.0" y1="365.0" x2="372.0" y2="365.0" stroke="#92400e" stroke-width="1"/>
+<line x1="428.0" y1="365.0" x2="542.0" y2="365.0" stroke="#92400e" stroke-width="1"/>
+<line x1="258.0" y1="400.0" x2="372.0" y2="400.0" stroke="#92400e" stroke-width="1"/>
+<line x1="428.0" y1="400.0" x2="542.0" y2="400.0" stroke="#92400e" stroke-width="1"/>
+<text x="310" y="332" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Vedträ</text>
+<text x="490" y="332" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">klyvs i två</text>
+<polygon points="400.0,130.0 354.0,300.0 446.0,300.0" fill="#9ca3af" stroke="#1f2937" stroke-width="2.5"/>
+<polygon points="400.0,130.0 354.0,300.0 400.0,300.0" fill="#cbd5e1" stroke="#1f2937" stroke-width="2.5"/>
+<text x="400" y="220" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Kil</text>
+<text x="470" y="200" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="start">tjock här</text>
+<line x1="418.0" y1="200.0" x2="462.0" y2="196.0" stroke="#6b7280" stroke-width="1"/>
+<text x="334" y="150" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">smal i spetsen</text>
+<line x1="338.0" y1="150.0" x2="392.0" y2="142.0" stroke="#6b7280" stroke-width="1"/>
+<line x1="400.0" y1="80.0" x2="400.0" y2="108.0" stroke="#dc2626" stroke-width="4.5"/>
+<polygon points="400.0,124.0 391.2,108.0 408.8,108.0" fill="#dc2626"/>
+<text x="458" y="100" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start" font-weight="bold">Kraft nedåt</text>
+<line x1="350.0" y1="280.0" x2="303.0" y2="280.0" stroke="#16a34a" stroke-width="3.5"/>
+<polygon points="290.0,280.0 303.0,272.9 303.0,287.1" fill="#16a34a"/>
+<line x1="450.0" y1="280.0" x2="497.0" y2="280.0" stroke="#16a34a" stroke-width="3.5"/>
+<polygon points="510.0,280.0 497.0,287.1 497.0,272.9" fill="#16a34a"/>
+<text x="400" y="268" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">pressas isär åt sidorna</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En kil är tjock i ena änden och smal i andra — den pressar isär eller håller fast</text>
+</svg>

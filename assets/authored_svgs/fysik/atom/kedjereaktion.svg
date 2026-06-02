@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kedjereaktion (kärnklyvning)</text>
+<text x="400" y="70" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">En klyvning skickar ut neutroner som startar fler klyvningar</text>
+<circle cx="150" cy="250" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<circle cx="90" cy="250" r="5" fill="#6b7280"/>
+<line x1="96.0" y1="250.0" x2="124.0" y2="250.0" stroke="#2563eb" stroke-width="2"/>
+<polygon points="132.0,250.0 124.0,246.5 124.0,253.5" fill="#2563eb"/>
+<text x="90" y="235" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">n</text>
+<circle cx="330" cy="180" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="168.0" y1="244.4" x2="304.7" y2="183.3" stroke="#2563eb" stroke-width="1.8"/>
+<polygon points="312.0,180.0 303.3,180.1 306.1,186.5" fill="#2563eb"/>
+<circle cx="330" cy="320" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="168.0" y1="255.6" x2="304.7" y2="316.7" stroke="#2563eb" stroke-width="1.8"/>
+<polygon points="312.0,320.0 306.1,313.5 303.3,319.9" fill="#2563eb"/>
+<circle cx="560" cy="130" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="348.0" y1="180.0" x2="535.2" y2="131.7" stroke="#2563eb" stroke-width="1.6"/>
+<polygon points="542.0,130.0 534.5,128.8 536.0,134.7" fill="#2563eb"/>
+<circle cx="560" cy="225" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="348.0" y1="180.0" x2="535.2" y2="223.4" stroke="#2563eb" stroke-width="1.6"/>
+<polygon points="542.0,225.0 535.9,220.5 534.5,226.3" fill="#2563eb"/>
+<circle cx="560" cy="290" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="348.0" y1="320.0" x2="535.1" y2="291.1" stroke="#2563eb" stroke-width="1.6"/>
+<polygon points="542.0,290.0 534.6,288.1 535.5,294.0" fill="#2563eb"/>
+<circle cx="560" cy="380" r="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="348.0" y1="320.0" x2="535.3" y2="377.9" stroke="#2563eb" stroke-width="1.6"/>
+<polygon points="542.0,380.0 536.2,375.1 534.4,380.8" fill="#2563eb"/>
+<line x1="578.0" y1="130.0" x2="624.3" y2="114.0" stroke="#2563eb" stroke-width="1.4"/>
+<polygon points="630.0,112.0 623.4,111.3 625.2,116.6" fill="#2563eb"/>
+<line x1="578.0" y1="225.0" x2="624.3" y2="209.0" stroke="#2563eb" stroke-width="1.4"/>
+<polygon points="630.0,207.0 623.4,206.3 625.2,211.6" fill="#2563eb"/>
+<line x1="578.0" y1="290.0" x2="624.3" y2="274.0" stroke="#2563eb" stroke-width="1.4"/>
+<polygon points="630.0,272.0 623.4,271.3 625.2,276.6" fill="#2563eb"/>
+<line x1="578.0" y1="380.0" x2="624.3" y2="364.0" stroke="#2563eb" stroke-width="1.4"/>
+<polygon points="630.0,362.0 623.4,361.3 625.2,366.6" fill="#2563eb"/>
+<text x="150" y="300" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">1 kärna</text>
+<text x="330" y="360" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">2 kärnor</text>
+<text x="620" y="420" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">4 kärnor → fler ...</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Som fallande dominobrickor — varje klyvning startar nästa, om och om igen</text>
+</svg>

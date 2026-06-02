@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Front (väderterm)</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Gränsen där två luftmassor med olika temperatur möts</text>
+
+<!-- warm air mass (left) -->
+<rect x="60" y="120" width="320" height="250" fill="#fee2e2"/>
+<text x="170" y="160" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">Varm luft</text>
+<circle cx="150" cy="200" r="6" fill="#dc2626"/>
+<circle cx="210" cy="230" r="6" fill="#dc2626"/>
+<circle cx="120" cy="270" r="6" fill="#dc2626"/>
+<circle cx="240" cy="300" r="6" fill="#dc2626"/>
+<text x="170" y="345" font-family="Arial,sans-serif" font-size="12" fill="#991b1b" text-anchor="middle">lätt, stiger uppåt</text>
+
+<!-- cold air mass (right) -->
+<rect x="420" y="120" width="320" height="250" fill="#dbeafe"/>
+<text x="630" y="160" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">Kall luft</text>
+<circle cx="560" cy="200" r="6" fill="#2563eb"/>
+<circle cx="640" cy="240" r="6" fill="#2563eb"/>
+<circle cx="690" cy="280" r="6" fill="#2563eb"/>
+<circle cx="600" cy="320" r="6" fill="#2563eb"/>
+<text x="630" y="345" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">tung, tränger in lågt</text>
+
+<!-- the front boundary -->
+<line x1="400" y1="115" x2="400" y2="375" stroke="#7c3aed" stroke-width="4" stroke-dasharray="2,0"/>
+<text x="400" y="105" font-family="Arial,sans-serif" font-size="14" fill="#7c3aed" text-anchor="middle" font-weight="bold">FRONT = gränsen</text>
+
+<!-- clouds + rain at the front -->
+<ellipse cx="400" cy="135" rx="45" ry="18" fill="#9ca3af"/>
+<line x1="385" y1="150" x2="382" y2="170" stroke="#3b82f6" stroke-width="2"/>
+<line x1="400" y1="150" x2="397" y2="172" stroke="#3b82f6" stroke-width="2"/>
+<line x1="415" y1="150" x2="412" y2="170" stroke="#3b82f6" stroke-width="2"/>
+<text x="400" y="200" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">regn och blåst</text>
+
+<rect x="120" y="400" width="560" height="40" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="6"/>
+<text x="400" y="426" font-family="Arial,sans-serif" font-size="14" fill="#5b21b6" text-anchor="middle">Vid fronten byter vädret karaktär ganska snabbt</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Där varm och kall luft möts bildas moln, regn och vindbyten</text>
+</svg>

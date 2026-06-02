@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Hypotes i vetenskaplig metod</text>
+<rect x="120" y="118" width="200" height="84" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="8"/>
+<text x="220" y="152" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">Fråga</text>
+<text x="220" y="178" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Vad undrar jag?</text>
+<rect x="480" y="118" width="200" height="84" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+<text x="580" y="152" font-family="Arial,sans-serif" font-size="16" fill="#f59e0b" text-anchor="middle" font-weight="bold">Hypotes</text>
+<text x="580" y="178" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Min testbara gissning</text>
+<rect x="480" y="288" width="200" height="84" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="8"/>
+<text x="580" y="322" font-family="Arial,sans-serif" font-size="16" fill="#16a34a" text-anchor="middle" font-weight="bold">Experiment</text>
+<text x="580" y="348" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Jag testar</text>
+<rect x="120" y="288" width="200" height="84" fill="#e9d5ff" stroke="#7c3aed" stroke-width="2" rx="8"/>
+<text x="220" y="322" font-family="Arial,sans-serif" font-size="16" fill="#7c3aed" text-anchor="middle" font-weight="bold">Slutsats</text>
+<text x="220" y="348" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Stämde det?</text>
+<line x1="322.0" y1="150.0" x2="468.0" y2="150.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="478.0,150.0 468.0,146.0 468.0,154.0" fill="#6b7280"/>
+<line x1="580.0" y1="204.0" x2="580.0" y2="276.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="580.0,286.0 584.0,276.0 576.0,276.0" fill="#6b7280"/>
+<line x1="478.0" y1="340.0" x2="332.0" y2="340.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="322.0,340.0 332.0,344.0 332.0,336.0" fill="#6b7280"/>
+<line x1="220.0" y1="286.0" x2="220.0" y2="214.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="220.0,204.0 216.0,214.0 224.0,214.0" fill="#6b7280"/>
+<text x="400" y="250" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Hypotesen är en gissning man KAN testa</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En hypotes är en testbar gissning — starten på vetenskapligt arbete</text>
+</svg>

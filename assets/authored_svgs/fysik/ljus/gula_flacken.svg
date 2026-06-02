@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Gula fläcken i ögat</text>
+<!-- Eyeball -->
+<circle cx="380" cy="250" r="150" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+<!-- Cornea bulge -->
+<path d="M 248 180 Q 205 250 248 320" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+<!-- Lens -->
+<ellipse cx="262" cy="250" rx="14" ry="42" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+<text x="262" y="160" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">Lins</text>
+<line x1="262" y1="208" x2="262" y2="172" stroke="#1e40af" stroke-width="1"/>
+<!-- Retina back wall -->
+<path d="M 462 130 A 150 150 0 0 1 462 370" fill="none" stroke="#dc2626" stroke-width="5" opacity="0.5"/>
+<text x="600" y="135" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Näthinna</text>
+<line x1="565" y1="150" x2="520" y2="185" stroke="#dc2626" stroke-width="1"/>
+<!-- Gula fläcken: bright yellow patch on the retina, directly behind lens -->
+<ellipse cx="528" cy="250" rx="11" ry="26" fill="#f59e0b" stroke="#b45309" stroke-width="2"/>
+<text x="640" y="245" font-family="Arial,sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle" font-weight="bold">Gula fläcken</text>
+<text x="640" y="263" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(skarpast syn)</text>
+<line x1="588" y1="250" x2="542" y2="250" stroke="#f59e0b" stroke-width="1"/>
+<!-- Two converging rays through lens to the gula fläcken -->
+<line x1="120" y1="200" x2="262" y2="235" stroke="#16a34a" stroke-width="2"/>
+<line x1="262" y1="235" x2="524" y2="250" stroke="#16a34a" stroke-width="2"/>
+<polygon points="525,250 513,247 514,255" fill="#16a34a"/>
+<line x1="120" y1="300" x2="262" y2="265" stroke="#16a34a" stroke-width="2"/>
+<line x1="262" y1="265" x2="524" y2="250" stroke="#16a34a" stroke-width="2"/>
+<text x="160" y="190" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">Ljus</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">I gula fläcken ser ögat allra skarpast och uppfattar färger bäst</text>
+</svg>

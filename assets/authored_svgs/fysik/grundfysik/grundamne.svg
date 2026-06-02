@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Grundämne (en enda sorts atomer)</text>
+<circle cx="180" cy="150" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="180" y="154" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="238" cy="150" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="238" y="154" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="296" cy="150" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="296" y="154" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="354" cy="150" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="354" y="154" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="180" cy="208" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="180" y="212" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="238" cy="208" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="238" y="212" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="296" cy="208" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="296" y="212" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="354" cy="208" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="354" y="212" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="180" cy="266" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="180" y="270" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="238" cy="266" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="238" y="270" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="296" cy="266" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="296" y="270" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="354" cy="266" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="354" y="270" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="180" cy="324" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="180" y="328" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="238" cy="324" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="238" y="328" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="296" cy="324" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="296" y="328" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<circle cx="354" cy="324" r="20" fill="#fb923c" stroke="#9a3412" stroke-width="2"/>
+<text x="354" y="328" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Cu</text>
+<text x="267.0" y="362" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">alla atomer lika</text>
+<text x="267.0" y="120" font-family="Arial,sans-serif" font-size="14" fill="#9a3412" text-anchor="middle" font-weight="bold">Koppar (Cu)</text>
+<rect x="470" y="150" width="280" height="120" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="610" y="180" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Grundämne</text>
+<text x="610" y="208" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">= bara EN sorts atom</text>
+<text x="610" y="232" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">kan inte delas i något</text>
+<text x="610" y="250" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">enklare ämne</text>
+<line x1="470" y1="320" x2="600" y2="320" stroke="#fb923c" stroke-width="10" stroke-linecap="round"/>
+<line x1="470" y1="320" x2="600" y2="320" stroke="#9a3412" stroke-width="2" stroke-dasharray="2,6"/>
+<text x="665" y="324" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">koppartråd</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Koppartråden i laddaren är gjord av grundämnet koppar</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ett grundämne består av en enda sorts atomer</text>
+</svg>

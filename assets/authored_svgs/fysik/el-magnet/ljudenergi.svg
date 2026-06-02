@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Ljudenergi</text>
+<rect x="150" y="200" width="40" height="100" fill="#1f2937" rx="3"/>
+<polygon points="190,210 240,180 240,320 190,290" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="170" y="330" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Högtalare</text>
+<path d="M 267.9 217.2 A 40 40 0 0 1 267.9 282.8" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+<path d="M 288.0 188.6 A 75 75 0 0 1 288.0 311.4" fill="none" stroke="#dc2626" stroke-width="2.1"/>
+<path d="M 308.1 159.9 A 110 110 0 0 1 308.1 340.1" fill="none" stroke="#dc2626" stroke-width="2.7"/>
+<path d="M 328.2 131.2 A 145 145 0 0 1 328.2 368.8" fill="none" stroke="#dc2626" stroke-width="3.3"/>
+<text x="470" y="200" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Mer ljudenergi</text>
+<text x="470" y="222" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">= starkare ljud</text>
+<circle cx="640" cy="270" r="26" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<path d="M 632 258 A 12 12 0 1 1 648 274 L 644 282" fill="none" stroke="#7c2d12" stroke-width="2.5"/>
+<text x="640" y="320" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Örat hör</text>
+<text x="400" y="380" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Ljudet är svängningar i luften — mer energi ger högre volym</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ljudenergi finns i ljudvågor när något låter</text>
+</svg>

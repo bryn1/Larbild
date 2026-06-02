@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Medium — det ämne ljuset går genom</text>
+<!-- Three vertical media slabs -->
+<rect x="120" y="90" width="180" height="300" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="300" y="90" width="180" height="300" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="480" y="90" width="180" height="300" fill="#bfdbfe" stroke="#1e40af" stroke-width="1.5"/>
+<text x="210" y="115" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle" font-weight="bold">Luft</text>
+<text x="390" y="115" font-family="Arial,sans-serif" font-size="15" fill="#2563eb" text-anchor="middle" font-weight="bold">Vatten</text>
+<text x="570" y="115" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Glas</text>
+<!-- Light ray passing through, bending at each boundary -->
+<line x1="120" y1="180" x2="300" y2="210" stroke="#dc2626" stroke-width="3"/>
+<line x1="300" y1="210" x2="480" y2="255" stroke="#dc2626" stroke-width="3"/>
+<line x1="480" y1="255" x2="660" y2="310" stroke="#dc2626" stroke-width="3"/>
+<polygon points="660,310 648,305 651,297" fill="#dc2626"/>
+<text x="135" y="170" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start">Ljus</text>
+<!-- Normals at boundaries (dashed) -->
+<line x1="300" y1="160" x2="300" y2="260" stroke="#6b7280" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="480" y1="205" x2="480" y2="305" stroke="#6b7280" stroke-width="1" stroke-dasharray="4,3"/>
+<!-- Speed labels -->
+<text x="210" y="360" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">snabbast</text>
+<text x="390" y="360" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">långsammare</text>
+<text x="570" y="360" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">långsammast</text>
+<text x="400" y="435" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Ljuset böjs och saktar ner när det byter medium</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Mediet är ämnet ljuset rör sig genom — luft, vatten eller glas</text>
+</svg>

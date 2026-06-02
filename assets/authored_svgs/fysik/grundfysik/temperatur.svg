@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Temperatur (hur snabbt molekylerna rör sig)</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ju fortare partiklarna rör sig, desto högre temperatur</text>
+
+<!-- LEFT box: COLD -->
+<rect x="80" y="110" width="270" height="230" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="215" y="100" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">Kallt</text>
+<!-- particles with SHORT motion arrows (slow) -->
+<circle cx="140" cy="170" r="11" fill="#2563eb"/><line x1="151" y1="170" x2="163" y2="170" stroke="#1e3a8a" stroke-width="2"/><polygon points="167,170 162,172.5 162,167.5" fill="#1e3a8a"/>
+<circle cx="250" cy="190" r="11" fill="#2563eb"/><line x1="239" y1="190" x2="227" y2="190" stroke="#1e3a8a" stroke-width="2"/><polygon points="223,190 228,192.5 228,187.5" fill="#1e3a8a"/>
+<circle cx="180" cy="240" r="11" fill="#2563eb"/><line x1="180" y1="251" x2="180" y2="263" stroke="#1e3a8a" stroke-width="2"/><polygon points="180,267 177.5,262 182.5,262" fill="#1e3a8a"/>
+<circle cx="290" cy="260" r="11" fill="#2563eb"/><line x1="290" y1="249" x2="290" y2="237" stroke="#1e3a8a" stroke-width="2"/><polygon points="290,233 287.5,238 292.5,238" fill="#1e3a8a"/>
+<circle cx="150" cy="300" r="11" fill="#2563eb"/><line x1="161" y1="300" x2="173" y2="300" stroke="#1e3a8a" stroke-width="2"/><polygon points="177,300 172,302.5 172,297.5" fill="#1e3a8a"/>
+<text x="215" y="328" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">långsam rörelse</text>
+
+<!-- RIGHT box: HOT -->
+<rect x="450" y="110" width="270" height="230" fill="#fef2f2" stroke="#dc2626" stroke-width="2" rx="6"/>
+<text x="585" y="100" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">Varmt</text>
+<!-- particles with LONG motion arrows (fast) -->
+<circle cx="510" cy="165" r="11" fill="#dc2626"/><line x1="521" y1="165" x2="552" y2="158" stroke="#991b1b" stroke-width="2.5"/><polygon points="558,156.5 547,159 549,153.5" fill="#991b1b"/>
+<circle cx="640" cy="185" r="11" fill="#dc2626"/><line x1="629" y1="185" x2="599" y2="195" stroke="#991b1b" stroke-width="2.5"/><polygon points="593,197 604,194 602,200" fill="#991b1b"/>
+<circle cx="560" cy="245" r="11" fill="#dc2626"/><line x1="560" y1="256" x2="552" y2="285" stroke="#991b1b" stroke-width="2.5"/><polygon points="551,291 547.5,280 556.5,283" fill="#991b1b"/>
+<circle cx="680" cy="265" r="11" fill="#dc2626"/><line x1="680" y1="254" x2="688" y2="225" stroke="#991b1b" stroke-width="2.5"/><polygon points="690,219 692,230 683,227" fill="#991b1b"/>
+<circle cx="500" cy="300" r="11" fill="#dc2626"/><line x1="511" y1="300" x2="541" y2="292" stroke="#991b1b" stroke-width="2.5"/><polygon points="547,290.5 536,293 538,287.5" fill="#991b1b"/>
+<text x="585" y="328" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">snabb rörelse</text>
+
+<!-- Temperature scale arrow at bottom -->
+<line x1="120" y1="390" x2="680" y2="390" stroke="#1f2937" stroke-width="2.5"/>
+<polygon points="692,390 680,395 680,385" fill="#1f2937"/>
+<line x1="120" y1="383" x2="120" y2="397" stroke="#1f2937" stroke-width="2.5"/>
+<text x="120" y="418" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">låg temperatur</text>
+<text x="660" y="418" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">hög temperatur</text>
+<text x="400" y="383" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">mäts i °C (grader Celsius)</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Temperaturen visar hur snabbt molekylerna i ett ämne rör sig</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Fart (v = s / t)</text>
+<text x="400" y="92" font-family="Arial,sans-serif" font-size="34" fill="#1e40af" text-anchor="middle" font-weight="bold">v = s / t</text>
+<text x="400" y="122" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle">fart = sträcka delat med tid</text>
+<line x1="120.0" y1="230.0" x2="680.0" y2="230.0" stroke="#1f2937" stroke-width="3"/>
+<circle cx="120.0" cy="230.0" r="5.0" fill="#16a34a" stroke="#1f2937" stroke-width="2"/>
+<text x="120" y="254" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">Start</text>
+<circle cx="680.0" cy="230.0" r="5.0" fill="#dc2626" stroke="#1f2937" stroke-width="2"/>
+<text x="680" y="254" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Mål</text>
+<circle cx="232.0" cy="218.0" r="12.0" fill="none" stroke="#2563eb" stroke-width="3"/>
+<circle cx="268.0" cy="218.0" r="12.0" fill="none" stroke="#2563eb" stroke-width="3"/>
+<polyline points="232.0,218.0 250.0,200.0 268.0,218.0 246.0,218.0" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"/>
+<line x1="250.0" y1="200.0" x2="256.0" y2="190.0" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="280.0" y1="218.0" x2="328.0" y2="218.0" stroke="#16a34a" stroke-width="3"/>
+<polygon points="340.0,218.0 328.0,224.6 328.0,211.4" fill="#16a34a"/>
+<line x1="120.0" y1="270.0" x2="680.0" y2="270.0" stroke="#16a34a" stroke-width="2"/>
+<line x1="120.0" y1="263.0" x2="120.0" y2="277.0" stroke="#16a34a" stroke-width="2"/>
+<line x1="680.0" y1="263.0" x2="680.0" y2="277.0" stroke="#16a34a" stroke-width="2"/>
+<text x="400" y="288" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle">sträcka s = 2000 m</text>
+<rect x="180" y="320" width="440" height="110" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+<text x="400" y="348" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">Exempel:  s = 2000 m,   t = 400 s</text>
+<text x="400" y="380" font-family="Arial,sans-serif" font-size="20" fill="#1e40af" text-anchor="middle" font-weight="bold">v = 2000 / 400 = 5 m/s</text>
+<text x="400" y="410" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(fart säger inget om riktningen)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Fart är sträckan delat med tiden — hur snabbt något rör sig</text>
+</svg>

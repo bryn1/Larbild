@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Subventionera (staten ger bidrag)</text>
+<!-- Left: full price -->
+<text x="180" y="95" font-family="Arial,sans-serif" font-size="15" fill="#374151" text-anchor="middle" font-weight="bold">Utan bidrag</text>
+<rect x="120" y="120" width="120" height="240" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<text x="180" y="250" font-family="Arial,sans-serif" font-size="22" fill="#dc2626" text-anchor="middle" font-weight="bold">100 kr</text>
+<text x="180" y="385" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Du betalar allt</text>
+<!-- Arrow -->
+<line x1="270" y1="240" x2="350" y2="240" stroke="#1e40af" stroke-width="3"/>
+<polygon points="362,240 350,245 350,235" fill="#1e40af"/>
+<text x="316" y="225" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">staten</text>
+<text x="316" y="262" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">betalar</text>
+<text x="316" y="278" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">en del</text>
+<!-- Right: subsidised price -->
+<text x="560" y="95" font-family="Arial,sans-serif" font-size="15" fill="#374151" text-anchor="middle" font-weight="bold">Med bidrag</text>
+<!-- state's share (green) on top -->
+<rect x="500" y="120" width="120" height="90" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="560" y="170" font-family="Arial,sans-serif" font-size="16" fill="#16a34a" text-anchor="middle" font-weight="bold">40 kr</text>
+<text x="560" y="190" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">staten</text>
+<!-- your share -->
+<rect x="500" y="210" width="120" height="150" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="560" y="295" font-family="Arial,sans-serif" font-size="20" fill="#b45309" text-anchor="middle" font-weight="bold">60 kr</text>
+<text x="560" y="385" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Du betalar mindre</text>
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">→ billigare att välja t.ex. solceller</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Att subventionera = staten betalar en del så priset sjunker</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Geotermisk värme – jordens inre</text>
+
+<!-- layered earth cross-section, getting hotter downward -->
+<rect x="60" y="70" width="680" height="60" fill="#dbeafe"/>
+<text x="120" y="105" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Marknivå (svalt)</text>
+<rect x="60" y="130" width="680" height="80" fill="#fde68a"/>
+<rect x="60" y="210" width="680" height="80" fill="#fbbf24"/>
+<rect x="60" y="290" width="680" height="80" fill="#f97316"/>
+<rect x="60" y="370" width="680" height="80" fill="#dc2626"/>
+<rect x="60" y="70" width="680" height="380" fill="none" stroke="#78350f" stroke-width="2"/>
+
+<!-- depth/temperature scale arrow on the right -->
+<line x1="700" y1="90" x2="700" y2="430" stroke="#1f2937" stroke-width="3"/>
+<polygon points="700,440 695,428 705,428" fill="#1f2937"/>
+<text x="725" y="150" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">djupare</text>
+<text x="725" y="410" font-family="Arial,sans-serif" font-size="12" fill="#991b1b" text-anchor="middle" font-weight="bold">hetare</text>
+
+<!-- temperature labels -->
+<text x="150" y="175" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">ca 15 °C</text>
+<text x="150" y="335" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle" font-weight="bold">flera hundra °C</text>
+<text x="150" y="415" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">het smält sten</text>
+
+<!-- heat arrows rising from below -->
+<line x1="300" y1="430" x2="300" y2="320" stroke="#fef3c7" stroke-width="3"/>
+<polygon points="300,310 294,323 306,323" fill="#fef3c7"/>
+<line x1="400" y1="430" x2="400" y2="320" stroke="#fef3c7" stroke-width="3"/>
+<polygon points="400,310 394,323 406,323" fill="#fef3c7"/>
+<line x1="500" y1="430" x2="500" y2="320" stroke="#fef3c7" stroke-width="3"/>
+<polygon points="500,310 494,323 506,323" fill="#fef3c7"/>
+<text x="400" y="295" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle" font-weight="bold">Värme strömmar uppåt</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Djupt nere i jorden är det alltid hett – den värmen kallas geotermisk</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Solfläckar</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Mörkare områden på solens yta där det är lite svalare än runt omkring</text>
+
+<!-- The Sun -->
+<circle cx="400" cy="265" r="160" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<text x="400" y="120" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">Solens yta</text>
+
+<!-- a few rays -->
+<g stroke="#f59e0b" stroke-width="3" stroke-linecap="round">
+<line x1="400" y1="95" x2="400" y2="70"/>
+<line x1="565" y1="265" x2="595" y2="265"/>
+<line x1="235" y1="265" x2="205" y2="265"/>
+<line x1="515" y1="150" x2="535" y2="130"/>
+<line x1="285" y1="150" x2="265" y2="130"/>
+<line x1="515" y1="380" x2="535" y2="400"/>
+<line x1="285" y1="380" x2="265" y2="400"/>
+</g>
+
+<!-- Sunspots (darker, cooler) -->
+<ellipse cx="345" cy="225" rx="34" ry="26" fill="#92400e"/>
+<ellipse cx="345" cy="225" rx="16" ry="12" fill="#451a03"/>
+<ellipse cx="470" cy="300" rx="26" ry="20" fill="#92400e"/>
+<ellipse cx="470" cy="300" rx="12" ry="9" fill="#451a03"/>
+<ellipse cx="380" cy="330" rx="18" ry="14" fill="#92400e"/>
+
+<!-- Label arrow to a sunspot -->
+<line x1="345" y1="225" x2="170" y2="175" stroke="#1f2937" stroke-width="1.5"/>
+<text x="150" y="170" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="end" font-weight="bold">Solfläck</text>
+<text x="150" y="190" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">(svalare → mörkare)</text>
+
+<!-- temperature note -->
+<rect x="560" y="180" width="210" height="70" fill="#f9fafb" stroke="#6b7280" stroke-width="1.5" rx="4"/>
+<text x="665" y="205" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Ytan runt om: ~5500 °C</text>
+<text x="665" y="228" font-family="Arial,sans-serif" font-size="12" fill="#451a03" text-anchor="middle">Solfläcken: ~3500 °C</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Läraren visade bilder av solfläckar genom ett specialfilter — titta aldrig rakt in i solen</text>
+</svg>

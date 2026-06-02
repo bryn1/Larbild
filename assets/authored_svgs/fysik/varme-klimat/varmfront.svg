@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Varmfront</text>
+<!-- ground -->
+<rect x="60" y="380" width="680" height="20" fill="#16a34a"/>
+<!-- Cold air wedge (left, blue) -->
+<polygon points="60,380 60,150 520,380" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="180" y="330" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">Kall luft</text>
+<!-- Warm air gliding up over the cold wedge (right/above, red) -->
+<polygon points="60,150 520,380 740,380 740,90" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<text x="610" y="150" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">Varm luft</text>
+<text x="610" y="172" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">glider upp</text>
+<!-- arrow: warm air glides up the slope -->
+<line x1="300" y1="320" x2="430" y2="230" stroke="#dc2626" stroke-width="3"/>
+<polygon points="440,222 426,224 432,236" fill="#dc2626"/>
+<!-- Clouds along the sloping front -->
+<ellipse cx="360" cy="195" rx="55" ry="24" fill="#9ca3af" stroke="#4b5563" stroke-width="1.5"/>
+<ellipse cx="470" cy="160" rx="48" ry="22" fill="#9ca3af" stroke="#4b5563" stroke-width="1.5"/>
+<ellipse cx="250" cy="235" rx="48" ry="22" fill="#cbd5e1" stroke="#4b5563" stroke-width="1.5"/>
+<text x="470" y="125" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">moln först</text>
+<!-- long-lasting rain under clouds -->
+<g stroke="#2563eb" stroke-width="2">
+<line x1="220" y1="260" x2="216" y2="285"/>
+<line x1="255" y1="262" x2="251" y2="287"/>
+<line x1="320" y1="222" x2="316" y2="250"/>
+<line x1="355" y1="224" x2="351" y2="252"/>
+<line x1="390" y1="222" x2="386" y2="248"/>
+</g>
+<text x="300" y="370" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">långvarigt regn</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Varm luft glider upp över kall luft → moln och sedan ett långvarigt regn</text>
+</svg>

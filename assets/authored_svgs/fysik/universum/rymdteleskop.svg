@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Rymdteleskop — fotar ovanför molnen</text>
+<path d="M 80 400 Q 400 360 720 400 L 720 420 L 80 420 Z" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="180.0" cy="375.0" rx="38.0" ry="14.0" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+<ellipse cx="202.0" cy="380.0" rx="26.0" ry="11.0" fill="#f1f5f9" stroke="#9ca3af" stroke-width="1.2"/>
+<ellipse cx="320.0" cy="375.0" rx="38.0" ry="14.0" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+<ellipse cx="342.0" cy="380.0" rx="26.0" ry="11.0" fill="#f1f5f9" stroke="#9ca3af" stroke-width="1.2"/>
+<ellipse cx="470.0" cy="375.0" rx="38.0" ry="14.0" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+<ellipse cx="492.0" cy="380.0" rx="26.0" ry="11.0" fill="#f1f5f9" stroke="#9ca3af" stroke-width="1.2"/>
+<ellipse cx="600.0" cy="375.0" rx="38.0" ry="14.0" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+<ellipse cx="622.0" cy="380.0" rx="26.0" ry="11.0" fill="#f1f5f9" stroke="#9ca3af" stroke-width="1.2"/>
+<text x="400" y="408" font-family="Arial,sans-serif" font-size="11" fill="#bfdbfe" text-anchor="middle" font-weight="bold">Jordens yta (moln + lampor stör)</text>
+<ellipse cx="400.0" cy="470.0" rx="330.0" ry="230.0" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="7,5"/>
+<rect x="345" y="128" width="110" height="44" fill="#cbd5e1" stroke="#475569" stroke-width="2.5" rx="8"/>
+<circle cx="345.0" cy="150.0" r="16.0" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+<rect x="305" y="134" width="36" height="32" fill="#1e3a8a" stroke="#1e40af" stroke-width="2" rx="0"/>
+<rect x="455" y="134" width="36" height="32" fill="#1e3a8a" stroke="#1e40af" stroke-width="2" rx="0"/>
+<text x="400" y="194" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Rymdteleskop</text>
+<ellipse cx="660.0" cy="110.0" rx="26.0" ry="10.0" fill="#7c3aed" stroke="#5b21b6" stroke-width="2"/>
+<circle cx="660.0" cy="110.0" r="3" fill="white"/>
+<circle cx="650.0" cy="107.0" r="2" fill="white"/>
+<circle cx="670.0" cy="113.0" r="2" fill="white"/>
+<text x="660" y="88" font-family="Arial,sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="bold">Avlägsen galax</text>
+<line x1="634.0" y1="114.0" x2="468.8" y2="142.2" stroke="#fbbf24" stroke-width="2.5"/>
+<polygon points="458.0,144.0 467.8,136.2 469.9,148.1" fill="#fbbf24"/>
+<text x="400" y="250" font-family="Arial,sans-serif" font-size="14" fill="#15803d" text-anchor="middle" font-weight="bold">Inga moln eller lampor stör  →  skarpare bilder</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ett rymdteleskop kretsar runt jorden där varken moln eller ljus stör bilderna</text>
+</svg>

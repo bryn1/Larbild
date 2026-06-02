@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Fågelväg (kortaste raka sträckan)</text>
+<path d="M 150 330 C 250 130, 320 420, 430 280 S 560 120, 650 180" fill="none" stroke="#9ca3af" stroke-width="6" stroke-linecap="round"/>
+<text x="360" y="415" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">vägen (längre)</text>
+<line x1="397.0" y1="255.9" x2="160.5" y2="326.8" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="150.0,330.0 159.1,322.1 162.0,331.6" fill="#dc2626"/>
+<line x1="403.0" y1="254.1" x2="639.5" y2="183.2" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="650.0,180.0 640.9,187.9 638.0,178.4" fill="#dc2626"/>
+<rect x="330.0" y="211.0" width="140" height="30" rx="5" fill="white" stroke="#dc2626" stroke-width="1.5"/>
+<text x="400.0" y="231.0" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">fågelväg 300 m</text>
+<circle cx="150" cy="330" r="9" fill="#1e40af"/>
+<rect x="120" y="348" width="80" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="160" y="366" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">Skolan</text>
+<circle cx="650" cy="180" r="9" fill="#1e40af"/>
+<rect x="615" y="134" width="80" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="655" y="152" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">Affären</text>
+<text x="400" y="450" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Fågelvägen är den raka linjen — vägen runtom är längre</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Fågelväg är den kortaste, raka sträckan mellan två platser</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">The Big Freeze — universum kallnar</text>
+<line x1="140" y1="380" x2="680" y2="380" stroke="#374151" stroke-width="2"/>
+<line x1="680.0" y1="380.0" x2="688.0" y2="380.0" stroke="#374151" stroke-width="2"/>
+<polygon points="698.0,380.0 688.0,384.5 688.0,375.5" fill="#374151"/>
+<line x1="140" y1="380" x2="140" y2="130" stroke="#374151" stroke-width="2"/>
+<line x1="140.0" y1="130.0" x2="140.0" y2="122.0" stroke="#374151" stroke-width="2"/>
+<polygon points="140.0,112.0 144.5,122.0 135.5,122.0" fill="#374151"/>
+<text x="696" y="398" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">tid</text>
+<text x="128" y="124" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">universums storlek</text>
+<path d="M 140.0 380.0 L 149.0 368.8 L 158.0 358.1 L 167.0 348.0 L 176.0 338.3 L 185.0 329.1 L 194.0 320.4 L 203.0 312.1 L 212.0 304.2 L 221.0 296.7 L 230.0 289.5 L 239.0 282.7 L 248.0 276.2 L 257.0 270.1 L 266.0 264.2 L 275.0 258.6 L 284.0 253.3 L 293.0 248.3 L 302.0 243.5 L 311.0 239.0 L 320.0 234.6 L 329.0 230.5 L 338.0 226.6 L 347.0 222.8 L 356.0 219.3 L 365.0 215.9 L 374.0 212.7 L 383.0 209.6 L 392.0 206.7 L 401.0 204.0 L 410.0 201.3 L 419.0 198.8 L 428.0 196.4 L 437.0 194.2 L 446.0 192.0 L 455.0 190.0 L 464.0 188.0 L 473.0 186.2 L 482.0 184.4 L 491.0 182.7 L 500.0 181.1 L 509.0 179.6 L 518.0 178.2 L 527.0 176.8 L 536.0 175.5 L 545.0 174.2 L 554.0 173.1 L 563.0 171.9 L 572.0 170.9 L 581.0 169.8 L 590.0 168.9 L 599.0 168.0 L 608.0 167.1 L 617.0 166.2 L 626.0 165.5 L 635.0 164.7 L 644.0 164.0 L 653.0 163.3 L 662.0 162.7 L 671.0 162.0 L 680.0 161.5" fill="none" stroke="#2563eb" stroke-width="3"/>
+<text x="410.0" y="242.5" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">växer hela tiden</text>
+<circle cx="249.7" cy="252.3" r="1.4" fill="#93c5fd"/>
+<circle cx="200.8" cy="300.2" r="1.4" fill="#93c5fd"/>
+<circle cx="599.1" cy="355.5" r="1.4" fill="#93c5fd"/>
+<circle cx="473.8" cy="191.0" r="1.4" fill="#93c5fd"/>
+<circle cx="430.3" cy="222.7" r="1.4" fill="#93c5fd"/>
+<circle cx="320.2" cy="317.2" r="1.4" fill="#93c5fd"/>
+<circle cx="454.1" cy="345.2" r="1.8" fill="#93c5fd"/>
+<circle cx="150.3" cy="321.8" r="1.8" fill="#93c5fd"/>
+<circle cx="352.8" cy="207.0" r="1.4" fill="#93c5fd"/>
+<circle cx="570.4" cy="308.0" r="1.8" fill="#93c5fd"/>
+<circle cx="158.2" cy="275.7" r="1.4" fill="#93c5fd"/>
+<circle cx="283.0" cy="346.8" r="1.8" fill="#93c5fd"/>
+<circle cx="245.9" cy="241.4" r="1.4" fill="#93c5fd"/>
+<circle cx="150.3" cy="171.2" r="1.8" fill="#93c5fd"/>
+<circle cx="172.7" cy="336.3" r="1.4" fill="#93c5fd"/>
+<circle cx="189.6" cy="349.3" r="1.4" fill="#93c5fd"/>
+<circle cx="158.4" cy="285.2" r="1.4" fill="#93c5fd"/>
+<circle cx="617.9" cy="327.9" r="1.4" fill="#93c5fd"/>
+<circle cx="591.6" cy="312.6" r="1.4" fill="#93c5fd"/>
+<circle cx="192.4" cy="359.1" r="1.8" fill="#93c5fd"/>
+<circle cx="278.7" cy="207.9" r="1.8" fill="#93c5fd"/>
+<circle cx="187.1" cy="317.5" r="1.4" fill="#93c5fd"/>
+<circle cx="301.3" cy="159.0" r="1.4" fill="#93c5fd"/>
+<circle cx="187.3" cy="275.4" r="1.4" fill="#93c5fd"/>
+<circle cx="245.2" cy="285.2" r="1.4" fill="#93c5fd"/>
+<text x="237.2" y="128" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">många stjärnor</text>
+<text x="599.0" y="142.5" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">glest, kallt, mörkt</text>
+<line x1="642.2" y1="280.0" x2="654.2" y2="280.0" stroke="#60a5fa" stroke-width="1.5"/>
+<line x1="642.2" y1="280.0" x2="648.2" y2="290.4" stroke="#60a5fa" stroke-width="1.5"/>
+<line x1="642.2" y1="280.0" x2="636.2" y2="290.4" stroke="#60a5fa" stroke-width="1.5"/>
+<line x1="642.2" y1="280.0" x2="630.2" y2="280.0" stroke="#60a5fa" stroke-width="1.5"/>
+<line x1="642.2" y1="280.0" x2="636.2" y2="269.6" stroke="#60a5fa" stroke-width="1.5"/>
+<line x1="642.2" y1="280.0" x2="648.2" y2="269.6" stroke="#60a5fa" stroke-width="1.5"/>
+<text x="400" y="95" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">Universum fortsätter växa tills allt blir glest, kallt och mörkt</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Som en kopp varm choklad i snön — allt kallnar tills inget värmer längre</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Tyngd (kraften neråt: F = m · g)</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Tyngden beror på massan och hur starkt jorden drar</text>
+
+<!-- A bag / backpack object hanging, with downward weight arrow -->
+<rect x="240" y="130" width="120" height="110" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+<path d="M 270 130 Q 300 95 330 130" stroke="#2563eb" stroke-width="3" fill="none"/>
+<text x="300" y="195" font-family="Arial,sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">m = 3 kg</text>
+<text x="300" y="125" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">skolväska</text>
+
+<!-- Downward weight (tyngd) arrow -->
+<line x1="300" y1="245" x2="300" y2="360" stroke="#dc2626" stroke-width="4"/>
+<polygon points="300,375 294,360 306,360" fill="#dc2626"/>
+<text x="318" y="320" font-family="Arial,sans-serif" font-size="18" fill="#dc2626" text-anchor="start" font-weight="bold">Tyngd</text>
+<text x="318" y="342" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start">(neråt)</text>
+
+<!-- ground line -->
+<line x1="180" y1="380" x2="420" y2="380" stroke="#1f2937" stroke-width="2"/>
+
+<!-- Worked example formula on the right -->
+<text x="560" y="150" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">F = m · g</text>
+<text x="560" y="195" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">m = massa (kg)</text>
+<text x="560" y="218" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">g = 9,82 N/kg (på jorden)</text>
+<line x1="470" y1="240" x2="650" y2="240" stroke="#9ca3af" stroke-width="1"/>
+<text x="560" y="275" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle">F = 3 · 9,82</text>
+<text x="560" y="310" font-family="Arial,sans-serif" font-size="20" fill="#16a34a" text-anchor="middle" font-weight="bold">F ≈ 29,5 N</text>
+<text x="560" y="345" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Enhet: newton (N)</text>
+
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">Du känner tyngden direkt när du lyfter väskan på ryggen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Tyngd är kraften som jorden drar ett föremål med — den mäts i newton</text>
+</svg>

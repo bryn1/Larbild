@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Regnbågshinnan (iris)</text>
+<ellipse cx="400" cy="260" rx="170" ry="100" fill="white" stroke="#1f2937" stroke-width="2"/>
+<circle cx="400" cy="260" r="78" fill="#3b82f6"/>
+<line x1="430.0" y1="260.0" x2="476.0" y2="260.0" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="429.0" y1="267.8" x2="473.4" y2="279.7" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="426.0" y1="275.0" x2="465.8" y2="298.0" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="421.2" y1="281.2" x2="453.7" y2="313.7" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="415.0" y1="286.0" x2="438.0" y2="325.8" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="407.8" y1="289.0" x2="419.7" y2="333.4" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="400.0" y1="290.0" x2="400.0" y2="336.0" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="392.2" y1="289.0" x2="380.3" y2="333.4" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="385.0" y1="286.0" x2="362.0" y2="325.8" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="378.8" y1="281.2" x2="346.3" y2="313.7" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="374.0" y1="275.0" x2="334.2" y2="298.0" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="371.0" y1="267.8" x2="326.6" y2="279.7" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="370.0" y1="260.0" x2="324.0" y2="260.0" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="371.0" y1="252.2" x2="326.6" y2="240.3" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="374.0" y1="245.0" x2="334.2" y2="222.0" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="378.8" y1="238.8" x2="346.3" y2="206.3" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="385.0" y1="234.0" x2="362.0" y2="194.2" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="392.2" y1="231.0" x2="380.3" y2="186.6" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="400.0" y1="230.0" x2="400.0" y2="184.0" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="407.8" y1="231.0" x2="419.7" y2="186.6" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="415.0" y1="234.0" x2="438.0" y2="194.2" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="421.2" y1="238.8" x2="453.7" y2="206.3" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="426.0" y1="245.0" x2="465.8" y2="222.0" stroke="#1e40af" stroke-width="1.5"/>
+<line x1="429.0" y1="252.2" x2="473.4" y2="240.3" stroke="#1e40af" stroke-width="1.5"/>
+<circle cx="400" cy="260" r="28" fill="#111827"/>
+<circle cx="390" cy="250" r="6" fill="white" opacity="0.85"/>
+<line x1="478" y1="260" x2="640" y2="170" stroke="#1f2937" stroke-width="1.5"/>
+<text x="660" y="165" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">Regnbågshinna</text>
+<text x="660" y="181" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(iris) — den färgade ringen</text>
+<line x1="400" y1="288" x2="250" y2="400" stroke="#1f2937" stroke-width="1.5"/>
+<text x="210" y="410" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Pupill</text>
+<text x="400" y="410" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Iris styr hur stor pupillen är och ger ögat dess färg</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Regnbågshinnan är den färgade ringen runt pupillen — den bestämmer ögats färg</text>
+</svg>

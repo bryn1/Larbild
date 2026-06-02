@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kontinentalplatta</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Jordens yttersta skal är delat i stora plattor som flyter på het massa under</text>
+
+<!-- Hot mantle (amber) -->
+<rect x="60" y="330" width="680" height="120" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Het, trögflytande massa (manteln)</text>
+
+<!-- Left plate (gray slab) tilting up into mountains -->
+<polygon points="60,250 360,250 390,210 60,210" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<text x="200" y="240" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Platta A</text>
+<!-- mantle gap under left plate down to 330 -->
+<rect x="60" y="250" width="300" height="80" fill="#fde68a" stroke="none"/>
+
+<!-- Right plate sliding under (subduction) -->
+<polygon points="410,210 740,210 740,250 440,250 410,290" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<text x="600" y="240" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Platta B</text>
+<rect x="440" y="250" width="300" height="80" fill="#fde68a" stroke="none"/>
+
+<!-- Mountains formed where they collide -->
+<polygon points="360,210 380,130 400,180 420,110 440,210" fill="#a8a29e" stroke="#57534e" stroke-width="2"/>
+<text x="400" y="105" font-family="Arial,sans-serif" font-size="12" fill="#57534e" text-anchor="middle">Berg bildas</text>
+
+<!-- Motion arrows: plates pushing toward each other -->
+<line x1="180" y1="290" x2="300" y2="290" stroke="#dc2626" stroke-width="3"/>
+<polygon points="310,290 298,285 298,295" fill="#dc2626"/>
+<line x1="620" y1="290" x2="500" y2="290" stroke="#dc2626" stroke-width="3"/>
+<polygon points="490,290 502,285 502,295" fill="#dc2626"/>
+<text x="400" y="285" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">krock</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">När två plattor trycker mot varandra veckas marken upp och bildar bergskedjor</text>
+</svg>

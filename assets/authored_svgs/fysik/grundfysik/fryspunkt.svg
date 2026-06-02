@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Fryspunkt (vätska stelnar till fast)</text>
+<rect x="158" y="110" width="24" height="270" rx="12" fill="#f3f4f6" stroke="#1f2937" stroke-width="2"/>
+<circle cx="170" cy="398" r="22" fill="#2563eb" stroke="#1f2937" stroke-width="2"/>
+<rect x="163" y="290.0" width="14" height="92.0" fill="#2563eb"/>
+<circle cx="170" cy="398" r="16" fill="#2563eb"/>
+<line x1="182" y1="380.0" x2="192" y2="380.0" stroke="#1f2937" stroke-width="1.5"/>
+<text x="214" y="384.0" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">-20 °C</text>
+<line x1="182" y1="290.0" x2="192" y2="290.0" stroke="#1f2937" stroke-width="1.5"/>
+<text x="214" y="294.0" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start" font-weight="bold">0 °C</text>
+<line x1="182" y1="200.0" x2="192" y2="200.0" stroke="#1f2937" stroke-width="1.5"/>
+<text x="214" y="204.0" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">20 °C</text>
+<line x1="182" y1="110.0" x2="192" y2="110.0" stroke="#1f2937" stroke-width="1.5"/>
+<text x="214" y="114.0" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">40 °C</text>
+<rect x="260" y="274.0" width="120" height="32" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="320" y="294.0" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Fryspunkt</text>
+<text x="560" y="130" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">Vatten</text>
+<ellipse cx="500" cy="220" rx="55" ry="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="500" y="224" font-family="Arial,sans-serif" font-size="12" fill="#1e3a8a" text-anchor="middle">vätska</text>
+<line x1="560.0" y1="240.0" x2="610.8" y2="273.9" stroke="#1f2937" stroke-width="2.5"/>
+<polygon points="620.0,280.0 608.1,278.0 613.6,269.8" fill="#1f2937"/>
+<text x="595" y="250" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="start">kyls under 0 °C</text>
+<rect x="610" y="290" width="80" height="70" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<line x1="610" y1="312" x2="690" y2="312" stroke="#2563eb" stroke-width="1"/>
+<line x1="635" y1="290" x2="635" y2="360" stroke="#2563eb" stroke-width="1"/>
+<text x="650" y="330" font-family="Arial,sans-serif" font-size="12" fill="#1e3a8a" text-anchor="middle">is (fast)</text>
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Vid fryspunkten stelnar vätskan och blir fast — vatten vid 0 °C</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Fryspunkten är temperaturen där en vätska stelnar och blir fast</text>
+</svg>

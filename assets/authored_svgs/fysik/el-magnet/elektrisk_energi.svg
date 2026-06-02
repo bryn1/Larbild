@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Elektrisk energi</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Energin som rör sig med strömmen i sladdarna</text>
+
+<!-- wall outlet -->
+<rect x="90" y="200" width="110" height="110" fill="#f3f4f6" stroke="#6b7280" stroke-width="2" rx="4"/>
+<circle cx="130" cy="245" r="7" fill="#1f2937"/>
+<circle cx="160" cy="245" r="7" fill="#1f2937"/>
+<text x="145" y="295" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vägguttag</text>
+
+<!-- cable -->
+<line x1="200" y1="255" x2="560" y2="255" stroke="#1f2937" stroke-width="4"/>
+
+<!-- energy flowing arrows -->
+<line x1="270" y1="230" x2="330" y2="230" stroke="#f59e0b" stroke-width="4"/>
+<polygon points="342,230 328,224 328,236" fill="#f59e0b"/>
+<line x1="400" y1="230" x2="460" y2="230" stroke="#f59e0b" stroke-width="4"/>
+<polygon points="472,230 458,224 458,236" fill="#f59e0b"/>
+<text x="380" y="215" font-family="Arial,sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle" font-weight="bold">elektrisk energi</text>
+
+<!-- phone with battery -->
+<rect x="560" y="180" width="90" height="160" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5" rx="10"/>
+<rect x="575" y="210" width="60" height="100" fill="white" stroke="#2563eb" stroke-width="1.5" rx="3"/>
+<rect x="575" y="270" width="60" height="40" fill="#16a34a"/>
+<text x="605" y="200" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">Mobil</text>
+<text x="605" y="360" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">Batteri laddas</text>
+
+<text x="400" y="410" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">Vägguttag → sladd → batteri: energin flyttas med strömmen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Elektrisk energi får apparater att fungera och kan lagras i ett batteri</text>
+</svg>

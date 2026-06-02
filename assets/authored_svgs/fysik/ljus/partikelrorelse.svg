@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Partikelrörelse</text>
+<path d="M 150 180 L 290 180 L 275 360 L 165 360 Z" fill="#fde68a" stroke="#b45309" stroke-width="2" opacity="0.5"/>
+<text x="220" y="385" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Före: sockret samlat</text>
+<path d="M 510 180 L 650 180 L 635 360 L 525 360 Z" fill="#fde68a" stroke="#b45309" stroke-width="2" opacity="0.5"/>
+<text x="580" y="385" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Efter: utspritt överallt</text>
+<circle cx="213.7" cy="304.6" r="4" fill="#dc2626"/>
+<circle cx="225.4" cy="301.2" r="4" fill="#dc2626"/>
+<circle cx="221.3" cy="314.1" r="4" fill="#dc2626"/>
+<circle cx="204.1" cy="320.3" r="4" fill="#dc2626"/>
+<circle cx="203.3" cy="317.1" r="4" fill="#dc2626"/>
+<circle cx="204.5" cy="302.0" r="4" fill="#dc2626"/>
+<circle cx="217.3" cy="334.4" r="4" fill="#dc2626"/>
+<circle cx="206.5" cy="307.8" r="4" fill="#dc2626"/>
+<circle cx="224.6" cy="339.7" r="4" fill="#dc2626"/>
+<circle cx="222.8" cy="315.5" r="4" fill="#dc2626"/>
+<circle cx="237.1" cy="300.0" r="4" fill="#dc2626"/>
+<circle cx="232.9" cy="310.7" r="4" fill="#dc2626"/>
+<circle cx="207.2" cy="303.2" r="4" fill="#dc2626"/>
+<circle cx="213.1" cy="333.9" r="4" fill="#dc2626"/>
+<circle cx="549.3" cy="283.1" r="4" fill="#dc2626"/>
+<circle cx="593.3" cy="249.6" r="4" fill="#dc2626"/>
+<circle cx="584.6" cy="200.0" r="4" fill="#dc2626"/>
+<circle cx="537.7" cy="223.0" r="4" fill="#dc2626"/>
+<circle cx="597.3" cy="258.4" r="4" fill="#dc2626"/>
+<circle cx="562.2" cy="283.7" r="4" fill="#dc2626"/>
+<circle cx="575.5" cy="238.0" r="4" fill="#dc2626"/>
+<circle cx="608.3" cy="301.8" r="4" fill="#dc2626"/>
+<circle cx="555.4" cy="281.9" r="4" fill="#dc2626"/>
+<circle cx="582.4" cy="330.0" r="4" fill="#dc2626"/>
+<circle cx="602.0" cy="236.1" r="4" fill="#dc2626"/>
+<circle cx="626.1" cy="208.9" r="4" fill="#dc2626"/>
+<circle cx="572.1" cy="311.1" r="4" fill="#dc2626"/>
+<circle cx="546.6" cy="268.2" r="4" fill="#dc2626"/>
+<line x1="580" y1="270" x2="633.0" y2="270.0" stroke="#6b7280" stroke-width="1.2"/>
+<polygon points="640.0,270.0 633.6,272.9 633.6,267.1" fill="#6b7280"/>
+<line x1="580" y1="270" x2="599.9" y2="343.2" stroke="#6b7280" stroke-width="1.2"/>
+<polygon points="601.7,350 597.3,344.6 602.8,343.1" fill="#6b7280"/>
+<line x1="580" y1="270" x2="536.6" y2="318.7" stroke="#6b7280" stroke-width="1.2"/>
+<polygon points="531.9,323.9 534.0,317.2 538.3,321.0" fill="#6b7280"/>
+<line x1="580" y1="270" x2="537.1" y2="220.2" stroke="#6b7280" stroke-width="1.2"/>
+<polygon points="532.5,214.9 538.8,217.9 534.5,221.6" fill="#6b7280"/>
+<line x1="580" y1="270" x2="595.5" y2="201.8" stroke="#6b7280" stroke-width="1.2"/>
+<polygon points="597.0,195 598.4,201.9 592.8,200.6" fill="#6b7280"/>
+<line x1="310" y1="270" x2="466.0" y2="270.0" stroke="#1f2937" stroke-width="3"/>
+<polygon points="480,270 467.2,275.7 467.2,264.3" fill="#1f2937"/>
+<text x="395" y="255" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">tid</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Partiklarna rör sig hela tiden och sprider sig av sig själva tills allt är jämnt blandat</text>
+</svg>

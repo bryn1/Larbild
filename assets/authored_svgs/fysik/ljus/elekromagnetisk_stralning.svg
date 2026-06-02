@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Elektromagnetisk strålning (spektrum)</text>
+<!-- Spectrum bar from long wavelength (left) to short (right) -->
+<rect x="60" y="150" width="120" height="60" fill="#7f1d1d"/>
+<rect x="180" y="150" width="110" height="60" fill="#b91c1c"/>
+<rect x="290" y="150" width="120" height="60" fill="#dc2626"/>
+<!-- visible band: rainbow -->
+<rect x="410" y="150" width="14" height="60" fill="#ef4444"/>
+<rect x="424" y="150" width="14" height="60" fill="#f59e0b"/>
+<rect x="438" y="150" width="14" height="60" fill="#eab308"/>
+<rect x="452" y="150" width="14" height="60" fill="#16a34a"/>
+<rect x="466" y="150" width="14" height="60" fill="#2563eb"/>
+<rect x="480" y="150" width="20" height="60" fill="#6d28d9"/>
+<rect x="500" y="150" width="100" height="60" fill="#5b21b6"/>
+<rect x="600" y="150" width="140" height="60" fill="#312e81"/>
+<!-- Border -->
+<rect x="60" y="150" width="680" height="60" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+<!-- Labels above bands -->
+<text x="120" y="140" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Radiovågor</text>
+<text x="235" y="140" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Mikrovågor</text>
+<text x="350" y="140" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Infrarött</text>
+<text x="455" y="128" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle" font-weight="bold">Synligt</text>
+<text x="455" y="142" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">ljus</text>
+<text x="550" y="140" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">UV</text>
+<text x="640" y="140" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Röntgen / gamma</text>
+<!-- Wavelength axis arrow -->
+<line x1="60" y1="245" x2="740" y2="245" stroke="#6b7280" stroke-width="1.5"/>
+<text x="120" y="265" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">lång våglängd</text>
+<text x="680" y="265" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">kort våglängd</text>
+<!-- A wave squiggle illustrating "travels as waves" -->
+<path d="M 200 330 Q 230 300 260 330 T 320 330 T 380 330 T 440 330 T 500 330 T 560 330 T 600 330" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<text x="400" y="385" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Energin färdas som vågor genom rymden — alla rör sig lika fort</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Synligt ljus, radiovågor och röntgen är alla elektromagnetisk strålning</text>
+</svg>

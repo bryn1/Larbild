@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kub</text>
+<!-- cube drawn in cabinet/oblique projection. front face square 220 wide -->
+<!-- front face -->
+<rect x="260" y="190" width="220" height="220" fill="#dbeafe" stroke="#1e40af" stroke-width="3"/>
+<!-- top face (parallelogram) -->
+<polygon points="260,190 350,110 570,110 480,190" fill="#bfdbfe" stroke="#1e40af" stroke-width="3"/>
+<!-- right face (parallelogram) -->
+<polygon points="480,190 570,110 570,330 480,410" fill="#93c5fd" stroke="#1e40af" stroke-width="3"/>
+<!-- hidden edges dashed -->
+<line x1="260" y1="190" x2="350" y2="110" stroke="#1e40af" stroke-width="1.5" stroke-dasharray="5,4"/>
+<line x1="350" y1="110" x2="350" y2="330" stroke="#1e40af" stroke-width="1.5" stroke-dasharray="5,4"/>
+<line x1="350" y1="330" x2="260" y2="410" stroke="#1e40af" stroke-width="1.5" stroke-dasharray="5,4"/>
+<line x1="350" y1="330" x2="570" y2="330" stroke="#1e40af" stroke-width="1.5" stroke-dasharray="5,4"/>
+<!-- right-angle marker at front-bottom-left corner -->
+<polyline points="285,410 285,385 260,385" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="297" y="403" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">90°</text>
+<!-- equal edge labels -->
+<text x="370" y="440" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">s</text>
+<text x="500" y="305" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">s</text>
+<text x="240" y="305" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">s</text>
+<!-- tick marks showing equal length -->
+<line x1="365" y1="412" x2="375" y2="408" stroke="#16a34a" stroke-width="2"/>
+<line x1="528" y1="265" x2="533" y2="255" stroke="#16a34a" stroke-width="2"/>
+<line x1="255" y1="305" x2="265" y2="305" stroke="#16a34a" stroke-width="2"/>
+<text x="640" y="180" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">6 lika stora</text>
+<text x="640" y="202" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">kvadrater</text>
+<text x="640" y="240" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">Alla kanter</text>
+<text x="640" y="262" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">lika långa (s)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En kub har sex lika stora kvadratiska sidor och bara räta hörn — t.ex. en tärning</text>
+</svg>

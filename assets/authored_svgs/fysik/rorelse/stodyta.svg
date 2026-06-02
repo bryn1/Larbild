@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Stödyta</text>
+<!-- ground -->
+<line x1="60" y1="360" x2="740" y2="360" stroke="#1f2937" stroke-width="3"/>
+<!-- LEFT: wide base, stable -->
+<text x="220" y="80" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">Stor stödyta</text>
+<!-- chair-like object: seat + 4 splayed legs -->
+<rect x="140" y="150" width="160" height="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="2"/>
+<line x1="155" y1="172" x2="120" y2="358" stroke="#2563eb" stroke-width="4"/>
+<line x1="195" y1="172" x2="180" y2="358" stroke="#2563eb" stroke-width="4"/>
+<line x1="245" y1="172" x2="260" y2="358" stroke="#2563eb" stroke-width="4"/>
+<line x1="285" y1="172" x2="320" y2="358" stroke="#2563eb" stroke-width="4"/>
+<!-- base-of-support measurement (green) -->
+<line x1="120" y1="385" x2="320" y2="385" stroke="#16a34a" stroke-width="2"/>
+<line x1="120" y1="377" x2="120" y2="393" stroke="#16a34a" stroke-width="2"/>
+<line x1="320" y1="377" x2="320" y2="393" stroke="#16a34a" stroke-width="2"/>
+<text x="220" y="408" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">bred stödyta</text>
+<!-- verdict -->
+<text x="220" y="438" font-family="Arial,sans-serif" font-size="17" fill="#16a34a" text-anchor="middle" font-weight="bold">JA — står stadigt</text>
+<!-- RIGHT: narrow base, tipping -->
+<text x="580" y="80" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Liten stödyta</text>
+<!-- tall thin object, tilted, about to tip -->
+<g transform="rotate(14 560 358)">
+<rect x="540" y="140" width="40" height="218" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="2"/>
+</g>
+<!-- narrow base-of-support measurement (green) -->
+<line x1="548" y1="385" x2="600" y2="385" stroke="#16a34a" stroke-width="2"/>
+<line x1="548" y1="377" x2="548" y2="393" stroke="#16a34a" stroke-width="2"/>
+<line x1="600" y1="377" x2="600" y2="393" stroke="#16a34a" stroke-width="2"/>
+<text x="574" y="408" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">smal stödyta</text>
+<!-- tipping arrow -->
+<path d="M 600 200 A 60 60 0 0 1 645 245" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+<polygon points="645,245 636.5,242.0 642.2,236.0" fill="#dc2626"/>
+<!-- verdict -->
+<text x="574" y="438" font-family="Arial,sans-serif" font-size="17" fill="#dc2626" text-anchor="middle" font-weight="bold">NEJ — välter lätt</text>
+<!-- bottom caption -->
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En stor stödyta gör att föremålet står stadigare och inte välter så lätt</text>
+</svg>

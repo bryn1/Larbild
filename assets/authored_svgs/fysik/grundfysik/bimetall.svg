@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Bimetall (böjs av värme)</text>
+<text x="225" y="110" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">Kall — rak</text>
+<rect x="120" y="170" width="220" height="14" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<rect x="120" y="184" width="220" height="14" fill="#9ca3af" stroke="#1f2937" stroke-width="1"/>
+<rect x="106" y="164" width="14" height="40" fill="#1f2937"/>
+<text x="230" y="225" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">två metaller ihop</text>
+<text x="575" y="110" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Varm — böjd</text>
+<path d="M 470 170 Q 590 170 670 260" fill="none" stroke="#92400e" stroke-width="0"/>
+<path d="M 470 170 Q 600 170 675 265 L 666 275 Q 595 184 470 184 Z" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<path d="M 470 184 Q 595 184 666 275 L 657 285 Q 590 198 470 198 Z" fill="#9ca3af" stroke="#1f2937" stroke-width="1"/>
+<rect x="456" y="164" width="14" height="40" fill="#1f2937"/>
+<path d="M 510 320 q 6 -12 0 -22 q -6 -10 0 -20" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M 560 320 q 6 -12 0 -22 q -6 -10 0 -20" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M 610 320 q 6 -12 0 -22 q -6 -10 0 -20" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="560" y="335" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">värme</text>
+<text x="400" y="405" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Den metall som utvidgas mest hamnar på böjens utsida</text>
+<text x="400" y="429" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Termostaten i brödrosten bryter strömmen när bimetallen böjt sig</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Bimetall: två metaller som böjer sig när temperaturen ändras</text>
+</svg>

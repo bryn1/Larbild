@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Higgs partikel ger massa</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Higgsfältet finns överallt och bromsar partiklar — så får de massa</text>
+<circle cx="120" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="120" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="120" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="120" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="120" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="120" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="158" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="158" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="158" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="158" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="158" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="158" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="196" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="196" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="196" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="196" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="196" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="196" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="234" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="234" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="234" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="234" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="234" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="234" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="272" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="272" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="272" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="272" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="272" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="272" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="310" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="310" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="310" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="310" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="310" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="310" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="348" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="348" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="348" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="348" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="348" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="348" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="386" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="386" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="386" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="386" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="386" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="386" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="424" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="424" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="424" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="424" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="424" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="424" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="462" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="462" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="462" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="462" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="462" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="462" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="500" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="500" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="500" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="500" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="500" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="500" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="538" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="538" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="538" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="538" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="538" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="538" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="576" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="576" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="576" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="576" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="576" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="576" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="614" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="614" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="614" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="614" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="614" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="614" cy="310" r="2.5" fill="#c7d2fe"/>
+<circle cx="652" cy="120" r="2.5" fill="#c7d2fe"/>
+<circle cx="652" cy="158" r="2.5" fill="#c7d2fe"/>
+<circle cx="652" cy="196" r="2.5" fill="#c7d2fe"/>
+<circle cx="652" cy="234" r="2.5" fill="#c7d2fe"/>
+<circle cx="652" cy="272" r="2.5" fill="#c7d2fe"/>
+<circle cx="652" cy="310" r="2.5" fill="#c7d2fe"/>
+<text x="150" y="110" font-family="Arial,sans-serif" font-size="12" fill="#6366f1" text-anchor="middle" font-weight="bold">Higgsfältet</text>
+<circle cx="180" cy="220" r="12" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="180" y="245" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">partikel</text>
+<line x1="200.0" y1="220.0" x2="549.0" y2="220.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="560.0,220.0 549.0,215.5 549.0,224.5" fill="#dc2626"/>
+<text x="380" y="205" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">rör sig genom fältet → bromsas</text>
+<circle cx="600" cy="220" r="20" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="600" y="225" font-family="Arial,sans-serif" font-size="10" fill="white" text-anchor="middle">massa</text>
+<text x="600" y="255" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">har nu massa</text>
+<rect x="200" y="350" width="400" height="64" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" rx="6"/>
+<text x="400" y="376" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">Hittades i en partikelaccelerator (LHC) år 2012</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="12" fill="#7c5e2e" text-anchor="middle">Utan Higgs skulle partiklar vara viktlösa</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Higgspartikeln hör ihop med fältet som ger andra partiklar massa</text>
+</svg>

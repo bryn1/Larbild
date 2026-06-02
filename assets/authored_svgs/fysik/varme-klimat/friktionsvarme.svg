@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Friktionsvärme</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">När två ytor gnids mot varandra blir rörelse till värme</text>
+
+<!-- two surfaces rubbing -->
+<rect x="200" y="200" width="400" height="45" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<rect x="200" y="280" width="400" height="45" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<!-- rough contact zone -->
+<line x1="200" y1="263" x2="600" y2="263" stroke="#f59e0b" stroke-width="6"/>
+
+<!-- motion arrows opposite directions -->
+<line x1="420" y1="222" x2="540" y2="222" stroke="#2563eb" stroke-width="3"/>
+<polygon points="550,222 538,217 538,227" fill="#2563eb"/>
+<text x="480" y="212" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">rörelse</text>
+
+<line x1="380" y1="303" x2="260" y2="303" stroke="#2563eb" stroke-width="3"/>
+<polygon points="250,303 262,298 262,308" fill="#2563eb"/>
+<text x="320" y="318" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">rörelse</text>
+
+<!-- heat rising from contact -->
+<path d="M 320 258 Q 312 240 322 232 Q 318 248 328 240" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<path d="M 400 258 Q 392 235 402 225 Q 398 245 408 234" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<path d="M 480 258 Q 472 240 482 232 Q 478 248 488 240" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<text x="630" y="263" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start" font-weight="bold">VÄRME</text>
+
+<!-- energy conversion formula bar -->
+<rect x="150" y="370" width="500" height="55" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="6"/>
+<text x="285" y="403" font-family="Arial,sans-serif" font-size="15" fill="#2563eb" text-anchor="middle" font-weight="bold">Rörelseenergi</text>
+<line x1="400" y1="398" x2="445" y2="398" stroke="#92400e" stroke-width="3"/>
+<polygon points="455,398 443,393 443,403" fill="#92400e"/>
+<text x="555" y="403" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Värme</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Bromsklossarna på cykeln blir heta – rörelsen omvandlas till värme</text>
+</svg>

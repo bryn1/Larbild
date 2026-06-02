@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Graviton (en hypotes)</text>
+<circle cx="200" cy="250" r="42" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<text x="200" y="255" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">massa</text>
+<circle cx="600" cy="250" r="42" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="600" y="255" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">massa</text>
+<line x1="255.0" y1="220.0" x2="349.0" y2="220.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="360.0,220.0 349.0,224.9 349.0,215.1" fill="#dc2626"/>
+<line x1="545.0" y1="220.0" x2="451.0" y2="220.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="440.0,220.0 451.0,215.1 451.0,224.9" fill="#dc2626"/>
+<text x="400" y="205" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">dragningskraft</text>
+<path d="M 245 270 q 40 24 78 0 q 40 -24 78 0 q 40 24 78 0 q 40 -24 78 0" stroke="#9ca3af" stroke-width="2" fill="none" stroke-dasharray="5,4"/>
+<circle cx="400" cy="270" r="12" fill="#fef3c7" stroke="#9ca3af" stroke-width="2" stroke-dasharray="3,2"/>
+<text x="400" y="305" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">graviton?</text>
+<rect x="240" y="360" width="320" height="50" rx="8" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+<text x="400" y="382" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">Ingen har sett en — bara en hypotes</text>
+<text x="400" y="402" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">(ej bevisad)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Graviton är en tänkt partikel som skulle bära dragningskraften — den är ännu inte bevisad</text>
+</svg>

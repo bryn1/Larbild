@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Fysikalisk effekt (P = W / t)</text>
+<text x="400" y="90" font-family="Arial,sans-serif" font-size="32" fill="#1e40af" text-anchor="middle" font-weight="bold">P = W / t</text>
+<text x="400" y="118" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">effekt = arbete delat med tid</text>
+<text x="400" y="140" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Enhet: watt (W) = joule / sekund</text>
+<rect x="180" y="210" width="140" height="70" fill="white" stroke="#2563eb" stroke-width="2.5" rx="8"/>
+<text x="250" y="236" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">Svag dammsugare</text>
+<text x="250" y="260" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">600 W</text>
+<rect x="480" y="210" width="140" height="70" fill="white" stroke="#dc2626" stroke-width="2.5" rx="8"/>
+<text x="550" y="236" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Kraftig dammsugare</text>
+<text x="550" y="260" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">1200 W</text>
+<text x="400" y="330" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Samma arbete: W = 60 000 J (städa rummet)</text>
+<rect x="180" y="350" width="440" height="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+<text x="400" y="368" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Svag: t = 100 s</text>
+<rect x="180" y="388" width="220" height="26" fill="#fecaca" stroke="#dc2626" stroke-width="2" rx="4"/>
+<text x="290" y="406" font-family="Arial,sans-serif" font-size="13" fill="#991b1b" text-anchor="middle">Kraftig: t = 50 s</text>
+<line x1="630.0" y1="401.0" x2="649.0" y2="401.0" stroke="#16a34a" stroke-width="3"/>
+<polygon points="660.0,401.0 649.0,407.1 649.0,394.9" fill="#16a34a"/>
+<text x="665" y="405" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="start">snabbare!</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Effekt är hur mycket arbete som utförs per sekund — hög effekt = snabbt klart</text>
+</svg>

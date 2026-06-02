@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Barometer (mäter lufttryck)</text>
+<circle cx="400" cy="250" r="130" fill="white" stroke="#1f2937" stroke-width="3"/>
+<circle cx="400" cy="250" r="140" fill="none" stroke="#9ca3af" stroke-width="6"/>
+<path d="M 400 250 L 308.1 158.1 A 130 130 0 0 0 308.1 341.9 Z" fill="#dbeafe"/>
+<path d="M 400 250 L 491.9 158.1 A 130 130 0 0 1 491.9 341.9 Z" fill="#fee2e2"/>
+<circle cx="400" cy="250" r="130" fill="none" stroke="#1f2937" stroke-width="3"/>
+<line x1="289.1" y1="314.0" x2="297.8" y2="309.0" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="273.9" y1="272.2" x2="283.8" y2="270.5" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="273.9" y1="227.8" x2="283.8" y2="229.5" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="289.1" y1="186.0" x2="297.8" y2="191.0" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="317.7" y1="151.9" x2="324.2" y2="159.6" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="356.2" y1="129.7" x2="359.6" y2="139.1" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="400.0" y1="122.0" x2="400.0" y2="132.0" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="443.8" y1="129.7" x2="440.4" y2="139.1" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="482.3" y1="151.9" x2="475.8" y2="159.6" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="510.9" y1="186.0" x2="502.2" y2="191.0" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="526.1" y1="227.8" x2="516.2" y2="229.5" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="526.1" y1="272.2" x2="516.2" y2="270.5" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="510.9" y1="314.0" x2="502.2" y2="309.0" stroke="#1f2937" stroke-width="1.5"/>
+<line x1="400" y1="250" x2="457.4" y2="168.1" stroke="#1f2937" stroke-width="3.5"/>
+<circle cx="400" cy="250" r="7" fill="#1f2937"/>
+<text x="322" y="200" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">Lågt</text>
+<text x="322" y="218" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">Regn</text>
+<line x1="305" y1="280" x2="301" y2="295" stroke="#2563eb" stroke-width="2"/>
+<line x1="320" y1="280" x2="316" y2="295" stroke="#2563eb" stroke-width="2"/>
+<line x1="335" y1="280" x2="331" y2="295" stroke="#2563eb" stroke-width="2"/>
+<text x="478" y="200" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Högt</text>
+<text x="478" y="218" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">Sol</text>
+<circle cx="478" cy="288" r="12" fill="#f59e0b"/>
+<text x="400" y="98" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">hPa</text>
+<text x="400" y="415" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Högt tryck → ofta vackert väder · Lågt tryck → ofta regn</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Barometern visar lufttrycket så man kan gissa vädret</text>
+</svg>

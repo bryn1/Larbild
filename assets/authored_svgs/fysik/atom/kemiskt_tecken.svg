@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kemiskt tecken (kort för grundämne)</text>
+<text x="400" y="80" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Ett eller två bokstäver står för hela grundämnets namn</text>
+<rect x="140" y="112" width="80" height="56" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="180" y="150" font-family="Arial,sans-serif" font-size="24" fill="#1e40af" text-anchor="middle" font-weight="bold">O</text>
+<line x1="225.0" y1="140.0" x2="246.0" y2="140.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="255.0,140.0 246.0,136.0 246.0,144.0" fill="#6b7280"/>
+<text x="265" y="146" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start">Syre</text>
+<rect x="480" y="112" width="80" height="56" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="520" y="150" font-family="Arial,sans-serif" font-size="24" fill="#1e40af" text-anchor="middle" font-weight="bold">H</text>
+<line x1="565.0" y1="140.0" x2="586.0" y2="140.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="595.0,140.0 586.0,136.0 586.0,144.0" fill="#6b7280"/>
+<text x="605" y="146" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start">Väte</text>
+<rect x="140" y="190" width="80" height="56" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="180" y="228" font-family="Arial,sans-serif" font-size="24" fill="#1e40af" text-anchor="middle" font-weight="bold">Fe</text>
+<line x1="225.0" y1="218.0" x2="246.0" y2="218.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="255.0,218.0 246.0,214.0 246.0,222.0" fill="#6b7280"/>
+<text x="265" y="224" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start">Järn</text>
+<rect x="480" y="190" width="80" height="56" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="520" y="228" font-family="Arial,sans-serif" font-size="24" fill="#1e40af" text-anchor="middle" font-weight="bold">Cu</text>
+<line x1="565.0" y1="218.0" x2="586.0" y2="218.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="595.0,218.0 586.0,214.0 586.0,222.0" fill="#6b7280"/>
+<text x="605" y="224" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start">Koppar</text>
+<rect x="140" y="268" width="80" height="56" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="180" y="306" font-family="Arial,sans-serif" font-size="24" fill="#1e40af" text-anchor="middle" font-weight="bold">Na</text>
+<line x1="225.0" y1="296.0" x2="246.0" y2="296.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="255.0,296.0 246.0,292.0 246.0,300.0" fill="#6b7280"/>
+<text x="265" y="302" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start">Natrium</text>
+<rect x="480" y="268" width="80" height="56" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="520" y="306" font-family="Arial,sans-serif" font-size="24" fill="#1e40af" text-anchor="middle" font-weight="bold">F</text>
+<line x1="565.0" y1="296.0" x2="586.0" y2="296.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="595.0,296.0 586.0,292.0 586.0,300.0" fill="#6b7280"/>
+<text x="605" y="302" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start">Fluor</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Kemiska tecken är korta bokstavsförkortningar, t.ex. F för fluor</text>
+</svg>

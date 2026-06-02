@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Norrsken — solpartiklar krockar med luften</text>
+<rect x="60" y="55" width="680" height="360" fill="#0f172a" stroke="#1f2937" stroke-width="2" rx="4"/>
+<circle cx="120.0" cy="110.0" r="26.0" fill="#fde047" stroke="#f97316" stroke-width="2"/>
+<text x="120" y="150" font-family="Arial,sans-serif" font-size="12" fill="#fde047" text-anchor="middle" font-weight="bold">Solen</text>
+<line x1="150.0" y1="96.0" x2="351.4" y2="158.3" stroke="#fbbf24" stroke-width="2"/>
+<polygon points="360.0,161.0 349.9,163.1 352.9,153.6" fill="#fbbf24"/>
+<line x1="150.0" y1="110.0" x2="351.4" y2="172.3" stroke="#fbbf24" stroke-width="2"/>
+<polygon points="360.0,175.0 349.9,177.1 352.9,167.6" fill="#fbbf24"/>
+<line x1="150.0" y1="124.0" x2="351.4" y2="186.3" stroke="#fbbf24" stroke-width="2"/>
+<polygon points="360.0,189.0 349.9,191.1 352.9,181.6" fill="#fbbf24"/>
+<text x="255" y="130" font-family="Arial,sans-serif" font-size="12" fill="#fbbf24" text-anchor="middle" font-weight="bold">Partiklar från solen</text>
+<path d="M 90 400 Q 400 300 710 400 L 710 415 L 90 415 Z" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="400" y="405" font-family="Arial,sans-serif" font-size="12" fill="#bfdbfe" text-anchor="middle" font-weight="bold">Jorden (vid polen)</text>
+<path d="M 300 270.0 Q 306 305.0 300 340" fill="none" stroke="#22c55e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 328 253.1705803038421 Q 334 296.585290151921 328 340" fill="none" stroke="#22c55e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 356 251.81405146348635 Q 362 295.9070257317432 356 340" fill="none" stroke="#22c55e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 384 267.1775998388026 Q 390 303.5887999194013 384 340" fill="none" stroke="#22c55e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 412 285.1360499061586 Q 418 312.56802495307926 412 340" fill="none" stroke="#22c55e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 440 289.17848549326277 Q 446 314.5892427466314 440 340" fill="none" stroke="#22c55e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 468 275.58830996397853 Q 474 307.79415498198927 468 340" fill="none" stroke="#22c55e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 496 256.86026802562424 Q 502 298.4301340128121 496 340" fill="none" stroke="#22c55e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 310 212.0 Q 316 271.0 310 320" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 338 220.27455849437348 Q 344 275.1372792471867 338 320" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 366 237.49064305784856 Q 372 283.74532152892425 366 320" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 394 247.81986493880802 Q 400 288.909932469404 394 320" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 422 241.76558517554503 Q 428 285.8827925877725 422 320" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 450 224.89408066166192 Q 456 277.447040330831 450 320" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 478 212.71693484029342 Q 484 271.3584674201467 478 320" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 506 216.4297594218205 Q 512 273.2148797109103 506 320" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="560" y="250" font-family="Arial,sans-serif" font-size="13" fill="#4ade80" text-anchor="start" font-weight="bold">Gröna och röda</text>
+<text x="560" y="268" font-family="Arial,sans-serif" font-size="13" fill="#4ade80" text-anchor="start" font-weight="bold">ljusslöjor</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Norrsken uppstår när partiklar från solen krockar med luften högt över polerna</text>
+</svg>

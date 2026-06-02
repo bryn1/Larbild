@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Industrialisering</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Från handarbete i verkstäder till stora fabriker med maskiner</text>
+
+<!-- BEFORE -->
+<rect x="60" y="90" width="300" height="300" fill="#f9fafb" stroke="#9ca3af" stroke-width="2" rx="4"/>
+<text x="210" y="118" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle" font-weight="bold">FÖRR – liten verkstad</text>
+<!-- small workshop -->
+<rect x="140" y="220" width="140" height="100" fill="#fde68a" stroke="#92400e" stroke-width="2"/>
+<polygon points="130,220 290,220 210,180" fill="#a16207"/>
+<rect x="195" y="270" width="30" height="50" fill="#92400e"/>
+<!-- person with hammer (stick figure) -->
+<circle cx="170" cy="280" r="8" fill="#1f2937"/>
+<line x1="170" y1="288" x2="170" y2="308" stroke="#1f2937" stroke-width="2"/>
+<line x1="170" y1="295" x2="182" y2="288" stroke="#1f2937" stroke-width="2"/>
+<text x="210" y="345" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">handarbete, lite energi</text>
+
+<!-- ARROW -->
+<line x1="370" y1="240" x2="430" y2="240" stroke="#1f2937" stroke-width="4"/>
+<polygon points="442,240 428,233 428,247" fill="#1f2937"/>
+
+<!-- AFTER -->
+<rect x="440" y="90" width="300" height="300" fill="#fef2f2" stroke="#dc2626" stroke-width="2" rx="4"/>
+<text x="590" y="118" font-family="Arial,sans-serif" font-size="15" fill="#991b1b" text-anchor="middle" font-weight="bold">SEDAN – stor fabrik</text>
+<!-- big factory with smokestacks -->
+<rect x="490" y="240" width="200" height="100" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<rect x="510" y="180" width="25" height="60" fill="#6b7280"/>
+<rect x="560" y="180" width="25" height="60" fill="#6b7280"/>
+<!-- smoke -->
+<circle cx="522" cy="165" r="12" fill="#d1d5db"/>
+<circle cx="540" cy="150" r="14" fill="#d1d5db"/>
+<circle cx="572" cy="165" r="12" fill="#d1d5db"/>
+<circle cx="590" cy="150" r="14" fill="#d1d5db"/>
+<!-- gears -->
+<circle cx="630" cy="285" r="20" fill="none" stroke="#374151" stroke-width="4"/>
+<circle cx="660" cy="305" r="14" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="590" y="365" font-family="Arial,sans-serif" font-size="12" fill="#991b1b" text-anchor="middle" font-weight="bold">maskiner – mycket mer energi</text>
+
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Maskinerna krävde mycket mer bränsle och el än handarbetet</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Industrialiseringen ökade energibehovet kraftigt</text>
+</svg>

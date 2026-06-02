@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Elektromagnetisk strålning</text>
+<rect x="90.0" y="200" width="88.6" height="36" fill="#6b7280"/>
+<rect x="90.0" y="200" width="88.6" height="36" fill="none" stroke="white" stroke-width="1"/>
+<text x="134.28571428571428" y="256" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Radio</text>
+<rect x="178.6" y="200" width="88.6" height="36" fill="#0891b2"/>
+<rect x="178.6" y="200" width="88.6" height="36" fill="none" stroke="white" stroke-width="1"/>
+<text x="222.85714285714283" y="256" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Mikro</text>
+<rect x="267.1" y="200" width="88.6" height="36" fill="#dc2626"/>
+<rect x="267.1" y="200" width="88.6" height="36" fill="none" stroke="white" stroke-width="1"/>
+<text x="311.4285714285714" y="256" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Infraröd</text>
+<rect x="355.7" y="200" width="15.4" height="36" fill="#dc2626"/>
+<rect x="370.5" y="200" width="15.4" height="36" fill="#f59e0b"/>
+<rect x="385.2" y="200" width="15.4" height="36" fill="#fde047"/>
+<rect x="400.0" y="200" width="15.4" height="36" fill="#16a34a"/>
+<rect x="414.8" y="200" width="15.4" height="36" fill="#2563eb"/>
+<rect x="429.5" y="200" width="15.4" height="36" fill="#7c3aed"/>
+<rect x="355.7" y="200" width="88.6" height="36" fill="none" stroke="white" stroke-width="1"/>
+<text x="400.0" y="256" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Synligt</text>
+<rect x="444.3" y="200" width="88.6" height="36" fill="#7c3aed"/>
+<rect x="444.3" y="200" width="88.6" height="36" fill="none" stroke="white" stroke-width="1"/>
+<text x="488.57142857142856" y="256" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">UV</text>
+<rect x="532.9" y="200" width="88.6" height="36" fill="#1e40af"/>
+<rect x="532.9" y="200" width="88.6" height="36" fill="none" stroke="white" stroke-width="1"/>
+<text x="577.1428571428572" y="256" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Röntgen</text>
+<rect x="621.4" y="200" width="88.6" height="36" fill="#111827"/>
+<rect x="621.4" y="200" width="88.6" height="36" fill="none" stroke="white" stroke-width="1"/>
+<text x="665.7142857142858" y="256" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Gamma</text>
+<line x1="90.0" y1="150.0" x2="231.0" y2="150.0" stroke="#1f2937" stroke-width="2"/>
+<polygon points="240.0,150.0 231.0,154.1 231.0,145.9" fill="#1f2937"/>
+<text x="260" y="154" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">lång våglängd</text>
+<line x1="710.0" y1="150.0" x2="569.0" y2="150.0" stroke="#1f2937" stroke-width="2"/>
+<polygon points="560.0,150.0 569.0,145.9 569.0,154.1" fill="#1f2937"/>
+<text x="540" y="154" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="end">kort våglängd</text>
+<text x="400" y="290" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Allt är samma sorts strålning — bara olika våglängd (λ)</text>
+<text x="400" y="312" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Synligt ljus är den lilla del ögat kan se</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Elektromagnetisk strålning: energi som vågor — radio, ljus och röntgen är alla exempel</text>
+</svg>

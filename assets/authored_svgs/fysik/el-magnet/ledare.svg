@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Ledare (leder ström lätt)</text>
+<rect x="120" y="200" width="560" height="90" rx="45" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<text x="400" y="178" font-family="Arial,sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle">Plast (isolator)</text>
+<rect x="120" y="225" width="560" height="40" rx="20" fill="#fbbf24" stroke="#b45309" stroke-width="2"/>
+<text x="180" y="250" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle" font-weight="bold">Koppar</text>
+<circle cx="300" cy="245" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="300" y="248.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
+<circle cx="360" cy="245" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="360" y="248.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
+<circle cx="420" cy="245" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="420" y="248.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
+<circle cx="480" cy="245" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="480" y="248.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
+<circle cx="540" cy="245" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="540" y="248.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
+<circle cx="600" cy="245" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="600" y="248.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
+<line x1="250.0" y1="320.0" x2="548.0" y2="320.0" stroke="#2563eb" stroke-width="3"/>
+<polygon points="560.0,320.0 548.0,325.0 548.0,315.0" fill="#2563eb"/>
+<text x="405" y="340" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Elektronerna rör sig fritt →  ström</text>
+<text x="400" y="410" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Metaller (koppar, järn, aluminium) är bra ledare</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En ledare släpper lätt igenom elektrisk ström</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Antioxidanter skyddar cellerna</text>
+<text x="180" y="95" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Fri radikal</text>
+<circle cx="180" cy="175" r="34" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<circle cx="209.44486372867092" cy="158.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="209.44486372867092" y="161.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="180.0" cy="141.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="180.0" y="144.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="150.55513627132908" cy="158.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="150.55513627132908" y="161.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="150.55513627132908" cy="192.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="150.55513627132908" y="195.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="180.0" cy="209.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="180.0" y="212.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="209.4448637286709" cy="192.0" r="7" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="180" y="175" font-family="Arial,sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">saknar</text>
+<text x="180" y="188" font-family="Arial,sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">1 e-</text>
+<text x="180" y="235" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">reaktiv &amp; farlig</text>
+<text x="400" y="95" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Antioxidant</text>
+<circle cx="400" cy="175" r="34" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="400" y="179" font-family="Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle">ger e-</text>
+<circle cx="330" cy="175" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="330" y="178.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<line x1="355.0" y1="175.0" x2="246.0" y2="175.0" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="235.0,175.0 246.0,179.5 246.0,170.5" fill="#16a34a"/>
+<text x="295" y="162" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">lämnar en elektron</text>
+<text x="640" y="95" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Resultat</text>
+<circle cx="640" cy="175" r="34" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<circle cx="669.444863728671" cy="158.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="669.444863728671" y="161.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="640.0" cy="141.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="640.0" y="144.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="610.555136271329" cy="158.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="610.555136271329" y="161.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="610.555136271329" cy="192.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="610.555136271329" y="195.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="640.0" cy="209.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="640.0" y="212.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="669.444863728671" cy="192.0" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="669.444863728671" y="195.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<text x="640" y="235" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">stabil — ofarlig</text>
+<line x1="470.0" y1="175.0" x2="590.0" y2="175.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="600.0,175.0 590.0,171.0 590.0,179.0" fill="#6b7280"/>
+<text x="400" y="320" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Fria radikaler saknar en elektron. Antioxidanten lånar ut en</text>
+<text x="400" y="345" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">och gör radikalen ofarlig — då skadas inte cellen.</text>
+<rect x="250" y="375" width="300" height="44" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" rx="6"/>
+<text x="400" y="402" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">Finns i blåbär, frukt och grönsaker</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Antioxidanter fångar upp fria radikaler och skyddar cellerna</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Hästskomagnet</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Böjd som en hästsko – båda polerna pekar åt samma håll</text>
+
+<!-- horseshoe: U-shape using thick stroke path -->
+<path d="M330 130 L330 300 A70 70 0 0 0 470 300 L470 130" fill="none" stroke="#9ca3af" stroke-width="46" stroke-linecap="butt"/>
+<!-- color the two pole tips -->
+<rect x="307" y="130" width="46" height="55" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<rect x="447" y="130" width="46" height="55" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="330" y="165" font-family="Arial,sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="bold">N</text>
+<text x="470" y="165" font-family="Arial,sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="bold">S</text>
+
+<!-- field arcing between the two close tips -->
+<path d="M330 130 C360 80 440 80 470 130" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="6,4"/>
+<polygon points="400,84 393,95 407,95" fill="#6b7280"/>
+<text x="400" y="118" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">starkt fält</text>
+
+<!-- paperclips being picked up -->
+<rect x="345" y="370" width="30" height="10" rx="5" fill="none" stroke="#1f2937" stroke-width="2"/>
+<rect x="385" y="380" width="30" height="10" rx="5" fill="none" stroke="#1f2937" stroke-width="2"/>
+<rect x="425" y="370" width="30" height="10" rx="5" fill="none" stroke="#1f2937" stroke-width="2"/>
+<line x1="360" y1="360" x2="360" y2="370" stroke="#16a34a" stroke-width="2"/>
+<line x1="440" y1="360" x2="440" y2="370" stroke="#16a34a" stroke-width="2"/>
+<text x="400" y="415" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">Drar starkt – plockar upp gem</text>
+
+<text x="160" y="200" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">Nordpol</text>
+<text x="640" y="200" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Sydpol</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Polerna nära varandra ger ett starkare magnetfält än en rak stavmagnet</text>
+</svg>

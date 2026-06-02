@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Transformatorstation</text>
+<!-- High voltage pylon (left) -->
+<line x1="110" y1="120" x2="110" y2="300" stroke="#6b7280" stroke-width="4"/>
+<line x1="110" y1="120" x2="80" y2="300" stroke="#6b7280" stroke-width="3"/>
+<line x1="110" y1="120" x2="140" y2="300" stroke="#6b7280" stroke-width="3"/>
+<line x1="78" y1="150" x2="142" y2="150" stroke="#6b7280" stroke-width="3"/>
+<line x1="84" y1="190" x2="136" y2="190" stroke="#6b7280" stroke-width="3"/>
+<text x="110" y="335" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">130 000 V</text>
+<text x="110" y="353" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">hög spänning</text>
+<!-- power line into station -->
+<line x1="142" y1="150" x2="290" y2="180" stroke="#dc2626" stroke-width="2.5"/>
+<!-- Transformer station box -->
+<rect x="290" y="140" width="220" height="180" rx="8" fill="#eff6ff" stroke="#1e40af" stroke-width="3"/>
+<text x="400" y="168" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Transformator</text>
+<!-- two coils symbol -->
+<rect x="335" y="190" width="40" height="90" rx="4" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<path d="M345 200 q10 6 0 12 q10 6 0 12 q10 6 0 12 q10 6 0 12 q10 6 0 12" fill="none" stroke="#dc2626" stroke-width="2"/>
+<rect x="425" y="190" width="40" height="90" rx="4" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<path d="M455 200 q-10 6 0 12 q-10 6 0 12 q-10 6 0 12 q-10 6 0 12 q-10 6 0 12" fill="none" stroke="#16a34a" stroke-width="2"/>
+<line x1="385" y1="235" x2="415" y2="235" stroke="#1f2937" stroke-width="2"/>
+<line x1="385" y1="245" x2="415" y2="245" stroke="#1f2937" stroke-width="2"/>
+<text x="400" y="310" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">sänker spänningen</text>
+<!-- power line out -->
+<line x1="510" y1="230" x2="600" y2="230" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="612,230 600,235 600,225" fill="#16a34a"/>
+<text x="555" y="220" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">230 V</text>
+<!-- house -->
+<rect x="620" y="200" width="110" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<polygon points="615,200 675,155 735,200" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<rect x="658" y="240" width="30" height="40" fill="#92400e"/>
+<text x="675" y="305" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">230 V till huset</text>
+<text x="675" y="323" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">låg, säker spänning</text>
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Hög spänning  →  transformator  →  låg spänning</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Stationen sänker den höga spänningen innan elen går ut till husen</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Turbin driver en generator</text>
+<!-- Steam/water in arrows -->
+<line x1="60" y1="200" x2="160" y2="200" stroke="#dc2626" stroke-width="3"/>
+<polygon points="172,200 160,205 160,195" fill="#dc2626"/>
+<line x1="60" y1="240" x2="160" y2="240" stroke="#dc2626" stroke-width="3"/>
+<polygon points="172,240 160,245 160,235" fill="#dc2626"/>
+<text x="105" y="185" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Ånga / vatten</text>
+<text x="105" y="270" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">trycker på bladen</text>
+<!-- Turbine hub -->
+<circle cx="290" cy="220" r="22" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+<!-- Turbine blades (8 around hub) -->
+<g fill="#2563eb" stroke="#1e40af" stroke-width="1.5">
+<polygon points="290,160 282,200 298,200"/>
+<polygon points="290,280 282,240 298,240"/>
+<polygon points="230,220 270,212 270,228"/>
+<polygon points="350,220 310,212 310,228"/>
+<polygon points="247,177 277,205 266,217"/>
+<polygon points="333,263 303,235 314,223"/>
+<polygon points="333,177 303,205 314,217"/>
+<polygon points="247,263 277,235 266,223"/>
+</g>
+<!-- rotation arrow -->
+<path d="M290 130 a90 90 0 0 1 78 45" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="372,182 360,170 372,166" fill="#16a34a"/>
+<text x="290" y="120" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">snurrar</text>
+<!-- Shaft -->
+<rect x="312" y="214" width="160" height="12" fill="#6b7280"/>
+<text x="392" y="208" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">axel</text>
+<!-- Generator box -->
+<rect x="472" y="170" width="160" height="100" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<text x="552" y="210" font-family="Arial,sans-serif" font-size="16" fill="#b45309" text-anchor="middle" font-weight="bold">Generator</text>
+<text x="552" y="235" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">gör elektricitet</text>
+<!-- electricity out -->
+<line x1="632" y1="220" x2="710" y2="220" stroke="#1e40af" stroke-width="3"/>
+<polygon points="722,220 710,225 710,215" fill="#1e40af"/>
+<path d="M748 195 l-14 24 h12 l-12 22" fill="none" stroke="#1e40af" stroke-width="2.5"/>
+<text x="745" y="265" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">El</text>
+<text x="400" y="370" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Ånga, vatten eller vind  →  turbinen snurrar  →  generatorn gör el</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Bladen snurrar när något trycker på dem och driver generatorn</text>
+</svg>

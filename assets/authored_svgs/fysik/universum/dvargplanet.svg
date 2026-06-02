@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Dvärgplanet (för liten för planet)</text>
+<circle cx="240" cy="240" r="90" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<text x="240" y="245" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Jorden</text>
+<text x="240" y="355" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Planet</text>
+<circle cx="560" cy="270" r="22" fill="#d6bfa6" stroke="#92400e" stroke-width="2"/>
+<text x="560" y="274" font-family="Arial,sans-serif" font-size="10" fill="#5b3a16" text-anchor="middle">Pluto</text>
+<text x="560" y="330" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">Dvärgplanet</text>
+<rect x="120" y="395" width="560" height="34" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+<text x="400" y="417" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">Går runt solen: JA   ·   Rund: JA   ·   Stor nog att rensa sin bana: NEJ</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En dvärgplanet går runt solen och är rund, men är för liten för att räknas som planet</text>
+</svg>

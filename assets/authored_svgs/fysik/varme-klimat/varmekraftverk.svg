@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Värmekraftverk</text>
+<!-- 1. Fuel / burner -->
+<rect x="55" y="200" width="120" height="110" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="115" y="225" font-family="Arial,sans-serif" font-size="13" fill="#b45309" text-anchor="middle" font-weight="bold">1. Bränsle</text>
+<text x="115" y="244" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">flis, kol, olja</text>
+<!-- flame -->
+<path d="M90 295 q8 -22 25 -8 q-4 -14 8 -18 q-2 18 12 12 q-6 24 -23 20 q-18 0 -22 -18 z" fill="#dc2626" stroke="#b91c1c" stroke-width="1"/>
+<text x="140" y="295" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="start">eldas</text>
+<!-- arrow 1 (heat) -->
+<line x1="180" y1="255" x2="240" y2="255" stroke="#dc2626" stroke-width="3"/>
+<polygon points="252,255 240,260 240,250" fill="#dc2626"/>
+<text x="210" y="243" font-family="Arial,sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">värme</text>
+<!-- 2. Boiler with water -> steam -->
+<rect x="256" y="190" width="110" height="130" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="311" y="214" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">2. Panna</text>
+<text x="311" y="232" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">vatten kokar</text>
+<!-- steam bubbles -->
+<circle cx="290" cy="265" r="5" fill="#93c5fd"/>
+<circle cx="311" cy="278" r="6" fill="#93c5fd"/>
+<circle cx="330" cy="260" r="5" fill="#93c5fd"/>
+<text x="311" y="312" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">→ ånga</text>
+<!-- arrow 2 (steam) -->
+<line x1="371" y1="240" x2="431" y2="240" stroke="#6b7280" stroke-width="3"/>
+<polygon points="443,240 431,245 431,235" fill="#6b7280"/>
+<text x="402" y="228" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">ånga</text>
+<!-- 3. Turbine -->
+<rect x="447" y="190" width="110" height="100" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="502" y="212" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle" font-weight="bold">3. Turbin</text>
+<circle cx="502" cy="248" r="22" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<g stroke="#2563eb" stroke-width="2">
+<line x1="502" y1="228" x2="502" y2="268"/>
+<line x1="482" y1="248" x2="522" y2="248"/>
+<line x1="488" y1="234" x2="516" y2="262"/>
+<line x1="488" y1="262" x2="516" y2="234"/>
+</g>
+<text x="502" y="284" font-family="Arial,sans-serif" font-size="10" fill="#374151" text-anchor="middle">snurrar</text>
+<!-- shaft to generator -->
+<line x1="557" y1="248" x2="600" y2="248" stroke="#6b7280" stroke-width="8"/>
+<!-- 4. Generator -->
+<rect x="600" y="200" width="120" height="90" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="660" y="240" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">4. Generator</text>
+<text x="660" y="262" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">ger el</text>
+<!-- electricity out -->
+<line x1="660" y1="290" x2="660" y2="335" stroke="#1e40af" stroke-width="3"/>
+<polygon points="660,347 655,335 665,335" fill="#1e40af"/>
+<path d="M690 305 l-14 24 h12 l-12 22" fill="none" stroke="#1e40af" stroke-width="2.5"/>
+<text x="700" y="345" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">El</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Bränsle eldas  →  vatten kokar till ånga  →  turbin  →  generator</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Bränsle eldas för att koka vatten till ånga som driver turbinen</text>
+</svg>

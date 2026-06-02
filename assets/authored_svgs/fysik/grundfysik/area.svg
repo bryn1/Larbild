@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Area (A = l · b)</text>
+<rect x="230" y="150" width="300" height="180" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="290" y1="150" x2="290" y2="330" stroke="#2563eb" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="350" y1="150" x2="350" y2="330" stroke="#2563eb" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="410" y1="150" x2="410" y2="330" stroke="#2563eb" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="470" y1="150" x2="470" y2="330" stroke="#2563eb" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="230" y1="210" x2="530" y2="210" stroke="#2563eb" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="230" y1="270" x2="530" y2="270" stroke="#2563eb" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="230" y1="348" x2="530" y2="348" stroke="#16a34a" stroke-width="2"/>
+<line x1="230" y1="342" x2="230" y2="354" stroke="#16a34a" stroke-width="2"/>
+<line x1="530" y1="342" x2="530" y2="354" stroke="#16a34a" stroke-width="2"/>
+<text x="380.0" y="368" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">längd l = 5 m</text>
+<line x1="208" y1="150" x2="208" y2="330" stroke="#16a34a" stroke-width="2"/>
+<line x1="202" y1="150" x2="214" y2="150" stroke="#16a34a" stroke-width="2"/>
+<line x1="202" y1="330" x2="214" y2="330" stroke="#16a34a" stroke-width="2"/>
+<text x="198" y="240.0" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold" transform="rotate(-90 198 240.0)">bredd b = 3 m</text>
+<rect x="230" y="150" width="60" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="260.0" y="185.0" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="bold">1 m²</text>
+<text x="400" y="408" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">A = l · b = 5 m · 3 m = 15 m²</text>
+<text x="400" y="436" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Area mäts i kvadratmeter (m²) eller kvadratcentimeter (cm²)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Arean är hur stor en yta är på längden och bredden</text>
+</svg>

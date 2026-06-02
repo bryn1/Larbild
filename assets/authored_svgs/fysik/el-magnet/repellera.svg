@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Repellera (stöter bort)</text>
+<rect x="150" y="210" width="120" height="60" fill="#9ca3af" stroke="#1f2937" stroke-width="2"/>
+<rect x="210" y="210" width="60" height="60" fill="#dc2626"/>
+<rect x="150" y="210" width="60" height="60" fill="#2563eb"/>
+<text x="180" y="248" font-family="Arial,sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">S</text>
+<text x="240" y="248" font-family="Arial,sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">N</text>
+<rect x="530" y="210" width="120" height="60" fill="#9ca3af" stroke="#1f2937" stroke-width="2"/>
+<rect x="530" y="210" width="60" height="60" fill="#dc2626"/>
+<rect x="590" y="210" width="60" height="60" fill="#2563eb"/>
+<text x="560" y="248" font-family="Arial,sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">N</text>
+<text x="620" y="248" font-family="Arial,sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">S</text>
+<line x1="280.0" y1="200.0" x2="213.0" y2="200.0" stroke="#dc2626" stroke-width="4"/>
+<polygon points="200.0,200.0 213.0,194.5 213.0,205.5" fill="#dc2626"/>
+<line x1="520.0" y1="200.0" x2="587.0" y2="200.0" stroke="#dc2626" stroke-width="4"/>
+<polygon points="600.0,200.0 587.0,205.5 587.0,194.5" fill="#dc2626"/>
+<text x="400" y="240" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">samma pol</text>
+<text x="400" y="258" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">N ↔ N</text>
+<text x="400" y="195" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">kraft</text>
+<text x="400" y="330" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Två lika poler (N mot N) stöter bort varandra</text>
+<text x="400" y="360" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Magneterna hoppar isär istället för att fastna ihop</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Repellera betyder att stöta bort</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Multimeter (mäter flera saker)</text>
+<rect x="180" y="150" width="200" height="240" rx="12" fill="#e5e7eb" stroke="#1f2937" stroke-width="2"/>
+<rect x="205" y="170" width="150" height="55" rx="4" fill="#052e16" stroke="#1f2937" stroke-width="1.5"/>
+<text x="280" y="208" font-family="Arial,sans-serif" font-size="24" fill="#4ade80" text-anchor="middle" font-weight="bold">12,4 V</text>
+<circle cx="280" cy="300" r="48" fill="white" stroke="#1f2937" stroke-width="2"/>
+<line x1="280" y1="300" x2="280" y2="262" stroke="#dc2626" stroke-width="3"/>
+<circle cx="280" cy="300" r="5" fill="#1f2937"/>
+<text x="280" y="258" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">V</text>
+<text x="330" y="305" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">A</text>
+<text x="230" y="305" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Ω</text>
+<text x="280" y="360" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Vred: V / A / Ω</text>
+<line x1="380" y1="260" x2="560" y2="220" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="380" y1="300" x2="560" y2="340" stroke="#1f2937" stroke-width="2.5"/>
+<rect x="560" y="250" width="90" height="60" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="605" y="285" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">komponent</text>
+<text x="490" y="200" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">röd (+)</text>
+<text x="490" y="360" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">svart (−)</text>
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Mäter spänning (V), ström (A) och resistans (Ω) i en krets</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En multimeter kan mäta flera saker i en elektrisk krets</text>
+</svg>

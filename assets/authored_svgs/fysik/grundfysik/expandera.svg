@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Expandera (blir större av värme)</text>
+<text x="225" y="130" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">Sval</text>
+<ellipse cx="225" cy="260" rx="55" ry="63" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+<path d="M 219 323 L 225 337 L 231 323 Z" fill="#2563eb"/>
+<line x1="225" y1="337" x2="225" y2="370" stroke="#6b7280" stroke-width="1.5"/>
+<line x1="330.0" y1="250.0" x2="407.0" y2="250.0" stroke="#dc2626" stroke-width="3"/>
+<polygon points="420.0,250.0 407.0,255.8 407.0,244.2" fill="#dc2626"/>
+<text x="375" y="235" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">värme</text>
+<text x="575" y="110" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Varm — större</text>
+<ellipse cx="580" cy="270" rx="90" ry="102" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+<path d="M 573 372 L 580 386 L 587 372 Z" fill="#dc2626"/>
+<line x1="580" y1="386" x2="580" y2="400" stroke="#6b7280" stroke-width="1.5"/>
+<line x1="647.5" y1="270.0" x2="681.0" y2="270.0" stroke="#dc2626" stroke-width="1.5"/>
+<polygon points="688.0,270.0 681.0,273.1 681.0,266.9" fill="#dc2626"/>
+<line x1="613.8" y1="328.5" x2="630.7" y2="360.8" stroke="#dc2626" stroke-width="1.5"/>
+<polygon points="634.0,367.0 628.0,362.3 633.5,359.3" fill="#dc2626"/>
+<line x1="546.2" y1="328.5" x2="529.3" y2="360.8" stroke="#dc2626" stroke-width="1.5"/>
+<polygon points="526.0,367.0 526.5,359.3 532.0,362.3" fill="#dc2626"/>
+<line x1="512.5" y1="270.0" x2="479.0" y2="270.0" stroke="#dc2626" stroke-width="1.5"/>
+<polygon points="472.0,270.0 479.0,266.9 479.0,273.1" fill="#dc2626"/>
+<line x1="546.2" y1="211.5" x2="529.3" y2="179.2" stroke="#dc2626" stroke-width="1.5"/>
+<polygon points="526.0,173.0 532.0,177.7 526.5,180.7" fill="#dc2626"/>
+<line x1="613.8" y1="211.5" x2="630.7" y2="179.2" stroke="#dc2626" stroke-width="1.5"/>
+<polygon points="634.0,173.0 633.5,180.7 628.0,177.7" fill="#dc2626"/>
+<circle cx="690" cy="120" r="24" fill="#f59e0b"/>
+<line x1="718.0" y1="120.0" x2="728.0" y2="120.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="709.8" y1="139.8" x2="716.9" y2="146.9" stroke="#f59e0b" stroke-width="2"/>
+<line x1="690.0" y1="148.0" x2="690.0" y2="158.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="670.2" y1="139.8" x2="663.1" y2="146.9" stroke="#f59e0b" stroke-width="2"/>
+<line x1="662.0" y1="120.0" x2="652.0" y2="120.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="670.2" y1="100.2" x2="663.1" y2="93.1" stroke="#f59e0b" stroke-width="2"/>
+<line x1="690.0" y1="92.0" x2="690.0" y2="82.0" stroke="#f59e0b" stroke-width="2"/>
+<line x1="709.8" y1="100.2" x2="716.9" y2="93.1" stroke="#f59e0b" stroke-width="2"/>
+<text x="400" y="410" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">När luften värms rör sig molekylerna mer och tar mer plats</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Att expandera är att bli större — oftast när något blir varmare</text>
+</svg>

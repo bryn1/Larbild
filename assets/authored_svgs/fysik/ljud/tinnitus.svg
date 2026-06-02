@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Tinnitus – pip i örat utan ljud</text>
+<text x="200" y="80" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Orsak: för starkt ljud</text>
+<rect x="110" y="150" width="60" height="120" fill="#374151" stroke="#1f2937" stroke-width="2" rx="4"/>
+<path d="M 170 175 L 200 155 L 200 265 L 170 245 Z" fill="#6b7280" stroke="#1f2937" stroke-width="2"/>
+<path d="M 237.8 232.9 A 40 40 0 0 1 237.8 187.1" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<path d="M 254.1 244.4 A 60 60 0 0 1 254.1 175.6" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<path d="M 270.5 255.9 A 80 80 0 0 1 270.5 164.1" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<path d="M 286.9 267.4 A 100 100 0 0 1 286.9 152.6" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<text x="160" y="300" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Hög volym</text>
+<line x1="310.0" y1="230.0" x2="370.0" y2="230.0" stroke="#6b7280" stroke-width="2.5"/>
+<polygon points="380.0,230.0 370.0,235.5 370.0,224.5" fill="#6b7280"/>
+<text x="345" y="215" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">senare</text>
+<text x="560" y="80" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Efteråt: tyst rum</text>
+<path d="M 545 175 C 505 175 488 215 500 250 C 508 275 498 295 515 300 C 532 305 540 288 535 272 C 560 280 580 255 575 228 C 595 220 590 185 565 180 C 558 176 552 175 545 175 Z" fill="#fde8d8" stroke="#b45309" stroke-width="2.5"/>
+<path d="M 530 235 C 522 228 530 218 540 224 C 548 230 542 242 532 240" fill="none" stroke="#92400e" stroke-width="1.8"/>
+<path d="M 564.4 261.1 A 38 38 0 0 1 564.4 202.9" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<path d="M 573.4 271.8 A 52 52 0 0 1 573.4 192.2" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<path d="M 582.4 282.6 A 66 66 0 0 1 582.4 181.4" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="645" y="200" font-family="Arial,sans-serif" font-size="15" fill="#f59e0b" text-anchor="middle" font-weight="bold" font-style="italic">Piiip...</text>
+<text x="645" y="220" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">(susning)</text>
+<text x="560" y="320" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Inget ljud finns runt dig</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Du hör ett pip eller en susning fast det är tyst – kommer ofta efter för starkt ljud</text>
+</svg>

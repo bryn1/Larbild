@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Gravitation (massor dras mot varandra)</text>
+<rect x="0" y="380" width="800" height="120" fill="#86efac"/>
+<line x1="0" y1="380" x2="800" y2="380" stroke="#15803d" stroke-width="2"/>
+<circle cx="200" cy="285" r="14" fill="#fcd9b8" stroke="#d6a06a" stroke-width="1.5"/>
+<line x1="200" y1="299" x2="200" y2="345" stroke="#1f2937" stroke-width="3"/>
+<line x1="200" y1="310" x2="184" y2="328" stroke="#1f2937" stroke-width="3"/>
+<line x1="200" y1="310" x2="218" y2="302" stroke="#1f2937" stroke-width="3"/>
+<line x1="200" y1="345" x2="188" y2="380" stroke="#1f2937" stroke-width="3"/>
+<line x1="200" y1="345" x2="212" y2="380" stroke="#1f2937" stroke-width="3"/>
+<path d="M 222 302 Q 400 80 560 376" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6,5"/>
+<circle cx="400" cy="138" r="13" fill="#f59e0b" stroke="#92400e" stroke-width="1.5"/>
+<line x1="230.0" y1="290.0" x2="323.6" y2="159.0" stroke="#2563eb" stroke-width="2"/>
+<polygon points="330.0,150.0 327.6,161.8 319.6,156.1" fill="#2563eb"/>
+<text x="300" y="120" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">kastas upp</text>
+<line x1="400.0" y1="175.0" x2="400.0" y2="239.0" stroke="#dc2626" stroke-width="3.5"/>
+<polygon points="400.0,250.0 395.1,239.0 404.9,239.0" fill="#dc2626"/>
+<text x="440" y="220" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">gravitation</text>
+<text x="440" y="240" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">drar nedåt</text>
+<circle cx="560" cy="376" r="13" fill="#f59e0b" stroke="#92400e" stroke-width="1.5"/>
+<line x1="560.0" y1="250.0" x2="560.0" y2="344.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="560.0,355.0 555.0,344.0 565.0,344.0" fill="#dc2626"/>
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="13" fill="#14532d" text-anchor="middle">Allt med massa dras mot varandra — jorden drar fotbollen ner igen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Gravitationen drar föremål med massa mot varandra</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Stjärnbild — Karlavagnen</text>
+<rect x="60" y="60" width="680" height="330" fill="#0b1d4d" rx="6"/>
+<line x1="190" y1="150" x2="300" y2="140" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="300" y1="140" x2="330" y2="235" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="330" y1="235" x2="215" y2="250" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="215" y1="250" x2="190" y2="150" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="215" y1="250" x2="430" y2="255" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="430" y1="255" x2="540" y2="210" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="540" y1="210" x2="640" y2="170" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<polygon points="190.0,139.0 192.6,146.4 200.5,146.6 194.3,151.4 196.5,158.9 190.0,154.5 183.5,158.9 185.7,151.4 179.5,146.6 187.4,146.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="300.0,129.0 302.6,136.4 310.5,136.6 304.3,141.4 306.5,148.9 300.0,144.5 293.5,148.9 295.7,141.4 289.5,136.6 297.4,136.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="330.0,224.0 332.6,231.4 340.5,231.6 334.3,236.4 336.5,243.9 330.0,239.5 323.5,243.9 325.7,236.4 319.5,231.6 327.4,231.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="215.0,239.0 217.6,246.4 225.5,246.6 219.3,251.4 221.5,258.9 215.0,254.5 208.5,258.9 210.7,251.4 204.5,246.6 212.4,246.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="430.0,244.0 432.6,251.4 440.5,251.6 434.3,256.4 436.5,263.9 430.0,259.5 423.5,263.9 425.7,256.4 419.5,251.6 427.4,251.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="540.0,199.0 542.6,206.4 550.5,206.6 544.3,211.4 546.5,218.9 540.0,214.5 533.5,218.9 535.7,211.4 529.5,206.6 537.4,206.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="640.0,159.0 642.6,166.4 650.5,166.6 644.3,171.4 646.5,178.9 640.0,174.5 633.5,178.9 635.7,171.4 629.5,166.6 637.4,166.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<circle cx="323.0" cy="358.0" r="1.2" fill="#bfdbfe"/>
+<circle cx="458.0" cy="322.0" r="2" fill="#bfdbfe"/>
+<circle cx="674.0" cy="113.0" r="2" fill="#bfdbfe"/>
+<circle cx="93.0" cy="320.0" r="1.6" fill="#bfdbfe"/>
+<circle cx="644.0" cy="199.0" r="1.2" fill="#bfdbfe"/>
+<circle cx="561.0" cy="356.0" r="2" fill="#bfdbfe"/>
+<circle cx="567.0" cy="283.0" r="2" fill="#bfdbfe"/>
+<circle cx="234.0" cy="198.0" r="2" fill="#bfdbfe"/>
+<circle cx="235.0" cy="347.0" r="1.6" fill="#bfdbfe"/>
+<circle cx="95.0" cy="112.0" r="1.2" fill="#bfdbfe"/>
+<circle cx="685.0" cy="101.0" r="1.6" fill="#bfdbfe"/>
+<circle cx="111.0" cy="217.0" r="1.6" fill="#bfdbfe"/>
+<circle cx="689.0" cy="278.0" r="2" fill="#bfdbfe"/>
+<circle cx="517.0" cy="282.0" r="2" fill="#bfdbfe"/>
+<circle cx="670.0" cy="307.0" r="1.2" fill="#bfdbfe"/>
+<circle cx="454.0" cy="129.0" r="1.2" fill="#bfdbfe"/>
+<circle cx="219.0" cy="333.0" r="1.2" fill="#bfdbfe"/>
+<circle cx="344.0" cy="303.0" r="2" fill="#bfdbfe"/>
+<circle cx="388.0" cy="295.0" r="2" fill="#bfdbfe"/>
+<circle cx="475.0" cy="373.0" r="1.6" fill="#bfdbfe"/>
+<circle cx="626.0" cy="288.0" r="2" fill="#bfdbfe"/>
+<circle cx="109.0" cy="223.0" r="2" fill="#bfdbfe"/>
+<circle cx="247.0" cy="247.0" r="2" fill="#bfdbfe"/>
+<circle cx="665.0" cy="371.0" r="1.2" fill="#bfdbfe"/>
+<circle cx="296.0" cy="373.0" r="1.6" fill="#bfdbfe"/>
+<text x="415" y="320" font-family="Arial,sans-serif" font-size="13" fill="#bfdbfe" text-anchor="middle">ser ut som en kastrull</text>
+<text x="400" y="415" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">Stjärnorna ser ut att bilda en figur — men ligger egentligen olika långt bort</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Karlavagnen är en stjärnbild som ser ut som en kastrull på himlen</text>
+</svg>

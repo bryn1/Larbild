@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Röntgenstrålning</text>
+<text x="110" y="140" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Röntgenkälla</text>
+<circle cx="110" cy="170" r="12" fill="#2563eb"/>
+<path d="M 135.0 170.0 L 137.0 160.3 L 139.0 153.1 L 141.0 150.0 L 143.0 152.0 L 145.0 158.4 L 147.1 167.8 L 149.1 177.7 L 151.1 185.6 L 153.1 189.7 L 155.1 188.9 L 157.1 183.3 L 159.1 174.5 L 161.1 164.5 L 163.1 155.9 L 165.1 150.8 L 167.1 150.5 L 169.2 155.1 L 171.2 163.4 L 173.2 173.4 L 175.2 182.5 L 177.2 188.5 L 179.2 189.9 L 181.2 186.3 L 183.2 178.7 L 185.2 168.9 L 187.2 159.4 L 189.2 152.5 L 191.2 150.0 L 193.3 152.5 L 195.3 159.4 L 197.3 168.9 L 199.3 178.7 L 201.3 186.3 L 203.3 189.9 L 205.3 188.5 L 207.3 182.5 L 209.3 173.4 L 211.3 163.4 L 213.3 155.1 L 215.4 150.5 L 217.4 150.8 L 219.4 155.9 L 221.4 164.5 L 223.4 174.5 L 225.4 183.3 L 227.4 188.9 L 229.4 189.7 L 231.4 185.6 L 233.4 177.7 L 235.4 167.8 L 237.5 158.4 L 239.5 152.0 L 241.5 150.0 L 243.5 153.1 L 245.5 160.3 L 247.5 170.0 L 249.5 179.7 L 251.5 186.9 L 253.5 190.0 L 255.5 188.0 L 257.5 181.6 L 259.6 172.2 L 261.6 162.3 L 263.6 154.4 L 265.6 150.3 L 267.6 151.1 L 269.6 156.7 L 271.6 165.5 L 273.6 175.5 L 275.6 184.1 L 277.6 189.2 L 279.6 189.5 L 281.7 184.9 L 283.7 176.6 L 285.7 166.6 L 287.7 157.5 L 289.7 151.5 L 291.7 150.1 L 293.7 153.7 L 295.7 161.3 L 297.7 171.1 L 299.7 180.6 L 301.7 187.5 L 303.8 190.0 L 305.8 187.5 L 307.8 180.6 L 309.8 171.1 L 311.8 161.3 L 313.8 153.7 L 315.8 150.1 L 317.8 151.5 L 319.8 157.5 L 321.8 166.6 L 323.8 176.6 L 325.8 184.9 L 327.9 189.5 L 329.9 189.2 L 331.9 184.1 L 333.9 175.5 L 335.9 165.5 L 337.9 156.7 L 339.9 151.1 L 341.9 150.3 L 343.9 154.4 L 345.9 162.3 L 347.9 172.2 L 350.0 181.6 L 352.0 188.0 L 354.0 190.0 L 356.0 186.9 L 358.0 179.7 L 360.0 170.0" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+<line x1="135" y1="132" x2="160" y2="132" stroke="#16a34a" stroke-width="2"/>
+<line x1="135" y1="126" x2="135" y2="138" stroke="#16a34a" stroke-width="2"/>
+<line x1="160" y1="126" x2="160" y2="138" stroke="#16a34a" stroke-width="2"/>
+<text x="205" y="122" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">λ mycket kort</text>
+<rect x="380" y="150" width="120" height="90" rx="40" fill="#fcd5b5" stroke="#c2855a" stroke-width="2" opacity="0.7"/>
+<text x="440" y="145" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Mjuk vävnad</text>
+<rect x="425" y="160" width="20" height="70" rx="6" fill="#e5e7eb" stroke="#1f2937" stroke-width="2"/>
+<text x="440" y="255" font-family="Arial,sans-serif" font-size="10" fill="#1f2937" text-anchor="middle">Ben (stoppar strålning)</text>
+<line x1="360" y1="175" x2="550.0" y2="175.0" stroke="#16a34a" stroke-width="2"/>
+<polygon points="560,175 550.9,179.1 550.9,170.9" fill="#16a34a"/>
+<text x="610" y="175" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">JA: går igenom</text>
+<line x1="360" y1="205" x2="425" y2="205" stroke="#2563eb" stroke-width="2"/>
+<text x="615" y="210" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">NEJ: stoppas av ben</text>
+<rect x="60" y="300" width="90" height="60" fill="#94a3b8" opacity="0.32" stroke="#94a3b8" stroke-width="1"/>
+<text x="105.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Radiovågor</text>
+<rect x="150" y="300" width="70" height="60" fill="#a78bfa" opacity="0.32" stroke="#a78bfa" stroke-width="1"/>
+<text x="185.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Mikrovågor</text>
+<rect x="220" y="300" width="80" height="60" fill="#ef4444" opacity="0.32" stroke="#ef4444" stroke-width="1"/>
+<text x="260.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Infraröd</text>
+<rect x="300.0" y="300" width="10.6" height="60" fill="#dc2626" opacity="0.75"/>
+<rect x="310.0" y="300" width="10.6" height="60" fill="#f97316" opacity="0.75"/>
+<rect x="320.0" y="300" width="10.6" height="60" fill="#eab308" opacity="0.75"/>
+<rect x="330.0" y="300" width="10.6" height="60" fill="#22c55e" opacity="0.75"/>
+<rect x="340.0" y="300" width="10.6" height="60" fill="#3b82f6" opacity="0.75"/>
+<rect x="350.0" y="300" width="10.6" height="60" fill="#6366f1" opacity="0.75"/>
+<rect x="360.0" y="300" width="10.6" height="60" fill="#8b5cf6" opacity="0.75"/>
+<text x="335.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Synligt</text>
+<rect x="370" y="300" width="60" height="60" fill="#7c3aed" opacity="0.32" stroke="#7c3aed" stroke-width="1"/>
+<text x="400.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">UV</text>
+<rect x="430" y="300" width="70" height="60" fill="#2563eb" opacity="0.32" stroke="#2563eb" stroke-width="1"/>
+<text x="465.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Röntgen</text>
+<rect x="500" y="300" width="70" height="60" fill="#1e3a5f" opacity="0.32" stroke="#1e3a5f" stroke-width="1"/>
+<text x="535.0" y="382" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Gamma</text>
+<line x1="558" y1="404" x2="78.0" y2="404.0" stroke="#9ca3af" stroke-width="1.5"/>
+<polygon points="68,404 77.1,399.9 77.1,408.1" fill="#9ca3af"/>
+<text x="400" y="401" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Våglängd ökar</text>
+<line x1="68" y1="426" x2="548.0" y2="426.0" stroke="#9ca3af" stroke-width="1.5"/>
+<polygon points="558,426 548.9,430.1 548.9,421.9" fill="#9ca3af"/>
+<text x="400" y="423" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Frekvens ökar</text>
+<rect x="428" y="298" width="74" height="64" fill="none" stroke="#f59e0b" stroke-width="3"/>
+<line x1="465.0" y1="274" x2="465.0" y2="286.0" stroke="#f59e0b" stroke-width="2.5"/>
+<polygon points="465.0,295 461.3,286.8 468.7,286.8" fill="#f59e0b"/>
+<text x="465.0" y="269" font-family="Arial,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle" font-weight="bold">Här!</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Röntgenstrålning har mycket kort våglängd: går genom mjuk vävnad men stoppas av ben och metall</text>
+</svg>

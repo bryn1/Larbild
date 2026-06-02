@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Tonläge – högt uppe eller långt ner</text>
+<line x1="400.0" y1="420.0" x2="400.0" y2="100.0" stroke="#1f2937" stroke-width="2.5"/>
+<polygon points="400.0,90.0 405.5,100.0 394.5,100.0" fill="#1f2937"/>
+<text x="400" y="80" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">högt tonläge</text>
+<text x="400" y="440" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">lågt tonläge</text>
+<line x1="390.0" y1="110.0" x2="410.0" y2="110.0" stroke="#94a3b8" stroke-width="2"/>
+<line x1="390.0" y1="155.0" x2="410.0" y2="155.0" stroke="#94a3b8" stroke-width="2"/>
+<line x1="390.0" y1="200.0" x2="410.0" y2="200.0" stroke="#94a3b8" stroke-width="2"/>
+<line x1="390.0" y1="245.0" x2="410.0" y2="245.0" stroke="#94a3b8" stroke-width="2"/>
+<line x1="390.0" y1="290.0" x2="410.0" y2="290.0" stroke="#94a3b8" stroke-width="2"/>
+<line x1="390.0" y1="335.0" x2="410.0" y2="335.0" stroke="#94a3b8" stroke-width="2"/>
+<line x1="390.0" y1="380.0" x2="410.0" y2="380.0" stroke="#94a3b8" stroke-width="2"/>
+<ellipse cx="426.0" cy="150.0" rx="7.0" ry="5.0" fill="#94a3b8" stroke="none" stroke-width="0"/>
+<line x1="433.0" y1="150.0" x2="433.0" y2="126.0" stroke="#94a3b8" stroke-width="2"/>
+<ellipse cx="426.0" cy="240.0" rx="7.0" ry="5.0" fill="#94a3b8" stroke="none" stroke-width="0"/>
+<line x1="433.0" y1="240.0" x2="433.0" y2="216.0" stroke="#94a3b8" stroke-width="2"/>
+<ellipse cx="426.0" cy="340.0" rx="7.0" ry="5.0" fill="#94a3b8" stroke="none" stroke-width="0"/>
+<line x1="433.0" y1="340.0" x2="433.0" y2="316.0" stroke="#94a3b8" stroke-width="2"/>
+<circle cx="190.0" cy="150.0" r="26.0" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+<circle cx="182.0" cy="146.0" r="3.0" fill="#1f2937" stroke="none" stroke-width="0"/>
+<circle cx="198.0" cy="146.0" r="3.0" fill="#1f2937" stroke="none" stroke-width="0"/>
+<path d="M 180 158 Q 190 166 200 158" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+<text x="190" y="200" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">Barn</text>
+<text x="190" y="218" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">högre tonläge</text>
+<path d="M 237.3 164.9 A 26 26 0 0 1 237.3 135.1" fill="none" stroke="#2563eb" stroke-width="2"/>
+<path d="M 247.1 171.8 A 38 38 0 0 1 247.1 128.2" fill="none" stroke="#2563eb" stroke-width="2"/>
+<line x1="220.0" y1="150.0" x2="388.0" y2="150.0" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,4"/>
+<circle cx="610.0" cy="340.0" r="30.0" fill="#fcd9b6" stroke="#b45309" stroke-width="2"/>
+<circle cx="601.0" cy="335.0" r="3.0" fill="#1f2937" stroke="none" stroke-width="0"/>
+<circle cx="619.0" cy="335.0" r="3.0" fill="#1f2937" stroke="none" stroke-width="0"/>
+<path d="M 599 350 Q 610 358 621 350" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+<text x="610" y="395" font-family="Arial,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold">Vuxen</text>
+<text x="610" y="413" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">lägre tonläge</text>
+<path d="M 555.4 322.8 A 30 30 0 0 1 555.4 357.2" fill="none" stroke="#1e40af" stroke-width="2"/>
+<path d="M 544.0 314.8 A 44 44 0 0 1 544.0 365.2" fill="none" stroke="#1e40af" stroke-width="2"/>
+<line x1="412.0" y1="340.0" x2="578.0" y2="340.0" stroke="#1e40af" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Var en röst eller ett instrument ligger – barn pratar oftast i ett högre tonläge än vuxna</text>
+</svg>

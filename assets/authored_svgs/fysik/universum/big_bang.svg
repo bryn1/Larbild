@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Big Bang (universum började)</text>
+<circle cx="110" cy="230" r="6" fill="#fde047" opacity="0.85"/>
+<text x="110" y="258" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Het punkt</text>
+<circle cx="270" cy="230" r="26" fill="#f59e0b" opacity="0.85"/>
+<text x="270" y="278" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Snabb</text>
+<text x="270" y="293" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">utvidgning</text>
+<line x1="120.0" y1="230.0" x2="227.0" y2="230.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="238.0,230.0 227.0,234.9 227.0,225.1" fill="#dc2626"/>
+<circle cx="470" cy="230" r="55" fill="#fbbf24" opacity="0.85"/>
+<text x="470" y="307" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Stjärnor +</text>
+<text x="470" y="322" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">galaxer bildas</text>
+<line x1="300.0" y1="230.0" x2="398.0" y2="230.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="409.0,230.0 398.0,234.9 398.0,225.1" fill="#dc2626"/>
+<circle cx="680" cy="230" r="90" fill="#2563eb" opacity="0.85"/>
+<text x="680" y="342" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Universum</text>
+<text x="680" y="357" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">idag</text>
+<line x1="529.0" y1="230.0" x2="573.0" y2="230.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="584.0,230.0 573.0,234.9 573.0,225.1" fill="#dc2626"/>
+<line x1="80.0" y1="350.0" x2="710.0" y2="350.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="720.0,350.0 710.0,354.5 710.0,345.5" fill="#6b7280"/>
+<text x="400" y="372" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Tid →</text>
+<text x="120" y="130" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">för ca 13,8 miljarder år sedan</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Big Bang: hela universum började som en liten het punkt och växer fortfarande utåt</text>
+</svg>

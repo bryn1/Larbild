@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Acentrisk (förskjutet centrum)</text>
+<text x="200" y="90" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">Centrisk</text>
+<circle cx="200" cy="250" r="120" stroke="#16a34a" stroke-width="2.5" fill="none"/>
+<circle cx="200" cy="250" r="4" fill="#16a34a"/>
+<line x1="80" y1="250" x2="320" y2="250" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="200" y1="130" x2="200" y2="370" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="200" y="290" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">centrum i mitten</text>
+<text x="600" y="90" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Acentrisk</text>
+<circle cx="600" cy="250" r="120" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+<line x1="480" y1="250" x2="720" y2="250" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="600" y1="130" x2="600" y2="370" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>
+<circle cx="655" cy="285" r="5" fill="#dc2626"/>
+<line x1="600.0" y1="250.0" x2="643.4" y2="277.2" stroke="#dc2626" stroke-width="2"/>
+<polygon points="651.0,282.0 641.2,280.6 645.5,273.8" fill="#dc2626"/>
+<text x="655" y="310" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">punkten sitter snett</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Acentrisk: punkten eller banan ligger inte i mitten — centrum är förskjutet</text>
+</svg>

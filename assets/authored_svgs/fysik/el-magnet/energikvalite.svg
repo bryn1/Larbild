@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Energikvalité</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Hur användbar energin är</text>
+
+<!-- high quality box -->
+<rect x="80" y="150" width="200" height="120" fill="#dcfce7" stroke="#16a34a" stroke-width="3" rx="6"/>
+<text x="180" y="185" font-family="Arial,sans-serif" font-size="16" fill="#166534" text-anchor="middle" font-weight="bold">Hög kvalité</text>
+<text x="180" y="215" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Elektricitet</text>
+<text x="180" y="245" font-family="Arial,sans-serif" font-size="12" fill="#166534" text-anchor="middle">Lätt att använda</text>
+
+<!-- arrow down quality with steps -->
+<line x1="300" y1="210" x2="500" y2="210" stroke="#6b7280" stroke-width="3"/>
+<polygon points="515,210 499,203 499,217" fill="#6b7280"/>
+<text x="400" y="195" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">används / omvandlas</text>
+<text x="400" y="240" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">kvalitén sjunker</text>
+
+<!-- low quality box -->
+<rect x="520" y="150" width="200" height="120" fill="#fee2e2" stroke="#dc2626" stroke-width="3" rx="6"/>
+<text x="620" y="185" font-family="Arial,sans-serif" font-size="16" fill="#991b1b" text-anchor="middle" font-weight="bold">Låg kvalité</text>
+<text x="620" y="215" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Ljummen värme</text>
+<text x="620" y="245" font-family="Arial,sans-serif" font-size="12" fill="#991b1b" text-anchor="middle">Svår att använda</text>
+
+<!-- example: charger heats phone -->
+<rect x="160" y="320" width="480" height="60" fill="#fff7ed" stroke="#f59e0b" stroke-width="2" rx="6"/>
+<text x="400" y="345" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Laddaren: el (hög) → mobilen blir varm (låg)</text>
+<text x="400" y="368" font-family="Arial,sans-serif" font-size="12" fill="#b45309" text-anchor="middle">Energimängden är lika stor – men kvalitén har sjunkit</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">El har hög energikvalité, ljummen värme har låg – ju mer den används desto lägre</text>
+</svg>

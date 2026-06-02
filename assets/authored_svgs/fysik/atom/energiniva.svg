@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Energinivå (som trappsteg)</text>
+<line x1="200" y1="420" x2="310" y2="420" stroke="#2563eb" stroke-width="4"/>
+<text x="255.0" y="412" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">n=1  (lägst)</text>
+<line x1="310" y1="350" x2="420" y2="350" stroke="#2563eb" stroke-width="4"/>
+<line x1="310" y1="350" x2="310" y2="420" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="365.0" y="342" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">n=2</text>
+<line x1="420" y1="280" x2="530" y2="280" stroke="#2563eb" stroke-width="4"/>
+<line x1="420" y1="280" x2="420" y2="350" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="475.0" y="272" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">n=3</text>
+<line x1="530" y1="210" x2="640" y2="210" stroke="#2563eb" stroke-width="4"/>
+<line x1="530" y1="210" x2="530" y2="280" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="585.0" y="202" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">n=4  (högst)</text>
+<line x1="150.0" y1="420.0" x2="150.0" y2="120.0" stroke="#6b7280" stroke-width="2"/>
+<polygon points="150.0,110.0 146.0,120.0 154.0,120.0" fill="#6b7280"/>
+<text x="135" y="260" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" transform="rotate(-90 135 260)">Energi</text>
+<circle cx="365.0" cy="338" r="9" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="365.0" y="341.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<text x="435.0" y="338" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="start">elektron på en nivå</text>
+<line x1="430" y1="320" x2="470" y2="280" stroke="#dc2626" stroke-width="2"/>
+<line x1="470" y1="320" x2="430" y2="280" stroke="#dc2626" stroke-width="2"/>
+<text x="560" y="300" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">aldrig mellan</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Elektroner kan bara ligga på bestämda energinivåer, aldrig mitt emellan</text>
+</svg>

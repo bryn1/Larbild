@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Pythagoras sats (a² + b² = c²)</text>
+<line x1="200.0" y1="400.0" x2="560.0" y2="400.0" stroke="#2563eb" stroke-width="4"/>
+<line x1="200.0" y1="400.0" x2="200.0" y2="180.0" stroke="#16a34a" stroke-width="4"/>
+<line x1="200.0" y1="180.0" x2="560.0" y2="400.0" stroke="#dc2626" stroke-width="4"/>
+<polyline points="222.0,400.0 222.0,378.0 200.0,378.0" fill="none" stroke="#1f2937" stroke-width="2" stroke-linejoin="round"/>
+<text x="186" y="290.0" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="end">a = 30 m</text>
+<text x="380.0" y="424" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle">b = 40 m</text>
+<text x="398.0" y="280.0" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="start" font-weight="bold">c = ?</text>
+<circle cx="200.0" cy="400.0" r="5.0" fill="#1f2937" stroke="#1f2937" stroke-width="2"/>
+<text x="186" y="422" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">Start</text>
+<circle cx="560.0" cy="400.0" r="5.0" fill="#1f2937" stroke="#1f2937" stroke-width="2"/>
+<circle cx="200.0" cy="180.0" r="5.0" fill="#1f2937" stroke="#1f2937" stroke-width="2"/>
+<text x="200" y="168" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Du svänger</text>
+<rect x="575" y="150" width="210" height="150" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+<text x="680" y="180" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">c² = a² + b²</text>
+<text x="680" y="208" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">c² = 30² + 40²</text>
+<text x="680" y="232" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">c² = 900 + 1600</text>
+<text x="680" y="256" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">c² = 2500</text>
+<text x="680" y="284" font-family="Arial,sans-serif" font-size="18" fill="#1e40af" text-anchor="middle" font-weight="bold">c = 50 m</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Pythagoras sats ger längden på sträckan c när krafter eller vägar går åt olika håll</text>
+</svg>

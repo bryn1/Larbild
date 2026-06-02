@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kemisk energi</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Energi lagrad i bindningarna mellan atomer</text>
+
+<!-- molecule with bonds storing energy -->
+<text x="200" y="130" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Före: lagrad i bindningar</text>
+<circle cx="150" cy="220" r="26" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="150" y="226" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle">C</text>
+<circle cx="250" cy="180" r="22" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<text x="250" y="186" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle">H</text>
+<circle cx="250" cy="260" r="22" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<text x="250" y="266" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle">H</text>
+<line x1="173" y1="207" x2="230" y2="190" stroke="#f59e0b" stroke-width="4"/>
+<line x1="173" y1="233" x2="230" y2="250" stroke="#f59e0b" stroke-width="4"/>
+<text x="205" y="225" font-family="Arial,sans-serif" font-size="11" fill="#b45309" text-anchor="middle">bindning</text>
+<text x="200" y="305" font-family="Arial,sans-serif" font-size="12" fill="#b45309" text-anchor="middle">energin sitter i bindningarna</text>
+
+<!-- reaction arrow -->
+<line x1="320" y1="220" x2="420" y2="220" stroke="#dc2626" stroke-width="4"/>
+<polygon points="435,220 419,213 419,227" fill="#dc2626"/>
+<text x="377" y="205" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">reagerar</text>
+<text x="377" y="245" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(brinner / smälts)</text>
+
+<!-- after: energy released -->
+<text x="600" y="130" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Efter: energin frigörs</text>
+<circle cx="600" cy="220" r="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<line x1="600" y1="160" x2="600" y2="140" stroke="#f59e0b" stroke-width="3"/>
+<line x1="600" y1="280" x2="600" y2="300" stroke="#f59e0b" stroke-width="3"/>
+<line x1="540" y1="220" x2="520" y2="220" stroke="#f59e0b" stroke-width="3"/>
+<line x1="660" y1="220" x2="680" y2="220" stroke="#f59e0b" stroke-width="3"/>
+<line x1="558" y1="178" x2="544" y2="164" stroke="#f59e0b" stroke-width="3"/>
+<line x1="642" y1="178" x2="656" y2="164" stroke="#f59e0b" stroke-width="3"/>
+<line x1="558" y1="262" x2="544" y2="276" stroke="#f59e0b" stroke-width="3"/>
+<line x1="642" y1="262" x2="656" y2="276" stroke="#f59e0b" stroke-width="3"/>
+<text x="600" y="226" font-family="Arial,sans-serif" font-size="13" fill="#b45309" text-anchor="middle" font-weight="bold">energi</text>
+
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Maten du äter ger kemisk energi som musklerna sedan använder</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Frigörs när ämnet reagerar – t.ex. när något brinner eller mat smälts</text>
+</svg>

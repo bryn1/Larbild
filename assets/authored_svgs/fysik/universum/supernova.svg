@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Supernova — en stjärna exploderar</text>
+<text x="200" y="110" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">FÖRE</text>
+<polygon points="280.0,250.0 248.7,261.1 272.1,284.7 239.1,281.2 249.9,312.5 221.7,295.0 217.8,328.0 200.0,300.0 182.2,328.0 178.3,295.0 150.1,312.5 160.9,281.2 127.9,284.7 151.3,261.1 120.0,250.0 151.3,238.9 127.9,215.3 160.9,218.8 150.1,187.5 178.3,205.0 182.2,172.0 200.0,200.0 217.8,172.0 221.7,205.0 249.9,187.5 239.1,218.8 272.1,215.3 248.7,238.9" fill="#fca5a5" stroke="#ef4444" stroke-width="1.5"/>
+<circle cx="200" cy="250" r="58" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+<text x="200" y="254" font-family="Arial,sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">stor</text>
+<text x="200" y="360" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Mycket stor stjärna,</text>
+<text x="200" y="376" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">bränslet tar slut</text>
+<line x1="305.0" y1="250.0" x2="362.0" y2="250.0" stroke="#1f2937" stroke-width="3"/>
+<polygon points="375.0,250.0 362.0,255.8 362.0,244.2" fill="#1f2937"/>
+<text x="580" y="110" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">EFTER</text>
+<circle cx="580" cy="250" r="120" fill="#fde68a" opacity="0.25"/>
+<circle cx="580" cy="250" r="95" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,5"/>
+<line x1="602.0" y1="250.0" x2="677.0" y2="250.0" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="685.0,250.0 677.0,253.6 677.0,246.4" fill="#f97316"/>
+<line x1="600.1" y1="241.1" x2="668.6" y2="210.5" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="675.9,207.3 670.1,213.8 667.1,207.3" fill="#f97316"/>
+<line x1="594.7" y1="233.7" x2="644.9" y2="177.9" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="650.3,172.0 647.6,180.3 642.2,175.5" fill="#f97316"/>
+<line x1="586.8" y1="229.1" x2="610.0" y2="157.7" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="612.4,150.1 613.4,158.9 606.6,156.6" fill="#f97316"/>
+<line x1="577.7" y1="228.1" x2="569.9" y2="153.5" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="569.0,145.6 573.4,153.2 566.3,153.9" fill="#f97316"/>
+<line x1="569.0" y1="230.9" x2="531.5" y2="166.0" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="527.5,159.1 534.6,164.2 528.4,167.8" fill="#f97316"/>
+<line x1="562.2" y1="237.1" x2="501.5" y2="193.0" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="495.1,188.3 503.6,190.1 499.4,195.9" fill="#f97316"/>
+<line x1="558.5" y1="245.4" x2="485.1" y2="229.8" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="477.3,228.2 485.9,226.3 484.4,233.4" fill="#f97316"/>
+<line x1="558.5" y1="254.6" x2="485.1" y2="270.2" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="477.3,271.8 484.4,266.6 485.9,273.7" fill="#f97316"/>
+<line x1="562.2" y1="262.9" x2="501.5" y2="307.0" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="495.1,311.7 499.4,304.1 503.6,309.9" fill="#f97316"/>
+<line x1="569.0" y1="269.1" x2="531.5" y2="334.0" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="527.5,340.9 528.4,332.2 534.6,335.8" fill="#f97316"/>
+<line x1="577.7" y1="271.9" x2="569.9" y2="346.5" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="569.0,354.4 566.3,346.1 573.4,346.8" fill="#f97316"/>
+<line x1="586.8" y1="270.9" x2="610.0" y2="342.3" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="612.4,349.9 606.6,343.4 613.4,341.1" fill="#f97316"/>
+<line x1="594.7" y1="266.3" x2="644.9" y2="322.1" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="650.3,328.0 642.2,324.5 647.6,319.7" fill="#f97316"/>
+<line x1="600.1" y1="258.9" x2="668.6" y2="289.5" stroke="#f97316" stroke-width="1.8"/>
+<polygon points="675.9,292.7 667.1,292.7 670.1,286.2" fill="#f97316"/>
+<polygon points="610.0,250.0 592.0,255.0 601.2,271.2 585.0,262.0 580.0,280.0 575.0,262.0 558.8,271.2 568.0,255.0 550.0,250.0 568.0,245.0 558.8,228.8 575.0,238.0 580.0,220.0 585.0,238.0 601.2,228.8 592.0,245.0" fill="#fef3c7" stroke="#fbbf24" stroke-width="1"/>
+<circle cx="580.0" cy="250.0" r="8" fill="#ffffff"/>
+<text x="580" y="388" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">enorm blixt av ljus,</text>
+<text x="580" y="404" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">material sprids i rymden</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En supernova kan lysa starkare än hela sin galax under några dagar</text>
+</svg>

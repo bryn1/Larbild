@@ -382,6 +382,19 @@ def _validate_authored_concept(begrepp, area, fysik_json):
         concepts = sb.load_fysik_concepts(fysik_json)
     except Exception:  # noqa: BLE001 — if the authority can't load, skip the check
         return None
+    # Exact-begrepp precedence (handles a normalize() collision between two
+    # legitimately-distinct concepts whose only difference is punctuation the
+    # normaliser drops — e.g. fysik.json carries BOTH "Elektromagnetisk strålning"
+    # (area=atom) AND "Elektromagnetisk strålning." (area=universum); they
+    # normalize to the same key, so the first-wins ``by_norm`` index can't tell
+    # them apart). If the manifest's verbatim begrepp matches a concept whose area
+    # is exactly the claimed area, that pairing is authoritative and unambiguous —
+    # accept it before falling back to the (accent-/punctuation-folded) index.
+    for c in concepts:
+        if c.get("begrepp") == begrepp:
+            if c.get("area") == area:
+                return None  # exact begrepp lands in its exact authoritative area
+            # else: keep scanning — another exact-string concept may match the area
     by_norm, _ = sb._build_index(concepts)
     c = by_norm.get(sb.normalize(begrepp))
     if c is None:

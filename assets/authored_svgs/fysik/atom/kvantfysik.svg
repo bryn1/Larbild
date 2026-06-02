@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kvantfysik — reglerna inne i atomen</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Inuti atomen gäller andra regler än i vår vanliga värld</text>
+<text x="220" y="120" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle" font-weight="bold">Vardagen</text>
+<line x1="120" y1="360" x2="320" y2="200" stroke="#6b7280" stroke-width="3"/>
+<circle cx="200" cy="296" r="11" fill="#9ca3af" stroke="#4b5563" stroke-width="1.5"/>
+<text x="220" y="390" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">kan vara var som helst</text>
+<line x1="400" y1="110" x2="400" y2="410" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="6,4"/>
+<text x="580" y="120" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Kvantvärlden</text>
+<line x1="490" y1="360" x2="670" y2="360" stroke="#2563eb" stroke-width="4"/>
+<line x1="490" y1="308" x2="670" y2="308" stroke="#2563eb" stroke-width="4"/>
+<line x1="490" y1="256" x2="670" y2="256" stroke="#2563eb" stroke-width="4"/>
+<line x1="490" y1="204" x2="670" y2="204" stroke="#2563eb" stroke-width="4"/>
+<circle cx="540" cy="308" r="9" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="540" y="311.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<circle cx="620" cy="256" r="9" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="620" y="259.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<text x="580" y="390" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">bara bestämda nivåer</text>
+<line x1="700" y1="250" x2="715" y2="230" stroke="#dc2626" stroke-width="2"/>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Kvantfysiken beskriver atomens inre — energin finns i bestämda steg</text>
+</svg>

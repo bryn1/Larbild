@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Växelström (AC) — byter riktning</text>
+<line x1="150" y1="230" x2="670" y2="230" stroke="#1f2937" stroke-width="2"/>
+<line x1="150" y1="140" x2="150" y2="320" stroke="#1f2937" stroke-width="2"/>
+<text x="670" y="250" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="end">tid</text>
+<text x="140" y="140" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="end">ström</text>
+<polyline points="150,230.0 154,216.6 158,203.6 162,191.6 166,181.1 170,172.4 174,165.8 178,161.6 182,160.0 186,161.0 190,164.5 194,170.5 198,178.7 202,188.9 206,200.5 210,213.2 214,226.6 218,240.1 222,253.2 226,265.5 230,276.4 234,285.6 238,292.7 242,297.5 246,299.8 250,299.5 254,296.6 258,291.2 262,283.5 266,273.8 270,262.5 274,250.0 278,236.8 282,223.2 286,210.0 290,197.5 294,186.2 298,176.5 302,168.8 306,163.4 310,160.5 314,160.2 318,162.5 322,167.3 326,174.4 330,183.6 334,194.5 338,206.8 342,219.9 346,233.4 350,246.8 354,259.5 358,271.1 362,281.3 366,289.5 370,295.5 374,299.0 378,300.0 382,298.4 386,294.2 390,287.6 394,278.9 398,268.4 402,256.4 406,243.4 410,230.0 414,216.6 418,203.6 422,191.6 426,181.1 430,172.4 434,165.8 438,161.6 442,160.0 446,161.0 450,164.5 454,170.5 458,178.7 462,188.9 466,200.5 470,213.2 474,226.6 478,240.1 482,253.2 486,265.5 490,276.4 494,285.6 498,292.7 502,297.5 506,299.8 510,299.5 514,296.6 518,291.2 522,283.5 526,273.8 530,262.5 534,250.0 538,236.8 542,223.2 546,210.0 550,197.5 554,186.2 558,176.5 562,168.8 566,163.4 570,160.5 574,160.2 578,162.5 582,167.3 586,174.4 590,183.6 594,194.5 598,206.8 602,219.9 606,233.4 610,246.8 614,259.5 618,271.1 622,281.3 626,289.5 630,295.5 634,299.0 638,300.0 642,298.4 646,294.2 650,287.6 654,278.9 658,268.4 662,256.4 666,243.4 670,230.0" fill="none" stroke="#dc2626" stroke-width="3"/>
+<text x="215" y="135" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">framåt</text>
+<text x="280" y="335" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">bakåt</text>
+<text x="400" y="360" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Strömmen byter riktning fram och tillbaka många gånger per sekund</text>
+<text x="400" y="388" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Sverige: 50 gånger i sekunden (50 Hz) från vägguttaget</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Växelström byter riktning, till skillnad från likström</text>
+</svg>

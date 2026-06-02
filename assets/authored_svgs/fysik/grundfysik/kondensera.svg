@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kondensera — gas blir vätska</text>
+<!-- cold glass in the middle -->
+<rect x="350" y="120" width="100" height="260" fill="#dbeafe" stroke="#1e40af" stroke-width="3" rx="6"/>
+<rect x="356" y="160" width="88" height="214" fill="#bfdbfe"/>
+<text x="400" y="148" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Kallt glas</text>
+<!-- snowflake/cold marker -->
+<text x="400" y="270" font-family="Arial,sans-serif" font-size="26" fill="#2563eb" text-anchor="middle">❄</text>
+<!-- water vapour (gas) on the left, wavy/loose dots -->
+<text x="160" y="110" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle" font-weight="bold">Vattenånga (gas)</text>
+<circle cx="120" cy="160" r="5" fill="#9ca3af"/><circle cx="170" cy="150" r="5" fill="#9ca3af"/><circle cx="210" cy="175" r="5" fill="#9ca3af"/>
+<circle cx="140" cy="210" r="5" fill="#9ca3af"/><circle cx="190" cy="225" r="5" fill="#9ca3af"/><circle cx="240" cy="200" r="5" fill="#9ca3af"/>
+<circle cx="130" cy="265" r="5" fill="#9ca3af"/><circle cx="185" cy="280" r="5" fill="#9ca3af"/><circle cx="230" cy="255" r="5" fill="#9ca3af"/>
+<circle cx="150" cy="320" r="5" fill="#9ca3af"/><circle cx="205" cy="330" r="5" fill="#9ca3af"/><circle cx="245" cy="310" r="5" fill="#9ca3af"/>
+<!-- arrows: gas hits cold surface -->
+<line x1="255" y1="200" x2="340" y2="210" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="350,211 333,217 335,205" fill="#16a34a"/>
+<line x1="255" y1="300" x2="340" y2="290" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="350,289 333,295 335,283" fill="#16a34a"/>
+<text x="280" y="245" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">kyls ner</text>
+<!-- droplets forming on glass surface (right side) -->
+<text x="630" y="110" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Droppar (vätska)</text>
+<path d="M 455 165 q -6 -10 0 -18 q 6 8 0 18 Z" fill="#2563eb" transform="rotate(90 455 156)"/>
+<ellipse cx="463" cy="175" rx="9" ry="11" fill="#2563eb"/>
+<ellipse cx="460" cy="215" rx="11" ry="14" fill="#2563eb"/>
+<ellipse cx="466" cy="255" rx="8" ry="10" fill="#2563eb"/>
+<ellipse cx="461" cy="295" rx="12" ry="15" fill="#2563eb"/>
+<ellipse cx="467" cy="335" rx="9" ry="11" fill="#2563eb"/>
+<!-- a drop running down -->
+<line x1="461" y1="310" x2="461" y2="375" stroke="#2563eb" stroke-width="3"/>
+<ellipse cx="461" cy="378" rx="6" ry="8" fill="#2563eb"/>
+<line x1="490" y1="220" x2="560" y2="200" stroke="#2563eb" stroke-width="2"/>
+<polygon points="490,220 502,216 502,225" fill="#2563eb"/>
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">När gasen kyls ner mot den kalla ytan bildas små vattendroppar</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Kondensation: gas → vätska, motsatsen till avdunstning</text>
+</svg>

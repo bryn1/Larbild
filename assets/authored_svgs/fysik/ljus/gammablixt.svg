@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Gammablixt (puls av gammastrålning)</text>
+<!-- Dying star on the left -->
+<circle cx="180" cy="250" r="55" fill="#fbbf24" stroke="#dc2626" stroke-width="3"/>
+<circle cx="180" cy="250" r="30" fill="#fef08a"/>
+<!-- spikes -->
+<line x1="180" y1="185" x2="180" y2="155" stroke="#dc2626" stroke-width="3"/>
+<line x1="180" y1="315" x2="180" y2="345" stroke="#dc2626" stroke-width="3"/>
+<line x1="125" y1="250" x2="95" y2="250" stroke="#dc2626" stroke-width="3"/>
+<line x1="140" y1="210" x2="118" y2="188" stroke="#dc2626" stroke-width="3"/>
+<line x1="140" y1="290" x2="118" y2="312" stroke="#dc2626" stroke-width="3"/>
+<text x="180" y="375" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Döende stjärna</text>
+<!-- Twin gamma jets shooting out (narrow beams) -->
+<polygon points="232,235 232,265 560,210 560,150" fill="#7c3aed" opacity="0.35"/>
+<polygon points="232,235 232,265 560,290 560,350" fill="#7c3aed" opacity="0.35"/>
+<!-- Gamma rays as zig-zag arrows along upper jet -->
+<polyline points="240,225 280,212 320,222 360,206 400,216 440,200 480,210"
+          fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+<polygon points="490,208 478,204 482,213" fill="#7c3aed"/>
+<text x="370" y="170" font-family="Arial,sans-serif" font-size="13" fill="#7c3aed" text-anchor="middle" font-weight="bold">Gammastrålning</text>
+<!-- Satellite on the right detecting it -->
+<rect x="610" y="220" width="50" height="60" fill="#94a3b8" stroke="#475569" stroke-width="2" rx="3"/>
+<!-- solar panels -->
+<rect x="565" y="235" width="40" height="30" fill="#1e40af" stroke="#1e3a8a" stroke-width="1.5"/>
+<rect x="665" y="235" width="40" height="30" fill="#1e40af" stroke="#1e3a8a" stroke-width="1.5"/>
+<line x1="635" y1="220" x2="635" y2="200" stroke="#475569" stroke-width="2"/>
+<circle cx="635" cy="196" r="5" fill="#dc2626"/>
+<text x="635" y="310" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Satellit</text>
+<text x="635" y="326" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">upptäcker blixten</text>
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">En kort, kraftig puls av gammastrålning skickas ut långt borta i rymden</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Satelliter kan upptäcka en gammablixt på bara några sekunder</text>
+</svg>

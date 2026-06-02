@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Candela (cd) — ljusstyrka i en riktning</text>
+<!-- Light source on the left -->
+<circle cx="170" cy="250" r="26" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="170" y="255" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle" font-weight="bold">Lampa</text>
+<!-- A cone of light to the right (the measured direction) -->
+<polygon points="196,250 620,160 620,340" fill="#fde68a" stroke="#f59e0b" stroke-width="2" opacity="0.6"/>
+<!-- central direction arrow -->
+<line x1="200" y1="250" x2="615" y2="250" stroke="#dc2626" stroke-width="3"/>
+<polygon points="625,250 612,244 612,256" fill="#dc2626"/>
+<text x="420" y="240" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">en bestämd riktning</text>
+<!-- Angle wedge symbol at source -->
+<path d="M 230 232 A 60 60 0 0 0 230 268" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="252" y="255" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">vinkel</text>
+<!-- measurement at far end -->
+<text x="660" y="240" font-family="Arial,sans-serif" font-size="16" fill="#16a34a" text-anchor="middle" font-weight="bold">cd</text>
+<text x="660" y="262" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">candela</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Candela mäter hur starkt lampan lyser åt ett visst håll</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En cykellampa anges i candela — hur skarpt den lyser framåt på vägen</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Unit (u) — atomers massenhet</text>
+<text x="400" y="95" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">1 u = massan av ungefär 1 proton</text>
+<rect x="120" y="180" width="250" height="150" fill="white" stroke="#2563eb" stroke-width="2" rx="6"/>
+<text x="245" y="208" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">En atom väger i unit</text>
+<text x="245" y="238" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">väte:  1 u</text>
+<text x="245" y="262" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">kol:   12 u</text>
+<text x="245" y="286" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">syre:  16 u</text>
+<text x="245" y="312" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">järn:  56 u</text>
+<rect x="430" y="180" width="250" height="150" fill="white" stroke="#16a34a" stroke-width="2" rx="6"/>
+<text x="555" y="208" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="bold">Mycket mindre än ett gram</text>
+<text x="555" y="245" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">1 u ≈ 0,000 000 000</text>
+<text x="555" y="268" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">000 000 000 0017 g</text>
+<text x="555" y="305" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(en pytteliten massa)</text>
+<text x="400" y="370" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Kemister väger atomer i unit, precis som mjöl vägs i gram</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Unit (u) är en massenhet för atomer, mycket mindre än ett gram</text>
+</svg>

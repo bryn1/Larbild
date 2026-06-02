@@ -65,6 +65,1438 @@
     "rorelse/acceleration": {
       "begrepp": "Acceleration",
       "title": "Acceleration (a = Δv / Δt)"
+    },
+    "atom/aktivitet": {
+      "begrepp": "Aktivitet",
+      "title": "Aktivitet (sönderfall per sekund)"
+    },
+    "atom/antioxidanter": {
+      "begrepp": "Antioxidanter",
+      "title": "Antioxidanter skyddar cellerna"
+    },
+    "atom/atomnummer": {
+      "begrepp": "Atomnummer",
+      "title": "Atomnummer = antal protoner"
+    },
+    "atom/bakgrundsstralning": {
+      "begrepp": "Bakgrundsstrålning",
+      "title": "Bakgrundsstrålning runt omkring oss"
+    },
+    "atom/betapartiklar": {
+      "begrepp": "Betapartiklar",
+      "title": "Betapartiklar (snabba elektroner)"
+    },
+    "atom/de_fyra_elementen": {
+      "begrepp": "De fyra elementen",
+      "title": "De fyra elementen (forntida idé)"
+    },
+    "atom/elektromagnetisk_stralning": {
+      "begrepp": "Elektromagnetisk strålning",
+      "title": "Elektromagnetisk strålning"
+    },
+    "atom/elektronhopp": {
+      "begrepp": "Elektronhopp",
+      "title": "Elektronhopp ger ljus"
+    },
+    "atom/energiniva": {
+      "begrepp": "Energinivå",
+      "title": "Energinivå (som trappsteg)"
+    },
+    "atom/excitera": {
+      "begrepp": "Excitera",
+      "title": "Excitera en atom"
+    },
+    "atom/formelmassa": {
+      "begrepp": "Formelmassa",
+      "title": "Formelmassa (H₂O = 18 u)"
+    },
+    "atom/fria_radikaler": {
+      "begrepp": "Fria radikaler",
+      "title": "Fria radikaler (saknar en elektron)"
+    },
+    "atom/higgs_partikel": {
+      "begrepp": "Higgs partikel",
+      "title": "Higgs partikel ger massa"
+    },
+    "atom/hypotes": {
+      "begrepp": "Hypotes",
+      "title": "Hypotes i vetenskaplig metod"
+    },
+    "atom/joniserande_stralning": {
+      "begrepp": "Joniserande strålning",
+      "title": "Joniserande strålning slår loss elektroner"
+    },
+    "atom/jonladdning": {
+      "begrepp": "Jonladdning",
+      "title": "Jonladdning (plus eller minus)"
+    },
+    "atom/kedjereaktion": {
+      "begrepp": "Kedjereaktion",
+      "title": "Kedjereaktion (kärnklyvning)"
+    },
+    "atom/kemisk_reaktion": {
+      "begrepp": "Kemisk reaktion",
+      "title": "Kemisk reaktion (nya ämnen bildas)"
+    },
+    "atom/kemiskt_tecken": {
+      "begrepp": "Kemiskt tecken",
+      "title": "Kemiskt tecken (kort för grundämne)"
+    },
+    "atom/kol_14_metoden": {
+      "begrepp": "Kol-14-metoden",
+      "title": "Kol-14-metoden (åldersbestämning)"
+    },
+    "atom/kosmisk_stralning": {
+      "begrepp": "Kosmisk strålning",
+      "title": "Kosmisk strålning från rymden"
+    },
+    "atom/kvantfysik": {
+      "begrepp": "Kvantfysik",
+      "title": "Kvantfysik — reglerna inne i atomen"
+    },
+    "atom/karnklyvning": {
+      "begrepp": "Kärnklyvning",
+      "title": "Kärnklyvning"
+    },
+    "atom/leukemi": {
+      "begrepp": "Leukemi",
+      "title": "Leukemi"
+    },
+    "atom/linjespektrum": {
+      "begrepp": "Linjespektrum",
+      "title": "Linjespektrum"
+    },
+    "atom/masstal": {
+      "begrepp": "Masstal",
+      "title": "Masstal (A = Z + N)"
+    },
+    "atom/nervsystem": {
+      "begrepp": "Nervsystem",
+      "title": "Nervsystem"
+    },
+    "atom/organisk": {
+      "begrepp": "Organisk",
+      "title": "Organisk"
+    },
+    "atom/partikelstralning": {
+      "begrepp": "Partikelstrålning",
+      "title": "Partikelstrålning"
+    },
+    "atom/skiktrontgen": {
+      "begrepp": "Skiktröntgen",
+      "title": "Skiktröntgen"
+    },
+    "atom/smutsig_bomb": {
+      "begrepp": "Smutsig bomb",
+      "title": "Smutsig bomb"
+    },
+    "atom/spektrallinje": {
+      "begrepp": "Spektrallinje",
+      "title": "Spektrallinje"
+    },
+    "atom/spektroskop": {
+      "begrepp": "Spektroskop",
+      "title": "Spektroskop"
+    },
+    "atom/standardmodellen": {
+      "begrepp": "Standardmodellen.",
+      "title": "Standardmodellen"
+    },
+    "atom/straldos": {
+      "begrepp": "Stråldos",
+      "title": "Stråldos"
+    },
+    "atom/sonderfallserie": {
+      "begrepp": "Sönderfallserie",
+      "title": "Sönderfallserie"
+    },
+    "atom/ultraviolett_stralning": {
+      "begrepp": "Ultraviolett strålning",
+      "title": "Ultraviolett strålning"
+    },
+    "atom/unit": {
+      "begrepp": "Unit",
+      "title": "Unit (u)"
+    },
+    "atom/valenselektroner": {
+      "begrepp": "Valenselektroner",
+      "title": "Valenselektroner"
+    },
+    "ljus/normal": {
+      "begrepp": "Normal",
+      "title": "Normalen"
+    },
+    "ljus/narsynthet": {
+      "begrepp": "Närsynthet",
+      "title": "Närsynthet (myopi)"
+    },
+    "ljus/nathinna": {
+      "begrepp": "Näthinna",
+      "title": "Näthinnan (retina)"
+    },
+    "ljus/optisk_tathet": {
+      "begrepp": "Optisk täthet",
+      "title": "Optisk täthet"
+    },
+    "ljus/parallell": {
+      "begrepp": "Parallell",
+      "title": "Parallella strålar"
+    },
+    "ljus/partikelrorelse": {
+      "begrepp": "Partikelrörelse",
+      "title": "Partikelrörelse"
+    },
+    "ljus/polaroidglas": {
+      "begrepp": "Polaroidglas",
+      "title": "Polaroidglas"
+    },
+    "ljus/positiv_lins": {
+      "begrepp": "Positiv lins",
+      "title": "Positiv lins (samlingslins)"
+    },
+    "ljus/pupill": {
+      "begrepp": "Pupill",
+      "title": "Pupillen"
+    },
+    "ljus/radiovagor": {
+      "begrepp": "Radiovågor",
+      "title": "Radiovågor"
+    },
+    "ljus/reflektionsvinkel": {
+      "begrepp": "Reflektionsvinkel",
+      "title": "Reflektionsvinkel"
+    },
+    "ljus/regnbagshinna": {
+      "begrepp": "Regnbågshinna",
+      "title": "Regnbågshinnan (iris)"
+    },
+    "ljus/rontgenstralning": {
+      "begrepp": "Röntgenstrålning",
+      "title": "Röntgenstrålning"
+    },
+    "ljus/stealth": {
+      "begrepp": "Stealth",
+      "title": "Stealth (radarsmygteknik)"
+    },
+    "ljus/synnerv": {
+      "begrepp": "Synnerv",
+      "title": "Synnerven"
+    },
+    "ljus/tappar_och_stavar": {
+      "begrepp": "Tappar och stavar",
+      "title": "Tappar och stavar"
+    },
+    "ljus/uv_ljus": {
+      "begrepp": "UV-ljus",
+      "title": "UV-ljus (ultraviolett)"
+    },
+    "ljus/oversynthet": {
+      "begrepp": "Översynthet",
+      "title": "Översynthet (hyperopi)"
+    },
+    "rorelse/angreppspunkt": {
+      "begrepp": "Angreppspunkt",
+      "title": "Angreppspunkt"
+    },
+    "rorelse/block": {
+      "begrepp": "Block",
+      "title": "Block (talja)"
+    },
+    "rorelse/centrifugalkraft": {
+      "begrepp": "Centrifugalkraft",
+      "title": "Centrifugalkraft"
+    },
+    "rorelse/centripetalkraft": {
+      "begrepp": "Centripetalkraft",
+      "title": "Centripetalkraft"
+    },
+    "rorelse/fallhastighet": {
+      "begrepp": "Fallhastighet",
+      "title": "Fallhastighet"
+    },
+    "rorelse/fart": {
+      "begrepp": "Fart",
+      "title": "Fart (v = s / t)"
+    },
+    "rorelse/fixera": {
+      "begrepp": "Fixera",
+      "title": "Fixera (låsa fast)"
+    },
+    "rorelse/fysikalisk_effekt": {
+      "begrepp": "Fysikalisk effekt",
+      "title": "Fysikalisk effekt (P = W / t)"
+    },
+    "rorelse/gravitionskraft": {
+      "begrepp": "Gravitionskraft",
+      "title": "Gravitationskraft"
+    },
+    "rorelse/granshastighet": {
+      "begrepp": "Gränshastighet",
+      "title": "Gränshastighet"
+    },
+    "rorelse/havarm": {
+      "begrepp": "Hävarm",
+      "title": "Hävarm"
+    },
+    "rorelse/kil": {
+      "begrepp": "Kil",
+      "title": "Kil"
+    },
+    "rorelse/lodlinje": {
+      "begrepp": "Lodlinje",
+      "title": "Lodlinje"
+    },
+    "rorelse/luftmotstand": {
+      "begrepp": "Luftmotstånd",
+      "title": "Luftmotstånd"
+    },
+    "rorelse/medelhastighet": {
+      "begrepp": "Medelhastighet",
+      "title": "Medelhastighet"
+    },
+    "rorelse/mekanikens_gyllene_regel": {
+      "begrepp": "Mekanikens gyllene regel",
+      "title": "Mekanikens gyllene regel"
+    },
+    "rorelse/motriktad_kraft": {
+      "begrepp": "Motriktad kraft",
+      "title": "Motriktad kraft"
+    },
+    "rorelse/pythagoras_sats": {
+      "begrepp": "Pythagoras sats",
+      "title": "Pythagoras sats (a² + b² = c²)"
+    },
+    "rorelse/relativitetsteorin": {
+      "begrepp": "Relativitetsteorin",
+      "title": "Relativitetsteorin"
+    },
+    "rorelse/resultant": {
+      "begrepp": "Resultant",
+      "title": "Resultant (summan av krafter)"
+    },
+    "rorelse/retardation": {
+      "begrepp": "Retardation",
+      "title": "Retardation (inbromsning)"
+    },
+    "rorelse/spett": {
+      "begrepp": "Spett",
+      "title": "Spett (hävstång)"
+    },
+    "rorelse/stodyta": {
+      "begrepp": "Stödyta",
+      "title": "Stödyta"
+    },
+    "rorelse/talja": {
+      "begrepp": "Talja",
+      "title": "Talja"
+    },
+    "rorelse/tangent": {
+      "begrepp": "Tangent",
+      "title": "Tangent"
+    },
+    "rorelse/troghet": {
+      "begrepp": "Tröghet",
+      "title": "Tröghet"
+    },
+    "rorelse/tyngdacceleration": {
+      "begrepp": "Tyngdacceleration",
+      "title": "Tyngdacceleration"
+    },
+    "rorelse/vridningspunkt": {
+      "begrepp": "Vridningspunkt",
+      "title": "Vridningspunkt"
+    },
+    "rorelse/watt": {
+      "begrepp": "Watt",
+      "title": "Watt — enhet för effekt"
+    },
+    "universum/acentrisk": {
+      "begrepp": "Acentrisk",
+      "title": "Acentrisk (förskjutet centrum)"
+    },
+    "universum/asteroid": {
+      "begrepp": "Asteroid",
+      "title": "Asteroid (stenklump runt solen)"
+    },
+    "universum/astrologi": {
+      "begrepp": "Astrologi",
+      "title": "Astrologi (tro, inte vetenskap)"
+    },
+    "universum/astronomi": {
+      "begrepp": "Astronomi",
+      "title": "Astronomi (vetenskapen om rymden)"
+    },
+    "universum/big_bang": {
+      "begrepp": "Big Bang",
+      "title": "Big Bang (universum började)"
+    },
+    "universum/cepheid": {
+      "begrepp": "Cepheid",
+      "title": "Cepheid (pulserande stjärna)"
+    },
+    "universum/dvargplanet": {
+      "begrepp": "Dvärgplanet",
+      "title": "Dvärgplanet (för liten för planet)"
+    },
+    "universum/elektromagnetisk_stralning": {
+      "begrepp": "Elektromagnetisk strålning.",
+      "title": "Elektromagnetisk strålning"
+    },
+    "universum/ellips": {
+      "begrepp": "Ellips",
+      "title": "Ellips (oval bana)"
+    },
+    "universum/epicykel": {
+      "begrepp": "Epicykel",
+      "title": "Epicykel (cirkel på cirkel)"
+    },
+    "universum/exoplanet": {
+      "begrepp": "Exoplanet",
+      "title": "Exoplanet (planet vid annan stjärna)"
+    },
+    "universum/extremofil": {
+      "begrepp": "Extremofil",
+      "title": "Extremofil (liv på extrema platser)"
+    },
+    "universum/fixstjarna": {
+      "begrepp": "Fixstjärna",
+      "title": "Fixstjärna (verkar stå still)"
+    },
+    "universum/galaktiskt_ar": {
+      "begrepp": "Galaktiskt år",
+      "title": "Galaktiskt år (varv runt galaxen)"
+    },
+    "universum/galax": {
+      "begrepp": "Galax",
+      "title": "Galax (Vintergatan)"
+    },
+    "universum/gravition": {
+      "begrepp": "Gravition",
+      "title": "Graviton (en hypotes)"
+    },
+    "universum/himlakropp": {
+      "begrepp": "Himlakropp",
+      "title": "Himlakropp (föremål i rymden)"
+    },
+    "universum/interstellar": {
+      "begrepp": "Interstellär",
+      "title": "Interstellär rymd (mellan stjärnorna)"
+    },
+    "universum/jordaxel": {
+      "begrepp": "Jordaxel",
+      "title": "Jordaxeln (lutar — ger årstider)"
+    },
+    "universum/klassificering": {
+      "begrepp": "Klassificering",
+      "title": "Klassificering (sortera i grupper)"
+    },
+    "universum/komet": {
+      "begrepp": "Komet",
+      "title": "Komet (isklump med svans)"
+    },
+    "universum/marslandare": {
+      "begrepp": "Marslandare",
+      "title": "Marslandare (robot på Mars)"
+    },
+    "universum/megalitgrav": {
+      "begrepp": "Megalitgrav",
+      "title": "Megalitgrav (dös av stora stenblock)"
+    },
+    "universum/meteroid": {
+      "begrepp": "Meteroid",
+      "title": "Meteoroid — storlek i rymden"
+    },
+    "universum/mikrorganism": {
+      "begrepp": "Mikrorganism",
+      "title": "Mikroorganism (ses bara i mikroskop)"
+    },
+    "universum/mane": {
+      "begrepp": "Måne",
+      "title": "Måne — kretsar runt en planet"
+    },
+    "universum/mork_energi": {
+      "begrepp": "Mörk energi",
+      "title": "Mörk energi — universum växer allt fortare"
+    },
+    "universum/mork_materia": {
+      "begrepp": "Mörk materia",
+      "title": "Mörk materia — osynlig massa drar i galaxen"
+    },
+    "universum/nebulosa": {
+      "begrepp": "Nebulosa",
+      "title": "Nebulosa — där stjärnor föds"
+    },
+    "universum/neutronstjarna": {
+      "begrepp": "Neutronstjärna",
+      "title": "Neutronstjärna — otroligt tät"
+    },
+    "universum/norrsken": {
+      "begrepp": "Norrsken",
+      "title": "Norrsken — solpartiklar krockar med luften"
+    },
+    "universum/omloppsbana": {
+      "begrepp": "Omloppsbana",
+      "title": "Omloppsbana — vägen runt något i rymden"
+    },
+    "universum/omloppstid": {
+      "begrepp": "Omloppstid",
+      "title": "Omloppstid — tiden för ett helt varv"
+    },
+    "universum/optiskt_teleskop": {
+      "begrepp": "Optiskt teleskop",
+      "title": "Optiskt teleskop — samlar synligt ljus"
+    },
+    "universum/oxidera": {
+      "begrepp": "Oxidera",
+      "title": "Oxidera — ett ämne reagerar med syre"
+    },
+    "universum/polstjarna": {
+      "begrepp": "Polstjärna",
+      "title": "Polstjärnan — visar vägen mot norr"
+    },
+    "universum/protuberans": {
+      "begrepp": "Protuberans",
+      "title": "Protuberans — båge av het gas på solen"
+    },
+    "universum/radioteleskop": {
+      "begrepp": "Radioteleskop",
+      "title": "Radioteleskop — fångar radiovågor från rymden"
+    },
+    "universum/retrograd": {
+      "begrepp": "Retrograd",
+      "title": "Retrograd rörelse — verkar gå baklänges"
+    },
+    "universum/rymdsond": {
+      "begrepp": "Rymdsond",
+      "title": "Rymdsond — obemannad farkost i rymden"
+    },
+    "universum/rymdstation": {
+      "begrepp": "Rymdstation",
+      "title": "Rymdstation — astronauter bor i omloppsbana"
+    },
+    "universum/rymdteleskop": {
+      "begrepp": "Rymdteleskop",
+      "title": "Rymdteleskop — fotar ovanför molnen"
+    },
+    "universum/rod_dvarg": {
+      "begrepp": "Röd dvärg",
+      "title": "Röd dvärg — liten, sval och långlivad"
+    },
+    "universum/rod_jatte": {
+      "begrepp": "Röd jätte",
+      "title": "Röd jätte — gammal stjärna som svällt upp"
+    },
+    "universum/rodljusforskjutning": {
+      "begrepp": "Rödljusförskjutning",
+      "title": "Rödljusförskjutning (rödförskjutning)"
+    },
+    "universum/satellit": {
+      "begrepp": "Satellit",
+      "title": "Satellit i omloppsbana"
+    },
+    "universum/sfar": {
+      "begrepp": "Sfär",
+      "title": "Sfär"
+    },
+    "universum/singularitet": {
+      "begrepp": "Singularitet",
+      "title": "Singularitet"
+    },
+    "universum/solstorm": {
+      "begrepp": "Solstorm",
+      "title": "Solstorm"
+    },
+    "universum/solvind": {
+      "begrepp": "Solvind",
+      "title": "Solvind"
+    },
+    "universum/sommarsolstand": {
+      "begrepp": "Sommarsolstånd",
+      "title": "Sommarsolstånd"
+    },
+    "universum/stjarnbild": {
+      "begrepp": "Stjärnbild",
+      "title": "Stjärnbild (Karlavagnen)"
+    },
+    "universum/supernova": {
+      "begrepp": "Supernova",
+      "title": "Supernova"
+    },
+    "universum/svart_dvarg": {
+      "begrepp": "Svart dvärg",
+      "title": "Svart dvärg"
+    },
+    "universum/svart_hal": {
+      "begrepp": "Svart hål",
+      "title": "Svart hål"
+    },
+    "universum/the_big_bounce": {
+      "begrepp": "The Big Bounce",
+      "title": "The Big Bounce"
+    },
+    "universum/the_big_crunch": {
+      "begrepp": "The Big Crunch",
+      "title": "The Big Crunch"
+    },
+    "universum/the_big_freeze_chill": {
+      "begrepp": "The Big Freeze (chill)",
+      "title": "The Big Freeze (chill)"
+    },
+    "universum/the_big_rip": {
+      "begrepp": "The Big Rip",
+      "title": "The Big Rip"
+    },
+    "universum/vintersolstand": {
+      "begrepp": "Vintersolstånd",
+      "title": "Vintersolstånd"
+    },
+    "universum/vit_dvarg": {
+      "begrepp": "Vit dvärg",
+      "title": "Vit dvärg"
+    },
+    "universum/zodiak": {
+      "begrepp": "Zodiak",
+      "title": "Zodiaken"
+    },
+    "varme-klimat/beaufort": {
+      "begrepp": "Beaufort",
+      "title": "Beaufortskalan – vindstyrka"
+    },
+    "varme-klimat/bergvarme": {
+      "begrepp": "Bergvärme",
+      "title": "Bergvärme"
+    },
+    "varme-klimat/biobransle": {
+      "begrepp": "Biobränsle",
+      "title": "Biobränsle – förnybart kretslopp"
+    },
+    "varme-klimat/biologisk_mangfald": {
+      "begrepp": "Biologisk mångfald",
+      "title": "Biologisk mångfald"
+    },
+    "varme-klimat/ellevererator": {
+      "begrepp": "Ellevereratör",
+      "title": "Elleverantör"
+    },
+    "varme-klimat/elproducent": {
+      "begrepp": "Elproducent",
+      "title": "Elproducent"
+    },
+    "varme-klimat/energibarare": {
+      "begrepp": "Energibärare",
+      "title": "Energibärare"
+    },
+    "varme-klimat/flodande_energikalla": {
+      "begrepp": "Flödande energikälla",
+      "title": "Flödande energikälla"
+    },
+    "varme-klimat/fokusera": {
+      "begrepp": "Fokusera",
+      "title": "Fokusera ljus med en lins"
+    },
+    "varme-klimat/friktionsvarme": {
+      "begrepp": "Friktionsvärme",
+      "title": "Friktionsvärme"
+    },
+    "varme-klimat/front_vaderterm": {
+      "begrepp": "Front (väderterm)",
+      "title": "Front (väderterm)"
+    },
+    "varme-klimat/forbrukning": {
+      "begrepp": "Förbrukning",
+      "title": "Förbrukning av energi"
+    },
+    "varme-klimat/fornybar_energikalla": {
+      "begrepp": "Förnybar energikälla",
+      "title": "Förnybar energikälla"
+    },
+    "varme-klimat/gejser": {
+      "begrepp": "Gejser",
+      "title": "Gejser"
+    },
+    "varme-klimat/geotermisk": {
+      "begrepp": "Geotermisk",
+      "title": "Geotermisk värme – jordens inre"
+    },
+    "varme-klimat/hogspanningsel": {
+      "begrepp": "Högspänningsel",
+      "title": "Högspänningsel"
+    },
+    "varme-klimat/icke_fornybara_energikalla": {
+      "begrepp": "Icke förnybara energikälla",
+      "title": "Icke förnybar energikälla"
+    },
+    "varme-klimat/industralisering": {
+      "begrepp": "Industralisering",
+      "title": "Industrialisering"
+    },
+    "varme-klimat/kapacitet": {
+      "begrepp": "Kapacitet",
+      "title": "Kapacitet"
+    },
+    "varme-klimat/kisel": {
+      "begrepp": "Kisel",
+      "title": "Kisel (Si)"
+    },
+    "varme-klimat/klimat": {
+      "begrepp": "Klimat",
+      "title": "Klimat = vädret över många år"
+    },
+    "varme-klimat/klyvningsprodukter": {
+      "begrepp": "Klyvningsprodukter",
+      "title": "Klyvningsprodukter"
+    },
+    "varme-klimat/koldioxidneutral": {
+      "begrepp": "Koldioxidneutral",
+      "title": "Koldioxidneutral (CO₂ ut = CO₂ in)"
+    },
+    "varme-klimat/kontinentalplatta": {
+      "begrepp": "Kontinentalplatta",
+      "title": "Kontinentalplatta"
+    },
+    "varme-klimat/kraftverk": {
+      "begrepp": "Kraftverk",
+      "title": "Kraftverk"
+    },
+    "varme-klimat/lagrad_energikalla": {
+      "begrepp": "Lagrad energikälla",
+      "title": "Lagrad energikälla"
+    },
+    "varme-klimat/lokalnat": {
+      "begrepp": "Lokalnät",
+      "title": "Lokalnät"
+    },
+    "varme-klimat/luftfuktighet": {
+      "begrepp": "Luftfuktighet",
+      "title": "Luftfuktighet"
+    },
+    "varme-klimat/luftmassa": {
+      "begrepp": "Luftmassa",
+      "title": "Luftmassa"
+    },
+    "varme-klimat/lagtryck": {
+      "begrepp": "Lågtryck",
+      "title": "Lågtryck"
+    },
+    "varme-klimat/meterolog": {
+      "begrepp": "Meterolog",
+      "title": "Meteorolog"
+    },
+    "varme-klimat/meterologi": {
+      "begrepp": "Meterologi",
+      "title": "Meteorologi — läran om vädret"
+    },
+    "varme-klimat/moderator": {
+      "begrepp": "Moderator",
+      "title": "Moderator (i en kärnreaktor)"
+    },
+    "varme-klimat/mattad": {
+      "begrepp": "Mättad",
+      "title": "Mättad luft"
+    },
+    "varme-klimat/nederbord": {
+      "begrepp": "Nederbörd",
+      "title": "Nederbörd"
+    },
+    "varme-klimat/parallellkoppla": {
+      "begrepp": "Parallellkoppla",
+      "title": "Parallellkoppling"
+    },
+    "varme-klimat/reaktorhard": {
+      "begrepp": "Reaktorhärd",
+      "title": "Reaktorhärd"
+    },
+    "varme-klimat/regionnat": {
+      "begrepp": "Regionnät",
+      "title": "Regionnät"
+    },
+    "varme-klimat/reglera": {
+      "begrepp": "Reglera",
+      "title": "Reglera"
+    },
+    "varme-klimat/restprodukt": {
+      "begrepp": "Restprodukt",
+      "title": "Restprodukt"
+    },
+    "varme-klimat/rotor": {
+      "begrepp": "Rotor",
+      "title": "Rotor"
+    },
+    "varme-klimat/skvaltkvarn": {
+      "begrepp": "Skvaltkvarn",
+      "title": "Skvaltkvarn"
+    },
+    "varme-klimat/solflackar": {
+      "begrepp": "Solfläckar",
+      "title": "Solfläckar"
+    },
+    "varme-klimat/stamnat": {
+      "begrepp": "Stamnät",
+      "title": "Stamnät"
+    },
+    "varme-klimat/styrstavar": {
+      "begrepp": "Styrstavar",
+      "title": "Styrstavar i en kärnreaktor"
+    },
+    "varme-klimat/subventionera": {
+      "begrepp": "Subventionera",
+      "title": "Subventionera (staten ger bidrag)"
+    },
+    "varme-klimat/svaveldioxid": {
+      "begrepp": "Svaveldioxid",
+      "title": "Svaveldioxid (SO₂) och surt regn"
+    },
+    "varme-klimat/transformatorstation": {
+      "begrepp": "Transformatorstation",
+      "title": "Transformatorstation"
+    },
+    "varme-klimat/turbin": {
+      "begrepp": "Turbin",
+      "title": "Turbin driver en generator"
+    },
+    "varme-klimat/varmfront": {
+      "begrepp": "Varmfront",
+      "title": "Varmfront"
+    },
+    "varme-klimat/vattenmagasin": {
+      "begrepp": "Vattenmagasin",
+      "title": "Vattenmagasin (vattenkraft)"
+    },
+    "varme-klimat/verkningsgrad": {
+      "begrepp": "Verkningsgrad",
+      "title": "Verkningsgrad"
+    },
+    "varme-klimat/vader": {
+      "begrepp": "Väder",
+      "title": "Väder — hur det är i luften just nu"
+    },
+    "varme-klimat/vaderprognos": {
+      "begrepp": "Väderprognos",
+      "title": "Väderprognos"
+    },
+    "varme-klimat/varmekraftverk": {
+      "begrepp": "Värmekraftverk",
+      "title": "Värmekraftverk"
+    },
+    "varme-klimat/varmepanna": {
+      "begrepp": "Värmepanna",
+      "title": "Värmepanna"
+    },
+    "varme-klimat/varmevaxlare": {
+      "begrepp": "Värmeväxlare",
+      "title": "Värmeväxlare"
+    },
+    "el-magnet/ampere": {
+      "begrepp": "Ampere",
+      "title": "Ampere (A) – elektrisk ström"
+    },
+    "el-magnet/attrahera": {
+      "begrepp": "Attrahera",
+      "title": "Attrahera – dra till sig"
+    },
+    "el-magnet/automatsakring": {
+      "begrepp": "Automatsäkring",
+      "title": "Automatsäkring"
+    },
+    "el-magnet/diameter": {
+      "begrepp": "Diameter",
+      "title": "Diameter (d = 2 · r)"
+    },
+    "el-magnet/elastisk_energi": {
+      "begrepp": "Elastisk energi",
+      "title": "Elastisk energi"
+    },
+    "el-magnet/elektrisk_energi": {
+      "begrepp": "Elektrisk energi",
+      "title": "Elektrisk energi"
+    },
+    "el-magnet/elektrisk_potential": {
+      "begrepp": "Elektrisk potential",
+      "title": "Elektrisk potential (spänning U)"
+    },
+    "el-magnet/energi": {
+      "begrepp": "Energi",
+      "title": "Energi"
+    },
+    "el-magnet/energikvalite": {
+      "begrepp": "Energikvalité",
+      "title": "Energikvalité"
+    },
+    "el-magnet/faltlinje": {
+      "begrepp": "Fältlinje",
+      "title": "Fältlinje (magnetfält)"
+    },
+    "el-magnet/grenuttag": {
+      "begrepp": "Grenuttag",
+      "title": "Grenuttag"
+    },
+    "el-magnet/halvledare": {
+      "begrepp": "Halvledare",
+      "title": "Halvledare"
+    },
+    "el-magnet/hastskomagnet": {
+      "begrepp": "Hästskomagnet",
+      "title": "Hästskomagnet"
+    },
+    "el-magnet/induktion": {
+      "begrepp": "Induktion",
+      "title": "Induktion"
+    },
+    "el-magnet/isolator": {
+      "begrepp": "Isolator",
+      "title": "Isolator"
+    },
+    "el-magnet/jordad_sladd": {
+      "begrepp": "Jordad sladd",
+      "title": "Jordad sladd"
+    },
+    "el-magnet/jordfelsbrytare": {
+      "begrepp": "Jordfelsbrytare",
+      "title": "Jordfelsbrytare"
+    },
+    "el-magnet/joule": {
+      "begrepp": "Joule",
+      "title": "Joule (J) – enhet för energi"
+    },
+    "el-magnet/kemisk_energi": {
+      "begrepp": "Kemisk energi",
+      "title": "Kemisk energi"
+    },
+    "el-magnet/kilowatt": {
+      "begrepp": "Kilowatt",
+      "title": "Kilowatt (kW) – 1 kW = 1000 W"
+    },
+    "el-magnet/kilowatttimme": {
+      "begrepp": "Kilowatttimme",
+      "title": "Kilowattimme (kWh): E = P · t"
+    },
+    "el-magnet/komponent": {
+      "begrepp": "Komponent",
+      "title": "Komponent i en krets"
+    },
+    "el-magnet/ledare": {
+      "begrepp": "Ledare",
+      "title": "Ledare (leder ström lätt)"
+    },
+    "el-magnet/likstrom": {
+      "begrepp": "Likström",
+      "title": "Likström (DC)"
+    },
+    "el-magnet/ljudenergi": {
+      "begrepp": "Ljudenergi",
+      "title": "Ljudenergi"
+    },
+    "el-magnet/lagesenergi": {
+      "begrepp": "Lägesenergi",
+      "title": "Lägesenergi (E = m · g · h)"
+    },
+    "el-magnet/motstand": {
+      "begrepp": "Motstånd",
+      "title": "Motstånd"
+    },
+    "el-magnet/multimeter": {
+      "begrepp": "Multimeter",
+      "title": "Multimeter"
+    },
+    "el-magnet/nukleon": {
+      "begrepp": "Nukleon",
+      "title": "Nukleon"
+    },
+    "el-magnet/ohm": {
+      "begrepp": "Ohm",
+      "title": "Ohm (Ω)"
+    },
+    "el-magnet/propp": {
+      "begrepp": "Propp",
+      "title": "Propp (säkring)"
+    },
+    "el-magnet/repellera": {
+      "begrepp": "Repellera",
+      "title": "Repellera"
+    },
+    "el-magnet/rorelseenergi": {
+      "begrepp": "Rörelseenergi",
+      "title": "Rörelseenergi (E = ½ · m · v²)"
+    },
+    "el-magnet/spole": {
+      "begrepp": "Spole",
+      "title": "Spole"
+    },
+    "el-magnet/stralningsenergi": {
+      "begrepp": "Strålningsenergi",
+      "title": "Strålningsenergi"
+    },
+    "el-magnet/strom": {
+      "begrepp": "Ström",
+      "title": "Ström"
+    },
+    "el-magnet/supraledare": {
+      "begrepp": "Supraledare",
+      "title": "Supraledare"
+    },
+    "el-magnet/volt": {
+      "begrepp": "Volt",
+      "title": "Volt (V)"
+    },
+    "el-magnet/varmeenergi": {
+      "begrepp": "Värmeenergi",
+      "title": "Värmeenergi"
+    },
+    "el-magnet/vaxelstrom": {
+      "begrepp": "Växelström",
+      "title": "Växelström (AC)"
+    },
+    "el-magnet/overbelastning": {
+      "begrepp": "Överbelastning",
+      "title": "Överbelastning"
+    },
+    "grundfysik/aneoridmatare": {
+      "begrepp": "Aneoridmätare",
+      "title": "Aneroidmätare (lufttryck utan vätska)"
+    },
+    "grundfysik/area": {
+      "begrepp": "Area",
+      "title": "Area (A = l · b)"
+    },
+    "grundfysik/arkimedes_skruv": {
+      "begrepp": "Arkimedes skruv",
+      "title": "Arkimedes skruv"
+    },
+    "grundfysik/atmosfar": {
+      "begrepp": "Atmosfär",
+      "title": "Atmosfär (luftlagret runt jorden)"
+    },
+    "grundfysik/atomkarna": {
+      "begrepp": "Atomkärna",
+      "title": "Atomkärna (atomens mitt)"
+    },
+    "grundfysik/avdunstning": {
+      "begrepp": "Avdunstning",
+      "title": "Avdunstning (vätska blir gas vid ytan)"
+    },
+    "grundfysik/barometer": {
+      "begrepp": "Barometer",
+      "title": "Barometer (mäter lufttryck)"
+    },
+    "grundfysik/bimetall": {
+      "begrepp": "Bimetall",
+      "title": "Bimetall (böjs av värme)"
+    },
+    "grundfysik/den_absoluta_nollpunkten": {
+      "begrepp": "Den absoluta nollpunkten",
+      "title": "Den absoluta nollpunkten (−273 °C)"
+    },
+    "grundfysik/dragningskraft": {
+      "begrepp": "Dragningskraft",
+      "title": "Dragningskraft (drar mot varandra)"
+    },
+    "grundfysik/elektron": {
+      "begrepp": "Elektron",
+      "title": "Elektron (laddning −1)"
+    },
+    "grundfysik/elektronskal": {
+      "begrepp": "Elektronskal",
+      "title": "Elektronskal (banor runt kärnan)"
+    },
+    "grundfysik/expandera": {
+      "begrepp": "Expandera",
+      "title": "Expandera (blir större av värme)"
+    },
+    "grundfysik/foton": {
+      "begrepp": "Foton",
+      "title": "Foton (en energibit av ljus)"
+    },
+    "grundfysik/fryspunkt": {
+      "begrepp": "Fryspunkt",
+      "title": "Fryspunkt (vätska stelnar till fast)"
+    },
+    "grundfysik/fagelvag": {
+      "begrepp": "Fågelväg",
+      "title": "Fågelväg (kortaste raka sträckan)"
+    },
+    "grundfysik/gravitation": {
+      "begrepp": "Gravitation",
+      "title": "Gravitation (massor dras mot varandra)"
+    },
+    "grundfysik/grundamne": {
+      "begrepp": "Grundämne",
+      "title": "Grundämne (en enda sorts atomer)"
+    },
+    "grundfysik/hastighet": {
+      "begrepp": "Hastighet",
+      "title": "Hastighet (v = s / t)"
+    },
+    "grundfysik/jordacceleration": {
+      "begrepp": "Jordacceleration",
+      "title": "Jordacceleration (g ≈ 9,82 m/s²)"
+    },
+    "grundfysik/kallfront": {
+      "begrepp": "Kallfront",
+      "title": "Kallfront (kall luft tränger in)"
+    },
+    "grundfysik/kokpunkt": {
+      "begrepp": "Kokpunkt",
+      "title": "Kokpunkt (vätska kokar, blir gas)"
+    },
+    "grundfysik/kommunicerande_karl": {
+      "begrepp": "Kommunicerande kärl",
+      "title": "Kommunicerande kärl"
+    },
+    "grundfysik/kompakt": {
+      "begrepp": "Kompakt",
+      "title": "Kompakt — tätt packat material"
+    },
+    "grundfysik/komprimera": {
+      "begrepp": "Komprimera",
+      "title": "Komprimera — trycka ihop luft"
+    },
+    "grundfysik/kondensera": {
+      "begrepp": "Kondensera",
+      "title": "Kondensera — gas blir vätska"
+    },
+    "grundfysik/kub": {
+      "begrepp": "Kub",
+      "title": "Kub"
+    },
+    "grundfysik/ledning": {
+      "begrepp": "Ledning",
+      "title": "Ledning av värme"
+    },
+    "grundfysik/lufttryck": {
+      "begrepp": "Lufttryck",
+      "title": "Lufttryck"
+    },
+    "grundfysik/lyftkraft": {
+      "begrepp": "Lyftkraft",
+      "title": "Lyftkraft"
+    },
+    "grundfysik/massa": {
+      "begrepp": "Massa",
+      "title": "Massa"
+    },
+    "grundfysik/materia": {
+      "begrepp": "Materia",
+      "title": "Materia — har massa och tar plats"
+    },
+    "grundfysik/molekyl": {
+      "begrepp": "Molekyl",
+      "title": "Molekyl — atomer som sitter ihop (H₂O)"
+    },
+    "grundfysik/neutron": {
+      "begrepp": "Neutron",
+      "title": "Neutron — partikel utan laddning"
+    },
+    "grundfysik/partikel": {
+      "begrepp": "Partikel",
+      "title": "Partikel — en mycket liten bit"
+    },
+    "grundfysik/proton": {
+      "begrepp": "Proton",
+      "title": "Proton — positivt laddad partikel"
+    },
+    "grundfysik/punkt": {
+      "begrepp": "Punkt",
+      "title": "Punkt — ett läge utan storlek"
+    },
+    "grundfysik/sjobris": {
+      "begrepp": "Sjöbris",
+      "title": "Sjöbris"
+    },
+    "grundfysik/sluten_krets": {
+      "begrepp": "Sluten krets",
+      "title": "Sluten krets"
+    },
+    "grundfysik/smaltning": {
+      "begrepp": "Smältning",
+      "title": "Smältning — fast blir vätska"
+    },
+    "grundfysik/smaltpunkt": {
+      "begrepp": "Smältpunkt",
+      "title": "Smältpunkt — olika för olika ämnen"
+    },
+    "grundfysik/solkurva": {
+      "begrepp": "Solkurva",
+      "title": "Solkurva på järnvägsräls"
+    },
+    "grundfysik/stelning": {
+      "begrepp": "Stelning",
+      "title": "Stelning — vätska blir fast"
+    },
+    "grundfysik/stracka": {
+      "begrepp": "Sträcka",
+      "title": "Sträcka — hur långt mellan två punkter"
+    },
+    "grundfysik/stralning": {
+      "begrepp": "Strålning",
+      "title": "Strålning (värmeöverföring utan material)"
+    },
+    "grundfysik/stromning": {
+      "begrepp": "Strömning",
+      "title": "Strömning (vätska eller gas i rörelse)"
+    },
+    "grundfysik/sublimering": {
+      "begrepp": "Sublimering",
+      "title": "Sublimering (fast ämne → gas direkt)"
+    },
+    "grundfysik/temperatur": {
+      "begrepp": "Temperatur",
+      "title": "Temperatur (hur snabbt molekylerna rör sig)"
+    },
+    "grundfysik/termometer": {
+      "begrepp": "Termometer",
+      "title": "Termometer (mätinstrument för temperatur)"
+    },
+    "grundfysik/trumhinna": {
+      "begrepp": "Trumhinna",
+      "title": "Trumhinnan (tunt skinn inne i örat)"
+    },
+    "grundfysik/tyngd": {
+      "begrepp": "Tyngd",
+      "title": "Tyngd (kraften neråt: F = m · g)"
+    },
+    "grundfysik/tyngdkraft": {
+      "begrepp": "Tyngdkraft",
+      "title": "Tyngdkraft (drar allt neråt mot marken)"
+    },
+    "grundfysik/vakuum": {
+      "begrepp": "Vakuum",
+      "title": "Vakuum (nästan inga luftmolekyler)"
+    },
+    "grundfysik/vikt": {
+      "begrepp": "Vikt",
+      "title": "Vikt (hur mycket något väger på en våg)"
+    },
+    "grundfysik/volym": {
+      "begrepp": "Volym",
+      "title": "Volym (hur mycket plats något tar upp)"
+    },
+    "grundfysik/varme": {
+      "begrepp": "Värme",
+      "title": "Värme (energi från varmt till kallt)"
+    },
+    "grundfysik/yta": {
+      "begrepp": "Yta",
+      "title": "Yta (storleken på ett platt område)"
+    },
+    "grundfysik/overtryck": {
+      "begrepp": "Övertryck",
+      "title": "Övertryck (högre tryck inuti än utanför)"
+    },
+    "ljud/absorbera": {
+      "begrepp": "Absorbera",
+      "title": "Absorbera ljud"
+    },
+    "ljud/akustisk": {
+      "begrepp": "Akustisk",
+      "title": "Akustisk – ljud utan elektrisk förstärkning"
+    },
+    "ljud/buller": {
+      "begrepp": "Buller",
+      "title": "Buller – oönskat, störande ljud"
+    },
+    "ljud/dopplereffekten": {
+      "begrepp": "Dopplereffekten",
+      "title": "Dopplereffekten"
+    },
+    "ljud/efterklang": {
+      "begrepp": "Efterklang",
+      "title": "Efterklang – ljudet hänger kvar"
+    },
+    "ljud/ekolod": {
+      "begrepp": "Ekolod",
+      "title": "Ekolod (djup = ljudfart · tid / 2)"
+    },
+    "ljud/fas": {
+      "begrepp": "Fas",
+      "title": "Fas – var i svängningen vågen är"
+    },
+    "ljud/fortunning": {
+      "begrepp": "Förtunning",
+      "title": "Förtunning – glesare luft i ljudvågen"
+    },
+    "ljud/fortatning": {
+      "begrepp": "Förtätning",
+      "title": "Förtätning – tätare luft i ljudvågen"
+    },
+    "ljud/grundton": {
+      "begrepp": "Grundton",
+      "title": "Grundton – strängens lägsta svängning"
+    },
+    "ljud/hammaren_stadet_och_stigbygeln": {
+      "begrepp": "Hammaren, städet och stigbygeln",
+      "title": "Hammaren, städet och stigbygeln"
+    },
+    "ljud/hertz_hz": {
+      "begrepp": "Hertz (Hz)",
+      "title": "Hertz (Hz) – svängningar per sekund"
+    },
+    "ljud/horselgang": {
+      "begrepp": "Hörselgång",
+      "title": "Hörselgång – kanalen in till trumhinnan"
+    },
+    "ljud/horselsnackan": {
+      "begrepp": "Hörselsnäckan",
+      "title": "Hörselsnäckan – gör ljud till nervsignaler"
+    },
+    "ljud/infraljud": {
+      "begrepp": "Infraljud",
+      "title": "Infraljud – för låg frekvens att höra"
+    },
+    "ljud/klangfarg": {
+      "begrepp": "Klangfärg",
+      "title": "Klangfärg – samma ton, olika form"
+    },
+    "ljud/ljud": {
+      "begrepp": "Ljud",
+      "title": "Ljud – vibrationer som sprider sig"
+    },
+    "ljud/ljudstyrka": {
+      "begrepp": "Ljudstyrka",
+      "title": "Ljudstyrka – beror på amplituden"
+    },
+    "ljud/mach": {
+      "begrepp": "Mach",
+      "title": "Mach – fart jämfört med ljudet"
+    },
+    "ljud/medsvangning": {
+      "begrepp": "Medsvängning",
+      "title": "Medsvängning – rätt frekvens får något att svänga"
+    },
+    "ljud/membran": {
+      "begrepp": "Membran",
+      "title": "Membran – tunt skinn som skakar av ljud"
+    },
+    "ljud/resonans": {
+      "begrepp": "Resonans",
+      "title": "Resonans – svänger kraftigt vid rätt takt"
+    },
+    "ljud/resonanslada": {
+      "begrepp": "Resonanslåda",
+      "title": "Resonanslåda – förstärker svaga ljud"
+    },
+    "ljud/sinnescell": {
+      "begrepp": "Sinnescell",
+      "title": "Sinnescell – känner av och skickar signal"
+    },
+    "ljud/sinuskurva": {
+      "begrepp": "Sinuskurva",
+      "title": "Sinuskurva – en ren, jämn svängning"
+    },
+    "ljud/stamgaffel": {
+      "begrepp": "Stämgaffel",
+      "title": "Stämgaffel – ger en ren ton"
+    },
+    "ljud/svangning": {
+      "begrepp": "Svängning",
+      "title": "Svängning – fram och tillbaka kring en punkt"
+    },
+    "ljud/tinnitus": {
+      "begrepp": "Tinnitus",
+      "title": "Tinnitus – pip i örat utan ljud"
+    },
+    "ljud/tonhojd": {
+      "begrepp": "Tonhöjd",
+      "title": "Tonhöjd – ljus eller mörk ton"
+    },
+    "ljud/tonlage": {
+      "begrepp": "Tonläge",
+      "title": "Tonläge – högt uppe eller långt ner"
+    },
+    "ljud/overljudsfart": {
+      "begrepp": "Överljudsfart",
+      "title": "Överljudsfart – snabbare än ljudet"
+    },
+    "ljud/overton": {
+      "begrepp": "Överton",
+      "title": "Överton – extra ljusare ton i klangen"
+    },
+    "ljus/blinda_flacken": {
+      "begrepp": "Blinda fläcken",
+      "title": "Blinda fläcken i ögat"
+    },
+    "ljus/bruten_strale": {
+      "begrepp": "Bruten stråle",
+      "title": "Bruten ljusstråle (luft → vatten)"
+    },
+    "ljus/brytningsvinkel": {
+      "begrepp": "Brytningsvinkel",
+      "title": "Brytningsvinkel"
+    },
+    "ljus/brannpunkt": {
+      "begrepp": "Brännpunkt",
+      "title": "Brännpunkt (samlande lins)"
+    },
+    "ljus/candela": {
+      "begrepp": "Candela",
+      "title": "Candela (cd) — ljusstyrka i en riktning"
+    },
+    "ljus/elekromagnetisk_stralning": {
+      "begrepp": "Elekromagnetisk strålning",
+      "title": "Elektromagnetisk strålning (spektrum)"
+    },
+    "ljus/fiberoptik": {
+      "begrepp": "Fiberoptik",
+      "title": "Fiberoptik (totalreflektion i glastråd)"
+    },
+    "ljus/fokus": {
+      "begrepp": "Fokus",
+      "title": "Fokus (skarp bild via lins)"
+    },
+    "ljus/gammablixt": {
+      "begrepp": "Gammablixt",
+      "title": "Gammablixt (puls av gammastrålning)"
+    },
+    "ljus/glaskropp": {
+      "begrepp": "Glaskropp",
+      "title": "Glaskroppen i ögat"
+    },
+    "ljus/gula_flacken": {
+      "begrepp": "Gula fläcken",
+      "title": "Gula fläcken i ögat"
+    },
+    "ljus/hologram": {
+      "begrepp": "Hologram",
+      "title": "Hologram — tredimensionell bild av ljus"
+    },
+    "ljus/hornhinna": {
+      "begrepp": "Hornhinna",
+      "title": "Hornhinnan längst fram i ögat"
+    },
+    "ljus/infallsvinkel": {
+      "begrepp": "Infallsvinkel",
+      "title": "Infallsvinkel (i = r vid reflektion)"
+    },
+    "ljus/infrarod_stralning": {
+      "begrepp": "Infraröd strålning",
+      "title": "Infraröd strålning (osynlig värme)"
+    },
+    "ljus/laser": {
+      "begrepp": "Laser",
+      "title": "Laser — samlat ljus i en färg"
+    },
+    "ljus/ljusar": {
+      "begrepp": "Ljusår",
+      "title": "Ljusår — sträckan ljus hinner på 1 år"
+    },
+    "ljus/lumen": {
+      "begrepp": "Lumen",
+      "title": "Lumen (lm) — allt ljus åt alla håll"
+    },
+    "ljus/lux": {
+      "begrepp": "Lux",
+      "title": "Lux (lx) — ljus som faller på en yta"
+    },
+    "ljus/medium": {
+      "begrepp": "Medium",
+      "title": "Medium — ämnet ljuset går genom"
+    },
+    "ljus/mikrovagor": {
+      "begrepp": "Mikrovågor",
+      "title": "Mikrovågor värmer mat"
+    },
+    "ljus/negativ_lins": {
+      "begrepp": "Negativ lins",
+      "title": "Negativ lins (sprider ljus)"
     }
   }
 }

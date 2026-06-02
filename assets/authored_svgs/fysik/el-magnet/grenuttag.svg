@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Grenuttag</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Ett uttag blir flera – för att koppla in fler apparater</text>
+
+<!-- wall outlet -->
+<rect x="70" y="220" width="90" height="90" fill="#f3f4f6" stroke="#6b7280" stroke-width="2" rx="4"/>
+<circle cx="100" cy="255" r="6" fill="#1f2937"/>
+<circle cx="130" cy="255" r="6" fill="#1f2937"/>
+<text x="115" y="295" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Vägguttag</text>
+
+<!-- cable to strip -->
+<line x1="160" y1="265" x2="240" y2="265" stroke="#1f2937" stroke-width="4"/>
+
+<!-- power strip body -->
+<rect x="240" y="230" width="380" height="70" fill="#e5e7eb" stroke="#6b7280" stroke-width="2.5" rx="8"/>
+<text x="430" y="218" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Grenuttag (4 uttag)</text>
+
+<!-- four sockets -->
+<circle cx="300" cy="265" r="20" fill="white" stroke="#1f2937" stroke-width="2"/>
+<circle cx="293" cy="265" r="4" fill="#1f2937"/><circle cx="307" cy="265" r="4" fill="#1f2937"/>
+<circle cx="380" cy="265" r="20" fill="white" stroke="#1f2937" stroke-width="2"/>
+<circle cx="373" cy="265" r="4" fill="#1f2937"/><circle cx="387" cy="265" r="4" fill="#1f2937"/>
+<circle cx="460" cy="265" r="20" fill="white" stroke="#1f2937" stroke-width="2"/>
+<circle cx="453" cy="265" r="4" fill="#1f2937"/><circle cx="467" cy="265" r="4" fill="#1f2937"/>
+<circle cx="540" cy="265" r="20" fill="white" stroke="#1f2937" stroke-width="2"/>
+<circle cx="533" cy="265" r="4" fill="#1f2937"/><circle cx="547" cy="265" r="4" fill="#1f2937"/>
+
+<!-- appliances plugged in -->
+<line x1="300" y1="245" x2="300" y2="360" stroke="#1f2937" stroke-width="3"/>
+<rect x="270" y="360" width="60" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="3"/>
+<text x="300" y="385" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">Router</text>
+<line x1="460" y1="245" x2="460" y2="360" stroke="#1f2937" stroke-width="3"/>
+<rect x="430" y="360" width="60" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="3"/>
+<text x="460" y="385" font-family="Arial,sans-serif" font-size="11" fill="#b45309" text-anchor="middle">Högtalare</text>
+<line x1="540" y1="245" x2="540" y2="330" stroke="#1f2937" stroke-width="3"/>
+<rect x="510" y="330" width="60" height="40" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="3"/>
+<text x="540" y="355" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">TV</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Flera apparater i samma vägguttag – akta så det inte blir överbelastning</text>
+</svg>

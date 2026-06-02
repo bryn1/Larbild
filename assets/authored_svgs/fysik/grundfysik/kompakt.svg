@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Kompakt — tätt packat material</text>
+<!-- left box: compact (densely packed) -->
+<rect x="120" y="110" width="220" height="220" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="230" y="90" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Kompakt</text>
+<!-- dense grid of circles, touching, little gap -->
+<circle cx="155" cy="145" r="16" fill="#2563eb"/><circle cx="190" cy="145" r="16" fill="#2563eb"/><circle cx="225" cy="145" r="16" fill="#2563eb"/><circle cx="260" cy="145" r="16" fill="#2563eb"/><circle cx="295" cy="145" r="16" fill="#2563eb"/>
+<circle cx="155" cy="180" r="16" fill="#2563eb"/><circle cx="190" cy="180" r="16" fill="#2563eb"/><circle cx="225" cy="180" r="16" fill="#2563eb"/><circle cx="260" cy="180" r="16" fill="#2563eb"/><circle cx="295" cy="180" r="16" fill="#2563eb"/>
+<circle cx="155" cy="215" r="16" fill="#2563eb"/><circle cx="190" cy="215" r="16" fill="#2563eb"/><circle cx="225" cy="215" r="16" fill="#2563eb"/><circle cx="260" cy="215" r="16" fill="#2563eb"/><circle cx="295" cy="215" r="16" fill="#2563eb"/>
+<circle cx="155" cy="250" r="16" fill="#2563eb"/><circle cx="190" cy="250" r="16" fill="#2563eb"/><circle cx="225" cy="250" r="16" fill="#2563eb"/><circle cx="260" cy="250" r="16" fill="#2563eb"/><circle cx="295" cy="250" r="16" fill="#2563eb"/>
+<circle cx="155" cy="285" r="16" fill="#2563eb"/><circle cx="190" cy="285" r="16" fill="#2563eb"/><circle cx="225" cy="285" r="16" fill="#2563eb"/><circle cx="260" cy="285" r="16" fill="#2563eb"/><circle cx="295" cy="285" r="16" fill="#2563eb"/>
+<text x="230" y="355" font-family="Arial,sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle" font-weight="bold">Lite tomrum → tungt</text>
+<!-- right box: not compact (loose) -->
+<rect x="460" y="110" width="220" height="220" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+<text x="570" y="90" font-family="Arial,sans-serif" font-size="16" fill="#6b7280" text-anchor="middle" font-weight="bold">Inte kompakt</text>
+<circle cx="500" cy="150" r="16" fill="#9ca3af"/><circle cx="570" cy="150" r="16" fill="#9ca3af"/><circle cx="640" cy="150" r="16" fill="#9ca3af"/>
+<circle cx="535" cy="210" r="16" fill="#9ca3af"/><circle cx="615" cy="220" r="16" fill="#9ca3af"/>
+<circle cx="500" cy="280" r="16" fill="#9ca3af"/><circle cx="580" cy="285" r="16" fill="#9ca3af"/><circle cx="650" cy="265" r="16" fill="#9ca3af"/>
+<text x="570" y="355" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle" font-weight="bold">Mycket tomrum → lätt</text>
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Samma storlek, men det kompakta innehåller mer material</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Kompakt material är tätt packat och känns tungt för sin storlek</text>
+</svg>

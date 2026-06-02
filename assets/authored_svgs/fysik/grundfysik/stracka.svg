@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Sträcka — hur långt mellan två punkter</text>
+<!-- point A: home -->
+<circle cx="150" cy="320" r="8" fill="#dc2626"/>
+<rect x="120" y="250" width="60" height="45" fill="#fca5a5" stroke="#b91c1c" stroke-width="2"/>
+<polygon points="115,250 150,225 185,250" fill="#dc2626"/>
+<text x="150" y="350" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Hem (A)</text>
+<!-- point B: school -->
+<circle cx="650" cy="320" r="8" fill="#dc2626"/>
+<rect x="615" y="245" width="70" height="50" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+<rect x="630" y="225" width="40" height="20" fill="#1e40af"/>
+<text x="650" y="350" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Skola (B)</text>
+<!-- straight distance line with measure -->
+<line x1="150" y1="320" x2="650" y2="320" stroke="#16a34a" stroke-width="3"/>
+<line x1="150" y1="312" x2="150" y2="328" stroke="#16a34a" stroke-width="3"/>
+<line x1="650" y1="312" x2="650" y2="328" stroke="#16a34a" stroke-width="3"/>
+<text x="400" y="310" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">Sträcka = 2 km (fågelvägen)</text>
+<!-- curved road (the path actually walked) -->
+<path d="M 150 320 Q 280 200 400 250 Q 530 300 650 320" fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="8,5"/>
+<text x="400" y="200" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Vägen (krokig) är längre</text>
+<!-- ruler / unit note -->
+<text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Sträcka mäts i meter (m) eller kilometer (km)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Sträckan är hur långt det är mellan två punkter, rakt eller längs en väg</text>
+</svg>

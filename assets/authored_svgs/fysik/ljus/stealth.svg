@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Stealth (radarsmygteknik)</text>
+<rect x="70" y="350" width="70" height="40" fill="#cbd5e1" stroke="#1f2937" stroke-width="2"/>
+<path d="M 105 350 L 90 320 L 120 320 Z" fill="#94a3b8" stroke="#1f2937" stroke-width="1.5"/>
+<text x="105" y="410" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Radar</text>
+<polygon points="430,150 600,210 560,250 390,190" fill="#475569" stroke="#1f2937" stroke-width="2"/>
+<text x="500" y="140" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Stealth-yta (vinklad)</text>
+<line x1="140" y1="320" x2="449.8" y2="199.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="460,195 452.3,202.8 449.0,194.5" fill="#dc2626"/>
+<text x="270" y="240" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Radarvåg ut</text>
+<line x1="460" y1="195" x2="689.6" y2="113.7" stroke="#6b7280" stroke-width="2.5"/>
+<polygon points="700,110 692.0,117.6 689.0,109.1" fill="#6b7280"/>
+<text x="640" y="95" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">studsar bort</text>
+<rect x="150" y="430" width="500" height="34" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+<text x="400" y="452" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">NEJ: ingen våg studsar tillbaka — radarn ser inget</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vinklade ytor styr bort radarvågorna så att de inte studsar tillbaka till radarn</text>
+</svg>

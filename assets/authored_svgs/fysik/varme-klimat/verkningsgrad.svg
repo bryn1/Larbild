@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Verkningsgrad</text>
+<!-- Input energy bar (left) -->
+<rect x="70" y="180" width="120" height="120" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="130" y="235" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Tillförd</text>
+<text x="130" y="256" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">energi</text>
+<text x="130" y="278" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">100 %</text>
+<!-- Device box -->
+<rect x="280" y="170" width="140" height="140" rx="8" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="350" y="230" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">LED-lampa</text>
+<text x="350" y="252" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">(apparat)</text>
+<!-- arrow in -->
+<line x1="190" y1="240" x2="270" y2="240" stroke="#1f2937" stroke-width="3"/>
+<polygon points="282,240 270,245 270,235" fill="#1f2937"/>
+<!-- Useful out (green, large) -->
+<line x1="420" y1="215" x2="560" y2="200" stroke="#16a34a" stroke-width="14"/>
+<polygon points="574,199 558,206 560,192" fill="#16a34a"/>
+<rect x="575" y="170" width="150" height="64" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="650" y="195" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Nyttig energi</text>
+<text x="650" y="218" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">ljus  85 %</text>
+<!-- Loss out (red, small) -->
+<line x1="420" y1="280" x2="560" y2="330" stroke="#dc2626" stroke-width="6"/>
+<polygon points="572,335 556,334 562,323" fill="#dc2626"/>
+<rect x="575" y="305" width="150" height="56" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<text x="650" y="328" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Spillvärme</text>
+<text x="650" y="349" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">15 %</text>
+<text x="400" y="410" font-family="Arial,sans-serif" font-size="15" fill="#374151" text-anchor="middle" font-weight="bold">Verkningsgrad = nyttig energi / tillförd energi</text>
+<text x="400" y="438" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Hög verkningsgrad = lite energi blir spillvärme</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hur stor del av energin som blir nyttig — resten blir oftast värme</text>
+</svg>

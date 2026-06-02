@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Astrologi (tro, inte vetenskap)</text>
+<circle cx="400" cy="250" r="140" stroke="#f59e0b" stroke-width="2" fill="none" stroke-dasharray="3,4"/>
+<polygon points="400.0,103.0 401.8,107.6 406.7,107.8 402.9,110.9 404.1,115.7 400.0,113.0 395.9,115.7 397.1,110.9 393.3,107.8 398.2,107.6" fill="#f59e0b"/>
+<polygon points="470.0,121.8 471.8,126.3 476.7,126.6 472.9,129.7 474.1,134.4 470.0,131.8 465.9,134.4 467.1,129.7 463.3,126.6 468.2,126.3" fill="#f59e0b"/>
+<polygon points="521.2,173.0 523.0,177.6 527.9,177.8 524.1,180.9 525.4,185.7 521.2,183.0 517.1,185.7 518.4,180.9 514.6,177.8 519.5,177.6" fill="#f59e0b"/>
+<polygon points="540.0,243.0 541.8,247.6 546.7,247.8 542.9,250.9 544.1,255.7 540.0,253.0 535.9,255.7 537.1,250.9 533.3,247.8 538.2,247.6" fill="#f59e0b"/>
+<polygon points="521.2,313.0 523.0,317.6 527.9,317.8 524.1,320.9 525.4,325.7 521.2,323.0 517.1,325.7 518.4,320.9 514.6,317.8 519.5,317.6" fill="#f59e0b"/>
+<polygon points="470.0,364.2 471.8,368.8 476.7,369.1 472.9,372.2 474.1,376.9 470.0,374.2 465.9,376.9 467.1,372.2 463.3,369.1 468.2,368.8" fill="#f59e0b"/>
+<polygon points="400.0,383.0 401.8,387.6 406.7,387.8 402.9,390.9 404.1,395.7 400.0,393.0 395.9,395.7 397.1,390.9 393.3,387.8 398.2,387.6" fill="#f59e0b"/>
+<polygon points="330.0,364.2 331.8,368.8 336.7,369.1 332.9,372.2 334.1,376.9 330.0,374.2 325.9,376.9 327.1,372.2 323.3,369.1 328.2,368.8" fill="#f59e0b"/>
+<polygon points="278.8,313.0 280.5,317.6 285.4,317.8 281.6,320.9 282.9,325.7 278.8,323.0 274.6,325.7 275.9,320.9 272.1,317.8 277.0,317.6" fill="#f59e0b"/>
+<polygon points="260.0,243.0 261.8,247.6 266.7,247.8 262.9,250.9 264.1,255.7 260.0,253.0 255.9,255.7 257.1,250.9 253.3,247.8 258.2,247.6" fill="#f59e0b"/>
+<polygon points="278.8,173.0 280.5,177.6 285.4,177.8 281.6,180.9 282.9,185.7 278.8,183.0 274.6,185.7 275.9,180.9 272.1,177.8 277.0,177.6" fill="#f59e0b"/>
+<polygon points="330.0,121.8 331.8,126.3 336.7,126.6 332.9,129.7 334.1,134.4 330.0,131.8 325.9,134.4 327.1,129.7 323.3,126.6 328.2,126.3" fill="#f59e0b"/>
+<circle cx="400" cy="220" r="16" fill="#fde68a" stroke="#b45309" stroke-width="1.5"/>
+<rect x="378" y="240" width="44" height="48" rx="6" fill="#fde68a" stroke="#b45309" stroke-width="1.5"/>
+<text x="400" y="335" font-family="Arial,sans-serif" font-size="12" fill="#b45309" text-anchor="middle">horoskop</text>
+<rect x="250" y="395" width="300" height="34" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<text x="400" y="418" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Vetenskap? NEJ — tro och spådom</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Astrologi tror att stjärnornas läge styr våra liv — det är inte bevisat och inte vetenskap</text>
+</svg>

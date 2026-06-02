@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Jordad sladd</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">En extra ledning leder bort farlig ström ner i marken</text>
+
+<!-- appliance: washing machine -->
+<rect x="120" y="150" width="160" height="160" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5" rx="8"/>
+<circle cx="200" cy="230" r="45" fill="white" stroke="#2563eb" stroke-width="2"/>
+<circle cx="200" cy="230" r="30" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="200" y="300" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">Tvättmaskin</text>
+
+<!-- three wires: live, neutral, ground -->
+<line x1="280" y1="190" x2="500" y2="190" stroke="#a16207" stroke-width="3"/>
+<text x="540" y="194" font-family="Arial,sans-serif" font-size="12" fill="#a16207" text-anchor="middle">fasledare</text>
+<line x1="280" y1="220" x2="500" y2="220" stroke="#2563eb" stroke-width="3"/>
+<text x="540" y="224" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">nolledare</text>
+<line x1="280" y1="250" x2="500" y2="250" stroke="#16a34a" stroke-width="4"/>
+<text x="555" y="254" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">jordledare</text>
+
+<!-- ground wire goes down to earth -->
+<line x1="500" y1="250" x2="500" y2="370" stroke="#16a34a" stroke-width="4"/>
+<line x1="450" y1="370" x2="550" y2="370" stroke="#6b7280" stroke-width="3"/>
+<line x1="460" y1="380" x2="540" y2="380" stroke="#6b7280" stroke-width="3"/>
+<line x1="475" y1="390" x2="525" y2="390" stroke="#6b7280" stroke-width="3"/>
+<text x="500" y="415" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">Jord (marken)</text>
+
+<!-- fault current arrow down ground -->
+<polygon points="500,330 494,318 506,318" fill="#dc2626"/>
+<text x="640" y="335" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">felström leds bort</text>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Om fel uppstår leds farlig ström säkert ner i marken istället för genom dig</text>
+</svg>

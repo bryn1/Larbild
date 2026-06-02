@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Koldioxidneutral (CO₂ ut = CO₂ in)</text>
+<text x="400" y="65" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Lika mycket koldioxid släpps ut som tas upp igen — mängden i luften ökar inte</text>
+
+<!-- Sky band with CO2 molecules -->
+<rect x="60" y="90" width="680" height="70" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+<text x="400" y="115" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Luften (atmosfären)</text>
+<text x="150" y="145" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">CO₂</text>
+<text x="300" y="140" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">CO₂</text>
+<text x="500" y="145" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">CO₂</text>
+<text x="650" y="140" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">CO₂</text>
+
+<!-- LEFT: burning wood releases CO2 (red arrow up) -->
+<rect x="120" y="320" width="120" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="3"/>
+<text x="180" y="350" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Brasa</text>
+<text x="180" y="372" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">(eldar ved)</text>
+<line x1="180" y1="320" x2="180" y2="165" stroke="#dc2626" stroke-width="3"/>
+<polygon points="180,158 175,170 185,170" fill="#dc2626"/>
+<text x="125" y="245" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">CO₂ ut</text>
+
+<!-- RIGHT: growing tree absorbs CO2 (green arrow down) -->
+<rect x="560" y="300" width="14" height="90" fill="#92400e"/>
+<circle cx="567" cy="290" r="45" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<text x="567" y="385" font-family="Arial,sans-serif" font-size="13" fill="#15803d" text-anchor="middle" font-weight="bold">Nytt träd</text>
+<line x1="567" y1="165" x2="567" y2="245" stroke="#16a34a" stroke-width="3"/>
+<polygon points="567,252 562,240 572,240" fill="#16a34a"/>
+<text x="625" y="215" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">CO₂ in</text>
+
+<!-- Balance equals sign in centre -->
+<text x="385" y="290" font-family="Arial,sans-serif" font-size="40" fill="#1e40af" text-anchor="middle" font-weight="bold">=</text>
+<text x="385" y="330" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">i balans</text>
+
+<!-- Ground -->
+<line x1="60" y1="390" x2="740" y2="390" stroke="#6b7280" stroke-width="2"/>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Trädet tar upp lika mycket CO₂ som veden släpper ut → ingen ökning totalt sett</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Hammaren, städet och stigbygeln</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">De tre hörselbenen i mellanörat</text>
+<line x1="150.0" y1="160.0" x2="150.0" y2="320.0" stroke="#b45309" stroke-width="4"/>
+<text x="150" y="345" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Trumhinna</text>
+<line x1="95.0" y1="240.0" x2="135.0" y2="240.0" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="145.0,240.0 135.0,245.5 135.0,234.5" fill="#2563eb"/>
+<text x="110" y="225" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">ljud</text>
+<line x1="152.0" y1="240.0" x2="250.0" y2="200.0" stroke="#7c3aed" stroke-width="8"/>
+<circle cx="250.0" cy="200.0" r="14.0" fill="#c4b5fd" stroke="#7c3aed" stroke-width="2"/>
+<text x="250" y="165" font-family="Arial,sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="bold">Hammaren</text>
+<line x1="255.0" y1="205.0" x2="360.0" y2="235.0" stroke="#1d4ed8" stroke-width="8"/>
+<circle cx="360.0" cy="235.0" r="14.0" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="360" y="280" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="bold">Städet</text>
+<line x1="365.0" y1="232.0" x2="455.0" y2="215.0" stroke="#16a34a" stroke-width="8"/>
+<path d="M 455 200 L 470 205 L 470 225 L 455 230 Z" fill="#86efac" stroke="#15803d" stroke-width="2"/>
+<text x="460" y="175" font-family="Arial,sans-serif" font-size="12" fill="#15803d" text-anchor="middle" font-weight="bold">Stigbygeln</text>
+<path d="M 560 240 m 0 0 a 45 45 0 1 1 -2 -2 a 32 32 0 1 1 4 0 a 18 18 0 1 1 -3 0" fill="none" stroke="#0891b2" stroke-width="3"/>
+<circle cx="560.0" cy="240.0" r="50.0" fill="none" stroke="#0891b2" stroke-width="3"/>
+<circle cx="560.0" cy="240.0" r="33.0" fill="none" stroke="#0891b2" stroke-width="2.5"/>
+<circle cx="560.0" cy="240.0" r="17.0" fill="none" stroke="#0891b2" stroke-width="2"/>
+<text x="560" y="320" font-family="Arial,sans-serif" font-size="12" fill="#0e7490" text-anchor="middle">Hörselsnäcka</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">Trumhinnan → hammaren → städet → stigbygeln → snäckan</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">De tre små benen för vidare trumhinnans rörelse in till hörselsnäckan</text>
+</svg>

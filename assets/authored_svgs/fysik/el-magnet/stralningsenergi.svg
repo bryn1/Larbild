@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Strålningsenergi</text>
+<circle cx="200" cy="260" r="45" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<path d="M 200 230 q -18 25 0 45 q 18 -20 0 -45 Z" fill="#dc2626"/>
+<path d="M 185 245 q -10 18 5 30 q 10 -14 -5 -30 Z" fill="#f59e0b"/>
+<text x="200" y="325" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Varm källa (brasa)</text>
+<line x1="258.2" y1="254.3" x2="388.4" y2="163.1" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="397.4,156.8 391.1,166.9 385.8,159.3" fill="#dc2626"/>
+<line x1="259.7" y1="257.4" x2="413.2" y2="216.3" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="423.9,213.4 414.4,220.7 412.0,211.8" fill="#dc2626"/>
+<line x1="260.0" y1="260.9" x2="418.4" y2="274.7" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="429.3,275.7 418.0,279.3 418.8,270.1" fill="#dc2626"/>
+<line x1="259.1" y1="264.2" x2="403.2" y2="331.4" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="413.1,336.1 401.2,335.6 405.1,327.2" fill="#dc2626"/>
+<text x="430" y="175" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">strålning genom luften</text>
+<circle cx="600" cy="270" r="16" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+<text x="600" y="320" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Känner värmen</text>
+<text x="400" y="380" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Energi som rör sig genom luft eller tomrum, t.ex. ljus eller värme</text>
+<text x="400" y="408" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Du behöver inte röra vid källan för att känna den</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Strålningsenergi rör sig utan att behöva en ledning</text>
+</svg>

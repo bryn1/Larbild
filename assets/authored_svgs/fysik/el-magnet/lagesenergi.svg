@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Lägesenergi (E = m · g · h)</text>
+<line x1="80" y1="400" x2="720" y2="400" stroke="#1f2937" stroke-width="2"/>
+<rect x="80" y="400" width="640" height="12" fill="#d1d5db"/>
+<line x1="150" y1="150" x2="150" y2="400" stroke="#16a34a" stroke-width="2"/>
+<line x1="142" y1="150" x2="158" y2="150" stroke="#16a34a" stroke-width="2"/>
+<line x1="142" y1="400" x2="158" y2="400" stroke="#16a34a" stroke-width="2"/>
+<text x="135" y="280" font-family="Arial,sans-serif" font-size="16" fill="#16a34a" text-anchor="end" font-weight="bold">h</text>
+<rect x="150" y="150" width="120" height="14" fill="#a16207"/>
+<circle cx="210" cy="138" r="18" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+<text x="210" y="143" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">m</text>
+<line x1="210.0" y1="165.0" x2="210.0" y2="368.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="210.0,380.0 205.0,368.0 215.0,368.0" fill="#dc2626"/>
+<text x="228" y="280" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="start">faller</text>
+<text x="520" y="200" font-family="Arial,sans-serif" font-size="26" fill="#1e40af" text-anchor="middle" font-weight="bold">E = m · g · h</text>
+<text x="520" y="235" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">m = massa (kg)</text>
+<text x="520" y="258" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">g = 9,82 m/s²</text>
+<text x="520" y="281" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">h = höjd (m)</text>
+<text x="520" y="320" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Enhet: joule (J)</text>
+<text x="400" y="440" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Högre upp → mer lägesenergi. Vid fall blir den rörelseenergi.</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Lägesenergi har ett föremål som befinner sig högt upp</text>
+</svg>

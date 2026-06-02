@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Dragningskraft (drar mot varandra)</text>
+<circle cx="250" cy="300" r="80" fill="#86efac" stroke="#15803d" stroke-width="2"/>
+<text x="250" y="305" font-family="Arial,sans-serif" font-size="15" fill="#14532d" text-anchor="middle" font-weight="bold">Jorden</text>
+<rect x="538" y="142" width="44" height="76" rx="6" fill="#1f2937" stroke="#000" stroke-width="1.5"/>
+<rect x="543" y="150" width="34" height="55" rx="2" fill="#60a5fa"/>
+<text x="560" y="238" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">mobil</text>
+<line x1="535.0" y1="210.0" x2="337.0" y2="223.3" stroke="#dc2626" stroke-width="3.5"/>
+<polygon points="326.0,224.0 336.6,218.3 337.3,228.2" fill="#dc2626"/>
+<line x1="306.0" y1="244.0" x2="504.0" y2="230.7" stroke="#dc2626" stroke-width="3.5"/>
+<polygon points="515.0,230.0 504.4,235.7 503.7,225.8" fill="#dc2626"/>
+<text x="430" y="215" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Kraft</text>
+<text x="430" y="320" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Kraft</text>
+<text x="400" y="400" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Båda föremålen dras mot varandra — jorden drar i mobilen</text>
+<text x="400" y="424" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Ju större massa, desto starkare dragningskraft</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Dragningskraften drar två föremål med massa mot varandra</text>
+</svg>

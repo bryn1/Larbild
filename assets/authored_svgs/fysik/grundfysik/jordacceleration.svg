@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Jordacceleration (g ≈ 9,82 m/s²)</text>
+<rect x="90" y="90" width="90" height="20" fill="#9ca3af" stroke="#1f2937" stroke-width="1.5"/>
+<text x="135" y="82" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">balkong</text>
+<rect x="0" y="430" width="800" height="70" fill="#86efac"/>
+<line x1="0" y1="430" x2="800" y2="430" stroke="#15803d" stroke-width="2"/>
+<circle cx="135" cy="130" r="11" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
+<text x="113" y="134" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">t1</text>
+<circle cx="170" cy="185" r="11" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
+<text x="148" y="189" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">t2</text>
+<circle cx="215" cy="265" r="11" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
+<text x="193" y="269" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">t3</text>
+<circle cx="270" cy="375" r="11" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
+<text x="248" y="379" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="end">t4</text>
+<line x1="155.0" y1="130.0" x2="155.0" y2="143.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="155.0,152.0 150.9,143.0 159.1,143.0" fill="#dc2626"/>
+<line x1="190.0" y1="185.0" x2="190.0" y2="212.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="190.0,221.0 185.9,212.0 194.1,212.0" fill="#dc2626"/>
+<line x1="235.0" y1="265.0" x2="235.0" y2="306.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="235.0,315.0 230.9,306.0 239.1,306.0" fill="#dc2626"/>
+<line x1="290.0" y1="375.0" x2="290.0" y2="410.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="290.0,419.0 285.9,410.0 294.1,410.0" fill="#dc2626"/>
+<text x="300" y="383" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="start" font-weight="bold">farten ökar</text>
+<rect x="470" y="140" width="300" height="120" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="620" y="170" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Jordacceleration</text>
+<text x="620" y="200" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">g ≈ 9,82 m/s²</text>
+<text x="620" y="228" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Farten ökar med 9,82 m/s</text>
+<text x="620" y="246" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">för varje sekund</text>
+<text x="560" y="405" font-family="Arial,sans-serif" font-size="12" fill="#14532d" text-anchor="middle">Utan luftmotstånd faller</text>
+<text x="560" y="423" font-family="Arial,sans-serif" font-size="12" fill="#14532d" text-anchor="middle">stenen snabbare och snabbare</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Jordaccelerationen är hur snabbt ett fallande föremål ökar farten</text>
+</svg>

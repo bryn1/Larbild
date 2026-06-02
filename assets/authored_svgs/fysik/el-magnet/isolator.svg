@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Isolator</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Ett material som stoppar strömmen – t.ex. plast eller gummi</text>
+
+<!-- cross section of a cable -->
+<text x="400" y="120" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Genomskärning av en sladd</text>
+<circle cx="400" cy="250" r="120" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+<circle cx="400" cy="250" r="55" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="400" y="248" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">Koppar</text>
+<text x="400" y="266" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">(ledare)</text>
+
+<!-- label isolator plast -->
+<line x1="490" y1="160" x2="430" y2="195" stroke="#dc2626" stroke-width="1.5"/>
+<text x="585" y="158" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Plast (isolator)</text>
+<text x="585" y="178" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">stoppar strömmen</text>
+
+<!-- current trying to escape but blocked -->
+<line x1="400" y1="250" x2="510" y2="320" stroke="#16a34a" stroke-width="3"/>
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">Strömmen kan inte ta sig ut</text>
+<!-- a blocked symbol at the plast layer -->
+<line x1="495" y1="312" x2="520" y2="338" stroke="#dc2626" stroke-width="3"/>
+<line x1="520" y1="312" x2="495" y2="338" stroke="#dc2626" stroke-width="3"/>
+
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Plasten runt sladden gör att du inte får stöt när du tar i den</text>
+</svg>

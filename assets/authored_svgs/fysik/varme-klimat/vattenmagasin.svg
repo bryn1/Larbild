@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Vattenmagasin (vattenkraft)</text>
+<!-- Mountain / terrain stepped -->
+<polygon points="60,420 60,140 360,140 360,300 560,300 560,420" fill="#e7e5e4" stroke="#a8a29e" stroke-width="2"/>
+<!-- Reservoir water high up -->
+<rect x="80" y="150" width="270" height="80" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+<text x="215" y="195" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Vattenmagasin</text>
+<text x="215" y="215" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">vatten sparas högt upp</text>
+<!-- Dam wall -->
+<rect x="350" y="150" width="22" height="150" fill="#6b7280" stroke="#4b5563" stroke-width="2"/>
+<text x="361" y="135" font-family="Arial,sans-serif" font-size="12" fill="#4b5563" text-anchor="middle">damm</text>
+<!-- Height marker (fall height) -->
+<line x1="395" y1="150" x2="395" y2="300" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,4"/>
+<line x1="389" y1="150" x2="401" y2="150" stroke="#16a34a" stroke-width="1.5"/>
+<line x1="389" y1="300" x2="401" y2="300" stroke="#16a34a" stroke-width="1.5"/>
+<text x="420" y="228" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="start">fallhöjd</text>
+<!-- Penstock: water released down -->
+<line x1="372" y1="270" x2="470" y2="330" stroke="#2563eb" stroke-width="10"/>
+<polygon points="478,335 466,328 462,340" fill="#2563eb"/>
+<text x="345" y="305" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="end">vatten</text>
+<text x="345" y="320" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="end">släpps ut</text>
+<!-- Turbine + generator in power house -->
+<rect x="470" y="315" width="120" height="80" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<circle cx="510" cy="355" r="20" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<g stroke="#2563eb" stroke-width="2">
+<line x1="510" y1="338" x2="510" y2="372"/>
+<line x1="493" y1="355" x2="527" y2="355"/>
+<line x1="498" y1="343" x2="522" y2="367"/>
+<line x1="498" y1="367" x2="522" y2="343"/>
+</g>
+<text x="510" y="388" font-family="Arial,sans-serif" font-size="10" fill="#b45309" text-anchor="middle">turbin</text>
+<rect x="540" y="338" width="44" height="34" fill="#fde68a" stroke="#f59e0b" stroke-width="1.5"/>
+<text x="562" y="358" font-family="Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">gene-</text>
+<text x="562" y="368" font-family="Arial,sans-serif" font-size="9" fill="#b45309" text-anchor="middle">rator</text>
+<!-- electricity out -->
+<line x1="590" y1="350" x2="680" y2="350" stroke="#1e40af" stroke-width="3"/>
+<polygon points="692,350 680,355 680,345" fill="#1e40af"/>
+<text x="690" y="335" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">El</text>
+<!-- water out river -->
+<rect x="590" y="395" width="150" height="25" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="400" y="455" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Mer el behövs → mer vatten släpps ut genom turbinen</text>
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vatten sparat högt upp släpps ut när elen behövs</text>
+</svg>

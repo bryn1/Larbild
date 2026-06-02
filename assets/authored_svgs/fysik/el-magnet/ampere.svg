@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Ampere (A) – elektrisk ström</text>
+<text x="400" y="78" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Ström = laddning som passerar per sekund</text>
+
+<!-- battery -->
+<rect x="90" y="250" width="60" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="3"/>
+<text x="120" y="285" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">Batteri</text>
+<text x="120" y="303" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">+    −</text>
+
+<!-- wires -->
+<line x1="150" y1="265" x2="640" y2="265" stroke="#1f2937" stroke-width="3"/>
+<line x1="640" y1="265" x2="640" y2="380" stroke="#1f2937" stroke-width="3"/>
+<line x1="640" y1="380" x2="120" y2="380" stroke="#1f2937" stroke-width="3"/>
+<line x1="120" y1="380" x2="120" y2="320" stroke="#1f2937" stroke-width="3"/>
+
+<!-- lamp -->
+<circle cx="640" cy="200" r="26" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+<line x1="630" y1="190" x2="650" y2="210" stroke="#f59e0b" stroke-width="2"/>
+<line x1="650" y1="190" x2="630" y2="210" stroke="#f59e0b" stroke-width="2"/>
+<line x1="640" y1="226" x2="640" y2="265" stroke="#1f2937" stroke-width="3"/>
+<text x="690" y="205" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Lampa</text>
+
+<!-- ammeter A in series -->
+<circle cx="400" cy="265" r="28" fill="white" stroke="#16a34a" stroke-width="3"/>
+<text x="400" y="273" font-family="Arial,sans-serif" font-size="22" fill="#16a34a" text-anchor="middle" font-weight="bold">A</text>
+<text x="400" y="325" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">Amperemeter</text>
+
+<!-- electrons flowing -->
+<circle cx="250" cy="265" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="250" y="269" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
+<circle cx="520" cy="265" r="7" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="520" y="269" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
+<line x1="290" y1="248" x2="330" y2="248" stroke="#dc2626" stroke-width="3"/>
+<polygon points="340,248 330,252 330,244" fill="#dc2626"/>
+<text x="315" y="240" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">ström I</text>
+
+<text x="400" y="430" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">1 A = 1 coulomb laddning per sekund</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ampere mäter hur mycket laddning som rinner genom sladden varje sekund</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Neutronstjärna — otroligt tät</text>
+<circle cx="250.0" cy="230.0" r="36.0" fill="#bfdbfe" stroke="#1e40af" stroke-width="3"/>
+<circle cx="250.0" cy="230.0" r="46.0" fill="none" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3,4"/>
+<text x="250" y="292" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Neutronstjärna</text>
+<text x="250" y="310" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">liten som en stad</text>
+<text x="450" y="200" font-family="Arial,sans-serif" font-size="44" fill="#1f2937" text-anchor="middle" font-weight="bold">=</text>
+<ellipse cx="600.0" cy="255.0" rx="50.0" ry="22.0" fill="#e5e7eb" stroke="#6b7280" stroke-width="2.5"/>
+<rect x="644" y="250" width="90" height="9" fill="#e5e7eb" stroke="#6b7280" stroke-width="2" rx="4"/>
+<polygon points="566.0,261.0 592.0,225.0 606.0,243.0 618.0,221.0 640.0,261.0" fill="#78716c" stroke="#44403c" stroke-width="2"/>
+<polygon points="592.0,225.0 598.0,232.0 602.0,229.0" fill="white" stroke="none" stroke-width="1"/>
+<polygon points="618.0,221.0 624.0,229.0 628.0,226.0" fill="white" stroke="none" stroke-width="1"/>
+<text x="620" y="310" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Ett helt berg</text>
+<text x="620" y="328" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">i en tesked</text>
+<text x="400" y="390" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Resten av en tung stjärna som kollapsat</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En neutronstjärna är jätteliten men väger lika mycket som ett berg per tesked</text>
+</svg>

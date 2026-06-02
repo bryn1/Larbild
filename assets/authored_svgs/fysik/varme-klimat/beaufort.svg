@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Beaufortskalan – vindstyrka</text>
+<text x="400" y="62" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Vinden bedöms efter vad den gör med flaggor och träd</text>
+
+<!-- Tree 1: calm (Beaufort 0-1) -->
+<line x1="120" y1="380" x2="120" y2="300" stroke="#92400e" stroke-width="6"/>
+<circle cx="120" cy="280" r="28" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<line x1="100" y1="395" x2="180" y2="395" stroke="#6b7280" stroke-width="2"/>
+<line x1="200" y1="320" x2="200" y2="290" stroke="#6b7280" stroke-width="2"/>
+<rect x="200" y="290" width="32" height="20" fill="#dc2626"/>
+<text x="170" y="425" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">Beaufort 0–2</text>
+<text x="170" y="445" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Lugnt – flaggan hänger</text>
+
+<!-- Tree 2: fresh breeze (Beaufort 4-5) leaning, flag out -->
+<line x1="420" y1="380" x2="412" y2="300" stroke="#92400e" stroke-width="6"/>
+<path d="M 412 300 Q 440 270 470 278 Q 445 282 460 300 Q 430 290 412 300 Z" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<circle cx="430" cy="278" r="22" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<line x1="400" y1="395" x2="480" y2="395" stroke="#6b7280" stroke-width="2"/>
+<line x1="500" y1="320" x2="500" y2="290" stroke="#6b7280" stroke-width="2"/>
+<polygon points="500,290 552,295 500,310" fill="#dc2626"/>
+<text x="470" y="425" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">Beaufort 4–6</text>
+<text x="470" y="445" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Frisk vind – flaggan rak ut</text>
+
+<!-- Tree 3: storm (Beaufort 9+) bent over -->
+<path d="M 690 380 Q 685 330 660 308" stroke="#92400e" stroke-width="6" fill="none"/>
+<path d="M 660 308 Q 620 295 600 305 Q 625 308 612 320 Q 645 312 660 308 Z" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<circle cx="640" cy="305" r="18" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+<line x1="670" y1="395" x2="750" y2="395" stroke="#6b7280" stroke-width="2"/>
+<line x1="770" y1="320" x2="770" y2="290" stroke="#6b7280" stroke-width="2"/>
+<polygon points="770,290 720,283 750,300 720,308" fill="#dc2626"/>
+<text x="710" y="425" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">Beaufort 9–12</text>
+<text x="710" y="445" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Storm – grenar bryts</text>
+
+<!-- arrow scale -->
+<line x1="80" y1="100" x2="720" y2="100" stroke="#f59e0b" stroke-width="4"/>
+<polygon points="730,100 718,95 718,105" fill="#f59e0b"/>
+<text x="80" y="92" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="start">svag</text>
+<text x="720" y="92" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="end">orkan (12)</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ju starkare vind, desto högre tal på skalan – från 0 (stiltje) till 12 (orkan)</text>
+</svg>

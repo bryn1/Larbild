@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Värmeväxlare</text>
+<!-- Heat exchanger body -->
+<rect x="230" y="120" width="340" height="240" rx="14" fill="#f9fafb" stroke="#6b7280" stroke-width="2.5"/>
+<text x="400" y="148" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle" font-weight="bold">Värmeväxlare (de blandas inte)</text>
+<!-- Hot fluid pipe (red) entering left-top, leaving cooler -->
+<line x1="60" y1="190" x2="265" y2="190" stroke="#dc2626" stroke-width="9"/>
+<polygon points="277,190 261,197 261,183" fill="#dc2626"/>
+<text x="120" y="178" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">varm vätska in</text>
+<path d="M280 190 q70 0 70 40 q0 40 70 40 q70 0 70 40" fill="none" stroke="#dc2626" stroke-width="9"/>
+<line x1="490" y1="310" x2="740" y2="310" stroke="#f59e0b" stroke-width="9"/>
+<polygon points="740,310 726,317 726,303" fill="#f59e0b"/>
+<text x="650" y="298" font-family="Arial,sans-serif" font-size="12" fill="#b45309" text-anchor="middle" font-weight="bold">avkyld ut</text>
+<!-- Cold fluid pipe (blue) entering right-bottom, leaving warmer -->
+<line x1="740" y1="190" x2="535" y2="190" stroke="#2563eb" stroke-width="9"/>
+<polygon points="523,190 539,197 539,183" fill="#2563eb"/>
+<text x="660" y="178" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">kall vätska in</text>
+<path d="M520 190 q-70 0 -70 40 q0 40 -70 40 q-70 0 -70 40" fill="none" stroke="#2563eb" stroke-width="9"/>
+<line x1="310" y1="310" x2="60" y2="310" stroke="#16a34a" stroke-width="9"/>
+<polygon points="60,310 74,317 74,303" fill="#16a34a"/>
+<text x="150" y="298" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="bold">uppvärmd ut</text>
+<!-- heat transfer arrows between the two -->
+<g stroke="#9ca3af" stroke-width="2" stroke-dasharray="4,3">
+<line x1="380" y1="230" x2="420" y2="230"/>
+<line x1="380" y1="270" x2="420" y2="270"/>
+</g>
+<text x="400" y="252" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">värme</text>
+<text x="400" y="410" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Den varma blir kallare · den kalla blir varmare</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Två vätskor byter värme utan att blandas</text>
+</svg>

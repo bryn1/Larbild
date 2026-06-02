@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Standardmodellen — naturens byggstenar</text>
+<rect x="70" y="90" width="70" height="70" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+<text x="105.0" y="127.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">u</text>
+<text x="105.0" y="152" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">upp</text>
+<rect x="148" y="90" width="70" height="70" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+<text x="183.0" y="127.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">c</text>
+<text x="183.0" y="152" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">charm</text>
+<rect x="226" y="90" width="70" height="70" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+<text x="261.0" y="127.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">t</text>
+<text x="261.0" y="152" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">topp</text>
+<rect x="70" y="168" width="70" height="70" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+<text x="105.0" y="205.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">d</text>
+<text x="105.0" y="230" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">ner</text>
+<rect x="148" y="168" width="70" height="70" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+<text x="183.0" y="205.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">s</text>
+<text x="183.0" y="230" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">sär</text>
+<rect x="226" y="168" width="70" height="70" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+<text x="261.0" y="205.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">b</text>
+<text x="261.0" y="230" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">botten</text>
+<text x="183.0" y="80" font-family="Arial,sans-serif" font-size="13" fill="#7c3aed" text-anchor="middle" font-weight="bold">Kvarkar</text>
+<rect x="320" y="90" width="70" height="70" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+<text x="355.0" y="127.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">e</text>
+<text x="355.0" y="152" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">elektron</text>
+<rect x="398" y="90" width="70" height="70" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+<text x="433.0" y="127.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">µ</text>
+<text x="433.0" y="152" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">myon</text>
+<rect x="476" y="90" width="70" height="70" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+<text x="511.0" y="127.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">τ</text>
+<text x="511.0" y="152" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">tau</text>
+<rect x="320" y="168" width="70" height="70" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+<text x="355.0" y="205.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">νe</text>
+<text x="355.0" y="230" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">neutrino</text>
+<rect x="398" y="168" width="70" height="70" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+<text x="433.0" y="205.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">νµ</text>
+<text x="433.0" y="230" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">neutrino</text>
+<rect x="476" y="168" width="70" height="70" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+<text x="511.0" y="205.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">ντ</text>
+<text x="511.0" y="230" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">neutrino</text>
+<text x="433.0" y="80" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">Leptoner</text>
+<rect x="70" y="300" width="70" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="4"/>
+<text x="105.0" y="337.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">γ</text>
+<text x="105.0" y="362" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">foton</text>
+<rect x="148" y="300" width="70" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="4"/>
+<text x="183.0" y="337.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">g</text>
+<text x="183.0" y="362" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">gluon</text>
+<rect x="226" y="300" width="70" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="4"/>
+<text x="261.0" y="337.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">W</text>
+<text x="261.0" y="362" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">W-boson</text>
+<rect x="304" y="300" width="70" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="4"/>
+<text x="339.0" y="337.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">Z</text>
+<text x="339.0" y="362" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">Z-boson</text>
+<text x="222.0" y="290" font-family="Arial,sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle" font-weight="bold">Kraftbärare</text>
+<rect x="430" y="300" width="100" height="70" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="4"/>
+<text x="480.0" y="337.0" font-family="Arial,sans-serif" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">H</text>
+<text x="480.0" y="362" font-family="Arial,sans-serif" font-size="9" fill="#374151" text-anchor="middle">Higgs</text>
+<text x="480.0" y="290" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">Higgs</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Alla kända minsta partiklar: kvarkar, leptoner och kraftbärare</text>
+</svg>

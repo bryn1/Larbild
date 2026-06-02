@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Epicykel (cirkel på cirkel)</text>
+<circle cx="360" cy="250" r="6" fill="#16a34a"/>
+<text x="360" y="272" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">Jorden</text>
+<circle cx="360" cy="250" r="150" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4" fill="none"/>
+<text x="360" y="88" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">stora banan (deferent)</text>
+<circle cx="495.9" cy="186.6" r="55" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,3" fill="none"/>
+<circle cx="495.9" cy="186.6" r="3" fill="#6b7280"/>
+<text x="565.9461680554975" y="129.6072607388951" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">lilla banan</text>
+<text x="565.9461680554975" y="144.6072607388951" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">(epicykel)</text>
+<circle cx="523.4" cy="139.0" r="8" fill="#dc2626"/>
+<text x="533.4461680554975" y="130.97586353075098" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="start">planet</text>
+<path d="M 523.4 139.0 A 55 55 0 0 0 481.7 133.5" stroke="#dc2626" stroke-width="2" fill="none"/>
+<polygon points="481.7,133.5 489.4,127.2 491.5,135.1" fill="#dc2626"/>
+<path d="M 495.9 186.6 A 150 150 0 0 0 446.0 127.1" stroke="#16a34a" stroke-width="2" fill="none"/>
+<polygon points="446.0,127.1 455.7,129.0 451.1,135.6" fill="#16a34a"/>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En epicykel är en liten cirkelbana som åker runt på en större — gammal modell för planeterna</text>
+</svg>

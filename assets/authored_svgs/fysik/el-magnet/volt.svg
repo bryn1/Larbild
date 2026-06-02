@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Volt (V) — enhet för spänning</text>
+<text x="400" y="85" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle">Spänning = “elektriskt tryck”</text>
+<rect x="300" y="140" width="200" height="90" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="330" y="195" font-family="Arial,sans-serif" font-size="30" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="470" y="195" font-family="Arial,sans-serif" font-size="30" fill="#2563eb" text-anchor="middle" font-weight="bold">−</text>
+<text x="400" y="190" font-family="Arial,sans-serif" font-size="24" fill="#1f2937" text-anchor="middle" font-weight="bold">9 V</text>
+<text x="400" y="250" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Batteri</text>
+<text x="245" y="300" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">1,5 V</text>
+<line x1="180.0" y1="330.0" x2="240.0" y2="330.0" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="250.0,330.0 240.0,334.2 240.0,325.8" fill="#dc2626"/>
+<text x="245" y="355" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">litet tryck</text>
+<text x="555" y="300" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">230 V</text>
+<line x1="470.0" y1="330.0" x2="626.0" y2="330.0" stroke="#dc2626" stroke-width="6"/>
+<polygon points="640.0,330.0 626.0,335.9 626.0,324.1" fill="#dc2626"/>
+<text x="555" y="355" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">stort tryck</text>
+<text x="400" y="410" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Ju fler volt, desto kraftigare tryck har strömmen i ledningen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Volt mäter spänningen — trycket som driver strömmen</text>
+</svg>

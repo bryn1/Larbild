@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<rect width="800" height="500" fill="white"/>
+<text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Himlakropp (föremål i rymden)</text>
+<text x="400" y="70" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Naturliga föremål i rymden</text>
+<polygon points="170.0,166.0 178.4,188.4 202.3,189.5 183.6,204.4 190.0,227.5 170.0,214.3 150.0,227.5 156.4,204.4 137.7,189.5 161.6,188.4" fill="#fbbf24" stroke="#b45309" stroke-width="1.5"/>
+<text x="170" y="254" font-family="Arial,sans-serif" font-size="13" fill="#b45309" text-anchor="middle" font-weight="bold">Stjärna</text>
+<text x="170" y="270" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(t.ex. solen)</text>
+<circle cx="400" cy="200" r="30" fill="#2563eb"/>
+<text x="400" y="250" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Planet</text>
+<text x="400" y="266" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(t.ex. jorden)</text>
+<circle cx="630" cy="200" r="22" fill="#9ca3af"/>
+<text x="630" y="242" font-family="Arial,sans-serif" font-size="13" fill="#4b5563" text-anchor="middle" font-weight="bold">Måne</text>
+<text x="630" y="258" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(t.ex. vår måne)</text>
+<circle cx="285" cy="330" r="16" fill="#dc2626"/>
+<path d="M 299 324 q 40 -10 70 -28" stroke="#93c5fd" stroke-width="3" fill="none"/>
+<path d="M 299 336 q 40 10 70 26" stroke="#93c5fd" stroke-width="3" fill="none"/>
+<text x="285" y="366" font-family="Arial,sans-serif" font-size="13" fill="#991b1b" text-anchor="middle" font-weight="bold">Komet</text>
+<text x="285" y="382" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(is + svans)</text>
+<circle cx="515" cy="330" r="14" fill="#6b7280"/>
+<text x="515" y="364" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle" font-weight="bold">Asteroid</text>
+<text x="515" y="380" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(stenklump)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En himlakropp är ett naturligt föremål i rymden — stjärna, planet, måne, komet eller asteroid</text>
+</svg>
