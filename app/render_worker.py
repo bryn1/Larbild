@@ -165,8 +165,14 @@ def _noop_pause(reason: str = "", **_: Any) -> Iterator[int]:
     yield 1 << 20
 
 
-def _default_comfy_factory() -> ComfyUIClient:
-    target = RENDER_TARGETS.get(DEFAULT_BACKEND, {})
+def _default_comfy_factory(target_key: Optional[str] = None) -> ComfyUIClient:
+    """A ComfyUI client for a render target (default: DEFAULT_BACKEND = vm100).
+
+    ``target_key`` lets the FLUX route point at its registered target; the FLUX
+    lane shares vm100:8188 today so this resolves to the same endpoint, but it
+    keeps the factory target-aware so a future split host needs no edit here.
+    """
+    target = RENDER_TARGETS.get(target_key or DEFAULT_BACKEND, {})
     return ComfyUIClient(target.get("http") or default_comfyui_url())
 
 
@@ -441,15 +447,49 @@ def render_job(
         # LoRA is STILL resolved server-side from (subject, imageType) — the
         # concept-aligned prompt changes only the positive text, never the LoRA
         # allowlist or the negative scaffold.
-        workflow, meta = _workflow.assemble_txt2img(
-            subject=job["subject"],
-            image_type=job["image_type"],
-            prompt=positive or job["prompt"] or "",
-            neg_prompt=negative,  # SFW negative for diffusion; None → default
-            seed=job["seed"] if job["seed"] is not None else _default_seed(),
-        )
+        #
+        # ── FLUX-lane routing ──
+        # When flux_route_for says this imageType should render on FLUX (the flag
+        # is on AND a 'flux' target is registered AND the type is FLUX-eligible),
+        # build the FLUX graph instead of the SDXL one. FLUX follows prompts far
+        # better on the abstract / science-illustration concepts SDXL plateaus on.
+        # The SAME concept-aligned positive + SFW negative feed both lanes (a fair
+        # model-only switch); only the graph + LoRA set differ, and the FLUX path
+        # has its OWN SFW allowlist (resolve_and_validate_flux_lora). When the flag
+        # is off / no FLUX target, this is None and the SDXL path runs exactly as
+        # before — the routing is fully gated by LARBILD_FLUX_ROUTE_ENABLE.
+        flux_target = flux_route_for(job["image_type"])
+        prompt_text = positive or job["prompt"] or ""
+        seed = job["seed"] if job["seed"] is not None else _default_seed()
+        if flux_target:
+            workflow, meta = _workflow.assemble_flux_txt2img(
+                subject=job["subject"],
+                image_type=job["image_type"],
+                prompt=prompt_text,
+                neg_prompt=negative,
+                seed=seed,
+            )
+            # Honest provenance: the library row says this was a FLUX render.
+            meta["backend"] = RENDER_TARGETS.get(flux_target, {}).get(
+                "label", _backend_label())
+        else:
+            workflow, meta = _workflow.assemble_txt2img(
+                subject=job["subject"],
+                image_type=job["image_type"],
+                prompt=prompt_text,
+                neg_prompt=negative,  # SFW negative for diffusion; None → default
+                seed=seed,
+            )
         meta["area"] = job["area"]  # carry the sort key for the output path
         meta["edu"] = edu_meta      # provenance: how the prompt was built
+
+        # The ComfyUI client. FLUX shares the vm100:8188 endpoint with the SDXL
+        # lane today (one box, one 3090 — only the graph differs), so the default
+        # factory already yields the right client and we keep the call zero-arg
+        # (the injected test factories are zero-arg). The factory is target-aware
+        # for a future split host; the FLUX target it would use is recorded in
+        # meta['backend'] above.
+        comfy = comfy_factory()
 
         # Acquire the SHARED VM100 lock, then pause VRAM, then submit. The lock
         # makes larbild wait while imagegen holds the 3090 (and vice-versa).
@@ -458,11 +498,11 @@ def render_job(
                 log.warning("render %s proceeding without cross-host lock", job_id)
             with vram_pause_cm(reason=f"larbild render {job_id}"):
                 results = _submit_and_wait(
-                    comfy_factory(), workflow, job_id, poll_s, timeout_s,
+                    comfy, workflow, job_id, poll_s, timeout_s,
                 )
 
         # Download + auto-sort.
-        client = comfy_factory()
+        client = comfy
         rel = _relative_output_path(meta, results[0].filename)
         _download_first_image(client, results, _storage_dir() / rel)
         lib_id = _autosort_to_library(job, meta, rel)

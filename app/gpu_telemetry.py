@@ -64,6 +64,15 @@ RENDER_TARGETS: dict[str, dict] = {
               "label": "vm100 · 3090", "accel": "cuda"},
     "vm153": {"ws": "ws://192.168.5.123:8188", "http": "http://192.168.5.123:8188",
               "label": "vm153 · B70", "accel": "vulkan"},
+    # The FLUX render lane (lb FLUX-lane). FLUX dev-fp8 runs on the SAME VM100
+    # ComfyUI (one box, one 3090) — this is a distinct render-TARGET key, not a
+    # distinct host: the worker selects the FLUX graph (assemble_flux_txt2img)
+    # for it while still submitting to vm100:8188. Registering it here is what
+    # makes render_worker.flux_route_for resolve (it returns None until a 'flux'
+    # target exists), and gives the FLUX render an honest backend label on the
+    # library row. The diffusion queue is shared; only the graph differs.
+    "flux": {"ws": "ws://192.168.5.230:8188", "http": "http://192.168.5.230:8188",
+             "label": "vm100 · 3090 · FLUX", "accel": "cuda", "model": "flux"},
 }
 
 # SSE leak protection: cap concurrent streams + idle-timeout a long-lived tab so
