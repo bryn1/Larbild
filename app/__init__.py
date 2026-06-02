@@ -69,6 +69,7 @@ def _register_blueprints(app: Flask) -> None:
     from .routes.jobs import jobs_bp
     from .routes.library import library_bp
     from .routes.lora import lora_bp
+    from .routes.portraits import portraits_bp
     from .routes.taxonomy import taxonomy_bp
     from .routes.views import views_bp
 
@@ -91,6 +92,12 @@ def _register_blueprints(app: Flask) -> None:
     # GET /api/jobs/<id> (state), GET /api/jobs/<id>/events (SSE). The LoRA is
     # never accepted from the client; the worker resolves it server-side.
     app.register_blueprint(jobs_bp)
+    # lb-ly1/lb-wdu/lb-xlr: Porträtt consent API — register a consented face
+    # (under-18 requires guardian consent, computed server-side), gate every
+    # compositor use (consentOk recomputed from the DB, else 403), and GDPR-
+    # delete a reference (cascade files off disk + audit). The consent rule +
+    # storage live in app.portraits; this blueprint is the thin HTTP layer.
+    app.register_blueprint(portraits_bp)
     # lb-eee: serve the no-build React frontend (the Bibliotek view) at / and
     # /bibliotek; repoints Flask's /static handler at the repo-root static/ dir.
     app.register_blueprint(views_bp)
