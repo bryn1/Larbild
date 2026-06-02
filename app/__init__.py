@@ -38,6 +38,7 @@ def create_app(overrides: Optional[Mapping] = None) -> Flask:
 
     _init_database(app)
     _register_blueprints(app)
+    _start_background_workers(app)
     return app
 
 
@@ -63,6 +64,7 @@ def _register_blueprints(app: Flask) -> None:
     stay local to keep the factory's import graph flat and side-effect free at
     package import time.
     """
+    from .gpu_telemetry import gpu_bp
     from .routes.health import health_bp
     from .routes.library import library_bp
     from .routes.lora import lora_bp
@@ -80,6 +82,28 @@ def _register_blueprints(app: Flask) -> None:
     # — the Skapa funnel sends only its (subject, imageType) selection; the
     # backend decides the LoRA and the client can never override it.
     app.register_blueprint(lora_bp)
+    # lb-c2r: per-GPU telemetry + render-target registry at GET /api/gpus
+    # (snapshot) and /api/gpus/stream (SSE) — backs the top-bar GPU pills and
+    # the P4 `auto` router's input.
+    app.register_blueprint(gpu_bp)
     # lb-eee: serve the no-build React frontend (the Bibliotek view) at / and
     # /bibliotek; repoints Flask's /static handler at the repo-root static/ dir.
     app.register_blueprint(views_bp)
+
+
+def _start_background_workers(app: Flask) -> None:
+    """Start long-lived background daemons (lb-c2r).
+
+    The GPU telemetry poller SSHes out to VM100/vm153, so it must NOT run under
+    tests (it would hang/fail on the sandboxed CI host). It is gated on
+    ``START_GPU_TELEMETRY`` — default on in production, default off when
+    ``TESTING`` is set. Imports stay local so the factory's import graph stays
+    flat and a unit test that never boots workers pays nothing.
+    """
+    start_telemetry = app.config.get(
+        "START_GPU_TELEMETRY", not app.config.get("TESTING", False)
+    )
+    if start_telemetry:
+        from .gpu_telemetry import start_telemetry_daemon
+
+        start_telemetry_daemon()
