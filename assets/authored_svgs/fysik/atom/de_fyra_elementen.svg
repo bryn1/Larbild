@@ -9,10 +9,10 @@
 <text x="200" y="328" font-family="Arial,sans-serif" font-size="22" fill="#0c4a6e" text-anchor="middle" font-weight="bold">Luft</text>
 <rect x="440" y="265" width="200" height="110" fill="#ef4444" stroke="#374151" stroke-width="1.5" rx="8" opacity="0.92"/>
 <text x="540" y="328" font-family="Arial,sans-serif" font-size="22" fill="#fff" text-anchor="middle" font-weight="bold">Eld</text>
-<circle cx="400" cy="240" r="46" fill="white" stroke="#6b7280" stroke-width="2"/>
-<text x="400" y="236" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Förr:</text>
-<text x="400" y="252" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">allt =</text>
-<text x="400" y="268" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">4 element</text>
+<circle cx="370" cy="240" r="46" fill="white" stroke="#6b7280" stroke-width="2"/>
+<text x="370" y="236" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Förr:</text>
+<text x="370" y="252" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">allt =</text>
+<text x="370" y="268" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">4 element</text>
 <rect x="200" y="402" width="400" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
 <text x="400" y="428" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Idag vet vi: all materia består av ATOMER</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Forntida tanke: allt byggdes av jord, vatten, luft och eld</text>

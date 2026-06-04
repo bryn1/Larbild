@@ -13,16 +13,16 @@
 <!-- bottom rail -->
 <line x1="150" y1="385" x2="650" y2="385" stroke="#1f2937" stroke-width="3"/>
 <!-- left wire with gap for battery -->
-<line x1="150" y1="160" x2="150" y2="245" stroke="#1f2937" stroke-width="3"/>
-<line x1="150" y1="305" x2="150" y2="385" stroke="#1f2937" stroke-width="3"/>
+<line x1="150" y1="160" x2="150" y2="240" stroke="#1f2937" stroke-width="3"/>
+<line x1="150" y1="310" x2="150" y2="385" stroke="#1f2937" stroke-width="3"/>
 
-<!-- BATTERY on the left side - large and clear -->
-<line x1="125" y1="258" x2="175" y2="258" stroke="#1f2937" stroke-width="3"/>
-<line x1="137" y1="292" x2="163" y2="292" stroke="#1f2937" stroke-width="7"/>
-<text x="108" y="264" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
-<text x="108" y="299" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<!-- BATTERY on the left side - one cell, large and clear (long thin line = +, short thick line = -) -->
+<line x1="120" y1="255" x2="180" y2="255" stroke="#1f2937" stroke-width="3"/>
+<line x1="138" y1="295" x2="162" y2="295" stroke="#1f2937" stroke-width="9"/>
+<text x="103" y="261" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="103" y="303" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
 <text x="150" y="333" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
-<text x="200" y="264" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">lång linje = pluspol (+)</text>
+<text x="200" y="262" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">lång tunn linje = pluspol (+)</text>
 <text x="200" y="290" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="start">kort tjock linje = minuspol (−)</text>
 
 <!-- LAMP 1 on top rail (label moved UP, clear of the circle) -->

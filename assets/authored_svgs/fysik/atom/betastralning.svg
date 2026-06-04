@@ -42,12 +42,12 @@
 <line x1="555" y1="200" x2="690" y2="120" stroke="#2563eb" stroke-width="2.5"/>
 <polygon points="700,114 684,116 690,128" fill="#2563eb"/>
 <circle cx="710" cy="108" r="16" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
-<text x="710" y="113" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">e−</text>
+<text x="710" y="113" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">e-</text>
 <text x="640" y="95" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">betapartikel</text>
 
 <!-- explanation box: n -> p+ + e- -->
 <rect x="250" y="335" width="300" height="58" fill="white" stroke="#9ca3af" stroke-width="1.5" rx="6"/>
-<text x="400" y="360" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">neutron  →  proton (p+)  +  elektron (e−)</text>
+<text x="400" y="360" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">neutron  →  proton (p+)  +  elektron (e-)</text>
 <text x="400" y="381" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">en neutron i kärnan blir en proton och skickar ut en elektron</text>
 
 <!-- shielding note -->

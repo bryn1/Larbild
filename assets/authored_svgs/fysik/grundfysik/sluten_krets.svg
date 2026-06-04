@@ -4,35 +4,38 @@
 
 <!-- circuit wire rectangle, with a gap on the bottom for the battery -->
 <rect x="200" y="130" width="400" height="240" fill="none" stroke="#1f2937" stroke-width="4"/>
-<!-- erase wire where the battery sits (bottom-left) by drawing white over it -->
-<rect x="298" y="362" width="104" height="16" fill="white"/>
+<!-- erase wire where the battery sits (bottom-middle) by drawing white over it -->
+<rect x="322" y="362" width="56" height="16" fill="white"/>
 
-<!-- BATTERY symbol on the bottom wire: long line = +, short thick line = − -->
+<!-- BATTERY symbol (ONE cell) on the bottom wire: long thin line = +, short thick line = − -->
 <!-- left lead -->
-<line x1="298" y1="370" x2="320" y2="370" stroke="#1f2937" stroke-width="4"/>
+<line x1="322" y1="370" x2="338" y2="370" stroke="#1f2937" stroke-width="4"/>
 <!-- short, thick plate = minus -->
-<line x1="320" y1="356" x2="320" y2="384" stroke="#1f2937" stroke-width="6"/>
-<text x="312" y="405" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<line x1="338" y1="356" x2="338" y2="384" stroke="#1f2937" stroke-width="6"/>
+<text x="330" y="405" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">-</text>
 <!-- long, thin plate = plus -->
-<line x1="345" y1="345" x2="345" y2="395" stroke="#dc2626" stroke-width="3"/>
-<text x="353" y="412" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
-<!-- second cell (short + long again) to make it read clearly as a battery -->
-<line x1="362" y1="356" x2="362" y2="384" stroke="#1f2937" stroke-width="6"/>
-<line x1="380" y1="345" x2="380" y2="395" stroke="#dc2626" stroke-width="3"/>
+<line x1="362" y1="345" x2="362" y2="395" stroke="#dc2626" stroke-width="3"/>
+<text x="370" y="412" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
 <!-- right lead -->
-<line x1="380" y1="370" x2="402" y2="370" stroke="#1f2937" stroke-width="4"/>
+<line x1="362" y1="370" x2="378" y2="370" stroke="#1f2937" stroke-width="4"/>
 <text x="350" y="445" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Batteri</text>
-<text x="350" y="464" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">lång linje = plus (+), kort tjock = minus (−)</text>
+<text x="350" y="464" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">lång linje = plus (+), kort tjock = minus (-)</text>
 
-<!-- lamp on right side: circle with X -->
-<circle cx="600" cy="250" r="28" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
-<line x1="580" y1="230" x2="620" y2="270" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="620" y1="230" x2="580" y2="270" stroke="#f59e0b" stroke-width="2.5"/>
-<line x1="600" y1="210" x2="600" y2="195" stroke="#f59e0b" stroke-width="3"/>
-<line x1="640" y1="250" x2="658" y2="250" stroke="#f59e0b" stroke-width="3"/>
-<line x1="628" y1="222" x2="642" y2="208" stroke="#f59e0b" stroke-width="3"/>
-<text x="600" y="335" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Lampa</text>
-<text x="600" y="353" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(lyser)</text>
+<!-- lamp on right side: circle with X and light rays in ALL directions -->
+<circle cx="600" cy="250" r="26" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<line x1="582" y1="232" x2="618" y2="268" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="618" y1="232" x2="582" y2="268" stroke="#f59e0b" stroke-width="2.5"/>
+<!-- rays radiating outward in 8 directions -->
+<line x1="600" y1="216" x2="600" y2="198" stroke="#f59e0b" stroke-width="3"/>
+<line x1="600" y1="284" x2="600" y2="302" stroke="#f59e0b" stroke-width="3"/>
+<line x1="626" y1="250" x2="648" y2="250" stroke="#f59e0b" stroke-width="3"/>
+<line x1="574" y1="250" x2="552" y2="250" stroke="#f59e0b" stroke-width="3"/>
+<line x1="619" y1="231" x2="634" y2="216" stroke="#f59e0b" stroke-width="3"/>
+<line x1="581" y1="231" x2="566" y2="216" stroke="#f59e0b" stroke-width="3"/>
+<line x1="619" y1="269" x2="634" y2="284" stroke="#f59e0b" stroke-width="3"/>
+<line x1="581" y1="269" x2="566" y2="284" stroke="#f59e0b" stroke-width="3"/>
+<text x="600" y="338" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Lampa</text>
+<text x="600" y="356" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(lyser)</text>
 
 <!-- switch on top side: CLOSED -->
 <circle cx="370" cy="130" r="5" fill="#1f2937"/>
@@ -40,12 +43,17 @@
 <line x1="370" y1="130" x2="428" y2="130" stroke="#16a34a" stroke-width="4"/>
 <text x="400" y="110" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">Strömbrytare (sluten)</text>
 
-<!-- current direction arrows around the loop -->
-<polygon points="500,126 480,118 480,134" fill="#2563eb"/>
-<polygon points="604,200 596,182 612,182" fill="#2563eb"/>
-<polygon points="196,300 188,318 204,318" fill="#2563eb"/>
-<text x="500" y="250" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">strömmen</text>
-<text x="500" y="268" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">går runt</text>
+<!-- current-direction arrows sitting ON the wires (clockwise: + at right of battery -> up left side... here drawn consistently around loop) -->
+<!-- top wire: pointing right -->
+<polygon points="510,130 494,122 494,138" fill="#2563eb"/>
+<!-- right wire: pointing down (toward lamp / on into battery -) -->
+<polygon points="600,210 592,194 608,194" fill="#2563eb"/>
+<!-- left wire: pointing up -->
+<polygon points="200,290 192,306 208,306" fill="#2563eb"/>
+<!-- bottom wire (left of battery): pointing right toward + ... shown on left segment -->
+<polygon points="260,370 244,362 244,378" fill="#2563eb"/>
+<text x="470" y="250" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">strömmen</text>
+<text x="470" y="268" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">går runt</text>
 
 <text x="400" y="488" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En sluten krets är en obruten bana från batteriets ena pol till den andra</text>
 </svg>

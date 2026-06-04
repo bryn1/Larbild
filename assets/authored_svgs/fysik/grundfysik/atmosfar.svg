@@ -2,20 +2,26 @@
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Atmosfär (luftlagret runt jorden)</text>
 
-<!-- space (top, dark) -->
-<rect x="0" y="55" width="800" height="70" fill="#1e293b"/>
-<text x="400" y="98" font-family="Arial,sans-serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">Rymden (nästan ingen luft)</text>
-<circle cx="120" cy="80" r="2" fill="white"/>
-<circle cx="250" cy="95" r="2" fill="white"/>
-<circle cx="600" cy="78" r="2" fill="white"/>
-<circle cx="700" cy="100" r="2" fill="white"/>
+<!-- outer space (top, black): completely WITHOUT air -->
+<rect x="0" y="48" width="800" height="50" fill="#0b1120"/>
+<text x="400" y="79" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Yttre rymden — helt utan luft (vakuum)</text>
+<circle cx="90" cy="62" r="2" fill="white"/>
+<circle cx="320" cy="70" r="2" fill="white"/>
+<circle cx="500" cy="60" r="2" fill="white"/>
+<circle cx="720" cy="72" r="2" fill="white"/>
+
+<!-- space (almost no air) -->
+<rect x="0" y="98" width="800" height="44" fill="#1e293b"/>
+<text x="400" y="125" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Rymden (nästan ingen luft)</text>
+<circle cx="180" cy="112" r="2" fill="white"/>
+<circle cx="610" cy="115" r="2" fill="white"/>
 
 <!-- upper atmosphere (thin air) -->
-<rect x="0" y="125" width="800" height="80" fill="#bfdbfe"/>
-<text x="400" y="170" font-family="Arial,sans-serif" font-size="14" fill="#1e3a8a" text-anchor="middle">Tunn luft högt upp</text>
+<rect x="0" y="142" width="800" height="68" fill="#bfdbfe"/>
+<text x="400" y="182" font-family="Arial,sans-serif" font-size="14" fill="#1e3a8a" text-anchor="middle">Tunn luft högt upp</text>
 
 <!-- lower atmosphere (the air we breathe) -->
-<rect x="0" y="205" width="800" height="120" fill="#7ec8f7"/>
+<rect x="0" y="210" width="800" height="115" fill="#7ec8f7"/>
 <text x="400" y="270" font-family="Arial,sans-serif" font-size="16" fill="#0c4a6e" text-anchor="middle" font-weight="bold">Atmosfären — luft och gaser</text>
 <text x="400" y="294" font-family="Arial,sans-serif" font-size="12" fill="#0c4a6e" text-anchor="middle">tätast nära marken (luften vi andas)</text>
 
@@ -29,12 +35,12 @@
 <rect x="620" y="332" width="34" height="24" fill="#fde68a" stroke="#92400e" stroke-width="1.5"/>
 <polygon points="620,332 637,318 654,332" fill="#dc2626"/>
 
-<!-- thickness bracket on the right: marks the atmosphere layer height -->
-<line x1="760" y1="128" x2="760" y2="333" stroke="#dc2626" stroke-width="2.5"/>
-<line x1="752" y1="128" x2="768" y2="128" stroke="#dc2626" stroke-width="2.5"/>
+<!-- thickness bracket on the right: marks the air layer height (only where there IS air) -->
+<line x1="760" y1="145" x2="760" y2="333" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="752" y1="145" x2="768" y2="145" stroke="#dc2626" stroke-width="2.5"/>
 <line x1="752" y1="333" x2="768" y2="333" stroke="#dc2626" stroke-width="2.5"/>
-<text x="745" y="225" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="end" font-weight="bold">lager av</text>
-<text x="745" y="243" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="end" font-weight="bold">luft</text>
+<text x="745" y="235" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="end" font-weight="bold">lager av</text>
+<text x="745" y="253" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="end" font-weight="bold">luft</text>
 
 <text x="400" y="490" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Atmosfären är luftlagret som omger jorden och håller oss vid liv</text>
 </svg>

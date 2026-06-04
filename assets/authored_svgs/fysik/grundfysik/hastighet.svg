@@ -6,14 +6,14 @@
 <line x1="100" y1="190" x2="700" y2="190" stroke="#1f2937" stroke-width="3"/>
 <line x1="100" y1="190" x2="700" y2="190" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="20,16"/>
 
-<!-- car -->
-<circle cx="170" cy="183" r="16" fill="none" stroke="#1f2937" stroke-width="3"/>
-<circle cx="220" cy="183" r="16" fill="none" stroke="#1f2937" stroke-width="3"/>
-<path d="M 170 183 L 195 165 L 220 183 M 195 165 L 200 151" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<!-- vehicle sits ON TOP of the road: wheel bottoms (r=16) rest on the road line y=190 -> wheel centre y=174 -->
+<circle cx="170" cy="174" r="16" fill="none" stroke="#1f2937" stroke-width="3"/>
+<circle cx="220" cy="174" r="16" fill="none" stroke="#1f2937" stroke-width="3"/>
+<path d="M 170 174 L 195 156 L 220 174 M 195 156 L 200 142" fill="none" stroke="#2563eb" stroke-width="2.5"/>
 <!-- velocity arrow -->
-<line x1="245" y1="165" x2="318" y2="165" stroke="#dc2626" stroke-width="3"/>
-<polygon points="330,165 318,170.4 318,159.6" fill="#dc2626"/>
-<text x="288" y="152" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">v</text>
+<line x1="245" y1="156" x2="318" y2="156" stroke="#dc2626" stroke-width="3"/>
+<polygon points="330,156 318,161.4 318,150.6" fill="#dc2626"/>
+<text x="288" y="143" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">v</text>
 
 <!-- distance measurement s -->
 <line x1="170" y1="225" x2="600" y2="225" stroke="#16a34a" stroke-width="2"/>

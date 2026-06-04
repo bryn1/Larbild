@@ -28,9 +28,5 @@
 <polygon points="380.0,330.0 371.3,330.4 374.4,336.7" fill="#92400e"/>
 <line x1="240.0" y1="418.0" x2="385.1" y2="334.0" stroke="#92400e" stroke-width="1.5"/>
 <polygon points="392.0,330.0 383.3,331.0 386.8,337.0" fill="#92400e"/>
-<circle cx="620" cy="400" r="18" fill="#fca5a5" stroke="#dc2626" stroke-width="1.5"/>
-<text x="620" y="404" font-family="Arial,sans-serif" font-size="10" fill="#991b1b" text-anchor="middle">mat</text>
-<line x1="605.0" y1="388.0" x2="432.6" y2="330.5" stroke="#dc2626" stroke-width="1.5"/>
-<polygon points="425.0,328.0 431.5,333.9 433.7,327.2" fill="#dc2626"/>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Svag strålning når oss alltid — från rymden, solen, marken och maten</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Svag strålning når oss alltid — från rymden, solen och marken</text>
 </svg>

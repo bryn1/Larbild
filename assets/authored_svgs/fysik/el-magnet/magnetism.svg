@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Magnetism</text>
-<text x="400" y="64" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle">Kraften som drar samman eller stöter bort magneter</text>
+<text x="400" y="64" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle">Kraften som drar samman eller stöter bort magneter</text>
 
 <!-- TOP: unlike poles attract (N <-> S), field lines connect -->
-<text x="400" y="100" font-family="Arial,sans-serif" font-size="17" fill="#16a34a" text-anchor="middle" font-weight="bold">Olika poler dras till varandra</text>
+<text x="400" y="100" font-family="Arial,sans-serif" font-size="18" fill="#16a34a" text-anchor="middle" font-weight="bold">Olika poler dras till varandra</text>
 
-<!-- left magnet N|S, right magnet N|S so facing poles are S ... N? show facing N (red) and S (blue) -->
+<!-- left magnet S|N, right magnet S|N so facing poles are N (red) and S (blue) -->
 <rect x="190" y="125" width="70" height="46" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
 <rect x="260" y="125" width="70" height="46" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
 <text x="225" y="156" font-family="Arial,sans-serif" font-size="22" fill="white" text-anchor="middle" font-weight="bold">S</text>
@@ -20,18 +20,22 @@
 <!-- field lines crossing the gap N(330) -> S(470), several arcs -->
 <line x1="330" y1="148" x2="470" y2="148" stroke="#6b7280" stroke-width="2"/>
 <polygon points="408,148 396,143 396,153" fill="#6b7280"/>
-<path d="M330 138 C370 118 430 118 470 138" fill="none" stroke="#6b7280" stroke-width="2"/>
-<polygon points="406,123 394,119 396,129" fill="#6b7280"/>
-<path d="M330 158 C370 178 430 178 470 158" fill="none" stroke="#6b7280" stroke-width="2"/>
-<polygon points="406,173 394,176 396,166" fill="#6b7280"/>
+<path d="M330 138 C370 122 430 122 470 138" fill="none" stroke="#6b7280" stroke-width="2"/>
+<polygon points="406,126 394,122 396,132" fill="#6b7280"/>
+<path d="M330 158 C370 174 430 174 470 158" fill="none" stroke="#6b7280" stroke-width="2"/>
+<polygon points="406,170 394,173 396,163" fill="#6b7280"/>
+<path d="M330 130 C372 104 428 104 470 130" fill="none" stroke="#6b7280" stroke-width="2"/>
+<polygon points="404,112 392,108 394,118" fill="#6b7280"/>
+<path d="M330 166 C372 192 428 192 470 166" fill="none" stroke="#6b7280" stroke-width="2"/>
+<polygon points="404,184 392,187 394,177" fill="#6b7280"/>
 <!-- attraction force arrows -->
-<line x1="360" y1="200" x2="395" y2="200" stroke="#16a34a" stroke-width="4"/>
-<polygon points="408,200 392,193 392,207" fill="#16a34a"/>
-<line x1="440" y1="200" x2="405" y2="200" stroke="#16a34a" stroke-width="4"/>
-<polygon points="392,200 408,193 408,207" fill="#16a34a"/>
+<line x1="360" y1="205" x2="395" y2="205" stroke="#16a34a" stroke-width="4"/>
+<polygon points="408,205 392,198 392,212" fill="#16a34a"/>
+<line x1="440" y1="205" x2="405" y2="205" stroke="#16a34a" stroke-width="4"/>
+<polygon points="392,205 408,198 408,212" fill="#16a34a"/>
 
 <!-- BOTTOM: like poles repel (N <-> N) -->
-<text x="400" y="270" font-family="Arial,sans-serif" font-size="17" fill="#dc2626" text-anchor="middle" font-weight="bold">Lika poler stöter bort varandra</text>
+<text x="400" y="270" font-family="Arial,sans-serif" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="bold">Lika poler stöter bort varandra</text>
 
 <rect x="190" y="300" width="70" height="46" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
 <rect x="260" y="300" width="70" height="46" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
@@ -44,17 +48,19 @@
 <text x="575" y="331" font-family="Arial,sans-serif" font-size="22" fill="white" text-anchor="middle" font-weight="bold">S</text>
 
 <!-- field lines bulging out + curling away from the two facing N poles (they don't connect) -->
-<path d="M330 312 C370 300 370 295 358 288" fill="none" stroke="#6b7280" stroke-width="1.5"/>
-<path d="M330 323 C375 323 378 320 372 314" fill="none" stroke="#6b7280" stroke-width="1.5"/>
-<path d="M330 334 C370 346 370 351 358 358" fill="none" stroke="#6b7280" stroke-width="1.5"/>
-<path d="M470 312 C430 300 430 295 442 288" fill="none" stroke="#6b7280" stroke-width="1.5"/>
-<path d="M470 323 C425 323 422 320 428 314" fill="none" stroke="#6b7280" stroke-width="1.5"/>
-<path d="M470 334 C430 346 430 351 442 358" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<path d="M330 308 C372 294 372 288 358 280" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<path d="M330 318 C378 318 382 314 376 307" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<path d="M330 328 C378 328 382 332 376 339" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<path d="M330 338 C372 352 372 358 358 366" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<path d="M470 308 C428 294 428 288 442 280" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<path d="M470 318 C422 318 418 314 424 307" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<path d="M470 328 C422 328 418 332 424 339" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<path d="M470 338 C428 352 428 358 442 366" fill="none" stroke="#6b7280" stroke-width="1.5"/>
 <!-- repulsion force arrows pointing apart -->
-<line x1="380" y1="375" x2="345" y2="375" stroke="#dc2626" stroke-width="4"/>
-<polygon points="333,375 349,368 349,382" fill="#dc2626"/>
-<line x1="420" y1="375" x2="455" y2="375" stroke="#dc2626" stroke-width="4"/>
-<polygon points="467,375 451,368 451,382" fill="#dc2626"/>
+<line x1="380" y1="378" x2="345" y2="378" stroke="#dc2626" stroke-width="4"/>
+<polygon points="333,378 349,371 349,385" fill="#dc2626"/>
+<line x1="420" y1="378" x2="455" y2="378" stroke="#dc2626" stroke-width="4"/>
+<polygon points="467,378 451,371 451,385" fill="#dc2626"/>
 
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Magnetismen verkar på avstånd, utan att magneterna rör vid varandra</text>
 </svg>

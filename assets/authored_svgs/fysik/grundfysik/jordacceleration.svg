@@ -13,23 +13,23 @@
 <!-- vertical fall path (faint) -->
 <line x1="200" y1="113" x2="200" y2="418" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,4"/>
 
-<!-- t = 1 s : fallen 1 unit -->
-<circle cx="200" cy="140" r="13" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
-<text x="225" y="144" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">t = 1 s</text>
-<line x1="200" y1="153" x2="200" y2="170" stroke="#dc2626" stroke-width="2.5"/>
-<polygon points="200,179 195.9,170 204.1,170" fill="#dc2626"/>
+<!-- t = 1 s : short fall, short velocity arrow -->
+<circle cx="200" cy="150" r="13" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
+<text x="225" y="154" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">t = 1 s</text>
+<line x1="200" y1="163" x2="200" y2="180" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="200,189 195.9,180 204.1,180" fill="#dc2626"/>
 
-<!-- t = 2 s : fallen 4 units (bigger gap, faster) -->
-<circle cx="200" cy="230" r="13" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
-<text x="225" y="234" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">t = 2 s</text>
-<line x1="200" y1="243" x2="200" y2="278" stroke="#dc2626" stroke-width="2.5"/>
-<polygon points="200,287 195.9,278 204.1,278" fill="#dc2626"/>
+<!-- t = 2 s : bigger gap, longer velocity arrow (faster) -->
+<circle cx="200" cy="240" r="13" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
+<text x="225" y="244" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">t = 2 s</text>
+<line x1="200" y1="253" x2="200" y2="288" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="200,297 195.9,288 204.1,288" fill="#dc2626"/>
 
-<!-- t = 3 s : fallen 9 units (biggest gap, fastest) -->
-<circle cx="200" cy="380" r="13" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
-<text x="225" y="384" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">t = 3 s</text>
-<line x1="200" y1="393" x2="200" y2="414" stroke="#dc2626" stroke-width="2.5"/>
-<polygon points="200,418 195.9,409 204.1,409" fill="#dc2626"/>
+<!-- t = 3 s : biggest gap, longest velocity arrow (fastest) — full length above the ground -->
+<circle cx="200" cy="350" r="13" fill="#6b7280" stroke="#1f2937" stroke-width="1.5"/>
+<text x="225" y="354" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="start" font-weight="bold">t = 3 s</text>
+<line x1="200" y1="363" x2="200" y2="408" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="200,417 195.9,408 204.1,408" fill="#dc2626"/>
 
 <!-- "farten ökar" bracket on the right of the path -->
 <text x="300" y="270" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start" font-weight="bold">farten ökar</text>

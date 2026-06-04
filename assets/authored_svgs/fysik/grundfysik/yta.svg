@@ -5,16 +5,6 @@
 
 <!-- a realistic tabletop: 2,0 m long x 1,2 m wide -->
 <rect x="240" y="120" width="320" height="192" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
-<!-- light grid: 5 cols x 3 rows of 0,4 m squares -->
-<line x1="304" y1="120" x2="304" y2="312" stroke="#f59e0b" stroke-width="1"/>
-<line x1="368" y1="120" x2="368" y2="312" stroke="#f59e0b" stroke-width="1"/>
-<line x1="432" y1="120" x2="432" y2="312" stroke="#f59e0b" stroke-width="1"/>
-<line x1="496" y1="120" x2="496" y2="312" stroke="#f59e0b" stroke-width="1"/>
-<line x1="240" y1="184" x2="560" y2="184" stroke="#f59e0b" stroke-width="1"/>
-<line x1="240" y1="248" x2="560" y2="248" stroke="#f59e0b" stroke-width="1"/>
-<!-- one unit square highlighted -->
-<rect x="240" y="120" width="64" height="64" fill="#fbbf24" stroke="#b45309" stroke-width="1.5"/>
-<text x="272" y="157" font-family="Arial,sans-serif" font-size="10" fill="#7c2d12" text-anchor="middle">0,4 m</text>
 
 <text x="400" y="222" font-family="Arial,sans-serif" font-size="15" fill="#7c2d12" text-anchor="middle" font-weight="bold">Bordets yta</text>
 

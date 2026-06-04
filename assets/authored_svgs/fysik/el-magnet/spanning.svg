@@ -6,11 +6,11 @@
 <!-- ============ LEFT: battery + voltmeter across the terminals ============ -->
 <text x="230" y="105" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Voltmeter mäter spänningen</text>
 
-<!-- clean schematic battery symbol: long line (+) over short thick line (-) -->
-<line x1="170" y1="250" x2="290" y2="250" stroke="#1f2937" stroke-width="3"/>
-<line x1="200" y1="290" x2="260" y2="290" stroke="#1f2937" stroke-width="9"/>
-<text x="150" y="256" font-family="Arial,sans-serif" font-size="22" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
-<text x="150" y="299" font-family="Arial,sans-serif" font-size="22" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<!-- clean schematic battery symbol: long thin line (+) over short thick line (-) -->
+<line x1="160" y1="250" x2="300" y2="250" stroke="#1f2937" stroke-width="3"/>
+<line x1="205" y1="290" x2="255" y2="290" stroke="#1f2937" stroke-width="10"/>
+<text x="143" y="256" font-family="Arial,sans-serif" font-size="24" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="143" y="300" font-family="Arial,sans-serif" font-size="24" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
 <text x="230" y="335" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
 
 <!-- wires from each terminal up to the voltmeter -->
@@ -30,8 +30,8 @@
 <text x="335" y="269" font-family="Arial,sans-serif" font-size="18" fill="#16a34a" text-anchor="middle" font-weight="bold">1,5 V</text>
 
 <!-- voltage span marker between terminals -->
-<path d="M270 250 C295 262 295 278 270 290" fill="none" stroke="#16a34a" stroke-width="2"/>
-<text x="300" y="305" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">spänning U</text>
+<path d="M275 250 C300 262 300 278 275 290" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="305" y="305" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">spänning U</text>
 
 <!-- ============ RIGHT: meaning = energy per charge ============ -->
 <rect x="440" y="120" width="330" height="210" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>

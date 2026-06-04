@@ -18,9 +18,9 @@
 
 <!-- exactly 2 electrons on the shell (matches 2 protons) -->
 <circle cx="300" cy="120" r="14" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
-<text x="300" y="125" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
+<text x="300" y="125" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e-</text>
 <circle cx="300" cy="380" r="14" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
-<text x="300" y="385" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
+<text x="300" y="385" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e-</text>
 
 <!-- count box: protons = electrons -->
 <rect x="490" y="120" width="290" height="130" rx="8" fill="white" stroke="#16a34a" stroke-width="2.5"/>
@@ -29,8 +29,8 @@
 <text x="520" y="183" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">p+</text>
 <text x="545" y="183" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">2 protoner (+)</text>
 <circle cx="520" cy="212" r="12" fill="#2563eb"/>
-<text x="520" y="217" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e−</text>
-<text x="545" y="217" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">2 elektroner (−)</text>
+<text x="520" y="217" font-family="Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">e-</text>
+<text x="545" y="217" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">2 elektroner (-)</text>
 <text x="635" y="240" font-family="Arial,sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold">lika många: 2 = 2</text>
 
 <!-- callout: nucleus -->
@@ -43,5 +43,5 @@
 <text x="560" y="368" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Elektroner</text>
 <text x="560" y="387" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">i skal runt kärnan</text>
 
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">I en neutral atom är antalet protoner (p+) lika med antalet elektroner (e−)</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">I en neutral atom är antalet protoner (p+) lika med antalet elektroner (e-)</text>
 </svg>

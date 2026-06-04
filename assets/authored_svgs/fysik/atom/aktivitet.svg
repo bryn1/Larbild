@@ -30,5 +30,5 @@
 <text x="412" y="240" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">räknas</text>
 <text x="400" y="390" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Enhet: becquerel (Bq)   1 Bq = 1 sönderfall per sekund</text>
 <text x="400" y="418" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Hög aktivitet = många sönderfall = mer strålning just nu</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Aktivitet är antalet atomkärnor som sönderfaller varje sekund</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Aktivitet är antalet radioaktiva atomkärnor som sönderfaller varje sekund</text>
 </svg>
