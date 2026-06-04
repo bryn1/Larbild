@@ -35,7 +35,7 @@
 <line x1="109" y1="230" x2="118" y2="230" stroke="#f59e0b" stroke-width="3"/>
 <text x="156" y="276" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Värmeenergi</text>
 
-<!-- 5 Ljusenergi (light / radiation) -->
+<!-- 5 Strålningsenergi (radiation / light) -->
 <rect x="279" y="186" width="242" height="104" rx="8" fill="#fefce8" stroke="#f59e0b" stroke-width="2"/>
 <circle cx="322" cy="226" r="17" fill="#fde047" stroke="#f59e0b" stroke-width="2"/>
 <line x1="322" y1="200" x2="322" y2="190" stroke="#facc15" stroke-width="3"/>
@@ -43,8 +43,8 @@
 <line x1="298" y1="210" x2="288" y2="200" stroke="#facc15" stroke-width="3"/>
 <line x1="346" y1="242" x2="356" y2="252" stroke="#facc15" stroke-width="3"/>
 <line x1="298" y1="242" x2="288" y2="252" stroke="#facc15" stroke-width="3"/>
-<text x="412" y="262" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Ljusenergi</text>
-<text x="412" y="280" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(strålningsenergi)</text>
+<text x="412" y="262" font-family="Arial,sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold">Strålningsenergi</text>
+<text x="412" y="280" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">(ljus och strålning)</text>
 
 <!-- 6 Ljudenergi (sound) -->
 <rect x="528" y="186" width="242" height="104" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
@@ -66,7 +66,7 @@
 <text x="339" y="363" font-family="Arial,sans-serif" font-size="18" fill="#7c3aed" text-anchor="middle" font-weight="bold">+</text>
 <text x="425" y="358" font-family="Arial,sans-serif" font-size="15" fill="#6d28d9" text-anchor="middle" font-weight="bold">Kemisk energi</text>
 
-<!-- 9 Kärnenergi (nuclear) -->
+<!-- 9 Kärnenergi (nuclear) - NEW -->
 <rect x="528" y="300" width="242" height="104" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
 <circle cx="572" cy="352" r="9" fill="#ea580c"/>
 <ellipse cx="572" cy="352" rx="26" ry="11" fill="none" stroke="#ea580c" stroke-width="2"/>

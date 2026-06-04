@@ -4,6 +4,7 @@
 <text x="400" y="62" font-family="Arial,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle">Lamporna sitter vid sidan av varandra – strömmen delar upp sig</text>
 
 <!-- Main loop: battery on the left, two parallel branches with lamps -->
+<!-- left vertical wire from battery -->
 <!-- top rail (ends at the last branch) -->
 <line x1="180" y1="130" x2="560" y2="130" stroke="#1f2937" stroke-width="3"/>
 <!-- bottom rail (ends at the last branch) -->
@@ -15,7 +16,7 @@
 <!-- BATTERY on left side -->
 <line x1="160" y1="248" x2="200" y2="248" stroke="#1f2937" stroke-width="3"/>
 <line x1="170" y1="282" x2="190" y2="282" stroke="#1f2937" stroke-width="6"/>
-<text x="148" y="253" font-family="Arial,sans-serif" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="148" y="253" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">+</text>
 <text x="148" y="288" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
 <text x="130" y="270" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
 
@@ -41,14 +42,11 @@
 <circle cx="400" cy="400" r="4.5" fill="#1f2937"/>
 <circle cx="560" cy="400" r="4.5" fill="#1f2937"/>
 
-<!-- current arrows: main flow along top rail + splitting down each branch -->
-<line x1="245" y1="130" x2="305" y2="130" stroke="#dc2626" stroke-width="3"/>
-<polygon points="317,130 303,123 303,137" fill="#dc2626"/>
-<text x="290" y="120" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">strömmen delar sig</text>
-<line x1="400" y1="160" x2="400" y2="200" stroke="#dc2626" stroke-width="3"/>
-<polygon points="400,212 393,198 407,198" fill="#dc2626"/>
-<line x1="560" y1="160" x2="560" y2="200" stroke="#dc2626" stroke-width="3"/>
-<polygon points="560,212 553,198 567,198" fill="#dc2626"/>
+<!-- current arrows: main + splitting -->
+<polygon points="300,130 290,125 290,135" fill="#dc2626"/>
+<text x="300" y="120" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">strömmen delar sig</text>
+<polygon points="400,200 395,190 405,190" fill="#dc2626"/>
+<polygon points="560,200 555,190 565,190" fill="#dc2626"/>
 
 <text x="400" y="445" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Går en lampa sönder lyser den andra ändå</text>
 <text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Komponenterna sitter vid sidan av varandra och strömmen delar upp sig</text>

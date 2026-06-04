@@ -9,8 +9,7 @@
 <line x1="400" y1="305" x2="400" y2="271" stroke="#6b7280" stroke-width="1"/>
 
 <!-- HELIX: 7 turns. Each turn = solid front arc (in front of core, lower) + dashed back arc (behind core, upper).
-     Front arcs are drawn AFTER the core so they sit on top; back arcs are dashed to read "behind".
-     Together they read as ONE continuous copper wire wound round and round the core. -->
+     Front arcs are drawn AFTER the core so they sit on top; back arcs are dashed to read "behind". -->
 <!-- back arcs (behind core) drawn first, dashed -->
 <g fill="none" stroke="#92400e" stroke-width="2.5" stroke-dasharray="5,4">
 <path d="M252 253 A16 30 0 0 1 288 253"/>
@@ -31,8 +30,8 @@
 <path d="M472 253 A16 30 0 0 0 516 253"/>
 <path d="M516 253 A16 30 0 0 0 552 253"/>
 </g>
-<text x="655" y="150" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle">en enda koppartråd</text>
-<text x="655" y="168" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle">virad varv efter varv</text>
+<text x="650" y="150" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle">koppartråd virad</text>
+<text x="650" y="168" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle">i en spiral (många varv)</text>
 <line x1="600" y1="170" x2="520" y2="225" stroke="#7c2d12" stroke-width="1"/>
 
 <!-- wire leads from the coil ends down to the battery -->
@@ -41,22 +40,20 @@
 <line x1="440" y1="395" x2="552" y2="395" stroke="#b45309" stroke-width="3"/>
 <line x1="552" y1="395" x2="552" y2="253" stroke="#b45309" stroke-width="3"/>
 
-<!-- BATTERY symbol: long thin line = +, short thick line = -, with a clear gap -->
-<line x1="382" y1="370" x2="382" y2="420" stroke="#1f2937" stroke-width="3"/>
-<line x1="418" y1="381" x2="418" y2="409" stroke="#1f2937" stroke-width="8"/>
-<text x="375" y="362" font-family="Arial,sans-serif" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
-<text x="425" y="362" font-family="Arial,sans-serif" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
-<text x="400" y="442" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
+<!-- BATTERY symbol: long line = +, short thick line = -, with a gap -->
+<line x1="385" y1="373" x2="385" y2="417" stroke="#1f2937" stroke-width="3"/>
+<line x1="415" y1="383" x2="415" y2="407" stroke="#1f2937" stroke-width="6"/>
+<text x="378" y="365" font-family="Arial,sans-serif" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="423" y="365" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="400" y="440" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
 
-<!-- field lines arcing from N (left end) to S (right end) above the bar, arrows pointing N -> S (rightward at top) -->
+<!-- field lines arcing from N (left end) to S (right end) above the bar -->
 <g fill="none" stroke="#9ca3af" stroke-width="2">
-<path d="M250 235 C250 145 550 145 550 235"/>
-<path d="M262 235 C272 168 528 168 538 235"/>
-<path d="M276 235 C292 190 508 190 524 235"/>
+<path d="M250 235 C250 150 550 150 550 235"/>
+<path d="M270 235 C285 180 515 180 530 235"/>
 </g>
-<polygon points="410,148 396,141 396,155" fill="#9ca3af"/>
-<polygon points="410,171 396,164 396,178" fill="#9ca3af"/>
-<polygon points="410,191 396,184 396,198" fill="#9ca3af"/>
+<polygon points="400,153 393,164 407,164" fill="#9ca3af"/>
+<polygon points="400,182 393,193 407,193" fill="#9ca3af"/>
 
 <text x="218" y="258" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">N</text>
 <text x="582" y="258" font-family="Arial,sans-serif" font-size="20" fill="#2563eb" text-anchor="middle" font-weight="bold">S</text>

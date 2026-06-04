@@ -4,47 +4,51 @@
 
 <!--
   Cabinet projection of a cuboid (rätblock).
-  Front face (true rectangle): A(250,360) B(490,360) C(490,230) D(250,230)
-  Depth vector (up-right, reduced): (+70,-45)
-    A'(320,315) B'(560,315) C'(560,185) D'(320,185)
-  All depth edges A-A', B-B', C-C', D-D' are parallel and equal -> it is a true box.
+  Front face: rectangle. Depth offset goes up-right at 30deg, half length.
+  Front face corners:
+    A front-bottom-left  (230, 360)
+    B front-bottom-right (470, 360)
+    C front-top-right    (470, 210)
+    D front-top-left     (230, 210)
+  Depth vector dx=+90, dy=-55 (up-right).
+    A' (320, 305)  B' (560, 305)  C' (560, 155)  D' (320, 155)
 -->
 
-<!-- hidden back edges (dashed) -->
-<line x1="250" y1="360" x2="320" y2="315" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="5,4"/>
-<line x1="320" y1="315" x2="560" y2="315" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="5,4"/>
-<line x1="320" y1="315" x2="320" y2="185" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="5,4"/>
+<!-- back face (hidden edges, dashed light) -->
+<polygon points="320,305 560,305 560,155 320,155" fill="none" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="5,4"/>
+<!-- hidden connector from A to A' -->
+<line x1="230" y1="360" x2="320" y2="305" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="5,4"/>
 
 <!-- top face -->
-<polygon points="250,230 490,230 560,185 320,185" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2.5"/>
+<polygon points="230,210 470,210 560,155 320,155" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2.5"/>
 <!-- right face -->
-<polygon points="490,230 560,185 560,315 490,360" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.5"/>
-<!-- front face (true rectangle) -->
-<rect x="250" y="230" width="240" height="130" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2.5"/>
+<polygon points="470,210 560,155 560,305 470,360" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.5"/>
+<!-- front face -->
+<polygon points="230,210 470,210 470,360 230,360" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2.5"/>
 
 <!-- ===== dimension labels with arrows ===== -->
 
 <!-- LENGTH (längd) — along front-bottom edge A-B -->
-<line x1="250" y1="392" x2="490" y2="392" stroke="#dc2626" stroke-width="2"/>
-<polygon points="250,392 264,387 264,397" fill="#dc2626"/>
-<polygon points="490,392 476,387 476,397" fill="#dc2626"/>
-<line x1="250" y1="370" x2="250" y2="400" stroke="#dc2626" stroke-width="1.2"/>
-<line x1="490" y1="370" x2="490" y2="400" stroke="#dc2626" stroke-width="1.2"/>
-<text x="370" y="414" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Längd</text>
+<line x1="230" y1="392" x2="470" y2="392" stroke="#dc2626" stroke-width="2"/>
+<polygon points="230,392 244,387 244,397" fill="#dc2626"/>
+<polygon points="470,392 456,387 456,397" fill="#dc2626"/>
+<line x1="230" y1="370" x2="230" y2="400" stroke="#dc2626" stroke-width="1.2"/>
+<line x1="470" y1="370" x2="470" y2="400" stroke="#dc2626" stroke-width="1.2"/>
+<text x="350" y="414" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Längd</text>
 
 <!-- HEIGHT (höjd) — along front-left edge A-D -->
-<line x1="220" y1="360" x2="220" y2="230" stroke="#15803d" stroke-width="2"/>
-<polygon points="220,360 215,346 225,346" fill="#15803d"/>
-<polygon points="220,230 215,244 225,244" fill="#15803d"/>
-<line x1="200" y1="360" x2="230" y2="360" stroke="#15803d" stroke-width="1.2"/>
-<line x1="200" y1="230" x2="230" y2="230" stroke="#15803d" stroke-width="1.2"/>
-<text x="170" y="300" font-family="Arial,sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold" transform="rotate(-90 170 300)">Höjd</text>
+<line x1="200" y1="360" x2="200" y2="210" stroke="#15803d" stroke-width="2"/>
+<polygon points="200,360 195,346 205,346" fill="#15803d"/>
+<polygon points="200,210 195,224 205,224" fill="#15803d"/>
+<line x1="180" y1="360" x2="210" y2="360" stroke="#15803d" stroke-width="1.2"/>
+<line x1="180" y1="210" x2="210" y2="210" stroke="#15803d" stroke-width="1.2"/>
+<text x="150" y="290" font-family="Arial,sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold" transform="rotate(-90 150 290)">Höjd</text>
 
 <!-- WIDTH/DEPTH (bredd) — along depth edge B-B' -->
-<line x1="512" y1="372" x2="582" y2="327" stroke="#b45309" stroke-width="2"/>
-<polygon points="512,372 526,371 519,361" fill="#b45309"/>
-<polygon points="582,327 568,328 575,338" fill="#b45309"/>
-<text x="565" y="372" font-family="Arial,sans-serif" font-size="15" fill="#b45309" text-anchor="middle" font-weight="bold">Bredd</text>
+<line x1="492" y1="372" x2="582" y2="317" stroke="#b45309" stroke-width="2"/>
+<polygon points="492,372 506,371 500,361" fill="#b45309"/>
+<polygon points="582,317 568,318 574,328" fill="#b45309"/>
+<text x="560" y="372" font-family="Arial,sans-serif" font-size="15" fill="#b45309" text-anchor="middle" font-weight="bold">Bredd</text>
 
 <!-- three-dimension explainer boxes -->
 <rect x="600" y="120" width="180" height="44" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5" rx="6"/>
