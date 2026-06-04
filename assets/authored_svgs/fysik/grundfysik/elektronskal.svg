@@ -36,17 +36,25 @@
 <circle cx="270" cy="410" r="9" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
 <text x="270" y="414" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e−</text>
 
-<!-- info box: shell capacities (own box, lowercase k/l/m) -->
-<rect x="500" y="150" width="280" height="200" rx="8" fill="white" stroke="#2563eb" stroke-width="2.5"/>
-<text x="640" y="180" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Skalens plats</text>
-<line x1="520" y1="195" x2="760" y2="195" stroke="#cbd5e1" stroke-width="1.5"/>
-<text x="540" y="228" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start" font-weight="bold">k</text>
-<text x="575" y="228" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="start">– innerst, max 2 e−</text>
-<text x="540" y="268" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start" font-weight="bold">l</text>
-<text x="575" y="268" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="start">– mitten, max 8 e−</text>
-<text x="540" y="308" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start" font-weight="bold">m</text>
-<text x="575" y="308" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="start">– ytterst, max 18 e−</text>
-<text x="640" y="338" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">k fylls först, sedan l, sedan m</text>
+<!-- info box: ALL shells listed in order (k..q), even though only k,l,m are drawn -->
+<rect x="495" y="108" width="290" height="300" rx="8" fill="white" stroke="#2563eb" stroke-width="2.5"/>
+<text x="640" y="136" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Skalens plats</text>
+<line x1="515" y1="150" x2="765" y2="150" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="525" y="180" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start" font-weight="bold">k</text>
+<text x="558" y="180" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">– innerst, max 2 e−</text>
+<text x="525" y="210" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start" font-weight="bold">l</text>
+<text x="558" y="210" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">– max 8 e−</text>
+<text x="525" y="240" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start" font-weight="bold">m</text>
+<text x="558" y="240" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">– max 18 e−</text>
+<text x="525" y="270" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start" font-weight="bold">n</text>
+<text x="558" y="270" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">– max 32 e−</text>
+<text x="525" y="300" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start" font-weight="bold">o</text>
+<text x="558" y="300" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">– max 50 e−</text>
+<text x="525" y="330" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start" font-weight="bold">p</text>
+<text x="558" y="330" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">– max 72 e−</text>
+<text x="525" y="360" font-family="Arial,sans-serif" font-size="16" fill="#1f2937" text-anchor="start" font-weight="bold">q</text>
+<text x="558" y="360" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="start">– ytterst, max 98 e−</text>
+<text x="640" y="392" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Skalen fylls inifrån: k, sedan l, m, n ...</text>
 
-<text x="400" y="465" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Elektronskal är tänkta banor runt kärnan — k innerst, sedan l och m</text>
+<text x="400" y="465" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Elektronskal är tänkta banor runt kärnan — k innerst, sedan l, m och fler skal utåt</text>
 </svg>

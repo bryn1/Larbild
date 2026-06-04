@@ -2,15 +2,20 @@
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Dopplereffekten</text>
 
-<!-- Each wavefront is a full circle emitted earlier from a point further left.
-     Source moves RIGHT, so circle centres drift right with time:
-     fronts BUNCH ahead (right) and STRETCH apart behind (left). Distinct, no mush. -->
-<!-- oldest (emitted first, biggest, centre far left) -->
-<circle cx="250" cy="250" r="120" fill="none" stroke="#2563eb" stroke-width="2.2"/>
-<circle cx="300" cy="250" r="92"  fill="none" stroke="#2563eb" stroke-width="2.2"/>
-<circle cx="345" cy="250" r="66"  fill="none" stroke="#2563eb" stroke-width="2.2"/>
-<circle cx="385" cy="250" r="42"  fill="none" stroke="#2563eb" stroke-width="2.2"/>
-<circle cx="418" cy="250" r="22"  fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<!-- Wavefronts drawn as half-circles. Source moves RIGHT, so the fronts BUNCH ahead
+     (right) and STRETCH apart behind (left). Front halves red (compressed), back halves blue. -->
+<!-- BEHIND (left): stretched-apart half-circles -->
+<path d="M 250,130 A 120 120 0 0 0 250,370" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<path d="M 300,158 A 92 92 0 0 0 300,342" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<path d="M 345,184 A 66 66 0 0 0 345,316" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<path d="M 385,208 A 42 42 0 0 0 385,292" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<path d="M 418,228 A 22 22 0 0 0 418,272" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<!-- AHEAD (right): bunched-together half-circles = compressed sound in front of the source -->
+<path d="M 250,130 A 120 120 0 0 1 250,370" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<path d="M 300,158 A 92 92 0 0 1 300,342" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<path d="M 345,184 A 66 66 0 0 1 345,316" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<path d="M 385,208 A 42 42 0 0 1 385,292" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<path d="M 418,228 A 22 22 0 0 1 418,272" fill="none" stroke="#dc2626" stroke-width="2.2"/>
 
 <!-- moving source -->
 <circle cx="440" cy="250" r="15" fill="#ef4444" stroke="#991b1b" stroke-width="2"/>

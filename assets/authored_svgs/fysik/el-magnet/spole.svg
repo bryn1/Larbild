@@ -1,30 +1,59 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Spole (lindad tråd blir magnet)</text>
-<rect x="200" y="225" width="400" height="50" rx="6" fill="#d1d5db" stroke="#6b7280" stroke-width="2"/>
-<ellipse cx="230" cy="250" rx="14" ry="40" fill="none" stroke="#b45309" stroke-width="3"/>
-<ellipse cx="275" cy="250" rx="14" ry="40" fill="none" stroke="#b45309" stroke-width="3"/>
-<ellipse cx="320" cy="250" rx="14" ry="40" fill="none" stroke="#b45309" stroke-width="3"/>
-<ellipse cx="365" cy="250" rx="14" ry="40" fill="none" stroke="#b45309" stroke-width="3"/>
-<ellipse cx="410" cy="250" rx="14" ry="40" fill="none" stroke="#b45309" stroke-width="3"/>
-<ellipse cx="455" cy="250" rx="14" ry="40" fill="none" stroke="#b45309" stroke-width="3"/>
-<ellipse cx="500" cy="250" rx="14" ry="40" fill="none" stroke="#b45309" stroke-width="3"/>
-<ellipse cx="545" cy="250" rx="14" ry="40" fill="none" stroke="#b45309" stroke-width="3"/>
-<line x1="400" y1="308" x2="400" y2="276" stroke="#6b7280" stroke-width="1"/>
-<text x="400" y="323" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">järnkärna</text>
-<text x="400" y="185" font-family="Arial,sans-serif" font-size="12" fill="#7c2d12" text-anchor="middle">koppartråd lindad i många varv</text>
-<line x1="160" y1="250" x2="200" y2="250" stroke="#1f2937" stroke-width="2"/>
-<line x1="600" y1="250" x2="640" y2="250" stroke="#1f2937" stroke-width="2"/>
-<line x1="140" y1="235" x2="140" y2="265" stroke="#1f2937" stroke-width="3"/>
-<line x1="150" y1="242" x2="150" y2="258" stroke="#1f2937" stroke-width="5"/>
-<text x="135" y="228" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">+</text>
-<text x="180" y="320" font-family="Arial,sans-serif" font-size="22" fill="#dc2626" text-anchor="middle" font-weight="bold">N</text>
-<text x="620" y="320" font-family="Arial,sans-serif" font-size="22" fill="#2563eb" text-anchor="middle" font-weight="bold">S</text>
-<line x1="210.0" y1="300.0" x2="189.0" y2="300.0" stroke="#dc2626" stroke-width="2"/>
-<polygon points="180.0,300.0 189.0,296.2 189.0,303.8" fill="#dc2626"/>
-<line x1="590.0" y1="300.0" x2="611.0" y2="300.0" stroke="#2563eb" stroke-width="2"/>
-<polygon points="620.0,300.0 611.0,303.8 611.0,296.2" fill="#2563eb"/>
-<text x="400" y="360" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">När ström går genom spolen beter den sig som en magnet</text>
-<text x="400" y="388" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Används i dörrklockor, elmotorer och högtalare</text>
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En spole är en tråd lindad i många varv runt en kärna</text>
+
+<!-- iron core -->
+<rect x="250" y="232" width="300" height="36" rx="5" fill="#d1d5db" stroke="#6b7280" stroke-width="2"/>
+<line x1="400" y1="305" x2="400" y2="268" stroke="#6b7280" stroke-width="1"/>
+<text x="400" y="320" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">järnkärna</text>
+<text x="400" y="125" font-family="Arial,sans-serif" font-size="12" fill="#7c2d12" text-anchor="middle">koppartråd lindad i en kontinuerlig spiral (många varv)</text>
+
+<!-- CONTINUOUS HELIX. The wire is one unbroken spiral:
+     FRONT of each turn (in front of the core) = solid;
+     BACK of each turn (hidden behind the core) = dashed.
+     Turns advance left->right with pitch 45. -->
+<!-- BACK halves (behind the core), dashed -->
+<g fill="none" stroke="#b45309" stroke-width="3" stroke-dasharray="6,4">
+  <path d="M 268 280 A 17 52 0 0 1 268 220"/>
+  <path d="M 313 280 A 17 52 0 0 1 313 220"/>
+  <path d="M 358 280 A 17 52 0 0 1 358 220"/>
+  <path d="M 403 280 A 17 52 0 0 1 403 220"/>
+  <path d="M 448 280 A 17 52 0 0 1 448 220"/>
+  <path d="M 493 280 A 17 52 0 0 1 493 220"/>
+  <path d="M 538 280 A 17 52 0 0 1 538 220"/>
+</g>
+<!-- FRONT halves (in front of the core), solid; each links a back-top to the next back-bottom (advancing the pitch) -->
+<g fill="none" stroke="#b45309" stroke-width="3.5">
+  <path d="M 268 220 A 17 52 0 0 1 313 280"/>
+  <path d="M 313 220 A 17 52 0 0 1 358 280"/>
+  <path d="M 358 220 A 17 52 0 0 1 403 280"/>
+  <path d="M 403 220 A 17 52 0 0 1 448 280"/>
+  <path d="M 448 220 A 17 52 0 0 1 493 280"/>
+  <path d="M 493 220 A 17 52 0 0 1 538 280"/>
+</g>
+<text x="640" y="160" font-family="Arial,sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">streckad linje =</text>
+<text x="640" y="175" font-family="Arial,sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">tråden bakom kärnan</text>
+
+<!-- ===== CLOSED CIRCUIT: leads from the two coil ends down to a battery ===== -->
+<!-- left lead: from the first back-bottom (268,280) -->
+<line x1="268" y1="280" x2="210" y2="280" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="210" y1="280" x2="210" y2="410" stroke="#1f2937" stroke-width="2.5"/>
+<!-- right lead: from the last front-bottom (538,280) -->
+<line x1="538" y1="280" x2="600" y2="280" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="600" y1="280" x2="600" y2="410" stroke="#1f2937" stroke-width="2.5"/>
+<!-- bottom wires to the battery -->
+<line x1="210" y1="410" x2="360" y2="410" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="440" y1="410" x2="600" y2="410" stroke="#1f2937" stroke-width="2.5"/>
+<!-- battery: long(+)/short(-) -->
+<line x1="385" y1="392" x2="385" y2="428" stroke="#1f2937" stroke-width="3"/>
+<line x1="415" y1="400" x2="415" y2="420" stroke="#1f2937" stroke-width="7"/>
+<text x="385" y="447" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="415" y="447" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="400" y="468" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">batteri – sluten krets</text>
+
+<!-- magnetic poles of the solenoid -->
+<text x="232" y="218" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">N</text>
+<text x="568" y="218" font-family="Arial,sans-serif" font-size="20" fill="#2563eb" text-anchor="middle" font-weight="bold">S</text>
+
+<text x="400" y="355" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">När ström går runt i den slutna kretsen beter sig spolen som en magnet</text>
 </svg>

@@ -20,14 +20,15 @@
   <circle cx="-7" cy="0" r="5.5" fill="#1f2937"/>
 </g>
 
-<!-- Fart: tangent to curve at the car, pointing up-left (perpendicular to radius). -->
-<line x1="417" y1="237" x2="357" y2="153" stroke="#16a34a" stroke-width="4"/>
-<polygon points="347,139 363,147 351,158" fill="#16a34a"/>
-<text x="330" y="120" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Fart (rakt fram)</text>
+<!-- Fart: tangent to the curve, pointing the SAME way the car's nose faces (up-right, the direction of travel). -->
+<line x1="430" y1="224" x2="502" y2="152" stroke="#16a34a" stroke-width="4"/>
+<polygon points="512,142 500,159 495,148" fill="#16a34a"/>
+<text x="560" y="150" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Fart (rakt fram)</text>
+<text x="560" y="168" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">— bilens färdriktning</text>
 
 <!-- real inward pull (centripetal) toward curve centre -->
 <line x1="417" y1="237" x2="500" y2="320" stroke="#6b7280" stroke-width="2" stroke-dasharray="5,4"/>
-<text x="540" y="310" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">vägen tvingar in mot mitten</text>
+<text x="540" y="330" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="start">vägen tvingar in mot mitten</text>
 
 <!-- Centrifugal: APPARENT outward force, directly AWAY from curve centre.
      Direction from centre(650,470) to car(417,237) = (-233,-233) normalised -> up-left. -->
@@ -37,9 +38,9 @@
 <text x="170" y="322" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">du kastas UTÅT i svängen</text>
 <line x1="200" y1="288" x2="330" y2="155" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
 
-<rect x="585" y="180" width="200" height="78" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
-<text x="685" y="210" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Känns bara av</text>
-<text x="685" y="234" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">den som åker med</text>
+<rect x="585" y="200" width="200" height="78" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+<text x="685" y="230" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Känns bara av</text>
+<text x="685" y="254" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">den som åker med</text>
 
 <text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Centrifugalkraften känns utåt av den som åker med i svängen — inte av någon utanför</text>
 </svg>

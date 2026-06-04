@@ -13,13 +13,34 @@
 <polygon points="380.0,230.0 370.0,235.5 370.0,224.5" fill="#6b7280"/>
 <text x="345" y="215" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">senare</text>
 <text x="560" y="80" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Efteråt: tyst rum</text>
-<path d="M 545 175 C 505 175 488 215 500 250 C 508 275 498 295 515 300 C 532 305 540 288 535 272 C 560 280 580 255 575 228 C 595 220 590 185 565 180 C 558 176 552 175 545 175 Z" fill="#fde8d8" stroke="#b45309" stroke-width="2.5"/>
-<path d="M 530 235 C 522 228 530 218 540 224 C 548 230 542 242 532 240" fill="none" stroke="#92400e" stroke-width="1.8"/>
+
+<!-- anatomically clearer outer ear (pinna): helix rim, antihelix, concha, tragus, lobe; opening faces right -->
+<!-- outer rim (helix) + earlobe silhouette -->
+<path d="M 556 182
+         C 590 184 602 218 596 250
+         C 592 280 580 300 558 304
+         C 548 316 532 316 528 302
+         C 525 292 530 284 537 282
+         C 518 277 512 248 522 228
+         C 512 218 516 198 534 194
+         C 541 185 548 182 556 182 Z"
+      fill="#fde8d8" stroke="#b45309" stroke-width="2.5"/>
+<!-- helix inner edge (fold of the rim) -->
+<path d="M 552 196 C 578 200 586 226 580 250 C 576 272 567 286 552 290"
+      fill="none" stroke="#cf8a52" stroke-width="1.6"/>
+<!-- antihelix ridge -->
+<path d="M 556 214 C 568 226 568 252 555 268" fill="none" stroke="#cf8a52" stroke-width="1.6"/>
+<!-- concha bowl leading to the canal -->
+<path d="M 540 236 C 533 246 535 262 547 268 C 555 264 556 248 548 240"
+      fill="#f7d2bd" stroke="#b45309" stroke-width="1.4"/>
+<!-- tragus (small flap at front of the canal) -->
+<path d="M 535 246 C 526 246 524 258 533 262" fill="#fde8d8" stroke="#b45309" stroke-width="1.4"/>
+
 <path d="M 564.4 261.1 A 38 38 0 0 1 564.4 202.9" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
 <path d="M 573.4 271.8 A 52 52 0 0 1 573.4 192.2" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
 <path d="M 582.4 282.6 A 66 66 0 0 1 582.4 181.4" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
-<text x="645" y="200" font-family="Arial,sans-serif" font-size="15" fill="#f59e0b" text-anchor="middle" font-weight="bold" font-style="italic">Piiip...</text>
-<text x="645" y="220" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">(susning)</text>
-<text x="560" y="320" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Inget ljud finns runt dig</text>
+<text x="650" y="200" font-family="Arial,sans-serif" font-size="15" fill="#f59e0b" text-anchor="middle" font-weight="bold" font-style="italic">Piiip...</text>
+<text x="650" y="220" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">(susning)</text>
+<text x="560" y="330" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Inget ljud finns runt dig</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Du hör ett pip eller en susning fast det är tyst – kommer ofta efter för starkt ljud</text>
 </svg>

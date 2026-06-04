@@ -1,30 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Betapartiklar (snabba elektroner)</text>
-<circle cx="250" cy="220" r="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-<circle cx="236" cy="220" r="13" fill="#6b7280" stroke="#374151" stroke-width="1.5"/>
-<text x="236" y="224" font-family="Arial,sans-serif" font-size="10" fill="white" text-anchor="middle">n</text>
-<circle cx="266" cy="218" r="13" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/>
-<text x="266" y="222" font-family="Arial,sans-serif" font-size="10" fill="white" text-anchor="middle">p+</text>
-<text x="250" y="280" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Atomkärna sönderfaller</text>
-<circle cx="280" cy="210" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
-<text x="280" y="213.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
-<line x1="290.0" y1="206.0" x2="549.6" y2="113.7" stroke="#2563eb" stroke-width="2.5"/>
+<!-- electron shell around the nucleus -->
+<circle cx="250" cy="220" r="72" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="250" y="138" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">elektronskal</text>
+<!-- nucleus -->
+<circle cx="250" cy="220" r="34" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<circle cx="237" cy="220" r="12" fill="#6b7280" stroke="#374151" stroke-width="1.5"/>
+<text x="237" y="224" font-family="Arial,sans-serif" font-size="10" fill="white" text-anchor="middle">n</text>
+<circle cx="264" cy="218" r="12" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/>
+<text x="264" y="222" font-family="Arial,sans-serif" font-size="10" fill="white" text-anchor="middle">p+</text>
+<text x="250" y="300" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Atomkärna sönderfaller</text>
+<!-- beta electron emerging from the nucleus, crossing the shell -->
+<circle cx="288" cy="183" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="288" y="186.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<line x1="296.0" y1="178.0" x2="549.6" y2="113.7" stroke="#2563eb" stroke-width="2.5"/>
 <polygon points="560.0,110.0 548.1,109.4 551.1,117.9" fill="#2563eb"/>
-<text x="470" y="135" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">betapartikel (e-)</text>
-<text x="470" y="153" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">kastas ut i hög fart</text>
+<text x="475" y="98" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">betapartikel (e⁻)</text>
+<text x="500" y="148" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">kastas ut i hög fart</text>
 <text x="400" y="300" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Genomträngning:</text>
-<rect x="150" y="320" width="14" height="70" fill="#d1d5db" stroke="#6b7280"/>
-<text x="157" y="408" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">tunt tyg</text>
-<line x1="120.0" y1="355.0" x2="241.0" y2="355.0" stroke="#2563eb" stroke-width="2"/>
-<polygon points="250.0,355.0 241.0,351.0 241.0,359.0" fill="#2563eb"/>
-<text x="190" y="343" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">passerar</text>
-<rect x="430" y="315" width="26" height="80" fill="#7c5e2e" stroke="#5c3e1e"/>
-<text x="443" y="408" font-family="Arial,sans-serif" font-size="11" fill="#5c3e1e" text-anchor="middle">tjock jacka</text>
-<line x1="310.0" y1="355.0" x2="416.0" y2="355.0" stroke="#2563eb" stroke-width="2"/>
-<polygon points="425.0,355.0 416.0,351.0 416.0,359.0" fill="#2563eb"/>
-<line x1="458" y1="345" x2="470" y2="365" stroke="#dc2626" stroke-width="2"/>
-<line x1="470" y1="345" x2="458" y2="365" stroke="#dc2626" stroke-width="2"/>
-<text x="540" y="360" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">stoppas</text>
+<!-- thin cloth: beta starts to the LEFT of the cloth and passes through -->
+<circle cx="118" cy="355" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+<text x="118" y="358.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
+<text x="118" y="385" font-family="Arial,sans-serif" font-size="10" fill="#2563eb" text-anchor="middle">betapartikel</text>
+<rect x="170" y="320" width="14" height="70" fill="#d1d5db" stroke="#6b7280"/>
+<text x="177" y="408" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">tunt tyg</text>
+<line x1="130.0" y1="355.0" x2="261.0" y2="355.0" stroke="#2563eb" stroke-width="2"/>
+<polygon points="270.0,355.0 261.0,351.0 261.0,359.0" fill="#2563eb"/>
+<text x="220" y="343" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">passerar</text>
+<rect x="440" y="315" width="26" height="80" fill="#7c5e2e" stroke="#5c3e1e"/>
+<text x="453" y="408" font-family="Arial,sans-serif" font-size="11" fill="#5c3e1e" text-anchor="middle">tjock jacka</text>
+<line x1="330.0" y1="355.0" x2="426.0" y2="355.0" stroke="#2563eb" stroke-width="2"/>
+<polygon points="435.0,355.0 426.0,351.0 426.0,359.0" fill="#2563eb"/>
+<line x1="468" y1="345" x2="480" y2="365" stroke="#dc2626" stroke-width="2"/>
+<line x1="480" y1="345" x2="468" y2="365" stroke="#dc2626" stroke-width="2"/>
+<text x="550" y="360" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">stoppas</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Betapartiklar är snabba elektroner — lättare än alfapartiklar</text>
 </svg>

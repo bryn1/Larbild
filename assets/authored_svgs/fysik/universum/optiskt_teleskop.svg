@@ -3,26 +3,35 @@
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Optiskt teleskop — samlar synligt ljus</text>
 <polygon points="110.0,96.0 113.5,105.2 123.3,105.7 115.6,111.8 118.2,121.3 110.0,115.9 101.8,121.3 104.4,111.8 96.7,105.7 106.5,105.2" fill="#fde047" stroke="#f97316" stroke-width="1.5"/>
 <text x="110" y="145" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="bold">Avlägsen stjärna</text>
-<line x1="150.0" y1="130.0" x2="314.0" y2="215.8" stroke="#fbbf24" stroke-width="2"/>
-<polygon points="322.0,220.0 311.7,220.2 316.3,211.4" fill="#fbbf24"/>
-<line x1="150.0" y1="130.0" x2="314.8" y2="254.6" stroke="#fbbf24" stroke-width="2"/>
-<polygon points="322.0,260.0 311.8,258.5 317.8,250.6" fill="#fbbf24"/>
-<line x1="150.0" y1="130.0" x2="315.6" y2="293.7" stroke="#fbbf24" stroke-width="2"/>
-<polygon points="322.0,300.0 312.1,297.2 319.1,290.2" fill="#fbbf24"/>
+
+<!-- continuous light rays: star -> objective lens -> focus -> okular -> eye, no cut-off arrowheads along the way -->
+<!-- incoming rays from the star, continuing all the way into the objective lens -->
+<line x1="150.0" y1="130.0" x2="330.0" y2="210.0" stroke="#fbbf24" stroke-width="2"/>
+<line x1="150.0" y1="130.0" x2="330.0" y2="260.0" stroke="#fbbf24" stroke-width="2"/>
+<line x1="150.0" y1="130.0" x2="330.0" y2="312.0" stroke="#fbbf24" stroke-width="2"/>
 <text x="235" y="180" font-family="Arial,sans-serif" font-size="12" fill="#b45309" text-anchor="middle" font-weight="bold">Ljus</text>
+
+<!-- objective lens / mirror -->
 <path d="M 330 205 Q 356 260 330 315 Q 304 260 330 205 Z" fill="#bfdbfe" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="330" y="338" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">Lins / spegel</text>
-<line x1="336.0" y1="205.0" x2="500.0" y2="260.0" stroke="#fbbf24" stroke-width="2"/>
+
+<!-- rays converge from the lens to the focus point (continuous, no arrowheads) -->
+<line x1="330.0" y1="210.0" x2="500.0" y2="260.0" stroke="#fbbf24" stroke-width="2"/>
 <line x1="336.0" y1="260.0" x2="500.0" y2="260.0" stroke="#fbbf24" stroke-width="2"/>
-<line x1="336.0" y1="315.0" x2="500.0" y2="260.0" stroke="#fbbf24" stroke-width="2"/>
+<line x1="330.0" y1="312.0" x2="500.0" y2="260.0" stroke="#fbbf24" stroke-width="2"/>
 <circle cx="500.0" cy="260.0" r="3" fill="#f97316"/>
+
+<!-- eyepiece -->
 <path d="M 540 230 Q 554 260 540 290 Q 526 260 540 230 Z" fill="#bfdbfe" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="540" y="312" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">Okular</text>
+
+<!-- the beam continues unbroken from the focus, through the okular, to the eye -->
+<line x1="500.0" y1="260.0" x2="609.0" y2="260.0" stroke="#fbbf24" stroke-width="2"/>
+<polygon points="618.0,260.0 609.0,264.9 609.0,255.1" fill="#fbbf24"/>
+
 <ellipse cx="650.0" cy="260.0" rx="26.0" ry="16.0" fill="white" stroke="#1f2937" stroke-width="2"/>
 <circle cx="650.0" cy="260.0" r="8.0" fill="#1e40af" stroke="none" stroke-width="2"/>
 <circle cx="650.0" cy="260.0" r="3.5" fill="#1f2937" stroke="none" stroke-width="2"/>
-<line x1="558.0" y1="260.0" x2="609.0" y2="260.0" stroke="#fbbf24" stroke-width="2"/>
-<polygon points="618.0,260.0 609.0,264.9 609.0,255.1" fill="#fbbf24"/>
 <text x="650" y="300" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle" font-weight="bold">Öga</text>
 <text x="400" y="420" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Stjärnan ser större och ljusare ut</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ett optiskt teleskop samlar vanligt ljus med linser eller speglar</text>

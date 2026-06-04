@@ -2,46 +2,50 @@
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Stjärnbild — Karlavagnen</text>
 <rect x="60" y="60" width="680" height="330" fill="#0b1d4d" rx="6"/>
-<line x1="190" y1="150" x2="300" y2="140" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
-<line x1="300" y1="140" x2="330" y2="235" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
-<line x1="330" y1="235" x2="215" y2="250" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
-<line x1="215" y1="250" x2="190" y2="150" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
-<line x1="215" y1="250" x2="430" y2="255" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
-<line x1="430" y1="255" x2="540" y2="210" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
-<line x1="540" y1="210" x2="640" y2="170" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
-<polygon points="190.0,139.0 192.6,146.4 200.5,146.6 194.3,151.4 196.5,158.9 190.0,154.5 183.5,158.9 185.7,151.4 179.5,146.6 187.4,146.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
-<polygon points="300.0,129.0 302.6,136.4 310.5,136.6 304.3,141.4 306.5,148.9 300.0,144.5 293.5,148.9 295.7,141.4 289.5,136.6 297.4,136.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
-<polygon points="330.0,224.0 332.6,231.4 340.5,231.6 334.3,236.4 336.5,243.9 330.0,239.5 323.5,243.9 325.7,236.4 319.5,231.6 327.4,231.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
-<polygon points="215.0,239.0 217.6,246.4 225.5,246.6 219.3,251.4 221.5,258.9 215.0,254.5 208.5,258.9 210.7,251.4 204.5,246.6 212.4,246.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
-<polygon points="430.0,244.0 432.6,251.4 440.5,251.6 434.3,256.4 436.5,263.9 430.0,259.5 423.5,263.9 425.7,256.4 419.5,251.6 427.4,251.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
-<polygon points="540.0,199.0 542.6,206.4 550.5,206.6 544.3,211.4 546.5,218.9 540.0,214.5 533.5,218.9 535.7,211.4 529.5,206.6 537.4,206.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
-<polygon points="640.0,159.0 642.6,166.4 650.5,166.6 644.3,171.4 646.5,178.9 640.0,174.5 633.5,178.9 635.7,171.4 629.5,166.6 637.4,166.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<!-- handle (skaft): Alkaid - Mizar - Alioth - Megrez -->
+<line x1="170" y1="150" x2="260" y2="165" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="260" y1="165" x2="350" y2="185" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="350" y1="185" x2="440" y2="205" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<!-- bowl (vagnen / kastrullen): Megrez - Dubhe - Merak - Phecda - Megrez -->
+<line x1="440" y1="205" x2="560" y2="175" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="560" y1="175" x2="575" y2="290" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="575" y1="290" x2="445" y2="310" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<line x1="445" y1="310" x2="440" y2="205" stroke="#93c5fd" stroke-width="1.6" opacity="0.8"/>
+<!-- the seven stars of the Big Dipper -->
+<polygon points="170.0,139.0 172.6,146.4 180.5,146.6 174.3,151.4 176.5,158.9 170.0,154.5 163.5,158.9 165.7,151.4 159.5,146.6 167.4,146.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="260.0,154.0 262.6,161.4 270.5,161.6 264.3,166.4 266.5,173.9 260.0,169.5 253.5,173.9 255.7,166.4 249.5,161.6 257.4,161.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="350.0,174.0 352.6,181.4 360.5,181.6 354.3,186.4 356.5,193.9 350.0,189.5 343.5,193.9 345.7,186.4 339.5,181.6 347.4,181.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="440.0,194.0 442.6,201.4 450.5,201.6 444.3,206.4 446.5,213.9 440.0,209.5 433.5,213.9 435.7,206.4 429.5,201.6 437.4,201.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="560.0,164.0 562.6,171.4 570.5,171.6 564.3,176.4 566.5,183.9 560.0,179.5 553.5,183.9 555.7,176.4 549.5,171.6 557.4,171.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="575.0,279.0 577.6,286.4 585.5,286.6 579.3,291.4 581.5,298.9 575.0,294.5 568.5,298.9 570.7,291.4 564.5,286.6 572.4,286.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<polygon points="445.0,299.0 447.6,306.4 455.5,306.6 449.3,311.4 451.5,318.9 445.0,314.5 438.5,318.9 440.7,311.4 434.5,306.6 442.4,306.4" fill="#fef9c3" stroke="#fde047" stroke-width="1"/>
+<!-- faint background stars -->
 <circle cx="323.0" cy="358.0" r="1.2" fill="#bfdbfe"/>
-<circle cx="458.0" cy="322.0" r="2" fill="#bfdbfe"/>
+<circle cx="120.0" cy="322.0" r="2" fill="#bfdbfe"/>
 <circle cx="674.0" cy="113.0" r="2" fill="#bfdbfe"/>
 <circle cx="93.0" cy="320.0" r="1.6" fill="#bfdbfe"/>
 <circle cx="644.0" cy="199.0" r="1.2" fill="#bfdbfe"/>
 <circle cx="561.0" cy="356.0" r="2" fill="#bfdbfe"/>
-<circle cx="567.0" cy="283.0" r="2" fill="#bfdbfe"/>
-<circle cx="234.0" cy="198.0" r="2" fill="#bfdbfe"/>
+<circle cx="660.0" cy="283.0" r="2" fill="#bfdbfe"/>
+<circle cx="234.0" cy="98.0" r="2" fill="#bfdbfe"/>
 <circle cx="235.0" cy="347.0" r="1.6" fill="#bfdbfe"/>
 <circle cx="95.0" cy="112.0" r="1.2" fill="#bfdbfe"/>
 <circle cx="685.0" cy="101.0" r="1.6" fill="#bfdbfe"/>
 <circle cx="111.0" cy="217.0" r="1.6" fill="#bfdbfe"/>
 <circle cx="689.0" cy="278.0" r="2" fill="#bfdbfe"/>
-<circle cx="517.0" cy="282.0" r="2" fill="#bfdbfe"/>
-<circle cx="670.0" cy="307.0" r="1.2" fill="#bfdbfe"/>
-<circle cx="454.0" cy="129.0" r="1.2" fill="#bfdbfe"/>
+<circle cx="690.0" cy="155.0" r="2" fill="#bfdbfe"/>
+<circle cx="670.0" cy="340.0" r="1.2" fill="#bfdbfe"/>
+<circle cx="454.0" cy="105.0" r="1.2" fill="#bfdbfe"/>
 <circle cx="219.0" cy="333.0" r="1.2" fill="#bfdbfe"/>
-<circle cx="344.0" cy="303.0" r="2" fill="#bfdbfe"/>
-<circle cx="388.0" cy="295.0" r="2" fill="#bfdbfe"/>
+<circle cx="320.0" cy="290.0" r="2" fill="#bfdbfe"/>
+<circle cx="150.0" cy="160.0" r="2" fill="#bfdbfe"/>
 <circle cx="475.0" cy="373.0" r="1.6" fill="#bfdbfe"/>
-<circle cx="626.0" cy="288.0" r="2" fill="#bfdbfe"/>
+<circle cx="626.0" cy="370.0" r="2" fill="#bfdbfe"/>
 <circle cx="109.0" cy="223.0" r="2" fill="#bfdbfe"/>
-<circle cx="247.0" cy="247.0" r="2" fill="#bfdbfe"/>
+<circle cx="100.0" cy="247.0" r="2" fill="#bfdbfe"/>
 <circle cx="665.0" cy="371.0" r="1.2" fill="#bfdbfe"/>
 <circle cx="296.0" cy="373.0" r="1.6" fill="#bfdbfe"/>
-<text x="415" y="320" font-family="Arial,sans-serif" font-size="13" fill="#bfdbfe" text-anchor="middle">ser ut som en kastrull</text>
+<text x="510" y="245" font-family="Arial,sans-serif" font-size="13" fill="#bfdbfe" text-anchor="middle">ser ut som en kastrull</text>
 <text x="400" y="415" font-family="Arial,sans-serif" font-size="13" fill="#374151" text-anchor="middle">Stjärnorna ser ut att bilda en figur — men ligger egentligen olika långt bort</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Karlavagnen är en stjärnbild som ser ut som en kastrull på himlen</text>
 </svg>

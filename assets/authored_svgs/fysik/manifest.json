@@ -150,10 +150,6 @@
       "begrepp": "Kosmisk strålning",
       "title": "Kosmisk strålning från rymden"
     },
-    "atom/kvantfysik": {
-      "begrepp": "Kvantfysik",
-      "title": "Kvantfysik — reglerna inne i atomen"
-    },
     "atom/karnklyvning": {
       "begrepp": "Kärnklyvning",
       "title": "Kärnklyvning"
@@ -1453,10 +1449,6 @@
     "ljus/gula_flacken": {
       "begrepp": "Gula fläcken",
       "title": "Gula fläcken i ögat"
-    },
-    "ljus/hologram": {
-      "begrepp": "Hologram",
-      "title": "Hologram — tredimensionell bild av ljus"
     },
     "ljus/hornhinna": {
       "begrepp": "Hornhinna",

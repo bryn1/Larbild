@@ -1,31 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Rymdstation — astronauter bor i omloppsbana</text>
-<ellipse cx="330.0" cy="300.0" rx="300.0" ry="170.0" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="7,5"/>
-<circle cx="110.0" cy="410.0" r="58.0" fill="#2563eb" stroke="#1e40af" stroke-width="2.5"/>
-<ellipse cx="95.0" cy="400.0" rx="28.0" ry="14.0" fill="#16a34a" stroke="none" stroke-width="2"/>
-<ellipse cx="128.0" cy="432.0" rx="17.0" ry="9.0" fill="#16a34a" stroke="none" stroke-width="2"/>
-<text x="110" y="414" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Jorden</text>
-<rect x="455" y="163" width="90" height="24" fill="#cbd5e1" stroke="#475569" stroke-width="2" rx="6"/>
-<rect x="488" y="145" width="24" height="60" fill="#e5e7eb" stroke="#475569" stroke-width="2" rx="4"/>
-<rect x="370" y="153" width="70" height="44" fill="#1e3a8a" stroke="#1e40af" stroke-width="2" rx="0"/>
-<rect x="560" y="153" width="70" height="44" fill="#1e3a8a" stroke="#1e40af" stroke-width="2" rx="0"/>
-<line x1="384.0" y1="153.0" x2="384.0" y2="197.0" stroke="#60a5fa" stroke-width="1"/>
-<line x1="574.0" y1="153.0" x2="574.0" y2="197.0" stroke="#60a5fa" stroke-width="1"/>
-<line x1="398.0" y1="153.0" x2="398.0" y2="197.0" stroke="#60a5fa" stroke-width="1"/>
-<line x1="588.0" y1="153.0" x2="588.0" y2="197.0" stroke="#60a5fa" stroke-width="1"/>
-<line x1="412.0" y1="153.0" x2="412.0" y2="197.0" stroke="#60a5fa" stroke-width="1"/>
-<line x1="602.0" y1="153.0" x2="602.0" y2="197.0" stroke="#60a5fa" stroke-width="1"/>
-<line x1="426.0" y1="153.0" x2="426.0" y2="197.0" stroke="#60a5fa" stroke-width="1"/>
-<line x1="616.0" y1="153.0" x2="616.0" y2="197.0" stroke="#60a5fa" stroke-width="1"/>
-<text x="500" y="227" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Rymdstation</text>
-<circle cx="360.0" cy="286.0" r="9.0" fill="white" stroke="#1f2937" stroke-width="2"/>
-<rect x="351" y="295" width="18" height="24" fill="white" stroke="#1f2937" stroke-width="2" rx="6"/>
-<line x1="351.0" y1="302.0" x2="338.0" y2="294.0" stroke="#1f2937" stroke-width="3"/>
-<line x1="369.0" y1="302.0" x2="382.0" y2="310.0" stroke="#1f2937" stroke-width="3"/>
-<line x1="355.0" y1="319.0" x2="348.0" y2="334.0" stroke="#1f2937" stroke-width="3"/>
-<line x1="365.0" y1="319.0" x2="374.0" y2="333.0" stroke="#1f2937" stroke-width="3"/>
-<text x="360" y="352" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle" font-weight="bold">Astronaut</text>
-<text x="360" y="368" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">i tyngdlöshet</text>
-<text x="400" y="492" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">På en rymdstation kan astronauter bo och göra experiment i tyngdlöshet</text>
+
+<!-- orbit: dashed ellipse centred ON the Earth, so the station clearly circles the Earth -->
+<ellipse cx="400.0" cy="270.0" rx="320.0" ry="160.0" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="7,5"/>
+
+<!-- Earth at the CENTRE of the orbit (the body being orbited) -->
+<circle cx="400.0" cy="270.0" r="60.0" fill="#2563eb" stroke="#1e40af" stroke-width="2.5"/>
+<ellipse cx="382.0" cy="258.0" rx="28.0" ry="14.0" fill="#16a34a" stroke="none" stroke-width="2"/>
+<ellipse cx="420.0" cy="290.0" rx="18.0" ry="10.0" fill="#16a34a" stroke="none" stroke-width="2"/>
+<text x="400" y="275" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Jorden</text>
+
+<!-- direction-of-travel arrow ON the orbit (right side) — shows the station goes AROUND the Earth -->
+<line x1="718.0" y1="290.0" x2="713.0" y2="345.0" stroke="#dc2626" stroke-width="3"/>
+<polygon points="711.0,357.0 705.0,343.0 719.0,345.0" fill="#dc2626"/>
+<text x="700" y="320" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="end" font-weight="bold">kretsar runt</text>
+
+<!-- space station sitting ON the orbit (top), centred above the Earth -->
+<rect x="355" y="98" width="90" height="24" fill="#cbd5e1" stroke="#475569" stroke-width="2" rx="6"/>
+<rect x="388" y="80" width="24" height="60" fill="#e5e7eb" stroke="#475569" stroke-width="2" rx="4"/>
+<rect x="270" y="88" width="70" height="44" fill="#1e3a8a" stroke="#1e40af" stroke-width="2" rx="0"/>
+<rect x="460" y="88" width="70" height="44" fill="#1e3a8a" stroke="#1e40af" stroke-width="2" rx="0"/>
+<line x1="284.0" y1="88.0" x2="284.0" y2="132.0" stroke="#60a5fa" stroke-width="1"/>
+<line x1="298.0" y1="88.0" x2="298.0" y2="132.0" stroke="#60a5fa" stroke-width="1"/>
+<line x1="312.0" y1="88.0" x2="312.0" y2="132.0" stroke="#60a5fa" stroke-width="1"/>
+<line x1="326.0" y1="88.0" x2="326.0" y2="132.0" stroke="#60a5fa" stroke-width="1"/>
+<line x1="474.0" y1="88.0" x2="474.0" y2="132.0" stroke="#60a5fa" stroke-width="1"/>
+<line x1="488.0" y1="88.0" x2="488.0" y2="132.0" stroke="#60a5fa" stroke-width="1"/>
+<line x1="502.0" y1="88.0" x2="502.0" y2="132.0" stroke="#60a5fa" stroke-width="1"/>
+<line x1="516.0" y1="88.0" x2="516.0" y2="132.0" stroke="#60a5fa" stroke-width="1"/>
+<text x="400" y="162" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Rymdstation</text>
+
+<!-- astronaut floating next to the station -->
+<circle cx="565.0" cy="160.0" r="9.0" fill="white" stroke="#1f2937" stroke-width="2"/>
+<rect x="556" y="169" width="18" height="24" fill="white" stroke="#1f2937" stroke-width="2" rx="6"/>
+<line x1="556.0" y1="176.0" x2="543.0" y2="168.0" stroke="#1f2937" stroke-width="3"/>
+<line x1="574.0" y1="176.0" x2="587.0" y2="184.0" stroke="#1f2937" stroke-width="3"/>
+<line x1="560.0" y1="193.0" x2="553.0" y2="208.0" stroke="#1f2937" stroke-width="3"/>
+<line x1="570.0" y1="193.0" x2="579.0" y2="207.0" stroke="#1f2937" stroke-width="3"/>
+<text x="565" y="226" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle" font-weight="bold">Astronaut</text>
+<text x="565" y="242" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">i tyngdlöshet</text>
+
+<text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">På en rymdstation kan astronauter bo och göra experiment i tyngdlöshet</text>
 </svg>

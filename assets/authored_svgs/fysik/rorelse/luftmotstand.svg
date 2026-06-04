@@ -47,15 +47,14 @@
 <polygon points="618,320 600,329 600,311" fill="#16a34a"/>
 <text x="560" y="342" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Rörelse framåt</text>
 
-<!-- air resistance: arrows pushing BACK (to the left) against the rider -->
-<line x1="270" y1="170" x2="200" y2="170" stroke="#dc2626" stroke-width="4"/>
-<polygon points="184,170 200,161 200,179" fill="#dc2626"/>
-<line x1="270" y1="200" x2="200" y2="200" stroke="#dc2626" stroke-width="4"/>
-<polygon points="184,200 200,191 200,209" fill="#dc2626"/>
-<line x1="270" y1="230" x2="200" y2="230" stroke="#dc2626" stroke-width="4"/>
-<polygon points="184,230 200,221 200,239" fill="#dc2626"/>
-<text x="150" y="195" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Luft-</text>
-<text x="150" y="214" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">motstånd</text>
+<!-- air resistance: arrows IN FRONT of (to the right of) the rider, pushing BACK (to the left) against the leading side -->
+<text x="510" y="158" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Luftmotstånd</text>
+<line x1="548" y1="182" x2="478" y2="182" stroke="#dc2626" stroke-width="4"/>
+<polygon points="462,182 478,173 478,191" fill="#dc2626"/>
+<line x1="548" y1="216" x2="478" y2="216" stroke="#dc2626" stroke-width="4"/>
+<polygon points="462,216 478,207 478,225" fill="#dc2626"/>
+<line x1="548" y1="250" x2="478" y2="250" stroke="#dc2626" stroke-width="4"/>
+<polygon points="462,250 478,241 478,259" fill="#dc2626"/>
 
 <rect x="470" y="400" width="280" height="42" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
 <text x="610" y="427" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold">Större yta → större luftmotstånd</text>

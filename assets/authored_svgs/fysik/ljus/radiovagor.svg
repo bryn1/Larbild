@@ -26,26 +26,37 @@
 <text x="680" y="200" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">kort våglängd</text>
 <!-- Highlight Radio at the long-wavelength (left) end -->
 <rect x="78" y="118" width="94" height="60" fill="none" stroke="#dc2626" stroke-width="3"/>
-<!-- ===== Wave below with a CLEAR crest-to-crest wavelength marking ===== -->
-<!-- baseline (centre line of the wave) -->
-<line x1="90" y1="320" x2="720" y2="320" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,4"/>
-<!-- A long-wavelength sine wave (radio): few, wide humps. Crests at x=180 and x=380 (period 200). -->
-<path d="M 90 320
-         Q 130 250 180 250 Q 230 250 280 390 Q 330 390 380 250
-         Q 430 250 480 250 Q 530 250 580 390 Q 630 390 680 250
-         L 720 280" fill="none" stroke="#2563eb" stroke-width="3"/>
-<!-- vertical guide lines at two adjacent crests (x=180 and x=380) -->
-<line x1="180" y1="250" x2="180" y2="430" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="5,4"/>
-<line x1="380" y1="250" x2="380" y2="430" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="5,4"/>
-<!-- crest-to-crest double arrow labelled lambda -->
-<line x1="180" y1="415" x2="380" y2="415" stroke="#dc2626" stroke-width="2.5"/>
-<polygon points="180,415 196,409 196,421" fill="#dc2626"/>
-<polygon points="380,415 364,409 364,421" fill="#dc2626"/>
-<text x="280" y="405" font-family="Arial,sans-serif" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="bold">λ (våglängd)</text>
-<!-- crest markers -->
-<circle cx="180" cy="250" r="4" fill="#dc2626"/>
-<circle cx="380" cy="250" r="4" fill="#dc2626"/>
-<text x="280" y="240" font-family="Arial,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">avstånd mellan två vågtoppar</text>
+
+<!-- ===== A real SINE wave (radio: long wavelength), baseline y=320, amplitude 60, wavelength 200 ===== -->
+<line x1="90" y1="320" x2="690" y2="320" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,4"/>
+<path d="M 90,320.0 L 98,305.1 L 106,291.1 L 114,278.9 L 122,269.3 L 130,262.9 L 138,260.1 L 146,261.1 L 154,265.7 L 162,273.8 L 170,284.7 L 178,297.9 L 186,312.5 L 194,327.5 L 202,342.1 L 210,355.3 L 218,366.2 L 226,374.3 L 234,378.9 L 242,379.9 L 250,377.1 L 258,370.7 L 266,361.1 L 274,348.9 L 282,334.9 L 290,320.0 L 298,305.1 L 306,291.1 L 314,278.9 L 322,269.3 L 330,262.9 L 338,260.1 L 346,261.1 L 354,265.7 L 362,273.8 L 370,284.7 L 378,297.9 L 386,312.5 L 394,327.5 L 402,342.1 L 410,355.3 L 418,366.2 L 426,374.3 L 434,378.9 L 442,379.9 L 450,377.1 L 458,370.7 L 466,361.1 L 474,348.9 L 482,334.9 L 490,320.0 L 498,305.1 L 506,291.1 L 514,278.9 L 522,269.3 L 530,262.9 L 538,260.1 L 546,261.1 L 554,265.7 L 562,273.8 L 570,284.7 L 578,297.9 L 586,312.5 L 594,327.5 L 602,342.1 L 610,355.3 L 618,366.2 L 626,374.3 L 634,378.9 L 642,379.9 L 650,377.1 L 658,370.7 L 666,361.1 L 674,348.9 L 682,334.9 L 690,320.0" fill="none" stroke="#2563eb" stroke-width="3"/>
+
+<!-- crest markers (tops) at x=140 and x=340 -->
+<circle cx="140" cy="260" r="4" fill="#dc2626"/>
+<circle cx="340" cy="260" r="4" fill="#dc2626"/>
+<!-- crest-to-crest measurement ABOVE the wave -->
+<line x1="140" y1="260" x2="140" y2="232" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
+<line x1="340" y1="260" x2="340" y2="232" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
+<line x1="140" y1="238" x2="340" y2="238" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="140,238 156,232 156,244" fill="#dc2626"/>
+<polygon points="340,238 324,232 324,244" fill="#dc2626"/>
+<text x="240" y="228" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">λ — vågtopp till vågtopp</text>
+
+<!-- trough markers (bottoms) at x=240 and x=440 -->
+<circle cx="240" cy="380" r="4" fill="#16a34a"/>
+<circle cx="440" cy="380" r="4" fill="#16a34a"/>
+<!-- trough-to-trough measurement BELOW the wave -->
+<line x1="240" y1="380" x2="240" y2="408" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="4,3"/>
+<line x1="440" y1="380" x2="440" y2="408" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="4,3"/>
+<line x1="240" y1="402" x2="440" y2="402" stroke="#16a34a" stroke-width="2.5"/>
+<polygon points="240,402 256,396 256,408" fill="#16a34a"/>
+<polygon points="440,402 424,396 424,408" fill="#16a34a"/>
+<text x="340" y="425" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">λ — vågdal till vågdal</text>
+
+<!-- the two are equal -->
+<text x="610" y="345" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Lika långa:</text>
+<text x="610" y="367" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">topp–topp = dal–dal</text>
+
 <text x="400" y="452" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Radiovågor har lång våglängd och ligger längst till vänster i spektrumet</text>
-<text x="400" y="476" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Våglängden λ mäts från en vågtopp till nästa</text>
+<text x="400" y="476" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Våglängden λ är lika stor mätt från vågtopp till vågtopp som från vågdal till vågdal</text>
 </svg>

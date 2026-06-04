@@ -6,34 +6,45 @@
 <line x1="252" y1="213" x2="252" y2="250" stroke="#16a34a" stroke-width="3"/>
 <line x1="252" y1="290" x2="252" y2="327" stroke="#16a34a" stroke-width="3"/>
 <ellipse cx="288" cy="270" rx="15" ry="42" stroke="#2563eb" stroke-width="2" fill="#dbeafe" opacity="0.5"/>
-<path d="M 445 150 Q 552 270 445 390" stroke="#dc2626" stroke-width="3" fill="none"/>
-<line x1="40" y1="220" x2="217.0" y2="220.0" stroke="#dc2626" stroke-width="1.8"/>
-<polygon points="226,220 217.8,223.7 217.8,216.3" fill="#dc2626"/>
-<line x1="40" y1="245" x2="217.0" y2="245.0" stroke="#dc2626" stroke-width="1.8"/>
-<polygon points="226,245 217.8,248.7 217.8,241.3" fill="#dc2626"/>
-<line x1="40" y1="270" x2="217.0" y2="270.0" stroke="#dc2626" stroke-width="1.8"/>
-<polygon points="226,270 217.8,273.7 217.8,266.3" fill="#dc2626"/>
-<line x1="40" y1="295" x2="217.0" y2="295.0" stroke="#dc2626" stroke-width="1.8"/>
-<polygon points="226,295 217.8,298.7 217.8,291.3" fill="#dc2626"/>
-<line x1="40" y1="320" x2="217.0" y2="320.0" stroke="#dc2626" stroke-width="1.8"/>
-<polygon points="226,320 217.8,323.7 217.8,316.3" fill="#dc2626"/>
-<line x1="290" y1="230" x2="540" y2="258.6" stroke="#dc2626" stroke-width="1.5"/>
-<line x1="540" y1="258.6" x2="640" y2="270" stroke="#dc2626" stroke-width="1.0" stroke-dasharray="4,3"/>
-<line x1="290" y1="250" x2="540" y2="264.3" stroke="#dc2626" stroke-width="1.5"/>
-<line x1="540" y1="264.3" x2="640" y2="270" stroke="#dc2626" stroke-width="1.0" stroke-dasharray="4,3"/>
-<line x1="290" y1="270" x2="540" y2="270.0" stroke="#dc2626" stroke-width="1.5"/>
-<line x1="540" y1="270.0" x2="640" y2="270" stroke="#dc2626" stroke-width="1.0" stroke-dasharray="4,3"/>
-<line x1="290" y1="290" x2="540" y2="275.7" stroke="#dc2626" stroke-width="1.5"/>
-<line x1="540" y1="275.7" x2="640" y2="270" stroke="#dc2626" stroke-width="1.0" stroke-dasharray="4,3"/>
-<line x1="290" y1="310" x2="540" y2="281.4" stroke="#dc2626" stroke-width="1.5"/>
-<line x1="540" y1="281.4" x2="640" y2="270" stroke="#dc2626" stroke-width="1.0" stroke-dasharray="4,3"/>
+
+<!-- CONTINUOUS light rays: parallel from outside, through the cornea and pupil, up to the lens (x=288),
+     then converge after the lens. Solid inside the eye, dashed where they continue behind the retina. -->
+<!-- ray 1 (y=232) -->
+<line x1="40" y1="232" x2="288" y2="232" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="150,232 142,235.7 142,228.3" fill="#dc2626"/>
+<line x1="288" y1="232" x2="545" y2="259.7" stroke="#dc2626" stroke-width="1.8"/>
+<line x1="545" y1="259.7" x2="640" y2="270" stroke="#dc2626" stroke-width="1.0" stroke-dasharray="4,3"/>
+<!-- ray 2 (y=251) -->
+<line x1="40" y1="251" x2="288" y2="251" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="150,251 142,254.7 142,247.3" fill="#dc2626"/>
+<line x1="288" y1="251" x2="545" y2="264.9" stroke="#dc2626" stroke-width="1.8"/>
+<line x1="545" y1="264.9" x2="640" y2="270" stroke="#dc2626" stroke-width="1.0" stroke-dasharray="4,3"/>
+<!-- ray 3 (y=270, axis) -->
+<line x1="40" y1="270" x2="288" y2="270" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="150,270 142,273.7 142,266.3" fill="#dc2626"/>
+<line x1="288" y1="270" x2="545" y2="270" stroke="#dc2626" stroke-width="1.8"/>
+<line x1="545" y1="270" x2="640" y2="270" stroke="#dc2626" stroke-width="1.0" stroke-dasharray="4,3"/>
+<!-- ray 4 (y=289) -->
+<line x1="40" y1="289" x2="288" y2="289" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="150,289 142,292.7 142,285.3" fill="#dc2626"/>
+<line x1="288" y1="289" x2="545" y2="275.1" stroke="#dc2626" stroke-width="1.8"/>
+<line x1="545" y1="275.1" x2="640" y2="270" stroke="#dc2626" stroke-width="1.0" stroke-dasharray="4,3"/>
+<!-- ray 5 (y=308) -->
+<line x1="40" y1="308" x2="288" y2="308" stroke="#dc2626" stroke-width="1.8"/>
+<polygon points="150,308 142,311.7 142,304.3" fill="#dc2626"/>
+<line x1="288" y1="308" x2="545" y2="280.3" stroke="#dc2626" stroke-width="1.8"/>
+<line x1="545" y1="280.3" x2="640" y2="270" stroke="#dc2626" stroke-width="1.0" stroke-dasharray="4,3"/>
+
+<!-- focus behind the retina -->
 <circle cx="640" cy="270" r="4" fill="#dc2626"/>
 <text x="640" y="288" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">Fokus bakom</text>
+
 <text x="196" y="200" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">Hornhinna</text>
 <text x="252" y="200" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">Iris</text>
 <text x="288" y="345" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">Lins</text>
 <text x="265" y="270" font-family="Arial,sans-serif" font-size="10" fill="#1f2937" text-anchor="middle">Pupill</text>
-<text x="600" y="200" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">Näthinna</text>
+<text x="560" y="205" font-family="Arial,sans-serif" font-size="11" fill="#1f2937" text-anchor="middle">Näthinna</text>
+<line x1="556" y1="210" x2="538" y2="232" stroke="#1f2937" stroke-width="1"/>
 <text x="400" y="80" font-family="Arial,sans-serif" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="bold">Ljuset skulle fokuseras BAKOM näthinnan</text>
 <text x="400" y="445" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ögat är för kort — nära text blir suddig</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Översynt: nära blir suddigt, långt bort syns bättre (pluslins korrigerar)</text>

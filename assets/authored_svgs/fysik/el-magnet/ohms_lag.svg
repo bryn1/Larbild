@@ -29,7 +29,8 @@
 <!-- RESISTOR on top side -->
 <rect x="180" y="184" width="70" height="22" fill="#fef3c7" stroke="#1f2937" stroke-width="2.5"/>
 <text x="215" y="201" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">R</text>
-<text x="215" y="172" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">R = 4 Ω</text>
+<!-- R = 4 Ohm label moved to the right of the resistor, into open space, clear of "Kretsen" -->
+<text x="263" y="200" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="start">R = 4 Ω</text>
 
 <!-- current arrow -->
 <line x1="320" y1="250" x2="320" y2="300" stroke="#dc2626" stroke-width="1"/>

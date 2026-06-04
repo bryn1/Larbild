@@ -29,7 +29,7 @@
 <!-- lower ray: (400,320) -> F(620,250) -> continues to (740,212) -->
 <line x1="400" y1="320" x2="740" y2="212" stroke="#dc2626" stroke-width="2.5"/>
 <polygon points="740,212 728,221 725,209" fill="#dc2626"/>
-<text x="500" y="200" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="bold">strålarna samlas i F</text>
+<text x="530" y="162" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="bold">strålarna samlas i F</text>
 <text x="695" y="330" font-family="Arial,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="bold">och sprids isär efteråt</text>
 <text x="400" y="455" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">En samlingslins samlar de parallella strålarna i brännpunkten F</text>
 <text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Efter F korsar strålarna varandra och fortsätter — de sprids isär igen</text>

@@ -26,9 +26,9 @@
 <!-- Angle of incidence arc i (in air, between incident ray and upper normal) -->
 <path d="M 400 200 A 60 60 0 0 0 355 220" fill="none" stroke="#16a34a" stroke-width="1.8"/>
 <text x="368" y="208" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">i</text>
-<!-- Angle of refraction arc b (in water, between refracted ray and lower normal), smaller -->
-<path d="M 400 320 A 60 60 0 0 0 426 374" fill="none" stroke="#16a34a" stroke-width="1.8"/>
-<text x="424" y="332" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">b</text>
+<!-- Angle of refraction arc b: between the downward normal and the refracted ray, below the surface -->
+<path d="M 400 315 A 55 55 0 0 0 424 310" fill="none" stroke="#16a34a" stroke-width="1.8"/>
+<text x="416" y="332" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">b</text>
 <text x="400" y="458" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">In i tätare vatten bryts strålen mot normalen: vinkeln b är mindre än i</text>
 <text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Därför ser sugröret i glaset knäckt ut vid vattenytan</text>
 </svg>

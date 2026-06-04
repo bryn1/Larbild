@@ -28,7 +28,8 @@
 <line x1="360.0" y1="250.0" x2="455.0" y2="250.0" stroke="#6b7280" stroke-width="2"/>
 <polygon points="465.0,250.0 455.0,246.0 455.0,254.0" fill="#6b7280"/>
 <text x="412" y="240" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">räknas</text>
-<text x="400" y="390" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Enhet: becquerel (Bq)   1 Bq = 1 sönderfall per sekund</text>
-<text x="400" y="418" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Hög aktivitet = många sönderfall = mer strålning just nu</text>
+<text x="400" y="378" font-family="Arial,sans-serif" font-size="13" fill="#1f2937" text-anchor="middle">Aktivitet mäter hur stark radioaktiviteten är just nu</text>
+<text x="400" y="402" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Enhet: becquerel (Bq)   1 Bq = 1 sönderfall per sekund</text>
+<text x="400" y="426" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Hög aktivitet = många sönderfall = mer strålning just nu</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Aktivitet är antalet atomkärnor som sönderfaller varje sekund</text>
 </svg>

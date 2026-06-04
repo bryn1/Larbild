@@ -24,7 +24,7 @@
 <path d="M 400 190 A 70 70 0 0 0 346 215" fill="none" stroke="#16a34a" stroke-width="2"/>
 <text x="360" y="200" font-family="Arial,sans-serif" font-size="16" fill="#16a34a" text-anchor="middle" font-weight="bold">i</text>
 <!-- Angle of refraction arc b: between downward normal and refracted ray, RIGHT side below surface (smaller) -->
-<path d="M 433 322 A 70 70 0 0 0 400 330" fill="none" stroke="#16a34a" stroke-width="2"/>
+<path d="M 433 322 A 70 70 0 0 1 400 330" fill="none" stroke="#16a34a" stroke-width="2"/>
 <text x="428" y="312" font-family="Arial,sans-serif" font-size="16" fill="#16a34a" text-anchor="middle" font-weight="bold">b</text>
 <text x="400" y="455" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">In i tätare glas bryts strålen mot normalen — brytningsvinkeln b är mindre än infallsvinkeln i</text>
 <text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Brytningsvinkeln b mäts mellan den brutna strålen och normalen</text>

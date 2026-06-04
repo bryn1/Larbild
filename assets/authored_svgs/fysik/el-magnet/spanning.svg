@@ -3,46 +3,52 @@
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Spänning</text>
 <text x="400" y="62" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Trycket som får strömmen att vilja röra sig (mäts i volt, V)</text>
 
-<!-- ============ LEFT: battery + voltmeter across the terminals ============ -->
-<text x="230" y="105" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Voltmeter mäter spänningen</text>
+<!-- ============ LEFT: a clean circuit schematic — voltmeter in parallel across the battery ============ -->
+<text x="230" y="100" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">Voltmetern kopplas parallellt</text>
+<text x="230" y="118" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">över batteriets två poler</text>
 
-<!-- clean schematic battery symbol: long line (+) over short thick line (-) -->
-<line x1="170" y1="250" x2="290" y2="250" stroke="#1f2937" stroke-width="3"/>
-<line x1="200" y1="290" x2="260" y2="290" stroke="#1f2937" stroke-width="9"/>
-<text x="150" y="256" font-family="Arial,sans-serif" font-size="22" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
-<text x="150" y="299" font-family="Arial,sans-serif" font-size="22" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
-<text x="230" y="335" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
+<!-- rectangular wire loop: battery on the LEFT side, voltmeter on the RIGHT side -->
+<!-- top wire -->
+<line x1="150" y1="170" x2="330" y2="170" stroke="#1f2937" stroke-width="2.5"/>
+<!-- bottom wire -->
+<line x1="150" y1="350" x2="330" y2="350" stroke="#1f2937" stroke-width="2.5"/>
+<!-- left wire segments (with gap for the battery) -->
+<line x1="150" y1="170" x2="150" y2="240" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="150" y1="280" x2="150" y2="350" stroke="#1f2937" stroke-width="2.5"/>
+<!-- right wire segments (with gap for the voltmeter) -->
+<line x1="330" y1="170" x2="330" y2="228" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="330" y1="292" x2="330" y2="350" stroke="#1f2937" stroke-width="2.5"/>
 
-<!-- wires from each terminal up to the voltmeter -->
-<line x1="230" y1="250" x2="230" y2="170" stroke="#1f2937" stroke-width="2.5"/>
-<line x1="230" y1="170" x2="330" y2="170" stroke="#1f2937" stroke-width="2.5"/>
-<line x1="230" y1="290" x2="120" y2="290" stroke="#1f2937" stroke-width="2.5"/>
-<line x1="120" y1="290" x2="120" y2="150" stroke="#1f2937" stroke-width="2.5"/>
-<line x1="120" y1="150" x2="370" y2="150" stroke="#1f2937" stroke-width="2.5"/>
+<!-- BATTERY on the left side: long line (+) above, short thick line (-) below -->
+<line x1="120" y1="240" x2="180" y2="240" stroke="#1f2937" stroke-width="3"/>
+<line x1="135" y1="280" x2="165" y2="280" stroke="#1f2937" stroke-width="9"/>
+<text x="103" y="246" font-family="Arial,sans-serif" font-size="20" fill="#dc2626" text-anchor="middle" font-weight="bold">+</text>
+<text x="103" y="289" font-family="Arial,sans-serif" font-size="20" fill="#1f2937" text-anchor="middle" font-weight="bold">−</text>
+<text x="150" y="318" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">batteri</text>
 
-<!-- VOLTMETER: circle with V, connected across the two terminals -->
-<circle cx="350" cy="160" r="32" fill="white" stroke="#2563eb" stroke-width="3"/>
-<text x="350" y="170" font-family="Arial,sans-serif" font-size="26" fill="#2563eb" text-anchor="middle" font-weight="bold">V</text>
-<text x="350" y="218" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">voltmeter</text>
+<!-- VOLTMETER on the right side: circle with V (standard schematic symbol) -->
+<circle cx="330" cy="260" r="32" fill="white" stroke="#2563eb" stroke-width="3"/>
+<text x="330" y="270" font-family="Arial,sans-serif" font-size="26" fill="#2563eb" text-anchor="middle" font-weight="bold">V</text>
+<text x="392" y="232" font-family="Arial,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">voltmeter</text>
+<text x="392" y="250" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">visar spänningen</text>
 
-<!-- the measured value badge -->
-<rect x="295" y="245" width="80" height="34" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
-<text x="335" y="269" font-family="Arial,sans-serif" font-size="18" fill="#16a34a" text-anchor="middle" font-weight="bold">1,5 V</text>
+<!-- measured value badge near the voltmeter -->
+<rect x="290" y="305" width="80" height="34" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="330" y="329" font-family="Arial,sans-serif" font-size="18" fill="#16a34a" text-anchor="middle" font-weight="bold">1,5 V</text>
 
-<!-- voltage span marker between terminals -->
-<path d="M270 250 C295 262 295 278 270 290" fill="none" stroke="#16a34a" stroke-width="2"/>
-<text x="300" y="305" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">spänning U</text>
+<!-- label the voltage across the battery -->
+<text x="240" y="262" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">spänning U</text>
 
 <!-- ============ RIGHT: meaning = energy per charge ============ -->
-<rect x="440" y="120" width="330" height="210" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<rect x="440" y="120" width="330" height="215" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
 <text x="605" y="150" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Vad är spänning?</text>
 <line x1="465" y1="164" x2="745" y2="164" stroke="#93c5fd" stroke-width="1.5"/>
 <text x="605" y="198" font-family="Arial,sans-serif" font-size="15" fill="#1f2937" text-anchor="middle">Spänning = energi per laddning</text>
 <text x="605" y="232" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Hur mycket energi varje liten laddning</text>
 <text x="605" y="252" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">får med sig från batteriet.</text>
-<text x="605" y="290" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">Högre spänning →</text>
-<text x="605" y="312" font-family="Arial,sans-serif" font-size="15" fill="#16a34a" text-anchor="middle" font-weight="bold">strömmen blir starkare</text>
+<text x="605" y="290" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">Högre spänning ger större ström</text>
+<text x="605" y="312" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle">om resistansen är densamma</text>
 
-<text x="400" y="385" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Voltmetern kopplas över batteriets två poler och visar spänningen</text>
+<text x="400" y="385" font-family="Arial,sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">Voltmetern kopplas parallellt över batteriets poler och visar spänningen</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Spänning är trycket som får strömmen att vilja röra sig i en ledning</text>
 </svg>

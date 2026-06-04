@@ -34,31 +34,32 @@
 
 <!-- ============ PANEL 2 (right): corrected with concave lens ============ -->
 <text x="595" y="92" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Med konkav glasögonlins</text>
-<!-- Concave (diverging) correcting lens placed in front of the eye -->
-<path d="M 462 188 Q 480 240 462 292 L 488 292 Q 470 240 488 188 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-<text x="475" y="178" font-family="Arial,sans-serif" font-size="10" fill="#2563eb" text-anchor="middle">konkav lins</text>
 <!-- Elongated eyeball -->
 <ellipse cx="600" cy="240" rx="130" ry="98" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
 <!-- Eye lens near the front -->
 <ellipse cx="503" cy="240" rx="11" ry="40" fill="#93c5fd" stroke="#1e40af" stroke-width="2"/>
-<!-- Retina at the back -->
-<path d="M 707 175 A 98 98 0 0 1 707 305" fill="none" stroke="#16a34a" stroke-width="4" opacity="0.8"/>
-<text x="730" y="244" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">näthinna</text>
-<!-- Rays: enter, the concave lens spreads them slightly, then eye lens converges them onto the retina -->
+<!-- Retina at the back, drawn so its vertex (at y=240) is at x=718 -->
+<path d="M 700 158 A 187 187 0 0 1 700 322" fill="none" stroke="#16a34a" stroke-width="4" opacity="0.85"/>
+<text x="690" y="150" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">näthinna</text>
+<!-- CONCAVE (diverging) correcting lens, CLEARLY in front of the eye (well to the left, not over the eyeball) -->
+<path d="M 420 178 Q 444 240 420 302 L 452 302 Q 432 240 452 178 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+<text x="436" y="168" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">konkav lins</text>
+<text x="436" y="330" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">tunn i mitten</text>
+<!-- Rays: parallel in, concave lens spreads them slightly, eye lens converges them EXACTLY onto the retina -->
 <!-- upper ray -->
-<line x1="420" y1="212" x2="465" y2="212" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="465,212 451,206 451,218" fill="#2563eb"/>
-<line x1="465" y1="212" x2="503" y2="203" stroke="#2563eb" stroke-width="2.5"/>
-<line x1="503" y1="203" x2="700" y2="240" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="700,240 686,234 685,245" fill="#2563eb"/>
+<line x1="360" y1="212" x2="423" y2="212" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="423,212 409,206 409,218" fill="#dc2626"/>
+<!-- diverged a bit by the concave lens -->
+<line x1="449" y1="212" x2="503" y2="205" stroke="#dc2626" stroke-width="2.5"/>
+<!-- converged by the eye lens onto the retina vertex (718,240) -->
+<line x1="503" y1="205" x2="718" y2="240" stroke="#dc2626" stroke-width="2.5"/>
 <!-- lower ray -->
-<line x1="420" y1="268" x2="465" y2="268" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="465,268 451,262 451,274" fill="#2563eb"/>
-<line x1="465" y1="268" x2="503" y2="277" stroke="#2563eb" stroke-width="2.5"/>
-<line x1="503" y1="277" x2="700" y2="240" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="700,240 685,235 686,246" fill="#2563eb"/>
-<!-- focus on retina -->
-<circle cx="700" cy="240" r="5" fill="#16a34a"/>
+<line x1="360" y1="268" x2="423" y2="268" stroke="#dc2626" stroke-width="2.5"/>
+<polygon points="423,268 409,262 409,274" fill="#dc2626"/>
+<line x1="449" y1="268" x2="503" y2="275" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="503" y1="275" x2="718" y2="240" stroke="#dc2626" stroke-width="2.5"/>
+<!-- focus EXACTLY on the retina -->
+<circle cx="718" cy="240" r="5" fill="#16a34a"/>
 <text x="600" y="375" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">skärpan hamnar nu på näthinnan</text>
 
 <text x="400" y="452" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">Vid närsynthet är ögat för långt — bilden blir skarp framför näthinnan</text>

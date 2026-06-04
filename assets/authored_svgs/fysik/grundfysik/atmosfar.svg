@@ -2,13 +2,20 @@
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Atmosfär (luftlagret runt jorden)</text>
 
-<!-- space (top, dark) -->
-<rect x="0" y="55" width="800" height="70" fill="#1e293b"/>
-<text x="400" y="98" font-family="Arial,sans-serif" font-size="15" fill="white" text-anchor="middle" font-weight="bold">Rymden (nästan ingen luft)</text>
-<circle cx="120" cy="80" r="2" fill="white"/>
-<circle cx="250" cy="95" r="2" fill="white"/>
-<circle cx="600" cy="78" r="2" fill="white"/>
-<circle cx="700" cy="100" r="2" fill="white"/>
+<!-- deep space at the very top: a layer COMPLETELY without air (vacuum) -->
+<rect x="0" y="55" width="800" height="38" fill="#0a0f1f"/>
+<text x="400" y="80" font-family="Arial,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Yttre rymden — helt utan luft (vakuum)</text>
+<circle cx="120" cy="70" r="2" fill="white"/>
+<circle cx="250" cy="83" r="2" fill="white"/>
+<circle cx="600" cy="68" r="2" fill="white"/>
+<circle cx="700" cy="82" r="2" fill="white"/>
+<circle cx="430" cy="74" r="1.6" fill="white"/>
+
+<!-- near space: almost no air -->
+<rect x="0" y="93" width="800" height="32" fill="#1e293b"/>
+<text x="400" y="114" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle">Rymden — nästan ingen luft</text>
+<circle cx="180" cy="104" r="1.6" fill="white"/>
+<circle cx="540" cy="107" r="1.6" fill="white"/>
 
 <!-- upper atmosphere (thin air) -->
 <rect x="0" y="125" width="800" height="80" fill="#bfdbfe"/>

@@ -4,8 +4,6 @@
 <circle cx="250" cy="250" r="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
 <text x="250" y="254" font-family="Arial,sans-serif" font-size="9" fill="#92400e" text-anchor="middle">kärna</text>
 <circle cx="250" cy="250" r="55" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
-<circle cx="292.1324443715438" cy="214.64668146724034" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
-<text x="292.1324443715438" y="218.14668146724034" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
 <circle cx="207.86755562845622" cy="214.64668146724034" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
 <text x="207.86755562845622" y="218.14668146724034" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
 <circle cx="207.86755562845622" cy="285.35331853275966" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
@@ -13,15 +11,20 @@
 <circle cx="292.1324443715438" cy="285.35331853275966" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
 <text x="292.1324443715438" y="288.85331853275966" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
 <text x="250" y="335" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">atom</text>
-<polyline points="70.0,150.0 72.0,145.4 74.0,141.8 76.0,140.1 78.0,140.6 80.0,143.4 82.0,147.6 84.0,152.4 86.0,156.6 88.0,159.4 90.0,159.9 92.0,158.2 94.0,154.6 96.0,150.0 98.0,145.4 100.0,141.8 102.0,140.1 104.0,140.6 106.0,143.4 108.0,147.6 110.0,152.4 112.0,156.6 114.0,159.4 116.0,159.9 118.0,158.2 120.0,154.6 122.0,150.0 124.0,145.4 126.0,141.8 128.0,140.1 130.0,140.6 132.0,143.4 134.0,147.6 136.0,152.4 138.0,156.6 140.0,159.4 142.0,159.9 144.0,158.2 146.0,154.6 148.0,150.0 150.0,145.4 152.0,141.8 154.0,140.1 156.0,140.6 158.0,143.4 160.0,147.6 162.0,152.4 164.0,156.6 166.0,159.4 168.0,159.9 170.0,158.2 172.0,154.6 174.0,150.0 176.0,145.4 178.0,141.8 180.0,140.1 182.0,140.6 184.0,143.4 186.0,147.6 188.0,152.4 190.0,156.6 192.0,159.4 194.0,159.9 196.0,158.2 198.0,154.6 200.0,150.0 202.0,145.4 204.0,141.8 206.0,140.1 208.0,140.6 210.0,143.4 212.0,147.6 214.0,152.4" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
-<line x1="207.0" y1="150.0" x2="221.6" y2="159.5" stroke="#7c3aed" stroke-width="2.5"/>
-<polygon points="230.0,165.0 224.1,155.8 219.2,163.3" fill="#7c3aed"/>
+<polyline points="70.0,150.0 72.0,154.3 74.0,157.8 76.0,159.7 78.0,159.7 80.0,157.8 82.0,154.3 84.0,150.0 86.0,145.7 88.0,142.2 90.0,140.3 92.0,140.3 94.0,142.2 96.0,145.7 98.0,150.0 100.0,154.3 102.0,157.8 104.0,159.7 106.0,159.7 108.0,157.8 110.0,154.3 112.0,150.0 114.0,145.7 116.0,142.2 118.0,140.3 120.0,140.3 122.0,142.2 124.0,145.7 126.0,150.0 128.0,154.3 130.0,157.8 132.0,159.7 134.0,159.7 136.0,157.8 138.0,154.3 140.0,150.0 142.0,145.7 144.0,142.2 146.0,140.3 148.0,140.3 150.0,142.2 152.0,145.7 154.0,150.0 156.0,154.3 158.0,157.8 160.0,159.7 162.0,159.7 164.0,157.8 166.0,154.3 168.0,150.0 170.0,145.7 172.0,142.2 174.0,140.3 176.0,140.3 178.0,142.2 180.0,145.7 182.0,150.0 184.0,154.3 186.0,157.8 188.0,159.7 190.0,159.7 192.0,157.8 194.0,154.3 196.0,150.0 198.0,145.7 200.0,142.2 202.0,140.3 204.0,140.3 206.0,142.2 208.0,145.7 210.0,150.0 212.0,154.3 214.0,157.8 216.0,159.7 218.0,159.7 220.0,157.8 222.0,154.3 224.0,150.0 226.0,145.7 228.0,142.2 230.0,140.3 232.0,140.3 234.0,142.2 236.0,145.7 238.0,150.0 240.0,154.3 242.0,157.8 244.0,159.7 246.0,159.7 248.0,157.8 250.0,154.3" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+<line x1="250.0" y1="154.3" x2="283.5" y2="208.0" stroke="#7c3aed" stroke-width="2.5"/>
+<polygon points="289.0,216.8 285.6,205.4 277.9,212.6" fill="#7c3aed"/>
 <text x="120" y="130" font-family="Arial,sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="bold">stark strålning</text>
-<line x1="298.1" y1="208.6" x2="549.5" y2="133.2" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="280" y1="200" x2="304" y2="228" stroke="#dc2626" stroke-width="1.6"/>
+<line x1="304" y1="200" x2="280" y2="228" stroke="#dc2626" stroke-width="1.6"/>
+<line x1="278" y1="214" x2="306" y2="214" stroke="#dc2626" stroke-width="1.6"/>
+<line x1="292" y1="198" x2="292" y2="230" stroke="#dc2626" stroke-width="1.6"/>
+<text x="300" y="186" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="bold">träffar elektronen</text>
+<line x1="300.0" y1="210.0" x2="549.5" y2="133.2" stroke="#2563eb" stroke-width="2.5"/>
 <polygon points="560.0,130.0 548.2,128.9 550.8,137.5" fill="#2563eb"/>
 <circle cx="560" cy="130" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
 <text x="560" y="133.5" font-family="Arial,sans-serif" font-size="8" fill="white" text-anchor="middle">e-</text>
-<text x="560" y="110" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">elektron slås loss</text>
+<text x="470" y="120" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">elektronen skjuts iväg</text>
 <rect x="470" y="280" width="240" height="90" fill="white" stroke="#dc2626" stroke-width="2" rx="6"/>
 <text x="590" y="308" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">Resultat: en jon</text>
 <text x="590" y="334" font-family="Arial,sans-serif" font-size="12" fill="#1f2937" text-anchor="middle">atomen blev positiv (laddning +1)</text>

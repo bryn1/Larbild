@@ -24,8 +24,11 @@
 
 <!-- the single touch point, highlighted -->
 <circle cx="360" cy="140" r="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
-<text x="490" y="175" font-family="Arial,sans-serif" font-size="14" fill="#b45309" text-anchor="middle" font-weight="bold">nuddar i EN punkt</text>
-<line x1="420" y1="170" x2="368" y2="144" stroke="#f59e0b" stroke-width="1.5"/>
+
+<!-- label moved to clear, easy-to-read space (upper area), with a clean leader to the touch point -->
+<text x="235" y="105" font-family="Arial,sans-serif" font-size="14" fill="#b45309" text-anchor="middle" font-weight="bold">nuddar i EN punkt</text>
+<line x1="312" y1="112" x2="354" y2="135" stroke="#f59e0b" stroke-width="1.5"/>
+<polygon points="361,139 349,138 354,128" fill="#f59e0b"/>
 
 <text x="400" y="478" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En tangent är en rät linje som nuddar en kurva i exakt en punkt</text>
 </svg>

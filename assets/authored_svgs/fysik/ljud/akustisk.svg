@@ -2,13 +2,13 @@
 <rect width="800" height="500" fill="white"/>
 <text x="400" y="35" font-family="Arial,sans-serif" font-size="22" fill="#1e40af" text-anchor="middle" font-weight="bold">Akustisk – ljud utan elektrisk förstärkning</text>
 
-<!-- ===== Clear acoustic guitar drawn upright-ish: neck up-left, body centre-right ===== -->
-<!-- neck -->
-<rect x="178" y="150" width="170" height="20" rx="5" fill="#a16207" stroke="#7c2d12" stroke-width="2" transform="rotate(38 178 160)"/>
-<!-- headstock at the far (upper-left) end of the neck -->
-<rect x="166" y="138" width="32" height="26" rx="4" fill="#7c2d12" stroke="#5b2410" stroke-width="2" transform="rotate(38 182 151)"/>
+<!-- ===== Acoustic guitar, upright: neck rises straight from the body's upper bout ===== -->
+<!-- neck: vertical, on the body's central axis (x = 462) -->
+<rect x="451" y="84" width="22" height="118" rx="5" fill="#a16207" stroke="#7c2d12" stroke-width="2"/>
+<!-- headstock at the top of the neck -->
+<rect x="447" y="60" width="30" height="28" rx="4" fill="#7c2d12" stroke="#5b2410" stroke-width="2"/>
 
-<!-- guitar body: ONE smooth figure-8 silhouette (small upper bout, waist, large lower bout) -->
+<!-- guitar body: figure-8 silhouette, upper bout meets the neck at (462,196) -->
 <path d="M 470 196
          C 426 196 404 220 408 244
          C 392 256 378 276 378 300
@@ -21,33 +21,33 @@
 <!-- sound-hole on the lower bout -->
 <circle cx="462" cy="296" r="26" fill="#7c2d12" stroke="#92400e" stroke-width="2.5"/>
 <circle cx="462" cy="296" r="32" fill="none" stroke="#92400e" stroke-width="1.5"/>
-<!-- 'Ljudhål' label below the body with a short leader to the hole -->
-<line x1="462" y1="328" x2="462" y2="392" stroke="#92400e" stroke-width="1.2" stroke-dasharray="3,3"/>
-<text x="462" y="406" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="bold">Ljudhål</text>
+<line x1="494" y1="296" x2="556" y2="296" stroke="#92400e" stroke-width="1.2" stroke-dasharray="3,3"/>
+<text x="588" y="300" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="bold">Ljudhål</text>
 
 <!-- bridge -->
 <rect x="442" y="338" width="40" height="9" rx="2" fill="#7c2d12" stroke="#5b2410" stroke-width="1.5"/>
 
-<!-- strings: from headstock, down the neck, across the sound-hole, to the bridge -->
-<line x1="196" y1="158" x2="452" y2="340" stroke="#374151" stroke-width="1.3"/>
-<line x1="200" y1="152" x2="462" y2="342" stroke="#374151" stroke-width="1.3"/>
-<line x1="204" y1="146" x2="472" y2="340" stroke="#374151" stroke-width="1.3"/>
+<!-- strings: straight down the neck centreline, over the sound-hole, to the bridge -->
+<line x1="456" y1="86" x2="450" y2="340" stroke="#374151" stroke-width="1.3"/>
+<line x1="462" y1="86" x2="462" y2="342" stroke="#374151" stroke-width="1.3"/>
+<line x1="468" y1="86" x2="474" y2="340" stroke="#374151" stroke-width="1.3"/>
 
 <!-- step 1: string vibrates (marks on the open neck portion) -->
-<path d="M 300 196 Q 312 182 324 196 Q 336 210 348 196" fill="none" stroke="#dc2626" stroke-width="2"/>
-<text x="300" y="172" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">1. Strängen svänger</text>
+<path d="M 444 150 Q 453 138 462 150 Q 471 162 480 150" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="300" y="120" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="bold">1. Strängen svänger</text>
+<line x1="358" y1="124" x2="438" y2="148" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,3"/>
 
-<!-- step 2: air in the body resonates (label placed clear of body, left side, with leader) -->
-<text x="150" y="296" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">2. Luften i lådan</text>
-<text x="150" y="314" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">svänger med</text>
-<line x1="218" y1="305" x2="378" y2="300" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,3"/>
+<!-- step 2: air in the body resonates (label left of body, with leader) -->
+<text x="170" y="296" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">2. Luften i lådan</text>
+<text x="170" y="314" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">svänger med</text>
+<line x1="238" y1="305" x2="378" y2="300" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,3"/>
 
 <!-- step 3: sound out from the sound-hole (arcs to the right) -->
 <path d="M 575 270 A 86 86 0 0 1 600 322" fill="none" stroke="#16a34a" stroke-width="2.5"/>
 <path d="M 596 252 A 112 112 0 0 1 632 322" fill="none" stroke="#16a34a" stroke-width="2.5"/>
 <path d="M 617 234 A 138 138 0 0 1 664 322" fill="none" stroke="#16a34a" stroke-width="2.5"/>
-<text x="668" y="252" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">3. Ljud ut</text>
-<text x="668" y="272" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">utan elektronik</text>
+<text x="668" y="232" font-family="Arial,sans-serif" font-size="14" fill="#16a34a" text-anchor="middle" font-weight="bold">3. Ljud ut</text>
+<text x="668" y="252" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">utan elektronik</text>
 
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Strängen svänger, luften i den ihåliga lådan svänger med och ljudet hörs – helt utan förstärkare</text>
 </svg>

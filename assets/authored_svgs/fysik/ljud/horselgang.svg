@@ -19,20 +19,18 @@
 <polygon points="466,266 453,272 453,260" fill="#2563eb"/>
 <text x="330" y="282" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">ljudet leds in</text>
 
-<!-- eardrum (trumhinna) at the inner end, drawn clearly SLANTED/oblique -->
-<!-- membrane line tilted ~30 deg from vertical, spanning the canal mouth -->
-<line x1="486" y1="216" x2="540" y2="312" stroke="#7c2d12" stroke-width="6"/>
-<!-- faint frame ring around it to read as a stretched skin -->
-<ellipse cx="513" cy="264" rx="10" ry="52" fill="none" stroke="#92400e" stroke-width="1.4" stroke-dasharray="4,3" transform="rotate(29 513 264)"/>
-<text x="600" y="196" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle" font-weight="bold">Trumhinna</text>
-<text x="600" y="214" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">(sitter snett)</text>
-<line x1="575" y1="206" x2="536" y2="244" stroke="#7c2d12" stroke-width="1.5"/>
-<polygon points="528,252 533,239 542,247" fill="#7c2d12"/>
+<!-- eardrum (trumhinna) at the inner end, rendered at 90 deg to the canal (vertical, since canal is horizontal) -->
+<line x1="505" y1="232" x2="505" y2="300" stroke="#7c2d12" stroke-width="6"/>
+<!-- faint frame ring around it to read as a stretched skin, aligned upright with the membrane -->
+<ellipse cx="505" cy="266" rx="9" ry="36" fill="none" stroke="#92400e" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="600" y="200" font-family="Arial,sans-serif" font-size="13" fill="#7c2d12" text-anchor="middle" font-weight="bold">Trumhinna</text>
+<line x1="568" y1="206" x2="520" y2="248" stroke="#7c2d12" stroke-width="1.5"/>
+<polygon points="512,254 518,241 526,250" fill="#7c2d12"/>
 
 <!-- it vibrates -->
-<path d="M 548 250 q 12 6 2 16" fill="none" stroke="#dc2626" stroke-width="1.8"/>
-<path d="M 556 266 q 12 6 2 16" fill="none" stroke="#dc2626" stroke-width="1.8"/>
-<text x="592" y="300" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">skakar av ljudet</text>
+<path d="M 516 250 q 12 6 2 16" fill="none" stroke="#dc2626" stroke-width="1.8"/>
+<path d="M 524 266 q 12 6 2 16" fill="none" stroke="#dc2626" stroke-width="1.8"/>
+<text x="585" y="300" font-family="Arial,sans-serif" font-size="11" fill="#dc2626" text-anchor="middle">skakar av ljudet</text>
 
-<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hörselgången leder ljudvågorna in till trumhinnan, som sitter snett längst in i kanalen</text>
+<text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Hörselgången leder ljudvågorna in till trumhinnan, som sitter rakt över kanalen längst in</text>
 </svg>
