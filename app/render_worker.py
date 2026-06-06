@@ -56,6 +56,7 @@ from flask import current_app
 from . import edu_prompt as _edu_prompt
 from . import gpu_lock as _gpu_lock
 from . import procedural as _procedural
+from . import storage as _storage
 from . import vram_pause as _vram_pause
 from . import workflow as _workflow
 from .comfyui import ComfyResult, ComfyUIClient, default_comfyui_url, extract_output_images
@@ -340,8 +341,13 @@ def flux_route_for(image_type: Optional[str]) -> Optional[str]:
 
 
 def _storage_dir() -> Path:
-    """The isolated output dir (STORAGE_DIR/output). Created if missing."""
-    base = Path(current_app.config["STORAGE_DIR"]) / "output"
+    """The isolated output dir (STORAGE_DIR/output). Created if missing.
+
+    Path comes from the single source of truth (:func:`app.storage.output_dir`);
+    the mkdir stays here so a render still succeeds even if ``INIT_STORAGE`` was
+    disabled at boot (the dir is created on first write).
+    """
+    base = _storage.output_dir(current_app.config)
     base.mkdir(parents=True, exist_ok=True)
     return base
 

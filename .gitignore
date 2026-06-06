@@ -15,6 +15,11 @@ env/
 /output/
 /results/
 
+# SFW-only model dir (lb-83n, P0.4): checkpoints + LoRAs are large runtime
+# assets sourced/curated in P9 (lb-0ul), never source. The dir is created on
+# boot by app.storage.ensure_layout; its contents must never be committed.
+/models/
+
 # Node / frontend build intermediates (commit built static/, not node_modules)
 node_modules/
 frontend/node_modules/
@@ -35,3 +40,11 @@ logs/
 *.swp
 .idea/
 .vscode/
+
+# Gas Town polecat worktree runtime — injected when a polecat works in its
+# sandbox (agent context, lock/session state, local beads cache). Never part of
+# the app; ignored so an auto-checkpoint can't commit them into the repo.
+/CLAUDE.md
+/.claude/
+/.beads/
+/.runtime/

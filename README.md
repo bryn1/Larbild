@@ -49,7 +49,13 @@ data from the design's `data.js`), subject/area auto-sort library model, Swedish
 app/        Flask backend (forked imagegen infra modules, SFW-stripped) + routers
 static/     Built React frontend assets served by Flask
 docs/       Architecture, build plan, design handoff notes
+storage/    Output media (git-ignored runtime data) — STORAGE_DIR/output/…
+models/     Dedicated SFW-only checkpoints/ + loras/ (git-ignored; sourced in P9)
 ```
+
+The three larbild-owned, imagegen-isolated on-disk roots (output media, DB, and
+the SFW-only model dir) — config knobs, boot creation, and the isolation guard —
+are documented in [`docs/STORAGE_LAYOUT.md`](docs/STORAGE_LAYOUT.md).
 
 ## System dependencies (Sibbis deploy)
 

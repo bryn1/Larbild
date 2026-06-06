@@ -36,10 +36,33 @@ def create_app(overrides: Optional[Mapping] = None) -> Flask:
     if overrides:
         app.config.update(dict(overrides))
 
+    _init_storage(app)
     _init_database(app)
     _register_blueprints(app)
     _start_background_workers(app)
     return app
+
+
+def _init_storage(app: Flask) -> None:
+    """Create the isolated, SFW-isolated storage layout on boot (lb-83n, P0.4).
+
+    Reads the live (post-override) config, so a test/deploy that overrides
+    ``STORAGE_DIR`` / ``MODEL_DIR`` is honoured. :func:`app.storage.ensure_layout`
+    runs the fail-closed isolation guard FIRST (refusing to boot if a larbild
+    path would land in an imagegen tree, or the output + model roots collide),
+    then mkdir -p's ``STORAGE_DIR/output``, ``MODEL_DIR/{checkpoints,loras}`` and
+    the DB parent. Idempotent — safe from every gunicorn worker.
+
+    Gated by ``INIT_STORAGE`` (default True), independent of ``INIT_DB`` so the
+    layout is created even when a test skips DB init. A pure-unit test that
+    writes nothing to disk can set it False; the import stays local so such a
+    test pays nothing.
+    """
+    if not app.config.get("INIT_STORAGE", True):
+        return
+    from .storage import ensure_layout
+
+    ensure_layout(app.config)
 
 
 def _init_database(app: Flask) -> None:

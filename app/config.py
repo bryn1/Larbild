@@ -93,18 +93,41 @@ class Config:
         self.HOST = os.environ.get("LARBILD_HOST", "0.0.0.0")
         self.PORT = int(os.environ.get("LARBILD_PORT", "6868"))
 
-        # ── Foundational paths ────────────────────────────────────────
-        # Resolved (not created) here so every phase reads one source of
-        # truth. P0.2 owns the DB; P0.4 owns the isolated storage layout.
+        # ── Foundational paths (the isolated, larbild-OWNED storage) ──
+        # Resolved here (not created) so every phase reads one source of truth;
+        # the dirs themselves are created on boot by app.storage.ensure_layout
+        # (lb-83n, P0.4). Defaults live under the repo root so a dev checkout
+        # runs out-of-the-box; production overrides each via env. NONE of these
+        # may overlap an imagegen path — app.storage.assert_isolated enforces it
+        # on boot (BUILD_PLAN hard-isolation plane: separate storage/DB/model).
+        #
+        # STORAGE_DIR — output media root; generated artefacts live under
+        # STORAGE_DIR/output/<subject>/<area>/<kind>/ (the Bibliotek tree).
         self.STORAGE_DIR = Path(
             os.environ.get("LARBILD_STORAGE", str(_REPO_ROOT / "storage"))
         )
+        # DB_PATH — the SFW SQLite database (its parent dir is created on boot).
         self.DB_PATH = Path(
             os.environ.get("LARBILD_DB_PATH", str(_REPO_ROOT / "data" / "larbild.db"))
+        )
+        # MODEL_DIR — the DEDICATED SFW-only model root: checkpoints/ + loras/
+        # are its only two subdirs, and this is the ONLY checkpoint/LoRA location
+        # larbild owns. It is physically separate from imagegen's model dirs;
+        # in production the render host's ComfyUI search path points HERE (and
+        # only here), so a restricted imagegen asset is never reachable. P9.1
+        # (lb-0ul) curates the actual SFW .safetensors into checkpoints/ + loras/.
+        self.MODEL_DIR = Path(
+            os.environ.get("LARBILD_MODEL_DIR", str(_REPO_ROOT / "models"))
         )
         # P0.2 (lb-ah2): run the SQLite migrations on boot. Default on; a test
         # can disable it to avoid filesystem writes when it doesn't touch the DB.
         self.INIT_DB = _env_bool("LARBILD_INIT_DB", True)
+        # P0.4 (lb-83n): create the isolated storage + SFW model layout on boot
+        # (mkdir -p output/, models/checkpoints/, models/loras/, the DB parent).
+        # Default on; independent of INIT_DB so the layout is created even when a
+        # test skips DB init. A pure-unit test that touches no filesystem can set
+        # it False. assert_isolated still runs first regardless, fail-closed.
+        self.INIT_STORAGE = _env_bool("LARBILD_INIT_STORAGE", True)
         # P10.3 (lb-qtr): full DB↔disk↔library reconcile on boot. Default on; the
         # wiring also defaults it OFF under TESTING so a plain create_app() unit
         # test doesn't walk the storage tree. Env can force it either way.
