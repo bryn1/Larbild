@@ -11,7 +11,10 @@ attributes via ``app.config.from_object``.
 
 Later phases extend this:
   * P0.2 — SQLite schema/migrations reads ``DB_PATH``.
-  * P0.4 — isolated storage layout reads ``STORAGE_DIR``.
+  * P0.4 — the isolated storage layout reads ``STORAGE_DIR`` (output media + DB)
+    and ``MODEL_DIR`` (the dedicated SFW-only checkpoint/LoRA root). All three are
+    larbild-OWNED, physically separate from imagegen, and created on boot by
+    :mod:`app.storage` (gated by ``INIT_STORAGE``).
   * P1   — ComfyUI bridge + Redis queue add their own ``LARBILD_*`` knobs.
 Add new knobs here; keep them env-overridable with safe LAN defaults.
 """
