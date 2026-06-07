@@ -1,36 +1,52 @@
-"""Cross-host Redis lock around the VM100 3090 — forked for Lärbild (lb-c2r).
+"""Cross-host Redis mutex around the VM100 3090 — the ONE canonical implementation.
 
-A SFW-stripped fork of imagegen's ``sibbis-app/gpu_lock.py`` (ig-3drb). The
-*coordination contract is shared, the data is not*: Lärbild renders run on the
-same VM100 3090 as imagegen's renders and as the resident chat/compose LLM, so
-all three must take **the same mutex** or they OOM the 24 GB card. This module
-therefore SETNX-with-TTL on the **exact same Redis key** imagegen uses —
+This is the single source of truth for the GPU lock. Three diverged copies used
+to exist (imagegen ``sibbis-app/`` + imagegen ``vm100/shared_runtime/`` + larbild
+``app/``); they differed only by logger name and a Redis env-var prefix order.
+They are now collapsed here (CODEBASE_AUDIT_2026-06-07 cluster 1). Each app gets a
+byte-identical *vendored copy* of this file at deploy time and a CI drift-check
+keeps the copies in sync — apps deploy independently (imagegen rsync→Sibbis,
+larbild git-pull→Sibbis, vm100 host-local), so there is no shared import path. See
+``infra/shared/README.md`` for the deploy-vendor pattern.
+
+Why the lock exists
+-------------------
+Larbild renders, imagegen renders, and the resident chat/compose LLM all run on
+the same VM100 3090. They must take **the same mutex** or they OOM the 24 GB card.
+The lock is a Redis ``SETNX``-with-TTL on a key SHARED VERBATIM across every
+participant — a winner blocks the others until it releases. That mutual exclusion
+is the whole point; never namespace the key per-app.
 
     LOCK_KEY = "lock:vm100-3090"   # SHARED verbatim; do NOT namespace this
 
-— against the **same VM400 Redis** (192.168.5.77:6379) imagegen's worker +
-Sibbis pipelines use. A larbild render that wins the key blocks an imagegen
-render (and vice-versa) until release; that mutual exclusion is the whole point
-(BUILD_PLAN risk R4, "3-way 3090 contention — SHARE gpu_lock, don't fork").
+Configuration (zero code change required — defaults preserve every app's behavior)
+---------------------------------------------------------------------------------
+The only two things that differed between the old copies are env-configurable, so
+the vendored file is byte-identical everywhere:
 
-What *is* forked (not shared): the env-var prefix for the Redis connection is
-``LARBILD_REDIS_*`` (with the imagegen ``IMAGE_GEN_REDIS_*`` names honored as a
-fallback so a single deploy that only sets one prefix still points both apps at
-the same server). The job queue keys (app/jobs.py) ARE namespaced ``larbild:``
-— only this lock key is shared, because a lock is mutual exclusion, not data.
+    GPU_LOCK_LOGGER          logging.getLogger() name      (default "gpu_lock")
+    GPU_LOCK_ENV_PREFIXES    comma-sep Redis env prefixes  (default "LARBILD,IMAGE_GEN")
 
-SFW-only: no restricted import, model, or reference. The only process this
-module is aware of is ComfyUI; it never names a restricted feature.
+The default prefix order resolves ``LARBILD_REDIS_*`` first then
+``IMAGE_GEN_REDIS_*`` — for imagegen the LARBILD_* names are simply unset, so it
+falls through to IMAGE_GEN_* (identical to its old behavior); for larbild the
+LARBILD_* names win first (identical to its old behavior). A single default thus
+preserves both apps. Apps may also call ``configure()`` instead of using env vars.
 
-Env vars:
-    LARBILD_REDIS_URL / IMAGE_GEN_REDIS_URL        full redis:// URL — wins if set
-    LARBILD_REDIS_HOST / IMAGE_GEN_REDIS_HOST      default 192.168.5.77 (VM400)
-    LARBILD_REDIS_PORT / IMAGE_GEN_REDIS_PORT      default 6379
-    LARBILD_REDIS_PASSWORD / IMAGE_GEN_REDIS_PASSWORD   optional
+Redis connection env vars (resolved against each prefix in GPU_LOCK_ENV_PREFIXES):
+    <PREFIX>_REDIS_URL        full redis:// URL — wins if set
+    <PREFIX>_REDIS_HOST       default 192.168.5.77 (VM400)
+    <PREFIX>_REDIS_PORT       default 6379
+    <PREFIX>_REDIS_PASSWORD   optional
+
+Lock-behavior env vars:
     GPU_LOCK_TTL_S        default 300 — crash safety; lock evaporates if a holder dies
     GPU_LOCK_TIMEOUT_S    default 600 — covers a long render queued behind another
     GPU_LOCK_REFRESH_S    default 60  — TTL refresh cadence while the holder lives
     GPU_LOCK_DISABLE      if "1", skip the lock entirely (debug/fallback)
+
+Public API: ``gpu_lock`` (context manager), ``LOCK_KEY``, ``make_redis_client``,
+``configure``.
 """
 from __future__ import annotations
 
@@ -41,13 +57,39 @@ import threading
 import time
 import uuid
 from contextlib import contextmanager
-from typing import Any, Iterator, Optional
+from typing import Any, Iterator, Optional, Sequence
 
-log = logging.getLogger("larbild.gpu_lock")
+# ── Configurable module state (the only per-app differences) ──────────────────
+log = logging.getLogger(os.environ.get("GPU_LOCK_LOGGER", "gpu_lock"))
 
-# SHARED verbatim with imagegen — the mutual-exclusion contract on the VM100
-# 3090. Never namespace this to 'larbild:'; that would let larbild + imagegen
-# render concurrently and OOM the card (the exact bug this lock prevents).
+_ENV_PREFIXES: tuple[str, ...] = tuple(
+    p.strip()
+    for p in os.environ.get("GPU_LOCK_ENV_PREFIXES", "LARBILD,IMAGE_GEN").split(",")
+    if p.strip()
+)
+
+
+def configure(
+    *,
+    logger_name: Optional[str] = None,
+    env_prefixes: Optional[Sequence[str]] = None,
+) -> None:
+    """Override the logger name and/or Redis env-var prefixes programmatically.
+
+    An alternative to the GPU_LOCK_LOGGER / GPU_LOCK_ENV_PREFIXES env vars for
+    apps that prefer wiring this in code. Call once at import time, before the
+    first ``gpu_lock()``.
+    """
+    global log, _ENV_PREFIXES
+    if logger_name:
+        log = logging.getLogger(logger_name)
+    if env_prefixes:
+        _ENV_PREFIXES = tuple(env_prefixes)
+
+
+# SHARED verbatim with every participant — the mutual-exclusion contract on the
+# VM100 3090. Never namespace this per-app; that would let two apps render
+# concurrently and OOM the card (the exact bug this lock prevents).
 LOCK_KEY = "lock:vm100-3090"
 
 DEFAULT_TTL_S = int(os.environ.get("GPU_LOCK_TTL_S", "300"))
@@ -55,7 +97,7 @@ DEFAULT_TIMEOUT_S = float(os.environ.get("GPU_LOCK_TIMEOUT_S", "600"))
 DEFAULT_REFRESH_S = float(os.environ.get("GPU_LOCK_REFRESH_S", "60"))
 DISABLE = os.environ.get("GPU_LOCK_DISABLE") == "1"
 
-__all__ = ["gpu_lock", "LOCK_KEY", "make_redis_client"]
+__all__ = ["gpu_lock", "LOCK_KEY", "make_redis_client", "configure"]
 
 # Atomic compare-and-delete on release. A plain DEL would race TTL expiry + a
 # new holder taking the key — we'd drop someone else's lock. KEYS[1] = lock
@@ -98,23 +140,23 @@ def _new_holder_token() -> str:
     return f"{socket.gethostname()}:{os.getpid()}:{uuid.uuid4().hex}"
 
 
-def _env(*names: str, default: Optional[str] = None) -> Optional[str]:
-    """First set env var among *names* (Lärbild prefix first, imagegen fallback)."""
-    for n in names:
-        v = os.environ.get(n)
+def _env(suffix: str, default: Optional[str] = None) -> Optional[str]:
+    """First set ``<PREFIX>_REDIS_<suffix>`` across GPU_LOCK_ENV_PREFIXES order."""
+    for prefix in _ENV_PREFIXES:
+        v = os.environ.get(f"{prefix}_REDIS_{suffix}")
         if v:
             return v
     return default
 
 
 def make_redis_client() -> Optional[Any]:
-    """Build a Redis client pointed at the SAME server imagegen uses.
+    """Build a Redis client pointed at the SAME server every participant uses.
 
-    Resolves ``LARBILD_REDIS_*`` first, then the imagegen ``IMAGE_GEN_REDIS_*``
-    names, so a deploy that only sets one prefix still points both apps at the
-    shared VM400 Redis (otherwise the lock key would live in two servers and
-    stop coordinating). Returns ``None`` on import failure so callers fall
-    through to the lock-disabled path rather than crashing.
+    Resolves the Redis env vars against GPU_LOCK_ENV_PREFIXES in order so a
+    deploy that only sets one app's prefix still points every app at the shared
+    VM400 Redis (otherwise the lock key would live in two servers and stop
+    coordinating). Returns ``None`` on import failure so callers fall through to
+    the lock-disabled path rather than crashing.
     """
     try:
         import redis  # type: ignore
@@ -122,17 +164,21 @@ def make_redis_client() -> Optional[Any]:
         log.warning("redis package not installed; gpu_lock disabled")
         return None
 
-    url = _env("LARBILD_REDIS_URL", "IMAGE_GEN_REDIS_URL")
+    url = _env("URL")
     if url:
         return redis.Redis.from_url(url, decode_responses=True)
     return redis.Redis(
-        host=_env("LARBILD_REDIS_HOST", "IMAGE_GEN_REDIS_HOST", default="192.168.5.77"),
-        port=int(_env("LARBILD_REDIS_PORT", "IMAGE_GEN_REDIS_PORT", default="6379")),
-        password=_env("LARBILD_REDIS_PASSWORD", "IMAGE_GEN_REDIS_PASSWORD"),
+        host=_env("HOST", default="192.168.5.77"),
+        port=int(_env("PORT", default="6379")),
+        password=_env("PASSWORD"),
         decode_responses=True,
         socket_connect_timeout=5,
         socket_timeout=5,
     )
+
+
+# Back-compat alias: imagegen's old copy exposed this name privately.
+_make_redis_client = make_redis_client
 
 
 def _try_acquire(client: Any, token: str, ttl_s: int) -> bool:
@@ -188,7 +234,7 @@ def gpu_lock(
 
     Usage::
 
-        with gpu_lock(reason="larbild render abc") as held:
+        with gpu_lock(reason="render abc") as held:
             if not held:
                 log.warning("rendering without cross-host coordination")
             ...  # always run the work — the fallback is already logged
@@ -198,7 +244,7 @@ def gpu_lock(
     thread share a single acquire. Fallback (Redis unreachable or
     ``GPU_LOCK_DISABLE=1``): yield False without acquiring — a Redis outage must
     not refuse all render work, so we accept the (already-tolerated) original
-    race over a hard failure, exactly like imagegen.
+    race over a hard failure.
     """
     if DISABLE:
         log.warning("gpu_lock DISABLED via GPU_LOCK_DISABLE=1; reason=%s", reason)
