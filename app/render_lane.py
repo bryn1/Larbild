@@ -47,6 +47,7 @@ from typing import Any, Iterator, Optional
 
 import requests
 
+from .comfyui import default_comfyui_url
 from .gpu_lock import gpu_lock
 from .jobs import get_redis
 
@@ -57,13 +58,9 @@ log = logging.getLogger("larbild.render_lane")
 # nothing BRPOP/BLPOPs it, so markers are never consumed as tasks.
 RENDER_PRESSURE_KEY = os.environ.get("RENDER_PRESSURE_KEY", "vm100:render_pressure:external")
 
-# The shared VM100 3090 ComfyUI — one box, one card. Default matches larbild's
-# default_comfyui_url; the IMAGE_GEN_COMFYUI_URL override mirrors imagegen's helper
-# so a single env can repoint both apps.
-COMFYUI_URL = os.environ.get(
-    "IMAGE_GEN_COMFYUI_URL",
-    os.environ.get("LARBILD_COMFYUI_URL", "http://192.168.5.230:8188"),
-)
+# ComfyUI base URL is resolved via larbild's own default_comfyui_url() (the SAME
+# resolver the render worker uses, env LARBILD_COMFYUI_URL) so the readiness poll
+# always hits the exact endpoint the render submits to.
 
 # How long to wait for the dispatcher to evict an LLM + restore ComfyUI (~15-20s
 # for a swap; generous headroom). On timeout we proceed and let the render's own
@@ -128,7 +125,7 @@ def render_residency(
             results = _submit_and_wait(comfy, workflow, ...)
     """
     r = client if client is not None else _safe_redis()
-    url = comfyui_url or COMFYUI_URL
+    url = comfyui_url or default_comfyui_url()
     marker = json.dumps({"_signal": "render_pressure", "reason": reason,
                          "token": uuid.uuid4().hex})
     pushed = False

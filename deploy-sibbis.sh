@@ -6,7 +6,8 @@
 # sentinel records the last successfully-deployed SHA so a no-op pull skips
 # the venv/restart churn unless --force is given.
 #
-# Render is DEFERRED (no GPU/LoRA wired) — this serves the browsable UI + APIs.
+# Deploys both larbild.service (UI/APIs) and larbild-worker.service (the render
+# worker → ComfyUI on the shared VM100 3090 via render-residency).
 #
 # Usage:
 #   bash deploy-sibbis.sh            # pull + deploy if HEAD changed
@@ -36,8 +37,12 @@ echo "Installing deps..."
 venv/bin/pip install --quiet --upgrade pip
 venv/bin/pip install --quiet -r requirements.txt
 
-echo "Restarting larbild.service..."
+echo "Restarting larbild.service + larbild-worker.service..."
 sudo systemctl restart larbild.service
+# The render worker is a SEPARATE unit (BRPOP loop → ComfyUI on the shared VM100
+# 3090). It MUST be restarted too so render-path code (render_lane / render_worker)
+# is picked up — a stale worker would run the old render coordination (hq-jx6g).
+sudo systemctl restart larbild-worker.service
 sleep 3
 # Smoke gate: only write the sentinel if /healthz answers 200.
 for i in $(seq 1 15); do
