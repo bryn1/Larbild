@@ -6,7 +6,7 @@ before the ComfyUI graph is assembled — keeping the SFW LoRA allowlist + a SFW
 negative — while leaving non-diffusion jobs untouched. Also covers the dormant
 FLUX-routing flag.
 
-End-to-end with a MOCKED ComfyUI + STUBBED gpu_lock/vram_pause (no live GPU,
+End-to-end with a MOCKED ComfyUI + STUBBED render-residency (no live GPU,
 no network). The 14B composer is OFF (conftest LARBILD_EDU_LLM_ENABLE=0) so the
 render path uses the deterministic fallback; an LLM-on integration is asserted by
 patching edu_prompt._http_json.

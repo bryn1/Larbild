@@ -126,7 +126,7 @@ class BridgeKeyframeRenderer:
 
     Each keyframe is submitted as a ``bild`` job through the SAME path stills
     take — :func:`app.jobs.enqueue_job` then :func:`app.render_worker.render_job`
-    — so it inherits the shared gpu_lock + vram_pause + the SFW LoRA allowlist.
+    — so it inherits the shared render-residency (gpu_lock) + the SFW LoRA allowlist.
     The produced ``library`` row's ``file_path`` (under the isolated output dir)
     is resolved to an absolute path for the mux.
 

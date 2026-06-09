@@ -17,7 +17,8 @@ Lärbild is **~70% a fork of imagegen's backend infra**, but it is a **separate 
 separate rig**. It is **NEVER** a branch of imagegen and must **NEVER** be merged with it.
 
 A CI guard rejects any NSFW imports. The two apps share **only** the cross-host GPU
-coordination primitives (`gpu_lock` + `vram_pause`, same `lock:vm100-3090` key) so that
+coordination primitives (`gpu_lock` + render-residency on the same `lock:vm100-3090` key +
+the shared `vm100:render_pressure:external` dispatcher signal) so that
 larbild, imagegen, and chat do not OOM each other on the shared 3090 — they share
 *mutual-exclusion coordination*, never data, models, storage, or collections.
 
@@ -32,7 +33,7 @@ Five isolation planes:
 ## What's reused vs net-new
 
 **Forked from imagegen** (`/home/lektove/imagegen-repo/sibbis-app/`): GPU telemetry+routing
-(`api_gpus.py`), cross-host GPU lock (`gpu_lock.py`), `vram_pause`, Redis queue + SSE
+(`api_gpus.py`), cross-host GPU lock (`gpu_lock.py`), render-residency (`render_lane.py`), Redis queue + SSE
 (`job_status.py`), ComfyUI client + workflow assembly + LoRA injection (`video.py`), ffmpeg
 mux, pnginfo embed, deploy pipeline (`deploy-sibbis.sh` → git-pull-on-Sibbis), and the
 consent-face schema (`faces` / `face_usage_log` CHECK-constraint pattern) as the Porträtt

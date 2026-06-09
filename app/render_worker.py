@@ -2,29 +2,26 @@
 
 Ties the bridge together end to end: a queued job →
 :func:`app.workflow.assemble_txt2img` (LoRA resolved + allowlist-validated, the
-SFW guard) → the SHARED :func:`app.gpu_lock.gpu_lock` + :func:`app.vram_pause`
-(so a render coexists with imagegen + chat on the one VM100 3090 without OOM,
-BUILD_PLAN R4) → :class:`app.comfyui.ComfyUIClient` submit + poll → download the
+SFW guard) → :func:`app.render_lane.render_residency` (signal render-pressure so
+the VM100 dispatcher evicts any LLM + keeps ComfyUI resident, then hold the SHARED
+``lock:vm100-3090`` — so a render coexists with imagegen + chat on the one VM100
+3090 without OOM, hq-jx6g) → :class:`app.comfyui.ComfyUIClient` submit + poll → download the
 PNG into the isolated output dir → write a ``library`` row **auto-sorted by
 subject / area / imageType** (lb-b1r) and link it back onto the ``jobs`` row →
 the ``done`` state for the SSE stream.
 
 ────────────────────────────────────────────────────────────────────────────
-NO LIVE GPU RENDER IN THIS BEAD (CRITICAL).
-A large imagegen sweep is on BOTH GPUs (VM100 + vm153). This module is built +
-unit/integration-tested with a **mocked ComfyUI** (an injected client) and
-**stubbed** gpu_lock / vram_pause — no live GPU or network call is made. The
-"first real render on vm100" validation is **DEFERRED** until the GPU is free;
-see :data:`DEFERRED_LIVE_RENDER` and the bead notes. The shared gpu_lock is
-exactly what will let larbild + imagegen coexist safely when that live run
-happens.
+Unit/integration-tested with a **mocked ComfyUI** (an injected client) and a
+**stubbed render-residency** — no live GPU or network call in the test path. The
+live VM100 render was validated end-to-end under hq-jx6g (render-residency evicts
+a resident LLM via the dispatcher, holds ``lock:vm100-3090``, no OOM).
 ────────────────────────────────────────────────────────────────────────────
 
 Dependency injection: every side-effecting collaborator (the ComfyUI client
-factory, the gpu_lock + vram_pause context managers) is a parameter with a
-production default, so tests pass mocks/stubs and exercise the full orchestration
-without touching a GPU. The production loop :func:`run_worker_loop` is the real
-entry point (a BRPOP loop); it is intentionally NOT run during this bead.
+factory + the render-residency context manager) is a parameter with a production
+default, so tests pass mocks/stubs and exercise the full orchestration without
+touching a GPU. The production loop :func:`run_worker_loop` is the real entry
+point (a BRPOP loop).
 
 SFW-only: orchestration over the SFW workflow + SFW library; no restricted
 import, model, or reference.
@@ -448,7 +445,7 @@ def render_job(
     # real Swedish labels — diffusion garbles both (the owner's report). These
     # render deterministically on CPU (graphviz/matplotlib/RDKit), so they work
     # even while the VM100 3090 is busy with imagegen/chat, and never need the
-    # gpu_lock / vram_pause / ComfyUI path below. (MODEL_LIBRARY.md §6 procedural-
+    # render-residency / gpu_lock / ComfyUI path below. (MODEL_LIBRARY.md §6 procedural-
     # first.) The PNG still auto-sorts into the same library tree.
     if _procedural.is_structured_image_type(job["image_type"]):
         return _render_procedural_job(job)
@@ -582,7 +579,7 @@ def _render_procedural_job(job: str | dict) -> str:
 
     The CPU/procedural twin of the GPU happy path: build the concept inputs from
     the job row, render a clean labeled PNG via :func:`app.procedural.render_concept`
-    (graphviz/matplotlib/RDKit — no gpu_lock, no vram_pause, no ComfyUI), write it
+    (graphviz/matplotlib/RDKit — no render-residency, no gpu_lock, no ComfyUI), write it
     into the isolated output dir auto-sorted by subject/area/imageType, insert the
     ``library`` row, link it onto the job, and publish ``done`` for the SSE stream.
     Returns the new library row id. On failure writes ``failed`` + raises

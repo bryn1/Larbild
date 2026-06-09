@@ -374,9 +374,9 @@ def test_live_render_is_deferred():
     # gpu_lock is what will coordinate the eventual live run.
     assert "DEFERRED" in rw.DEFERRED_LIVE_RENDER
     assert "gpu_lock" in rw.DEFERRED_LIVE_RENDER
-    # the worker's defaults are the REAL collaborators (so the live run, when it
-    # happens, uses the shared lock + real vram_pause + real ComfyUI) — proven by
-    # the default factory pointing at the vm100 render target.
+    # the worker's defaults are the REAL collaborators (the live run uses real
+    # render-residency on the shared lock + real ComfyUI) — proven by the default
+    # factory pointing at the vm100 render target.
     factory_target = rw.RENDER_TARGETS[rw.DEFAULT_BACKEND]
     assert factory_target["http"].endswith(":8188")
 
