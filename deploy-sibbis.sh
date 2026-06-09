@@ -24,6 +24,16 @@ cd "$APP"
 git remote set-url origin "$REMOTE" 2>/dev/null || git remote add origin "$REMOTE"
 git fetch --quiet origin master
 git reset --hard origin/master
+
+# Re-exec ourselves so bash re-parses the updated script on disk.
+# Without this, any change to this script's logic (e.g. a new systemctl
+# restart line) would only land on the NEXT deploy — one deploy late.
+# The DEPLOY_REEXEC env flag prevents an infinite loop.
+if [ "${DEPLOY_REEXEC:-}" != "1" ]; then
+  export DEPLOY_REEXEC=1
+  exec bash "$0" "$@"
+fi
+
 HEAD_SHA=$(git rev-parse HEAD)
 echo "HEAD now: $(git log --oneline -1)"
 
