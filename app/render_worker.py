@@ -47,16 +47,14 @@ import json
 import logging
 import os
 import time
-from contextlib import contextmanager
 from pathlib import Path
-from typing import Any, Callable, Iterator, Optional
+from typing import Any, Callable, Optional
 
 from flask import current_app
 
 from . import edu_prompt as _edu_prompt
-from . import gpu_lock as _gpu_lock
 from . import procedural as _procedural
-from . import vram_pause as _vram_pause
+from . import render_lane as _render_lane
 from . import workflow as _workflow
 from .comfyui import ComfyResult, ComfyUIClient, default_comfyui_url, extract_output_images
 from .db import connect, new_id, now_iso
@@ -150,19 +148,7 @@ class RenderError(RuntimeError):
 
 # Type aliases for the injected collaborators.
 ComfyFactory = Callable[[], ComfyUIClient]
-LockCM = Callable[..., Any]   # context manager factory -> yields bool
-PauseCM = Callable[..., Any]  # context manager factory -> yields free MiB
-
-
-@contextmanager
-def _noop_pause(reason: str = "", **_: Any) -> Iterator[int]:
-    """A vram_pause stand-in for environments without the VM100 SSH path.
-
-    Yields a large free-MiB so the worker proceeds. NOT used in production (the
-    real :func:`app.vram_pause.vram_pause` is the default); it exists so a render
-    can be driven in a test/dev box that can't SSH to VM100.
-    """
-    yield 1 << 20
+RenderCM = Callable[..., Any]  # render-residency context manager factory -> yields held (bool)
 
 
 def _default_comfy_factory(target_key: Optional[str] = None) -> ComfyUIClient:
@@ -427,28 +413,27 @@ def render_job(
     job_id: str,
     *,
     comfy_factory: Optional[ComfyFactory] = None,
-    gpu_lock_cm: Optional[LockCM] = None,
-    vram_pause_cm: Optional[PauseCM] = None,
+    render_cm: Optional[RenderCM] = None,
     poll_s: float = POLL_S,
     timeout_s: float = RENDER_TIMEOUT_S,
 ) -> str:
     """Render one queued job end-to-end and auto-sort the result into the library.
 
     Steps: load the durable job row → assemble the SFW txt2img graph (LoRA
-    resolved + allowlist-validated) → acquire the SHARED gpu_lock + vram_pause →
+    resolved + allowlist-validated) → enter render-residency on the shared 3090
+    (signal render pressure → wait for ComfyUI → hold the SHARED gpu_lock) →
     submit to ComfyUI + poll until done → download the PNG into the isolated
     output dir, auto-sorted by subject/area/imageType → write the ``library``
     row + link it onto the job → mark the job ``done``. Progress + terminal
     states are published via :func:`app.jobs.write_job_state` for the SSE stream.
 
-    Collaborators are injected (``comfy_factory`` / ``gpu_lock_cm`` /
-    ``vram_pause_cm``) with production defaults; tests pass mocks so NO live GPU
-    is touched. Returns the new ``library`` row id. On failure, writes a
-    ``failed`` state (with the error) and re-raises :class:`RenderError`.
+    Collaborators are injected (``comfy_factory`` / ``render_cm``) with production
+    defaults; tests pass mocks so NO live GPU is touched. Returns the new
+    ``library`` row id. On failure, writes a ``failed`` state (with the error)
+    and re-raises :class:`RenderError`.
     """
     comfy_factory = comfy_factory or _default_comfy_factory
-    gpu_lock_cm = gpu_lock_cm or _gpu_lock.gpu_lock
-    vram_pause_cm = vram_pause_cm or _vram_pause.vram_pause
+    render_cm = render_cm or _render_lane.render_residency
 
     job = get_job_row(job_id)
     if job is None:
@@ -529,15 +514,18 @@ def render_job(
         # meta['backend'] above.
         comfy = comfy_factory()
 
-        # Acquire the SHARED VM100 lock, then pause VRAM, then submit. The lock
-        # makes larbild wait while imagegen holds the 3090 (and vice-versa).
-        with gpu_lock_cm(reason=f"larbild render {job_id}") as held:
+        # Render on the SHARED VM100 3090 via render-residency (hq-jx6g): signal
+        # render pressure so the dispatcher (hq-t4y8) evicts any LLM/compose +
+        # keeps ComfyUI resident (renders-first), wait for ComfyUI WITHOUT holding
+        # the lock, then hold the SHARED gpu_lock (lock:vm100-3090) for the submit
+        # so a model swap can't co-reside with the render. Replaces the old
+        # self-evicting vram_pause — the dispatcher is now the sole 3090 evictor.
+        with render_cm(reason=f"larbild render {job_id}") as held:
             if not held:
                 log.warning("render %s proceeding without cross-host lock", job_id)
-            with vram_pause_cm(reason=f"larbild render {job_id}"):
-                results = _submit_and_wait(
-                    comfy, workflow, job_id, poll_s, timeout_s,
-                )
+            results = _submit_and_wait(
+                comfy, workflow, job_id, poll_s, timeout_s,
+            )
 
         # Download + auto-sort.
         client = comfy

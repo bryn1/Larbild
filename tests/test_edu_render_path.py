@@ -48,13 +48,10 @@ class MockComfyClient:
 
 
 @contextlib.contextmanager
-def _ok_lock(reason="", **kw):
+def _ok_residency(reason="", **kw):
+    # Stand-in for render_lane.render_residency: yields held=True without touching
+    # Redis, ComfyUI, or the 3090 (hq-jx6g).
     yield True
-
-
-@contextlib.contextmanager
-def _ok_pause(reason="", **kw):
-    yield 1 << 20
 
 
 @pytest.fixture
@@ -73,7 +70,7 @@ def fake_redis():
 
 def _render(job_id, client):
     return rw.render_job(job_id, comfy_factory=lambda: client,
-                         gpu_lock_cm=_ok_lock, vram_pause_cm=_ok_pause, poll_s=0.0)
+                         render_cm=_ok_residency, poll_s=0.0)
 
 
 def _submitted_positive(client) -> str:

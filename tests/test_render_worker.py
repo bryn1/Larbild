@@ -1,17 +1,17 @@
 """Integration tests for the render worker (lb-ocx, P1.3).
 
 The P1 'it actually works' gate — exercised END TO END with a MOCKED ComfyUI and
-STUBBED gpu_lock / vram_pause. NO live GPU or network call is made (CRITICAL: a
+a STUBBED render-residency. NO live GPU or network call is made (CRITICAL: a
 large imagegen sweep is on both GPUs; the live 'first real render on vm100' is
 deferred — see test_live_render_is_deferred + DEFERRED_LIVE_RENDER).
 
 Covered:
   * a submitted job produces a (mocked) PNG written to the isolated output dir,
     auto-sorted by subject/area/imageType into the library table;
-  * the render acquires the SHARED lock:vm100-3090 gpu_lock BEFORE submitting;
-  * vram_pause is honored (entered before submit);
-  * concurrent imagegen activity does not OOM — modelled by a lock that yields
-    held=False (imagegen holds it) and asserting the worker waits/serialises;
+  * the render runs inside render-residency, which holds the SHARED
+    lock:vm100-3090 gpu_lock for the submit (hq-jx6g);
+  * concurrent imagegen activity does not OOM — modelled by a residency that
+    yields held=False (imagegen holds the lock) and asserting the worker proceeds;
   * the SFW guard: an off-allowlist LoRA fails the job without ever submitting.
 """
 from __future__ import annotations
@@ -26,7 +26,7 @@ from app.db import connect
 from tests._fakeredis import FakeRedis
 
 
-# ── mock ComfyUI client + lock/pause spies ─────────────────────────────────
+# ── mock ComfyUI client + render-residency spy ─────────────────────────────
 
 
 class MockComfyClient:
@@ -60,13 +60,15 @@ class MockComfyClient:
         return b"\x89PNG mock image bytes"
 
 
-class LockSpy:
-    """A gpu_lock stand-in that records the reason + key it would use."""
+class ResidencySpy:
+    """A render_residency stand-in: records the reason(s) + enter/exit order,
+    yields the gpu_lock ``held`` flag — without touching Redis, ComfyUI, or the
+    3090. Replaces the old separate gpu_lock + vram_pause spies now that
+    render_residency wraps both (hq-jx6g)."""
 
     def __init__(self, held=True):
         self.held = held
         self.calls: list[str] = []
-        self.entered_before_submit = None
         self.order: list[str] = []
 
     def __call__(self, reason="", **kw):
@@ -75,28 +77,9 @@ class LockSpy:
 
         @contextlib.contextmanager
         def _cm():
-            spy.order.append("lock-acquire")
+            spy.order.append("residency-enter")
             yield spy.held
-            spy.order.append("lock-release")
-        return _cm()
-
-
-class PauseSpy:
-    def __init__(self):
-        self.calls: list[str] = []
-        self.order_ref = None
-
-    def __call__(self, reason="", **kw):
-        self.calls.append(reason)
-        order = self.order_ref
-
-        @contextlib.contextmanager
-        def _cm():
-            if order is not None:
-                order.append("pause-enter")
-            yield 1 << 20
-            if order is not None:
-                order.append("pause-exit")
+            spy.order.append("residency-exit")
         return _cm()
 
 
@@ -128,14 +111,12 @@ def test_full_render_produces_autosorted_library_row(app, fake_redis):
     with app.app_context():
         job_id = _enqueue_bild()
         client = MockComfyClient(finish_after_polls=1)
-        lock = LockSpy(held=True)
-        pause = PauseSpy()
+        rez = ResidencySpy(held=True)
 
         lib_id = rw.render_job(
             job_id,
             comfy_factory=lambda: client,
-            gpu_lock_cm=lock,
-            vram_pause_cm=pause,
+            render_cm=rez,
             poll_s=0.0,
         )
 
@@ -173,43 +154,41 @@ def test_done_state_is_published_for_sse(app, fake_redis):
         job_id = _enqueue_bild()
         lib_id = rw.render_job(
             job_id, comfy_factory=lambda: MockComfyClient(),
-            gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(), poll_s=0.0,
+            render_cm=ResidencySpy(), poll_s=0.0,
         )
         state = jobs.read_job_state(job_id)
         assert state["status"] == "done"
         assert state["library_id"] == lib_id
 
 
-# ── the SHARED gpu_lock is acquired BEFORE submit (coordination, R4) ────────
+# ── the render runs INSIDE render-residency (coordination, hq-jx6g) ─────────
 
 
-def test_shared_gpu_lock_acquired_before_submit(app, fake_redis):
+def test_render_runs_inside_residency(app, fake_redis):
     with app.app_context():
         job_id = _enqueue_bild()
         client = MockComfyClient()
-        lock = LockSpy(held=True)
-        pause = PauseSpy()
-        pause.order_ref = lock.order  # share the order log to assert sequencing
+        rez = ResidencySpy(held=True)
 
         rw.render_job(job_id, comfy_factory=lambda: client,
-                      gpu_lock_cm=lock, vram_pause_cm=pause, poll_s=0.0)
+                      render_cm=rez, poll_s=0.0)
 
-        # lock acquired, THEN vram paused, THEN (submit happens inside) — the
-        # lock + pause must both be entered before the graph is submitted.
-        assert lock.order[0] == "lock-acquire"
-        assert "pause-enter" in lock.order
-        assert lock.order.index("lock-acquire") < lock.order.index("pause-enter")
-        # release happens after the pause exits (lock wraps pause wraps submit)
-        assert lock.order.index("pause-exit") < lock.order.index("lock-release")
+        # the render-residency context wrapped the submit: entered, the graph was
+        # submitted inside it, then exited (the residency signals render pressure +
+        # holds the shared gpu_lock for the whole render).
+        assert rez.order == ["residency-enter", "residency-exit"]
+        assert len(client.submitted) == 1
+        assert rez.calls == [f"larbild render {job_id}"]
 
 
-def test_uses_the_real_shared_lock_key_by_default():
-    # The worker's default gpu_lock is app.gpu_lock.gpu_lock, whose key is the
-    # SHARED lock:vm100-3090 — not a forked/namespaced key. (gpu_lock behaviour
-    # is unit-tested in test_gpu_lock; here we assert the worker wires the right
-    # one as its default collaborator.)
-    from app import gpu_lock
-    assert rw._gpu_lock is gpu_lock
+def test_default_render_cm_is_residency_on_the_shared_lock():
+    # The worker's default collaborator is render_lane.render_residency, which
+    # holds the SHARED lock:vm100-3090 gpu_lock — not a forked/namespaced key —
+    # and signals render pressure to the vm100 dispatcher. (render_residency
+    # behaviour is unit-tested in test_render_lane; here we assert the wiring.)
+    from app import render_lane, gpu_lock
+    assert rw._render_lane is render_lane
+    assert render_lane.gpu_lock is gpu_lock.gpu_lock
     assert gpu_lock.LOCK_KEY == "lock:vm100-3090"
 
 
@@ -236,7 +215,7 @@ def test_flux_route_off_by_default_uses_sdxl_graph(app, fake_redis):
         job_id = _enqueue_bild(image_type="illustration")
         client = MockComfyClient()
         rw.render_job(job_id, comfy_factory=lambda: client,
-                      gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(), poll_s=0.0)
+                      render_cm=ResidencySpy(), poll_s=0.0)
         g = client.submitted[0]
         classes = {n["class_type"] for n in g.values()}
         assert "DualCLIPLoader" not in classes
@@ -255,7 +234,7 @@ def test_flux_route_on_submits_flux_graph(app, fake_redis, flux_route_on):
         job_id = _enqueue_bild(image_type="illustration", prompt="sound waves")
         client = MockComfyClient()
         rw.render_job(job_id, comfy_factory=lambda: client,
-                      gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(), poll_s=0.0)
+                      render_cm=ResidencySpy(), poll_s=0.0)
         g = client.submitted[0]
         classes = {n["class_type"] for n in g.values()}
         assert "DualCLIPLoader" in classes
@@ -310,7 +289,7 @@ def test_render_proceeds_when_lock_falls_back(app, fake_redis):
         job_id = _enqueue_bild()
         lib_id = rw.render_job(
             job_id, comfy_factory=lambda: MockComfyClient(),
-            gpu_lock_cm=LockSpy(held=False), vram_pause_cm=PauseSpy(), poll_s=0.0,
+            render_cm=ResidencySpy(held=False), poll_s=0.0,
         )
         assert jobs.get_job_row(job_id)["status"] == "done"
         assert lib_id
@@ -332,7 +311,7 @@ def test_offlist_lora_fails_job_without_submitting(app, fake_redis, monkeypatch)
         client = MockComfyClient()
         with pytest.raises(rw.RenderError):
             rw.render_job(job_id, comfy_factory=lambda: client,
-                          gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(), poll_s=0.0)
+                          render_cm=ResidencySpy(), poll_s=0.0)
         # nothing was ever submitted to ComfyUI — the guard fired first
         assert client.submitted == []
         # the job is marked failed with the SFW-guard reason
@@ -355,7 +334,7 @@ def test_render_timeout_marks_failed(app, fake_redis):
         client = MockComfyClient(finish_after_polls=10**9)
         with pytest.raises(rw.RenderError):
             rw.render_job(job_id, comfy_factory=lambda: client,
-                          gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(),
+                          render_cm=ResidencySpy(),
                           poll_s=0.0, timeout_s=0.0)
         assert jobs.read_job_state(job_id)["status"] == "failed"
 
@@ -366,7 +345,7 @@ def test_finished_with_no_image_marks_failed(app, fake_redis):
         client = MockComfyClient(output_image=False)  # finishes, empty outputs
         with pytest.raises(rw.RenderError):
             rw.render_job(job_id, comfy_factory=lambda: client,
-                          gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(), poll_s=0.0)
+                          render_cm=ResidencySpy(), poll_s=0.0)
         assert jobs.read_job_state(job_id)["status"] == "failed"
 
 
@@ -374,7 +353,7 @@ def test_unknown_job_raises(app, fake_redis):
     with app.app_context():
         with pytest.raises(rw.RenderError):
             rw.render_job("does-not-exist", comfy_factory=lambda: MockComfyClient(),
-                          gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy())
+                          render_cm=ResidencySpy())
 
 
 def test_film_job_rejected_by_still_worker(app, fake_redis):
@@ -383,7 +362,7 @@ def test_film_job_rejected_by_still_worker(app, fake_redis):
                                   video_type="lektionsfilm", prompt="x")
         with pytest.raises(rw.RenderError):
             rw.render_job(job_id, comfy_factory=lambda: MockComfyClient(),
-                          gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy())
+                          render_cm=ResidencySpy())
 
 
 # ── the live render is explicitly deferred ─────────────────────────────────
@@ -505,19 +484,17 @@ def test_diagram_job_renders_procedurally_without_touching_the_gpu(app, fake_red
             params={"begrepp": "Avdunstning", "forklaring": "Vatten blir ånga."},
         )
         client = MockComfyClient()
-        lock = LockSpy(held=True)
-        pause = PauseSpy()
+        rez = ResidencySpy(held=True)
 
         lib_id = rw.render_job(
             job_id, comfy_factory=lambda: client,
-            gpu_lock_cm=lock, vram_pause_cm=pause, poll_s=0.0,
+            render_cm=rez, poll_s=0.0,
         )
 
         # the GPU path was BYPASSED entirely
         assert client.submitted == [], "ComfyUI must not be used for a diagram"
         assert client.viewed == []
-        assert lock.calls == [], "gpu_lock must not be acquired for a diagram"
-        assert pause.calls == [], "vram_pause must not be entered for a diagram"
+        assert rez.calls == [], "render-residency must not be entered for a diagram"
 
         # a library row was written, auto-sorted under the diagram bucket
         with connect() as conn:
@@ -555,7 +532,7 @@ def test_molecule_job_routes_procedurally(app, fake_redis):
         )
         client = MockComfyClient()
         lib_id = rw.render_job(job_id, comfy_factory=lambda: client,
-                               gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(),
+                               render_cm=ResidencySpy(),
                                poll_s=0.0)
         assert client.submitted == []  # no GPU
         with connect() as conn:
@@ -573,7 +550,7 @@ def test_tidslinje_job_routes_procedurally(app, fake_redis):
         )
         client = MockComfyClient()
         lib_id = rw.render_job(job_id, comfy_factory=lambda: client,
-                               gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(),
+                               render_cm=ResidencySpy(),
                                poll_s=0.0)
         assert client.submitted == []
         from pathlib import Path
@@ -589,13 +566,12 @@ def test_diffusion_imagetype_still_uses_comfyui(app, fake_redis):
     with app.app_context():
         job_id = _enqueue_bild(image_type="illustration")
         client = MockComfyClient()
-        lock = LockSpy(held=True)
-        pause = PauseSpy()
+        rez = ResidencySpy(held=True)
         rw.render_job(job_id, comfy_factory=lambda: client,
-                      gpu_lock_cm=lock, vram_pause_cm=pause, poll_s=0.0)
+                      render_cm=rez, poll_s=0.0)
         # the GPU path WAS used for a diffusion type
         assert len(client.submitted) == 1
-        assert lock.calls and pause.calls
+        assert rez.calls  # render-residency was entered for the GPU render
         with connect() as conn:
             row = conn.execute("SELECT backend FROM library WHERE job_id=?",
                                (job_id,)).fetchone()
@@ -617,7 +593,7 @@ def test_procedural_render_failure_marks_job_failed(app, fake_redis, monkeypatch
                                   params={"begrepp": "Ljud"})
         with pytest.raises(rw.RenderError):
             rw.render_job(job_id, comfy_factory=lambda: MockComfyClient(),
-                          gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(), poll_s=0.0)
+                          render_cm=ResidencySpy(), poll_s=0.0)
         st = jobs.read_job_state(job_id)
         assert st["status"] == "failed"
 
@@ -630,7 +606,7 @@ def test_diagram_job_without_params_falls_back_to_title(app, fake_redis):
                                   image_type="diagram", title="Elektrisk krets",
                                   prompt="x")
         lib_id = rw.render_job(job_id, comfy_factory=lambda: MockComfyClient(),
-                               gpu_lock_cm=LockSpy(), vram_pause_cm=PauseSpy(),
+                               render_cm=ResidencySpy(),
                                poll_s=0.0)
         with connect() as conn:
             row = conn.execute("SELECT prompt FROM library WHERE id=?",
