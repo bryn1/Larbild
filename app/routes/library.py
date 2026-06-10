@@ -90,8 +90,11 @@ _ITEM_COLUMNS = (
     # SVG-baseline provenance (migration 0007 / lb-svg-baseline): where the row
     # came from, the kept vector source, and whether it's the preferred version
     # for its bucket. ``source='skola-svg-baseline'`` rows are the hand-authored
-    # concept diagrams imported from the skola rig; the UI reads ``preferred`` to
-    # surface them first and ``svg_source_path`` to offer the true vector.
+    # concept diagrams imported from the skola rig. These fields are SURFACED in
+    # the API response for a future UI (sort preferred-first + offer the vector
+    # download); the current bibliotek frontend does NOT yet consume them — see
+    # lb-3n3 (audit v3 F8). The two-lane provenance itself is keyed correctly on
+    # ``source`` + ``svg_source_path`` (no title-mapping).
     "source",
     "svg_source_path",
     "preferred",

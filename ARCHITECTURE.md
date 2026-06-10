@@ -9,7 +9,7 @@ Lärbild is a single-teacher, LAN-only, SFW educational image and film studio fo
 
 ## Tech Stack
 - **Backend:** Python 3 (Flask), `requirements.txt` managed via venv.
-- **Frontend:** React (built assets served statically by Flask).
+- **Frontend:** React via Babel-in-browser (no build step) — JSX + vendored React/Babel served statically by Flask (lb-tix vendored these prod-min for LAN-only operation).
 - **Infrastructure:**
   - **GPU Coordination:** `gpu_lock` (mutual exclusion), `render_lane` (residency management), `render_pressure` (dispatcher signal).
   - **Queue/Status:** Redis (BRPOP loop), SSE for job status.
@@ -51,7 +51,7 @@ Lärbild is a single-teacher, LAN-only, SFW educational image and film studio fo
 
 ## Key Directories (Post-Refactor)
 - `app/`: Flask backend (forked imagegen infra modules, SFW-stripped), routers.
-- `static/`: Built React frontend assets.
+- `static/`: JSX screens + vendored React/Babel (Babel-in-browser, no build step).
 - `docs/`: Architecture, build plan, design handoff notes.
 - `larbild/mayor/rig/`: Rig tree (tests, data, utilities).
 - `larbild/mayor/rig/tests/`: Comprehensive test suite (API, taxonomy, rendering, safety, migrations).
