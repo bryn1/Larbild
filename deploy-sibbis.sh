@@ -6,6 +6,12 @@
 # sentinel records the last successfully-deployed SHA so a no-op pull skips
 # the venv/restart churn unless --force is given.
 #
+# WHY git-pull here but git-pull+rsync in imagegen (hq-0vte, deliberate
+# divergence): larbild RUNS FROM its git checkout, so a pull deploys it.
+# imagegen's runtime dir is separate from its checkout (repo carries
+# docs/assets that must not land in the runtime) and needs the rsync subset.
+# Same-host, different app layouts — not drift.
+#
 # Deploys both larbild.service (UI/APIs) and larbild-worker.service (the render
 # worker → ComfyUI on the shared VM100 3090 via render-residency).
 #
