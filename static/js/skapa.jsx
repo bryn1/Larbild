@@ -152,6 +152,13 @@ function SubmitStatus({ submit, jobState, onReset }) {
   // only that it is queued; describeJobState then drives the live view.
   const d = jobState || S.describeJobState({ status: "queued" });
   const dest = submit.dest || {};
+  // lb-9d5: when N>1 images were queued, the bar tails the first job; say so.
+  const count = submit.count || 1;
+  const batchNote = count > 1
+    ? <div style={{ fontSize: 11.5, color: "var(--ink-2)", marginTop: 6 }}>
+        {count} bilder köade — förloppet visar den första; resten dyker upp i biblioteket när de är klara.
+      </div>
+    : null;
 
   // ---- terminal: failed ----
   if (d.failed) {
@@ -177,7 +184,9 @@ function SubmitStatus({ submit, jobState, onReset }) {
           {dims && <span className="mono dim" style={{ fontSize: 10 }}>{dims}</span>}
         </div>
         <div style={{ fontSize: 12.5, color: "var(--ink-2)", marginTop: 8, lineHeight: 1.4 }}>
-          Bilden sorterades in i biblioteket.
+          {count > 1
+            ? `Den första bilden är klar och sorterad i biblioteket; de övriga ${count - 1} renderas och dyker upp där.`
+            : "Bilden sorterades in i biblioteket."}
         </div>
         <div className="row" style={{ marginTop: 10, gap: 8 }}>
           <a className="btn sm" href={link}>{SI.library} Visa i biblioteket</a>
@@ -196,6 +205,7 @@ function SubmitStatus({ submit, jobState, onReset }) {
       </div>
       <ProgressBar percent={d.percent} />
       <div className="mono dim" style={{ fontSize: 10, marginTop: 8 }}>jobb {submit.jobId}</div>
+      {batchNote}
     </div>
   );
 }
@@ -346,7 +356,7 @@ function Skapa() {
       .then((r) => r.json().catch(() => null).then((j) => ({ status: r.status, body: j })))
       .then(({ status, body }) => {
         const res = S.interpretSubmitResponse(status, body);
-        if (res.ok) setSubmit({ phase: "submitted", jobId: res.jobId, dest });
+        if (res.ok) setSubmit({ phase: "submitted", jobId: res.jobId, count: res.count || 1, dest });
         else setSubmit({ phase: "error", message: res.message });
       })
       .catch((e) => setSubmit({ phase: "error", message: `Nätverksfel: ${e}` }));

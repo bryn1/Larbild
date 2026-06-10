@@ -143,16 +143,39 @@ def submit_job():
     202 (Accepted) — the work is queued, not done; the client then tails
     ``/api/jobs/<id>/events``. 400 on a bad selection; 429 when the queue is full.
     """
-    clean, err = _validate_submission(_body())
+    body = _body()
+    clean, err = _validate_submission(body)
     if err is not None:
         payload, status = err
         return jsonify(payload), status
+    # lb-9d5 (A1): honour the "Antal" count — the worker renders one image per job,
+    # so N images means N jobs. The frontend tails the first job's SSE for progress;
+    # the rest render and land in the library. The client sends count under the
+    # nested `params` blob (buildJobPayload); re-clamp 1..8 here so a forged request
+    # can't queue a runaway batch. count==1 (default) == the prior single-job path.
     try:
-        job_id = enqueue_job(**clean)
+        count = int((body.get("params") or {}).get("count", 1))
+    except (TypeError, ValueError):
+        count = 1
+    count = max(1, min(count, 8))
+    # The N renders are independent jobs (no batches-row grouping — jobs.batch_id
+    # is a FK to the bulk-CSV `batches` table, which this count fan-out doesn't use).
+    job_ids: list[str] = []
+    try:
+        for _ in range(count):
+            job_ids.append(enqueue_job(**clean))
     except QueueFull as e:
-        return jsonify({"error": "render queue is full, try again shortly",
-                        "depth": e.depth, "limit": e.limit}), 429
-    return jsonify({"job_id": job_id, "status": "queued"}), 202
+        if not job_ids:
+            return jsonify({"error": "render queue is full, try again shortly",
+                            "depth": e.depth, "limit": e.limit}), 429
+        # Partial success: some jobs queued before the queue filled — return them
+        # rather than silently dropping the whole request.
+    return jsonify({
+        "job_id": job_ids[0],
+        "job_ids": job_ids,
+        "count": len(job_ids),
+        "status": "queued",
+    }), 202
 
 
 @jobs_bp.get("/api/jobs/<job_id>")

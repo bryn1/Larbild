@@ -193,10 +193,16 @@ test("buildJobPayload adds an optional title when non-blank", () => {
 
 /* ---------- POST /api/jobs response interpretation (lb-5wp) ---------- */
 
-test("interpretSubmitResponse: 202 with a job_id → ok + jobId", () => {
+test("interpretSubmitResponse: 202 with a job_id → ok + jobId + count", () => {
+  // count defaults to 1 when the server omits it (back-compat)
   assert.deepEqual(
     S.interpretSubmitResponse(202, { job_id: "job-abc", status: "queued" }),
-    { ok: true, jobId: "job-abc" },
+    { ok: true, jobId: "job-abc", count: 1 },
+  );
+  // lb-9d5: a fanned-out N-image submit reports the real count
+  assert.deepEqual(
+    S.interpretSubmitResponse(202, { job_id: "job-abc", count: 5, status: "queued" }),
+    { ok: true, jobId: "job-abc", count: 5 },
   );
 });
 

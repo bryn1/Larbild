@@ -217,7 +217,11 @@
   function interpretSubmitResponse(status, body) {
     const b = body || {};
     if (status === 202 && b.job_id) {
-      return { ok: true, jobId: b.job_id };
+      // lb-9d5: count = how many images were actually queued (one job each). The
+      // progress bar tails the first; surface the total so an N-image request
+      // reads honestly instead of looking like one.
+      const count = Number.isFinite(b.count) ? b.count : 1;
+      return { ok: true, jobId: b.job_id, count };
     }
     if (status === 429) {
       const depth = b.depth, limit = b.limit;

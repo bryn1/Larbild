@@ -47,6 +47,48 @@ def test_post_jobs_enqueues_and_returns_id(tmp_path):
         jobs.set_redis(None)
 
 
+def test_post_count_fans_out_n_jobs(tmp_path):
+    # lb-9d5 (A1): "Antal" N -> N independent render jobs (one image per job),
+    # with the first id returned for SSE tailing. count is re-clamped server-side
+    # so a forged request can't queue a runaway batch.
+    r = _fresh_redis()
+    try:
+        app = _app(tmp_path)
+        resp = app.test_client().post("/api/jobs", json={
+            "subject": "fysik", "area": "ljud", "imageType": "illustration",
+            "prompt": "a transverse wave", "params": {"count": 3},
+        })
+        assert resp.status_code == 202
+        body = resp.get_json()
+        assert body["count"] == 3
+        assert len(body["job_ids"]) == 3
+        assert body["job_id"] == body["job_ids"][0]
+        assert len(set(body["job_ids"])) == 3  # distinct ids
+        assert r.llen("larbild:render:task_queue") == 3
+    finally:
+        jobs.set_redis(None)
+
+
+def test_post_count_clamped_and_default_single(tmp_path):
+    # count=1 (default) is the prior single-job behaviour; over-cap clamps to 8.
+    _fresh_redis()
+    try:
+        app = _app(tmp_path)
+        c = app.test_client()
+        one = c.post("/api/jobs", json={
+            "subject": "fysik", "area": "ljud", "imageType": "illustration",
+            "prompt": "x",
+        }).get_json()
+        assert one["count"] == 1 and len(one["job_ids"]) == 1
+        many = c.post("/api/jobs", json={
+            "subject": "fysik", "area": "ljud", "imageType": "illustration",
+            "prompt": "y", "params": {"count": 999},
+        }).get_json()
+        assert many["count"] == 8 and len(many["job_ids"]) == 8
+    finally:
+        jobs.set_redis(None)
+
+
 def test_post_rejects_unknown_subject(tmp_path):
     r = _fresh_redis()
     try:
