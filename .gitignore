@@ -35,3 +35,9 @@ logs/
 *.swp
 .idea/
 .vscode/
+
+# Gas Town agent / worktree runtime state (never commit — local per-worktree)
+.beads/
+.claude/
+.runtime/
+/CLAUDE.md
