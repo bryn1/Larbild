@@ -426,6 +426,34 @@ function Bibliotek() {
     });
   }, [sub, areaId]);
 
+  // Live regenerate streams, so an unmount tears them down (lb-xz3).
+  const regenStreams = useRef(new Set());
+  useEffect(() => () => {
+    regenStreams.current.forEach((es) => es.close());
+    regenStreams.current.clear();
+  }, []);
+
+  // A regenerate was accepted: follow its render job over the same SSE stream the
+  // Skapa funnel uses (/api/jobs/<id>/events) and refetch the open node ONLY when
+  // the job reaches a terminal 'done' — so the queued new version actually appears
+  // in place. The old wiring fired a single refetch immediately, before the worker
+  // had rendered anything, so the message ("dyker upp här när den är klar") never
+  // came true short of a manual refresh (lb-xz3). No EventSource (SSR/old browser)
+  // → fall back to the one-shot refetch.
+  const onRegenerated = useCallback((jobId) => {
+    if (!jobId || typeof EventSource === "undefined") { refetchOpenNode(); return; }
+    const es = new EventSource(`/api/jobs/${encodeURIComponent(jobId)}/events`);
+    const close = () => { es.close(); regenStreams.current.delete(es); };
+    es.addEventListener("message", (ev) => {
+      let parsed;
+      try { parsed = JSON.parse(ev.data); } catch (e) { return; } // ignore keepalives
+      if (parsed.status === "done") { refetchOpenNode(); close(); }
+      else if (parsed.status === "failed" || parsed.status === "cancelled") { close(); }
+    });
+    es.addEventListener("end", close);
+    regenStreams.current.add(es);
+  }, [refetchOpenNode]);
+
   // The node the user is currently looking at, captured in a ref so a resolving
   // items fetch can tell "is this still the open node?" WITHOUT being cancelled
   // by the effect re-running. This effect writes itemsByNode (the in-flight null
@@ -637,7 +665,7 @@ function Bibliotek() {
           subject={sub}
           onClose={() => setLightbox(null)}
           onPersist={applyReview}
-          onRegenerated={refetchOpenNode}
+          onRegenerated={onRegenerated}
         />
       )}
     </div>
