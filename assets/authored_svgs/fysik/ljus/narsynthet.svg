@@ -41,8 +41,8 @@
 <!-- Retina at the back, drawn so its vertex (at y=240) is at x=718 -->
 <path d="M 700 158 A 187 187 0 0 1 700 322" fill="none" stroke="#16a34a" stroke-width="4" opacity="0.85"/>
 <text x="690" y="150" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">näthinna</text>
-<!-- CONCAVE (diverging) correcting lens, CLEARLY in front of the eye (well to the left, not over the eyeball) -->
-<path d="M 420 178 Q 444 240 420 302 L 452 302 Q 432 240 452 178 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+<!-- CONCAVE (diverging) correcting lens, CLEARLY in front of the eye (well to the left, not over the eyeball); stronger fill+stroke so it is clearly visible -->
+<path d="M 418 174 Q 446 240 418 306 L 456 306 Q 430 240 456 174 Z" fill="#60a5fa" stroke="#1e40af" stroke-width="3"/>
 <text x="436" y="168" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">konkav lins</text>
 <text x="436" y="330" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">tunn i mitten</text>
 <!-- Rays: parallel in, concave lens spreads them slightly, eye lens converges them EXACTLY onto the retina -->

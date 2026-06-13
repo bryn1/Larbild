@@ -28,10 +28,10 @@
          C 606 242 626 220 650 226 Z" fill="#fcd9c8" stroke="#b45309" stroke-width="2"/>
 <circle cx="640" cy="262" r="8" fill="#7c2d12"/>
 <text x="660" y="336" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Örat hör ljudet</text>
-<!-- arrow points INTO the ear (rightward), so it reads as sound entering, not leaving -->
-<line x1="596" y1="262" x2="626" y2="262" stroke="#2563eb" stroke-width="2.5"/>
-<polygon points="636,262 624,256 624,268" fill="#2563eb"/>
-<text x="600" y="240" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">ljudet går in</text>
+<!-- arrow points INTO the ear (rightward), starting clearly outside the ear so it reads as sound entering, not leaving -->
+<line x1="556" y1="262" x2="628" y2="262" stroke="#2563eb" stroke-width="3"/>
+<polygon points="642,262 626,254 626,270" fill="#2563eb"/>
+<text x="576" y="248" font-family="Arial,sans-serif" font-size="11" fill="#2563eb" text-anchor="middle">ljudet går in</text>
 
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Ljud är vibrationer som sprider sig som vågor genom luft, vatten eller fasta ämnen</text>
 </svg>

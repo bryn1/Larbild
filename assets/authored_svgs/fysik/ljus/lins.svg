@@ -14,12 +14,12 @@
 <line x1="80" y1="330" x2="345" y2="330"/>
 </g>
 <text x="150" y="155" font-family="Arial,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">parallella strålar</text>
-<!-- refracted rays converging to focal point at x=620 -->
+<!-- refracted rays converging to focal point at x=620, then CONTINUING (diverging) past it -->
 <g stroke="#dc2626" stroke-width="2">
-<line x1="375" y1="170" x2="620" y2="250"/>
-<line x1="372" y1="210" x2="620" y2="250"/>
-<line x1="372" y1="290" x2="620" y2="250"/>
-<line x1="375" y1="330" x2="620" y2="250"/>
+<line x1="375" y1="170" x2="725" y2="284.3"/>
+<line x1="372" y1="210" x2="725" y2="266.9"/>
+<line x1="372" y1="290" x2="725" y2="233.1"/>
+<line x1="375" y1="330" x2="725" y2="215.7"/>
 </g>
 <!-- focal point F -->
 <circle cx="620" cy="250" r="6" fill="#16a34a"/>

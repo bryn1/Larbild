@@ -23,7 +23,8 @@
 <rect x="322" y="226" width="40" height="10" fill="#1e40af"/>
 <line x1="340" y1="264" x2="300" y2="288" stroke="#374151" stroke-width="3"/>
 <circle cx="300" cy="288" r="5" fill="#16a34a"/>
-<text x="290" y="310" font-family="Arial,sans-serif" font-size="10" fill="#15803d" text-anchor="middle">arm samlar prover</text>
+<rect x="232" y="300" width="116" height="15" rx="3" fill="#ffffff" opacity="0.9"/>
+<text x="290" y="311" font-family="Arial,sans-serif" font-size="10" fill="#15803d" text-anchor="middle" font-weight="bold">arm samlar prover</text>
 <text x="620" y="130" font-family="Arial,sans-serif" font-size="14" fill="#9a3412" text-anchor="middle" font-weight="bold">Planeten Mars</text>
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">En marslandare är en robot som landar på Mars, tar bilder och samlar information om ytan</text>
 </svg>

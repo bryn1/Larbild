@@ -39,8 +39,8 @@
 </g>
 <text x="545" y="330" font-family="Arial,sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">Husen i området</text>
 
-<!-- hierarchy ladder -->
-<text x="400" y="385" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Stamnät  →  Regionnät  →  <tspan fill="#dc2626" font-weight="bold">Lokalnät (lägst spänning)</tspan></text>
+<text x="290" y="385" font-family="Arial,sans-serif" font-size="14" fill="#6b7280" text-anchor="end">Stamnät  →  Regionnät  →  </text>
+<text x="296" y="385" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start" font-weight="bold">Lokalnät (lägst spänning)</text>
 
 <text x="400" y="475" font-family="Arial,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">Sladden till din spis får strömmen via lokalnätet i din gata</text>
 </svg>

@@ -35,7 +35,7 @@
 <polyline points="590,340 420,340 420,290 220,290" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linejoin="round"/>
 <!-- direction arrows (back towards central) -->
 <polygon points="490,340 506,333 506,347" fill="#1e3a8a"/>
-<polygon points="300,290 284,283 284,297" fill="#1e3a8a"/>
+<polygon points="284,290 300,283 300,297" fill="#1e3a8a"/>
 <text x="400" y="372" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle" font-weight="bold">Retur - avkylt vatten tillbaka</text>
 
 <!-- closed-loop connectors at the house (vertical link top->bottom) -->
