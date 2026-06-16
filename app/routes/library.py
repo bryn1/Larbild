@@ -35,6 +35,7 @@ no restricted import, model, or route belongs here.
 """
 from __future__ import annotations
 
+import os
 from datetime import datetime, timezone
 from typing import Any, Optional
 
@@ -42,9 +43,48 @@ from flask import Blueprint, jsonify, request
 
 from .. import taxonomy
 from ..db import connect, now_iso
-from ..jobs import QueueFull, enqueue_job
 
 library_bp = Blueprint("library", __name__)
+
+# Public read-only mode (bilder.sibbamala.com). Read from the environment at
+# import time — before any view is bound to the blueprint — so the write views
+# (POST review / POST regenerate) are simply NEVER ATTACHED to the blueprint in
+# the public process, and every read query is forced to approved-only. This is
+# the SAME switch as Config.PUBLIC_READONLY (LARBILD_PUBLIC_READONLY); reading it
+# here too lets the decision happen at registration time, not request time, so
+# the privileged code is absent from the public instance rather than guarded.
+_PUBLIC_READONLY = os.environ.get("LARBILD_PUBLIC_READONLY", "").strip().lower() in {
+    "1",
+    "true",
+    "yes",
+    "on",
+}
+
+# The approved-only predicate. ``review_ok`` is INTEGER CHECK (review_ok IN (0,1))
+# and NULLABLE: 1 = owner-approved (OK), 0 = rejected (Inte OK), NULL = unreviewed
+# (pending). The public instance shows ONLY approved images, so every public
+# library query ANDs in this clause. Kept as a constant so the tree-count query
+# and the gallery-items query can never drift on the definition of "approved".
+_APPROVED_ONLY_SQL = "review_ok = 1"
+
+
+def _write_route(rule, **options):
+    """Decorator that registers a MUTATING library route only when NOT public.
+
+    The two write endpoints (POST review, POST regenerate) are the privileged,
+    owner-only part of this blueprint. On the public read-only instance they must
+    not exist — so this decorator simply returns the view function UNREGISTERED
+    when ``_PUBLIC_READONLY`` is set: the URL rule is never added to the map, so
+    the public process answers ``/api/library/<id>/review`` and ``…/regenerate``
+    with a plain 404 (route not registered). The function body still parses fine
+    (no behaviour change for the private instance, which registers it normally).
+    """
+    if _PUBLIC_READONLY:
+        def _skip(func):
+            return func
+
+        return _skip
+    return library_bp.post(rule, **options)
 
 # Owner notes are plain text; cap so a runaway paste can't bloat the row (matches
 # the atelier review cap). The same cap is applied to a regenerate's fresh note.
@@ -148,13 +188,21 @@ def _asset_counts() -> dict[tuple[str, str], int]:
     browsable library. Keys are whatever string keys the DB holds; the caller
     only reads counts for taxonomy-valid nodes, so a stray/legacy key simply
     goes unread (it never inflates a valid node).
+
+    PUBLIC_READONLY: the public browse tree must count ONLY approved images, so
+    the per-node counts match the approved-only gallery. The clause is ANDed in
+    so a node's badge never advertises pending/rejected assets the visitor can't
+    open.
     """
+    where = "deleted_at IS NULL"
+    if _PUBLIC_READONLY:
+        where += f" AND {_APPROVED_ONLY_SQL}"
     with connect() as conn:
         rows = conn.execute(
-            """
+            f"""
             SELECT subject, area, COUNT(*) AS n
             FROM library
-            WHERE deleted_at IS NULL
+            WHERE {where}
             GROUP BY subject, area
             """
         ).fetchall()
@@ -296,6 +344,11 @@ def _node_items(
     verdict filter (the whole node). Used by the review UI's pending/not-ok
     filter.
 
+    PUBLIC_READONLY: the public instance shows ONLY approved images, so the
+    approved-only clause (``review_ok = 1``) is ANDed in UNCONDITIONALLY here —
+    it overrides any ``review`` argument, so a crafted ``?review=pending`` /
+    ``?review=notok`` can never surface an unreviewed or rejected asset.
+
     Ordered ``created_at DESC`` (newest first) to match the auto-sort index and
     the Bibliotek "latest at top" expectation. Read-only.
     """
@@ -306,13 +359,16 @@ def _node_items(
         "AND deleted_at IS NULL AND missing_since IS NULL"
     )
     params: list[Any] = [subject, area]
+    if _PUBLIC_READONLY:
+        # Approved-only, always — independent of the ``review`` arg below.
+        sql += f" AND {_APPROVED_ONLY_SQL}"
     if image_type:
         # A film row has video_type, not image_type; match either column so an
         # imageType filter never silently hides a same-bucket film.
         sql += " AND (image_type = ? OR video_type = ?)"
         params.extend([image_type, image_type])
     review_clause = _REVIEW_FILTER_SQL.get(review or "")
-    if review_clause:
+    if review_clause and not _PUBLIC_READONLY:
         sql += f" AND {review_clause}"
     # Preferred-first (lb-svg-baseline): a ``preferred=1`` row — the hand-authored
     # SVG concept-diagram baseline — sorts ahead of an organically rendered asset
@@ -435,7 +491,7 @@ def _review_state(lib_id: str) -> dict[str, Any]:
     }
 
 
-@library_bp.post("/api/library/<lib_id>/review")
+@_write_route("/api/library/<lib_id>/review")
 def post_review(lib_id: str):
     """Set the owner's review verdict + note on a generated asset.
 
@@ -557,7 +613,7 @@ def _guided_prompt(base_prompt: Optional[str], comment: Optional[str]) -> str:
     return f"{base}. {suffix}" if base else suffix
 
 
-@library_bp.post("/api/library/<lib_id>/regenerate")
+@_write_route("/api/library/<lib_id>/regenerate")
 def post_regenerate(lib_id: str):
     """Regenerate an asset as a NEW, linked version — the core review→fix loop.
 
@@ -620,6 +676,10 @@ def post_regenerate(lib_id: str):
             return jsonify(error="seed must be an integer"), 400
 
     prompt = _guided_prompt(parent.get("prompt"), guide_comment)
+
+    # Imported lazily (not at module top) so the public read-only instance — which
+    # never registers this view — also never imports the job-enqueue machinery.
+    from ..jobs import QueueFull, enqueue_job
 
     try:
         job_id = enqueue_job(

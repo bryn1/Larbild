@@ -66,3 +66,61 @@ def skapa():
     Bibliotek SPA untouched. SFW-only: educational image funnel.
     """
     return send_from_directory(_STATIC_DIR, "skapa.html")
+
+
+# ── Public read-only views (bilder.sibbamala.com) ───────────────────────────
+# A SEPARATE blueprint registered only by the public-read-only factory path. It
+# serves ONLY the Bibliotek browse shell at / and /bibliotek — the /skapa
+# generate funnel is NOT a route here, so the generate page is not even reachable
+# on the public instance. The served HTML has a tiny flag injected so the
+# Bibliotek SPA renders its read-only chrome (no review/regenerate controls, no
+# review-filter tabs, no Skapa nav).
+
+# Marker the public shell injects so the no-build React frontend knows it is the
+# internet-facing instance. Placed just before </head>.
+_PUBLIC_FLAG_SCRIPT = "<script>window.__LARBILD_PUBLIC_READONLY__=true;</script>"
+
+
+def _public_index_html() -> str:
+    """Read static/index.html and inject the public-read-only flag.
+
+    Read-only: only serves the Bibliotek shell, with one ``<script>`` line added
+    so the SPA hides the owner-only controls. The file itself is never modified
+    on disk.
+    """
+    html = (_STATIC_DIR / "index.html").read_text(encoding="utf-8")
+    if _PUBLIC_FLAG_SCRIPT in html:
+        return html
+    if "</head>" in html:
+        return html.replace("</head>", f"  {_PUBLIC_FLAG_SCRIPT}\n</head>", 1)
+    # No <head> (shouldn't happen) — prepend so the flag is still set first.
+    return _PUBLIC_FLAG_SCRIPT + html
+
+
+def register_public_views(app) -> None:
+    """Register the read-only browse views on the public instance (no /skapa).
+
+    Builds a dedicated ``public_views`` blueprint exposing GET ``/`` and GET
+    ``/bibliotek`` only — both serving the flag-injected Bibliotek shell — and
+    repoints Flask's ``/static`` handler at the repo-root ``static/`` dir (so the
+    vendored React/Babel + CSS + JS still load). The ``/skapa`` funnel route is
+    deliberately never added to this blueprint, so the generate page returns 404
+    on the public process.
+    """
+    public_views_bp = Blueprint("public_views", __name__)
+
+    @public_views_bp.record_once
+    def _point_static(setup_state):  # noqa: ANN202 — Flask hook
+        a = setup_state.app
+        if Path(a.static_folder or "").resolve() != _STATIC_DIR:
+            a.static_folder = str(_STATIC_DIR)
+
+    @public_views_bp.get("/")
+    def public_index():  # noqa: ANN202
+        return _public_index_html()
+
+    @public_views_bp.get("/bibliotek")
+    def public_bibliotek():  # noqa: ANN202
+        return _public_index_html()
+
+    app.register_blueprint(public_views_bp)

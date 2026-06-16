@@ -1,0 +1,69 @@
+[Unit]
+Description=Larbild PUBLIC (read-only) — bilder.sibbamala.com approved-image gallery
+Documentation=https://bilder.sibbamala.com
+After=network-online.target larbild.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=lektove
+Group=lektove
+WorkingDirectory=/home/lektove/larbild-app
+
+# ── Internet-facing, READ-ONLY instance ──────────────────────────────────────
+# bilder.sibbamala.com is already routed (Cloudflare) to 192.168.1.183:6869, so
+# the INSTANT this binds :6869 it is publicly reachable. It MUST therefore always
+# start in PUBLIC_READONLY mode. When this flag is set the app factory:
+#   * registers ONLY the read-only browse blueprints (taxonomy, library-read,
+#     media, views: / + /bibliotek, health) — the generation/admin/review/
+#     regenerate/jobs/batch/films/lessons/portraits/tts/lora/gpu blueprints are
+#     NOT imported or registered (privileged code absent, not hidden),
+#   * forces every library query to approved-only (review_ok = 1), and
+#   * installs a before_request that 405s any non-GET/HEAD/OPTIONS method.
+# It also (forced by the flag) disables boot DB migrations + storage reconcile
+# (DB is read-only here) and the GPU-telemetry SSH daemon (no outbound SSH).
+Environment=LARBILD_PUBLIC_READONLY=1
+Environment=LARBILD_ENV=production
+Environment=LARBILD_HOST=0.0.0.0
+Environment=LARBILD_PORT=6869
+# Read the SAME database + storage the private :6868 instance owns — read-only.
+Environment=LARBILD_DB_PATH=/home/lektove/larbild-app/data/larbild.db
+Environment=LARBILD_STORAGE=/mnt/vm153-output/larbild
+# Belt-and-suspenders: even if the flag were ever unset, never write the DB / SSH.
+Environment=LARBILD_INIT_DB=0
+Environment=LARBILD_RECONCILE_STORAGE=0
+Environment=START_GPU_TELEMETRY=0
+# Read-only repo ⇒ never try to write .pyc next to the sources.
+Environment=PYTHONDONTWRITEBYTECODE=1
+# Own ephemeral session secret (no sessions on a read-only browse site).
+
+ExecStart=/home/lektove/larbild-app/venv/bin/gunicorn -w 2 -k gthread --threads 8 -b 0.0.0.0:6869 --timeout 120 wsgi:app
+Restart=on-failure
+RestartSec=3
+
+# A writable per-service runtime dir at /run/larbild-public, used as HOME so
+# gunicorn 26's control server can create its ~/.gunicorn/gunicorn.ctl (home is
+# otherwise read-only). Nothing else writes to disk.
+RuntimeDirectory=larbild-public
+Environment=HOME=/run/larbild-public
+
+# Hardening: this one faces the internet, so lock it down harder than :6868.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+# The app needs to READ the repo, the DB and the storage tree.
+ReadOnlyPaths=/home/lektove/larbild-app /mnt/vm153-output/larbild
+# SQLite WAL readers must touch the DB's -shm/-wal sidecars, so the data dir
+# (and ONLY the data dir) is writable. The app connection is opened mode=ro with
+# PRAGMA query_only=ON, so it can never mutate a row — this grant only lets the
+# reader map the shared-memory index the private :6868 instance maintains.
+ReadWritePaths=/home/lektove/larbild-app/data
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from typing import Mapping, Optional
 
-from flask import Flask
+from flask import Flask, jsonify
 
 from .config import Config
 
@@ -37,9 +37,83 @@ def create_app(overrides: Optional[Mapping] = None) -> Flask:
         app.config.update(dict(overrides))
 
     _init_database(app)
-    _register_blueprints(app)
-    _start_background_workers(app)
+    if app.config.get("PUBLIC_READONLY", False):
+        _install_readonly_guard(app)
+        _register_public_blueprints(app)
+    else:
+        _register_blueprints(app)
+        _start_background_workers(app)
     return app
+
+
+def _install_readonly_guard(app: Flask) -> None:
+    """Belt-and-suspenders: reject every mutating method on the public instance.
+
+    The public-read-only factory already declines to import or register any
+    write/generate/admin/review blueprint (so that code is absent from the
+    process, not merely hidden). This ``before_request`` is the second,
+    independent layer: it short-circuits ANY request whose method is not a safe,
+    read-only method (GET/HEAD/OPTIONS) with 405 before it can reach a view — so
+    even if a mutating route were ever reachable, the method itself is refused.
+
+    OPTIONS is allowed through so CORS/preflight and Flask's automatic-OPTIONS
+    still answer; HEAD is GET-without-a-body. Everything else (POST/PUT/PATCH/
+    DELETE/…) is a hard 405 with an ``Allow: GET, HEAD, OPTIONS`` header.
+    """
+    safe_methods = {"GET", "HEAD", "OPTIONS"}
+
+    @app.before_request
+    def _reject_mutations():  # noqa: ANN202 — Flask hook
+        from flask import request
+
+        if request.method not in safe_methods:
+            return (
+                jsonify(error="read-only instance: method not allowed"),
+                405,
+                {"Allow": "GET, HEAD, OPTIONS"},
+            )
+        return None
+
+
+def _register_public_blueprints(app: Flask) -> None:
+    """Register ONLY the read-only browse blueprints (PUBLIC_READONLY mode).
+
+    This is the internet-facing instance behind bilder.sibbamala.com. It serves
+    exactly the Bibliotek browse experience over APPROVED images and nothing
+    else. The generation/admin/review/regenerate/jobs/batch/films/lessons/
+    portraits/TTS/LoRA/GPU blueprints are deliberately NEVER IMPORTED here — the
+    privileged code is absent from this process, not conditionally hidden inside
+    a registered blueprint.
+
+    Registered (all GET-only):
+      * health  — GET /healthz liveness.
+      * taxonomy — GET /api/taxonomy (LGR22 subject/area tree, the browse SoT).
+      * library — GET /api/library (tree + per-node counts) and
+        GET /api/library/items (the gallery). In this mode both are forced to
+        approved-only (review_ok = 1); the POST review + POST regenerate views
+        are NOT attached to the blueprint (see app.routes.library).
+      * media — GET /media/<file_path> (serve an approved artefact's bytes,
+        path-traversal-safe).
+      * views — GET / and /bibliotek (the SPA shell). /skapa (the generate
+        funnel) is NOT registered here.
+
+    Imports stay local so importing the package never drags in a privileged
+    module at import time.
+    """
+    from .routes.health import health_bp
+    from .routes.library import library_bp
+    from .routes.media import media_bp
+    from .routes.taxonomy import taxonomy_bp
+    from .routes.views import register_public_views
+
+    app.register_blueprint(health_bp)
+    app.register_blueprint(taxonomy_bp)
+    app.register_blueprint(library_bp)
+    app.register_blueprint(media_bp)
+    # views: register only the read-only browse pages (/, /bibliotek) — never the
+    # /skapa generate funnel. A dedicated helper builds a Skapa-free blueprint so
+    # the generate page is not even routable on the public instance.
+    register_public_views(app)
 
 
 def _init_database(app: Flask) -> None:
@@ -61,6 +135,14 @@ def _init_database(app: Flask) -> None:
        skippable so it can't stall boot on a huge directory scan. Gated by
        ``RECONCILE_STORAGE`` (default on; off under TESTING).
     """
+    if app.config.get("PUBLIC_READONLY", False):
+        # Public read-only instance: bind connect() to the shared DB for READING
+        # only — no mkdir, no migrations, no reconcile (those all write, and this
+        # process must never touch the DB the private :6868 instance owns).
+        from .db import configure_db_path
+
+        configure_db_path(app.config["DB_PATH"])
+        return
     if not app.config.get("INIT_DB", True):
         return
     from .db import init_db
