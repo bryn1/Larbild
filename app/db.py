@@ -25,12 +25,18 @@ from typing import Iterator, Optional, Union
 
 from .migrations import run_migrations
 
-__all__ = ["connect", "init_db", "new_id", "now_iso"]
+__all__ = ["configure_db_path", "connect", "init_db", "new_id", "now_iso"]
 
 # Process-wide default set by init_db(), so helper modules can call connect()
 # without threading the path through every function. init_db() must run first
 # (it does — create_app calls it on boot).
 _DB_PATH: Optional[Path] = None
+
+# Read-only mode (PUBLIC_READONLY instance): when set, connect() opens the DB as
+# a pure reader — it sets ``PRAGMA query_only = ON`` (the connection can never
+# mutate a row) and does NOT issue ``PRAGMA journal_mode = WAL`` (a no-op write
+# the read-only instance must not attempt). configure_db_path() turns this on.
+_READ_ONLY: bool = False
 
 # Wait up to 5s for the writer lock before raising "database is locked" — gives
 # parallel gunicorn workers room to serialize writes (matches imagegen).
@@ -57,6 +63,22 @@ def connect(db_path: Optional[Union[str, Path]] = None) -> Iterator[sqlite3.Conn
     always closed on exit.
     """
     path = _resolve_path(db_path)
+    if _READ_ONLY:
+        # PUBLIC_READONLY: open the existing DB as a pure reader. mode=ro means
+        # SQLite never creates/truncates the main DB file; query_only=ON makes the
+        # connection refuse any write statement; and we deliberately do NOT issue
+        # PRAGMA journal_mode (a write). The private :6868 instance owns the WAL.
+        conn = sqlite3.connect(
+            f"file:{path}?mode=ro", uri=True, isolation_level=None
+        )
+        conn.row_factory = sqlite3.Row
+        conn.execute(f"PRAGMA busy_timeout = {_BUSY_TIMEOUT_MS}")
+        conn.execute("PRAGMA query_only = ON")
+        try:
+            yield conn
+        finally:
+            conn.close()
+        return
     conn = sqlite3.connect(str(path), isolation_level=None)
     conn.row_factory = sqlite3.Row
     conn.execute(f"PRAGMA busy_timeout = {_BUSY_TIMEOUT_MS}")
@@ -66,6 +88,24 @@ def connect(db_path: Optional[Union[str, Path]] = None) -> Iterator[sqlite3.Conn
         yield conn
     finally:
         conn.close()
+
+
+def configure_db_path(db_path: Union[str, Path]) -> Path:
+    """Point :func:`connect` at ``db_path`` WITHOUT writing or migrating.
+
+    The read-only counterpart to :func:`init_db`: it only sets the process-wide
+    default path so ``connect()`` can open the existing DB, and never mkdirs,
+    never opens a writer, never runs migrations. It also flips the module into
+    read-only mode so every ``connect()`` sets ``query_only`` and skips the
+    journal-mode write. Used by the PUBLIC_READONLY instance, which reads the
+    shared larbild.db the private instance owns and must not touch it. Returns the
+    resolved path.
+    """
+    global _DB_PATH, _READ_ONLY
+    path = Path(db_path)
+    _DB_PATH = path
+    _READ_ONLY = True
+    return path
 
 
 def init_db(db_path: Union[str, Path]) -> Path:

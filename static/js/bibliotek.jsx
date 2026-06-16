@@ -31,6 +31,14 @@
 const { useState, useEffect, useCallback, useRef } = React;
 const D = window.LBData;
 
+/* Public read-only mode (bilder.sibbamala.com): the public shell injects
+   window.__LARBILD_PUBLIC_READONLY__ = true before this script runs. In that
+   mode the owner-only review/regenerate controls and the review-filter tabs are
+   not rendered at all — the public sees only the approved gallery (the backend
+   already serves approved-only items and 404s the write routes). */
+const PUBLIC_READONLY = typeof window !== "undefined"
+  && window.__LARBILD_PUBLIC_READONLY__ === true;
+
 /* ---------- minimal icon set (subset of the design's ui.jsx I) ---------- */
 const Ico = ({ d, size = 18, sw = 1.6, fill = "none" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke="currentColor"
@@ -111,7 +119,7 @@ function AssetCard({ chain, subject, onOpen }) {
         <span className={`kind-tag ${isVideoKind(item.kind) ? "film" : ""}`}>{item.kind}</span>
         {isVideoKind(item.kind) && <span className="play">{I.play}</span>}
         {levelLabel(item.level) && <span className="level-pill">{levelLabel(item.level)}</span>}
-        <ReviewBadge ok={item.review_ok} onTile />
+        {!PUBLIC_READONLY && <ReviewBadge ok={item.review_ok} onTile />}
         {versionCount > 1 && <span className="ver-pill">v{versionCount}</span>}
       </div>
       <div className="ainfo">
@@ -288,7 +296,7 @@ function Lightbox({ chain, subject, onClose, onPersist, onRegenerated }) {
         <div className="lb-info">
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
             <div className="lb-title serif">{item.title}</div>
-            <ReviewBadge ok={item.review_ok} />
+            {!PUBLIC_READONLY && <ReviewBadge ok={item.review_ok} />}
           </div>
           <div className="lb-sub mono">
             {subject ? subject.name : ""} · {item.area_name || item.area}
@@ -304,13 +312,14 @@ function Lightbox({ chain, subject, onClose, onPersist, onRegenerated }) {
             </dl>
           )}
 
-          {/* Review the version on stage (verdict + note). Films are reviewable
-              too; only regeneration is image-only (the button is gated below). */}
-          <ReviewControl item={item} onPersist={onPersist} />
+          {/* Review the version on stage (verdict + note). Owner-only — hidden
+              on the public read-only instance (no review/regenerate there). */}
+          {!PUBLIC_READONLY && <ReviewControl item={item} onPersist={onPersist} />}
 
           {/* Regenerate — only the latest version of an image chain (a regen
-              extends the newest tip; films aren't regenerable in v1). */}
-          {item.kind === "bild" && (
+              extends the newest tip; films aren't regenerable in v1). Owner-only:
+              not rendered on the public read-only instance. */}
+          {!PUBLIC_READONLY && item.kind === "bild" && (
             <div className="rev-actions" style={{ marginTop: 14 }}>
               <button className="btn primary" onClick={regenerate}
                 disabled={regen.phase === "busy" || !isLatest}
@@ -594,15 +603,21 @@ function Bibliotek() {
             <button className={`tab ${kind === "film" ? "active" : ""}`} onClick={() => setKind("film")}>Filmer</button>
             <button className={`tab ${kind === "lektion" ? "active" : ""}`} onClick={() => setKind("lektion")}>Lektioner</button>
           </div>
-          <span className="hsep" />
-          {/* Review filter — the atelier-style triage lens over the gallery. */}
-          <div className="tabs">
-            <button className={`tab ${reviewFilter === "all" ? "active" : ""}`} onClick={() => setReviewFilter("all")} title="Visa alla">Alla</button>
-            <button className={`tab ${reviewFilter === "pending" ? "active" : ""}`} onClick={() => setReviewFilter("pending")} title="Ej granskade">Att granska</button>
-            <button className={`tab ${reviewFilter === "notok" ? "active" : ""}`} onClick={() => setReviewFilter("notok")} title="Markerade Inte OK">Inte OK</button>
-          </div>
-          <span className="hsep" />
-          <a className="btn primary" href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa här</a>
+          {/* Review filter + Skapa nav — owner-only. Hidden entirely on the
+              public read-only instance (approved gallery only, no triage, no
+              generate funnel). */}
+          {!PUBLIC_READONLY && <span className="hsep" />}
+          {!PUBLIC_READONLY && (
+            <div className="tabs">
+              <button className={`tab ${reviewFilter === "all" ? "active" : ""}`} onClick={() => setReviewFilter("all")} title="Visa alla">Alla</button>
+              <button className={`tab ${reviewFilter === "pending" ? "active" : ""}`} onClick={() => setReviewFilter("pending")} title="Ej granskade">Att granska</button>
+              <button className={`tab ${reviewFilter === "notok" ? "active" : ""}`} onClick={() => setReviewFilter("notok")} title="Markerade Inte OK">Inte OK</button>
+            </div>
+          )}
+          {!PUBLIC_READONLY && <span className="hsep" />}
+          {!PUBLIC_READONLY && (
+            <a className="btn primary" href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa här</a>
+          )}
         </div>
       </div>
 

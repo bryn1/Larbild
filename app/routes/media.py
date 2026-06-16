@@ -28,11 +28,50 @@ and nothing else — it can only ever reach files under the configured STORAGE_D
 from __future__ import annotations
 
 import mimetypes
+import os
 from pathlib import Path
 
 from flask import Blueprint, abort, current_app, send_file
 
 media_bp = Blueprint("media", __name__)
+
+# Public read-only mode (bilder.sibbamala.com): same switch as
+# Config.PUBLIC_READONLY, read here at import time. When set, /media only serves
+# the bytes of files referenced by an APPROVED (review_ok = 1), non-deleted
+# library row — so a guessed path to an unreviewed/rejected image (the file_path
+# scheme is semantic, e.g. .../diagram/<concept>__authored-svg.png) cannot leak
+# unapproved content the gallery already hides.
+_PUBLIC_READONLY = os.environ.get("LARBILD_PUBLIC_READONLY", "").strip().lower() in {
+    "1",
+    "true",
+    "yes",
+    "on",
+}
+
+
+def _is_approved_media(relpath: str) -> bool:
+    """True if ``relpath`` is the file/thumb/svg of an APPROVED library row.
+
+    The public instance serves only approved artefacts. A library row references
+    its bytes via ``file_path`` (the render), ``thumb_path`` (the thumbnail), or
+    ``svg_source_path`` (the authored-SVG baseline). The requested STORAGE_DIR-
+    relative path must match one of those on a row with ``review_ok = 1`` and not
+    soft-deleted. Anything else (an unreviewed/rejected row's file, or a path no
+    row references) is treated as not-found.
+    """
+    from ..db import connect
+
+    with connect() as conn:
+        row = conn.execute(
+            """
+            SELECT 1 FROM library
+            WHERE review_ok = 1 AND deleted_at IS NULL
+              AND (file_path = ? OR thumb_path = ? OR svg_source_path = ?)
+            LIMIT 1
+            """,
+            (relpath, relpath, relpath),
+        ).fetchone()
+    return row is not None
 
 
 def _storage_root() -> Path:
@@ -92,6 +131,13 @@ def serve_media(relpath: str):
 
     Read-only: streams the bytes off disk, never writes.
     """
+    # PUBLIC_READONLY: only an approved row's bytes may be served. Checked before
+    # touching disk so a guessed unapproved path 404s identically to a missing
+    # one (never confirms an unapproved file exists). The private instance serves
+    # any in-bounds file as before.
+    if _PUBLIC_READONLY and not _is_approved_media(relpath):
+        abort(404)
+
     resolved = _safe_resolve(relpath)
     if not resolved.is_file():
         # Missing, or a directory — nothing to serve.
