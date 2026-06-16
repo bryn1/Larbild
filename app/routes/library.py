@@ -216,6 +216,15 @@ def _build_tree(counts: dict[tuple[str, str], int]) -> list[dict[str, Any]]:
     area's count from ``counts`` (default 0) and rolling areas up into a subject
     total. Every taxonomy node is present regardless of whether anything has been
     generated for it — the left-join-onto-structure contract.
+
+    PUBLIC_READONLY: the public gallery (bilder.sibbamala.com) must not show
+    paths that dead-end. ``counts`` is already approved-only there (see
+    :func:`_asset_counts`), so an ``asset_count == 0`` area has no openable image
+    and an all-zero subject is an empty branch. When the flag is set this OMITS
+    every such empty area and then every subject left with no areas, so the nav
+    only offers paths that reach ≥1 approved image. The private review instance
+    (flag unset) is UNCHANGED — it still emits every taxonomy node so the owner
+    can review unpopulated buckets. One implementation, gated on the flag.
     """
     subjects_out: list[dict[str, Any]] = []
     for s in taxonomy.SUBJECTS:
@@ -225,6 +234,9 @@ def _build_tree(counts: dict[tuple[str, str], int]) -> list[dict[str, Any]]:
         for a in s["areas"]:
             a_slug = a["slug"]
             area_count = counts.get((s_slug, a_slug), 0)
+            # Public: skip an area with no approved (openable) asset — a dead-end.
+            if _PUBLIC_READONLY and area_count == 0:
+                continue
             subject_total += area_count
             areas_out.append(
                 {
@@ -235,6 +247,10 @@ def _build_tree(counts: dict[tuple[str, str], int]) -> list[dict[str, Any]]:
                     "central_content": _central_entries(s_slug, a_slug, a["central"]),
                 }
             )
+        # Public: a subject whose areas are all empty (none survived above) is an
+        # empty branch — drop it so it never appears as a clickable dead-end.
+        if _PUBLIC_READONLY and not areas_out:
+            continue
         subjects_out.append(
             {
                 "id": s_slug,
