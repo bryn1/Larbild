@@ -25,7 +25,7 @@ from typing import Iterator, Optional, Union
 
 from .migrations import run_migrations
 
-__all__ = ["configure_db_path", "connect", "init_db", "new_id", "now_iso"]
+__all__ = ["configure_db_path", "connect", "connect_writer", "init_db", "new_id", "now_iso"]
 
 # Process-wide default set by init_db(), so helper modules can call connect()
 # without threading the path through every function. init_db() must run first
@@ -79,6 +79,41 @@ def connect(db_path: Optional[Union[str, Path]] = None) -> Iterator[sqlite3.Conn
         finally:
             conn.close()
         return
+    conn = sqlite3.connect(str(path), isolation_level=None)
+    conn.row_factory = sqlite3.Row
+    conn.execute(f"PRAGMA busy_timeout = {_BUSY_TIMEOUT_MS}")
+    conn.execute("PRAGMA foreign_keys = ON")
+    conn.execute("PRAGMA journal_mode = WAL")
+    try:
+        yield conn
+    finally:
+        conn.close()
+
+
+@contextmanager
+def connect_writer(
+    db_path: Optional[Union[str, Path]] = None,
+) -> Iterator[sqlite3.Connection]:
+    """Yield a WRITABLE connection to the configured DB — even in read-only mode.
+
+    The public read-only instance opens :func:`connect` as a pure reader
+    (``mode=ro`` + ``PRAGMA query_only = ON``) so the browse path can never
+    mutate the shared DB the private :6868 instance owns. The visitor-flag
+    endpoint is the SINGLE sanctioned public write, so it needs a connection that
+    deliberately is NOT read-only — this is that narrow, explicit exception.
+
+    It opens the SAME ``DB_PATH`` in normal read-write mode with the usual
+    pragmas (WAL, foreign_keys ON, busy_timeout), independent of the module's
+    ``_READ_ONLY`` flag. Keeping it a separate, explicitly-named entry point
+    means a stray ``connect()`` on the public instance still can't write — only
+    code that intentionally calls ``connect_writer`` can, and there is exactly
+    one such caller (POST /api/flag). All other public writes remain impossible.
+
+    The shared larbild.db lives on local disk (not a network FS) and SQLite WAL
+    lets this writer coexist with the private instance's writers + this
+    instance's readers (the busy_timeout serialises the brief INSERT).
+    """
+    path = _resolve_path(db_path)
     conn = sqlite3.connect(str(path), isolation_level=None)
     conn.row_factory = sqlite3.Row
     conn.execute(f"PRAGMA busy_timeout = {_BUSY_TIMEOUT_MS}")

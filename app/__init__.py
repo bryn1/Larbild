@@ -61,18 +61,27 @@ def _install_readonly_guard(app: Flask) -> None:
     DELETE/…) is a hard 405 with an ``Allow: GET, HEAD, OPTIONS`` header.
     """
     safe_methods = {"GET", "HEAD", "OPTIONS"}
+    # The SINGLE public write the read-only instance permits: a visitor flagging
+    # an image as wrong/broken (POST /api/flag, the crowdsource feedback path).
+    # Everything else mutating stays a hard 405. This exemption is intentionally
+    # an exact-path allowlist of ONE so no other write can slip through.
+    write_exempt = {"/api/flag"}
 
     @app.before_request
     def _reject_mutations():  # noqa: ANN202 — Flask hook
         from flask import request
 
-        if request.method not in safe_methods:
-            return (
-                jsonify(error="read-only instance: method not allowed"),
-                405,
-                {"Allow": "GET, HEAD, OPTIONS"},
-            )
-        return None
+        if request.method in safe_methods:
+            return None
+        # Allow the one sanctioned public write (the flag endpoint) to proceed to
+        # its hardened view; refuse every other mutating method.
+        if request.method == "POST" and request.path in write_exempt:
+            return None
+        return (
+            jsonify(error="read-only instance: method not allowed"),
+            405,
+            {"Allow": "GET, HEAD, OPTIONS"},
+        )
 
 
 def _register_public_blueprints(app: Flask) -> None:
@@ -100,6 +109,7 @@ def _register_public_blueprints(app: Flask) -> None:
     Imports stay local so importing the package never drags in a privileged
     module at import time.
     """
+    from .routes.flags import public_flag_bp
     from .routes.health import health_bp
     from .routes.library import library_bp
     from .routes.media import media_bp
@@ -110,6 +120,11 @@ def _register_public_blueprints(app: Flask) -> None:
     app.register_blueprint(taxonomy_bp)
     app.register_blueprint(library_bp)
     app.register_blueprint(media_bp)
+    # The ONE public write: POST /api/flag (visitor reports a wrong/broken image
+    # in the crowdsource gallery). The LAN-only flags REVIEW blueprint is NOT
+    # registered here — the public instance can write a flag but never read flag
+    # state. The before_request guard above exempts exactly /api/flag.
+    app.register_blueprint(public_flag_bp)
     # views: register only the read-only browse pages (/, /bibliotek) — never the
     # /skapa generate funnel. A dedicated helper builds a Skapa-free blueprint so
     # the generate page is not even routable on the public instance.
@@ -189,6 +204,13 @@ def _register_blueprints(app: Flask) -> None:
     # gallery knows which images exist but every <img> 404s — the "counts update
     # but no images show" symptom. SFW: only reaches files under STORAGE_DIR.
     app.register_blueprint(media_bp)
+    # lb-public-flags: the visitor-flag table's two surfaces — the public write
+    # POST /api/flag (registered here too so it works on the LAN tool) and the
+    # owner's LAN-only review API (GET /api/flags + POST /api/flags/<id>/resolve).
+    from .routes.flags import flags_admin_bp, public_flag_bp
+
+    app.register_blueprint(public_flag_bp)
+    app.register_blueprint(flags_admin_bp)
     # lb-9tz: backend-authoritative LoRA resolution at POST/GET /api/resolve-lora
     # — the Skapa funnel sends only its (subject, imageType) selection; the
     # backend decides the LoRA and the client can never override it.

@@ -53,7 +53,8 @@ const I = {
   check:   <Ico d={<path d="M5 12l5 5L20 7" />} sw={2} size={15} />,
   cross:   <Ico d={<path d="M6 6l12 12M18 6L6 18" />} sw={2} size={15} />,
   redo:    <Ico d={<><path d="M21 12a9 9 0 1 1-3-6.7" /><path d="M21 4v5h-5" /></>} size={16} />,
-};
+  flag:    <Ico d={<><path d="M4 15V4a1 1 0 0 1 1-1h11l-2 4 2 4H5a1 1 0 0 0-1 1z" /><path d="M4 22v-7" /></>} size={16} />,
+}
 
 /* ---------- LEVEL 1 card: one subject ---------- */
 function SubjectCard({ s, onOpen }) {
@@ -210,6 +211,69 @@ function ReviewControl({ item, onPersist }) {
   );
 }
 
+/* ---------- the public "flag this image" control (lightbox) ----------
+   PUBLIC instance only (bilder.sibbamala.com). A visitor reports an image as
+   wrong/broken; an optional short reason can be added. It POSTs to /api/flag
+   (the single sanctioned public write) and shows ONLY a thank-you on success —
+   it NEVER reveals flag status, counts, or anyone else's reports (the public
+   site shows a flag BUTTON, never flag state). One report per image per visit:
+   after a successful send the control thanks + disables for this image. */
+function FlagButton({ item }) {
+  const [open, setOpen] = useState(false);     // reason box expanded?
+  const [reason, setReason] = useState("");
+  const [state, setState] = useState("idle");  // idle | sending | done | err
+
+  // Reset when a different image opens in the modal.
+  useEffect(() => { setOpen(false); setReason(""); setState("idle"); }, [item.id]);
+
+  const REASON_MAX = 500;
+  const submit = () => {
+    setState("sending");
+    fetch("/api/flag", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ image_id: item.id, reason: reason.slice(0, REASON_MAX) }),
+    })
+      // A 201 = recorded; a 429 = rate-limited (still a polite thank-you so we
+      // never expose how flagging works); any other status = a soft error.
+      .then((r) => { setState(r.ok || r.status === 429 ? "done" : "err"); })
+      .catch(() => setState("err"));
+  };
+
+  if (state === "done") {
+    return (
+      <div className="lb-flag done">
+        {I.check} Tack! Vi tittar på den här bilden.
+      </div>
+    );
+  }
+  return (
+    <div className="lb-flag">
+      {!open ? (
+        <button className="btn sm flag" onClick={() => setOpen(true)}
+          title="Rapportera att något är fel eller trasigt i den här bilden">
+          {I.flag} Flagga som fel
+        </button>
+      ) : (
+        <div className="flag-form">
+          <div className="flag-h">Vad är fel? (valfritt)</div>
+          <textarea className="flag-reason" value={reason} maxLength={REASON_MAX}
+            placeholder="T.ex. fel formel, otydlig bild, fel begrepp…"
+            onChange={(e) => setReason(e.target.value)} />
+          <div className="flag-actions">
+            <button className="btn sm" onClick={submit} disabled={state === "sending"}>
+              {state === "sending" ? "Skickar…" : "Skicka rapport"}
+            </button>
+            <button className="btn sm ghost" onClick={() => setOpen(false)}
+              disabled={state === "sending"}>Avbryt</button>
+            {state === "err" && <span className="rev-status err">Kunde inte skicka — försök igen.</span>}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ---------- the version chain strip (lightbox) ---------- */
 function VersionStrip({ chain, currentId, onPick }) {
   if (!chain || chain.versions.length < 2) return null;
@@ -334,6 +398,10 @@ function Lightbox({ chain, subject, onClose, onPersist, onRegenerated }) {
               )}
             </div>
           )}
+
+          {/* Public crowdsource: let a visitor flag a wrong/broken image. Shown
+              ONLY on the public read-only instance; never reveals flag state. */}
+          {PUBLIC_READONLY && <FlagButton item={item} />}
 
           <VersionStrip chain={chain} currentId={item.id} onPick={(v) => setViewId(v.id)} />
         </div>

@@ -49,23 +49,28 @@ _PUBLIC_READONLY = os.environ.get("LARBILD_PUBLIC_READONLY", "").strip().lower()
 }
 
 
-def _is_approved_media(relpath: str) -> bool:
-    """True if ``relpath`` is the file/thumb/svg of an APPROVED library row.
+def _is_visible_media(relpath: str) -> bool:
+    """True if ``relpath`` is the file/thumb/svg of a PUBLICLY-VISIBLE library row.
 
-    The public instance serves only approved artefacts. A library row references
-    its bytes via ``file_path`` (the render), ``thumb_path`` (the thumbnail), or
-    ``svg_source_path`` (the authored-SVG baseline). The requested STORAGE_DIR-
-    relative path must match one of those on a row with ``review_ok = 1`` and not
-    soft-deleted. Anything else (an unreviewed/rejected row's file, or a path no
-    row references) is treated as not-found.
+    The public instance serves only the bytes of a row the gallery itself would
+    show. A library row references its bytes via ``file_path`` (the render),
+    ``thumb_path`` (the thumbnail), or ``svg_source_path`` (the authored-SVG
+    baseline). The requested STORAGE_DIR-relative path must match one of those on
+    a non-soft-deleted row that passes the public visibility predicate
+    (visible_predicate_sql) — i.e. approved everywhere, plus un-reviewed for the
+    crowdsource subjects (fysik/matematik/teknik), and NEVER rejected. This is
+    the SAME predicate the listing + count queries use, so a tile the gallery
+    renders always has servable bytes and a rejected/other-subject-pending path
+    404s identically to a missing one (no existence oracle).
     """
     from ..db import connect
+    from ..public_visibility import visible_predicate_sql
 
     with connect() as conn:
         row = conn.execute(
-            """
+            f"""
             SELECT 1 FROM library
-            WHERE review_ok = 1 AND deleted_at IS NULL
+            WHERE deleted_at IS NULL AND {visible_predicate_sql(_PUBLIC_READONLY)}
               AND (file_path = ? OR thumb_path = ? OR svg_source_path = ?)
             LIMIT 1
             """,
@@ -135,7 +140,7 @@ def serve_media(relpath: str):
     # touching disk so a guessed unapproved path 404s identically to a missing
     # one (never confirms an unapproved file exists). The private instance serves
     # any in-bounds file as before.
-    if _PUBLIC_READONLY and not _is_approved_media(relpath):
+    if _PUBLIC_READONLY and not _is_visible_media(relpath):
         abort(404)
 
     resolved = _safe_resolve(relpath)

@@ -43,6 +43,7 @@ from flask import Blueprint, jsonify, request
 
 from .. import taxonomy
 from ..db import connect, now_iso
+from ..public_visibility import visible_predicate_sql
 
 library_bp = Blueprint("library", __name__)
 
@@ -196,7 +197,11 @@ def _asset_counts() -> dict[tuple[str, str], int]:
     """
     where = "deleted_at IS NULL"
     if _PUBLIC_READONLY:
-        where += f" AND {_APPROVED_ONLY_SQL}"
+        # Publish-all for crowdsource subjects (fysik/matematik/teknik):
+        # count approved OR pending there, approved-only elsewhere. Rejected
+        # (review_ok = 0) is never counted. visible_predicate_sql(_PUBLIC_READONLY) is the
+        # single source of truth shared with the gallery + /media gates.
+        where += f" AND {visible_predicate_sql(_PUBLIC_READONLY)}"
     with connect() as conn:
         rows = conn.execute(
             f"""
@@ -376,8 +381,11 @@ def _node_items(
     )
     params: list[Any] = [subject, area]
     if _PUBLIC_READONLY:
-        # Approved-only, always — independent of the ``review`` arg below.
-        sql += f" AND {_APPROVED_ONLY_SQL}"
+        # Public visibility, always — independent of the ``review`` arg below.
+        # Crowdsource subjects (fysik/matematik/teknik) publish approved OR
+        # pending images; every other subject stays approved-only; rejected
+        # (review_ok = 0) is never surfaced. A crafted ?review= can't widen it.
+        sql += f" AND {visible_predicate_sql(_PUBLIC_READONLY)}"
     if image_type:
         # A film row has video_type, not image_type; match either column so an
         # imageType filter never silently hides a same-bucket film.
