@@ -25,7 +25,10 @@ three ordered steps:
      swap can't co-reside with it.
 
 Crash-safe: a driver that dies mid-render leaks its marker — a SAFE-FAIL (a stale marker
-only keeps ComfyUI resident, never an OOM); a boot reconcile clears the key. Fall-forward:
+only keeps ComfyUI resident, never an OOM); a boot reconcile clears its OWN leaked markers
+ORIGIN-SCOPED (each marker carries a per-deploy ``origin`` tag, RENDER_ORIGIN; the reconcile
+LREMs only its own + untagged-legacy markers, never a peer's live marker — ig-e9lg).
+Fall-forward:
 a Redis hiccup / unreachable ComfyUI never REFUSES a render — log loud, run the body anyway
 (same contract as gpu_lock's degrade-don't-block).
 
@@ -39,6 +42,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import socket
 import time
 import uuid
 from contextlib import contextmanager
@@ -55,6 +59,46 @@ log = logging.getLogger("sibbis.render_lane")
 
 # MUST match vm100_dispatcher.py RENDER_QUEUES — render-pressure ONLY (nothing BRPOPs it).
 RENDER_PRESSURE_KEY = os.environ.get("RENDER_PRESSURE_KEY", "vm100:render_pressure:external")
+
+# Per-deploy/per-driver tag stamped on every render-pressure marker so a boot
+# reconcile can clear ONLY its own leaked markers (origin-scoped LREM) instead of
+# nuking the whole SHARED list — which evicts peers' (larbild/vm100) ComfyUI
+# mid-render (ig-e9lg). Each deploy's service env sets a distinct RENDER_ORIGIN
+# (e.g. "imagegen-sibbis", "larbild", "vm100"); the default is a stable per-host
+# id so an unconfigured deploy is still self-distinguishable on a single box.
+# The dispatcher counts markers by LLEN (vm100_dispatcher.render_pressure) and
+# never reads their bodies, so adding this field is invisible to it.
+RENDER_ORIGIN = os.environ.get("RENDER_ORIGIN") or f"host:{socket.gethostname()}"
+
+
+def marker_origin(raw: Any) -> Optional[str]:
+    """Return the ``origin`` tag of a render-pressure marker, or None for an
+    untagged legacy marker (predates ig-e9lg) or any non-marker value. Never
+    raises — a malformed entry is treated as untagged (None)."""
+    if isinstance(raw, (bytes, bytearray)):
+        try:
+            raw = raw.decode("utf-8")
+        except Exception:
+            return None
+    if not isinstance(raw, str):
+        return None
+    try:
+        obj = json.loads(raw)
+    except Exception:
+        return None
+    if not isinstance(obj, dict):
+        return None
+    origin = obj.get("origin")
+    return origin if isinstance(origin, str) else None
+
+
+def is_own_or_legacy_marker(raw: Any, origin: str = RENDER_ORIGIN) -> bool:
+    """True if a marker should be cleared by THIS deploy's boot reconcile:
+    either it carries our own origin, or it is an untagged legacy marker (no
+    origin field — predates the tag, so it is stale by definition at boot).
+    A marker tagged with a DIFFERENT origin is a peer's live marker — leave it."""
+    tag = marker_origin(raw)
+    return tag is None or tag == origin
 
 # The shared VM100 3090 ComfyUI. Resolve each app's env prefix in order (imagegen then
 # larbild) so one canonical file points every deploy at the right endpoint.
@@ -131,7 +175,7 @@ def render_residency(
     r = client if client is not None else _safe_redis()
     url = comfyui_url or COMFYUI_URL
     marker = json.dumps({"_signal": "render_pressure", "reason": reason,
-                         "token": uuid.uuid4().hex})
+                         "origin": RENDER_ORIGIN, "token": uuid.uuid4().hex})
     pushed = False
 
     if r is not None:
