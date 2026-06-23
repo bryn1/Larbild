@@ -30,6 +30,11 @@
    ============================================================================ */
 const { useState, useEffect, useCallback, useRef } = React;
 const D = window.LBData;
+// GPU telemetry pills + Kö modal (lb-dop), defined in gpu_telemetry.jsx and
+// exposed on window (separate Babel-in-browser <script> scope). Owner-only —
+// only rendered when !PUBLIC_READONLY below.
+const GpuPills = window.LBGpuPills;
+const KoModal = window.LBKoModal;
 
 /* Public read-only mode (bilder.sibbamala.com): the public shell injects
    window.__LARBILD_PUBLIC_READONLY__ = true before this script runs. In that
@@ -424,6 +429,7 @@ function Bibliotek() {
   // regenerate so the new version appears.
   const [itemsByNode, setItemsByNode] = useState({});
   const [lightbox, setLightbox] = useState(null); // the version chain open in the modal, or null
+  const [koOpen, setKoOpen] = useState(false); // the Kö (queue + GPU telemetry) modal, owner-only (lb-dop)
   // The deep-linked location read from the URL on first load (lb-review-regen):
   // restored once the tree arrives so a refresh stays put. Captured in a ref so
   // it's read exactly once (not re-applied on every render).
@@ -612,6 +618,8 @@ function Bibliotek() {
             <div className="caption">{D.totalAssets(subjects)} objekt · {subjects.length} ämnen · sorterat enligt LGR22 åk 7–9</div>
           </div>
           <div className="page-head-actions">
+            {!PUBLIC_READONLY && GpuPills && <GpuPills onOpenQueue={() => setKoOpen(true)} />}
+            {!PUBLIC_READONLY && <span className="hsep" />}
             <a className="btn primary" href={D.skapaLink()}>{I.plus} Skapa bild</a>
           </div>
         </div>
@@ -620,6 +628,7 @@ function Bibliotek() {
             {ordered.map((s) => <SubjectCard key={s.id} s={s} onOpen={setSubjectId} />)}
           </div>
         </div>
+        {!PUBLIC_READONLY && koOpen && KoModal && <KoModal onClose={() => setKoOpen(false)} />}
       </div>
     );
   }
@@ -682,6 +691,8 @@ function Bibliotek() {
               <button className={`tab ${reviewFilter === "notok" ? "active" : ""}`} onClick={() => setReviewFilter("notok")} title="Markerade Inte OK">Inte OK</button>
             </div>
           )}
+          {!PUBLIC_READONLY && <span className="hsep" />}
+          {!PUBLIC_READONLY && GpuPills && <GpuPills onOpenQueue={() => setKoOpen(true)} />}
           {!PUBLIC_READONLY && <span className="hsep" />}
           {!PUBLIC_READONLY && (
             <a className="btn primary" href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa här</a>
@@ -751,6 +762,7 @@ function Bibliotek() {
           onRegenerated={onRegenerated}
         />
       )}
+      {!PUBLIC_READONLY && koOpen && KoModal && <KoModal onClose={() => setKoOpen(false)} />}
     </div>
   );
 }
