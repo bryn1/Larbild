@@ -44,7 +44,14 @@ Lärbild is a single-teacher, LAN-only, SFW educational image and film studio fo
 - **Network:** LAN-only. No public access.
 
 ## Data Stores
-- **Models:** Dedicated SFW-only model directory + LoRA allowlist (`baseLora`, `loraMatrix`).
+- **Models:** No SFW model directory exists on disk — none was ever sourced. The
+  `baseLora`/`loraMatrix` entries in `taxonomy.json` are PLACEHOLDER logical names
+  (e.g. `photoreal-edu-v3`, `physics-vector-v3`); no matching `.safetensors` file
+  exists anywhere. They are NOT dead config: `app/taxonomy.resolve_lora()` reads
+  them and `app/workflow.allowlist()` derives the SFW injection-guard allowlist
+  from `baseLora ∪ loraMatrix` — the security boundary the dormant render path
+  enforces. KEEP them. (Diffusion-footprint audit 2026-06-23: nothing dead to
+  remove; see "Diffusion footprint" below.)
 - **Database:** Isolated instance (ChromaDB deferred in v1).
 - **Storage:** Separate from `imagegen`. No shared data, models, or collections.
 - **Telemetry:** GPU telemetry (`api_gpus.py`) and render-residency state.
@@ -74,6 +81,31 @@ Lärbild is a single-teacher, LAN-only, SFW educational image and film studio fo
 - **Diffusion Images:** Deleted (junk).
 - **Scoring:** Abstract-physics + generic topics score 1 on SDXL regardless of prompt (belong on procedural or FLUX).
 - **Harness:** `sibbis:/home/lektove/larbild_harness.py`.
+
+## Diffusion footprint (audit 2026-06-23)
+The diffusion (ComfyUI/SDXL/FLUX/LoRA) image-gen path is DEAD SCOPE as a product
+direction (pivoted to authored SVG; the live library is 1068/1069 rows SVG/vector,
+0 approved diffusion images). A full code+DB+import audit found **nothing genuinely
+dead to remove** — every diffusion file is imported/registered/test-covered, and the
+`baseLora`/`loraMatrix` config is the load-bearing SFW allowlist, not orphaned config.
+Classification:
+- **Dead scope, but NOT dead code:** the diffusion render path overall. Removing any
+  of it would break the running private factory + ~6 tests, so it is NOT removed.
+- **Functional-but-dormant (KEEP this pass):** the ComfyUI render plumbing —
+  `app/comfyui.py`, `render_worker.py`, `render_lane.py`, `workflow.py`, `jobs.py`,
+  `assembly.py`, `film.py`/`film_templates.py`, `batch.py`, `gpu_telemetry.py`
+  (`/api/gpus`), `routes/jobs.py` (`/api/jobs`, the Kö). All owner-only (never on the
+  public read-only factory). lb-dop (GPU pills/Kö) + lb-07y (cancel/retry) were built
+  on it and one real FLUX render ran on VM100. Strip only on explicit owner confirm.
+- **Shared / must-keep:** `taxonomy.json` + `taxonomy/__init__.py` (`resolve_lora`,
+  `BASE_LORA`/`LORA_MATRIX`/`FLUX_LORA`, the allowlist), `gpu_lock.py`, `reconcile.py`.
+- **The SVG pipeline is fully independent** of the render path (zero diffusion imports).
+- **Residual data:** 1 live, unapproved (`review_ok=NULL`) FLUX render row remains in
+  the library DB (`kemi/materia/illustration/larbild_00796_.png`, file present on disk).
+  It is a legitimate pending-review item, not a dangling artifact — left for the owner
+  to approve or reject via the normal review UI; NOT auto-deleted.
+- **Closed as won't-do (diffusion-productionization, superseded):** lb-0ul, lb-m05,
+  lb-83n, lb-xl0, lb-6ma.
 
 ## Edit Policy
 - **Factual Only:** This document reflects the evidence from the provided codebase, tests, and deployment scripts.
