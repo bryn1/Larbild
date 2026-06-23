@@ -43,10 +43,15 @@
 <line x1="370" y1="130" x2="428" y2="130" stroke="#16a34a" stroke-width="4"/>
 <text x="400" y="110" font-family="Arial,sans-serif" font-size="13" fill="#16a34a" text-anchor="middle" font-weight="bold">Strömbrytare (sluten)</text>
 
-<!-- current direction arrows sitting ON the wires (clockwise) -->
-<polygon points="500,130 480,122 480,138" fill="#2563eb"/>
-<polygon points="600,210 592,192 608,192" fill="#2563eb"/>
-<polygon points="200,300 192,318 208,318" fill="#2563eb"/>
+<!-- current direction arrows sitting ON the wires (counter-clockwise: conventional
+     current LEAVES the + pole, goes up the right side, left across the top, down the
+     left side, and back into the - pole) -->
+<!-- top wire: current flows LEFT -->
+<polygon points="480,130 500,122 500,138" fill="#2563eb"/>
+<!-- right side wire: current flows UP -->
+<polygon points="600,210 592,228 608,228" fill="#2563eb"/>
+<!-- left side wire: current flows DOWN -->
+<polygon points="200,300 192,282 208,282" fill="#2563eb"/>
 <text x="500" y="250" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">strömmen</text>
 <text x="500" y="268" font-family="Arial,sans-serif" font-size="13" fill="#2563eb" text-anchor="middle">går runt</text>
 

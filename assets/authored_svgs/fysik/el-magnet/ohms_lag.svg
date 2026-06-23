@@ -32,10 +32,11 @@
 <!-- R = 4 Ohm label placed BELOW the resistor in open space, clear of "Kretsen" title and the wires -->
 <text x="215" y="232" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle">R = 4 Ω</text>
 
-<!-- current arrow -->
-<line x1="320" y1="250" x2="320" y2="300" stroke="#dc2626" stroke-width="1"/>
-<polygon points="320,250 313,262 327,262" fill="#dc2626"/>
-<text x="338" y="285" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start" font-weight="bold">I</text>
+<!-- current arrow on the right wire: + pole is at the top of the battery, so the
+     conventional current flows DOWN this side of the loop (was drawn pointing up) -->
+<line x1="320" y1="245" x2="320" y2="300" stroke="#dc2626" stroke-width="1"/>
+<polygon points="320,305 313,288 327,288" fill="#dc2626"/>
+<text x="338" y="280" font-family="Arial,sans-serif" font-size="14" fill="#dc2626" text-anchor="start" font-weight="bold">I</text>
 
 <!-- ============ RIGHT: worked example with a REAL fraction ============ -->
 <rect x="420" y="150" width="350" height="230" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
