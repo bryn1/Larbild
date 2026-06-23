@@ -48,6 +48,14 @@ Lärbild is a single-teacher, LAN-only, SFW educational image and film studio fo
 - **Database:** Isolated instance (ChromaDB deferred in v1).
 - **Storage:** Separate from `imagegen`. No shared data, models, or collections.
 - **Telemetry:** GPU telemetry (`api_gpus.py`) and render-residency state.
+- **Render queue (Redis, larbild keyspace):** `app/jobs.py` is the ONE job/queue
+  mechanism. Owner-only management actions (lb-07y) live on it: `GET /api/jobs`
+  (list/filter), `POST /api/jobs/<id>/cancel` (mark cancelled + LREM off the
+  queue, cooperative cancel checked in `render_worker` after BRPOP + before the
+  GPU submit), `POST /api/jobs/<id>/retry` (re-drive the same id). These + the Kö
+  management UI in `static/js/gpu_telemetry.jsx` (`JobQueueList` in `KoModal`) are
+  double-gated owner-only: `jobs_bp` is never registered on the public read-only
+  factory AND the readonly guard 405s every mutating method.
 
 ## Key Directories (Post-Refactor)
 - `app/`: Flask backend (forked imagegen infra modules, SFW-stripped), routers.
