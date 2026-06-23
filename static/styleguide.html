@@ -103,7 +103,6 @@
       <div class="sw"><div class="chip-color" style="background:var(--good)"></div><div class="meta"><div class="tk">--good</div></div></div>
       <div class="sw"><div class="chip-color" style="background:var(--warn)"></div><div class="meta"><div class="tk">--warn</div></div></div>
       <div class="sw"><div class="chip-color" style="background:var(--danger)"></div><div class="meta"><div class="tk">--danger</div></div></div>
-      <div class="sw"><div class="chip-color" style="background:var(--cool)"></div><div class="meta"><div class="tk">--cool</div><div class="vl">B70 GPU</div></div></div>
     </div>
   </section>
 
@@ -212,33 +211,26 @@
       </div>
 
       <div class="sg-card">
-        <span class="upper" style="color:var(--muted)">Sektion + stat</span>
-        <div class="section-h"><span>Telemetri</span><span class="acc">auto</span></div>
-        <div class="sg-row" style="gap:28px">
-          <div class="stat"><span class="v">128</span><span class="l">bilder</span></div>
-          <div class="stat"><span class="v">12</span><span class="l">filmer</span></div>
+        <span class="upper" style="color:var(--muted)">Sektionsrubrik</span>
+        <div class="section-h"><span>Områden</span><span class="acc">12</span></div>
+      </div>
+
+      <div class="sg-card">
+        <span class="upper" style="color:var(--muted)">Granskningsmärken</span>
+        <div class="sg-row">
+          <span class="rev-badge ok"><span class="dot"></span>OK</span>
+          <span class="rev-badge notok"><span class="dot"></span>Inte OK</span>
+          <span class="rev-badge"><span class="dot"></span>Att granska</span>
         </div>
       </div>
 
       <div class="sg-card">
-        <span class="upper" style="color:var(--muted)">GPU-indikatorer</span>
-        <div class="sg-row">
-          <div class="gpu-pill"><span class="dot"></span>vm100 · 3090 · 41%</div>
-          <div class="gpu-pill warn"><span class="dot"></span>het</div>
-          <div class="gpu-pill idle"><span class="dot"></span>vilar</div>
-        </div>
-        <div class="sg-row" style="margin-top:10px">
-          <span class="gpu-tag"><span class="dot"></span>vm100</span>
-          <span class="gpu-tag cool"><span class="dot"></span>vm153 · B70</span>
-        </div>
-      </div>
-
-      <div class="sg-card" style="grid-column:span 2">
-        <span class="upper" style="color:var(--muted)">Auto-LoRA callout</span>
-        <div class="suggest">
-          <div class="sl">Rekommenderad LoRA</div>
-          <div class="sv">physics-vector-v3</div>
-          <div class="sn">Ämnesspecifik (Fysik × diagram) · styrka 0.86</div>
+        <span class="upper" style="color:var(--muted)">Flikar</span>
+        <div class="tabs">
+          <button class="tab active">Allt</button>
+          <button class="tab">Bilder</button>
+          <button class="tab">Filmer</button>
+          <button class="tab">Lektioner</button>
         </div>
       </div>
 

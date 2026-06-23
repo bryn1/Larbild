@@ -130,7 +130,7 @@ function AssetCard({ chain, subject, onOpen }) {
       <div className="ainfo">
         <div className="atitle">{item.title}</div>
         <div className="ameta">
-          <span className="subj-dot" style={{ background: D.subjColor(subject), width: 8, height: 8, borderRadius: 2 }} />
+          <span className="subj-dot sm" />
           {subject ? subject.short : ""} · {item.area_name || item.area}
         </div>
       </div>
@@ -330,11 +330,11 @@ function Lightbox({ chain, subject, onClose, onPersist }) {
         <button className="lb-close" onClick={onClose} aria-label="Stäng">{I.close}</button>
         <div className="lb-stage">
           {isVideoKind(item.kind)
-            ? <video src={full} controls style={{ maxWidth: "100%", maxHeight: "72vh" }} />
+            ? <video src={full} controls />
             : (full ? <img src={full} alt={item.title} /> : <div className="dim">Ingen bild</div>)}
         </div>
         <div className="lb-info">
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
+          <div className="lb-title-row">
             <div className="lb-title serif">{item.title}</div>
             {!PUBLIC_READONLY && <ReviewBadge ok={item.review_ok} />}
           </div>
@@ -576,14 +576,14 @@ function Bibliotek() {
     <div className="page" data-screen-label={"Bibliotek · " + sub.name}>
       <div className="page-head">
         <div>
-          <div className="crumb" style={{ marginBottom: 8 }}>
+          <div className="crumb">
             <a onClick={() => { setSubjectId(null); setAreaId(null); }}>Bibliotek</a>
             <span className="sep">/</span>
             <a onClick={() => setAreaId(null)}>{sub.name}</a>
             {area && <><span className="sep">/</span><span>{area.name}</span></>}
           </div>
-          <h1 className="serif" style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <span style={{ width: 44, height: 44, borderRadius: 12, display: "grid", placeItems: "center", fontSize: 24, background: D.subjSoft(sub), color: D.subjColor(sub, 0.45) }}>{sub.glyph}</span>
+          <h1 className="serif subj-hero">
+            <span className="glyph">{sub.glyph}</span>
             {area ? area.name : sub.name}
           </h1>
           <div className="caption">{(itemsLoading && kind === "all" && reviewFilter === "all" ? (area ? (area.asset_count || 0) : (sub.asset_count || 0)) : chains.length)} objekt{area ? "" : " · " + (sub.areas || []).length + " områden"}</div>
@@ -612,9 +612,9 @@ function Bibliotek() {
         </div>
       </div>
 
-      <div className="page-body" style={{ display: "grid", gridTemplateColumns: "236px 1fr", gap: 28, padding: 0 }}>
+      <div className="page-body bib-layout">
         {/* område-rail (LEVEL 2) */}
-        <div style={{ borderRight: "1px solid var(--border)", padding: "24px 18px 40px", overflowY: "auto" }}>
+        <div className="bib-area-col">
           <div className="section-h"><span>Områden</span></div>
           <div className="area-rail">
             <button className={`area-item ${!area ? "active" : ""}`} onClick={() => setAreaId(null)}>
@@ -633,11 +633,11 @@ function Bibliotek() {
         </div>
 
         {/* assets + Centralt-innehåll panel (LEVEL 3) */}
-        <div style={{ padding: "24px 34px 48px", overflowY: "auto" }}>
+        <div className="bib-asset-col">
           {area && (
-            <div className="panel" style={{ marginBottom: 22, background: D.subjSoft(sub), borderColor: "var(--brand-line)" }}>
-              <div className="panel-body" style={{ padding: "13px 16px", fontSize: 13, color: "var(--ink-2)" }}>
-                <span className="upper" style={{ color: "var(--brand-ink)", marginRight: 10 }}>Centralt innehåll</span>
+            <div className="panel central-panel">
+              <div className="panel-body">
+                <span className="upper">Centralt innehåll</span>
                 {D.centralText(area)}
               </div>
             </div>
@@ -655,7 +655,7 @@ function Bibliotek() {
                   reviewFilter === "notok" ? "Inga objekt markerade Inte OK här." :
                   `Inga ${kind === "film" ? "filmer" : kind === "bild" ? "bilder" : kind === "lektion" ? "lektioner" : "objekt"} här ännu.`}
               </div>
-              <div className="dim" style={{ marginBottom: 16 }}>
+              <div className="dim empty-hint">
                 {reviewFilter !== "all" ? "Byt filter för att se fler objekt." : "Här samlas alla importerade bilder för det här området."}
               </div>
             </div>

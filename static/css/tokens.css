@@ -58,8 +58,6 @@
   --good-line:  oklch(0.62 0.15 150 / 0.3);   /* good chip border             */
   --good-glow:  oklch(0.62 0.15 150 / 0.16);  /* ok status dot glow ring      */
   --warn-glow:  oklch(0.72 0.15 70 / 0.16);   /* warn status dot glow ring    */
-  --cool:       oklch(0.62 0.12 220);         /* "cool" GPU (B70) indicator   */
-
   /* ----- Overlays & misc surfaces ------------------------------------------ */
   --overlay-light: oklch(1 0 0 / 0.85);       /* translucent glass tag bg     */
   --scrim:         oklch(0.2 0.02 265 / 0.8); /* dark tag/overlay background   */
@@ -82,7 +80,7 @@
      sizes for hi-fi fidelity; these tokens are the named scale for composing
      new views without scattering magic font sizes. */
   --text-display: 38px;    /* page-head h1                                    */
-  --text-2xl:     28px;    /* big stat values                                */
+  --text-2xl:     28px;    /* large serif numerals (scale step)              */
   --text-xl:      22px;    /* serif card titles                              */
   --text-lg:      18px;    /* panel headings                                 */
   --text-base:    14px;    /* UI / body (default)                            */
@@ -135,7 +133,4 @@
   --shadow:    0 4px 14px oklch(0.4 0.03 265 / 0.08), 0 1px 3px oklch(0.4 0.03 265 / 0.06);
   --shadow-lg: 0 18px 50px oklch(0.3 0.04 265 / 0.16);
 
-  /* ----- Layout dimensions ------------------------------------------------- */
-  --rail-w:   248px;   /* left navigation rail width                         */
-  --topbar-h: 60px;    /* top bar height                                     */
 }
