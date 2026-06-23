@@ -53,6 +53,33 @@ echo "Installing deps..."
 venv/bin/pip install --quiet --upgrade pip
 venv/bin/pip install --quiet -r requirements.txt
 
+# Install/refresh the systemd units from the repo templates so a FRESH deploy
+# brings up the render worker (lb-3z8). The committed docs/*.service templates
+# carry a leading "#"-comment header (install hints); drop those leading comment
+# lines so only the real [Unit]/[Service] body lands. Idempotent: only
+# daemon-reload + enable when the installed unit actually changed.
+install_unit() {  # <repo-template> <dest-path>
+  local src="$1" dest="$2" tmp
+  tmp=$(mktemp)
+  # Strip the contiguous leading block of "#" comment lines (the install header).
+  sed '0,/^[^#]/{/^#/d}' "$src" > "$tmp"
+  if ! sudo cmp -s "$tmp" "$dest" 2>/dev/null; then
+    sudo install -D -m 0644 "$tmp" "$dest"
+    echo "Installed unit: $dest"
+    UNITS_CHANGED=1
+  fi
+  rm -f "$tmp"
+}
+UNITS_CHANGED=0
+install_unit "$APP/docs/larbild-worker.service" \
+  /etc/systemd/system/larbild-worker.service
+install_unit "$APP/docs/larbild.service.d-10-redis.conf" \
+  /etc/systemd/system/larbild.service.d/10-redis.conf
+if [ "$UNITS_CHANGED" -eq 1 ]; then
+  sudo systemctl daemon-reload
+  sudo systemctl enable larbild-worker.service >/dev/null 2>&1 || true
+fi
+
 echo "Restarting larbild.service + larbild-worker.service..."
 sudo systemctl restart larbild.service
 # The render worker is a SEPARATE unit (BRPOP loop → ComfyUI on the shared VM100
