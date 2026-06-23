@@ -255,6 +255,16 @@ def _register_blueprints(app: Flask) -> None:
     # from one keyframe render. The LoRA is backend-authoritative per keyframe (SFW
     # guard); live keyframe render is deferred (imagegen sweep). Built on P6 (film).
     app.register_blueprint(lessons_bp)
+    # lb-zdp: asset-lessons — group EXISTING library assets into a named, ordered
+    # lesson at /api/asset-lessons*. A SEPARATE concern from lessons_bp above
+    # (that one RENDERS a video from a manuscript; this groups assets the teacher
+    # already has) — distinct routes + distinct tables (asset_lessons /
+    # asset_lesson_items, migration 0009), reusing library._row_to_item for the
+    # asset shape. Owner-only: registered here (private LAN) but NOT in the public
+    # read-only factory above.
+    from .routes.asset_lessons import asset_lessons_bp
+
+    app.register_blueprint(asset_lessons_bp)
     # lb-eee: serve the no-build React frontend (the Bibliotek view) at / and
     # /bibliotek; repoints Flask's /static handler at the repo-root static/ dir.
     app.register_blueprint(views_bp)

@@ -35,6 +35,10 @@ const D = window.LBData;
 // only rendered when !PUBLIC_READONLY below.
 const GpuPills = window.LBGpuPills;
 const KoModal = window.LBKoModal;
+// Lektioner (asset-lessons, lb-zdp): group existing library assets into a named
+// lesson. Defined in asset_lessons.jsx, exposed on window. Owner-only.
+const LessonsModal = window.LBLessonsModal;
+const AddToLessonControl = window.LBAddToLessonControl;
 
 /* Public read-only mode (bilder.sibbamala.com): the public shell injects
    window.__LARBILD_PUBLIC_READONLY__ = true before this script runs. In that
@@ -385,6 +389,10 @@ function Lightbox({ chain, subject, onClose, onPersist, onRegenerated }) {
               on the public read-only instance (no review/regenerate there). */}
           {!PUBLIC_READONLY && <ReviewControl item={item} onPersist={onPersist} />}
 
+          {/* Add this asset to a named lesson (lb-zdp). Owner-only; grouping
+              existing assets, separate from the video funnel. */}
+          {!PUBLIC_READONLY && AddToLessonControl && <AddToLessonControl item={item} />}
+
           {/* Regenerate — only the latest version of an image chain (a regen
               extends the newest tip; films aren't regenerable in v1). Owner-only:
               not rendered on the public read-only instance. */}
@@ -430,6 +438,7 @@ function Bibliotek() {
   const [itemsByNode, setItemsByNode] = useState({});
   const [lightbox, setLightbox] = useState(null); // the version chain open in the modal, or null
   const [koOpen, setKoOpen] = useState(false); // the Kö (queue + GPU telemetry) modal, owner-only (lb-dop)
+  const [lessonsOpen, setLessonsOpen] = useState(false); // the Lektioner (asset-lessons) modal, owner-only (lb-zdp)
   // The deep-linked location read from the URL on first load (lb-review-regen):
   // restored once the tree arrives so a refresh stays put. Captured in a ref so
   // it's read exactly once (not re-applied on every render).
@@ -620,6 +629,9 @@ function Bibliotek() {
           <div className="page-head-actions">
             {!PUBLIC_READONLY && GpuPills && <GpuPills onOpenQueue={() => setKoOpen(true)} />}
             {!PUBLIC_READONLY && <span className="hsep" />}
+            {!PUBLIC_READONLY && LessonsModal && (
+              <button type="button" className="btn" onClick={() => setLessonsOpen(true)}>{I.lessons} Lektioner</button>
+            )}
             <a className="btn primary" href={D.skapaLink()}>{I.plus} Skapa bild</a>
           </div>
         </div>
@@ -629,6 +641,7 @@ function Bibliotek() {
           </div>
         </div>
         {!PUBLIC_READONLY && koOpen && KoModal && <KoModal onClose={() => setKoOpen(false)} />}
+        {!PUBLIC_READONLY && lessonsOpen && LessonsModal && <LessonsModal onClose={() => setLessonsOpen(false)} />}
       </div>
     );
   }
@@ -694,6 +707,9 @@ function Bibliotek() {
           {!PUBLIC_READONLY && <span className="hsep" />}
           {!PUBLIC_READONLY && GpuPills && <GpuPills onOpenQueue={() => setKoOpen(true)} />}
           {!PUBLIC_READONLY && <span className="hsep" />}
+          {!PUBLIC_READONLY && LessonsModal && (
+            <button type="button" className="btn" onClick={() => setLessonsOpen(true)}>{I.lessons} Lektioner</button>
+          )}
           {!PUBLIC_READONLY && (
             <a className="btn primary" href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa här</a>
           )}
@@ -763,6 +779,7 @@ function Bibliotek() {
         />
       )}
       {!PUBLIC_READONLY && koOpen && KoModal && <KoModal onClose={() => setKoOpen(false)} />}
+      {!PUBLIC_READONLY && lessonsOpen && LessonsModal && <LessonsModal onClose={() => setLessonsOpen(false)} />}
     </div>
   );
 }
