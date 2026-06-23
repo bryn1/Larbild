@@ -134,41 +134,101 @@ _TEXT_EL = re.compile(r"(<text\b[^>]*>)(.*?)(</text>)", re.S)
 # A marker-{start,mid,end}="url(#id)" presentation attribute (and the id it points
 # at) — a few SVGs reference an arrowhead marker that was never <marker>-defined,
 # which crashes cairosvg's strict renderer.
-_MARKER_ATTR = re.compile(r'\s*marker-(?:start|mid|end)\s*=\s*"url\(#([^)"]+)\)"')
+_MARKER_ATTR = re.compile(r'marker-(?:start|mid|end)\s*=\s*"url\(#([^)"]+)\)"')
+# A real ``<tspan …>`` / ``</tspan>`` child of a <text> element. These are LEGAL
+# SVG markup and MUST survive the stray-bracket escaping in repair 2 — escaping
+# them is what leaked literal ``<tspan>`` into rendered text (the Lokalnät bug).
+_TSPAN_TAG = re.compile(r"</?tspan\b[^>]*>", re.I)
+
+# id of the default arrowhead marker injected when a dangling ``marker-*`` ref is
+# found (repair 4) so the tip RENDERS instead of being silently dropped.
+_DEFAULT_ARROW_ID = "lbDefaultArrow"
+_DEFAULT_ARROW_DEF = (
+    f'<defs><marker id="{_DEFAULT_ARROW_ID}" viewBox="0 0 10 10" '
+    'refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">'
+    '<path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker></defs>'
+)
+
+# Glyph → font-independent substitution (repair 5). The render font matched for
+# ``font-family="Arial,…"`` (Arimo, on the deploy host) lacks these, so they
+# rastered as tofu □. Superscripts/subscripts become baseline-shifted <tspan> with
+# a plain ASCII digit (meaning preserved, renders in any font); the decorative
+# snowflake becomes an asterisk (a universal cold/ice marker). The map carries the
+# glyphs the corpus actually uses; extend it here when a new tofu glyph appears.
+_SUP = '<tspan baseline-shift="super" font-size="0.7em">{}</tspan>'
+_SUB = '<tspan baseline-shift="sub" font-size="0.7em">{}</tspan>'
+_GLYPH_SUBS: dict[str, str] = {
+    # superscripts (m² / m³)
+    "¹": _SUP.format("1"), "²": _SUP.format("2"), "³": _SUP.format("3"),
+    "⁰": _SUP.format("0"), "⁴": _SUP.format("4"), "⁵": _SUP.format("5"),
+    "⁶": _SUP.format("6"), "⁷": _SUP.format("7"), "⁸": _SUP.format("8"),
+    "⁹": _SUP.format("9"), "⁺": _SUP.format("+"), "⁻": _SUP.format("-"),
+    # subscripts (CO₂ / H₂O)
+    "₀": _SUB.format("0"), "₁": _SUB.format("1"), "₂": _SUB.format("2"),
+    "₃": _SUB.format("3"), "₄": _SUB.format("4"), "₅": _SUB.format("5"),
+    "₆": _SUB.format("6"), "₇": _SUB.format("7"), "₈": _SUB.format("8"),
+    "₉": _SUB.format("9"),
+    # decorative snowflake / cold marker
+    "❄": "*",
+}
+_GLYPH_RE = re.compile("|".join(re.escape(g) for g in _GLYPH_SUBS))
 
 
 def _sanitise_svg(svg_text: str) -> str:
-    """Repair browser-lenient SVG so cairosvg's strict parser/renderer accepts it.
+    """Repair browser-lenient SVG so cairosvg's strict renderer renders it correctly.
 
     NON-DESTRUCTIVE to the source on disk — this only repairs the in-memory copy
     fed to the rasteriser; the verbatim ``.svg`` is still copied unchanged into
-    storage (the true vector). Three repairs, each a no-op when not needed:
+    storage (the true vector). Each repair is a no-op when not needed:
 
       1. escape a bare ``&`` not starting a valid entity → ``&amp;``;
       2. escape stray ``<`` / ``>`` INSIDE ``<text>…</text>`` content (e.g.
-         ``p < p`` / ``<0.01 nm``) → ``&lt;`` / ``&gt;`` (markup is untouched —
-         only the text node body is escaped);
-      3. drop a ``marker-*="url(#id)"`` attribute whose ``#id`` has no matching
-         ``<marker id="id">`` definition (a dangling arrowhead ref → cairosvg
-         ``AttributeError``); the path still renders, just without the tiny tip.
+         ``p < p`` / ``<0.01 nm``) → ``&lt;`` / ``&gt;`` — but PRESERVE any real
+         ``<tspan …>`` / ``</tspan>`` child markup (escaping those leaked literal
+         ``<tspan>`` into the rendered text — the Lokalnät bug);
+      3. substitute tofu glyphs (❄, ⁺/⁻, super/subscript digits) the render font
+         lacks with font-independent equivalents (baseline-shifted ASCII tspans,
+         ``*`` for the snowflake) so they render instead of as empty □ boxes;
+      4. for a ``marker-*="url(#id)"`` ref whose ``#id`` has no matching
+         ``<marker id="id">``, inject a default arrowhead marker and re-point the
+         ref at it, so the arrowhead RENDERS (was silently stripped before).
     """
     # 1) bare ampersands anywhere.
     svg_text = _BARE_AMP.sub("&amp;", svg_text)
 
-    # 2) stray <, > inside text element bodies only.
+    # 2) stray <, > inside text element bodies only, preserving real <tspan> tags.
     def _fix_text(m: "re.Match[str]") -> str:
-        body = m.group(2).replace("<", "&lt;").replace(">", "&gt;")
-        return m.group(1) + body + m.group(3)
+        body = m.group(2)
+        # Carve out the legal <tspan>/</tspan> tags so escaping skips them, then
+        # restore them verbatim. Anything else in the body is plain text content.
+        parts = _TSPAN_TAG.split(body)
+        tags = _TSPAN_TAG.findall(body)
+        escaped = [p.replace("<", "&lt;").replace(">", "&gt;") for p in parts]
+        rebuilt = escaped[0]
+        for tag, chunk in zip(tags, escaped[1:]):
+            rebuilt += tag + chunk
+        return m.group(1) + rebuilt + m.group(3)
 
     svg_text = _TEXT_EL.sub(_fix_text, svg_text)
 
-    # 3) strip dangling marker refs (id not defined by a <marker id=...>).
+    # 3) substitute tofu glyphs the render font lacks.
+    svg_text = _GLYPH_RE.sub(lambda m: _GLYPH_SUBS[m.group(0)], svg_text)
+
+    # 4) re-point dangling marker refs at an injected default arrowhead so the tip
+    #    renders (a dangling ref also crashes cairosvg's strict renderer).
     defined = set(re.findall(r'<marker\b[^>]*\bid\s*=\s*"([^"]+)"', svg_text))
+    needs_default = [False]
 
     def _fix_marker(m: "re.Match[str]") -> str:
-        return "" if m.group(1) not in defined else m.group(0)
+        if m.group(1) in defined:
+            return m.group(0)
+        needs_default[0] = True
+        return m.group(0).replace(f"url(#{m.group(1)})", f"url(#{_DEFAULT_ARROW_ID})")
 
     svg_text = _MARKER_ATTR.sub(_fix_marker, svg_text)
+    if needs_default[0]:
+        # Inject the default marker <defs> right after the opening <svg …> tag.
+        svg_text = re.sub(r"(<svg\b[^>]*>)", r"\1" + _DEFAULT_ARROW_DEF, svg_text, count=1)
     return svg_text
 
 

@@ -169,10 +169,47 @@ def test_sanitiser_repairs_messy_svg_so_it_rasterises(tmp_path):
     w, h = import_skola._rasterise(messy, out)
     assert out.exists() and out.stat().st_size > 0 and w == import_skola.RASTER_WIDTH
     # The sanitiser is the reason — confirm it escaped the illegal chars and
-    # dropped the dangling marker ref.
+    # re-pointed the dangling marker ref at the injected default arrowhead so the
+    # tip renders (instead of being silently stripped).
     fixed = import_skola._sanitise_svg(_MESSY_SVG)
     assert "p &lt; p" in fixed and "&amp; mer" in fixed
-    assert "marker-end" not in fixed
+    assert "url(#noSuchTip)" not in fixed
+    assert f"url(#{import_skola._DEFAULT_ARROW_ID})" in fixed
+    assert f'<marker id="{import_skola._DEFAULT_ARROW_ID}"' in fixed
+
+
+def test_sanitiser_preserves_real_tspan_markup(tmp_path):
+    # A legal <tspan> child of <text> must survive escaping (the Lokalnät bug:
+    # it was turned into literal &lt;tspan&gt; and leaked as visible text).
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">'
+        '<text x="400" y="385" font-size="14">A &lt; B '
+        '<tspan fill="#dc2626" font-weight="bold">Lokalnät</tspan> end</text></svg>'
+    )
+    fixed = import_skola._sanitise_svg(svg)
+    # the real tspan markup is intact (not escaped) …
+    assert '<tspan fill="#dc2626" font-weight="bold">Lokalnät</tspan>' in fixed
+    assert "&lt;tspan" not in fixed
+    # … and renders without leaking literal markup.
+    out = tmp_path / "tspan.png"
+    src = _write(tmp_path, "tspan.svg", svg)
+    import_skola._rasterise(src, out)
+    assert out.exists() and out.stat().st_size > 0
+
+
+def test_sanitiser_substitutes_tofu_glyphs():
+    # ❄, superscripts and subscripts the render font lacks are replaced with
+    # font-independent equivalents so they render instead of as □ tofu.
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">'
+        '<text x="0" y="0">Area 15 m² · CO₂ ut · ❄</text></svg>'
+    )
+    fixed = import_skola._sanitise_svg(svg)
+    assert "²" not in fixed and "₂" not in fixed and "❄" not in fixed
+    assert '<tspan baseline-shift="super" font-size="0.7em">2</tspan>' in fixed
+    assert '<tspan baseline-shift="sub" font-size="0.7em">2</tspan>' in fixed
+    assert "❄ " not in fixed  # snowflake gone
+    assert " * " not in fixed or "*" in fixed  # replaced by the asterisk marker
 
 
 # ── 3) end-to-end import (temp DB + storage) ────────────────────────────────
