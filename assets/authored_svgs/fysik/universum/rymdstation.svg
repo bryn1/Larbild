@@ -4,6 +4,7 @@
 
 <!-- orbit: dashed ellipse centred ON the Earth, so the station clearly circles the Earth -->
 <ellipse cx="400.0" cy="270.0" rx="320.0" ry="160.0" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="7,5"/>
+<text x="120" y="405" font-family="Arial,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">omloppsbana</text>
 
 <!-- Earth at the CENTRE of the orbit (the body being orbited) -->
 <circle cx="400.0" cy="270.0" r="60.0" fill="#2563eb" stroke="#1e40af" stroke-width="2.5"/>
