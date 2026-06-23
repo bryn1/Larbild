@@ -194,3 +194,108 @@ def test_film_job_uses_video_type(db, fake_redis):
     assert row["kind"] == "film"
     assert row["video_type"] == "lektionsfilm"
     assert row["image_type"] is None
+
+
+# ── lb-07y: Kö management actions (list / cancel / retry) ────────────────────
+
+
+def _set_db_status(db, job_id, status):
+    from app.db import now_iso
+    with connect(db) as conn:
+        conn.execute("UPDATE jobs SET status = ?, finished_at = ? WHERE id = ?",
+                     (status, now_iso(), job_id))
+
+
+def test_list_jobs_newest_first_and_status_filter(db, fake_redis):
+    a = jobs.enqueue_job(kind="bild", subject="fysik", area="ljud",
+                         image_type="illustration", prompt="a")
+    b = jobs.enqueue_job(kind="bild", subject="kemi", area="vatten",
+                         image_type="illustration", prompt="b")
+    rows = jobs.list_jobs()
+    # Both rows present, newest-first by queued_at (same-second inserts tiebreak
+    # by id DESC — the contract is "recent jobs", not exact insertion order).
+    assert {a, b} <= {r["id"] for r in rows}
+    # filter to queued only (both are queued live)
+    queued = jobs.list_jobs(status="queued")
+    assert {r["id"] for r in queued} == {a, b}
+    # a status no job has → empty
+    assert jobs.list_jobs(status="done") == []
+
+
+def test_list_jobs_overlays_live_status(db, fake_redis):
+    job_id = jobs.enqueue_job(kind="bild", subject="fysik", area="ljud",
+                              image_type="illustration", prompt="x")
+    jobs.write_job_state(job_id, {"job_id": job_id, "status": "running",
+                                  "progress_step": 1, "progress_total": 4})
+    [row] = [r for r in jobs.list_jobs() if r["id"] == job_id]
+    assert row["status"] == "running"  # live overlay beats the durable 'queued'
+
+
+def test_cancel_queued_job_removes_from_queue_and_marks_cancelled(db, fake_redis):
+    job_id = jobs.enqueue_job(kind="bild", subject="fysik", area="ljud",
+                              image_type="illustration", prompt="x")
+    assert fake_redis.llen("larbild:render:task_queue") == 1
+    state = jobs.cancel_job(job_id)
+    assert state["status"] == "cancelled"
+    # LREM'd off the pending queue → the worker can never pick it (no orphan)
+    assert fake_redis.llen("larbild:render:task_queue") == 0
+    assert jobs.read_job_state(job_id)["status"] == "cancelled"
+    assert jobs.get_job_row(job_id)["status"] == "cancelled"
+
+
+def test_cancel_is_idempotent_and_rejects_terminal(db, fake_redis):
+    job_id = jobs.enqueue_job(kind="bild", subject="fysik", area="ljud",
+                              image_type="illustration", prompt="x")
+    jobs.cancel_job(job_id)
+    assert jobs.cancel_job(job_id)["status"] == "cancelled"  # idempotent
+    # a done job cannot be cancelled
+    other = jobs.enqueue_job(kind="bild", subject="kemi", area="vatten",
+                             image_type="illustration", prompt="y")
+    jobs.write_job_state(other, {"job_id": other, "status": "done", "library_id": "L1"})
+    with pytest.raises(jobs.JobNotActionable):
+        jobs.cancel_job(other)
+
+
+def test_cancel_unknown_raises(db, fake_redis):
+    with pytest.raises(jobs.UnknownJob):
+        jobs.cancel_job("nope-not-a-job")
+
+
+def test_is_cancelled_reflects_state(db, fake_redis):
+    job_id = jobs.enqueue_job(kind="bild", subject="fysik", area="ljud",
+                              image_type="illustration", prompt="x")
+    assert jobs.is_cancelled(job_id) is False
+    jobs.cancel_job(job_id)
+    assert jobs.is_cancelled(job_id) is True
+
+
+def test_retry_failed_job_requeues_same_id(db, fake_redis):
+    job_id = jobs.enqueue_job(kind="bild", subject="fysik", area="ljud",
+                              image_type="illustration", prompt="x")
+    fake_redis.brpop("larbild:render:task_queue")  # simulate worker claim
+    jobs.write_job_state(job_id, {"job_id": job_id, "status": "failed",
+                                  "error": "boom"})
+    assert fake_redis.llen("larbild:render:task_queue") == 0
+    out = jobs.retry_job(job_id)
+    assert out == job_id  # same id, true re-drive
+    assert fake_redis.llen("larbild:render:task_queue") == 1
+    assert jobs.read_job_state(job_id)["status"] == "queued"
+    row = jobs.get_job_row(job_id)
+    assert row["status"] == "queued"
+    assert row["error"] is None  # lifecycle reset
+
+
+def test_retry_cancelled_job_ok_but_running_rejected(db, fake_redis):
+    job_id = jobs.enqueue_job(kind="bild", subject="fysik", area="ljud",
+                              image_type="illustration", prompt="x")
+    jobs.cancel_job(job_id)
+    assert jobs.retry_job(job_id) == job_id  # cancelled → retryable
+    # a running job is not retryable (already in flight)
+    jobs.write_job_state(job_id, {"job_id": job_id, "status": "running"})
+    with pytest.raises(jobs.JobNotActionable):
+        jobs.retry_job(job_id)
+
+
+def test_retry_unknown_raises(db, fake_redis):
+    with pytest.raises(jobs.UnknownJob):
+        jobs.retry_job("nope")

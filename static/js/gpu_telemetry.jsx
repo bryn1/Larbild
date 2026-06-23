@@ -238,10 +238,124 @@
     );
   }
 
+  /* ---------- job management (lb-07y) ---------- */
+  // Owner-only render-queue actions, surfaced inside the Kö modal: list the
+  // recent jobs and cancel a queued/running one or retry a failed/cancelled one.
+  // Backed by the OWNER-ONLY endpoints (the jobs blueprint isn't registered on
+  // the public read-only instance, and the modal itself never mounts there):
+  //   GET  /api/jobs?status=&limit=   POST /api/jobs/<id>/cancel   /retry
+  // Polls the list on a slow tick so an action's effect (and the worker's own
+  // transitions) show up without a manual reload.
+  function useJobList(pollMs = 3000) {
+    const [jobs, setJobs] = useState(null);   // null = loading; [] = empty
+    const [error, setError] = useState(null);
+    const reload = React.useCallback(() => {
+      return fetch("/api/jobs?limit=60")
+        .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
+        .then((d) => { setJobs(d.jobs || []); setError(null); })
+        .catch((e) => { setError(String(e.message || e)); });
+    }, []);
+    useEffect(() => {
+      let alive = true;
+      const tick = () => { if (alive) reload(); };
+      tick();
+      const id = setInterval(tick, pollMs);
+      return () => { alive = false; clearInterval(id); };
+    }, [reload, pollMs]);
+    return { jobs, error, reload };
+  }
+
+  const ACTIVE_STATUS = { queued: 1, running: 1 };       // cancellable
+  const RETRYABLE_STATUS = { failed: 1, cancelled: 1 };  // retryable
+
+  function statusLabel(s) {
+    return ({ queued: "i kö", running: "kör", done: "klar",
+              failed: "misslyckades", cancelled: "avbruten" })[s] || s;
+  }
+
+  // One row in the job-management table. Shows the job's subject/area/type +
+  // status, with a Cancel (queued/running) or Retry (failed/cancelled) action.
+  function JobRow({ job, busy, onCancel, onRetry }) {
+    const s = job.status;
+    const typ = job.image_type || job.video_type || job.kind;
+    return (
+      <div className="ko-job" data-status={s}>
+        <div className="ko-job-main">
+          <span className={`ko-job-dot ${s}`} />
+          <div className="ko-job-text">
+            <div className="ko-job-title">{job.title || `${job.subject} · ${job.area}`}</div>
+            <div className="ko-job-meta mono dim">{typ} · {shortId(job.id)}
+              {job.error ? ` · ${String(job.error).slice(0, 60)}` : ""}</div>
+          </div>
+        </div>
+        <div className="ko-job-side">
+          <span className={`ko-job-status ${s}`}>{statusLabel(s)}</span>
+          {ACTIVE_STATUS[s] && (
+            <button type="button" className="ko-act cancel" disabled={busy}
+              onClick={() => onCancel(job.id)} title="Avbryt jobbet">Avbryt</button>
+          )}
+          {RETRYABLE_STATUS[s] && (
+            <button type="button" className="ko-act retry" disabled={busy}
+              onClick={() => onRetry(job.id)} title="Köa om jobbet">Försök igen</button>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // The job-management list inside the Kö modal: live job rows + cancel/retry.
+  function JobQueueList() {
+    const { jobs, error, reload } = useJobList();
+    const [busyId, setBusyId] = useState(null);
+    const [actErr, setActErr] = useState(null);
+
+    const act = (id, path) => {
+      setBusyId(id); setActErr(null);
+      fetch(path, { method: "POST" })
+        .then((r) => (r.ok ? r.json()
+          : r.json().catch(() => ({})).then((b) => Promise.reject(new Error(b.error || `HTTP ${r.status}`)))))
+        .then(() => reload())
+        .catch((e) => setActErr(String(e.message || e)))
+        .finally(() => setBusyId(null));
+    };
+    const onCancel = (id) => act(id, `/api/jobs/${id}/cancel`);
+    const onRetry = (id) => act(id, `/api/jobs/${id}/retry`);
+
+    // Surface the actionable + recent jobs first (active, then the rest).
+    const ordered = (jobs || []).slice().sort((a, b) => {
+      const rank = (j) => (ACTIVE_STATUS[j.status] ? 0 : RETRYABLE_STATUS[j.status] ? 1 : 2);
+      return rank(a) - rank(b);
+    });
+
+    return (
+      <div className="ko-jobs">
+        <div className="ko-jobs-head">
+          <span className="ko-jobs-title serif">Renderjobb</span>
+          {actErr && <span className="ko-jobs-err mono">{actErr}</span>}
+        </div>
+        {jobs === null ? (
+          <div className="dim">Läser jobb…</div>
+        ) : error ? (
+          <div className="ko-jobs-err mono">Kunde inte läsa jobb: {error}</div>
+        ) : ordered.length === 0 ? (
+          <div className="dim">Inga renderjobb.</div>
+        ) : (
+          <div className="ko-job-list">
+            {ordered.map((j) => (
+              <JobRow key={j.id} job={j} busy={busyId === j.id}
+                onCancel={onCancel} onRetry={onRetry} />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
+
   /* ---------- the Kö (queue) modal ---------- */
   // Opened from a GPU pill. Live per-host telemetry cards + the render-queue
-  // depth. Closes on backdrop / × / Escape. Reuses the .lb-backdrop scrim; a
-  // dedicated .ko-modal (single column) rather than the lightbox's 2-col grid.
+  // depth + the owner-only job-management list (lb-07y). Closes on backdrop / ×
+  // / Escape. Reuses the .lb-backdrop scrim; a dedicated .ko-modal (single
+  // column) rather than the lightbox's 2-col grid.
   function KoModal({ onClose }) {
     const telem = useGpuTelemetry();
     const vm100 = gpuView(telem, "vm100");
@@ -278,6 +392,8 @@
             ) : (
               <div className="empty"><div className="dim">Läser in GPU-telemetri…</div></div>
             )}
+            {/* lb-07y: owner-only render-queue management (cancel / retry). */}
+            <JobQueueList />
           </div>
         </div>
       </div>

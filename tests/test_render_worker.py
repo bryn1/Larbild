@@ -613,3 +613,19 @@ def test_diagram_job_without_params_falls_back_to_title(app, fake_redis):
                                (lib_id,)).fetchone()
         # the title became the diagram's process label
         assert "Elektrisk krets" in (row["prompt"] or "")
+
+
+# ── lb-07y: cooperative cancel — a cancelled job never reaches the GPU ────────
+
+
+def test_cancelled_job_is_not_rendered(app, fake_redis):
+    """render_job bails before submit when the job was cancelled (no GPU touch)."""
+    with app.app_context():
+        job_id = _enqueue_bild()
+        jobs.cancel_job(job_id)  # marks 'cancelled' + LREMs it off the queue
+        client = MockComfyClient()
+        out = rw.render_job(job_id, comfy_factory=lambda: client,
+                            render_cm=ResidencySpy(), poll_s=0.0)
+        assert out is None                      # skipped, no library row
+        assert client.submitted == []           # NEVER submitted to ComfyUI
+        assert jobs.read_job_state(job_id)["status"] == "cancelled"

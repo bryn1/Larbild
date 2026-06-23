@@ -56,7 +56,7 @@ from . import workflow as _workflow
 from .comfyui import ComfyResult, ComfyUIClient, default_comfyui_url, extract_output_images
 from .db import connect, new_id, now_iso
 from .gpu_telemetry import RENDER_TARGETS
-from .jobs import QUEUE_KEY, get_job_row, get_redis, write_job_state
+from .jobs import QUEUE_KEY, get_job_row, get_redis, is_cancelled, write_job_state
 
 # redis exception types for the BRPOP idle/connectivity handling (hq-wc6i).
 # Imported defensively: redis is a hard dep for the worker, but the module is
@@ -450,6 +450,13 @@ def render_job(
     if _procedural.is_structured_image_type(job["image_type"]):
         return _render_procedural_job(job)
 
+    # Cooperative cancel (lb-07y): if the job was cancelled between BRPOP and now,
+    # bail before marking it running / touching the GPU. The 'cancelled' state
+    # already written by cancel_job stands.
+    if is_cancelled(job_id):
+        log.info("render_job: %s cancelled before render started; skipping", job_id)
+        return None
+
     try:
         write_job_state(job_id, {"job_id": job_id, "status": "running",
                                  "progress_step": 0, "progress_total": 1})
@@ -714,6 +721,13 @@ def run_worker_loop(stop: Optional[Callable[[], bool]] = None) -> None:
         if popped is None:
             continue
         _key, job_id = popped
+        # Cooperative cancel (lb-07y): a job cancelled while it sat in the queue —
+        # or in the BRPOP race window after cancel_job's LREM — must NOT render.
+        # cancel_job already marked the live state 'cancelled'; skip it here so no
+        # GPU work happens and the cancelled status stands.
+        if is_cancelled(job_id):
+            log.info("render worker: skipping cancelled job %s", job_id)
+            continue
         try:
             render_job(job_id)
         except RenderError as e:

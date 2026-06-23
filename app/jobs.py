@@ -50,6 +50,8 @@ __all__ = [
     "QUEUE_KEY",
     "JOB_STATE_PREFIX",
     "QueueFull",
+    "UnknownJob",
+    "JobNotActionable",
     "get_redis",
     "set_redis",
     "enqueue_job",
@@ -57,6 +59,10 @@ __all__ = [
     "write_job_state",
     "queue_depth",
     "get_job_row",
+    "list_jobs",
+    "cancel_job",
+    "retry_job",
+    "is_cancelled",
     "reconcile_stuck_jobs",
 ]
 
@@ -82,6 +88,28 @@ class QueueFull(RuntimeError):
         self.depth = depth
         self.limit = limit
         super().__init__(f"render queue full: {depth} >= {limit}")
+
+
+class UnknownJob(LookupError):
+    """No durable ``jobs`` row for this id (HTTP 404)."""
+
+    def __init__(self, job_id: str):
+        self.job_id = job_id
+        super().__init__(f"unknown job: {job_id}")
+
+
+class JobNotActionable(RuntimeError):
+    """The requested action does not apply to the job's current status (409).
+
+    e.g. cancelling a job that is already terminal, or retrying a job that did
+    not fail. Carries the current status so the caller can explain it.
+    """
+
+    def __init__(self, job_id: str, status: str, action: str):
+        self.job_id = job_id
+        self.status = status
+        self.action = action
+        super().__init__(f"cannot {action} job {job_id}: status is {status!r}")
 
 
 def set_redis(client: Optional[Any]) -> None:
@@ -318,6 +346,157 @@ def enqueue_job(
         log.exception("enqueue_job: redis push failed for %s", job_id)
         raise
     log.info("enqueued render job %s kind=%s subject=%s/%s", job_id, kind, subject, area)
+    return job_id
+
+
+def list_jobs(*, status: Optional[str] = None, limit: int = 100) -> list[dict]:
+    """The most-recent durable ``jobs`` rows, newest first — the Kö management feed.
+
+    Backs the owner-only Kö (queue) management view (lb-07y): the per-job table it
+    needs to cancel/retry against. Reads SQLite (the authoritative "did this job
+    exist / what was it" store), then overlays the LIVE Redis status so a row that
+    just transitioned (queued→running→done) reflects reality before the durable
+    mirror catches up.
+
+    ``status`` optionally filters to one lifecycle state (queued / running / done /
+    failed / cancelled) — the view typically asks for the actionable
+    (queued, running, failed) rows. ``limit`` is clamped 1..500.
+    """
+    limit = max(1, min(int(limit), 500))
+    where = ""
+    params: list[Any] = []
+    if status:
+        where = "WHERE status = ?"
+        params.append(status)
+    params.append(limit)
+    with connect() as conn:
+        rows = conn.execute(
+            "SELECT id, kind, status, subject, area, image_type, video_type, "
+            "title, backend, error, library_id, progress_step, progress_total, "
+            "queued_at, started_at, finished_at "
+            f"FROM jobs {where} ORDER BY queued_at DESC, id DESC LIMIT ?",
+            params,
+        ).fetchall()
+    out: list[dict] = []
+    for row in rows:
+        job = dict(row)
+        # Overlay the live Redis state (fresher than the durable mirror) so the UI
+        # never shows a stale 'queued' for a job already running. Best-effort: if
+        # Redis is down the durable row stands.
+        live = None
+        try:
+            raw = get_redis().get(_state_key(job["id"]))
+            if raw is not None:
+                live = json.loads(raw)
+        except Exception:  # noqa: BLE001 — overlay is advisory
+            live = None
+        if live:
+            if live.get("status"):
+                job["status"] = live["status"]
+            for k in ("progress_step", "progress_total", "error", "library_id"):
+                if live.get(k) is not None:
+                    job[k] = live[k]
+    # filter AGAIN on the overlaid status when a status filter was asked, so a row
+    # whose live state diverged from the DB doesn't leak into the wrong bucket.
+        if status and job["status"] != status:
+            continue
+        out.append(job)
+    return out
+
+
+def is_cancelled(job_id: str) -> bool:
+    """True if the job's live state is ``cancelled`` — the worker's cancel check.
+
+    The render worker calls this right after BRPOP (before it starts a render) so
+    a job cancelled while it sat in the queue — or in the BRPOP race window — is
+    skipped instead of rendered. Best-effort: on a Redis error it returns False so
+    a transient blip never silently drops a legitimate job.
+    """
+    try:
+        raw = get_redis().get(_state_key(job_id))
+    except Exception:  # noqa: BLE001 — fail open: render rather than drop
+        return False
+    if raw is None:
+        return False
+    try:
+        return json.loads(raw).get("status") == "cancelled"
+    except Exception:  # noqa: BLE001
+        return False
+
+
+def cancel_job(job_id: str) -> dict:
+    """Cancel a queued or running job. Returns the new state dict.
+
+    Idempotent on a queued/running job; raises :class:`UnknownJob` for an unknown
+    id and :class:`JobNotActionable` for a job already in a terminal state
+    (done/failed/cancelled — re-cancelling cancelled is a no-op success, not an
+    error).
+
+    Mechanics — no orphaned jobs left behind:
+      1. Mark the live Redis state ``cancelled`` + mirror the durable row. The
+         worker checks :func:`is_cancelled` after BRPOP, so a job popped after this
+         write is skipped without rendering.
+      2. LREM the id off the queue list (count=0 → all copies) so an unclaimed job
+         never even reaches a worker. A running job is already off the list; the
+         state flag above is what stops it (cooperative cancel at the next safe
+         point — the worker re-checks before the GPU submit).
+    """
+    job = get_job_row(job_id)
+    if job is None:
+        raise UnknownJob(job_id)
+    # Resolve the effective current status (live Redis overlay wins).
+    state = read_job_state(job_id) or {}
+    status = state.get("status") or job["status"]
+    if status == "cancelled":
+        return {"job_id": job_id, "status": "cancelled"}  # idempotent no-op
+    if status in ("done", "failed"):
+        raise JobNotActionable(job_id, status, "cancel")
+
+    cancelled = {"job_id": job_id, "status": "cancelled"}
+    write_job_state(job_id, cancelled)  # mirrors to the durable row too
+    # Drop every copy of the id from the pending queue list. Best-effort: a
+    # running job isn't on the list (LREM is a 0 no-op), the state flag handles it.
+    try:
+        get_redis().lrem(QUEUE_KEY, 0, job_id)
+    except Exception as e:  # noqa: BLE001 — the cancelled state already stands
+        log.warning("cancel_job: LREM failed for %s: %s", job_id, e)
+    log.info("cancelled render job %s (was %s)", job_id, status)
+    return cancelled
+
+
+def retry_job(job_id: str) -> str:
+    """Re-queue a failed or cancelled job under the SAME id. Returns the job id.
+
+    Raises :class:`UnknownJob` for an unknown id and :class:`JobNotActionable`
+    unless the job is in a terminal-but-not-done state (failed / cancelled —
+    re-running a ``done`` job would duplicate a good artefact; a queued/running job
+    is already in flight). Reuses the durable row's render parameters (no second
+    enqueue path): resets the lifecycle columns, seeds a fresh ``queued`` live
+    state, and LPUSHes the id back onto the queue so the worker re-drives it.
+    """
+    job = get_job_row(job_id)
+    if job is None:
+        raise UnknownJob(job_id)
+    state = read_job_state(job_id) or {}
+    status = state.get("status") or job["status"]
+    if status not in ("failed", "cancelled"):
+        raise JobNotActionable(job_id, status, "retry")
+
+    # Reset the durable lifecycle columns on the existing row (REUSE its render
+    # params — same id, same subject/area/prompt/seed/lora) so retry is a true
+    # re-drive, not a second job record.
+    with connect() as conn:
+        conn.execute(
+            "UPDATE jobs SET status = 'queued', error = NULL, library_id = NULL, "
+            "progress_step = NULL, progress_total = NULL, started_at = NULL, "
+            "finished_at = NULL WHERE id = ?",
+            (job_id,),
+        )
+    initial = {"job_id": job_id, "status": "queued"}
+    r = get_redis()
+    r.set(_state_key(job_id), json.dumps(initial), ex=JOB_STATE_TTL_S)
+    r.lpush(QUEUE_KEY, job_id)
+    log.info("retried render job %s (was %s)", job_id, status)
     return job_id
 
 

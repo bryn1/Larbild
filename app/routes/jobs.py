@@ -37,9 +37,14 @@ from flask import Blueprint, Response, jsonify, request, stream_with_context
 
 from .. import taxonomy
 from ..jobs import (
+    JobNotActionable,
     QueueFull,
+    UnknownJob,
+    cancel_job,
     enqueue_job,
+    list_jobs,
     read_job_state,
+    retry_job,
 )
 
 jobs_bp = Blueprint("jobs", __name__)
@@ -178,6 +183,30 @@ def submit_job():
     }), 202
 
 
+_LISTABLE_STATUS = ("queued", "running", "done", "failed", "cancelled")
+
+
+@jobs_bp.get("/api/jobs")
+def list_jobs_route():
+    """The recent jobs feed for the owner-only Kö management view (lb-07y).
+
+    Query: ``?status=`` (one of queued/running/done/failed/cancelled — omit for
+    all), ``?limit=`` (1..500, default 100). Returns ``{jobs: [...]}`` newest
+    first, each row carrying the live-overlaid status so the UI shows current
+    state. Owner-only by construction: this blueprint is not registered on the
+    public read-only instance.
+    """
+    status = (request.args.get("status") or "").strip() or None
+    if status is not None and status not in _LISTABLE_STATUS:
+        return jsonify({"error": f"invalid status: {status!r}",
+                        "valid": list(_LISTABLE_STATUS)}), 400
+    try:
+        limit = int(request.args.get("limit", 100))
+    except (TypeError, ValueError):
+        return jsonify({"error": "limit must be an integer"}), 400
+    return jsonify({"jobs": list_jobs(status=status, limit=limit)}), 200
+
+
 @jobs_bp.get("/api/jobs/<job_id>")
 def get_job(job_id: str):
     """The current state of a job, or 404 if unknown to both Redis and SQLite."""
@@ -185,6 +214,41 @@ def get_job(job_id: str):
     if state is None:
         return jsonify({"error": "unknown job", "job_id": job_id}), 404
     return jsonify(state), 200
+
+
+@jobs_bp.post("/api/jobs/<job_id>/cancel")
+def cancel_job_route(job_id: str):
+    """Cancel a queued or running job (owner-only Kö management, lb-07y).
+
+    200 with the new ``cancelled`` state; 404 unknown id; 409 if the job is
+    already done/failed (not actionable). Re-cancelling a cancelled job is an
+    idempotent 200. The queue LREM + cooperative-cancel flag mean no orphaned job
+    is left behind.
+    """
+    try:
+        state = cancel_job(job_id)
+    except UnknownJob:
+        return jsonify({"error": "unknown job", "job_id": job_id}), 404
+    except JobNotActionable as e:
+        return jsonify({"error": str(e), "job_id": job_id, "status": e.status}), 409
+    return jsonify(state), 200
+
+
+@jobs_bp.post("/api/jobs/<job_id>/retry")
+def retry_job_route(job_id: str):
+    """Re-queue a failed or cancelled job under the same id (owner-only, lb-07y).
+
+    202 ``{job_id, status: "queued"}`` (the work is re-queued, not done); 404
+    unknown id; 409 if the job is not in a retryable (failed/cancelled) state.
+    Reuses the durable row's render params — a true re-drive, not a new job.
+    """
+    try:
+        retry_job(job_id)
+    except UnknownJob:
+        return jsonify({"error": "unknown job", "job_id": job_id}), 404
+    except JobNotActionable as e:
+        return jsonify({"error": str(e), "job_id": job_id, "status": e.status}), 409
+    return jsonify({"job_id": job_id, "status": "queued"}), 202
 
 
 @jobs_bp.get("/api/jobs/<job_id>/events")

@@ -436,6 +436,43 @@ button.gpu-pill:hover { border-color: var(--brand-line); background: var(--surfa
 .tele-bars .bar-fill { height: 100%; border-radius: 3px; transition: width 240ms ease; }
 .tele-job { font-size: var(--text-label); margin-top: 3px; }
 
+/* ---- render-queue management (lb-07y): job list + cancel/retry actions ---- */
+.ko-jobs { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 16px; }
+.ko-jobs-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.ko-jobs-title { font-size: var(--text-base); }
+.ko-jobs-err { font-size: var(--text-label); color: var(--warn); }
+.ko-job-list { display: flex; flex-direction: column; gap: 6px; }
+.ko-job {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 9px 12px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg-2);
+}
+.ko-job-main { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.ko-job-dot { width: 8px; height: 8px; border-radius: 999px; background: var(--muted); flex: 0 0 auto; }
+.ko-job-dot.queued { background: var(--muted); }
+.ko-job-dot.running { background: var(--brand); }
+.ko-job-dot.done { background: var(--good); }
+.ko-job-dot.failed { background: var(--warn); }
+.ko-job-dot.cancelled { background: var(--border); }
+.ko-job-text { min-width: 0; }
+.ko-job-title { font-size: var(--text-base); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ko-job-meta { font-size: var(--text-label); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ko-job-side { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+.ko-job-status {
+  font-family: var(--mono); font-size: var(--text-label); text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--muted);
+}
+.ko-job-status.running { color: var(--brand-ink); }
+.ko-job-status.failed { color: var(--warn); }
+.ko-act {
+  cursor: pointer; font-size: var(--text-label); padding: 4px 10px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+  transition: border-color 120ms, background 120ms;
+}
+.ko-act:hover:not(:disabled) { border-color: var(--brand-line); background: var(--surface-2); }
+.ko-act:disabled { opacity: 0.5; cursor: default; }
+.ko-act.cancel:hover:not(:disabled) { border-color: var(--warn); color: var(--warn); }
+
 /* ============================================================================
    Lektioner — asset-lessons view (lb-zdp)
    ----------------------------------------------------------------------------

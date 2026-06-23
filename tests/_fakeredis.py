@@ -66,6 +66,37 @@ class FakeRedis:
             return lst.pop()
         return None
 
+    def lrange(self, key: str, start: int, end: int) -> list[str]:
+        lst = self.lists.get(key, [])
+        # Redis LRANGE is inclusive of end; -1 means the last element.
+        if end == -1:
+            return list(lst[start:])
+        return list(lst[start:end + 1])
+
+    def lrem(self, key: str, count: int, value: str) -> int:
+        """Remove occurrences of value. count==0 removes all (the queue cancel uses 0)."""
+        lst = self.lists.get(key)
+        if not lst:
+            return 0
+        removed = 0
+        if count == 0:
+            new = [v for v in lst if v != value]
+            removed = len(lst) - len(new)
+            self.lists[key] = new
+        else:
+            # positive: head→tail; negative: tail→head (we only use 0, but be correct)
+            indices = range(len(lst)) if count > 0 else range(len(lst) - 1, -1, -1)
+            to_remove = []
+            for i in indices:
+                if lst[i] == value:
+                    to_remove.append(i)
+                    if len(to_remove) >= abs(count):
+                        break
+            for i in sorted(to_remove, reverse=True):
+                del lst[i]
+            removed = len(to_remove)
+        return removed
+
     # introspection helper for tests
     def all_keys(self) -> set[str]:
         return set(self.kv) | set(self.lists)

@@ -311,3 +311,83 @@ def test_sse_connection_cap_returns_503(tmp_path, monkeypatch):
         assert resp.status_code == 503
     finally:
         jobs.set_redis(None)
+
+
+# ── lb-07y: Kö management API (list / cancel / retry) ────────────────────────
+
+
+def _enqueue(client):
+    resp = client.post("/api/jobs", json={
+        "kind": "bild", "subject": "fysik", "area": "ljud",
+        "imageType": "illustration", "prompt": "a wave",
+    })
+    return resp.get_json()["job_id"]
+
+
+def test_get_jobs_lists_and_filters(tmp_path):
+    _fresh_redis()
+    try:
+        app = _app(tmp_path)
+        c = app.test_client()
+        jid = _enqueue(c)
+        resp = c.get("/api/jobs")
+        assert resp.status_code == 200
+        ids = [j["id"] for j in resp.get_json()["jobs"]]
+        assert jid in ids
+        # filter
+        assert all(j["status"] == "queued"
+                   for j in c.get("/api/jobs?status=queued").get_json()["jobs"])
+        # bad status → 400
+        assert c.get("/api/jobs?status=bogus").status_code == 400
+    finally:
+        jobs.set_redis(None)
+
+
+def test_post_cancel_marks_cancelled(tmp_path):
+    r = _fresh_redis()
+    try:
+        app = _app(tmp_path)
+        c = app.test_client()
+        jid = _enqueue(c)
+        assert r.llen("larbild:render:task_queue") == 1
+        resp = c.post(f"/api/jobs/{jid}/cancel")
+        assert resp.status_code == 200
+        assert resp.get_json()["status"] == "cancelled"
+        assert r.llen("larbild:render:task_queue") == 0  # no orphaned queue entry
+        # unknown → 404
+        assert c.post("/api/jobs/nope/cancel").status_code == 404
+    finally:
+        jobs.set_redis(None)
+
+
+def test_post_cancel_terminal_is_409(tmp_path):
+    _fresh_redis()
+    try:
+        app = _app(tmp_path)
+        c = app.test_client()
+        jid = _enqueue(c)
+        jobs.write_job_state(jid, {"job_id": jid, "status": "done", "library_id": "L"})
+        assert c.post(f"/api/jobs/{jid}/cancel").status_code == 409
+    finally:
+        jobs.set_redis(None)
+
+
+def test_post_retry_requeues_failed(tmp_path):
+    r = _fresh_redis()
+    try:
+        app = _app(tmp_path)
+        c = app.test_client()
+        jid = _enqueue(c)
+        r.brpop("larbild:render:task_queue")  # worker claimed it
+        jobs.write_job_state(jid, {"job_id": jid, "status": "failed", "error": "x"})
+        resp = c.post(f"/api/jobs/{jid}/retry")
+        assert resp.status_code == 202
+        assert resp.get_json()["status"] == "queued"
+        assert r.llen("larbild:render:task_queue") == 1
+        # retry a queued job → 409 (already in flight)
+        assert c.post(f"/api/jobs/{jid}/retry").status_code == 409
+        # unknown → 404
+        assert c.post("/api/jobs/nope/retry").status_code == 404
+    finally:
+        jobs.set_redis(None)
+
