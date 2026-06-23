@@ -1,85 +1,75 @@
 # Lärbild
 
-**Owner-only, SFW educational image & film studio** — the SFW sibling of `imagegen`.
+**Owner-only, SFW educational image library** — the SFW sibling of `imagegen`.
 
-Lärbild is a single-teacher LAN tool for generating curriculum-aligned (åk 7-9 / LGR22)
-educational images and short films. Its output fills Skola (`sk2`) teaching content.
+Lärbild is a single-teacher LAN tool for browsing + reviewing curriculum-aligned
+(åk 7-9 / LGR22) educational images. Its content fills Skola (`sk2`) teaching
+material. The library is **authored SVG / vector content** — hand-authored
+concept diagrams imported and rasterised, not model-generated.
 
 - **Deploys to:** Sibbis, port **6868** (LAN-only, UFW-gated)
-- **Audience:** one teacher, owner-only — no public access, no multi-user
+- **Public mirror:** bilder.sibbamala.com (read-only, approved images only)
+- **Audience:** one teacher, owner-only on the LAN tool — no multi-user
 - **Priority subjects:** fysik, teknik, kemi, biologi (science first), then the rest of LGR22
-- **Output safety model:** SFW is enforced by the *checkpoints + a backend LoRA allowlist*,
-  not by prompt filtering. Only SFW models/LoRAs are reachable.
+
+## Authored-SVG only (diffusion render path removed)
+
+Lärbild originally carried a diffusion (ComfyUI/SDXL/FLUX/LoRA) render path forked
+from imagegen. That path was **removed** when the project committed permanently to
+authored SVG content: the ComfyUI client, the Redis render-job queue, the GPU
+lock / render-residency, the procedural diagram engine, the film/lesson render
+funnels, the Porträtt face stack, TTS, the LoRA matrix, and the GPU telemetry /
+Kö UI are all gone. The library is now populated by importing authored SVGs (see
+`scripts/import_skola_svgs.py`), rasterised to PNG with cairosvg.
 
 ## Relationship to imagegen — hard isolation
 
-Lärbild is **~70% a fork of imagegen's backend infra**, but it is a **separate repo and a
-separate rig**. It is **NEVER** a branch of imagegen and must **NEVER** be merged with it.
+Lärbild is a **separate repo and a separate rig**. It is **NEVER** a branch of
+imagegen and must **NEVER** be merged with it. A CI guard rejects any NSFW
+imports. With the render path gone, larbild no longer shares any GPU coordination
+with imagegen — it is a CPU-only Flask app that serves a library of imported SVG
+assets.
 
-A CI guard rejects any NSFW imports. The two apps share **only** the cross-host GPU
-coordination primitives (`gpu_lock` + render-residency on the same `lock:vm100-3090` key +
-the shared `vm100:render_pressure:external` dispatcher signal) so that
-larbild, imagegen, and chat do not OOM each other on the shared 3090 — they share
-*mutual-exclusion coordination*, never data, models, storage, or collections.
+## What it does
 
-Five isolation planes:
-1. Separate repo (no merge; CI guard rejects NSFW imports)
-2. Dedicated SFW-only model dir + backend LoRA allowlist (reject any LoRA not in
-   `baseLora ∪ loraMatrix` → NSFW injection impossible even via a crafted request)
-3. Separate storage / DB / port (6868)
-4. ChromaDB: a 3rd isolated instance **only if** semantic search is built (deferred in v1)
-5. SFW-only checkpoints are the actual safety boundary (output safety, not prompt filtering)
-
-## What's reused vs net-new
-
-**Forked from imagegen** (`/home/lektove/imagegen-repo/sibbis-app/`): GPU telemetry+routing
-(`api_gpus.py`), cross-host GPU lock (`gpu_lock.py`), render-residency (`render_lane.py`), Redis queue + SSE
-(`job_status.py`), ComfyUI client + workflow assembly + LoRA injection (`video.py`), ffmpeg
-mux, pnginfo embed, deploy pipeline (`deploy-sibbis.sh` → git-pull-on-Sibbis), and the
-consent-face schema (`faces` / `face_usage_log` CHECK-constraint pattern) as the Porträtt
-template.
-
-**Net-new:** LGR22 taxonomy (17 subjects × 102 areas + central content, 8 imageTypes,
-6 videoTypes, baseLora × 8, loraMatrix × 28, `resolveLora` — shipped verbatim as production
-data from the design's `data.js`), subject/area auto-sort library model, Swedish TTS
-(Piper sv-SE), the entire React frontend, and an isolated SFW-only model/LoRA set.
+- **Browse:** the 3-level Bibliotek (ämne → område → bilder) over the LGR22
+  taxonomy (17 subjects × 102 areas + Skolverket central content).
+- **Review:** the owner marks each asset OK / Inte OK with a note
+  (`POST /api/library/<id>/review`).
+- **Flag:** visitors on the public mirror can report a wrong/broken image
+  (`POST /api/flag`, the single sanctioned public write).
+- **Lessons:** group existing library assets into named, ordered lessons
+  (asset-lessons, `/api/asset-lessons*`).
 
 ## Repo layout
 
 ```
-app/        Flask backend (forked imagegen infra modules, SFW-stripped) + routers
-static/     Built React frontend assets served by Flask
+app/        Flask backend (taxonomy, library, media, review, flags, asset-lessons) + routers
+static/     no-build React frontend (Babel-in-browser) + vendored React/Babel
+scripts/    authored-SVG import pipeline (import_skola_svgs.py, build_svg_mapping.py)
 docs/       Architecture, build plan, design handoff notes
 ```
 
 ## System dependencies (Sibbis deploy)
 
 Python deps install from `requirements.txt` (`pip install -r requirements.txt`).
-Two things ALSO need OS packages on the deploy host:
+One thing ALSO needs an OS package on the deploy host:
 
 ```bash
-sudo apt-get install -y graphviz ffmpeg
+sudo apt-get install -y libcairo2   # cairosvg needs the system libcairo
 ```
 
-- **graphviz** — the `dot` binary backs the procedural block/flow/concept/cycle
-  diagram renderer (`app/procedural.py`). Without it the engine auto-falls back
-  to a matplotlib box+arrow renderer (diagrams still render), so install it for
-  the cleaner graphviz routing. The Python `graphviz` wrapper is in
-  `requirements.txt`; it needs this binary.
-- **ffmpeg** — the film/lesson mux step.
+- **libcairo** — backs `cairosvg`, which rasterises the imported authored SVGs to
+  white-background library PNGs on import (`scripts/import_skola_svgs.py`). CPU-only.
 
-The procedural diagram engine (structured imageTypes: `diagram` / `schema` /
-`tidslinje` / `molekyl` / `reaction`) is **CPU-only** — graphviz + matplotlib +
-RDKit draw the structure with real Swedish labels, no GPU. It renders even while
-the VM100 3090 is busy with diffusion. RDKit ships as a pure pip wheel (no apt).
+## Deployment
+
+`deploy-sibbis.sh` runs ON Sibbis: git-pulls the latest master into the live
+checkout, reinstalls deps, and restarts `larbild.service` (and removes the
+retired `larbild-worker.service` if a prior deploy installed it). The public
+read-only instance runs as `larbild-public.service`.
 
 ## Build plan & design
 
-- Build plan: `docs/BUILD_PLAN.md` (phases P0–P10, ~40 beads, acceptance criteria)
-- SFW design handoff: Sibbis `/tmp/sfw_design/handoff/` (from `sfw imaggen.zip` on
-  `backup-disk/docs`) — taxonomy lives in `design/data.js`
-
-## Status
-
-Bootstrap skeleton only. Application code is built by polecats per the phase beads
-(prefix `lb-`). See `docs/BUILD_PLAN.md`.
+- Build plan: `docs/BUILD_PLAN.md`
+- Architecture: `ARCHITECTURE.md`

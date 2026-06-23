@@ -30,11 +30,6 @@
    ============================================================================ */
 const { useState, useEffect, useCallback, useRef } = React;
 const D = window.LBData;
-// GPU telemetry pills + Kö modal (lb-dop), defined in gpu_telemetry.jsx and
-// exposed on window (separate Babel-in-browser <script> scope). Owner-only —
-// only rendered when !PUBLIC_READONLY below.
-const GpuPills = window.LBGpuPills;
-const KoModal = window.LBKoModal;
 // Lektioner (asset-lessons, lb-zdp): group existing library assets into a named
 // lesson. Defined in asset_lessons.jsx, exposed on window. Owner-only.
 const LessonsModal = window.LBLessonsModal;
@@ -138,7 +133,6 @@ function AssetCard({ chain, subject, onOpen }) {
           <span className="subj-dot" style={{ background: D.subjColor(subject), width: 8, height: 8, borderRadius: 2 }} />
           {subject ? subject.short : ""} · {item.area_name || item.area}
         </div>
-        {item.lora && <div className="alora">{I.sparkle}{item.lora}</div>}
       </div>
     </div>
   );
@@ -308,15 +302,14 @@ function VersionStrip({ chain, currentId, onPick }) {
 /* ---------- full-size lightbox: one chain, the selected version + review ----------
    Opened by clicking a tile (which passes its whole version chain). Shows the
    selected version full-resolution + its provenance + the review control + the
-   version strip + a "Regenerera" button (only on the LATEST version — a regen
-   always extends the newest tip). Closes on the backdrop, the × button, or
-   Escape. SFW educational artefact. */
-function Lightbox({ chain, subject, onClose, onPersist, onRegenerated }) {
+   version strip. Closes on the backdrop, the × button, or Escape. SFW
+   educational artefact. (The diffusion "Regenerera" action was removed with the
+   render path — assets are authored SVGs, re-authored/re-imported, not re-rolled.) */
+function Lightbox({ chain, subject, onClose, onPersist }) {
   // Which version of the chain is on stage (defaults to the latest).
   const [viewId, setViewId] = useState(chain.latest.id);
-  const [regen, setRegen] = useState({ phase: "idle", msg: "" }); // idle|busy|done|err
 
-  useEffect(() => { setViewId(chain.latest.id); setRegen({ phase: "idle", msg: "" }); }, [chain.latest.id]);
+  useEffect(() => { setViewId(chain.latest.id); }, [chain.latest.id]);
   useEffect(() => {
     const onKey = (e) => { if (e.key === "Escape") onClose(); };
     window.addEventListener("keydown", onKey);
@@ -324,38 +317,12 @@ function Lightbox({ chain, subject, onClose, onPersist, onRegenerated }) {
   }, [onClose]);
 
   const item = chain.versions.find((v) => v.id === viewId) || chain.latest;
-  const isLatest = item.id === chain.latest.id;
   const full = item.url || assetThumbSrc(item);
   const when = D.fmtDate ? D.fmtDate(item.generated_at) : (item.generated_at || "");
   const meta = [
-    item.lora && ["LoRA", item.lora + (item.lora_strength != null ? ` · ${item.lora_strength}` : "")],
-    item.seed != null && ["Seed", String(item.seed)],
-    item.backend && ["Backend", item.backend],
     (item.width && item.height) && ["Mått", `${item.width}×${item.height}`],
     when && ["Skapad", when],
   ].filter(Boolean);
-
-  const regenerate = () => {
-    setRegen({ phase: "busy", msg: "Startar ny version…" });
-    // Regenerate from the version on stage; its current comment (if any) guides
-    // the new render server-side. A fresh comment can be left first in the review
-    // box (persisted), then it guides the regenerate.
-    fetch(`/api/library/${encodeURIComponent(item.id)}/regenerate`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({}),
-    })
-      .then((r) => r.json().then((b) => ({ ok: r.ok, status: r.status, b })))
-      .then(({ ok, status, b }) => {
-        if (!ok) {
-          setRegen({ phase: "err", msg: status === 429 ? "Renderkön är full — försök strax igen." : (b.error || "Kunde inte regenerera.") });
-          return;
-        }
-        setRegen({ phase: "done", msg: "Ny version i kö — den dyker upp här när den är klar." });
-        if (onRegenerated) onRegenerated(b.job_id); // let the view refresh the node
-      })
-      .catch(() => setRegen({ phase: "err", msg: "Kunde inte regenerera." }));
-  };
 
   return (
     <div className="lb-backdrop" onClick={onClose}>
@@ -393,25 +360,6 @@ function Lightbox({ chain, subject, onClose, onPersist, onRegenerated }) {
               existing assets, separate from the video funnel. */}
           {!PUBLIC_READONLY && AddToLessonControl && <AddToLessonControl item={item} />}
 
-          {/* Regenerate — only the latest version of an image chain (a regen
-              extends the newest tip; films aren't regenerable in v1). Owner-only:
-              not rendered on the public read-only instance. */}
-          {!PUBLIC_READONLY && item.kind === "bild" && (
-            <div className="rev-actions" style={{ marginTop: 14 }}>
-              <button className="btn primary" onClick={regenerate}
-                disabled={regen.phase === "busy" || !isLatest}
-                title={isLatest ? "Skapa en ny version utifrån kommentaren" : "Öppna senaste versionen för att regenerera"}>
-                {I.redo} Regenerera
-              </button>
-              {!isLatest && <span className="rev-status">Visar en äldre version</span>}
-              {regen.msg && (
-                <span className={`rev-status ${regen.phase === "err" ? "err" : regen.phase === "done" ? "saved" : ""}`}>
-                  {regen.msg}
-                </span>
-              )}
-            </div>
-          )}
-
           {/* Public crowdsource: let a visitor flag a wrong/broken image. Shown
               ONLY on the public read-only instance; never reveals flag state. */}
           {PUBLIC_READONLY && <FlagButton item={item} />}
@@ -433,11 +381,9 @@ function Bibliotek() {
   const [reviewFilter, setReviewFilter] = useState("all"); // all | pending | notok
   // Per-node item cache keyed by "<subject>/<area>" — the gallery's data, fetched
   // lazily from /api/library/items when a node is opened. `null` = in-flight;
-  // array = loaded. A bump counter forces a re-fetch of the open node after a
-  // regenerate so the new version appears.
+  // array = loaded.
   const [itemsByNode, setItemsByNode] = useState({});
   const [lightbox, setLightbox] = useState(null); // the version chain open in the modal, or null
-  const [koOpen, setKoOpen] = useState(false); // the Kö (queue + GPU telemetry) modal, owner-only (lb-dop)
   const [lessonsOpen, setLessonsOpen] = useState(false); // the Lektioner (asset-lessons) modal, owner-only (lb-zdp)
   // The deep-linked location read from the URL on first load (lb-review-regen):
   // restored once the tree arrives so a refresh stays put. Captured in a ref so
@@ -506,52 +452,12 @@ function Bibliotek() {
     });
   }, []);
 
-  // Force a refetch of the open node (used after a regenerate so the queued new
-  // version shows once it renders — the owner can also just reopen the area).
-  const refetchOpenNode = useCallback(() => {
-    if (!sub) return;
-    const ids = areaId ? [areaId] : (sub.areas || []).filter((a) => (a.asset_count || 0) > 0).map((a) => a.id);
-    setItemsByNode((prev) => {
-      const next = { ...prev };
-      ids.forEach((aid) => { delete next[`${sub.id}/${aid}`]; });
-      return next;
-    });
-  }, [sub, areaId]);
-
-  // Live regenerate streams, so an unmount tears them down (lb-xz3).
-  const regenStreams = useRef(new Set());
-  useEffect(() => () => {
-    regenStreams.current.forEach((es) => es.close());
-    regenStreams.current.clear();
-  }, []);
-
-  // A regenerate was accepted: follow its render job over the same SSE stream the
-  // Skapa funnel uses (/api/jobs/<id>/events) and refetch the open node ONLY when
-  // the job reaches a terminal 'done' — so the queued new version actually appears
-  // in place. The old wiring fired a single refetch immediately, before the worker
-  // had rendered anything, so the message ("dyker upp här när den är klar") never
-  // came true short of a manual refresh (lb-xz3). No EventSource (SSR/old browser)
-  // → fall back to the one-shot refetch.
-  const onRegenerated = useCallback((jobId) => {
-    if (!jobId || typeof EventSource === "undefined") { refetchOpenNode(); return; }
-    const es = new EventSource(`/api/jobs/${encodeURIComponent(jobId)}/events`);
-    const close = () => { es.close(); regenStreams.current.delete(es); };
-    es.addEventListener("message", (ev) => {
-      let parsed;
-      try { parsed = JSON.parse(ev.data); } catch (e) { return; } // ignore keepalives
-      if (parsed.status === "done") { refetchOpenNode(); close(); }
-      else if (parsed.status === "failed" || parsed.status === "cancelled") { close(); }
-    });
-    es.addEventListener("end", close);
-    regenStreams.current.add(es);
-  }, [refetchOpenNode]);
-
   // The node the user is currently looking at, captured in a ref so a resolving
   // items fetch can tell "is this still the open node?" WITHOUT being cancelled
   // by the effect re-running. This effect writes itemsByNode (the in-flight null
-  // marker), and itemsByNode is in its dependency list (so a regenerate-refetch
-  // re-fires it), which means the effect tears down + re-runs on its OWN cache
-  // write. A per-run `alive = false` cleanup would then fire BEFORE the fetch it
+  // marker), and itemsByNode is in its dependency list, which means the effect
+  // tears down + re-runs on its OWN cache write. A per-run `alive = false`
+  // cleanup would then fire BEFORE the fetch it
   // started resolves, and `if (!alive) return` would throw the items away —
   // leaving the cache stuck on null forever and the gallery stuck on
   // "Läser in bilder…". So we guard on navigation identity (sub/area), not on
@@ -627,12 +533,9 @@ function Bibliotek() {
             <div className="caption">{D.totalAssets(subjects)} objekt · {subjects.length} ämnen · sorterat enligt LGR22 åk 7–9</div>
           </div>
           <div className="page-head-actions">
-            {!PUBLIC_READONLY && GpuPills && <GpuPills onOpenQueue={() => setKoOpen(true)} />}
-            {!PUBLIC_READONLY && <span className="hsep" />}
             {!PUBLIC_READONLY && LessonsModal && (
               <button type="button" className="btn" onClick={() => setLessonsOpen(true)}>{I.lessons} Lektioner</button>
             )}
-            <a className="btn primary" href={D.skapaLink()}>{I.plus} Skapa bild</a>
           </div>
         </div>
         <div className="page-body">
@@ -640,7 +543,6 @@ function Bibliotek() {
             {ordered.map((s) => <SubjectCard key={s.id} s={s} onOpen={setSubjectId} />)}
           </div>
         </div>
-        {!PUBLIC_READONLY && koOpen && KoModal && <KoModal onClose={() => setKoOpen(false)} />}
         {!PUBLIC_READONLY && lessonsOpen && LessonsModal && <LessonsModal onClose={() => setLessonsOpen(false)} />}
       </div>
     );
@@ -693,9 +595,8 @@ function Bibliotek() {
             <button className={`tab ${kind === "film" ? "active" : ""}`} onClick={() => setKind("film")}>Filmer</button>
             <button className={`tab ${kind === "lektion" ? "active" : ""}`} onClick={() => setKind("lektion")}>Lektioner</button>
           </div>
-          {/* Review filter + Skapa nav — owner-only. Hidden entirely on the
-              public read-only instance (approved gallery only, no triage, no
-              generate funnel). */}
+          {/* Review filter — owner-only. Hidden entirely on the public
+              read-only instance (approved gallery only, no triage). */}
           {!PUBLIC_READONLY && <span className="hsep" />}
           {!PUBLIC_READONLY && (
             <div className="tabs">
@@ -705,13 +606,8 @@ function Bibliotek() {
             </div>
           )}
           {!PUBLIC_READONLY && <span className="hsep" />}
-          {!PUBLIC_READONLY && GpuPills && <GpuPills onOpenQueue={() => setKoOpen(true)} />}
-          {!PUBLIC_READONLY && <span className="hsep" />}
           {!PUBLIC_READONLY && LessonsModal && (
             <button type="button" className="btn" onClick={() => setLessonsOpen(true)}>{I.lessons} Lektioner</button>
-          )}
-          {!PUBLIC_READONLY && (
-            <a className="btn primary" href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa här</a>
           )}
         </div>
       </div>
@@ -760,11 +656,8 @@ function Bibliotek() {
                   `Inga ${kind === "film" ? "filmer" : kind === "bild" ? "bilder" : kind === "lektion" ? "lektioner" : "objekt"} här ännu.`}
               </div>
               <div className="dim" style={{ marginBottom: 16 }}>
-                {reviewFilter !== "all" ? "Byt filter för att se fler objekt." : "Allt du skapar för det här området hamnar automatiskt här."}
+                {reviewFilter !== "all" ? "Byt filter för att se fler objekt." : "Här samlas alla importerade bilder för det här området."}
               </div>
-              {reviewFilter === "all" && (
-                <a className="btn primary" style={{ margin: "0 auto" }} href={D.skapaLink(sub.id, area ? area.id : null)}>{I.plus} Skapa det första</a>
-              )}
             </div>
           )}
         </div>
@@ -775,10 +668,8 @@ function Bibliotek() {
           subject={sub}
           onClose={() => setLightbox(null)}
           onPersist={applyReview}
-          onRegenerated={onRegenerated}
         />
       )}
-      {!PUBLIC_READONLY && koOpen && KoModal && <KoModal onClose={() => setKoOpen(false)} />}
       {!PUBLIC_READONLY && lessonsOpen && LessonsModal && <LessonsModal onClose={() => setLessonsOpen(false)} />}
     </div>
   );

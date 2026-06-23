@@ -1,45 +1,23 @@
-# Lärbild backend dependencies — the SFW subset of imagegen's stack.
+# Lärbild backend dependencies — the authored-SVG educational library.
 #
-# Dropped from imagegen's requirements on purpose (face-swap / deepfake only,
-# no SFW-educational use):
-#   insightface>=0.7    — InsightFace buffalo_l face detection + embeddings
-#   onnxruntime>=1.17   — ONNX runtime backing the face-swap model
-# Porträtt (P7) is consent-gated and would reintroduce a face stack only behind
-# the DB consent floor + audit log — never as a default backend dependency.
+# Lärbild is an authored-SVG library tool: a Flask backend + a no-build React
+# frontend serving curriculum-aligned (LGR22) SVG/vector content, with the
+# owner's review + visitor-flag workflow. The diffusion render path (ComfyUI
+# bridge, Redis job queue, procedural diagram engine, TTS, face stack) was
+# removed when larbild committed permanently to authored SVG content, and its
+# dependencies (redis, requests, flask-sock, simple-websocket, matplotlib,
+# graphviz, rdkit, numpy, insightface, onnxruntime) went with it.
 
 flask>=3.0
-gunicorn>=21.0          # production WSGI server (LAN-only, port 6767)
-
-# Forked imagegen infra modules added by later phases lean on these:
-flask-sock>=0.7         # WebSocket support for live job progress (P1+)
-simple-websocket>=1.0   # upstream WS client for the ComfyUI bridge (P1+)
-redis>=5.0              # job queue + SSE state (P1+)
-requests>=2.31          # ComfyUI HTTP client (P1+)
+gunicorn>=21.0          # production WSGI server (LAN-only, port 6868)
 bcrypt>=4.0             # owner login
 cryptography>=42.0      # session / secret crypto
-pillow>=10.0            # image post-processing (pnginfo embed, thumbnails)
-numpy>=1.26             # image array ops
-
-# ── Procedural diagram engine (app/procedural.py, lb-proc) ──────────────────
-# Structured imageTypes (diagram / schema / tidslinje / molekyl / reaction) are
-# rendered DETERMINISTICALLY on CPU instead of via diffusion — clean white-bg
-# läroboksstil PNGs with legible Swedish labels (the structured-content quality
-# fix). CPU-only, so a diagram renders even while the VM100 3090 is busy.
-#
-# IMPORTANT — graphviz also needs the SYSTEM `dot` binary (not just this Python
-# wrapper). On the Sibbis deploy host run:
-#     sudo apt-get install -y graphviz
-# (Without `dot`, app/procedural.py auto-falls back to a matplotlib box+arrow
-#  renderer, so block diagrams still render — but install `dot` for the cleaner
-#  graphviz routing.)
-matplotlib>=3.7         # plots/graphs, force diagrams, timelines, mpl fallbacks
-graphviz>=0.20          # block/flow/concept/cycle diagrams (needs apt `dot` too)
-rdkit>=2023.9           # kemi molecules: SMILES → bond-accurate skeletal formula
 
 # ── SVG concept-diagram baseline (scripts/import_skola_svgs.py, lb-svg-baseline)
-# Rasterises the 123 hand-authored skola concept SVGs → white-bg library PNGs
-# (the kept vector is also stored for later serving/edit). Needs the SYSTEM
-# libcairo (``libcairo.so.2`` — present on the Sibbis host) like graphviz needs
-# `dot`; cairocffi pulls it in. The browser-lenient sources are sanitised
-# in-memory before rasterising (the import handles raw </& and dangling markers).
+# Rasterises the hand-authored skola concept SVGs → white-bg library PNGs (the
+# kept vector is also stored for later serving/edit). Needs the SYSTEM libcairo
+# (``libcairo.so.2`` — present on the Sibbis host); cairocffi pulls it in. The
+# browser-lenient sources are sanitised in-memory before rasterising (the import
+# handles raw </& and dangling markers).
 cairosvg>=2.7           # SVG → PNG for the imported concept-diagram baseline
+pillow>=10.0            # read back the rasterised PNG's dimensions on import

@@ -288,33 +288,21 @@ def test_lan_review_lists_and_resolves(tmp_path, monkeypatch):
     assert not any(f["library_id"] == vid for f in cl.get("/api/flags?status=open").get_json()["flags"])
 
 
-# ── lb-07y: Kö management actions must be ABSENT on the public read-only instance ──
+# ── the render job queue (/api/jobs, the "Kö") was removed with the diffusion
+# render path; it is absent on BOTH the public and the private instance now. The
+# public read-only guard still 405s any mutating method (asserted above in
+# test_public_cannot_read_flags), so a stray POST never reaches a view. ──
 
 
-def test_ko_management_routes_absent_on_public(tmp_path, monkeypatch):
-    """The owner-only Kö actions (list/cancel/retry) are double-gated off public:
-    the jobs blueprint is never registered, AND the read-only guard 405s any
-    mutating method. Neither cancel nor retry nor the list feed is reachable."""
+def test_jobs_routes_absent_everywhere(tmp_path, monkeypatch):
+    """The render job queue was removed (authored-SVG library, no rendering).
+    /api/jobs no longer exists on either instance."""
     db = tmp_path / "lib.db"
     _init_schema(db)
-    app = _public_app(db, monkeypatch)
-    c = app.test_client()
-    # the jobs blueprint isn't registered → the list route doesn't exist.
-    assert c.get("/api/jobs").status_code == 404
-    # the read-only guard rejects POST regardless (405), and the route is absent.
-    assert c.post("/api/jobs/anything/cancel").status_code in (404, 405)
-    assert c.post("/api/jobs/anything/retry").status_code in (404, 405)
-
-
-def test_ko_management_routes_present_on_private(tmp_path, monkeypatch):
-    """On the private LAN instance the list route IS registered (the actions are
-    reachable for the owner)."""
-    db = tmp_path / "lib.db"
-    _init_schema(db)
-    app = _private_app(db, monkeypatch)
-    c = app.test_client()
-    # list route exists (200, not 404) — Redis is unconfigured so the overlay is
-    # best-effort; the DB read still answers with an (empty) jobs list.
-    resp = c.get("/api/jobs")
-    assert resp.status_code == 200
-    assert "jobs" in resp.get_json()
+    pub = _public_app(db, monkeypatch).test_client()
+    # Public: route absent (404 on GET) and the read-only guard 405s mutations.
+    assert pub.get("/api/jobs").status_code == 404
+    assert pub.post("/api/jobs/anything/cancel").status_code in (404, 405)
+    # Private: the render queue is gone too — the route is not registered.
+    priv = _private_app(db, monkeypatch).test_client()
+    assert priv.get("/api/jobs").status_code == 404

@@ -12,8 +12,9 @@
 # docs/assets that must not land in the runtime) and needs the rsync subset.
 # Same-host, different app layouts — not drift.
 #
-# Deploys both larbild.service (UI/APIs) and larbild-worker.service (the render
-# worker → ComfyUI on the shared VM100 3090 via render-residency).
+# Deploys larbild.service (the authored-SVG library UI/APIs). The diffusion
+# render worker (larbild-worker.service) was removed when larbild committed
+# permanently to authored SVG content — there is no render path to deploy.
 #
 # Usage:
 #   bash deploy-sibbis.sh            # pull + deploy if HEAD changed
@@ -53,39 +54,19 @@ echo "Installing deps..."
 venv/bin/pip install --quiet --upgrade pip
 venv/bin/pip install --quiet -r requirements.txt
 
-# Install/refresh the systemd units from the repo templates so a FRESH deploy
-# brings up the render worker (lb-3z8). The committed docs/*.service templates
-# carry a leading "#"-comment header (install hints); drop those leading comment
-# lines so only the real [Unit]/[Service] body lands. Idempotent: only
-# daemon-reload + enable when the installed unit actually changed.
-install_unit() {  # <repo-template> <dest-path>
-  local src="$1" dest="$2" tmp
-  tmp=$(mktemp)
-  # Strip the contiguous leading block of "#" comment lines (the install header).
-  sed '0,/^[^#]/{/^#/d}' "$src" > "$tmp"
-  if ! sudo cmp -s "$tmp" "$dest" 2>/dev/null; then
-    sudo install -D -m 0644 "$tmp" "$dest"
-    echo "Installed unit: $dest"
-    UNITS_CHANGED=1
-  fi
-  rm -f "$tmp"
-}
-UNITS_CHANGED=0
-install_unit "$APP/docs/larbild-worker.service" \
-  /etc/systemd/system/larbild-worker.service
-install_unit "$APP/docs/larbild.service.d-10-redis.conf" \
-  /etc/systemd/system/larbild.service.d/10-redis.conf
-if [ "$UNITS_CHANGED" -eq 1 ]; then
+# Remove the retired render-worker unit + its redis drop-in if a prior deploy
+# installed them (idempotent cleanup — larbild is now SVG-only, no render path).
+if systemctl list-unit-files larbild-worker.service >/dev/null 2>&1 \
+   && [ -f /etc/systemd/system/larbild-worker.service ]; then
+  sudo systemctl disable --now larbild-worker.service >/dev/null 2>&1 || true
+  sudo rm -f /etc/systemd/system/larbild-worker.service
+  sudo rm -f /etc/systemd/system/larbild.service.d/10-redis.conf
   sudo systemctl daemon-reload
-  sudo systemctl enable larbild-worker.service >/dev/null 2>&1 || true
+  echo "Removed retired larbild-worker.service + redis drop-in."
 fi
 
-echo "Restarting larbild.service + larbild-worker.service..."
+echo "Restarting larbild.service..."
 sudo systemctl restart larbild.service
-# The render worker is a SEPARATE unit (BRPOP loop → ComfyUI on the shared VM100
-# 3090). It MUST be restarted too so render-path code (render_lane / render_worker)
-# is picked up — a stale worker would run the old render coordination (hq-jx6g).
-sudo systemctl restart larbild-worker.service
 sleep 3
 # Smoke gate: only write the sentinel if /healthz answers 200.
 for i in $(seq 1 15); do

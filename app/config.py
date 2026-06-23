@@ -9,10 +9,9 @@ feature.
 boot (and each test) reads a fresh environment. Flask consumes the UPPERCASE
 attributes via ``app.config.from_object``.
 
-Later phases extend this:
-  * P0.2 — SQLite schema/migrations reads ``DB_PATH``.
-  * P0.4 — isolated storage layout reads ``STORAGE_DIR``.
-  * P1   — ComfyUI bridge + Redis queue add their own ``LARBILD_*`` knobs.
+Knobs:
+  * SQLite schema/migrations read ``DB_PATH``.
+  * The isolated storage layout reads ``STORAGE_DIR``.
 Add new knobs here; keep them env-overridable with safe LAN defaults.
 """
 from __future__ import annotations
@@ -111,23 +110,20 @@ class Config:
         # When LARBILD_PUBLIC_READONLY is set the app boots as the SECOND,
         # internet-facing instance behind bilder.sibbamala.com. In this mode the
         # factory registers ONLY the read-only browse blueprints (taxonomy,
-        # library-read, media, views, health) — the generation, admin, review,
-        # regenerate, jobs, batch, films, lessons, portraits, TTS, LoRA and GPU
-        # blueprints are NOT imported or registered, so that privileged code is
-        # not merely hidden but absent from the process. Every library query is
-        # forced to approved-only (review_ok = 1) and a global before_request
-        # rejects any non-GET/HEAD/OPTIONS method (belt-and-suspenders).
+        # library-read, media, views, health, the public flag-write) — the
+        # owner-only review + asset-lessons blueprints are NOT imported or
+        # registered, so that privileged code is not merely hidden but absent
+        # from the process. Every library query is forced to approved-only
+        # (review_ok = 1) and a global before_request rejects any non-GET/HEAD/
+        # OPTIONS method other than the single sanctioned POST /api/flag.
         #
-        # Safety side-effects of this flag (the public instance only READS the
-        # shared larbild.db and never reaches out to a GPU host):
-        #   * boot DB migrations + storage reconcile are FORCED off (no writes
-        #     to the DB the private :6868 instance owns), and
-        #   * the GPU-telemetry SSH daemon is FORCED off (no outbound SSH).
+        # Safety side-effect: the public instance only READS the shared
+        # larbild.db, so boot DB migrations + storage reconcile are FORCED off
+        # (no writes to the DB the private :6868 instance owns).
         self.PUBLIC_READONLY = _env_bool("LARBILD_PUBLIC_READONLY", False)
         if self.PUBLIC_READONLY:
-            # A public read-only instance must never write to the shared DB nor
-            # SSH out to a render host. Force these off regardless of their own
-            # env knobs so the flag is a single, safe switch.
+            # A public read-only instance must never write to the shared DB.
+            # Force these off regardless of their own env knobs so the flag is a
+            # single, safe switch.
             self.INIT_DB = False
             self.RECONCILE_STORAGE = False
-            self.START_GPU_TELEMETRY = False

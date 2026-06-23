@@ -42,7 +42,6 @@ def create_app(overrides: Optional[Mapping] = None) -> Flask:
         _register_public_blueprints(app)
     else:
         _register_blueprints(app)
-        _start_background_workers(app)
     return app
 
 
@@ -138,17 +137,14 @@ def _init_database(app: Flask) -> None:
     safe. ``INIT_DB`` (default True) lets a test skip filesystem writes; tests
     that exercise the DB instead point ``DB_PATH`` at a temp file.
 
-    After migrations, two reconcile passes run (both conservative + idempotent +
-    best-effort — neither ever blocks boot):
+    After migrations, the storage reconcile pass runs (conservative + idempotent +
+    best-effort — it never blocks boot):
 
-    1. Orphaned ``running`` jobs (lb-qtr, partial): a render left ``running`` by a
-       crashed/restarted worker is marked ``failed`` so the durable record
-       reflects reality instead of a phantom in-flight job.
-    2. Full storage reconcile (lb-qtr): DB ↔ disk ↔ library three-way
-       consistency — dangling library rows are flagged (soft ``missing_since``,
-       never deleted), orphaned files + mis-sorted assets are reported. Bounded +
-       skippable so it can't stall boot on a huge directory scan. Gated by
-       ``RECONCILE_STORAGE`` (default on; off under TESTING).
+    Full storage reconcile (lb-qtr): DB ↔ disk ↔ library three-way consistency —
+    dangling library rows are flagged (soft ``missing_since``, never deleted),
+    orphaned files + mis-sorted assets are reported. Bounded + skippable so it
+    can't stall boot on a huge directory scan. Gated by ``RECONCILE_STORAGE``
+    (default on; off under TESTING).
     """
     if app.config.get("PUBLIC_READONLY", False):
         # Public read-only instance: bind connect() to the shared DB for READING
@@ -161,34 +157,29 @@ def _init_database(app: Flask) -> None:
     if not app.config.get("INIT_DB", True):
         return
     from .db import init_db
-    from .jobs import reconcile_stuck_jobs
     from .reconcile import reconcile_storage_on_boot
 
     init_db(app.config["DB_PATH"])
-    reconcile_stuck_jobs()
     reconcile_storage_on_boot(app)
 
 
 def _register_blueprints(app: Flask) -> None:
-    """Register every SFW blueprint.
+    """Register every SFW blueprint (the LAN-only authored-SVG library tool).
 
-    The health blueprint is the foundation and always present. Later phases
-    append their blueprints here (library, jobs, film, lessons, …). Imports
-    stay local to keep the factory's import graph flat and side-effect free at
-    package import time.
+    Lärbild is an authored-SVG library: the diffusion/AI render path (jobs,
+    batch, films, lessons-render, portraits, TTS, LoRA, GPU telemetry) was
+    removed when the project committed permanently to authored SVG content. What
+    remains is the curriculum-aligned gallery + browse, the owner's review +
+    visitor-flag workflow, and the asset-lessons grouping over existing assets.
+
+    The health blueprint is the foundation and always present. Imports stay local
+    to keep the factory's import graph flat and side-effect free at package
+    import time.
     """
-    from .gpu_telemetry import gpu_bp
-    from .routes.batch import batch_bp
-    from .routes.films import films_bp
     from .routes.health import health_bp
-    from .routes.jobs import jobs_bp
-    from .routes.lessons import lessons_bp
     from .routes.library import library_bp
-    from .routes.lora import lora_bp
     from .routes.media import media_bp
-    from .routes.portraits import portraits_bp
     from .routes.taxonomy import taxonomy_bp
-    from .routes.tts import tts_bp
     from .routes.views import views_bp
 
     app.register_blueprint(health_bp)
@@ -211,78 +202,14 @@ def _register_blueprints(app: Flask) -> None:
 
     app.register_blueprint(public_flag_bp)
     app.register_blueprint(flags_admin_bp)
-    # lb-9tz: backend-authoritative LoRA resolution at POST/GET /api/resolve-lora
-    # — the Skapa funnel sends only its (subject, imageType) selection; the
-    # backend decides the LoRA and the client can never override it.
-    app.register_blueprint(lora_bp)
-    # lb-c2r: per-GPU telemetry + render-target registry at GET /api/gpus
-    # (snapshot) and /api/gpus/stream (SSE) — backs the top-bar GPU pills and
-    # the P4 `auto` router's input.
-    app.register_blueprint(gpu_bp)
-    # lb-3gi: render-job submission + progress — POST /api/jobs (enqueue, 202),
-    # GET /api/jobs/<id> (state), GET /api/jobs/<id>/events (SSE). The LoRA is
-    # never accepted from the client; the worker resolves it server-side.
-    app.register_blueprint(jobs_bp)
-    # lb-zht/lb-y9c: batch layer — POST /api/jobs/batch parses a CSV/txt/JSON
-    # spec, validates every row against the taxonomy SoT (LoRA dropped), and fans
-    # the valid rows out into N individual jobs through the lb-3gi bridge under
-    # one batch_id; GET /api/jobs/batch/<id>[/events] rolls up aggregate progress
-    # from the jobs table. Fan-out only enqueues — the render stays the worker's
-    # deferred job.
-    app.register_blueprint(batch_bp)
-    # lb-ly1/lb-wdu/lb-xlr: Porträtt consent API — register a consented face
-    # (under-18 requires guardian consent, computed server-side), gate every
-    # compositor use (consentOk recomputed from the DB, else 403), and GDPR-
-    # delete a reference (cascade files off disk + audit). The consent rule +
-    # storage live in app.portraits; this blueprint is the thin HTTP layer.
-    app.register_blueprint(portraits_bp)
-    # lb-ayi: Swedish narration TTS (Piper sv-SE on VM600) — POST /api/tts
-    # ({text, voice} -> audio/wav, voices sv-standard | sv-lattlast) backs the
-    # film voice-over (lb-4vw) and the Skapa-film voice preview. GPU-independent.
-    app.register_blueprint(tts_bp)
-    # lb-4vw: film pipeline — POST /api/films (enqueue a storyboard→keyframes→
-    # narration→ffmpeg-mux film, 202), GET /api/films/templates (the 6 film
-    # templates), GET /api/films/<id>[/events] (state + SSE; a film is a jobs row
-    # so it reuses the still-job SSE). The LoRA is backend-authoritative per
-    # keyframe (SFW guard); live keyframe render is deferred (imagegen sweep).
-    app.register_blueprint(films_bp)
-    # lb-lesson: the Lärbild pedagogical-video funnel — POST /api/lessons (enqueue
-    # a manuscript → per-beat keyframe+bildtext+narration → merge → a level-tagged
-    # lesson/short VIDEO in the library, 202), GET /api/lessons/schema (the
-    # manuscript schema the Opus step produces), POST /api/lessons/preview (parse +
-    # estimate, no render), GET /api/lessons/<id>[/events] (state + SSE; a lesson is
-    # a jobs row so it reuses the still-job SSE). allLevels renders all 3 levels
-    # from one keyframe render. The LoRA is backend-authoritative per keyframe (SFW
-    # guard); live keyframe render is deferred (imagegen sweep). Built on P6 (film).
-    app.register_blueprint(lessons_bp)
     # lb-zdp: asset-lessons — group EXISTING library assets into a named, ordered
-    # lesson at /api/asset-lessons*. A SEPARATE concern from lessons_bp above
-    # (that one RENDERS a video from a manuscript; this groups assets the teacher
-    # already has) — distinct routes + distinct tables (asset_lessons /
-    # asset_lesson_items, migration 0009), reusing library._row_to_item for the
-    # asset shape. Owner-only: registered here (private LAN) but NOT in the public
-    # read-only factory above.
+    # lesson at /api/asset-lessons*. Distinct routes + distinct tables
+    # (asset_lessons / asset_lesson_items, migration 0009), reusing
+    # library._row_to_item for the asset shape. Owner-only: registered here
+    # (private LAN) but NOT in the public read-only factory above.
     from .routes.asset_lessons import asset_lessons_bp
 
     app.register_blueprint(asset_lessons_bp)
     # lb-eee: serve the no-build React frontend (the Bibliotek view) at / and
     # /bibliotek; repoints Flask's /static handler at the repo-root static/ dir.
     app.register_blueprint(views_bp)
-
-
-def _start_background_workers(app: Flask) -> None:
-    """Start long-lived background daemons (lb-c2r).
-
-    The GPU telemetry poller SSHes out to VM100/vm153, so it must NOT run under
-    tests (it would hang/fail on the sandboxed CI host). It is gated on
-    ``START_GPU_TELEMETRY`` — default on in production, default off when
-    ``TESTING`` is set. Imports stay local so the factory's import graph stays
-    flat and a unit test that never boots workers pays nothing.
-    """
-    start_telemetry = app.config.get(
-        "START_GPU_TELEMETRY", not app.config.get("TESTING", False)
-    )
-    if start_telemetry:
-        from .gpu_telemetry import start_telemetry_daemon
-
-        start_telemetry_daemon()

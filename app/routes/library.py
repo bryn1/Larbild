@@ -48,9 +48,9 @@ from ..public_visibility import visible_predicate_sql
 library_bp = Blueprint("library", __name__)
 
 # Public read-only mode (bilder.sibbamala.com). Read from the environment at
-# import time — before any view is bound to the blueprint — so the write views
-# (POST review / POST regenerate) are simply NEVER ATTACHED to the blueprint in
-# the public process, and every read query is forced to approved-only. This is
+# import time — before any view is bound to the blueprint — so the write view
+# (POST review) is simply NEVER ATTACHED to the blueprint in the public process,
+# and every read query is forced to approved-only. This is
 # the SAME switch as Config.PUBLIC_READONLY (LARBILD_PUBLIC_READONLY); reading it
 # here too lets the decision happen at registration time, not request time, so
 # the privileged code is absent from the public instance rather than guarded.
@@ -72,13 +72,13 @@ _APPROVED_ONLY_SQL = "review_ok = 1"
 def _write_route(rule, **options):
     """Decorator that registers a MUTATING library route only when NOT public.
 
-    The two write endpoints (POST review, POST regenerate) are the privileged,
-    owner-only part of this blueprint. On the public read-only instance they must
-    not exist — so this decorator simply returns the view function UNREGISTERED
-    when ``_PUBLIC_READONLY`` is set: the URL rule is never added to the map, so
-    the public process answers ``/api/library/<id>/review`` and ``…/regenerate``
-    with a plain 404 (route not registered). The function body still parses fine
-    (no behaviour change for the private instance, which registers it normally).
+    The write endpoint (POST review) is the privileged, owner-only part of this
+    blueprint. On the public read-only instance it must not exist — so this
+    decorator simply returns the view function UNREGISTERED when
+    ``_PUBLIC_READONLY`` is set: the URL rule is never added to the map, so the
+    public process answers ``/api/library/<id>/review`` with a plain 404 (route
+    not registered). The function body still parses fine (no behaviour change for
+    the private instance, which registers it normally).
     """
     if _PUBLIC_READONLY:
         def _skip(func):
@@ -618,130 +618,9 @@ def _review_body() -> dict:
     return {}
 
 
-def _guided_prompt(base_prompt: Optional[str], comment: Optional[str]) -> str:
-    """Fold the owner's correction note into the regenerate prompt.
-
-    The regenerate re-uses the original prompt and INCORPORATES the review note as
-    correction guidance so the next render addresses what was wrong. The note is
-    appended as an explicit, labelled correction clause (kept short + plain) — a
-    minimal, model-agnostic approach that needs no LLM round-trip: a clear
-    "Correction:" suffix steers a txt2img prompt without rewriting the base. If
-    there is no note (e.g. a plain re-roll), the original prompt is returned
-    unchanged. SFW: the note is the owner's pedagogical correction, nothing else.
-    """
-    base = (base_prompt or "").strip()
-    note = (comment or "").strip()
-    if not note:
-        return base
-    suffix = f"Correction: {note}"
-    return f"{base}. {suffix}" if base else suffix
-
-
-@_write_route("/api/library/<lib_id>/regenerate")
-def post_regenerate(lib_id: str):
-    """Regenerate an asset as a NEW, linked version — the core review→fix loop.
-
-    Enqueues a fresh render job for the SAME subject/area/imageType as the source
-    row, re-using its prompt and INCORPORATING the owner's correction note so the
-    next render addresses what was flagged. The produced ``library`` row is LINKED
-    to the source via ``parent_id`` (a version chain), so the owner can regenerate
-    across several turns — each a new version, full history kept.
-
-    Body (JSON/form, all optional):
-      * ``comment`` (alias ``review_comment``) — a FRESH correction note for this
-        round. When given it both (a) guides this regenerate and (b) is persisted
-        onto the source row's review (so the source records why it was redone).
-        When omitted, the source row's existing ``review_comment`` (the verdict
-        the owner already left) guides the regenerate.
-      * ``seed`` — pin a seed; omitted → a fresh random seed each round (so a
-        re-roll actually differs).
-
-    Chain semantics: a regenerate always links to the row the request targeted
-    (``parent_id = <lib_id>``). Regenerating the LATEST version again therefore
-    extends the chain one deeper; regenerating an older version branches from it —
-    both are kept, nothing is overwritten.
-
-    404 if the source is unknown/soft-deleted. 400 if the source is a film (v1
-    regenerates stills only — the render worker is bild-only; films are a later
-    pass). 429 if the render queue is full. Returns
-    ``202 {job_id, status:"queued", parent_id}``.
-    """
-    parent = _get_library_row(lib_id)
-    if parent is None:
-        return jsonify(error="library item not found", id=lib_id), 404
-    if parent.get("kind") != "bild":
-        # The render worker handles kind='bild' only (render_job); a film
-        # regenerate would enqueue an un-renderable job. Fail loudly.
-        return jsonify(
-            error="regenerate supports images (kind='bild') only; "
-                  "film regeneration is not available yet",
-            id=lib_id, kind=parent.get("kind"),
-        ), 400
-
-    data = _review_body()
-
-    # A fresh note (if any) guides this round AND is recorded on the source row's
-    # review — so the source shows the correction that produced the next version.
-    fresh = data.get("comment", data.get("review_comment"))
-    fresh_comment: Optional[str] = None
-    if isinstance(fresh, str):
-        fresh_comment = fresh.strip()[:_COMMENT_MAX] or None
-    # The guiding note: this round's fresh note if sent, else the verdict note the
-    # owner already left on the source.
-    guide_comment = fresh_comment if fresh_comment is not None else parent.get("review_comment")
-
-    # seed: optional int; reject a non-int rather than silently coercing. Omitted
-    # → None, so the worker rolls a fresh random seed (a real re-roll).
-    seed = data.get("seed")
-    if seed is not None:
-        try:
-            seed = int(seed)
-        except (TypeError, ValueError):
-            return jsonify(error="seed must be an integer"), 400
-
-    prompt = _guided_prompt(parent.get("prompt"), guide_comment)
-
-    # Imported lazily (not at module top) so the public read-only instance — which
-    # never registers this view — also never imports the job-enqueue machinery.
-    from ..jobs import QueueFull, enqueue_job
-
-    try:
-        job_id = enqueue_job(
-            kind="bild",
-            subject=parent["subject"],
-            area=parent["area"],
-            image_type=parent.get("image_type"),
-            video_type=None,
-            title=parent.get("title"),
-            prompt=prompt,
-            seed=seed,
-            # The library row this render is made FROM — the worker copies it onto
-            # the produced row so the version chain is preserved (lb-review-regen).
-            parent_id=lib_id,
-            # Provenance of the regenerate, for debugging the chain.
-            params={
-                "regenerate_of": lib_id,
-                "guidance": guide_comment,
-                "source_prompt": parent.get("prompt"),
-            },
-        )
-    except QueueFull as e:
-        return jsonify(
-            error="render queue is full, try again shortly",
-            depth=e.depth, limit=e.limit,
-        ), 429
-
-    # Persist the fresh correction note onto the source row's review so the chain
-    # records why this version was made (best-effort — the job is already queued;
-    # a note-write hiccup must not fail the regenerate the owner just triggered).
-    if fresh_comment is not None:
-        try:
-            with connect() as conn:
-                conn.execute(
-                    "UPDATE library SET review_comment = ?, reviewed_at = ? WHERE id = ?",
-                    (fresh_comment, now_iso(), lib_id),
-                )
-        except Exception:  # noqa: BLE001 — review-note mirror is best-effort
-            pass
-
-    return jsonify(job_id=job_id, status="queued", parent_id=lib_id), 202
+# NOTE: the POST /api/library/<id>/regenerate endpoint was removed with the
+# diffusion render path (it enqueued a fresh render job). Lärbild is now an
+# authored-SVG library: assets are imported, not regenerated. The owner's review
+# verdict + note (post_review above) and the visitor-flag workflow remain — a
+# rejected asset is now corrected by re-authoring/re-importing its SVG, not by
+# re-rolling a model render.

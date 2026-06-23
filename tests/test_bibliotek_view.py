@@ -69,24 +69,15 @@ def test_static_js_view_and_data_served():
     assert "/api/taxonomy" in src
 
 
-def test_skapa_buttons_link_into_the_funnel(client=None):
-    """The "Skapa här"/"Skapa bild" buttons must actually navigate to /skapa.
-
-    Regression guard for lb-skapafix: the create buttons were inert (no handler),
-    so pressing them did nothing. They are now anchors built from
-    LBData.skapaLink(...), which the data layer assembles as a /skapa route
-    carrying the browse context.
-    """
-    client = client or _client()
+def test_no_skapa_funnel_link_remains():
+    """The Skapa generate funnel + its deep-link were removed with the diffusion
+    render path. The Bibliotek shell must no longer reference them."""
+    client = _client()
     data_js = client.get("/static/js/bibliotek_data.js").get_data(as_text=True)
-    # the pure helper that builds the /skapa deep-link exists + targets /skapa
-    assert "skapaLink" in data_js
-    assert "/skapa" in data_js
-
     view_js = client.get("/static/js/bibliotek.jsx").get_data(as_text=True)
-    # all three create buttons are wired through the helper (no inert button left)
-    assert "skapaLink" in view_js
-    assert view_js.count("D.skapaLink(") >= 3
+    assert "skapaLink" not in data_js
+    assert "skapaLink" not in view_js
+    assert "/skapa" not in view_js
 
 
 def test_view_js_has_no_nsfw_marker():

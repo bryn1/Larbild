@@ -82,9 +82,9 @@ __all__ = [
 # never come close, but the cap is the hard guarantee the build plan asks for.
 DEFAULT_MAX_SCAN = int(os.environ.get("LARBILD_RECONCILE_MAX_SCAN", "5000"))
 
-# The auto-sort bucket for a video row is the literal "film" dir (app.film);
-# a still uses its imageType, falling back to "övrigt" exactly like the worker
-# (app.render_worker._relative_output_path) so detection matches what was written.
+# The auto-sort bucket for a video row is the literal "film" dir; a still uses
+# its imageType, falling back to "övrigt" — the same convention the import
+# pipeline writes assets under, so disk-scan detection matches the stored paths.
 _FILM_BUCKET = "film"
 _FALLBACK_BUCKET = "övrigt"
 
@@ -135,9 +135,9 @@ class ReconcileReport:
 def expected_bucket(kind: str, image_type: Optional[str], video_type: Optional[str]) -> str:
     """The auto-sort bucket dir name for a library row's taxonomy.
 
-    Mirrors the worker write paths so mis-sort detection matches reality:
-      * film  → the literal ``film`` dir (app.film._film_output_path)
-      * bild  → ``image_type`` or ``övrigt`` (app.render_worker, same fallback)
+    Mirrors the import-pipeline write paths so mis-sort detection matches reality:
+      * film  → the literal ``film`` dir
+      * bild  → ``image_type`` or ``övrigt`` (same fallback)
     """
     if kind == "film":
         return _FILM_BUCKET

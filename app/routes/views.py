@@ -55,26 +55,17 @@ def bibliotek():
     return _index_response()
 
 
-@views_bp.get("/skapa")
-def skapa():
-    """Serve the "Skapa bild" funnel page (lb-e1p, P3.1).
-
-    Its own no-build React shell (static/skapa.html): it loads the same design-
-    system CSS and React CDN, plus the funnel scripts (skapa_data.js +
-    skapa.jsx), which bootstrap from the live SoT endpoints (/api/taxonomy,
-    /api/resolve-lora) and submit to /api/jobs. A separate shell keeps the
-    Bibliotek SPA untouched. SFW-only: educational image funnel.
-    """
-    return send_from_directory(_STATIC_DIR, "skapa.html")
+# NOTE: the /skapa generate funnel was removed with the diffusion render path.
+# Lärbild is now an authored-SVG library: assets are imported (see
+# scripts/import_skola_svgs.py), not generated through the UI. Only the Bibliotek
+# browse + review views remain.
 
 
 # ── Public read-only views (bilder.sibbamala.com) ───────────────────────────
 # A SEPARATE blueprint registered only by the public-read-only factory path. It
-# serves ONLY the Bibliotek browse shell at / and /bibliotek — the /skapa
-# generate funnel is NOT a route here, so the generate page is not even reachable
-# on the public instance. The served HTML has a tiny flag injected so the
-# Bibliotek SPA renders its read-only chrome (no review/regenerate controls, no
-# review-filter tabs, no Skapa nav).
+# serves ONLY the Bibliotek browse shell at / and /bibliotek. The served HTML has
+# a tiny flag injected so the Bibliotek SPA renders its read-only chrome (no
+# review controls, no review-filter tabs).
 
 # Marker the public shell injects so the no-build React frontend knows it is the
 # internet-facing instance. Placed just before </head>.
@@ -98,14 +89,12 @@ def _public_index_html() -> str:
 
 
 def register_public_views(app) -> None:
-    """Register the read-only browse views on the public instance (no /skapa).
+    """Register the read-only browse views on the public instance.
 
     Builds a dedicated ``public_views`` blueprint exposing GET ``/`` and GET
     ``/bibliotek`` only — both serving the flag-injected Bibliotek shell — and
     repoints Flask's ``/static`` handler at the repo-root ``static/`` dir (so the
-    vendored React/Babel + CSS + JS still load). The ``/skapa`` funnel route is
-    deliberately never added to this blueprint, so the generate page returns 404
-    on the public process.
+    vendored React/Babel + CSS + JS still load).
     """
     public_views_bp = Blueprint("public_views", __name__)
 

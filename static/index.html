@@ -21,12 +21,9 @@
   <script src="/static/vendor/react-dom.production.min.js"></script>
   <script src="/static/vendor/babel.min.js"></script>
 
-  <!-- Pure data layer (window.LBData), GPU telemetry pills + Kö view, then the
-       React Bibliotek view. The telemetry components are owner-only (gated on
-       PUBLIC_READONLY in bibliotek.jsx) so they never mount / open the SSE
-       stream on the public bilder.sibbamala.com instance. -->
+  <!-- Pure data layer (window.LBData), the asset-lessons grouping modal, then the
+       React Bibliotek view (the authored-SVG library browse + review). -->
   <script src="/static/js/bibliotek_data.js"></script>
-  <script type="text/babel" src="/static/js/gpu_telemetry.jsx"></script>
   <script type="text/babel" src="/static/js/asset_lessons.jsx"></script>
   <script type="text/babel" src="/static/js/bibliotek.jsx"></script>
 </body>

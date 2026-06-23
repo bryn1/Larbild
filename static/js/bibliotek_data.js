@@ -87,32 +87,6 @@
     return `oklch(0.95 0.05 ${h})`;
   }
 
-  /**
-   * The Skapa-funnel link carrying the current browse context (lb-skapafix).
-   *
-   * The "Skapa här" / "Skapa det första" buttons hand the teacher straight into
-   * the create funnel pre-scoped to where they were browsing. The Bibliotek
-   * subject/area `id` values ARE the taxonomy slugs the funnel selects on (the
-   * /api/library tree keys nodes by the same slug the /api/taxonomy SoT uses), so
-   * they pass through verbatim as ``?subject=<id>&area=<id>``. skapa.jsx reads
-   * these on bootstrap and pre-selects the funnel (falling back to its science
-   * default when a param is absent/unknown).
-   *
-   * Pure URL assembly; url-encodes each id (defensive — slugs are simple, but
-   * never inject). Returns:
-   *   • "/skapa"                          when no subject is given (top-level
-   *                                        "Skapa bild" — let the funnel default),
-   *   • "/skapa?subject=<s>"              with a subject but no area,
-   *   • "/skapa?subject=<s>&area=<a>"     with both.
-   * The area is only ever included alongside a subject (areas are subject-scoped).
-   */
-  function skapaLink(subjectId, areaId) {
-    if (!subjectId) return "/skapa";
-    let qs = `subject=${encodeURIComponent(subjectId)}`;
-    if (areaId) qs += `&area=${encodeURIComponent(areaId)}`;
-    return `/skapa?${qs}`;
-  }
-
   /* ----------------------------------------------------------------------
    * URL <-> browse-location (lb-review-regen: refresh/navigation fix)
    * --------------------------------------------------------------------- */
@@ -123,9 +97,7 @@
    * The SPA navigates by React state and (before this) never touched the URL,
    * so a refresh inside a subject bounced back to the top-level grid. We now
    * push the location to the URL (?subject=&area=[&imageType=]) and read it back
-   * on load to RESTORE where the owner was — reusing the exact same
-   * URLSearchParams parsing the Skapa deep-link added (skapaLink / skapa_data's
-   * readSelectionFromQuery).
+   * on load to RESTORE where the owner was, via a small URLSearchParams parse.
    *
    * Pure: parses the given search string only (no window/DOM access — the view
    * passes ``window.location.search``). Accepts the string with or without a
@@ -147,8 +119,8 @@
 
   /**
    * Build the Bibliotek URL (path + query) for a browse location, so a refresh
-   * stays put. Mirrors skapaLink's encode-each-id discipline. The area/imageType
-   * are only ever included alongside a subject (areas are subject-scoped). Used
+   * stays put. Url-encodes each id (defensive). The area/imageType are only ever
+   * included alongside a subject (areas are subject-scoped). Used
    * with history.replaceState so navigating doesn't spam the back-stack but a
    * reload restores the spot. Returns:
    *   • "/bibliotek"                                  (top-level, no subject),
@@ -314,7 +286,6 @@
     centralText,
     subjColor,
     subjSoft,
-    skapaLink,
     fmtDate,
     readLocationFromQuery,
     bibliotekUrl,

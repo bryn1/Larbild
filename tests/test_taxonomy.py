@@ -1,9 +1,11 @@
 """Tests for the LGR22 taxonomy single source of truth (lb-582).
 
 Locks the design's counts (acceptance: "a test asserts the counts"), the
-verbatim port (slugs stable + referenced by id), the ``resolve_lora`` fallback
-order, and the ``GET /api/taxonomy`` exposure. If a future edit drifts from
-``design/data.js`` these break loudly — the whole point of a single SoT.
+verbatim port (slugs stable + referenced by id), and the ``GET /api/taxonomy``
+exposure. If a future edit drifts from ``design/data.js`` these break loudly —
+the whole point of a single SoT. (The LoRA matrix + ``resolve_lora`` were
+removed with the diffusion render path; the taxonomy is now subject/area +
+image/video type structure only.)
 """
 from __future__ import annotations
 
@@ -35,14 +37,6 @@ def test_narration_voice_count():
     assert len(taxonomy.NARRATION_VOICES) == 2
 
 
-def test_base_lora_count():
-    assert len(taxonomy.BASE_LORA) == 8
-
-
-def test_lora_matrix_count():
-    assert len(taxonomy.LORA_MATRIX) == 28
-
-
 # ── slugs are stable + every reference is by id, not free text ─────────────
 
 
@@ -68,52 +62,6 @@ def test_every_area_has_slug_name_and_central_content():
             assert a["name"], f"area {a.get('slug')} in {s['slug']} missing name"
             # Skolverket central content is the reason areas exist here.
             assert a["central"], f"area {a['slug']} in {s['slug']} missing central"
-
-
-def test_base_lora_keyed_by_every_image_type():
-    image_type_slugs = {t["slug"] for t in taxonomy.IMAGE_TYPES}
-    assert set(taxonomy.BASE_LORA.keys()) == image_type_slugs
-
-
-def test_lora_matrix_keys_reference_valid_subject_and_image_type():
-    subject_slugs = {s["slug"] for s in taxonomy.SUBJECTS}
-    image_type_slugs = {t["slug"] for t in taxonomy.IMAGE_TYPES}
-    for key in taxonomy.LORA_MATRIX:
-        subj, _, itype = key.partition(":")
-        assert subj in subject_slugs, f"matrix key {key!r} has unknown subject"
-        assert itype in image_type_slugs, f"matrix key {key!r} has unknown image type"
-
-
-# ── resolve_lora: verbatim fallback order ──────────────────────────────────
-
-
-def test_resolve_lora_matrix_hit():
-    # fysik:diagram is a specialised cell in the design.
-    out = taxonomy.resolve_lora("fysik", "diagram")
-    assert out["name"] == "physics-vector-v3"
-    assert out["strength"] == 0.86
-    assert out["source"] == "ämnesspecifik"
-    assert out["base"] == "SDXL"  # cell.base or "SDXL"
-
-
-def test_resolve_lora_falls_back_to_base():
-    # matematik:foto has no matrix cell → base LoRA for 'foto'.
-    out = taxonomy.resolve_lora("matematik", "foto")
-    assert out["name"] == taxonomy.BASE_LORA["foto"]["name"]
-    assert out["source"] == "bas"
-    assert out["note"] == "Bas-LoRA för bildtypen."
-
-
-def test_resolve_lora_every_image_type_resolves_via_base():
-    # Every image type has a base LoRA, so any valid type resolves even for a
-    # subject with no specialised cell.
-    for itype in (t["slug"] for t in taxonomy.IMAGE_TYPES):
-        out = taxonomy.resolve_lora("idrott", itype)
-        assert out is not None and out["name"]
-
-
-def test_resolve_lora_unknown_image_type_is_none():
-    assert taxonomy.resolve_lora("fysik", "does-not-exist") is None
 
 
 # ── validation helpers (back DB key checks + library API) ──────────────────
@@ -151,5 +99,6 @@ def test_taxonomy_endpoint_returns_full_structure():
     assert len(body["subjects"]) == 17
     assert len(body["imageTypes"]) == 8
     assert len(body["videoTypes"]) == 6
-    assert len(body["baseLora"]) == 8
-    assert len(body["loraMatrix"]) == 28
+    # The LoRA matrix was removed with the diffusion render path.
+    assert "baseLora" not in body
+    assert "loraMatrix" not in body

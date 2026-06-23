@@ -285,7 +285,6 @@ def test_create_app_runs_storage_reconcile(tmp_path):
         "DB_PATH": db_path,
         "STORAGE_DIR": storage_dir,
         "RECONCILE_STORAGE": True,     # force on (TESTING would otherwise skip it)
-        "START_GPU_TELEMETRY": False,
         "TESTING": True,
     })
     # the boot reconcile flagged the dangling row but did NOT delete it
@@ -307,7 +306,6 @@ def test_create_app_skips_storage_reconcile_when_disabled(tmp_path):
         "DB_PATH": db_path,
         "STORAGE_DIR": storage_dir,
         "RECONCILE_STORAGE": False,
-        "START_GPU_TELEMETRY": False,
         "TESTING": True,
     })
     # disabled → the dangling row was never flagged
